@@ -15,6 +15,7 @@ body {
   font-family: 'Inter', sans-serif;
   background: #0a0a0a;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* NAV */
@@ -26,21 +27,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.25);
   backdrop-filter: blur(12px);
 }
 
 nav img {
   width: 95px;
   filter: brightness(1.2);
-}
-
-nav a {
-  color: white;
-  margin-left: 30px;
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 2px;
 }
 
 /* HERO */
@@ -53,15 +46,16 @@ nav a {
   position: relative;
 }
 
+/* FIXED OVERLAY */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.85),
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.2)
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.1)
   );
 }
 
@@ -71,34 +65,31 @@ nav a {
   max-width: 700px;
 }
 
-/* 🔥 GRADIENT HEADLINE */
+/* FIXED GRADIENT TEXT */
 .hero h1 {
   font-size: 64px;
   font-weight: 700;
   line-height: 1.05;
   margin-bottom: 25px;
 
-  background: linear-gradient(to right, #888, #ffffff);
+  background: linear-gradient(to right, #dddddd, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: 0 2px 25px rgba(0,0,0,0.6);
+  text-shadow: 0 5px 30px rgba(0,0,0,0.6);
 }
 
+/* TEXT */
 .hero p {
   font-size: 20px;
   color: #ffffff;
   max-width: 550px;
   line-height: 1.6;
+  margin-bottom: 30px;
 }
 
-/* CTA BUTTON */
-.cta {
-  margin-top: 30px;
-}
-
+/* CTA */
 .cta a {
-  display: inline-block;
   padding: 14px 30px;
   border: 1px solid white;
   color: white;
@@ -120,63 +111,22 @@ nav a {
   margin: auto;
 }
 
-.section h2 {
-  font-size: 40px;
-  margin-bottom: 60px;
+/* ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* SERVICES */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 50px;
-}
-
-.service p {
-  color: #bbb;
-}
-
-/* PROJECTS */
-.projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.project img {
-  width: 100%;
-  height: 340px;
-  object-fit: cover;
-  transition: 0.5s;
-}
-
-.project:hover img {
-  transform: scale(1.05);
-}
-
-/* CONTACT */
-.contact p {
-  margin: 10px 0;
-}
-
-/* WHATSAPP BUTTON */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 14px;
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* MOBILE */
 @media(max-width:768px){
+  .hero { padding: 0 20px; }
   .hero h1 { font-size: 36px; }
-  .grid { grid-template-columns: 1fr; }
-  .projects { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -185,15 +135,10 @@ nav a {
 
 <nav>
   <img src="logo.png">
-  <div>
-    <a href="#services">Services</a>
-    <a href="#projects">Work</a>
-    <a href="#contact">Contact</a>
-  </div>
 </nav>
 
 <div class="hero">
-  <div class="hero-content">
+  <div class="hero-content reveal">
 
     <h1>
       Precision in Construction.<br>
@@ -212,52 +157,35 @@ nav a {
   </div>
 </div>
 
-<div id="services" class="section">
-  <h2>Services</h2>
-
-  <div class="grid">
-    <div class="service">
-      <h3>Construction</h3>
-      <p>End-to-end construction from concept to completion.</p>
-    </div>
-
-    <div class="service">
-      <h3>Event Management</h3>
-      <p>Full-scale execution for corporate and government events.</p>
-    </div>
-
-    <div class="service">
-      <h3>Printing</h3>
-      <p>Large-format printing and branding solutions.</p>
-    </div>
-  </div>
-</div>
-
-<div id="projects" class="section">
-  <h2>Selected Work</h2>
-
-  <div class="projects">
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-    </div>
-
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a">
-    </div>
-  </div>
-</div>
-
-<div id="contact" class="section contact">
+<div class="section reveal" id="contact">
   <h2>Contact</h2>
   <p>+964 750 220 5577</p>
   <p>email@sevenpoints.info</p>
   <p>Zirka Road, Duhok, Kurdistan Region, Iraq</p>
 </div>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/9647502205577" target="_blank">
-  WhatsApp
-</a>
+<script>
+/* SMOOTH SCROLL ANIMATION */
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 80) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+
+/* PARALLAX (SMOOTH) */
+window.addEventListener('scroll', () => {
+  document.querySelector('.hero').style.backgroundPositionY =
+    window.scrollY * 0.3 + 'px';
+});
+</script>
 
 </body>
 </html>
