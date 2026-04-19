@@ -1,34 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Seven Points</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: black;
-      color: white;
-      text-align: center;
-    }
-    .hero {
-      padding: 100px 20px;
-      background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab') no-repeat center/cover;
-    }
-    h1 {
-      font-size: 50px;
-    }
-    p {
-      font-size: 20px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seven Points</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+.hero p {
+  font-size: 22px;
+  color: #d4af37;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* SERVICES */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* PROJECTS */
+.projects img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+/* CONTACT */
+.contact {
+  background: #111;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1 {
+    font-size: 35px;
+  }
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="hero">
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content fade">
     <h1>SEVEN POINTS</h1>
     <p>Construction • Event Management • General Services</p>
   </div>
+</div>
+
+<!-- SERVICES -->
+<div class="section fade">
+  <h2>Our Services</h2>
+  <div class="services">
+
+    <div class="card">
+      <h3>Construction</h3>
+      <p>Residential & Commercial Projects</p>
+    </div>
+
+    <div class="card">
+      <h3>Event Management</h3>
+      <p>Corporate Events & Setup</p>
+    </div>
+
+    <div class="card">
+      <h3>Printing</h3>
+      <p>Branding & Large Format Printing</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section projects fade">
+  <h2>Our Work</h2>
+  <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+  <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a">
+  <img src="https://images.unsplash.com/photo-1529429611273-2cfd5708f9d2">
+</div>
+
+<!-- CONTACT -->
+<div class="section contact fade">
+  <h2>Contact Us</h2>
+  <p>Phone: +964 XXX XXX XXX</p>
+  <p>Email: info@sevenpoints.info</p>
+  <p>Dahuk, Iraq</p>
+</div>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const rect = el.getBoundingClientRect().top;
+    if(rect < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
