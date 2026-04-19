@@ -17,7 +17,7 @@ body {
   color: #fff;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
   position: fixed;
   width: 100%;
@@ -37,27 +37,10 @@ nav img {
 
 nav a {
   color: white;
-  text-decoration: none;
   margin-left: 30px;
+  text-decoration: none;
   font-size: 12px;
   letter-spacing: 2px;
-  position: relative;
-  opacity: 0.85;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 1px;
-  bottom: -5px;
-  left: 0;
-  background: white;
-  transition: 0.3s;
-}
-
-nav a:hover::after {
-  width: 100%;
 }
 
 /* HERO */
@@ -76,36 +59,61 @@ nav a:hover::after {
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.85) 0%,
-    rgba(0,0,0,0.6) 40%,
-    rgba(0,0,0,0.2) 100%
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.2)
   );
 }
 
+/* CONTENT */
 .hero-content {
   position: relative;
-  max-width: 650px;
-  animation: fadeUp 1.2s ease;
+  max-width: 700px;
 }
 
+/* 🔥 GRADIENT HEADLINE */
 .hero h1 {
   font-size: 64px;
   font-weight: 700;
   line-height: 1.05;
-  margin-bottom: 20px;
-  letter-spacing: -2px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+  margin-bottom: 25px;
+
+  background: linear-gradient(to right, #888, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 2px 25px rgba(0,0,0,0.6);
 }
 
 .hero p {
   font-size: 20px;
-  line-height: 1.6;
   color: #ffffff;
   max-width: 550px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+  line-height: 1.6;
 }
 
-/* SECTIONS */
+/* CTA BUTTON */
+.cta {
+  margin-top: 30px;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 14px 30px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.cta a:hover {
+  background: white;
+  color: black;
+}
+
+/* SECTION */
 .section {
   padding: 140px 60px;
   max-width: 1200px;
@@ -114,24 +122,18 @@ nav a:hover::after {
 
 .section h2 {
   font-size: 40px;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 
 /* SERVICES */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 50px;
-}
-
-.service h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
 }
 
 .service p {
   color: #bbb;
-  line-height: 1.6;
 }
 
 /* PROJECTS */
@@ -141,77 +143,46 @@ nav a:hover::after {
   gap: 20px;
 }
 
-.project {
-  position: relative;
-  overflow: hidden;
-}
-
 .project img {
   width: 100%;
   height: 340px;
   object-fit: cover;
-  transition: 0.6s;
+  transition: 0.5s;
 }
 
 .project:hover img {
   transform: scale(1.05);
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  opacity: 0;
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  transition: 0.4s;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.project:hover .overlay {
-  opacity: 1;
-}
-
 /* CONTACT */
 .contact p {
   margin: 10px 0;
-  font-size: 18px;
 }
 
-/* ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* WHATSAPP BUTTON */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-  nav { padding: 20px; }
-  .hero { padding: 0 20px; }
-  .section { padding: 100px 20px; }
+  .hero h1 { font-size: 36px; }
   .grid { grid-template-columns: 1fr; }
   .projects { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 36px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <img src="logo.png">
   <div>
@@ -221,85 +192,72 @@ nav a:hover::after {
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-content">
+
     <h1>
       Precision in Construction.<br>
       Power in Execution.
     </h1>
+
     <p>
       Seven Points delivers integrated construction, event management, and production 
       solutions for commercial, corporate, and government sectors — executed with precision and scale.
     </p>
+
+    <div class="cta">
+      <a href="#contact">START A PROJECT</a>
+    </div>
+
   </div>
 </div>
 
-<!-- SERVICES -->
-<div id="services" class="section reveal">
+<div id="services" class="section">
   <h2>Services</h2>
 
   <div class="grid">
     <div class="service">
       <h3>Construction</h3>
-      <p>End-to-end construction solutions from concept to completion, including interiors and exteriors.</p>
+      <p>End-to-end construction from concept to completion.</p>
     </div>
 
     <div class="service">
       <h3>Event Management</h3>
-      <p>Professional execution of corporate and government events with full planning and production.</p>
+      <p>Full-scale execution for corporate and government events.</p>
     </div>
 
     <div class="service">
       <h3>Printing</h3>
-      <p>Large-format printing and branding solutions designed for visibility and impact.</p>
+      <p>Large-format printing and branding solutions.</p>
     </div>
   </div>
 </div>
 
-<!-- PROJECTS -->
-<div id="projects" class="section reveal">
+<div id="projects" class="section">
   <h2>Selected Work</h2>
 
   <div class="projects">
     <div class="project">
       <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-      <div class="overlay">Construction Project</div>
     </div>
 
     <div class="project">
       <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a">
-      <div class="overlay">Event Production</div>
     </div>
   </div>
 </div>
 
-<!-- CONTACT -->
-<div id="contact" class="section contact reveal">
+<div id="contact" class="section contact">
   <h2>Contact</h2>
   <p>+964 750 220 5577</p>
   <p>email@sevenpoints.info</p>
   <p>Zirka Road, Duhok, Kurdistan Region, Iraq</p>
 </div>
 
-<script>
-/* SCROLL REVEAL */
-const reveals = document.querySelectorAll('.reveal');
-
-window.addEventListener('scroll', () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.classList.add('active');
-    }
-  });
-});
-
-/* PARALLAX */
-window.addEventListener('scroll', () => {
-  document.querySelector('.hero').style.backgroundPositionY = window.scrollY * 0.4 + 'px';
-});
-</script>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/9647502205577" target="_blank">
+  WhatsApp
+</a>
 
 </body>
 </html>
