@@ -26,12 +26,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.3);
   backdrop-filter: blur(12px);
 }
 
 nav img {
   width: 95px;
+  filter: brightness(1.2);
 }
 
 nav a {
@@ -41,7 +42,7 @@ nav a {
   font-size: 12px;
   letter-spacing: 2px;
   position: relative;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 nav a::after {
@@ -53,10 +54,6 @@ nav a::after {
   left: 0;
   background: white;
   transition: 0.3s;
-}
-
-nav a:hover {
-  opacity: 1;
 }
 
 nav a:hover::after {
@@ -77,7 +74,12 @@ nav a:hover::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.6) 40%,
+    rgba(0,0,0,0.2) 100%
+  );
 }
 
 .hero-content {
@@ -87,16 +89,20 @@ nav a:hover::after {
 }
 
 .hero h1 {
-  font-size: 52px;
-  line-height: 1.1;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.05;
   margin-bottom: 20px;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
 }
 
 .hero p {
   font-size: 20px;
   line-height: 1.6;
-  opacity: 0.9;
+  color: #ffffff;
+  max-width: 550px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
 }
 
 /* SECTIONS */
@@ -107,7 +113,7 @@ nav a:hover::after {
 }
 
 .section h2 {
-  font-size: 38px;
+  font-size: 40px;
   margin-bottom: 70px;
 }
 
@@ -124,7 +130,7 @@ nav a:hover::after {
 }
 
 .service p {
-  color: #aaa;
+  color: #bbb;
   line-height: 1.6;
 }
 
@@ -198,7 +204,7 @@ nav a:hover::after {
   .section { padding: 100px 20px; }
   .grid { grid-template-columns: 1fr; }
   .projects { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 34px; }
+  .hero h1 { font-size: 36px; }
 }
 </style>
 </head>
@@ -218,7 +224,10 @@ nav a:hover::after {
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <h1>Building Excellence.<br>Delivering Impact.</h1>
+    <h1>
+      Precision in Construction.<br>
+      Power in Execution.
+    </h1>
     <p>
       Seven Points delivers integrated construction, event management, and production 
       solutions for commercial, corporate, and government sectors — executed with precision and scale.
