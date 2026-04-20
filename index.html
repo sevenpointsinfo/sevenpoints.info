@@ -18,6 +18,10 @@ body {
   line-height: 1.6;
 }
 
+.fade-in { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.23,1,0.320,1); }
+.fade-in.active { opacity: 1; transform: translateY(0); }
+.stagger { transition-delay: calc(0.1s * var(--i)); }
+
 /* Navigation */
 nav { 
   position: fixed; 
@@ -51,7 +55,7 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 /* Hero */
 .hero { 
   height: 100vh; 
-  background: linear-gradient(135deg, rgba(0,20,40,0.7), rgba(0,0,0,0.5)), url('sevenpointsbg.png') center/cover fixed; 
+  background: linear-gradient(135deg, rgba(0,20,40,0.7), rgba(0,0,0,0.5)), url('sevenpointsbg.png') center/cover; 
   display: flex; 
   align-items: center; 
   justify-content: flex-start; 
@@ -62,9 +66,7 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 .hero-content { 
   max-width: 800px; 
   z-index: 2;
-  animation: fadeInUp 1.5s ease;
 }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
 .hero h1 { 
   font-size: clamp(48px, 8vw, 90px); 
   font-weight: 800; 
@@ -127,7 +129,7 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
   margin: 20px auto 0;
 }
 
-/* Stats */
+/* Stats - FIXED */
 .stats { 
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
@@ -142,8 +144,16 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
   backdrop-filter: blur(10px); 
   border: 1px solid rgba(255,255,255,0.1);
 }
-.stat-number { font-size: 48px; font-weight: 900; color: #fff; display: block; margin-bottom: 10px; }
+.stat-number { 
+  font-size: 48px; 
+  font-weight: 900; 
+  color: #fff; 
+  display: block; 
+  margin-bottom: 10px; 
+  font-feature-settings: 'tnum';
+}
 .stat-label { font-size: 18px; opacity: 0.8; }
+.stat.animated .stat-number { color: #ffd700; }
 
 /* Services */
 .services-grid { 
@@ -281,17 +291,13 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 .scroll-top.show { opacity: 1; visibility: visible; }
 .scroll-top:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
 
-/* Animations */
-.fade-in { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.23,1,0.320,1); }
-.fade-in.active { opacity: 1; transform: translateY(0); }
-.stagger { transition-delay: calc(0.1s * var(--i)); }
-
 /* Mobile */
 @media (max-width: 1024px) {
   .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
-  nav .links { display: none; }
+  nav .links { display: none; position: fixed; top: 80px; left: 0; width: 100%; background: rgba(0,0,0,0.95); flex-direction: column; padding: 20px 5%; gap: 20px; }
+  nav .links.active { display: flex; }
   nav .hamburger { display: flex; }
   .cta { flex-direction: column; align-items: stretch; }
   .section { padding: 80px 5%; }
@@ -317,7 +323,7 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 </nav>
 
 <!-- Hero -->
-<section class="hero">
+<section class="hero fade-in active">
   <div class="hero-content">
     <h1>Precision in Construction. Power in Execution.</h1>
     <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors—executed with precision and scale.</p>
@@ -329,23 +335,23 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 </section>
 
 <!-- Stats -->
-<section class="section fade-in">
+<section class="section">
   <div class="stats">
-    <div class="stat">
-      <span class="stat-number" data-target="150">0</span>
+    <div class="stat fade-in" data-target="150">
+      <span class="stat-number">0</span>
       <span class="stat-label">Projects Completed</span>
     </div>
-    <div class="stat">
-      <span class="stat-number" data-target="5">0</span>
+    <div class="stat fade-in stagger" style="--i:1" data-target="5">
+      <span class="stat-number">0</span>
       <span class="stat-label">Years Experience</span>
     </div>
-    <div class="stat">
-      <span class="stat-number" data-target="100">0</span>
+    <div class="stat fade-in stagger" style="--i:2" data-target="100">
+      <span class="stat-number">0</span>
       <span class="stat-label">Happy Clients</span>
     </div>
-    <div class="stat">
-      <span class="stat-number" data-target="0">0</span>
-      <span class="stat-label">On-Time Deliveries</span>
+    <div class="stat fade-in stagger" style="--i:3" data-target="100">
+      <span class="stat-number">0</span>
+      <span class="stat-label">On-Time Deliveries %</span>
     </div>
   </div>
 </section>
@@ -354,17 +360,17 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 <section id="services" class="section">
   <h2 class="fade-in">Our Services</h2>
   <div class="services-grid">
-    <div class="service-card fade-in stagger" style="--i:1">
+    <div class="service-card fade-in" style="--i:1">
       <i class="fas fa-hard-hat"></i>
       <h3>Construction</h3>
       <p>Full-scale construction services from concept to completion, covering architectural planning, structural execution, and interior & exterior finishing.</p>
     </div>
-    <div class="service-card fade-in stagger" style="--i:2">
+    <div class="service-card fade-in" style="--i:2">
       <i class="fas fa-calendar-check"></i>
       <h3>Event Management</h3>
       <p>End-to-end event production for corporate and government sectors, delivering seamless execution from planning to final delivery.</p>
     </div>
-    <div class="service-card fade-in stagger" style="--i:3">
+    <div class="service-card fade-in" style="--i:3">
       <i class="fas fa-print"></i>
       <h3>Printing & Branding</h3>
       <p>High-impact large-format printing solutions, including banners, signage, and branding materials designed for maximum visibility.</p>
@@ -376,22 +382,22 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 <section id="projects" class="section">
   <h2 class="fade-in">Selected Work</h2>
   <div class="projects-grid">
-    <div class="project fade-in stagger" style="--i:1">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Construction Project">
+    <div class="project fade-in" style="--i:1">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Construction Project" loading="lazy">
       <div class="project-overlay">
         <h4>Construction Project</h4>
         <p>Commercial building completed on time and budget.</p>
       </div>
     </div>
-    <div class="project fade-in stagger" style="--i:2">
-      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Event Production">
+    <div class="project fade-in" style="--i:2">
+      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Event Production" loading="lazy">
       <div class="project-overlay">
         <h4>Event Production</h4>
         <p>Corporate gala for 500+ guests with full AV setup.</p>
       </div>
     </div>
-    <div class="project fade-in stagger" style="--i:3">
-      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Branding Project">
+    <div class="project fade-in" style="--i:3">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Branding Project" loading="lazy">
       <div class="project-overlay">
         <h4>Branding Campaign</h4>
         <p>Government signage and large-format prints.</p>
@@ -423,7 +429,7 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 <section id="contact" class="section">
   <h2 class="fade-in">Get In Touch</h2>
   <div class="contact-grid">
-    <div class="contact-info fade-in stagger" style="--i:1">
+    <div class="contact-info fade-in" style="--i:1">
       <h3><i class="fas fa-phone"></i> Phone</h3>
       <p><i class="fas fa-phone"></i> +964 750 220 5577</p>
       <h3><i class="fas fa-envelope"></i> Email</h3>
@@ -431,7 +437,7 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
       <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
       <p><i class="fas fa-map-marker-alt"></i> Zirka Road, Duhok, Kurdistan Region, Iraq</p>
     </div>
-    <form class="contact-form fade-in stagger" style="--i:2" id="contactForm">
+    <form class="contact-form fade-in" style="--i:2" id="contactForm">
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
       <input type="tel" placeholder="Your Phone">
@@ -450,65 +456,103 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 </a>
 
 <script>
-/* Navbar Scroll Effect */
-window.addEventListener('scroll', () => {
-  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
-  document.querySelector('.scroll-top').classList.toggle('show', window.scrollY > 500);
-});
-
-/* Reveal Animations */
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
+/* Lightweight Optimized Script */
+(() => {
+  // Navbar
+  let ticking = false;
+  function updateNavbar() {
+    const scrolled = window.scrollY > 50;
+    document.querySelector('nav').classList.toggle('scrolled', scrolled);
+    document.querySelector('.scroll-top').classList.toggle('show', window.scrollY > 500);
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateNavbar);
+      ticking = true;
     }
   });
-}, observerOptions);
 
-document.querySelectorAll('.fade-in, .stagger').forEach(el => observer.observe(el));
-
-/* Stats Counter */
-function animateCounters() {
-  const counters = document.querySelectorAll('.stat-number');
-  counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
-    const increment = target / 100;
-    let current = 0;
-    const updateCounter = () => {
-      if (current < target) {
-        current += increment;
-        counter.textContent = Math.floor(current) + '+';
-        requestAnimationFrame(updateCounter);
-      } else {
-        counter.textContent = target + '+';
+  // Reveal Animations - Optimized
+  const reveals = document.querySelectorAll('.fade-in');
+  let revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        revealObserver.unobserve(entry.target);
       }
-    };
-    if (Math.abs(counter.getBoundingClientRect().top) < window.innerHeight) {
-      updateCounter();
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
+  reveals.forEach(el => revealObserver.observe(el));
+
+  // Stats Counter - FIXED: Runs ONCE only
+  const stats = document.querySelectorAll('.stat');
+  let statsAnimated = false;
+  
+  function animateStats() {
+    if (statsAnimated) return;
+    
+    const rect = document.querySelector('.stats').getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      stats.forEach(stat => {
+        const target = parseInt(stat.dataset.target);
+        const number = stat.querySelector('.stat-number');
+        let current = 0;
+        const increment = target / 80;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            number.textContent = target + (target === 100 ? '%' : '+');
+            stat.classList.add('animated');
+            clearInterval(timer);
+          } else {
+            number.textContent = Math.floor(current) + (target === 100 ? '%' : '+');
+          }
+        }, 20);
+      });
+      statsAnimated = true;
     }
+  }
+  
+  window.addEventListener('scroll', animateStats);
+  animateStats(); // Check on load
+
+  // Mobile Menu
+  document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.links').classList.toggle('active');
   });
-}
-window.addEventListener('scroll', animateCounters);
-animateCounters();
 
-/* Form Submission */
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  alert('Thank you! Your message has been sent. We\'ll get back to you soon.');
-  e.target.reset();
-});
+  // Form
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Simulate form submission
+    const btn = e.target.querySelector('button');
+    const original = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      alert('Thank you! Your message has been sent. We\'ll contact you soon.');
+      e.target.reset();
+      btn.textContent = original;
+      btn.disabled = false;
+    }, 1500);
+  });
 
-/* Mobile Menu - Basic toggle */
-document.querySelector('.hamburger').addEventListener('click', () => {
-  document.querySelector('.links').classList.toggle('active');
-});
+  // Smooth Scroll for Links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelector('.links').classList.remove('active');
+      }
+    });
+  });
 
-/* Parallax Hero */
-window.addEventListener('scroll', () => {
-  const scrolled = window.scrollY;
-  document.querySelector('.hero').style.transform = `translateY(${scrolled * 0.5}px)`;
-});
+})();
 </script>
 
 </body>
