@@ -3,259 +3,513 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Seven Points | Construction & Event Managment</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<title>Seven Points | Precision Construction & Event Management</title>
+<meta name="description" content="Integrated construction, event management, and branding solutions for commercial, corporate, and government sectors in Duhok, Kurdistan.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-/* NAV */
-header{
-  position:fixed;
-  inset:0 0 auto 0;
-  z-index:1100;
-  display:flex;
-  justify-content:center;
-  pointer-events:none;
-}
-.nav-inner{
-  pointer-events:auto;
-  width:100%;
-  max-width:var(--max-width);
-  padding:18px 28px;
-  display:flex;
-  align-items:center;
-  gap:18px;
-  justify-content:space-between;
-  background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.12));
-  border-radius:12px;
-  margin:18px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.brand img{ width:110px; height:auto; display:block; filter:brightness(1.05)}
-.nav-links{ display:flex; gap:22px; align-items:center }
-.nav-links a{
-  color:#fff; text-decoration:none; font-size:13px; letter-spacing:1.6px; opacity:.9;
-  padding:8px 10px; border-radius:8px;
-}
-.nav-links a:hover, .nav-links a:focus{ background:var(--glass-strong); outline:none }
-
-/* HERO */
-.hero{
-  height:92vh;
-  min-height:560px;
-  display:flex;
-  align-items:center;
-  padding:0 24px;
-  margin-top:14px;
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-  max-width:calc(var(--max-width) - 36px);
-  margin-left:auto; margin-right:auto;
-  background-image: url('sevenpointsbg.png');
-  background-size:cover;
-  background-position:center;
-}
-/* soft dark overlay + gradient to left for text contrast */
-.hero::before{
-  content:"";
-  position:absolute; inset:0;
-  background:linear-gradient(90deg, rgba(6,6,6,0.66) 0%, rgba(6,6,6,0.42) 40%, rgba(6,6,6,0.14) 100%);
-  z-index:1;
-}
-.hero-inner{
-  position:relative; z-index:2;
-  width:100%;
-  max-width:900px;
-  padding:48px;
-}
-.eyebrow{ color:var(--accent); font-weight:600; letter-spacing:1.6px; font-size:13px; margin-bottom:12px }
-.hero h1{
-  font-size: clamp(28px, 5.6vw, 56px);
-  line-height:1.02;
-  margin:0 0 18px 0;
-  background: linear-gradient(90deg,#fff,#ddd);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow: 0 8px 30px rgba(0,0,0,0.6);
-}
-.hero p{ color:var(--muted); max-width:720px; margin-bottom:24px; font-size:17px }
-.cta-row{ display:flex; gap:14px; flex-wrap:wrap }
-.btn{
-  display:inline-block; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:700; letter-spacing:1.6px; font-size:13px;
-}
-.btn-primary{ background:var(--accent); color:#111; border:2px solid rgba(0,0,0,0.12) }
-.btn-ghost{ background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.14) }
-
-/* MAIN SECTION wrapper */
-main{ padding:48px 18px 120px; max-width:var(--max-width); margin:28px auto 0; }
-
-/* SECTION BASE */
-section{ padding:64px 0; border-radius:8px; }
-.section-header{ margin-bottom:28px; }
-.section h2{ font-size:22px; margin:0 0 10px 0 }
-.section p.lead{ color:var(--muted); margin:0 0 18px 0 }
-
-/* SERVICES */
-.services-grid{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
-}
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border:1px solid rgba(255,255,255,0.04);
-  padding:20px; border-radius:12px;
-  min-height:170px;
-  transition:transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s;
-}
-.card:hover{ transform:translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,0.6) }
-.card h3{ margin:0 0 10px; font-size:18px }
-.card p{ color:var(--muted); font-size:15px }
-
-/* PROJECTS */
-.projects-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; align-items:stretch }
-.project{
-  position:relative; border-radius:12px; overflow:hidden; min-height:240px;
-  background:#111;
-}
-.project img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s; }
-.project:hover img{ transform:scale(1.06) }
-.project .info{
-  position:absolute; left:16px; bottom:16px; z-index:3; color:#fff; background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.6));
-  padding:12px 14px; border-radius:10px; max-width:70%;
-}
-.project .info small{ color:var(--muted); display:block; font-size:13px; margin-bottom:6px }
-
-/* CONTACT & FOOTER */
-.contact-grid{ display:grid; grid-template-columns:2fr 1fr; gap:18px; align-items:start }
-.contact-card{ background:var(--glass); padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.03) }
-.contact-card p{ color:var(--muted); margin:8px 0 }
-.contact-form input, .contact-form textarea{
-  width:100%; padding:12px 14px; margin:8px 0 12px 0; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#fff;
-}
-.contact-form button{ background:var(--accent); color:#111; border:none; padding:12px 16px; border-radius:8px; font-weight:700; cursor:pointer }
-
-footer{ margin-top:40px; color:var(--muted); text-align:center; font-size:13px; padding:28px 0 }
-
-/* WhatsApp floating */
-.whatsapp{
-  position:fixed; right:18px; bottom:18px; z-index:1050;
-  background:#25D366; color:#fff; padding:14px 16px; border-radius:999px; box-shadow:0 8px 24px rgba(0,0,0,0.45); text-decoration:none; font-weight:700;
+html { scroll-behavior: smooth; }
+body { 
+  font-family: 'Inter', sans-serif; 
+  background: #0a0a0a; 
+  color: #fff; 
+  overflow-x: hidden; 
+  line-height: 1.6;
 }
 
-/* Reveal animation */
-.reveal{opacity:0; transform:translateY(36px); transition:all .9s cubic-bezier(.2,.9,.2,1)}
-.reveal.active{opacity:1; transform:none}
+/* Navigation */
+nav { 
+  position: fixed; 
+  width: 100%; 
+  padding: 20px 5%; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  z-index: 1000; 
+  background: rgba(0,0,0,0.3); 
+  backdrop-filter: blur(20px); 
+  transition: all 0.3s ease;
+}
+nav.scrolled { background: rgba(0,0,0,0.9); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+nav img { width: 120px; filter: brightness(1.3); transition: 0.3s; }
+nav .links { display: flex; gap: 40px; }
+nav .links a { 
+  color: #fff; 
+  text-decoration: none; 
+  font-size: 14px; 
+  font-weight: 500; 
+  letter-spacing: 1px; 
+  position: relative;
+  transition: 0.3s;
+}
+nav .links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #fff, #ddd); transition: 0.3s; }
+nav .links a:hover::after { width: 100%; }
+nav .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.3s; }
 
-/* Responsive */
-@media(max-width:980px){ .services-grid{grid-template-columns:repeat(2,1fr)} .projects-grid{grid-template-columns:1fr} .contact-grid{grid-template-columns:1fr} .nav-inner{padding:12px 16px} .hero-inner{padding:28px} }
-@media(max-width:640px){
-  .services-grid{grid-template-columns:1fr}
-  .brand img{width:86px}
-  .nav-links{ display:none } /* keep simple, or implement hamburger later */
-  .hero{ border-radius:0; height:72vh; min-height:520px }
-  .hero-inner{ padding:18px }
+/* Hero */
+.hero { 
+  height: 100vh; 
+  background: linear-gradient(135deg, rgba(0,20,40,0.7), rgba(0,0,0,0.5)), url('sevenpointsbg.png') center/cover fixed; 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-start; 
+  padding: 0 5%; 
+  position: relative;
+}
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%); }
+.hero-content { 
+  max-width: 800px; 
+  z-index: 2;
+  animation: fadeInUp 1.5s ease;
+}
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+.hero h1 { 
+  font-size: clamp(48px, 8vw, 90px); 
+  font-weight: 800; 
+  line-height: 1.1; 
+  margin-bottom: 20px; 
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  background-clip: text;
+  position: relative;
+}
+.hero h1::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: -10px; 
+  left: 0; 
+  width: 100px; 
+  height: 3px; 
+  background: linear-gradient(90deg, transparent, #fff, transparent); 
+}
+.hero p { 
+  font-size: clamp(18px, 3vw, 24px); 
+  max-width: 600px; 
+  margin-bottom: 40px; 
+  opacity: 0.95;
+}
+.cta { display: flex; gap: 20px; flex-wrap: wrap; }
+.cta a { 
+  padding: 16px 40px; 
+  border: 2px solid transparent; 
+  text-decoration: none; 
+  font-size: 14px; 
+  font-weight: 600; 
+  letter-spacing: 1px; 
+  border-radius: 50px; 
+  transition: all 0.4s cubic-bezier(0.23,1,0.320,1); 
+  position: relative; 
+  overflow: hidden;
+}
+.cta .primary { background: transparent; color: #fff; border-color: #fff; }
+.cta .primary:hover { background: #fff; color: #000; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(255,255,255,0.3); }
+.cta .secondary { background: rgba(255,255,255,0.1); color: #fff; backdrop-filter: blur(10px); }
+.cta .secondary:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
+
+/* Sections */
+.section { padding: 120px 5%; max-width: 1400px; margin: auto; }
+.section h2 { 
+  font-size: clamp(36px, 6vw, 60px); 
+  text-align: center; 
+  margin-bottom: 80px; 
+  font-weight: 700; 
+  position: relative;
+}
+.section h2::after { 
+  content: ''; 
+  display: block; 
+  width: 80px; 
+  height: 4px; 
+  background: linear-gradient(90deg, #fff, #ddd); 
+  margin: 20px auto 0;
 }
 
-  <nav class="nav-links" aria-label="Quick links">
+/* Stats */
+.stats { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 40px; 
+  text-align: center; 
+  margin: 80px 0;
+}
+.stat { 
+  padding: 40px 20px; 
+  background: rgba(255,255,255,0.05); 
+  border-radius: 20px; 
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.stat-number { font-size: 48px; font-weight: 900; color: #fff; display: block; margin-bottom: 10px; }
+.stat-label { font-size: 18px; opacity: 0.8; }
+
+/* Services */
+.services-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+  gap: 40px;
+}
+.service-card { 
+  background: rgba(255,255,255,0.03); 
+  padding: 50px 40px; 
+  border-radius: 24px; 
+  text-align: center; 
+  border: 1px solid rgba(255,255,255,0.1); 
+  transition: all 0.4s cubic-bezier(0.23,1,0.320,1); 
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
+.service-card:hover { 
+  transform: translateY(-15px); 
+  background: rgba(255,255,255,0.08); 
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.service-card i { font-size: 64px; color: #fff; opacity: 0.7; margin-bottom: 30px; display: block; }
+.service-card h3 { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
+.service-card p { color: #ccc; font-size: 16px; }
+
+/* Projects */
+.projects-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 30px;
+}
+.project { 
+  position: relative; 
+  height: 400px; 
+  border-radius: 24px; 
+  overflow: hidden;
+}
+.project img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: all 0.6s cubic-bezier(0.23,1,0.320,1);
+}
+.project:hover img { transform: scale(1.05); }
+.project-overlay { 
+  position: absolute; 
+  inset: 0; 
+  background: linear-gradient(transparent, rgba(0,0,0,0.9)); 
+  opacity: 0; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-end; 
+  padding: 40px; 
+  transition: all 0.6s cubic-bezier(0.23,1,0.320,1);
+}
+.project:hover .project-overlay { opacity: 1; }
+.project-overlay h4 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+.project-overlay p { opacity: 0.9; }
+
+/* Testimonials */
+.testimonials { 
+  background: rgba(255,255,255,0.02); 
+  border-radius: 24px; 
+  padding: 80px; 
+  margin: 80px 0;
+}
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.testimonial { text-align: center; }
+.testimonial p { font-size: 20px; font-style: italic; margin-bottom: 30px; opacity: 0.9; }
+.testimonial-author { font-weight: 600; }
+
+/* Contact */
+#contact { background: rgba(0,0,0,0.5); border-radius: 24px; padding: 80px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.contact-info h3 { font-size: 24px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+.contact-info p { margin: 20px 0; font-size: 18px; opacity: 0.9; display: flex; align-items: center; gap: 15px; }
+.contact-form { 
+  background: rgba(255,255,255,0.05); 
+  padding: 40px; 
+  border-radius: 20px; 
+  backdrop-filter: blur(10px);
+}
+.contact-form input, .contact-form textarea { 
+  width: 100%; 
+  padding: 20px; 
+  margin-bottom: 20px; 
+  background: rgba(255,255,255,0.1); 
+  border: 1px solid rgba(255,255,255,0.2); 
+  border-radius: 12px; 
+  color: #fff; 
+  font-size: 16px;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: #bbb; }
+.contact-form button { 
+  width: 100%; 
+  padding: 20px; 
+  background: linear-gradient(135deg, #fff, #e0e0e0); 
+  color: #000; 
+  border: none; 
+  border-radius: 12px; 
+  font-size: 18px; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: 0.3s;
+}
+.contact-form button:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(255,255,255,0.3); }
+
+/* WhatsApp & Scroll Top */
+.whatsapp, .scroll-top { 
+  position: fixed; 
+  bottom: 30px; 
+  right: 30px; 
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 24px; 
+  text-decoration: none; 
+  transition: 0.3s; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  z-index: 1001;
+}
+.whatsapp { background: #25D366; color: #fff; }
+.whatsapp:hover { transform: scale(1.1); }
+.scroll-top { 
+  background: rgba(255,255,255,0.1); 
+  color: #fff; 
+  opacity: 0; 
+  visibility: hidden; 
+  backdrop-filter: blur(10px);
+}
+.scroll-top.show { opacity: 1; visibility: visible; }
+.scroll-top:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
+
+/* Animations */
+.fade-in { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.23,1,0.320,1); }
+.fade-in.active { opacity: 1; transform: translateY(0); }
+.stagger { transition-delay: calc(0.1s * var(--i)); }
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  nav .links { display: none; }
+  nav .hamburger { display: flex; }
+  .cta { flex-direction: column; align-items: stretch; }
+  .section { padding: 80px 5%; }
+  .testimonials, #contact { padding: 40px 20px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .whatsapp, .scroll-top { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <img src="logo.png" alt="Seven Points Logo">
+  <div class="links">
     <a href="#services">Services</a>
     <a href="#projects">Work</a>
     <a href="#contact">Contact</a>
-  </nav>
-</div>
+  </div>
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Precision in Construction. Power in Execution.</h1>
+    <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors—executed with precision and scale.</p>
+    <div class="cta">
+      <a href="#contact" class="primary">Start a Project</a>
+      <a href="tel:+9647502205577" class="secondary">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="section fade-in">
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-number" data-target="150">0</span>
+      <span class="stat-label">Projects Completed</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="5">0</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="100">0</span>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="0">0</span>
+      <span class="stat-label">On-Time Deliveries</span>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section">
+  <h2 class="fade-in">Our Services</h2>
   <div class="services-grid">
-    <article class="card" aria-labelledby="s1">
-      <h3 id="s1">Construction</h3>
-      <p>Full-scale construction management: architectural coordination, civil and structural execution, finishes and commissioning.</p>
-    </article>
-
-    <article class="card" aria-labelledby="s2">
-      <h3 id="s2">Event Management & Production</h3>
-      <p>End-to-end event production, AV, logistics, staging and onsite operations for corporate and government events.</p>
-    </article>
-
-    <article class="card" aria-labelledby="s3">
-      <h3 id="s3">Printing & Branding</h3>
-      <p>Large-format printing, signage and brand activations designed and produced for maximum visual impact.</p>
-    </article>
+    <div class="service-card fade-in stagger" style="--i:1">
+      <i class="fas fa-hard-hat"></i>
+      <h3>Construction</h3>
+      <p>Full-scale construction services from concept to completion, covering architectural planning, structural execution, and interior & exterior finishing.</p>
+    </div>
+    <div class="service-card fade-in stagger" style="--i:2">
+      <i class="fas fa-calendar-check"></i>
+      <h3>Event Management</h3>
+      <p>End-to-end event production for corporate and government sectors, delivering seamless execution from planning to final delivery.</p>
+    </div>
+    <div class="service-card fade-in stagger" style="--i:3">
+      <i class="fas fa-print"></i>
+      <h3>Printing & Branding</h3>
+      <p>High-impact large-format printing solutions, including banners, signage, and branding materials designed for maximum visibility.</p>
+    </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="reveal">
-  <div class="section-header">
-    <h2>Selected Work</h2>
-    <p class="lead">A selection of recent projects showcasing construction execution and event production.</p>
-  </div>
-
+<!-- Projects -->
+<section id="projects" class="section">
+  <h2 class="fade-in">Selected Work</h2>
   <div class="projects-grid">
-    <figure class="project" tabindex="0" aria-labelledby="p1">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&auto=format&fit=crop&q=80" alt="Construction site with cranes and scaffolding">
-      <figcaption class="info">
-        <small>Construction</small>
-        <strong id="p1">Commercial Complex Fit-out</strong>
-      </figcaption>
-    </figure>
-
-    <figure class="project" tabindex="0" aria-labelledby="p2">
-      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?w=1400&auto=format&fit=crop&q=80" alt="Event stage with lighting and audience">
-      <figcaption class="info">
-        <small>Event Production</small>
-        <strong id="p2">Corporate Annual Conference</strong>
-      </figcaption>
-    </figure>
+    <div class="project fade-in stagger" style="--i:1">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Construction Project">
+      <div class="project-overlay">
+        <h4>Construction Project</h4>
+        <p>Commercial building completed on time and budget.</p>
+      </div>
+    </div>
+    <div class="project fade-in stagger" style="--i:2">
+      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Event Production">
+      <div class="project-overlay">
+        <h4>Event Production</h4>
+        <p>Corporate gala for 500+ guests with full AV setup.</p>
+      </div>
+    </div>
+    <div class="project fade-in stagger" style="--i:3">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Branding Project">
+      <div class="project-overlay">
+        <h4>Branding Campaign</h4>
+        <p>Government signage and large-format prints.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="reveal">
-  <div class="section-header">
-    <h2>Contact</h2>
-    <p class="lead">Get in touch to discuss your next project or request a quote.</p>
+<!-- Testimonials -->
+<section class="testimonials fade-in">
+  <h2 style="margin-bottom: 60px;">What Clients Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <p>"Seven Points transformed our vision into reality with unmatched precision and professionalism."</p>
+      <div class="testimonial-author">Government Client, Duhok</div>
+    </div>
+    <div class="testimonial">
+      <p>"Flawless event execution—on time, on budget, every detail perfect."</p>
+      <div class="testimonial-author">Corporate Director</div>
+    </div>
+    <div class="testimonial">
+      <p>"Best construction partner in Kurdistan. Highly recommended."</p>
+      <div class="testimonial-author">Commercial Developer</div>
+    </div>
   </div>
+</section>
 
+<!-- Contact -->
+<section id="contact" class="section">
+  <h2 class="fade-in">Get In Touch</h2>
   <div class="contact-grid">
-    <div class="contact-card">
-      <p><strong>Phone</strong></p>
-      <p>+964 750 220 5577</p>
-
-      <p><strong>Email</strong></p>
-      <p>email@sevenpoints.info</p>
-
-      <p><strong>Address</strong></p>
-      <p>Zirka Road, Duhok, Kurdistan Region, Iraq</p>
-
-      <p style="margin-top:12px"><a class="btn btn-ghost" href="https://wa.me/9647502205577" target="_blank" rel="noopener">Message on WhatsApp</a></p>
+    <div class="contact-info fade-in stagger" style="--i:1">
+      <h3><i class="fas fa-phone"></i> Phone</h3>
+      <p><i class="fas fa-phone"></i> +964 750 220 5577</p>
+      <h3><i class="fas fa-envelope"></i> Email</h3>
+      <p><i class="fas fa-envelope"></i> email@sevenpoints.info</p>
+      <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Zirka Road, Duhok, Kurdistan Region, Iraq</p>
     </div>
-
-    <div class="contact-card contact-form" aria-label="Contact form">
-      <form id="contactForm" onsubmit="submitContact(event)">
-        <label class="sr-only" for="name">Name</label>
-        <input id="name" name="name" placeholder="Your name" required>
-
-        <label class="sr-only" for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="Email address" required>
-
-        <label class="sr-only" for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Tell us about the project" required></textarea>
-
-        <button type="submit">Send Request</button>
-        <div id="formMsg" style="margin-top:10px;color:var(--muted);font-size:14px"></div>
-      </form>
-    </div>
+    <form class="contact-form fade-in stagger" style="--i:2" id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Phone">
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 </section>
 
-<footer>
-  © <span id="year"></span> Seven Points — All rights reserved.
-</footer>
+<!-- WhatsApp & Scroll Top -->
+<a class="whatsapp" href="https://wa.me/9647502205577" target="_blank" title="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<a class="scroll-top" href="#" title="Back to Top">
+  <i class="fas fa-chevron-up"></i>
+</a>
 
-<a class="whatsapp" href="https://wa.me/9647502205577" target="_blank" rel="noopener">WhatsApp</a>
+<script>
+/* Navbar Scroll Effect */
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+  document.querySelector('.scroll-top').classList.toggle('show', window.scrollY > 500);
+});
+
+/* Reveal Animations */
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in, .stagger').forEach(el => observer.observe(el));
+
+/* Stats Counter */
+function animateCounters() {
+  const counters = document.querySelectorAll('.stat-number');
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const increment = target / 100;
+    let current = 0;
+    const updateCounter = () => {
+      if (current < target) {
+        current += increment;
+        counter.textContent = Math.floor(current) + '+';
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = target + '+';
+      }
+    };
+    if (Math.abs(counter.getBoundingClientRect().top) < window.innerHeight) {
+      updateCounter();
+    }
+  });
+}
+window.addEventListener('scroll', animateCounters);
+animateCounters();
+
+/* Form Submission */
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Thank you! Your message has been sent. We\'ll get back to you soon.');
+  e.target.reset();
+});
+
+/* Mobile Menu - Basic toggle */
+document.querySelector('.hamburger').addEventListener('click', () => {
+  document.querySelector('.links').classList.toggle('active');
+});
+
+/* Parallax Hero */
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  document.querySelector('.hero').style.transform = `translateY(${scrolled * 0.5}px)`;
+});
+</script>
+
+</body>
+</html>
