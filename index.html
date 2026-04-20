@@ -1,338 +1,249 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* NAV */
+header{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:1100;
+  display:flex;
+  justify-content:center;
+  pointer-events:none;
+}
+.nav-inner{
+  pointer-events:auto;
+  width:100%;
+  max-width:var(--max-width);
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  justify-content:space-between;
+  background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.12));
+  border-radius:12px;
+  margin:18px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.brand img{ width:110px; height:auto; display:block; filter:brightness(1.05)}
+.nav-links{ display:flex; gap:22px; align-items:center }
+.nav-links a{
+  color:#fff; text-decoration:none; font-size:13px; letter-spacing:1.6px; opacity:.9;
+  padding:8px 10px; border-radius:8px;
+}
+.nav-links a:hover, .nav-links a:focus{ background:var(--glass-strong); outline:none }
 
-<title>Seven Points | Construction & Event Managment</title>
+/* HERO */
+.hero{
+  height:92vh;
+  min-height:560px;
+  display:flex;
+  align-items:center;
+  padding:0 24px;
+  margin-top:14px;
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  max-width:calc(var(--max-width) - 36px);
+  margin-left:auto; margin-right:auto;
+  background-image: url('sevenpointsbg.png');
+  background-size:cover;
+  background-position:center;
+}
+/* soft dark overlay + gradient to left for text contrast */
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(6,6,6,0.66) 0%, rgba(6,6,6,0.42) 40%, rgba(6,6,6,0.14) 100%);
+  z-index:1;
+}
+.hero-inner{
+  position:relative; z-index:2;
+  width:100%;
+  max-width:900px;
+  padding:48px;
+}
+.eyebrow{ color:var(--accent); font-weight:600; letter-spacing:1.6px; font-size:13px; margin-bottom:12px }
+.hero h1{
+  font-size: clamp(28px, 5.6vw, 56px);
+  line-height:1.02;
+  margin:0 0 18px 0;
+  background: linear-gradient(90deg,#fff,#ddd);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.hero p{ color:var(--muted); max-width:720px; margin-bottom:24px; font-size:17px }
+.cta-row{ display:flex; gap:14px; flex-wrap:wrap }
+.btn{
+  display:inline-block; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:700; letter-spacing:1.6px; font-size:13px;
+}
+.btn-primary{ background:var(--accent); color:#111; border:2px solid rgba(0,0,0,0.12) }
+.btn-ghost{ background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.14) }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+/* MAIN SECTION wrapper */
+main{ padding:48px 18px 120px; max-width:var(--max-width); margin:28px auto 0; }
 
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* SECTION BASE */
+section{ padding:64px 0; border-radius:8px; }
+.section-header{ margin-bottom:28px; }
+.section h2{ font-size:22px; margin:0 0 10px 0 }
+.section p.lead{ color:var(--muted); margin:0 0 18px 0 }
 
-/* Services */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+/* SERVICES */
+.services-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);
+  padding:20px; border-radius:12px;
+  min-height:170px;
+  transition:transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s;
+}
+.card:hover{ transform:translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,0.6) }
+.card h3{ margin:0 0 10px; font-size:18px }
+.card p{ color:var(--muted); font-size:15px }
+
+/* PROJECTS */
+.projects-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; align-items:stretch }
+.project{
+  position:relative; border-radius:12px; overflow:hidden; min-height:240px;
+  background:#111;
+}
+.project img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s; }
+.project:hover img{ transform:scale(1.06) }
+.project .info{
+  position:absolute; left:16px; bottom:16px; z-index:3; color:#fff; background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.6));
+  padding:12px 14px; border-radius:10px; max-width:70%;
+}
+.project .info small{ color:var(--muted); display:block; font-size:13px; margin-bottom:6px }
+
+/* CONTACT & FOOTER */
+.contact-grid{ display:grid; grid-template-columns:2fr 1fr; gap:18px; align-items:start }
+.contact-card{ background:var(--glass); padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.03) }
+.contact-card p{ color:var(--muted); margin:8px 0 }
+.contact-form input, .contact-form textarea{
+  width:100%; padding:12px 14px; margin:8px 0 12px 0; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#fff;
+}
+.contact-form button{ background:var(--accent); color:#111; border:none; padding:12px 16px; border-radius:8px; font-weight:700; cursor:pointer }
+
+footer{ margin-top:40px; color:var(--muted); text-align:center; font-size:13px; padding:28px 0 }
+
+/* WhatsApp floating */
+.whatsapp{
+  position:fixed; right:18px; bottom:18px; z-index:1050;
+  background:#25D366; color:#fff; padding:14px 16px; border-radius:999px; box-shadow:0 8px 24px rgba(0,0,0,0.45); text-decoration:none; font-weight:700;
 }
 
-.service-card h3 {
-  margin-bottom: 10px;
+/* Reveal animation */
+.reveal{opacity:0; transform:translateY(36px); transition:all .9s cubic-bezier(.2,.9,.2,1)}
+.reveal.active{opacity:1; transform:none}
+
+/* Responsive */
+@media(max-width:980px){ .services-grid{grid-template-columns:repeat(2,1fr)} .projects-grid{grid-template-columns:1fr} .contact-grid{grid-template-columns:1fr} .nav-inner{padding:12px 16px} .hero-inner{padding:28px} }
+@media(max-width:640px){
+  .services-grid{grid-template-columns:1fr}
+  .brand img{width:86px}
+  .nav-links{ display:none } /* keep simple, or implement hamburger later */
+  .hero{ border-radius:0; height:72vh; min-height:520px }
+  .hero-inner{ padding:18px }
 }
 
-.service-card p {
-  color: #bbb;
-  line-height: 1.6;
-}
-
-/* Projects */
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.project {
-  position: relative;
-  overflow: hidden;
-}
-
-.project img {
-  width: 100%;
-  height: 340px;
-  object-fit: cover;
-  transition: 0.8s;
-}
-
-.project:hover img {
-  transform: scale(1.05);
-}
-
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  opacity: 0;
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  transition: 0.6s;
-}
-
-.project:hover .project-overlay {
-  opacity: 1;
-}
-
-/* Contact */
-.contact p {
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-/* WhatsApp */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-}
-
-/* Mobile Fix */
-@media(max-width:768px){
-  .services-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
-}
-body {
-  font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-/* Navigation */
-nav {
-  position: fixed;
-  width: 100%;
-  padding: 25px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(12px);
-}
-
-nav img {
-  width: 95px;
-  filter: brightness(1.2);
-}
-
-nav .links a {
-  color: white;
-  margin-left: 30px;
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 2px;
-  opacity: 0.85;
-}
-
-/* Hero */
-.hero {
-  height: 100vh;
-  background: url('sevenpointsbg.png') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  padding: 0 60px;
-  position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.3),
-    rgba(0,0,0,0.1),
-    rgba(0,0,0,0.0)
-  );
-}
-
-.hero-content {
-  position: relative;
-  max-width: 700px;
-}
-
-/* Headline */
-.hero h1 {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1.05;
-  margin-bottom: 25px;
-
-  background: linear-gradient(to right, #dddddd, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow: 0 5px 30px rgba(0,0,0,0.6);
-}
-
-/* Paragraph */
-.hero p {
-  font-size: 20px;
-  color: #ffffff;
-  max-width: 550px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-/* Button */
-.cta a {
-  padding: 14px 30px;
-  border: 1px solid white;
-  color: white;
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 2px;
-  transition: 0.5s;
-}
-
-.cta a:hover {
-  background: white;
-  color: black;
-}
-
-/* Section base */
-.section {
-  padding: 140px 60px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Scroll animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: all 1.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Mobile */
-@media(max-width:768px){
-  nav { padding: 20px; }
-  .hero { padding: 0 20px; }
-  .hero h1 { font-size: 36px; }
-}
-</style>
-</head>
-
-<body>
-
-<!-- Navigation -->
-<nav>
-  <img src="logo.png" alt="Seven Points Logo">
-  <div class="links">
+  <nav class="nav-links" aria-label="Quick links">
     <a href="#services">Services</a>
     <a href="#projects">Work</a>
     <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<!-- Hero -->
-<div class="hero">
-  <div class="hero-content reveal">
-
-    <h1>
-      Precision in Construction.<br>
-      Power in Execution.
-    </h1>
-
-    <p>
-      Seven Points delivers integrated construction, event management, and production 
-      solutions for commercial, corporate, and government sectors — executed with precision and scale.
-    </p>
-
-    <div class="cta">
-      <a href="#contact">START A PROJECT</a>
-    </div>
-
-  </div>
+  </nav>
 </div>
-
-<!-- SERVICES -->
-<div id="services" class="section reveal">
-  <h2>Services</h2>
 
   <div class="services-grid">
-    <div class="service-card">
-      <h3>Construction</h3>
-      <p>
-        Full-scale construction services from concept to completion, covering
-        architectural planning, structural execution, and interior & exterior finishing.
-      </p>
-    </div>
+    <article class="card" aria-labelledby="s1">
+      <h3 id="s1">Construction</h3>
+      <p>Full-scale construction management: architectural coordination, civil and structural execution, finishes and commissioning.</p>
+    </article>
 
-    <div class="service-card">
-      <h3>Event Management</h3>
-      <p>
-        End-to-end event production for corporate and government sectors,
-        delivering seamless execution from planning to final delivery.
-      </p>
-    </div>
+    <article class="card" aria-labelledby="s2">
+      <h3 id="s2">Event Management & Production</h3>
+      <p>End-to-end event production, AV, logistics, staging and onsite operations for corporate and government events.</p>
+    </article>
 
-    <div class="service-card">
-      <h3>Printing & Branding</h3>
-      <p>
-        High-impact large-format printing solutions, including banners,
-        signage, and branding materials designed for maximum visibility.
-      </p>
-    </div>
+    <article class="card" aria-labelledby="s3">
+      <h3 id="s3">Printing & Branding</h3>
+      <p>Large-format printing, signage and brand activations designed and produced for maximum visual impact.</p>
+    </article>
   </div>
-</div>
+</section>
 
 <!-- PROJECTS -->
-<div id="projects" class="section reveal">
-  <h2>Selected Work</h2>
+<section id="projects" class="reveal">
+  <div class="section-header">
+    <h2>Selected Work</h2>
+    <p class="lead">A selection of recent projects showcasing construction execution and event production.</p>
+  </div>
 
   <div class="projects-grid">
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="">
-      <div class="project-overlay">Construction Project</div>
-    </div>
+    <figure class="project" tabindex="0" aria-labelledby="p1">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&auto=format&fit=crop&q=80" alt="Construction site with cranes and scaffolding">
+      <figcaption class="info">
+        <small>Construction</small>
+        <strong id="p1">Commercial Complex Fit-out</strong>
+      </figcaption>
+    </figure>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a" alt="">
-      <div class="project-overlay">Event Production</div>
-    </div>
+    <figure class="project" tabindex="0" aria-labelledby="p2">
+      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?w=1400&auto=format&fit=crop&q=80" alt="Event stage with lighting and audience">
+      <figcaption class="info">
+        <small>Event Production</small>
+        <strong id="p2">Corporate Annual Conference</strong>
+      </figcaption>
+    </figure>
   </div>
-</div>
+</section>
 
 <!-- CONTACT -->
-<div id="contact" class="section reveal contact">
-  <h2>Contact</h2>
+<section id="contact" class="reveal">
+  <div class="section-header">
+    <h2>Contact</h2>
+    <p class="lead">Get in touch to discuss your next project or request a quote.</p>
+  </div>
 
-  <p>+964 750 220 5577</p>
-  <p>email@sevenpoints.info</p>
-  <p>Zirka Road, Duhok, Kurdistan Region, Iraq</p>
-</div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <p><strong>Phone</strong></p>
+      <p>+964 750 220 5577</p>
 
-<!-- WHATSAPP BUTTON -->
-<a class="whatsapp" href="https://wa.me/9647502205577" target="_blank">
-  WhatsApp
-</a>
+      <p><strong>Email</strong></p>
+      <p>email@sevenpoints.info</p>
 
-<script>
-/* Scroll reveal animation */
-const reveals = document.querySelectorAll('.reveal');
+      <p><strong>Address</strong></p>
+      <p>Zirka Road, Duhok, Kurdistan Region, Iraq</p>
 
-function revealOnScroll() {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 80) {
-      el.classList.add('active');
-    }
-  });
-}
+      <p style="margin-top:12px"><a class="btn btn-ghost" href="https://wa.me/9647502205577" target="_blank" rel="noopener">Message on WhatsApp</a></p>
+    </div>
 
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
+    <div class="contact-card contact-form" aria-label="Contact form">
+      <form id="contactForm" onsubmit="submitContact(event)">
+        <label class="sr-only" for="name">Name</label>
+        <input id="name" name="name" placeholder="Your name" required>
 
-/* Parallax effect */
-window.addEventListener('scroll', () => {
-  document.querySelector('.hero').style.backgroundPositionY =
-    window.scrollY * 0.3 + 'px';
-});
-</script>
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Email address" required>
 
-</body>
-</html>
+        <label class="sr-only" for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us about the project" required></textarea>
+
+        <button type="submit">Send Request</button>
+        <div id="formMsg" style="margin-top:10px;color:var(--muted);font-size:14px"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Seven Points — All rights reserved.
+</footer>
+
+<a class="whatsapp" href="https://wa.me/9647502205577" target="_blank" rel="noopener">WhatsApp</a>
