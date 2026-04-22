@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seven Points | Precision Construction & Event Management</title>
-<meta name="description" content="Integrated construction, event management, and branding solutions for commercial, corporate, and government sectors in Duhok, Kurdistan.">
+<title>Seven Points | Precision Construction & Event Excellence</title>
+<meta name="description" content="Premium construction, event management, and branding solutions serving Duhok, Kurdistan and beyond. Government, corporate, commercial excellence.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 <style>
@@ -18,292 +18,593 @@ body {
   line-height: 1.6;
 }
 
-.fade-in { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.23,1,0.320,1); }
+.fade-in { opacity: 0; transform: translateY(60px); transition: all 1.2s cubic-bezier(0.23,1,0.320,1); }
 .fade-in.active { opacity: 1; transform: translateY(0); }
-.stagger { transition-delay: calc(0.1s * var(--i)); }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
 
 /* Navigation */
 nav { 
   position: fixed; 
+  top: 0; 
   width: 100%; 
-  padding: 20px 5%; 
+  padding: 1.5rem 5%; 
   display: flex; 
   justify-content: space-between; 
   align-items: center; 
   z-index: 1000; 
-  background: rgba(0,0,0,0.3); 
+  background: rgba(10,10,10,0.95); 
   backdrop-filter: blur(20px); 
-  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-nav.scrolled { background: rgba(0,0,0,0.9); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-nav img { width: 120px; filter: brightness(1.3); transition: 0.3s; }
-nav .links { display: flex; gap: 40px; }
+nav.scrolled { padding: 1rem 5%; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+nav img { width: 140px; filter: brightness(1.4); height: auto; }
+nav .links { display: flex; gap: 2.5rem; align-items: center; }
 nav .links a { 
   color: #fff; 
   text-decoration: none; 
-  font-size: 14px; 
+  font-size: 15px; 
   font-weight: 500; 
-  letter-spacing: 1px; 
-  position: relative;
+  letter-spacing: 0.5px; 
+  position: relative; 
   transition: 0.3s;
 }
-nav .links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #fff, #ddd); transition: 0.3s; }
+nav .links a::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: -8px; 
+  left: 0; 
+  width: 0; 
+  height: 2px; 
+  background: linear-gradient(90deg, #ffd700, #fff); 
+  transition: 0.3s; 
+}
 nav .links a:hover::after { width: 100%; }
-nav .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
-nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.3s; }
+nav .cta-nav { 
+  padding: 12px 28px; 
+  background: linear-gradient(135deg, #ffd700, #ffed4e); 
+  color: #000; 
+  border-radius: 50px; 
+  font-weight: 600; 
+  font-size: 14px; 
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(255,215,0,0.4);
+}
+nav .cta-nav:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,215,0,0.6); }
+nav .hamburger { 
+  display: none; 
+  flex-direction: column; 
+  cursor: pointer; 
+  gap: 5px; 
+  padding: 5px;
+}
+nav .hamburger span { 
+  width: 28px; 
+  height: 3px; 
+  background: #fff; 
+  border-radius: 2px; 
+  transition: 0.3s;
+}
 
-/* Hero */
+/* Hero - FIXED TEXT VISIBILITY */
 .hero { 
-  height: 100vh; 
-  background: linear-gradient(135deg, rgba(0,20,40,0.7), rgba(0,0,0,0.5)), url('sevenpointsbg.png') center/cover; 
+  min-height: 100vh; 
+  max-height: 110vh; 
+  background: 
+    linear-gradient(135deg, 
+      rgba(0,10,30,0.85) 0%, 
+      rgba(0,0,0,0.7) 40%, 
+      rgba(0,20,40,0.6) 100%
+    ),
+    url('sevenpointsbg.png') center/cover no-repeat fixed;
   display: flex; 
   align-items: center; 
   justify-content: flex-start; 
-  padding: 0 5%; 
+  padding: 0 clamp(2rem, 5vw, 6rem);
+  position: relative;
+  overflow: hidden;
+}
+.hero-content { 
+  max-width: 900px; 
+  z-index: 2; 
   position: relative;
 }
-.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%); }
-.hero-content { 
-  max-width: 800px; 
-  z-index: 2;
-}
 .hero h1 { 
-  font-size: clamp(48px, 8vw, 90px); 
-  font-weight: 800; 
-  line-height: 1.1; 
-  margin-bottom: 20px; 
-  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%); 
+  font-size: clamp(52px, 9vw, 110px); 
+  font-weight: 900; 
+  line-height: 1.05; 
+  margin-bottom: 1.5rem; 
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 40%, #ffffff 100%); 
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent; 
   background-clip: text;
+  text-shadow: none;
+  letter-spacing: -0.02em;
   position: relative;
+  text-align: left;
 }
-.hero h1::after { 
-  content: ''; 
-  position: absolute; 
-  bottom: -10px; 
-  left: 0; 
-  width: 100px; 
-  height: 3px; 
-  background: linear-gradient(90deg, transparent, #fff, transparent); 
+.hero h1 strong { 
+  background: linear-gradient(135deg, #ffd700, #ffed4e); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  background-clip: text;
 }
-.hero p { 
-  font-size: clamp(18px, 3vw, 24px); 
-  max-width: 600px; 
-  margin-bottom: 40px; 
+.hero-subtitle { 
+  font-size: clamp(20px, 3.5vw, 28px); 
+  font-weight: 400; 
+  max-width: 650px; 
+  margin-bottom: 3rem; 
   opacity: 0.95;
 }
-.cta { display: flex; gap: 20px; flex-wrap: wrap; }
-.cta a { 
-  padding: 16px 40px; 
-  border: 2px solid transparent; 
-  text-decoration: none; 
-  font-size: 14px; 
-  font-weight: 600; 
-  letter-spacing: 1px; 
-  border-radius: 50px; 
-  transition: all 0.4s cubic-bezier(0.23,1,0.320,1); 
-  position: relative; 
-  overflow: hidden;
+.cta-hero { 
+  display: flex; 
+  gap: 1.5rem; 
+  flex-wrap: wrap; 
+  align-items: center;
 }
-.cta .primary { background: transparent; color: #fff; border-color: #fff; }
-.cta .primary:hover { background: #fff; color: #000; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(255,255,255,0.3); }
-.cta .secondary { background: rgba(255,255,255,0.1); color: #fff; backdrop-filter: blur(10px); }
-.cta .secondary:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
+.cta-hero .primary { 
+  padding: 18px 42px; 
+  background: transparent; 
+  color: #fff; 
+  border: 2px solid #fff; 
+  border-radius: 50px; 
+  font-size: 16px; 
+  font-weight: 600; 
+  text-decoration: none; 
+  transition: all 0.4s cubic-bezier(0.23,1,0.320,1);
+}
+.cta-hero .primary:hover { 
+  background: #fff; 
+  color: #000; 
+  transform: translateY(-4px); 
+  box-shadow: 0 20px 50px rgba(255,255,255,0.4);
+}
+.cta-hero .secondary { 
+  padding: 18px 42px; 
+  background: linear-gradient(135deg, #ffd700, #ffed4e); 
+  color: #000; 
+  border-radius: 50px; 
+  font-size: 16px; 
+  font-weight: 600; 
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(255,215,0,0.4);
+}
+.cta-hero .secondary:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(255,215,0,0.6); }
+.hero-stats { 
+  display: flex; 
+  gap: 3rem; 
+  margin-top: 4rem; 
+  font-size: 18px; 
+  opacity: 0.8;
+}
+.hero-stat { display: flex; flex-direction: column; }
 
 /* Sections */
-.section { padding: 120px 5%; max-width: 1400px; margin: auto; }
+.section { padding: 140px 5%; max-width: 1600px; margin: auto; position: relative; }
+.section-dark { background: rgba(10,10,10,0.9); }
+.section-gradient { 
+  background: linear-gradient(135deg, rgba(0,20,40,0.8) 0%, rgba(10,10,20,0.9) 100%); 
+  border-radius: 40px; 
+  margin: 2rem 0; 
+  backdrop-filter: blur(20px);
+}
 .section h2 { 
-  font-size: clamp(36px, 6vw, 60px); 
+  font-size: clamp(42px, 7vw, 80px); 
   text-align: center; 
-  margin-bottom: 80px; 
-  font-weight: 700; 
-  position: relative;
+  margin-bottom: 5rem; 
+  font-weight: 800; 
+  background: linear-gradient(135deg, #fff 0%, #ddd 50%, #fff 100%); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
 }
 .section h2::after { 
   content: ''; 
   display: block; 
-  width: 80px; 
-  height: 4px; 
-  background: linear-gradient(90deg, #fff, #ddd); 
-  margin: 20px auto 0;
+  width: 120px; 
+  height: 5px; 
+  background: linear-gradient(90deg, transparent, #ffd700, transparent); 
+  margin: 2rem auto 0;
 }
 
-/* Stats - FIXED */
-.stats { 
+/* Stats Grid */
+.stats-grid { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-  gap: 40px; 
-  text-align: center; 
-  margin: 80px 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 3rem; 
+  margin: 6rem 0;
 }
-.stat { 
-  padding: 40px 20px; 
-  background: rgba(255,255,255,0.05); 
-  border-radius: 20px; 
-  backdrop-filter: blur(10px); 
-  border: 1px solid rgba(255,255,255,0.1);
+.stat-card { 
+  text-align: center; 
+  padding: 4rem 2rem; 
+  background: rgba(255,255,255,0.04); 
+  border-radius: 28px; 
+  border: 1px solid rgba(255,255,255,0.08); 
+  backdrop-filter: blur(20px);
+  transition: all 0.4s ease;
+}
+.stat-card:hover { 
+  transform: translateY(-10px); 
+  background: rgba(255,255,255,0.08); 
+  border-color: rgba(255,215,0,0.3);
 }
 .stat-number { 
-  font-size: 48px; 
+  font-size: clamp(48px, 12vw, 90px); 
   font-weight: 900; 
-  color: #fff; 
+  background: linear-gradient(135deg, #ffd700, #ffed4e); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
   display: block; 
-  margin-bottom: 10px; 
-  font-feature-settings: 'tnum';
+  margin-bottom: 1rem;
 }
-.stat-label { font-size: 18px; opacity: 0.8; }
-.stat.animated .stat-number { color: #ffd700; }
+.stat-label { font-size: 20px; opacity: 0.9; }
 
 /* Services */
 .services-grid { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+  gap: 3rem;
 }
 .service-card { 
   background: rgba(255,255,255,0.03); 
-  padding: 50px 40px; 
-  border-radius: 24px; 
+  padding: 4rem 3rem; 
+  border-radius: 28px; 
   text-align: center; 
   border: 1px solid rgba(255,255,255,0.1); 
-  transition: all 0.4s cubic-bezier(0.23,1,0.320,1); 
+  transition: all 0.5s cubic-bezier(0.23,1,0.320,1); 
   height: 100%;
-  backdrop-filter: blur(10px);
-}
-.service-card:hover { 
-  transform: translateY(-15px); 
-  background: rgba(255,255,255,0.08); 
-  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-}
-.service-card i { font-size: 64px; color: #fff; opacity: 0.7; margin-bottom: 30px; display: block; }
-.service-card h3 { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
-.service-card p { color: #ccc; font-size: 16px; }
-
-/* Projects */
-.projects-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
-  gap: 30px;
-}
-.project { 
+  backdrop-filter: blur(20px);
   position: relative; 
-  height: 400px; 
-  border-radius: 24px; 
   overflow: hidden;
 }
-.project img { 
+.service-card::before { 
+  content: ''; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  height: 4px; 
+  background: linear-gradient(90deg, #ffd700, transparent);
+}
+.service-card:hover { 
+  transform: translateY(-20px) scale(1.02); 
+  background: rgba(255,255,255,0.1); 
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+}
+.service-icon { 
+  font-size: 5rem; 
+  color: #ffd700; 
+  margin-bottom: 2rem; 
+  display: block; 
+  filter: drop-shadow(0 10px 20px rgba(255,215,0,0.3));
+}
+.service-card h3 { 
+  font-size: 2.2rem; 
+  font-weight: 700; 
+  margin-bottom: 1.5rem; 
+}
+.service-card p { 
+  color: #ccc; 
+  font-size: 1.1rem; 
+  opacity: 0.9;
+}
+
+/* Portfolio */
+.portfolio-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); 
+  gap: 2.5rem;
+}
+.portfolio-item { 
+  position: relative; 
+  height: 450px; 
+  border-radius: 28px; 
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.portfolio-item img { 
   width: 100%; 
   height: 100%; 
   object-fit: cover; 
-  transition: all 0.6s cubic-bezier(0.23,1,0.320,1);
+  transition: all 0.8s cubic-bezier(0.23,1,0.320,1);
 }
-.project:hover img { transform: scale(1.05); }
-.project-overlay { 
+.portfolio-item:hover img { 
+  transform: scale(1.08) rotate(1deg); 
+}
+.portfolio-overlay { 
   position: absolute; 
   inset: 0; 
-  background: linear-gradient(transparent, rgba(0,0,0,0.9)); 
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(255,215,0,0.1)); 
   opacity: 0; 
   display: flex; 
   flex-direction: column; 
-  justify-content: flex-end; 
-  padding: 40px; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  padding: 3rem; 
   transition: all 0.6s cubic-bezier(0.23,1,0.320,1);
 }
-.project:hover .project-overlay { opacity: 1; }
-.project-overlay h4 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
-.project-overlay p { opacity: 0.9; }
+.portfolio-item:hover .portfolio-overlay { opacity: 1; transform: translateY(0); }
+.portfolio-overlay h3 { 
+  font-size: 2.5rem; 
+  font-weight: 800; 
+  margin-bottom: 1rem; 
+  background: linear-gradient(135deg, #fff, #ffd700); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+}
+.portfolio-overlay p { opacity: 0.95; font-size: 1.2rem; }
+
+/* Process */
+.process-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 4rem; 
+  margin-top: 6rem;
+}
+.process-step { 
+  text-align: center; 
+  position: relative;
+}
+.process-number { 
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%; 
+  background: linear-gradient(135deg, #ffd700, #ffed4e); 
+  color: #000; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 2.2rem; 
+  font-weight: 800; 
+  margin: 0 auto 2.5rem;
+  box-shadow: 0 20px 50px rgba(255,215,0,0.4);
+}
+.process-step h3 { font-size: 1.8rem; margin-bottom: 1rem; }
 
 /* Testimonials */
-.testimonials { 
+.testimonials-container { 
   background: rgba(255,255,255,0.02); 
-  border-radius: 24px; 
-  padding: 80px; 
-  margin: 80px 0;
+  border-radius: 40px; 
+  padding: 6rem 4rem; 
+  margin: 6rem 0;
+  overflow: hidden;
+  position: relative;
 }
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-.testimonial { text-align: center; }
-.testimonial p { font-size: 20px; font-style: italic; margin-bottom: 30px; opacity: 0.9; }
-.testimonial-author { font-weight: 600; }
+.testimonials-container::before { 
+  content: ''; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  height: 1px; 
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+}
+.testimonials-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+  gap: 3rem;
+}
+.testimonial { 
+  background: rgba(255,255,255,0.03); 
+  padding: 3rem 2.5rem; 
+  border-radius: 24px; 
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  position: relative;
+}
+.testimonial::before { 
+  content: '"'; 
+  position: absolute; 
+  top: -10px; 
+  left: 2.5rem; 
+  font-size: 6rem; 
+  font-weight: 100; 
+  color: #ffd700; 
+  line-height: 1;
+}
+.testimonial p { 
+  font-size: 1.3rem; 
+  font-style: italic; 
+  margin-bottom: 2rem; 
+  opacity: 0.95;
+}
+.testimonial-author { 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem; 
+  font-weight: 600; 
+  color: #ffd700;
+}
+.testimonial-avatar { 
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  background: linear-gradient(135deg, #ffd700, #ffed4e); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-weight: 700;
+}
+
+/* Team */
+.team-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 3rem;
+}
+.team-member { 
+  text-align: center; 
+  padding: 3rem 2rem; 
+  border-radius: 24px; 
+  background: rgba(255,255,255,0.02);
+}
+.team-avatar { 
+  width: 140px; 
+  height: 140px; 
+  border-radius: 50%; 
+  margin: 0 auto 2rem; 
+  background: linear-gradient(135deg, #ffd700, #ffed4e); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 3rem; 
+  font-weight: 700;
+}
+.team-member h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.team-role { color: #ffd700; font-weight: 600; }
 
 /* Contact */
-#contact { background: rgba(0,0,0,0.5); border-radius: 24px; padding: 80px; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-.contact-info h3 { font-size: 24px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
-.contact-info p { margin: 20px 0; font-size: 18px; opacity: 0.9; display: flex; align-items: center; gap: 15px; }
-.contact-form { 
-  background: rgba(255,255,255,0.05); 
-  padding: 40px; 
+.contact-section { 
+  background: linear-gradient(135deg, rgba(0,10,30,0.95) 0%, rgba(10,10,10,0.98) 100%); 
+  border-radius: 40px; 
+  padding: 8rem 5%; 
+  margin: 4rem 0;
+}
+.contact-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+  gap: 6rem; 
+  max-width: 1400px; 
+  margin: 0 auto;
+}
+.contact-info { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 2.5rem;
+}
+.contact-item { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 1.5rem; 
+  padding: 2rem; 
+  background: rgba(255,255,255,0.03); 
   border-radius: 20px; 
-  backdrop-filter: blur(10px);
-}
-.contact-form input, .contact-form textarea { 
-  width: 100%; 
-  padding: 20px; 
-  margin-bottom: 20px; 
-  background: rgba(255,255,255,0.1); 
-  border: 1px solid rgba(255,255,255,0.2); 
-  border-radius: 12px; 
-  color: #fff; 
-  font-size: 16px;
-}
-.contact-form input::placeholder, .contact-form textarea::placeholder { color: #bbb; }
-.contact-form button { 
-  width: 100%; 
-  padding: 20px; 
-  background: linear-gradient(135deg, #fff, #e0e0e0); 
-  color: #000; 
-  border: none; 
-  border-radius: 12px; 
-  font-size: 18px; 
-  font-weight: 600; 
-  cursor: pointer; 
+  border: 1px solid rgba(255,255,255,0.1);
   transition: 0.3s;
 }
-.contact-form button:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(255,255,255,0.3); }
-
-/* WhatsApp & Scroll Top */
-.whatsapp, .scroll-top { 
-  position: fixed; 
-  bottom: 30px; 
-  right: 30px; 
+.contact-item:hover { 
+  background: rgba(255,255,255,0.08); 
+  transform: translateX(10px);
+}
+.contact-icon { 
   width: 60px; 
   height: 60px; 
+  border-radius: 16px; 
+  background: linear-gradient(135deg, #ffd700, #ffed4e); 
+  color: #000; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 1.5rem; 
+  flex-shrink: 0; 
+  margin-top: 0.2rem;
+}
+.contact-details h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.contact-details p { font-size: 1.2rem; opacity: 0.9; }
+
+.contact-form-wrapper { 
+  background: rgba(255,255,255,0.02); 
+  padding: 4rem; 
+  border-radius: 28px; 
+  backdrop-filter: blur(20px); 
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.contact-form input, 
+.contact-form textarea { 
+  width: 100%; 
+  padding: 1.5rem 1.5rem; 
+  margin-bottom: 1.8rem; 
+  background: rgba(255,255,255,0.08); 
+  border: 1px solid rgba(255,255,255,0.2); 
+  border-radius: 16px; 
+  color: #fff; 
+  font-size: 1rem; 
+  font-family: inherit;
+  transition: 0.3s;
+}
+.contact-form input:focus, 
+.contact-form textarea:focus { 
+  outline: none; 
+  border-color: #ffd700; 
+  background: rgba(255,255,255,0.12); 
+  box-shadow: 0 0 0 4px rgba(255,215,0,0.1);
+}
+.contact-form input::placeholder, 
+.contact-form textarea::placeholder { color: #aaa; }
+.contact-form button { 
+  width: 100%; 
+  padding: 1.5rem; 
+  background: linear-gradient(135deg, #ffd700, #ffed4e); 
+  color: #000; 
+  border: none; 
+  border-radius: 16px; 
+  font-size: 1.2rem; 
+  font-weight: 700; 
+  cursor: pointer; 
+  transition: all 0.4s cubic-bezier(0.23,1,0.320,1);
+}
+.contact-form button:hover { 
+  transform: translateY(-3px) scale(1.02); 
+  box-shadow: 0 20px 50px rgba(255,215,0,0.5);
+}
+
+/* WhatsApp & Scroll */
+.floating-actions { position: fixed; right: 3rem; bottom: 3rem; z-index: 1001; display: flex; flex-direction: column; gap: 1.5rem; }
+.whatsapp-btn, .scroll-top { 
+  width: 70px; 
+  height: 70px; 
   border-radius: 50%; 
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  font-size: 24px; 
+  font-size: 1.8rem; 
   text-decoration: none; 
-  transition: 0.3s; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  z-index: 1001;
+  transition: all 0.3s cubic-bezier(0.23,1,0.320,1); 
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
 }
-.whatsapp { background: #25D366; color: #fff; }
-.whatsapp:hover { transform: scale(1.1); }
+.whatsapp-btn { 
+  background: linear-gradient(135deg, #25D366, #128C7E); 
+  color: #fff; 
+}
+.whatsapp-btn:hover { transform: scale(1.15) rotate(5deg); }
 .scroll-top { 
-  background: rgba(255,255,255,0.1); 
+  background: rgba(255,255,255,0.15); 
   color: #fff; 
   opacity: 0; 
   visibility: hidden; 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
 }
 .scroll-top.show { opacity: 1; visibility: visible; }
-.scroll-top:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
+.scroll-top:hover { background: rgba(255,255,255,0.3); transform: translateY(-5px); }
 
 /* Mobile */
 @media (max-width: 1024px) {
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
+  .cta-hero { flex-direction: column; align-items: stretch; gap: 1rem; }
 }
 @media (max-width: 768px) {
-  nav .links { display: none; position: fixed; top: 80px; left: 0; width: 100%; background: rgba(0,0,0,0.95); flex-direction: column; padding: 20px 5%; gap: 20px; }
+  .floating-actions { right: 1.5rem; bottom: 1.5rem; gap: 1rem; }
+  .whatsapp-btn, .scroll-top { width: 60px; height: 60px; font-size: 1.5rem; }
+  nav .links { 
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100vh; 
+    background: rgba(10,10,10,0.98); 
+    flex-direction: column; 
+    justify-content: center; 
+    gap: 3rem; 
+    padding: 2rem 5%; 
+    backdrop-filter: blur(20px);
+  }
   nav .links.active { display: flex; }
   nav .hamburger { display: flex; }
-  .cta { flex-direction: column; align-items: stretch; }
-  .section { padding: 80px 5%; }
-  .testimonials, #contact { padding: 40px 20px; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .whatsapp, .scroll-top { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 20px; }
+  .section { padding: 100px 5%; }
+  .hero { padding: 0 5%; background-attachment: scroll !important; }
+  .process-grid { gap: 2rem; }
 }
 </style>
 </head>
@@ -314,8 +615,11 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
   <img src="logo.png" alt="Seven Points Logo">
   <div class="links">
     <a href="#services">Services</a>
-    <a href="#projects">Work</a>
-    <a href="#contact">Contact</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#process">Process</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#team">Team</a>
+    <a href="#contact" class="cta-nav">Get Quote</a>
   </div>
   <div class="hamburger">
     <span></span><span></span><span></span>
@@ -323,234 +627,294 @@ nav .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.
 </nav>
 
 <!-- Hero -->
-<section class="hero fade-in active">
-  <div class="hero-content">
-    <h1>Precision in Construction. Power in Execution.</h1>
-    <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors—executed with precision and scale.</p>
-    <div class="cta">
-      <a href="#contact" class="primary">Start a Project</a>
-      <a href="tel:+9647502205577" class="secondary">Call Now</a>
+<section class="hero">
+  <div class="hero-content fade-in active">
+    <h1><strong>Precision</strong> in Construction.<br><strong>Power</strong> in Execution.</h1>
+    <p class="hero-subtitle">Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors—executed with precision and scale across Kurdistan and beyond.</p>
+    <div class="cta-hero">
+      <a href="#contact" class="primary">Start Your Project</a>
+      <a href="tel:+9647502205577" class="secondary">Call +964 750 220 5577</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span style="font-size: 2.5rem; font-weight: 800; color: #ffd700;">150+</span><span>Projects</span></div>
+      <div class="hero-stat"><span style="font-size: 2.5rem; font-weight: 800; color: #ffd700;">5+</span><span>Years</span></div>
+      <div class="hero-stat"><span style="font-size: 2.5rem; font-weight: 800; color: #ffd700;">100%</span><span>On-Time</span></div>
     </div>
   </div>
 </section>
 
 <!-- Stats -->
-<section class="section">
-  <div class="stats">
-    <div class="stat fade-in" data-target="150">
-      <span class="stat-number">0</span>
-      <span class="stat-label">Projects Completed</span>
+<section class="section section-dark">
+  <div class="stats-grid">
+    <div class="stat-card fade-in">
+      <div class="stat-number">150+</div>
+      <div class="stat-label">Projects Delivered</div>
     </div>
-    <div class="stat fade-in stagger" style="--i:1" data-target="5">
-      <span class="stat-number">0</span>
-      <span class="stat-label">Years Experience</span>
+    <div class="stat-card fade-in delay-1">
+      <div class="stat-number">5+</div>
+      <div class="stat-label">Years of Excellence</div>
     </div>
-    <div class="stat fade-in stagger" style="--i:2" data-target="100">
-      <span class="stat-number">0</span>
-      <span class="stat-label">Happy Clients</span>
+    <div class="stat-card fade-in delay-2">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">On-Time Delivery</div>
     </div>
-    <div class="stat fade-in stagger" style="--i:3" data-target="100">
-      <span class="stat-number">0</span>
-      <span class="stat-label">On-Time Deliveries %</span>
+    <div class="stat-card fade-in delay-3">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Satisfied Clients</div>
     </div>
   </div>
 </section>
 
 <!-- Services -->
 <section id="services" class="section">
-  <h2 class="fade-in">Our Services</h2>
+  <h2 class="fade-in">Comprehensive Services</h2>
   <div class="services-grid">
-    <div class="service-card fade-in" style="--i:1">
-      <i class="fas fa-hard-hat"></i>
-      <h3>Construction</h3>
-      <p>Full-scale construction services from concept to completion, covering architectural planning, structural execution, and interior & exterior finishing.</p>
+    <div class="service-card fade-in">
+      <i class="fas fa-hard-hat service-icon"></i>
+      <h3>Full-Scale Construction</h3>
+      <p>Complete construction lifecycle management from architectural design through structural engineering, MEP installation, and premium interior/exterior finishing.</p>
     </div>
-    <div class="service-card fade-in" style="--i:2">
-      <i class="fas fa-calendar-check"></i>
+    <div class="service-card fade-in delay-1">
+      <i class="fas fa-calendar-alt service-icon"></i>
       <h3>Event Management</h3>
-      <p>End-to-end event production for corporate and government sectors, delivering seamless execution from planning to final delivery.</p>
+      <p>End-to-end production for corporate conferences, government ceremonies, and large-scale events with full AV, staging, and logistics coordination.</p>
     </div>
-    <div class="service-card fade-in" style="--i:3">
-      <i class="fas fa-print"></i>
+    <div class="service-card fade-in delay-2">
+      <i class="fas fa-print service-icon"></i>
       <h3>Printing & Branding</h3>
-      <p>High-impact large-format printing solutions, including banners, signage, and branding materials designed for maximum visibility.</p>
+      <p>Industrial-grade large-format printing, custom signage, vehicle wraps, and comprehensive branding materials engineered for maximum visual impact.</p>
     </div>
   </div>
 </section>
 
-<!-- Projects -->
-<section id="projects" class="section">
-  <h2 class="fade-in">Selected Work</h2>
-  <div class="projects-grid">
-    <div class="project fade-in" style="--i:1">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Construction Project" loading="lazy">
-      <div class="project-overlay">
-        <h4>Construction Project</h4>
-        <p>Commercial building completed on time and budget.</p>
+<!-- Portfolio -->
+<section id="portfolio" class="section section-dark">
+  <h2 class="fade-in">Featured Portfolio</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-item fade-in">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=85" alt="Government Complex" loading="lazy">
+      <div class="portfolio-overlay">
+        <h3>Government Complex</h3>
+        <p>12-month commercial construction project featuring advanced structural engineering and sustainable design.</p>
       </div>
     </div>
-    <div class="project fade-in" style="--i:2">
-      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Event Production" loading="lazy">
-      <div class="project-overlay">
-        <h4>Event Production</h4>
-        <p>Corporate gala for 500+ guests with full AV setup.</p>
+    <div class="portfolio-item fade-in delay-1">
+      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=85" alt="Corporate Gala" loading="lazy">
+      <div class="portfolio-overlay">
+        <h3>Corporate Gala 2025</h3>
+        <p>1,200 guest international conference with full production, lighting, and AV integration.</p>
       </div>
     </div>
-    <div class="project fade-in" style="--i:3">
-      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Branding Project" loading="lazy">
-      <div class="project-overlay">
-        <h4>Branding Campaign</h4>
-        <p>Government signage and large-format prints.</p>
+    <div class="portfolio-item fade-in delay-2">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=85" alt="Branding Campaign" loading="lazy">
+      <div class="portfolio-overlay">
+        <h3>Election Campaign</h3>
+        <p>Nationwide branding with 500+ large-format installations completed in 45 days.</p>
       </div>
+    </div>
+    <div class="portfolio-item fade-in delay-3">
+      <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=85" alt="Office Fitout" loading="lazy">
+      <div class="portfolio-overlay">
+        <h3>Corporate Headquarters</h3>
+        <p>Complete office fitout with custom joinery and smart building technology.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="section">
+  <h2 class="fade-in">Our Proven Process</h2>
+  <div class="process-grid">
+    <div class="process-step fade-in">
+      <div class="process-number">01</div>
+      <h3>Consultation & Planning</h3>
+      <p>Detailed site analysis, requirements gathering, and customized project roadmap development.</p>
+    </div>
+    <div class="process-step fade-in delay-1">
+      <div class="process-number">02</div>
+      <h3>Design & Engineering</h3>
+      <p>Architectural design, structural calculations, MEP coordination, and 3D modeling.</p>
+    </div>
+    <div class="process-step fade-in delay-2">
+      <div class="process-number">03</div>
+      <h3>Execution & Management</h3>
+      <p>Daily site supervision, quality control, supply chain management, and stakeholder communication.</p>
+    </div>
+    <div class="process-step fade-in delay-3">
+      <div class="process-number">04</div>
+      <h3>Completion & Handover</h3>
+      <p>Final inspections, commissioning, documentation, and seamless client handover.</p>
     </div>
   </div>
 </section>
 
 <!-- Testimonials -->
-<section class="testimonials fade-in">
-  <h2 style="margin-bottom: 60px;">What Clients Say</h2>
-  <div class="testimonials-grid">
-    <div class="testimonial">
-      <p>"Seven Points transformed our vision into reality with unmatched precision and professionalism."</p>
-      <div class="testimonial-author">Government Client, Duhok</div>
+<section id="testimonials" class="section section-gradient">
+  <h2 class="fade-in">Client Testimonials</h2>
+  <div class="testimonials-container">
+    <div class="testimonials-grid">
+      <div class="testimonial fade-in">
+        <p>Seven Points delivered our government complex three weeks ahead of schedule with impeccable quality. True professionals.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">G</div>
+          Government Directorate
+        </div>
+      </div>
+      <div class="testimonial fade-in delay-1">
+        <p>Flawless execution of our annual conference. Every detail was perfect from staging to lighting.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">C</div>
+          Corporate CEO
+        </div>
+      </div>
+      <div class="testimonial fade-in delay-2">
+        <p>Best construction partner in Kurdistan. Highly recommended for commercial projects.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">D</div>
+          Developer
+        </div>
+      </div>
     </div>
-    <div class="testimonial">
-      <p>"Flawless event execution—on time, on budget, every detail perfect."</p>
-      <div class="testimonial-author">Corporate Director</div>
+  </div>
+</section>
+
+<!-- Team -->
+<section id="team" class="section section-dark">
+  <h2 class="fade-in">Leadership Team</h2>
+  <div class="team-grid">
+    <div class="team-member fade-in">
+      <div class="team-avatar">CEO</div>
+      <h3>Founder & CEO</h3>
+      <div class="team-role">Strategic Vision & Operations</div>
     </div>
-    <div class="testimonial">
-      <p>"Best construction partner in Kurdistan. Highly recommended."</p>
-      <div class="testimonial-author">Commercial Developer</div>
+    <div class="team-member fade-in delay-1">
+      <div class="team-avatar">CTO</div>
+      <h3>Technical Director</h3>
+      <div class="team-role">Engineering & Construction</div>
+    </div>
+    <div class="team-member fade-in delay-2">
+      <div class="team-avatar">EVP</div>
+      <h3>Events Director</h3>
+      <div class="team-role">Production & Events</div>
     </div>
   </div>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="section">
-  <h2 class="fade-in">Get In Touch</h2>
+<section id="contact" class="contact-section">
   <div class="contact-grid">
-    <div class="contact-info fade-in" style="--i:1">
-      <h3><i class="fas fa-phone"></i> Phone</h3>
-      <p><i class="fas fa-phone"></i> +964 750 220 5577</p>
-      <h3><i class="fas fa-envelope"></i> Email</h3>
-      <p><i class="fas fa-envelope"></i> email@sevenpoints.info</p>
-      <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
-      <p><i class="fas fa-map-marker-alt"></i> Zirka Road, Duhok, Kurdistan Region, Iraq</p>
+    <div class="contact-info">
+      <div class="contact-item fade-in">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Call Us</h3>
+          <p>+964 750 220 5577</p>
+        </div>
+      </div>
+      <div class="contact-item fade-in delay-1">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Email Us</h3>
+          <p>email@sevenpoints.info</p>
+        </div>
+      </div>
+      <div class="contact-item fade-in delay-2">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Visit Us</h3>
+          <p>Zirka Road<br>Duhok, Kurdistan Region<br>Iraq</p>
+        </div>
+      </div>
     </div>
-    <form class="contact-form fade-in" style="--i:2" id="contactForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
+    
+    <form class="contact-form-wrapper fade-in delay-3" id="contactForm">
+      <input type="text" placeholder="Your Name *" required>
+      <input type="email" placeholder="Your Email *" required>
       <input type="tel" placeholder="Your Phone">
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <textarea rows="6" placeholder="Tell us about your project *" required></textarea>
+      <button type="submit">Get Your Free Quote</button>
     </form>
   </div>
-</section>
+</form>
 
-<!-- WhatsApp & Scroll Top -->
-<a class="whatsapp" href="https://wa.me/9647502205577" target="_blank" title="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-<a class="scroll-top" href="#" title="Back to Top">
-  <i class="fas fa-chevron-up"></i>
-</a>
+<!-- Floating Actions -->
+<div class="floating-actions">
+  <a class="whatsapp-btn" href="https://wa.me/9647502205577" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a class="scroll-top" href="#">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+</div>
 
 <script>
-/* Lightweight Optimized Script */
 (() => {
-  // Navbar
+  // Performance optimized script
   let ticking = false;
-  function updateNavbar() {
-    const scrolled = window.scrollY > 50;
-    document.querySelector('nav').classList.toggle('scrolled', scrolled);
-    document.querySelector('.scroll-top').classList.toggle('show', window.scrollY > 500);
+  
+  // Navbar & Scroll Top
+  const updateScroll = () => {
+    const scrollY = window.scrollY;
+    document.querySelector('nav').classList.toggle('scrolled', scrollY > 100);
+    document.querySelector('.scroll-top').classList.toggle('show', scrollY > 800);
     ticking = false;
-  }
+  };
+  
   window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateNavbar);
-      ticking = true;
-    }
+    if (!ticking) requestAnimationFrame(updateScroll);
+    ticking = true;
   });
 
-  // Reveal Animations - Optimized
-  const reveals = document.querySelectorAll('.fade-in');
-  let revealObserver = new IntersectionObserver((entries) => {
+  // Smooth reveal animations
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0.15 });
   
-  reveals.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Stats Counter - FIXED: Runs ONCE only
-  const stats = document.querySelectorAll('.stat');
-  let statsAnimated = false;
-  
-  function animateStats() {
-    if (statsAnimated) return;
-    
-    const rect = document.querySelector('.stats').getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      stats.forEach(stat => {
-        const target = parseInt(stat.dataset.target);
-        const number = stat.querySelector('.stat-number');
-        let current = 0;
-        const increment = target / 80;
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            number.textContent = target + (target === 100 ? '%' : '+');
-            stat.classList.add('animated');
-            clearInterval(timer);
-          } else {
-            number.textContent = Math.floor(current) + (target === 100 ? '%' : '+');
-          }
-        }, 20);
-      });
-      statsAnimated = true;
-    }
-  }
-  
-  window.addEventListener('scroll', animateStats);
-  animateStats(); // Check on load
-
-  // Mobile Menu
-  document.querySelector('.hamburger').addEventListener('click', () => {
+  // Mobile menu
+  document.querySelector('.hamburger').onclick = () => {
     document.querySelector('.links').classList.toggle('active');
-  });
+  };
 
-  // Form
-  document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Simulate form submission
-    const btn = e.target.querySelector('button');
-    const original = btn.textContent;
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    
-    setTimeout(() => {
-      alert('Thank you! Your message has been sent. We\'ll contact you soon.');
-      e.target.reset();
-      btn.textContent = original;
-      btn.disabled = false;
-    }, 1500);
-  });
-
-  // Smooth Scroll for Links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
+  // Smooth scroll for all links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
       e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const target = document.querySelector(link.getAttribute('href'));
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         document.querySelector('.links').classList.remove('active');
       }
     });
   });
+
+  // Contact form
+  document.getElementById('contactForm').onsubmit = e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    const text = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      alert('Thank you! Your inquiry has been received. We\'ll respond within 24 hours.');
+      e.target.reset();
+      btn.textContent = text;
+      btn.disabled = false;
+    }, 2000);
+  };
 
 })();
 </script>
