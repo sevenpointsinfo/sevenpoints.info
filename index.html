@@ -1,4 +1,4 @@
-html = r'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -18,18 +18,7 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 button,input,textarea{font:inherit}
 
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(7,7,7,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:.25s ease}
-.navbar.scrolled{background:rgba(7,7,7,.97);box-shadow:0 10px 30px rgba(0,0,0,.35)}
-.nav-inner{max-width:1400px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{width:122px;height:auto;flex:0 0 auto;filter:brightness(1.2)}
-.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
-.nav-links a{font-size:14px;font-weight:600;letter-spacing:.4px;opacity:.92;transition:.2s ease}
-.nav-links a:hover{color:var(--gold)}
-.quote-btn{padding:12px 22px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;font-weight:800;box-shadow:0 12px 30px rgba(255,213,74,.22)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border-radius:12px}
-.hamburger span{width:26px;height:3px;border-radius:2px;background:#fff;transition:.25s ease}
-
-.hero{min-height:100vh;padding:110px 28px 70px;background:
+.hero{min-height:100vh;padding:48px 28px 70px;background:
 linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.62)),
 radial-gradient(circle at 50% 30%, rgba(255,213,74,.12), transparent 26%),
 url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;position:relative}
@@ -116,13 +105,7 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
   .hero-mini{grid-template-columns:1fr}
 }
 @media (max-width: 768px){
-  .nav-inner{padding:14px 18px}
-  .logo{width:104px}
-  .hamburger{display:flex}
-  .nav-links{position:fixed;inset:72px 0 auto 0;background:rgba(7,7,7,.98);border-top:1px solid var(--line);padding:18px 18px 26px;flex-direction:column;align-items:flex-start;gap:18px;transform:translateY(-18px);opacity:0;pointer-events:none;transition:.25s ease}
-  .nav-links.active{transform:translateY(0);opacity:1;pointer-events:auto}
-  .quote-btn{width:100%;text-align:center}
-  .hero{padding:102px 18px 56px;background-attachment:scroll}
+  .hero{padding:82px 18px 56px;background-attachment:scroll}
   .hero h1{font-size:clamp(36px,12vw,54px)}
   .hero p{font-size:16px}
   .section{padding:82px 18px}
@@ -132,22 +115,6 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
 </style>
 </head>
 <body>
-<header class="navbar">
-  <div class="nav-inner">
-    <a href="#hero"><img src="logo.png" alt="Seven Points Logo" class="logo"></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#stats">Stats</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#contact" class="quote-btn">Get Quote</a></li>
-    </ul>
-    <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</header>
 
 <section class="hero" id="hero">
   <div class="hero-inner reveal show">
@@ -259,19 +226,14 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
 
 <script>
 (() => {
-  const navbar = document.querySelector('.navbar');
   const scrollTopBtn = document.querySelector('.scroll-top');
-  const navLinks = document.getElementById('navLinks');
-  const hamburger = document.getElementById('hamburger');
   const counters = document.querySelectorAll('.stat-reset');
   const reveals = document.querySelectorAll('.reveal');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const setCounter = (el, value) => {
-    const target = +el.dataset.target;
     const suffix = el.dataset.suffix || '';
-    const out = el.querySelector('.stat-number');
-    out.textContent = value + suffix;
+    el.querySelector('.stat-number').textContent = value + suffix;
   };
 
   const animateCounter = (el) => {
@@ -284,8 +246,7 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
     const tick = (now) => {
       const p = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      const val = Math.round(target * eased);
-      out.textContent = val + suffix;
+      out.textContent = Math.round(target * eased) + suffix;
       if (p < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -319,19 +280,12 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
   window.addEventListener('scroll', () => {
     if (raf) return;
     raf = requestAnimationFrame(() => {
-      const y = window.scrollY;
-      navbar.classList.toggle('scrolled', y > 20);
-      scrollTopBtn.classList.toggle('show', y > 500);
+      scrollTopBtn.classList.toggle('show', window.scrollY > 500);
       raf = 0;
     });
   }, { passive: true });
 
-  const closeMenu = () => navLinks.classList.remove('active');
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
-  hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navLinks.classList.toggle('active'); } });
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMenu));
-
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
+  document.querySelectorAll('a[href^=\"#\"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href');
       const target = document.querySelector(id);
@@ -359,7 +313,4 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
 })();
 </script>
 </body>
-</html>'''
-Path('output').mkdir(exist_ok=True)
-Path('output/seven_points_pro.html').write_text(html, encoding='utf-8')
-print('output/seven_points_pro.html')
+</html>
