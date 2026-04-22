@@ -1,93 +1,96 @@
-<!DOCTYPE html>
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seven Points | Construction & Event Management</title>
-<meta name="description" content="Seven Points delivers construction, event management, and branding solutions in Duhok, Kurdistan.">
+<title>Seven Points | Minimal Luxury</title>
+<meta name="description" content="Seven Points delivers premium construction and event management solutions in Duhok, Kurdistan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 <style>
-:root{--bg:#070707;--panel:#0f0f0f;--panel2:#121212;--text:#f5f5f5;--muted:#b8b8b8;--gold:#ffd54a;--gold2:#ffea7b;--line:rgba(255,255,255,.08);--shadow:0 18px 60px rgba(0,0,0,.45)}
+:root{--bg:#050505;--panel:rgba(255,255,255,.035);--panel2:rgba(255,255,255,.055);--text:#f6f6f6;--muted:#b8b8b8;--gold:#ffd85e;--gold2:#fff0a0;--line:rgba(255,255,255,.08);--shadow:0 24px 80px rgba(0,0,0,.55)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-button,input,textarea{font:inherit}
+body{font-family:'Inter',sans-serif;background:
+radial-gradient(circle at top, rgba(255,216,94,.08), transparent 26%),
+linear-gradient(180deg,#050505 0%,#080808 100%);color:var(--text);overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}button,input,textarea{font:inherit}
 
-.hero{min-height:100vh;padding:48px 28px 70px;background:
-linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.62)),
-radial-gradient(circle at 50% 30%, rgba(255,213,74,.12), transparent 26%),
-url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;position:relative}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.44) 38%,rgba(0,0,0,.78) 100%);pointer-events:none}
-.hero-inner{position:relative;z-index:1;max-width:1100px;width:100%;text-align:center;margin:0 auto}
-.hero-kicker{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.05);backdrop-filter:blur(10px);margin-bottom:20px;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#f0f0f0}
-.hero h1{font-size:clamp(44px,8vw,90px);line-height:1.02;font-weight:900;letter-spacing:-.03em;color:#fff;text-wrap:balance;text-shadow:0 8px 30px rgba(0,0,0,.55)}
-.hero h1 .gold{color:var(--gold);text-shadow:0 0 18px rgba(255,213,74,.25),0 6px 20px rgba(0,0,0,.4)}
-.hero p{max-width:780px;margin:24px auto 0;font-size:clamp(17px,2vw,22px);color:#f0f0f0;opacity:.98}
-.hero-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:34px}
+.hero{min-height:100svh;padding:64px 20px 72px;display:flex;align-items:center;justify-content:center;position:relative;isolation:isolate;background:
+linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.62)),
+url('sevenpointsbg.png') center/cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 28%, rgba(255,216,94,.14), transparent 32%), linear-gradient(135deg,rgba(0,0,0,.76),rgba(0,0,0,.4) 45%,rgba(0,0,0,.82));z-index:-1}
+.hero-inner{width:min(1120px,100%);text-align:center;position:relative;z-index:1;perspective:1200px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.04);backdrop-filter:blur(10px);font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:#eee;margin-bottom:18px}
+.hero h1{font-size:clamp(40px,8vw,94px);line-height:1.02;font-weight:900;letter-spacing:-.05em;color:#fff;text-wrap:balance;text-shadow:0 12px 40px rgba(0,0,0,.62)}
+.hero h1 .gold{color:var(--gold);text-shadow:0 0 24px rgba(255,216,94,.28),0 8px 22px rgba(0,0,0,.5)}
+.hero p{max-width:760px;margin:22px auto 0;font-size:clamp(16px,2vw,22px);color:#f2f2f2;opacity:.98}
+.hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:32px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:800;font-size:15px;transition:.25s ease;will-change:transform}
-.btn-primary{border:2px solid #fff;background:transparent;color:#fff}
-.btn-primary:hover{transform:translateY(-2px);background:#fff;color:#111}
-.btn-secondary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;box-shadow:0 14px 30px rgba(255,213,74,.22)}
-.btn-secondary:hover{transform:translateY(-2px)}
-.hero-mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:760px;margin:40px auto 0}
-.mini-card{padding:18px 14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:18px;backdrop-filter:blur(10px)}
-.mini-card strong{display:block;font-size:28px;color:var(--gold);line-height:1.1}.mini-card span{display:block;margin-top:6px;font-size:13px;color:#e7e7e7}
+.btn-primary{border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.03);color:#fff}
+.btn-primary:hover{transform:translateY(-2px) translateZ(20px);background:#fff;color:#111}
+.btn-secondary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;box-shadow:0 16px 34px rgba(255,216,94,.18)}
+.btn-secondary:hover{transform:translateY(-2px) translateZ(20px)}
+.hero-mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:760px;margin:38px auto 0}
+.mini-card{padding:18px 14px;border:1px solid var(--line);background:var(--panel);border-radius:18px;backdrop-filter:blur(10px);box-shadow:var(--shadow);transform-style:preserve-3d;transition:transform .25s ease}
+.mini-card strong{display:block;font-size:28px;color:var(--gold);line-height:1.1}.mini-card span{display:block;margin-top:6px;font-size:13px;color:#e8e8e8}
 
-.section{padding:100px 28px}
+.section{padding:96px 20px}
 .container{max-width:1400px;margin:0 auto}
-.section-title{font-size:clamp(32px,5vw,58px);text-align:center;font-weight:900;letter-spacing:-.03em;margin-bottom:18px}
-.section-sub{max-width:720px;margin:0 auto 54px;text-align:center;color:var(--muted);font-size:18px}
-.section-title .gold{color:var(--gold)}
+.section-title{font-size:clamp(30px,5vw,60px);text-align:center;font-weight:900;letter-spacing:-.04em;margin-bottom:14px}
+.section-sub{max-width:760px;margin:0 auto 50px;text-align:center;color:var(--muted);font-size:18px}
+.gold{color:var(--gold)}
 
-.stats-wrap{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:var(--shadow)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.stat-card{padding:26px 18px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);text-align:center;transition:.2s ease}
-.stat-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.05)}
-.stat-number{display:block;font-size:clamp(40px,7vw,66px);font-weight:900;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums;text-shadow:0 0 18px rgba(255,213,74,.15)}
-.stat-label{margin-top:8px;color:#e9e9e9;font-weight:600}
+.stats-wrap,.testimonials{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
+.stats-wrap{padding:30px;transform-style:preserve-3d}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.stat-card{padding:24px 16px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);text-align:center;transition:.2s ease;transform-style:preserve-3d}
+.stat-card:hover{transform:translateY(-4px) rotateX(4deg) rotateY(-4deg);background:rgba(255,255,255,.05)}
+.stat-number{display:block;font-size:clamp(38px,7vw,68px);font-weight:900;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums;text-shadow:0 0 18px rgba(255,216,94,.14)}
+.stat-label{margin-top:8px;color:#eaeaea;font-weight:600}
 
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
-.card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow);transition:.25s ease;overflow:hidden;position:relative}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent)}
-.card:hover{transform:translateY(-8px);background:rgba(255,255,255,.06)}
-.card i{font-size:42px;color:var(--gold);margin-bottom:16px;text-shadow:0 0 12px rgba(255,213,74,.2)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow);transition:.28s ease;overflow:hidden;position:relative;transform-style:preserve-3d}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.card:hover{transform:translateY(-8px) rotateX(5deg) rotateY(-5deg);background:var(--panel2)}
+.card i{font-size:42px;color:var(--gold);margin-bottom:16px;text-shadow:0 0 12px rgba(255,216,94,.18)}
 .card h3{font-size:24px;margin-bottom:10px}
 .card p{color:var(--muted)}
 
-.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
-.work{position:relative;min-height:320px;border-radius:24px;overflow:hidden;background:#111;box-shadow:var(--shadow)}
-.work img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
-.work:hover img{transform:scale(1.05)}
-.work-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.9));display:flex;align-items:flex-end;padding:24px;opacity:0;transition:.35s ease}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.work{position:relative;min-height:320px;border-radius:24px;overflow:hidden;background:#111;box-shadow:var(--shadow);transform-style:preserve-3d;transition:transform .35s ease}
+.work img{width:100%;height:100%;object-fit:cover;transition:.55s ease}
+.work:hover{transform:translateY(-6px) rotateX(5deg) rotateY(5deg)}
+.work:hover img{transform:scale(1.06)}
+.work-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92));display:flex;align-items:flex-end;padding:24px;opacity:0;transition:.35s ease}
 .work:hover .work-overlay{opacity:1}
 .work-overlay h3{font-size:24px;margin-bottom:6px}.work-overlay p{color:#ddd}
 
-.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.step{padding:26px;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.step{padding:24px;border-radius:22px;border:1px solid var(--line);background:var(--panel);transform-style:preserve-3d;transition:.28s ease}
+.step:hover{transform:translateY(-6px) rotateX(4deg) rotateY(-4deg);background:var(--panel2)}
 .step-no{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;font-weight:900;margin-bottom:14px}
-.step h3{font-size:20px;margin-bottom:8px}
-.step p{color:var(--muted)}
+.step h3{font-size:20px;margin-bottom:8px}.step p{color:var(--muted)}
 
-.testimonials{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:var(--shadow)}
-.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.quote{padding:24px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
+.testimonials{padding:30px;transform-style:preserve-3d}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.quote{padding:24px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);transition:.28s ease;transform-style:preserve-3d}
+.quote:hover{transform:translateY(-5px) rotateX(4deg) rotateY(4deg);background:rgba(255,255,255,.05)}
 .quote p{color:#f0f0f0;font-style:italic}.quote strong{display:block;margin-top:14px;color:var(--gold)}
 
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
 .contact-list{display:grid;gap:14px}
-.contact-item{display:flex;gap:14px;align-items:flex-start;padding:20px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.contact-item{display:flex;gap:14px;align-items:flex-start;padding:20px;border-radius:18px;background:var(--panel);border:1px solid rgba(255,255,255,.08);transition:.25s ease;transform-style:preserve-3d}
+.contact-item:hover{transform:translateY(-4px) rotateX(3deg) rotateY(-3deg);background:var(--panel2)}
 .contact-ic{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
 .contact-item h3{font-size:18px;margin-bottom:4px}.contact-item p{color:var(--muted)}
-.form{padding:26px;border-radius:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.form{padding:26px;border-radius:24px;background:var(--panel);border:1px solid rgba(255,255,255,.08);transform-style:preserve-3d}
 .form input,.form textarea{width:100%;margin-bottom:14px;padding:15px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;outline:none}
 .form input::placeholder,.form textarea::placeholder{color:#a9a9a9}
-.form input:focus,.form textarea:focus{border-color:rgba(255,213,74,.75);box-shadow:0 0 0 3px rgba(255,213,74,.08)}
-.form button{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;font-weight:900;cursor:pointer}
+.form input:focus,.form textarea:focus{border-color:rgba(255,216,94,.8);box-shadow:0 0 0 3px rgba(255,216,94,.08)}
+.form button{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;font-weight:900;cursor:pointer;transition:.2s ease}.form button:hover{transform:translateY(-2px)}
 
 .floating{position:fixed;right:20px;bottom:20px;z-index:1001;display:flex;flex-direction:column;gap:12px}
 .fab-btn{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(0,0,0,.38);transition:.25s ease;transform-style:preserve-3d}
@@ -95,30 +98,27 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
 .scroll-top{background:rgba(255,255,255,.12);color:#fff;opacity:0;visibility:hidden}
 .scroll-top.show{opacity:1;visibility:visible}
 .fab-btn.spin{animation:spin3d .45s ease}
-@keyframes spin3d{0%{transform:perspective(700px) rotateX(0deg) rotateY(0deg) translateY(0)}50%{transform:perspective(700px) rotateX(26deg) rotateY(18deg) translateY(-2px)}100%{transform:perspective(700px) rotateX(0deg) rotateY(0deg) translateY(0)}}
-
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.reveal.show{opacity:1;transform:translateY(0)}
+@keyframes spin3d{0%{transform:perspective(700px) rotateX(0deg) rotateY(0deg) translateY(0)}50%{transform:perspective(700px) rotateX(18deg) rotateY(22deg) translateY(-2px)}100%{transform:perspective(700px) rotateX(0deg) rotateY(0deg) translateY(0)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:translateY(0)}
 
 @media (max-width: 980px){
   .stats-grid,.contact-grid{grid-template-columns:1fr 1fr}
   .hero-mini{grid-template-columns:1fr}
 }
 @media (max-width: 768px){
-  .hero{padding:82px 18px 56px;background-attachment:scroll}
-  .hero h1{font-size:clamp(36px,12vw,54px)}
+  .hero{padding:82px 16px 52px}
+  .hero h1{font-size:clamp(35px,12vw,56px)}
   .hero p{font-size:16px}
-  .section{padding:82px 18px}
+  .section{padding:78px 16px}
   .stats-grid,.contact-grid{grid-template-columns:1fr}
   .stats-wrap,.testimonials{padding:18px}
 }
 </style>
 </head>
 <body>
-
 <section class="hero" id="hero">
   <div class="hero-inner reveal show">
-    <div class="hero-kicker">Construction • Event Management • Branding</div>
+    <div class="hero-kicker">Construction • Event Management</div>
     <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
     <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors in Duhok, Kurdistan.</p>
     <div class="hero-actions">
@@ -132,59 +132,42 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
     </div>
   </div>
 </section>
-
 <section class="section" id="stats">
   <div class="container">
     <h2 class="section-title reveal">Proven <span class="gold">Results</span></h2>
-    <p class="section-sub reveal">Numbers replay every time the section comes back into view, but the animation stays light and smooth.</p>
+    <p class="section-sub reveal">Numbers replay every time the section comes back into view, while staying smooth and lightweight.</p>
     <div class="stats-wrap reveal">
       <div class="stats-grid">
-        <div class="stat-card stat-reset" data-target="150" data-suffix="+">
-          <span class="stat-number">0</span>
-          <div class="stat-label">Projects Completed</div>
-        </div>
-        <div class="stat-card stat-reset" data-target="5" data-suffix="+">
-          <span class="stat-number">0</span>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat-card stat-reset" data-target="100" data-suffix="%">
-          <span class="stat-number">0</span>
-          <div class="stat-label">On-Time Delivery</div>
-        </div>
-        <div class="stat-card stat-reset" data-target="50" data-suffix="+">
-          <span class="stat-number">0</span>
-          <div class="stat-label">Happy Clients</div>
-        </div>
+        <div class="stat-card stat-reset" data-target="150" data-suffix="+"><span class="stat-number">0</span><div class="stat-label">Projects Completed</div></div>
+        <div class="stat-card stat-reset" data-target="5" data-suffix="+"><span class="stat-number">0</span><div class="stat-label">Years Experience</div></div>
+        <div class="stat-card stat-reset" data-target="100" data-suffix="%"><span class="stat-number">0</span><div class="stat-label">On-Time Delivery</div></div>
+        <div class="stat-card stat-reset" data-target="50" data-suffix="+"><span class="stat-number">0</span><div class="stat-label">Happy Clients</div></div>
       </div>
     </div>
   </div>
 </section>
-
 <section class="section" id="services">
   <div class="container">
     <h2 class="section-title reveal">Our <span class="gold">Services</span></h2>
-    <p class="section-sub reveal">Designed for organizations that need reliability, presentation, and execution at a high standard.</p>
+    <p class="section-sub reveal">Reliable, professional, and designed for strong presentation.</p>
     <div class="cards-grid">
       <div class="card reveal"><i class="fa-solid fa-hard-hat"></i><h3>Construction</h3><p>Full-scale construction from planning to delivery, including structure, finishing, and site coordination.</p></div>
       <div class="card reveal"><i class="fa-solid fa-calendar-check"></i><h3>Event Management</h3><p>Corporate and government events with complete production, setup, logistics, and on-site support.</p></div>
-      <div class="card reveal"><i class="fa-solid fa-print"></i><h3>Printing & Branding</h3><p>Large-format printing, signage, exhibition branding, and identity materials with sharp visual impact.</p></div>
       <div class="card reveal"><i class="fa-solid fa-helmet-safety"></i><h3>Site Supervision</h3><p>Daily control, quality checks, and progress monitoring to keep every project on track.</p></div>
     </div>
   </div>
 </section>
-
 <section class="section" id="portfolio">
   <div class="container">
     <h2 class="section-title reveal">Selected <span class="gold">Work</span></h2>
-    <p class="section-sub reveal">A clean showcase of construction, events, and branding projects.</p>
+    <p class="section-sub reveal">A clean showcase of construction and event projects.</p>
     <div class="work-grid">
       <div class="work reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80" alt="Construction Project"><div class="work-overlay"><div><h3>Commercial Construction</h3><p>Modern building delivery</p></div></div></div>
       <div class="work reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80" alt="Event Production"><div class="work-overlay"><div><h3>Corporate Event</h3><p>Production and staging</p></div></div></div>
-      <div class="work reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=80" alt="Branding Project"><div class="work-overlay"><div><h3>Branding Campaign</h3><p>Large-format visual identity</p></div></div></div>
+      <div class="work reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=80" alt="Project"><div class="work-overlay"><div><h3>Premium Delivery</h3><p>Clean, reliable execution</p></div></div></div>
     </div>
   </div>
 </section>
-
 <section class="section" id="process">
   <div class="container">
     <h2 class="section-title reveal">How We <span class="gold">Work</span></h2>
@@ -197,7 +180,19 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
     </div>
   </div>
 </section>
-
+<section class="section" id="testimonials">
+  <div class="container">
+    <h2 class="section-title reveal">Client <span class="gold">Feedback</span></h2>
+    <p class="section-sub reveal">Professional service, reliable delivery, and strong client relationships.</p>
+    <div class="testimonials reveal">
+      <div class="testimonials-grid">
+        <div class="quote"><p>Seven Points delivered our project with excellent quality and clear communication.</p><strong>Government Client</strong></div>
+        <div class="quote"><p>The event setup was elegant, organized, and finished on time.</p><strong>Corporate Director</strong></div>
+        <div class="quote"><p>They handled execution with real professionalism and discipline.</p><strong>Commercial Partner</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section" id="contact">
   <div class="container">
     <h2 class="section-title reveal">Contact <span class="gold">Us</span></h2>
@@ -218,99 +213,41 @@ url('sevenpointsbg.png') center/cover no-repeat;display:flex;align-items:center;
     </div>
   </div>
 </section>
-
 <div class="floating">
   <a class="fab-btn whatsapp" href="https://wa.me/9647502205577" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
   <a class="fab-btn scroll-top" href="#hero" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></a>
 </div>
-
 <script>
 (() => {
   const scrollTopBtn = document.querySelector('.scroll-top');
   const counters = document.querySelectorAll('.stat-reset');
   const reveals = document.querySelectorAll('.reveal');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const setCounter = (el, value) => {
-    const suffix = el.dataset.suffix || '';
-    el.querySelector('.stat-number').textContent = value + suffix;
-  };
-
-  const animateCounter = (el) => {
-    const target = +el.dataset.target;
-    const suffix = el.dataset.suffix || '';
-    const out = el.querySelector('.stat-number');
-    const duration = 900;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      out.textContent = Math.round(target * eased) + suffix;
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  };
-
+  const setCounter = (el, value) => { const suffix = el.dataset.suffix || ''; el.querySelector('.stat-number').textContent = value + suffix; };
+  const animateCounter = (el) => { const target = +el.dataset.target, suffix = el.dataset.suffix || '', out = el.querySelector('.stat-number'), start = performance.now(), duration = 900; const tick = (now) => { const p = Math.min((now - start) / duration, 1); const eased = 1 - Math.pow(1 - p, 3); out.textContent = Math.round(target * eased) + suffix; if (p < 1) requestAnimationFrame(tick); }; requestAnimationFrame(tick); };
   counters.forEach(card => setCounter(card, 0));
-
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
-      if (entry.isIntersecting) {
-        if (!reduceMotion) animateCounter(el);
-        else setCounter(el, +el.dataset.target);
-      } else {
-        setCounter(el, 0);
-      }
-    });
-  }, { threshold: 0.45 });
-
+  const statObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { const el = entry.target; if (entry.isIntersecting) { if (!reduceMotion) animateCounter(el); else setCounter(el, +el.dataset.target); } else setCounter(el, 0); }); }, { threshold: 0.45 });
   counters.forEach(card => statObserver.observe(card));
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('show');
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
+  const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); }); }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => revealObserver.observe(el));
-
   let raf = 0;
-  window.addEventListener('scroll', () => {
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      scrollTopBtn.classList.toggle('show', window.scrollY > 500);
-      raf = 0;
+  window.addEventListener('scroll', () => { if (raf) return; raf = requestAnimationFrame(() => { scrollTopBtn.classList.toggle('show', window.scrollY > 500); raf = 0; }); }, { passive: true });
+  const onMove = (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 10;
+    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+    document.querySelectorAll('.hero-inner, .stats-wrap, .card, .work, .step, .quote, .contact-item, .form').forEach(el => {
+      if (el.matches('.hero-inner')) el.style.transform = `rotateX(${(-y * 0.35)}deg) rotateY(${x * 0.35}deg)`;
     });
-  }, { passive: true });
-
-  document.querySelectorAll('a[href^=\"#\"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href');
-      const target = document.querySelector(id);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  document.querySelectorAll('.fab-btn').forEach(btn => {
-    btn.addEventListener('mouseenter', () => btn.classList.add('spin'));
-    btn.addEventListener('animationend', () => btn.classList.remove('spin'));
-    btn.addEventListener('touchstart', () => btn.classList.add('spin'), { passive: true });
-  });
-
-  document.getElementById('contactForm').addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    const old = btn.textContent;
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    setTimeout(() => { btn.textContent = old; btn.disabled = false; e.target.reset(); alert('Thank you. Your message has been sent.'); }, 1100);
-  });
+    document.querySelectorAll('.mini-card').forEach(el => el.style.transform = `translateY(0) rotateX(${(-y * 0.2)}deg) rotateY(${x * 0.2}deg)`);
+  };
+  if (!reduceMotion && window.matchMedia('(pointer:fine)').matches) window.addEventListener('mousemove', onMove);
+  document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const target = document.querySelector(a.getAttribute('href')); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); } }); });
+  document.querySelectorAll('.fab-btn').forEach(btn => { btn.addEventListener('mouseenter', () => btn.classList.add('spin')); btn.addEventListener('animationend', () => btn.classList.remove('spin')); btn.addEventListener('touchstart', () => btn.classList.add('spin'), { passive: true }); });
+  document.getElementById('contactForm').addEventListener('submit', e => { e.preventDefault(); const btn = e.target.querySelector('button'); const old = btn.textContent; btn.textContent = 'Sending...'; btn.disabled = true; setTimeout(() => { btn.textContent = old; btn.disabled = false; e.target.reset(); alert('Thank you. Your message has been sent.'); }, 1100); });
 })();
 </script>
 </body>
-</html>
+</html>'''
+Path('output').mkdir(exist_ok=True)
+Path('output/seven_points_minimal_luxury.html').write_text(html, encoding='utf-8')
+print('output/seven_points_minimal_luxury.html')
