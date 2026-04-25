@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Seven Points delivers premium construction and event management solutions in Duhok, Kurdistan. 150+ projects, 100% on-time delivery.">
-<meta name="keywords" content="construction, event management, Duhok, Kurdistan">
+<meta name="description" content="Seven Points delivers premium construction and event management solutions in Kurdistan Region, Iraq. 150+ projects, 100% on-time delivery.">
+<meta name="keywords" content="construction, event management, Kurdistan Region, Iraq">
 <meta name="theme-color" content="#030303">
 
 <meta property="og:type" content="business.business">
 <meta property="og:title" content="Seven Points | Premium Construction & Event Management">
-<meta property="og:description" content="Professional construction and event management solutions in Duhok, Kurdistan.">
+<meta property="og:description" content="Professional construction and event management solutions in Kurdistan Region, Iraq.">
 <meta property="og:image" content="https://sevenpoints.info/sevenpointsbg.png">
 
 <script type="application/ld+json">
@@ -44,8 +44,8 @@
   --panel2: rgba(255, 255, 255, .07);
   --text: #f8f8f8;
   --muted: #b8b8b8;
-  --gold: #ffd95c;
-  --gold2: #fff1aa;
+  --gold: #fbaf43;
+  --gold2: #ffc966;
   --line: rgba(255, 255, 255, .09);
   --shadow: 0 30px 100px rgba(0, 0, 0, .62);
 }
@@ -62,7 +62,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at 18% 12%, rgba(255, 217, 92, .10), transparent 18%),
+  background: radial-gradient(circle at 18% 12%, rgba(251, 175, 67, .08), transparent 18%),
     radial-gradient(circle at 82% 2%, rgba(255, 255, 255, .06), transparent 16%),
     linear-gradient(180deg, #030303 0%, #070707 100%);
   color: var(--text);
@@ -106,9 +106,14 @@ button, input, textarea, select { font: inherit; }
 }
 
 .brand img {
-  width: 52px;
+  width: 70px;
   height: auto;
   filter: brightness(1.15);
+  transition: transform .3s ease;
+}
+
+.brand img:hover {
+  transform: scale(1.05);
 }
 
 .nav-menu {
@@ -140,6 +145,7 @@ button, input, textarea, select { font: inherit; }
   border: none;
   cursor: pointer;
   padding: 4px;
+  z-index: 1001;
 }
 
 .hamburger span {
@@ -195,8 +201,7 @@ button, input, textarea, select { font: inherit; }
   content: '';
   position: absolute;
   inset: -20%;
-  background: radial-gradient(circle at 50% 28%, rgba(255, 217, 92, .18), transparent 24%),
-    conic-gradient(from 180deg at 50% 50%, rgba(255, 255, 255, .02), rgba(255, 255, 255, .00));
+  background: radial-gradient(circle at 50% 28%, rgba(251, 175, 67, .12), transparent 24%);
   filter: blur(20px);
   opacity: .85;
   z-index: -2;
@@ -228,9 +233,9 @@ button, input, textarea, select { font: inherit; }
   align-items: center;
   gap: 10px;
   padding: 11px 18px;
-  border: 1px solid rgba(255, 255, 255, .12);
+  border: 1px solid rgba(251, 175, 67, .3);
   border-radius: 999px;
-  background: rgba(255, 255, 255, .045);
+  background: rgba(251, 175, 67, .08);
   backdrop-filter: blur(14px);
   font-size: 12px;
   letter-spacing: 1.6px;
@@ -301,15 +306,15 @@ button, input, textarea, select { font: inherit; }
 }
 
 .btn-primary {
-  border: 1.5px solid rgba(255, 255, 255, .55);
-  background: rgba(255, 255, 255, .03);
+  border: 1.5px solid rgba(251, 175, 67, .6);
+  background: rgba(251, 175, 67, .08);
   color: #fff;
   backdrop-filter: blur(12px);
 }
 
 .btn-primary:hover, .btn-primary:focus {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, .08);
+  background: rgba(251, 175, 67, .15);
   border-color: var(--gold);
   color: var(--gold);
 }
@@ -317,12 +322,12 @@ button, input, textarea, select { font: inherit; }
 .btn-secondary {
   background: linear-gradient(135deg, var(--gold), var(--gold2));
   color: #111;
-  box-shadow: 0 18px 36px rgba(255, 217, 92, .22);
+  box-shadow: 0 18px 36px rgba(251, 175, 67, .25);
 }
 
 .btn-secondary:hover, .btn-secondary:focus {
   transform: translateY(-3px);
-  box-shadow: 0 24px 48px rgba(255, 217, 92, .32);
+  box-shadow: 0 24px 48px rgba(251, 175, 67, .35);
 }
 
 /* HERO MINI CARDS - 3D EFFECT */
@@ -338,11 +343,11 @@ button, input, textarea, select { font: inherit; }
 
 .mini-card {
   padding: 18px 14px;
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .025));
+  border: 1px solid rgba(251, 175, 67, .2);
+  background: linear-gradient(180deg, rgba(251, 175, 67, .06), rgba(251, 175, 67, .02));
   border-radius: 18px;
   backdrop-filter: blur(14px);
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 32px rgba(251, 175, 67, .08);
   transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
   transform-style: preserve-3d;
   cursor: pointer;
@@ -350,9 +355,9 @@ button, input, textarea, select { font: inherit; }
 
 .mini-card:hover {
   transform: translateY(-8px) rotateX(15deg) rotateY(-10deg) scale(1.05);
-  background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .04));
+  background: linear-gradient(180deg, rgba(251, 175, 67, .12), rgba(251, 175, 67, .05));
   border-color: var(--gold);
-  box-shadow: 0 20px 50px rgba(255, 217, 92, .15);
+  box-shadow: 0 20px 50px rgba(251, 175, 67, .15);
 }
 
 .mini-card strong {
@@ -404,10 +409,10 @@ button, input, textarea, select { font: inherit; }
 
 /* ===== STATS SECTION ===== */
 .stats-wrap {
-  background: linear-gradient(180deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, .015));
-  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(251, 175, 67, .04), rgba(251, 175, 67, .01));
+  border: 1px solid rgba(251, 175, 67, .15);
   border-radius: 30px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .1);
   backdrop-filter: blur(16px);
   padding: 40px 30px;
 }
@@ -421,11 +426,12 @@ button, input, textarea, select { font: inherit; }
 .stat-card {
   padding: 24px 16px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, .03);
-  border: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(251, 175, 67, .05);
+  border: 1px solid rgba(251, 175, 67, .1);
   text-align: center;
   transition: all .24s ease;
   animation: slideInUp .6s ease-out;
+  perspective: 1000px;
 }
 
 .stat-card:nth-child(2) { animation-delay: .1s; }
@@ -433,9 +439,10 @@ button, input, textarea, select { font: inherit; }
 .stat-card:nth-child(4) { animation-delay: .3s; }
 
 .stat-card:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, .06);
+  transform: translateY(-6px) rotateX(8deg);
+  background: rgba(251, 175, 67, .1);
   border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(251, 175, 67, .15);
 }
 
 .stat-number {
@@ -464,15 +471,16 @@ button, input, textarea, select { font: inherit; }
 }
 
 .card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
-  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(251, 175, 67, .04), rgba(251, 175, 67, .01));
+  border: 1px solid rgba(251, 175, 67, .15);
   border-radius: 24px;
   padding: 32px 28px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .08);
   transition: all .28s cubic-bezier(0.34, 1.56, 0.64, 1);
   overflow: hidden;
   position: relative;
   animation: slideInUp .6s ease-out;
+  perspective: 1000px;
 }
 
 .card:nth-child(2) { animation-delay: .1s; }
@@ -489,20 +497,25 @@ button, input, textarea, select { font: inherit; }
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  background: var(--panel2);
+  transform: translateY(-10px) rotateX(6deg) rotateY(-4deg);
+  background: linear-gradient(180deg, rgba(251, 175, 67, .08), rgba(251, 175, 67, .03));
   border-color: var(--gold);
+  box-shadow: 0 30px 80px rgba(251, 175, 67, .15);
 }
 
 .card i {
   font-size: 48px;
-  color: var(--gold);
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 20px;
   transition: transform .3s ease;
+  display: inline-block;
 }
 
 .card:hover i {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.15) rotate(8deg);
 }
 
 .card h3 {
@@ -529,10 +542,10 @@ button, input, textarea, select { font: inherit; }
   border-radius: 24px;
   overflow: hidden;
   background: #111;
-  box-shadow: var(--shadow);
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .08);
   transition: transform .35s cubic-bezier(0.34, 1.56, 0.64, 1);
   animation: slideInUp .6s ease-out;
-  perspective: 1000px;
+  perspective: 1200px;
   cursor: pointer;
 }
 
@@ -543,12 +556,12 @@ button, input, textarea, select { font: inherit; }
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform .5s ease;
+  transition: transform .6s cubic-bezier(0.34, 1.56, 0.64, 1);
   transform-style: preserve-3d;
 }
 
 .work:hover .work-inner {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) rotateX(5deg);
 }
 
 .work-front, .work-back {
@@ -556,27 +569,30 @@ button, input, textarea, select { font: inherit; }
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-back {
   transform: rotateY(180deg);
   background: linear-gradient(135deg, var(--gold), var(--gold2));
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 24px;
   text-align: center;
+  flex-direction: column;
 }
 
 .work-back h3 {
   font-size: 24px;
   color: #111;
   margin-bottom: 8px;
+  font-weight: 900;
 }
 
 .work-back p {
-  color: rgba(0, 0, 0, .7);
+  color: rgba(0, 0, 0, .75);
   font-size: 14px;
+  line-height: 1.6;
 }
 
 .work img {
@@ -594,7 +610,7 @@ button, input, textarea, select { font: inherit; }
 .work-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .92));
+  background: linear-gradient(180deg, rgba(251, 175, 67, .1), rgba(0, 0, 0, .95));
   display: flex;
   align-items: flex-end;
   padding: 24px;
@@ -627,11 +643,12 @@ button, input, textarea, select { font: inherit; }
 .step {
   padding: 28px 24px;
   border-radius: 22px;
-  border: 1px solid var(--line);
-  background: var(--panel);
+  border: 1px solid rgba(251, 175, 67, .15);
+  background: rgba(251, 175, 67, .03);
   transition: all .28s ease;
   position: relative;
   animation: slideInUp .6s ease-out;
+  perspective: 1000px;
 }
 
 .step:nth-child(2) { animation-delay: .1s; }
@@ -651,9 +668,10 @@ button, input, textarea, select { font: inherit; }
 }
 
 .step:hover {
-  transform: translateY(-8px);
-  background: var(--panel2);
+  transform: translateY(-8px) rotateX(5deg);
+  background: rgba(251, 175, 67, .06);
   border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(251, 175, 67, .1);
 }
 
 .step:hover::before {
@@ -672,6 +690,7 @@ button, input, textarea, select { font: inherit; }
   font-weight: 900;
   margin-bottom: 16px;
   font-size: 20px;
+  box-shadow: 0 8px 20px rgba(251, 175, 67, .2);
 }
 
 .step h3 {
@@ -687,10 +706,10 @@ button, input, textarea, select { font: inherit; }
 
 /* ===== TESTIMONIALS ===== */
 .testimonials {
-  background: linear-gradient(180deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, .015));
-  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(251, 175, 67, .04), rgba(251, 175, 67, .01));
+  border: 1px solid rgba(251, 175, 67, .15);
   border-radius: 30px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .08);
   backdrop-filter: blur(16px);
   padding: 40px 30px;
 }
@@ -704,19 +723,21 @@ button, input, textarea, select { font: inherit; }
 .quote {
   padding: 24px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, .03);
-  border: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(251, 175, 67, .05);
+  border: 1px solid rgba(251, 175, 67, .1);
   transition: all .28s ease;
   animation: slideInUp .6s ease-out;
+  perspective: 1000px;
 }
 
 .quote:nth-child(2) { animation-delay: .1s; }
 .quote:nth-child(3) { animation-delay: .2s; }
 
 .quote:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, .05);
+  transform: translateY(-6px) rotateX(6deg) rotateY(-4deg);
+  background: rgba(251, 175, 67, .08);
   border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(251, 175, 67, .12);
 }
 
 .quote p {
@@ -744,6 +765,8 @@ button, input, textarea, select { font: inherit; }
   color: #111;
   font-weight: 900;
   font-size: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(251, 175, 67, .2);
 }
 
 .quote-info strong {
@@ -777,15 +800,17 @@ button, input, textarea, select { font: inherit; }
   align-items: flex-start;
   padding: 20px;
   border-radius: 18px;
-  background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(251, 175, 67, .03);
+  border: 1px solid rgba(251, 175, 67, .1);
   transition: all .25s ease;
+  perspective: 1000px;
 }
 
 .contact-item:hover {
-  transform: translateY(-5px);
-  background: var(--panel2);
+  transform: translateY(-5px) rotateX(4deg);
+  background: rgba(251, 175, 67, .06);
   border-color: var(--gold);
+  box-shadow: 0 8px 20px rgba(251, 175, 67, .1);
 }
 
 .contact-ic {
@@ -799,6 +824,7 @@ button, input, textarea, select { font: inherit; }
   justify-content: center;
   flex: 0 0 auto;
   font-size: 20px;
+  box-shadow: 0 8px 20px rgba(251, 175, 67, .2);
 }
 
 .contact-item h3 {
@@ -816,6 +842,7 @@ button, input, textarea, select { font: inherit; }
 .contact-item a {
   color: var(--gold);
   text-decoration: none;
+  font-weight: 600;
 }
 
 .contact-item a:hover {
@@ -826,9 +853,10 @@ button, input, textarea, select { font: inherit; }
 .form {
   padding: 32px;
   border-radius: 24px;
-  background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(251, 175, 67, .03);
+  border: 1px solid rgba(251, 175, 67, .1);
   animation: slideInUp .6s ease-out .1s backwards;
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .08);
 }
 
 .form-group {
@@ -847,8 +875,8 @@ button, input, textarea, select { font: inherit; }
   width: 100%;
   padding: 15px 16px;
   border-radius: 12px;
-  border: 1.5px solid rgba(255, 255, 255, .14);
-  background: rgba(255, 255, 255, .06);
+  border: 1.5px solid rgba(251, 175, 67, .2);
+  background: rgba(251, 175, 67, .03);
   color: #fff;
   outline: none;
   transition: all .25s ease;
@@ -860,9 +888,9 @@ button, input, textarea, select { font: inherit; }
 }
 
 .form input:focus, .form textarea:focus, .form select:focus {
-  border-color: rgba(255, 217, 92, .8);
-  background: rgba(255, 255, 255, .08);
-  box-shadow: 0 0 0 3px rgba(255, 217, 92, .08);
+  border-color: var(--gold);
+  background: rgba(251, 175, 67, .06);
+  box-shadow: 0 0 0 3px rgba(251, 175, 67, .1);
 }
 
 .form-group.error input, .form-group.error textarea {
@@ -893,11 +921,12 @@ button, input, textarea, select { font: inherit; }
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(251, 175, 67, .2);
 }
 
 .form button:hover, .form button:focus {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(255, 217, 92, .25);
+  box-shadow: 0 12px 30px rgba(251, 175, 67, .3);
 }
 
 .form button:disabled {
@@ -937,7 +966,7 @@ button, input, textarea, select { font: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, .38);
+  box-shadow: 0 14px 30px rgba(251, 175, 67, .2);
   transition: all .25s ease;
   border: none;
   cursor: pointer;
@@ -946,7 +975,7 @@ button, input, textarea, select { font: inherit; }
 }
 
 .fab-btn:hover {
-  transform: translateY(-4px) scale(1.08);
+  transform: translateY(-4px) scale(1.08) rotateY(12deg);
 }
 
 .whatsapp {
@@ -955,11 +984,12 @@ button, input, textarea, select { font: inherit; }
 }
 
 .scroll-top {
-  background: rgba(255, 255, 255, .12);
-  color: #fff;
+  background: rgba(251, 175, 67, .2);
+  color: var(--gold);
   opacity: 0;
   visibility: hidden;
   transition: all .25s ease;
+  border: 1px solid rgba(251, 175, 67, .3);
 }
 
 .scroll-top.show {
@@ -986,7 +1016,7 @@ button, input, textarea, select { font: inherit; }
   }
 
   .brand img {
-    width: 44px;
+    width: 56px;
   }
 
   .nav-menu {
@@ -1006,7 +1036,7 @@ button, input, textarea, select { font: inherit; }
   }
 
   .nav-menu.active {
-    max-height: 400px;
+    max-height: 500px;
   }
 
   .nav-menu li {
@@ -1033,41 +1063,204 @@ button, input, textarea, select { font: inherit; }
   .hero-mini {
     grid-template-columns: 1fr;
     perspective: none;
+    gap: 12px;
+  }
+
+  .mini-card {
+    padding: 16px 12px;
+    perspective: 800px;
   }
 
   .mini-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-6px) rotateX(12deg) rotateY(-8deg) scale(1.02);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
   }
 
   .section {
     padding: 60px 16px;
   }
 
-  .stats-grid, .contact-grid, .process-grid {
-    grid-template-columns: 1fr;
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 18px 12px;
+    perspective: 800px;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-4px) rotateX(6deg);
+  }
+
+  .stat-number {
+    font-size: clamp(28px, 6vw, 48px);
+  }
+
+  .stats-wrap {
+    padding: 24px 16px;
   }
 
   .cards-grid {
     grid-template-columns: 1fr;
   }
 
+  .card {
+    perspective: 800px;
+    padding: 24px 20px;
+  }
+
+  .card:hover {
+    transform: translateY(-8px) rotateX(4deg) rotateY(-2deg);
+  }
+
+  .card i {
+    font-size: 40px;
+  }
+
   .work-grid {
     grid-template-columns: 1fr;
   }
 
+  .work {
+    min-height: 280px;
+  }
+
+  .work:hover .work-inner {
+    transform: rotateY(180deg) rotateX(0deg);
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    perspective: 800px;
+    padding: 24px 18px;
+  }
+
+  .step:hover {
+    transform: translateY(-6px) rotateX(3deg);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quote {
+    perspective: 800px;
+  }
+
+  .quote:hover {
+    transform: translateY(-4px) rotateX(4deg) rotateY(-2deg);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-item {
+    perspective: 800px;
+  }
+
+  .contact-item:hover {
+    transform: translateY(-4px) rotateX(3deg);
+  }
+
   .form {
     padding: 24px;
+    perspective: 800px;
   }
 
   .floating {
     right: 16px;
     bottom: 16px;
+    gap: 10px;
   }
 
   .fab-btn {
     width: 52px;
     height: 52px;
     font-size: 20px;
+    box-shadow: 0 10px 24px rgba(251, 175, 67, .15);
+  }
+
+  .fab-btn:hover {
+    transform: translateY(-3px) scale(1.06) rotateY(8deg);
+  }
+
+  .section-title {
+    font-size: clamp(24px, 6vw, 42px);
+  }
+
+  .section-sub {
+    font-size: 16px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+      perspective: none !important;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .brand img {
+    width: 48px;
+  }
+
+  .hero {
+    padding: 90px 14px 50px;
+  }
+
+  .hero h1 {
+    font-size: clamp(24px, 8vw, 40px);
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-number {
+    font-size: clamp(24px, 5vw, 36px);
+  }
+
+  .section-title {
+    font-size: clamp(22px, 5vw, 36px);
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  .work {
+    min-height: 240px;
+  }
+
+  .fab-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1082,6 +1275,7 @@ button, input, textarea, select { font: inherit; }
   * {
     animation: none !important;
     transition: none !important;
+    perspective: none !important;
   }
 }
 </style>
@@ -1118,7 +1312,7 @@ button, input, textarea, select { font: inherit; }
         <i class="fa-solid fa-star"></i> Construction • Event Management
       </div>
       <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
-      <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors in Duhok, Kurdistan.</p>
+      <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors in Kurdistan Region, Iraq.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">
           <i class="fa-solid fa-arrow-right"></i> Start a Project
@@ -1201,7 +1395,7 @@ button, input, textarea, select { font: inherit; }
   <section class="section" id="portfolio">
     <div class="container">
       <h2 class="section-title reveal">Selected <span class="gold">Work</span></h2>
-      <p class="section-sub reveal">Showcase of completed projects. Hover to see details.</p>
+      <p class="section-sub reveal">Showcase of completed projects. Hover or tap to see details.</p>
       <div class="work-grid">
         <div class="work reveal">
           <div class="work-inner">
@@ -1217,7 +1411,7 @@ button, input, textarea, select { font: inherit; }
             <div class="work-back">
               <div>
                 <h3>Commercial Construction</h3>
-                <p>Large-scale modern building delivery with full coordination</p>
+                <p>Large-scale modern building delivery with full coordination and quality control</p>
               </div>
             </div>
           </div>
@@ -1236,7 +1430,7 @@ button, input, textarea, select { font: inherit; }
             <div class="work-back">
               <div>
                 <h3>Corporate Event</h3>
-                <p>Full-scale event production with professional staging</p>
+                <p>Full-scale event production with professional staging and technical support</p>
               </div>
             </div>
           </div>
@@ -1255,7 +1449,7 @@ button, input, textarea, select { font: inherit; }
             <div class="work-back">
               <div>
                 <h3>Premium Delivery</h3>
-                <p>Premium projects with focus on quality and excellence</p>
+                <p>Premium projects executed with focus on quality, precision, and excellence</p>
               </div>
             </div>
           </div>
@@ -1302,7 +1496,7 @@ button, input, textarea, select { font: inherit; }
       <div class="testimonials reveal">
         <div class="testimonials-grid">
           <div class="quote">
-            <p>"Seven Points delivered our project with exceptional quality, clear communication, and professional handling."</p>
+            <p>"Seven Points delivered our project with exceptional quality, clear communication, and professional handling throughout the entire process."</p>
             <div class="quote-author">
               <div class="quote-avatar">GC</div>
               <div class="quote-info">
@@ -1312,7 +1506,7 @@ button, input, textarea, select { font: inherit; }
             </div>
           </div>
           <div class="quote">
-            <p>"The event setup was elegant, organized, and finished precisely on time. Remarkable attention to detail."</p>
+            <p>"The event setup was elegant, organized, and finished precisely on time. Their attention to detail is remarkable and impressive."</p>
             <div class="quote-author">
               <div class="quote-avatar">CD</div>
               <div class="quote-info">
@@ -1322,7 +1516,7 @@ button, input, textarea, select { font: inherit; }
             </div>
           </div>
           <div class="quote">
-            <p>"Seven Points handled our project with real professionalism, discipline, and commitment to excellence."</p>
+            <p>"Seven Points handled our complex project with real professionalism, discipline, and an unwavering commitment to excellence."</p>
             <div class="quote-author">
               <div class="quote-avatar">CP</div>
               <div class="quote-info">
@@ -1340,7 +1534,7 @@ button, input, textarea, select { font: inherit; }
   <section class="section" id="contact">
     <div class="container">
       <h2 class="section-title reveal">Get in <span class="gold">Touch</span></h2>
-      <p class="section-sub reveal">Ready to start? Contact us and let's create something exceptional.</p>
+      <p class="section-sub reveal">Ready to start? Contact us and let's create something exceptional together.</p>
       <div class="contact-grid">
         <div class="contact-list reveal">
           <div class="contact-item">
@@ -1408,7 +1602,7 @@ button, input, textarea, select { font: inherit; }
 
           <div class="form-group">
             <label for="message">Project Details *</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."></textarea>
             <div class="form-error">Please describe your project</div>
           </div>
 
@@ -1444,7 +1638,6 @@ button, input, textarea, select { font: inherit; }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let scrollTicking = false;
-  let statAnimated = {}; // Track which stats were animated
 
   // ===== MOBILE MENU =====
   hamburger?.addEventListener('click', () => {
@@ -1474,10 +1667,10 @@ button, input, textarea, select { font: inherit; }
     scrollTopBtn.classList.toggle('show', window.scrollY > 500);
   }, { passive: true });
 
-  // ===== COUNTER ANIMATION (SLOWER - 2.5 SECONDS) =====
+  // ===== COUNTER ANIMATION (2.5 SECONDS) =====
   const animateCounter = (el, target, suffix = '') => {
     const start = performance.now();
-    const duration = 2500; // SLOWER: 2.5 seconds instead of 900ms
+    const duration = 2500;
 
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
@@ -1493,22 +1686,19 @@ button, input, textarea, select { font: inherit; }
     requestAnimationFrame(tick);
   };
 
-  // ===== STATS INTERSECTION OBSERVER - RESETS EVERY TIME =====
+  // ===== STATS OBSERVER - RESETS ON SCROLL =====
   const statObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const target = parseInt(entry.target.dataset.target);
       const suffix = entry.target.dataset.suffix || '';
-      const statsId = entry.target;
 
       if (entry.isIntersecting) {
-        // COMING INTO VIEW - ANIMATE
         if (!reduceMotion) {
           animateCounter(entry.target.querySelector('.stat-number'), target, suffix);
         } else {
           entry.target.querySelector('.stat-number').textContent = target + suffix;
         }
       } else {
-        // LEAVING VIEW - RESET TO 0
         entry.target.querySelector('.stat-number').textContent = '0' + suffix;
       }
     });
@@ -1616,13 +1806,6 @@ button, input, textarea, select { font: inherit; }
           block: 'start'
         });
       }
-    });
-  });
-
-  // ===== FAB ANIMATION =====
-  document.querySelectorAll('.fab-btn').forEach(btn => {
-    btn.addEventListener('mouseenter', () => {
-      btn.style.animation = 'none';
     });
   });
 })();
