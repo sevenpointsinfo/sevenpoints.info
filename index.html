@@ -300,7 +300,7 @@ button, input, textarea, select { font: inherit; }
   border-radius: 999px;
   font-weight: 800;
   font-size: 15px;
-  transition: all .25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all .25s ease;
   cursor: pointer;
   border: none;
 }
@@ -330,7 +330,7 @@ button, input, textarea, select { font: inherit; }
   box-shadow: 0 24px 48px rgba(251, 175, 67, .35);
 }
 
-/* HERO MINI CARDS - SCROLL ROTATION ANIMATION */
+/* HERO MINI CARDS */
 .hero-mini {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -525,7 +525,7 @@ button, input, textarea, select { font: inherit; }
   line-height: 1.7;
 }
 
-/* ===== PORTFOLIO - 3D FLIP ===== */
+/* ===== PORTFOLIO - SMOOTH SCROLL ROTATION ===== */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -539,9 +539,9 @@ button, input, textarea, select { font: inherit; }
   overflow: hidden;
   background: #111;
   box-shadow: 0 20px 60px rgba(251, 175, 67, .08);
-  transition: transform .35s ease;
   animation: slideInUp .6s ease-out;
   cursor: pointer;
+  will-change: transform;
 }
 
 .work:nth-child(2) { animation-delay: .1s; }
@@ -626,6 +626,13 @@ button, input, textarea, select { font: inherit; }
 .work-overlay p {
   color: #ddd;
   font-size: 14px;
+}
+
+/* Subtle scroll rotation for desktop only */
+@media (min-width: 768px) {
+  .work {
+    transition: transform .3s ease;
+  }
 }
 
 /* ===== PROCESS SECTION ===== */
@@ -989,16 +996,6 @@ button, input, textarea, select { font: inherit; }
   visibility: visible;
 }
 
-/* ===== SCROLL ROTATION ANIMATION ===== */
-@keyframes slowRotate {
-  from { transform: rotateX(0deg); }
-  to { transform: rotateX(360deg); }
-}
-
-.scroll-rotate {
-  animation: slowRotate 8s linear infinite !important;
-}
-
 /* ===== REVEAL ANIMATION ===== */
 .reveal {
   opacity: 0;
@@ -1131,6 +1128,11 @@ button, input, textarea, select { font: inherit; }
 
   .work {
     min-height: 280px;
+  }
+
+  /* Disable transform on mobile to prevent lag */
+  .work {
+    transform: none !important;
   }
 
   .process-grid {
@@ -1278,15 +1280,15 @@ button, input, textarea, select { font: inherit; }
         </a>
       </div>
       <div class="hero-mini">
-        <div class="mini-card scroll-rotate" data-scroll-rotate="0">
+        <div class="mini-card">
           <strong>150+</strong>
           <span>Projects Delivered</span>
         </div>
-        <div class="mini-card scroll-rotate" data-scroll-rotate="1">
+        <div class="mini-card">
           <strong>5+</strong>
           <span>Years Experience</span>
         </div>
-        <div class="mini-card scroll-rotate" data-scroll-rotate="2">
+        <div class="mini-card">
           <strong>100%</strong>
           <span>On-Time Delivery</span>
         </div>
@@ -1353,7 +1355,7 @@ button, input, textarea, select { font: inherit; }
       <h2 class="section-title reveal">Selected <span class="gold">Work</span></h2>
       <p class="section-sub reveal">Showcase of completed projects. Hover or tap to see details.</p>
       <div class="work-grid">
-        <div class="work reveal">
+        <div class="work reveal" data-work-index="0">
           <div class="work-inner">
             <div class="work-front">
               <img loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80" alt="Commercial construction project">
@@ -1372,7 +1374,7 @@ button, input, textarea, select { font: inherit; }
             </div>
           </div>
         </div>
-        <div class="work reveal">
+        <div class="work reveal" data-work-index="1">
           <div class="work-inner">
             <div class="work-front">
               <img loading="lazy" src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80" alt="Corporate event production">
@@ -1391,7 +1393,7 @@ button, input, textarea, select { font: inherit; }
             </div>
           </div>
         </div>
-        <div class="work reveal">
+        <div class="work reveal" data-work-index="2">
           <div class="work-inner">
             <div class="work-front">
               <img loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=80" alt="Premium project delivery">
@@ -1591,10 +1593,12 @@ button, input, textarea, select { font: inherit; }
   const navbar = document.querySelector('.navbar');
   const contactForm = document.getElementById('contactForm');
   const reveals = document.querySelectorAll('.reveal');
-  const scrollRotateCards = document.querySelectorAll('.scroll-rotate');
+  const workCards = document.querySelectorAll('.work');
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
   let scrollTicking = false;
+  let lastScrollY = 0;
 
   // ===== MOBILE MENU =====
   hamburger?.addEventListener('click', () => {
@@ -1624,22 +1628,24 @@ button, input, textarea, select { font: inherit; }
     scrollTopBtn.classList.toggle('show', window.scrollY > 500);
   }, { passive: true });
 
-  // ===== SCROLL ROTATION ANIMATION FOR CARDS =====
+  // ===== SMOOTH SCROLL ROTATION FOR PORTFOLIO CARDS (DESKTOP ONLY) =====
   window.addEventListener('scroll', () => {
-    if (reduceMotion) return;
+    if (reduceMotion || isMobile) return;
 
-    scrollRotateCards.forEach((card, index) => {
+    workCards.forEach((card) => {
       const rect = card.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Check if element is in viewport
+      // Only apply rotation when scrolling down and card is in viewport
       if (rect.top < windowHeight && rect.bottom > 0) {
-        // Calculate rotation based on scroll position
-        const scrollPercent = (windowHeight - rect.top) / (windowHeight + rect.height);
-        const rotation = scrollPercent * 360;
+        // Calculate a subtle rotation based on scroll position (max 8 degrees)
+        const scrollPercent = (windowHeight - rect.top) / windowHeight;
+        const rotation = Math.max(0, Math.min(8, scrollPercent * 8));
 
-        // Apply smooth rotation
-        card.style.transform = `rotateX(${rotation}deg)`;
+        // Apply smooth subtle rotation (only Y axis)
+        card.style.transform = `perspective(800px) rotateY(${rotation}deg)`;
+      } else {
+        card.style.transform = 'perspective(800px) rotateY(0deg)';
       }
     });
   }, { passive: true });
