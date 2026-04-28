@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Seven Points delivers premium construction and event management solutions in Kurdistan Region, Iraq. 150+ projects, 100% on-time delivery.">
+<meta name="theme-color" content="#030303">
 <title>Seven Points | Premium Construction & Event Management</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +38,7 @@ body {
   background: linear-gradient(180deg, #030303 0%, #070707 100%);
   color: var(--text);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -50,6 +53,7 @@ button, input, textarea, select { font: inherit; }
   background: linear-gradient(90deg, var(--gold), var(--gold2));
   z-index: 999;
   width: 0;
+  transition: width .1s ease;
 }
 
 .navbar {
@@ -65,18 +69,36 @@ button, input, textarea, select { font: inherit; }
   backdrop-filter: blur(12px);
   background: rgba(3, 3, 3, .85);
   border-bottom: 1px solid var(--line);
+  transition: all .3s ease;
+}
+
+.navbar.scrolled {
+  padding: 10px 20px;
+  background: rgba(3, 3, 3, .95);
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
 }
 
 .brand img {
   width: 70px;
   height: auto;
   filter: brightness(1.15);
+  transition: transform .3s ease;
+}
+
+.brand img:hover {
+  transform: scale(1.05);
 }
 
 .nav-menu {
   display: flex;
   gap: 32px;
   list-style: none;
+  align-items: center;
 }
 
 .nav-menu a {
@@ -86,10 +108,27 @@ button, input, textarea, select { font: inherit; }
   text-transform: uppercase;
   letter-spacing: 1.2px;
   transition: color .25s ease;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width .3s ease;
 }
 
 .nav-menu a:hover, .nav-menu a.active {
   color: var(--gold);
+}
+
+.nav-menu a.active::after,
+.nav-menu a:hover::after {
+  width: 100%;
 }
 
 .hamburger {
@@ -107,10 +146,17 @@ button, input, textarea, select { font: inherit; }
   height: 2px;
   background: var(--text);
   border-radius: 2px;
+  transition: all .3s ease;
 }
 
 .section {
   padding: 96px 20px;
+  animation: fadeInUp .8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .container {
@@ -143,24 +189,44 @@ button, input, textarea, select { font: inherit; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(180deg, rgba(0, 0, 0, .18), rgba(0, 0, 0, .66)),
-    url('sevenpointsbg.png') center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .18), rgba(0, 0, 0, .66)), url('sevenpointsbg.png') center/cover no-repeat;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 50% 28%, rgba(251, 175, 67, .12), transparent 24%);
+  filter: blur(20px);
+  opacity: .85;
+  z-index: -1;
+  animation: subtlePulse 6s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { opacity: .85; transform: scale(1); }
+  50% { opacity: .92; transform: scale(1.01); }
 }
 
 .hero-inner {
   width: min(1120px, 100%);
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   font-size: clamp(42px, 8vw, 98px);
   font-weight: 900;
+  line-height: 1.01;
   margin: 20px 0;
   color: #fff;
+  text-shadow: 0 18px 50px rgba(0, 0, 0, .68);
 }
 
 .hero p {
   max-width: 760px;
-  margin: 20px auto;
+  margin: 22px auto;
   font-size: clamp(16px, 2vw, 22px);
   color: #f3f3f3;
 }
@@ -176,33 +242,98 @@ button, input, textarea, select { font: inherit; }
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 15px 24px;
   border-radius: 999px;
   font-weight: 800;
+  font-size: 15px;
+  transition: all .25s ease;
   cursor: pointer;
   border: none;
-  transition: all .25s ease;
 }
 
 .btn-primary {
   border: 1.5px solid rgba(251, 175, 67, .6);
   background: rgba(251, 175, 67, .08);
   color: #fff;
+  backdrop-filter: blur(12px);
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:focus {
+  transform: translateY(-3px);
   background: rgba(251, 175, 67, .15);
+  border-color: var(--gold);
   color: var(--gold);
 }
 
 .btn-secondary {
   background: linear-gradient(135deg, var(--gold), var(--gold2));
   color: #111;
+  box-shadow: 0 18px 36px rgba(251, 175, 67, .25);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-secondary:focus {
   transform: translateY(-3px);
+  box-shadow: 0 24px 48px rgba(251, 175, 67, .35);
+}
+
+.about-wrap, .stats-wrap, .testimonials {
+  background: linear-gradient(180deg, rgba(251, 175, 67, .04), rgba(251, 175, 67, .01));
+  border: 1px solid rgba(251, 175, 67, .15);
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .1);
+  backdrop-filter: blur(16px);
+  padding: 40px 30px;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  padding: 24px 16px;
+  border-radius: 20px;
+  background: rgba(251, 175, 67, .05);
+  border: 1px solid rgba(251, 175, 67, .1);
+  text-align: center;
+  transition: all .24s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  background: rgba(251, 175, 67, .1);
+  border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(251, 175, 67, .15);
+}
+
+.stat-number {
+  display: block;
+  font-size: clamp(38px, 7vw, 68px);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  margin-top: 8px;
+  color: #eaeaea;
+  font-weight: 600;
 }
 
 .cards-grid {
@@ -216,12 +347,27 @@ button, input, textarea, select { font: inherit; }
   border: 1px solid rgba(251, 175, 67, .15);
   border-radius: 24px;
   padding: 32px 28px;
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .08);
   transition: all .28s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
 }
 
 .card:hover {
   transform: translateY(-10px);
+  background: linear-gradient(180deg, rgba(251, 175, 67, .08), rgba(251, 175, 67, .03));
   border-color: var(--gold);
+  box-shadow: 0 30px 80px rgba(251, 175, 67, .15);
 }
 
 .card i {
@@ -231,6 +377,11 @@ button, input, textarea, select { font: inherit; }
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
   display: inline-block;
+  transition: transform .3s ease;
+}
+
+.card:hover i {
+  transform: scale(1.15) rotate(8deg);
 }
 
 .card h3 {
@@ -243,6 +394,16 @@ button, input, textarea, select { font: inherit; }
   color: var(--muted);
   line-height: 1.7;
   margin-bottom: 16px;
+}
+
+.card .btn-primary {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.card .btn-primary i {
+  font-size: 14px;
+  margin: 0;
 }
 
 .portfolio-filters {
@@ -260,6 +421,7 @@ button, input, textarea, select { font: inherit; }
   color: var(--muted);
   border-radius: 999px;
   font-weight: 700;
+  font-size: 14px;
   cursor: pointer;
   transition: all .25s ease;
   text-transform: uppercase;
@@ -269,6 +431,8 @@ button, input, textarea, select { font: inherit; }
 .filter-btn:hover, .filter-btn.active {
   background: linear-gradient(135deg, var(--gold), var(--gold2));
   color: #111;
+  border-color: var(--gold);
+  box-shadow: 0 8px 20px rgba(251, 175, 67, .2);
 }
 
 .work-grid {
@@ -283,6 +447,7 @@ button, input, textarea, select { font: inherit; }
   border-radius: 24px;
   overflow: hidden;
   background: #111;
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .08);
   cursor: pointer;
   transition: transform .3s ease;
 }
@@ -291,6 +456,7 @@ button, input, textarea, select { font: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform .4s ease;
 }
 
@@ -315,8 +481,8 @@ button, input, textarea, select { font: inherit; }
 
 .work-overlay h3 {
   font-size: 24px;
-  color: #fff;
   margin-bottom: 6px;
+  color: #fff;
 }
 
 .work-overlay p {
@@ -424,6 +590,7 @@ button, input, textarea, select { font: inherit; }
 
 .gallery-thumb:hover, .gallery-thumb.active {
   border-color: var(--gold);
+  transform: scale(1.05);
 }
 
 .modal-description h3 {
@@ -483,23 +650,42 @@ button, input, textarea, select { font: inherit; }
   flex: 1;
 }
 
-.process-grid, .stats-grid, .testimonials-grid {
+.process-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
 }
 
-.step, .stat-card, .quote {
-  padding: 24px;
-  border-radius: 20px;
+.step {
+  padding: 28px 24px;
+  border-radius: 22px;
   border: 1px solid rgba(251, 175, 67, .15);
   background: rgba(251, 175, 67, .03);
   transition: all .28s ease;
+  position: relative;
 }
 
-.step:hover, .stat-card:hover, .quote:hover {
-  transform: translateY(-6px);
+.step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+
+.step:hover {
+  transform: translateY(-8px);
+  background: rgba(251, 175, 67, .06);
   border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(251, 175, 67, .1);
+}
+
+.step:hover::before {
+  opacity: 1;
 }
 
 .step-no {
@@ -514,6 +700,7 @@ button, input, textarea, select { font: inherit; }
   font-weight: 900;
   margin-bottom: 16px;
   font-size: 20px;
+  box-shadow: 0 8px 20px rgba(251, 175, 67, .2);
 }
 
 .step h3 {
@@ -527,22 +714,37 @@ button, input, textarea, select { font: inherit; }
   font-size: 14px;
 }
 
-.stat-number {
-  font-size: 48px;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.testimonials {
+  margin-top: 40px;
 }
 
-.stat-label {
-  margin-top: 8px;
-  color: #eaeaea;
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.quote {
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(251, 175, 67, .05);
+  border: 1px solid rgba(251, 175, 67, .1);
+  transition: all .28s ease;
+  min-height: 100%;
+}
+
+.quote:hover {
+  transform: translateY(-6px);
+  background: rgba(251, 175, 67, .08);
+  border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(251, 175, 67, .12);
 }
 
 .quote p {
   color: #f0f0f0;
   font-style: italic;
+  font-size: 15px;
+  line-height: 1.8;
   margin-bottom: 16px;
 }
 
@@ -562,17 +764,36 @@ button, input, textarea, select { font: inherit; }
   justify-content: center;
   color: #111;
   font-weight: 900;
+  font-size: 14px;
+}
+
+.quote-info strong {
+  color: var(--gold);
+  font-size: 14px;
+  display: block;
+}
+
+.quote-info span {
+  font-size: 12px;
+  color: var(--muted);
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
+  align-items: start;
+}
+
+.contact-list {
+  display: grid;
+  gap: 14px;
 }
 
 .contact-item {
   display: flex;
   gap: 14px;
+  align-items: flex-start;
   padding: 20px;
   border-radius: 18px;
   background: rgba(251, 175, 67, .03);
@@ -582,7 +803,9 @@ button, input, textarea, select { font: inherit; }
 
 .contact-item:hover {
   transform: translateY(-5px);
+  background: rgba(251, 175, 67, .06);
   border-color: var(--gold);
+  box-shadow: 0 8px 20px rgba(251, 175, 67, .1);
 }
 
 .contact-ic {
@@ -594,8 +817,26 @@ button, input, textarea, select { font: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
   flex-shrink: 0;
+  font-size: 20px;
+  box-shadow: 0 8px 20px rgba(251, 175, 67, .2);
+}
+
+.contact-item h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.contact-item p, .contact-item a {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact-item a {
+  color: var(--gold);
+  font-weight: 600;
 }
 
 .form {
@@ -603,6 +844,7 @@ button, input, textarea, select { font: inherit; }
   border-radius: 24px;
   background: rgba(251, 175, 67, .03);
   border: 1px solid rgba(251, 175, 67, .1);
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .08);
 }
 
 .form-group {
@@ -613,28 +855,31 @@ button, input, textarea, select { font: inherit; }
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
+  font-size: 14px;
   color: #f0f0f0;
 }
 
 .form input, .form textarea, .form select {
   width: 100%;
-  padding: 16px;
+  padding: 16px 16px;
   border-radius: 12px;
   border: 1.5px solid rgba(251, 175, 67, .2);
   background: rgba(251, 175, 67, .03);
   color: #fff;
   outline: none;
-  min-height: 50px;
   transition: all .25s ease;
+  font-size: 15px;
+  min-height: 50px;
 }
 
 .form input::placeholder, .form textarea::placeholder {
   color: #a9a9a9;
 }
 
-.form input:focus, .form textarea:focus {
+.form input:focus, .form textarea:focus, .form select:focus {
   border-color: var(--gold);
   background: rgba(251, 175, 67, .06);
+  box-shadow: 0 0 0 3px rgba(251, 175, 67, .1);
 }
 
 .form button {
@@ -647,11 +892,15 @@ button, input, textarea, select { font: inherit; }
   font-weight: 900;
   cursor: pointer;
   transition: all .25s ease;
+  font-size: 15px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(251, 175, 67, .2);
 }
 
-.form button:hover {
+.form button:hover, .form button:focus {
   transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(251, 175, 67, .3);
 }
 
 .floating {
@@ -671,11 +920,12 @@ button, input, textarea, select { font: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 14px 30px rgba(251, 175, 67, .2);
+  transition: all .25s ease;
   border: none;
   cursor: pointer;
   font-size: 24px;
   text-decoration: none;
-  transition: all .25s ease;
 }
 
 .fab-btn:hover {
@@ -693,6 +943,7 @@ button, input, textarea, select { font: inherit; }
   opacity: 0;
   visibility: hidden;
   border: 1px solid rgba(251, 175, 67, .3);
+  transition: all .25s ease;
 }
 
 .scroll-top.show {
@@ -707,22 +958,31 @@ footer {
   color: var(--muted);
 }
 
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  max-width: 1400px;
-  margin: 0 auto 40px;
+  margin-bottom: 40px;
 }
 
 .footer-section h4 {
   color: #fff;
+  font-size: 16px;
   margin-bottom: 16px;
   font-weight: 700;
 }
 
 .footer-section ul {
   list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
 }
 
 .footer-section a {
@@ -735,6 +995,48 @@ footer {
   color: var(--gold);
 }
 
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(251, 175, 67, .1);
+  border: 1px solid rgba(251, 175, 67, .2);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -742,6 +1044,18 @@ footer {
 
   .nav-menu {
     display: none;
+  }
+
+  .hero {
+    padding: 110px 16px 60px;
+  }
+
+  .section {
+    padding: 60px 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .contact-grid {
@@ -763,6 +1077,24 @@ footer {
   .modal-video iframe {
     height: 300px;
   }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(24px, 8vw, 40px);
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
@@ -780,180 +1112,442 @@ footer {
     <span></span>
   </button>
   <ul class="nav-menu">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#hero" class="nav-link">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#services" class="nav-link">Services</a></li>
+    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+    <li><a href="#process" class="nav-link">Process</a></li>
+    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
   </ul>
 </nav>
 
-<main>
+<main id="main-content">
+  <!-- HERO SECTION -->
   <section class="hero" id="hero">
     <div class="hero-inner">
-      <div>Construction • Event Management</div>
-      <h1><span class="gold">Precision</span> in Construction. <span class="gold">Power</span> in Execution.</h1>
-      <p>Seven Points delivers integrated construction, event management, and production solutions.</p>
+      <div style="color: var(--muted); font-size: 14px; margin-bottom: 16px; letter-spacing: 1px;">Construction • Event Management</div>
+      <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
+      <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors in Kurdistan Region, Iraq.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Start Project</a>
+        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Start a Project</a>
         <a href="tel:+9647502205577" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Call Now</a>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT SECTION -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About <span class="gold">Seven Points</span></h2>
+      <p class="section-sub">Building trust through excellence and professional execution</p>
+      <div class="about-wrap">
+        <div class="about-content">
+          <p>Seven Points is a premier construction and event management company based in Duhok, Kurdistan Region. With over 5 years of proven experience, we have successfully delivered 150+ projects across commercial, corporate, and government sectors.</p>
+          
+          <p>Our commitment to precision, professionalism, and punctuality has made us a trusted partner for organizations seeking reliable solutions. We combine innovative approaches with rigorous quality control to ensure every project exceeds expectations.</p>
+
+          <p>From large-scale construction projects to sophisticated event productions, our dedicated team brings expertise, discipline, and unwavering commitment to excellence in every engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="section" id="stats">
+    <div class="container">
+      <h2 class="section-title">Proven <span class="gold">Results</span></h2>
+      <p class="section-sub">Consistent excellence backed by measurable outcomes</p>
+      <div class="stats-wrap">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number" data-target="150">0</span>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="5">0</span>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="100">0</span>
+            <div class="stat-label">On-Time Delivery (%)</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="50">0</span>
+            <div class="stat-label">Satisfied Clients</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
   <section class="section" id="services">
     <div class="container">
       <h2 class="section-title">Our <span class="gold">Services</span></h2>
+      <p class="section-sub">Professional solutions designed to deliver results</p>
       <div class="cards-grid">
         <div class="card">
           <i class="fa-solid fa-hard-hat"></i>
-          <h3>Construction</h3>
-          <p>Full-scale construction from planning to delivery.</p>
+          <h3>Construction Management</h3>
+          <p>Full-scale construction from planning to delivery, including structure, finishing, and comprehensive site coordination.</p>
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
         </div>
         <div class="card">
           <i class="fa-solid fa-calendar-check"></i>
           <h3>Event Management</h3>
-          <p>Professional events with complete production.</p>
+          <p>Corporate and government events with complete production, professional setup, logistics, and dedicated support.</p>
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
         </div>
         <div class="card">
           <i class="fa-solid fa-clipboard-check"></i>
           <h3>Site Supervision</h3>
-          <p>Quality control and progress monitoring.</p>
+          <p>Daily quality control, rigorous progress monitoring, and comprehensive supervision to keep projects on track.</p>
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PORTFOLIO SECTION -->
   <section class="section" id="portfolio">
     <div class="container">
       <h2 class="section-title">Selected <span class="gold">Work</span></h2>
+      <p class="section-sub">Showcase of completed projects</p>
       
       <div class="portfolio-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn active" data-filter="all">All Projects</button>
         <button class="filter-btn" data-filter="construction">Construction</button>
-        <button class="filter-btn" data-filter="event">Event</button>
+        <button class="filter-btn" data-filter="event">Event Management</button>
       </div>
 
-      <div class="work-grid">
-        <div class="work" data-category="construction" data-project="p1">
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500" alt="Project">
-          <div class="work-overlay"><div><h3>Commercial</h3><p>Modern office</p></div></div>
+      <div class="work-grid" id="workGrid">
+        <div class="work" data-category="construction" data-project="project1">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80" alt="Commercial Building">
+          <div class="work-overlay"><div><h3>Commercial Building</h3><p>Modern office complex</p></div></div>
         </div>
-        <div class="work" data-category="construction" data-project="p2">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500" alt="Project">
-          <div class="work-overlay"><div><h3>Residential</h3><p>Housing complex</p></div></div>
+        <div class="work" data-category="construction" data-project="project2">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80" alt="Residential Complex">
+          <div class="work-overlay"><div><h3>Residential Complex</h3><p>Premium housing development</p></div></div>
         </div>
-        <div class="work" data-category="event" data-project="p3">
-          <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?w=500" alt="Project">
-          <div class="work-overlay"><div><h3>Corporate</h3><p>Summit event</p></div></div>
+        <div class="work" data-category="construction" data-project="project3">
+          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80" alt="Infrastructure">
+          <div class="work-overlay"><div><h3>Infrastructure Project</h3><p>Transportation hub</p></div></div>
+        </div>
+        <div class="work" data-category="event" data-project="project4">
+          <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80" alt="Corporate Summit">
+          <div class="work-overlay"><div><h3>Corporate Summit</h3><p>International conference</p></div></div>
+        </div>
+        <div class="work" data-category="event" data-project="project5">
+          <img src="https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80" alt="Wedding">
+          <div class="work-overlay"><div><h3>Wedding Celebration</h3><p>Premium event production</p></div></div>
+        </div>
+        <div class="work" data-category="event" data-project="project6">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80" alt="Product Launch">
+          <div class="work-overlay"><div><h3>Product Launch</h3><p>Brand experience event</p></div></div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PROCESS SECTION -->
+  <section class="section" id="process">
+    <div class="container">
+      <h2 class="section-title">How We <span class="gold">Work</span></h2>
+      <p class="section-sub">A proven 4-step process built for clarity and delivery</p>
+      <div class="process-grid">
+        <div class="step">
+          <div class="step-no">01</div>
+          <h3>Consultation</h3>
+          <p>We review your project goals, scope, and timeline in detail.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">02</div>
+          <h3>Planning</h3>
+          <p>We prepare comprehensive execution plan and source materials.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">03</div>
+          <h3>Execution</h3>
+          <p>We manage with full supervision and daily progress updates.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">04</div>
+          <h3>Delivery</h3>
+          <p>We complete handover with quality checks and support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Client <span class="gold">Feedback</span></h2>
+      <p class="section-sub">Trusted by government, corporate, and commercial clients</p>
+      <div class="testimonials">
+        <div class="testimonials-grid" id="testimonialsGrid">
+          <div class="quote">
+            <p>"Seven Points delivered our project with exceptional quality, clear communication, and professional handling throughout the entire process."</p>
+            <div class="quote-author">
+              <div class="quote-avatar">GC</div>
+              <div class="quote-info">
+                <strong>Government Client</strong>
+                <span>Project Director</span>
+              </div>
+            </div>
+          </div>
+          <div class="quote">
+            <p>"The event setup was elegant, organized, and finished precisely on time. Their attention to detail is remarkable and impressive."</p>
+            <div class="quote-author">
+              <div class="quote-avatar">CD</div>
+              <div class="quote-info">
+                <strong>Corporate Director</strong>
+                <span>Event Organizer</span>
+              </div>
+            </div>
+          </div>
+          <div class="quote">
+            <p>"Seven Points handled our complex project with real professionalism, discipline, and an unwavering commitment to excellence."</p>
+            <div class="quote-author">
+              <div class="quote-avatar">CP</div>
+              <div class="quote-info">
+                <strong>Commercial Partner</strong>
+                <span>Construction Lead</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
   <section class="section" id="contact">
     <div class="container">
       <h2 class="section-title">Get in <span class="gold">Touch</span></h2>
+      <p class="section-sub">Ready to start? Contact us and let's create something exceptional together.</p>
       <div class="contact-grid">
-        <div>
+        <div class="contact-list">
           <div class="contact-item">
             <div class="contact-ic"><i class="fa-solid fa-phone"></i></div>
             <div><h3>Phone</h3><p><a href="tel:+9647502205577">+964 750 220 5577</a></p></div>
           </div>
+          <div class="contact-item">
+            <div class="contact-ic"><i class="fa-solid fa-envelope"></i></div>
+            <div><h3>Email</h3><p><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-ic"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Office Address</h3><p>Zirka Road, Duhok<br>Kurdistan Region, Iraq</p></div>
+          </div>
         </div>
-        <form class="form" id="contactForm">
+
+        <form class="form" id="contactForm" novalidate>
           <div class="form-group">
-            <label>Full Name *</label>
-            <input type="text" name="name" required>
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
           </div>
           <div class="form-group">
-            <label>Email *</label>
-            <input type="email" name="email" required>
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
           </div>
-          <button type="submit">Send</button>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+964 750 220 5577">
+          </div>
+          <div class="form-group">
+            <label for="project-type">Project Type *</label>
+            <select id="project-type" name="projectType" required>
+              <option value="">Select project type...</option>
+              <option value="construction">Construction</option>
+              <option value="event">Event Management</option>
+              <option value="supervision">Site Supervision</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details *</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </div>
   </section>
 </main>
 
-<div class="modal" id="modal">
+<!-- PORTFOLIO MODAL -->
+<div class="modal" id="portfolioModal">
   <div class="modal-content">
     <div class="modal-header">
-      <h2 class="modal-title">Project</h2>
-      <button class="modal-close">✕</button>
+      <h2 class="modal-title" id="modalTitle">Project</h2>
+      <button class="modal-close" id="modalClose">✕</button>
     </div>
-    <div class="gallery-main"><img id="mainImg" src="" alt=""></div>
-    <div class="gallery-thumbs" id="thumbs"></div>
-    <div class="modal-description"><p id="desc"></p></div>
-    <button class="btn btn-primary" onclick="document.getElementById('modal').classList.remove('show')">Close</button>
+    <div class="gallery-main"><img id="galleryMain" src="" alt=""></div>
+    <div class="gallery-thumbs" id="galleryThumbs"></div>
+    <div class="modal-description"><h3>Project Overview</h3><p id="projectDescription"></p></div>
+    <div class="modal-details">
+      <div class="detail-item"><strong>Category</strong><span id="projectCategory"></span></div>
+      <div class="detail-item"><strong>Duration</strong><span id="projectDuration"></span></div>
+      <div class="detail-item"><strong>Client Type</strong><span id="projectClient"></span></div>
+    </div>
+    <div class="modal-video"><iframe id="projectVideo" src="" allowfullscreen></iframe></div>
+    <div class="modal-actions">
+      <button class="btn btn-primary" id="backBtn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+      <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-arrow-right"></i> Start Project</a>
+    </div>
   </div>
 </div>
 
+<!-- FLOATING BUTTONS -->
 <div class="floating">
   <a class="fab-btn whatsapp" href="https://wa.me/9647502205577" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
   <a class="fab-btn scroll-top" href="#hero">↑</a>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <div class="footer-grid" style="max-width: 1400px; margin: 0 auto;">
-    <div class="footer-section">
-      <h4>Seven Points</h4>
-      <p>Premium construction and event management solutions.</p>
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h4>Seven Points</h4>
+        <p>Premium construction and event management solutions.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Construction</a></li>
+          <li><a href="#services">Event Management</a></li>
+          <li><a href="#contact">Get Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+9647502205577">+964 750 220 5577</a></li>
+          <li><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></li>
+          <li>Zirka Road, Duhok</li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Seven Points. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
 <script>
-const projects = {
-  p1: { title: 'Commercial Building', desc: 'Modern office complex', imgs: ['https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500', 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=500'] },
-  p2: { title: 'Residential', desc: 'Housing development', imgs: ['https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500', 'https://images.unsplash.com/photo-1493788048098-0880cd7da3fa?w=500'] },
-  p3: { title: 'Corporate Summit', desc: 'Event production', imgs: ['https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?w=500', 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500'] }
+const projectsData = {
+  project1: { title: 'Commercial Building', category: 'Construction', duration: '18 months', clientType: 'Corporate', desc: 'Large-scale modern office complex with state-of-the-art infrastructure.', imgs: ['https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600', 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=600'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+  project2: { title: 'Residential Complex', category: 'Construction', duration: '24 months', clientType: 'Developer', desc: 'Premium residential complex with 200+ units and modern amenities.', imgs: ['https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600', 'https://images.unsplash.com/photo-1493788048098-0880cd7da3fa?w=600'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+  project3: { title: 'Infrastructure Project', category: 'Construction', duration: '30 months', clientType: 'Government', desc: 'Major transportation hub with terminal and access roads.', imgs: ['https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600', 'https://images.unsplash.com/photo-1467495682498-f1104393e25b?w=600'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+  project4: { title: 'Corporate Summit', category: 'Event Management', duration: '6 weeks', clientType: 'Corporate', desc: 'International conference with 2000+ attendees and keynote speakers.', imgs: ['https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?w=600', 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+  project5: { title: 'Wedding Celebration', category: 'Event Management', duration: '4 months', clientType: 'Private', desc: 'Luxury wedding event for 500 guests with professional production.', imgs: ['https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?w=600', 'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?w=600'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+  project6: { title: 'Product Launch', category: 'Event Management', duration: '8 weeks', clientType: 'Corporate', desc: 'Innovative product launch with interactive displays and 1500+ attendees.', imgs: ['https://images.unsplash.com/photo-1552664730-d307ca884978?w=600', 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600'], video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }
 };
 
-document.querySelectorAll('.work').forEach(el => {
-  el.onclick = () => {
-    const p = projects[el.dataset.project];
-    if (!p) return;
-    document.querySelector('.modal-title').textContent = p.title;
-    document.getElementById('mainImg').src = p.imgs[0];
-    document.getElementById('desc').textContent = p.desc;
-    document.getElementById('thumbs').innerHTML = p.imgs.map((img, i) => `<div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="document.getElementById('mainImg').src='${img}'; document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active')); this.classList.add('active')"><img src="${img}"></div>`).join('');
-    document.getElementById('modal').classList.add('show');
-  };
+// Stats animation
+document.querySelectorAll('[data-target]').forEach(el => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = parseInt(el.dataset.target);
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            el.textContent = target;
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.floor(current);
+          }
+        }, 30);
+        observer.unobserve(el);
+      }
+    });
+  });
+  observer.observe(el);
 });
 
-document.querySelector('.modal-close').onclick = () => document.getElementById('modal').classList.remove('show');
+// Portfolio modal
+document.querySelectorAll('.work').forEach(card => {
+  card.addEventListener('click', () => {
+    const projectId = card.dataset.project;
+    const project = projectsData[projectId];
+    if (project) {
+      document.getElementById('modalTitle').textContent = project.title;
+      document.getElementById('projectDescription').textContent = project.desc;
+      document.getElementById('projectCategory').textContent = project.category;
+      document.getElementById('projectDuration').textContent = project.duration;
+      document.getElementById('projectClient').textContent = project.clientType;
+      document.getElementById('galleryMain').src = project.imgs[0];
+      document.getElementById('projectVideo').src = project.video;
+      document.getElementById('galleryThumbs').innerHTML = project.imgs.map((img, i) => `<div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="document.getElementById('galleryMain').src='${img}'; document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active')); this.classList.add('active')"><img src="${img}"></div>`).join('');
+      document.getElementById('portfolioModal').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
 
+document.getElementById('modalClose').addEventListener('click', () => {
+  document.getElementById('portfolioModal').classList.remove('show');
+  document.body.style.overflow = 'auto';
+});
+
+document.getElementById('backBtn').addEventListener('click', () => {
+  document.getElementById('portfolioModal').classList.remove('show');
+  document.body.style.overflow = 'auto';
+});
+
+// Filter
 document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.onclick = () => {
+  btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.dataset.filter;
-    document.querySelectorAll('.work').forEach(w => {
-      w.style.display = filter === 'all' || w.dataset.category === filter ? 'block' : 'none';
+    document.querySelectorAll('.work').forEach(work => {
+      work.style.display = filter === 'all' || work.dataset.category === filter ? 'block' : 'none';
     });
-  };
+  });
 });
 
+// Scroll progress
 window.addEventListener('scroll', () => {
   const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
   document.querySelector('.scroll-progress').style.width = scrolled + '%';
   document.querySelector('.scroll-top').classList.toggle('show', window.scrollY > 500);
+  document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
 });
 
-document.getElementById('contactForm').onsubmit = (e) => {
+// Form
+document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
   alert('Thank you! We will contact you soon.');
-  this.reset();
-};
+  document.getElementById('contactForm').reset();
+});
+
+// Nav links
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
 </script>
 </body>
 </html>
