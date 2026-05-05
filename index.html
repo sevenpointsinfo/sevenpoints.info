@@ -744,6 +744,8 @@ button, input, textarea, select { font: inherit; }
   margin-bottom: 20px;
   background: #111;
   height: 450px;
+  opacity: 1;
+  transition: opacity .15s ease;
 }
 
 .carousel-main img,
@@ -752,6 +754,12 @@ button, input, textarea, select { font: inherit; }
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.carousel-main iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .carousel-controls {
@@ -1519,6 +1527,7 @@ footer {
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .stat-card {
@@ -2236,7 +2245,7 @@ const projectsData = {
       { type: 'image', src: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80', alt: 'Project completion' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80', alt: 'Final walkthrough' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80', alt: 'Project overview' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', alt: 'Project video' }
+      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Project video' }
     ]
   },
   project2: {
@@ -2255,7 +2264,7 @@ const projectsData = {
       { type: 'image', src: 'https://images.unsplash.com/photo-1552672260-96c77eeadce1?auto=format&fit=crop&w=1600&q=80', alt: 'Parking area' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80', alt: 'Night view' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1520932091298-1b5eab9c3789?auto=format&fit=crop&w=1600&q=80', alt: 'Entrance' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', alt: 'Project video' }
+      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Project video' }
     ]
   },
   project3: {
@@ -2274,7 +2283,7 @@ const projectsData = {
       { type: 'image', src: 'https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=1600&q=80', alt: 'Utilities' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80', alt: 'Final phase' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80', alt: 'Completion' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', alt: 'Project video' }
+      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Project video' }
     ]
   },
   project4: {
@@ -2293,7 +2302,7 @@ const projectsData = {
       { type: 'image', src: 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80', alt: 'Workshop session' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80', alt: 'Evening event' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80', alt: 'Audience' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', alt: 'Event highlights' }
+      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Event highlights' }
     ]
   },
   project5: {
@@ -2312,7 +2321,7 @@ const projectsData = {
       { type: 'image', src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80', alt: 'Dance floor' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80', alt: 'Lighting' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80', alt: 'Night view' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', alt: 'Wedding highlights' }
+      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Wedding highlights' }
     ]
   },
   project6: {
@@ -2331,13 +2340,14 @@ const projectsData = {
       { type: 'image', src: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80', alt: 'Crowd reaction' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80', alt: 'Photo ops' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80', alt: 'After party' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', alt: 'Launch video' }
+      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Launch video' }
     ]
   }
 };
 
 let currentSlide = 0;
 let currentProjectMedia = [];
+let autoPlayInterval = null;
 
 const scrollTopBtn = document.querySelector('.scroll-top');
 const scrollProgress = document.querySelector('.scroll-progress');
@@ -2461,26 +2471,32 @@ filterBtns.forEach(btn => {
   });
 });
 
-// CAROUSEL FUNCTIONS
+// CAROUSEL FUNCTIONS WITH AUTO-PLAY
 function updateCarousel() {
   const media = currentProjectMedia[currentSlide];
   const carouselMain = document.getElementById('carouselMain');
   
-  carouselMain.innerHTML = '';
+  carouselMain.style.opacity = '0';
   
-  if (media.type === 'image') {
-    const img = document.createElement('img');
-    img.src = media.src;
-    img.alt = media.alt;
-    carouselMain.appendChild(img);
-  } else if (media.type === 'video') {
-    const iframe = document.createElement('iframe');
-    iframe.src = media.src;
-    iframe.frameborder = '0';
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    iframe.allowFullscreen = true;
-    carouselMain.appendChild(iframe);
-  }
+  setTimeout(() => {
+    carouselMain.innerHTML = '';
+    
+    if (media.type === 'image') {
+      const img = document.createElement('img');
+      img.src = media.src;
+      img.alt = media.alt;
+      carouselMain.appendChild(img);
+    } else if (media.type === 'video') {
+      const iframe = document.createElement('iframe');
+      iframe.src = media.src;
+      iframe.frameborder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      carouselMain.appendChild(iframe);
+    }
+    
+    carouselMain.style.opacity = '1';
+  }, 150);
   
   document.getElementById('carouselIndex').textContent = currentSlide + 1;
   document.getElementById('carouselTotal').textContent = currentProjectMedia.length;
@@ -2501,14 +2517,45 @@ function prevSlide() {
   updateCarousel();
 }
 
-prevBtn.addEventListener('click', prevSlide);
-nextBtn.addEventListener('click', nextSlide);
+function startAutoPlay() {
+  if (autoPlayInterval) clearInterval(autoPlayInterval);
+  
+  autoPlayInterval = setInterval(() => {
+    nextSlide();
+  }, 5000);
+}
 
-// KEYBOARD NAVIGATION
+function stopAutoPlay() {
+  if (autoPlayInterval) {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = null;
+  }
+}
+
+prevBtn.addEventListener('click', () => {
+  stopAutoPlay();
+  prevSlide();
+  startAutoPlay();
+});
+
+nextBtn.addEventListener('click', () => {
+  stopAutoPlay();
+  nextSlide();
+  startAutoPlay();
+});
+
 document.addEventListener('keydown', (e) => {
   if (portfolioModal.classList.contains('show')) {
-    if (e.key === 'ArrowRight') nextSlide();
-    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') {
+      stopAutoPlay();
+      nextSlide();
+      startAutoPlay();
+    }
+    if (e.key === 'ArrowLeft') {
+      stopAutoPlay();
+      prevSlide();
+      startAutoPlay();
+    }
     if (e.key === 'Escape') closeProjectModal();
   }
 });
@@ -2528,7 +2575,6 @@ workCards.forEach(card => {
       document.getElementById('projectDuration').textContent = project.duration;
       document.getElementById('projectClient').textContent = project.clientType;
 
-      // Build thumbnails
       const thumbsContainer = document.getElementById('carouselThumbs');
       thumbsContainer.innerHTML = '';
       
@@ -2546,8 +2592,10 @@ workCards.forEach(card => {
         }
         
         thumb.addEventListener('click', () => {
+          stopAutoPlay();
           currentSlide = index;
           updateCarousel();
+          startAutoPlay();
         });
         
         thumbsContainer.appendChild(thumb);
@@ -2556,11 +2604,15 @@ workCards.forEach(card => {
       updateCarousel();
       portfolioModal.classList.add('show');
       document.body.style.overflow = 'hidden';
+      
+      startAutoPlay();
     }
   });
 });
 
 const closeProjectModal = () => {
+  stopAutoPlay();
+  
   portfolioModal.classList.remove('show');
   document.body.style.overflow = 'auto';
 };
