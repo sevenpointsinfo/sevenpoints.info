@@ -732,7 +732,7 @@ button, input, textarea, select { font: inherit; }
   color: #111;
 }
 
-/* CAROUSEL GALLERY - SMOOTH SLIDE FROM RIGHT TO LEFT */
+/* APPLE STYLE CIRCULAR CAROUSEL */
 .carousel-gallery {
   margin-bottom: 40px;
 }
@@ -744,6 +744,7 @@ button, input, textarea, select { font: inherit; }
   background: #111;
   height: 450px;
   margin-bottom: 20px;
+  perspective: 1200px;
 }
 
 .carousel-wrapper {
@@ -759,18 +760,52 @@ button, input, textarea, select { font: inherit; }
   height: 100%;
   top: 0;
   left: 0;
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 1;
+  transition: all 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
+  transform-origin: center;
 }
 
-.carousel-main.slide-right {
-  transform: translateX(100%);
+.carousel-main.prev-exit {
+  transform: translateX(-100%) scale(0.95);
+  opacity: 0;
 }
 
-.carousel-main.slide-left {
-  transform: translateX(-100%);
+.carousel-main.next-exit {
+  transform: translateX(100%) scale(0.95);
+  opacity: 0;
+}
+
+.carousel-main.prev-enter {
+  animation: prevEnter 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+.carousel-main.next-enter {
+  animation: nextEnter 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+@keyframes prevEnter {
+  from {
+    transform: translateX(-100%) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes nextEnter {
+  from {
+    transform: translateX(100%) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
 }
 
 .carousel-main img,
@@ -789,60 +824,70 @@ button, input, textarea, select { font: inherit; }
 
 .carousel-controls {
   position: absolute;
-  bottom: 20px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 12px;
+  gap: 16px;
   z-index: 10;
+  background: rgba(0, 0, 0, .4);
+  padding: 12px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(20px);
 }
 
 .carousel-btn {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(251, 175, 67, .2);
+  background: rgba(251, 175, 67, .25);
   border: 1px solid rgba(251, 175, 67, .4);
   color: var(--gold);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .25s ease;
+  transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1);
   font-size: 16px;
-  will-change: background;
+  will-change: background, transform;
 }
 
 .carousel-btn:hover {
-  background: rgba(251, 175, 67, .4);
+  background: rgba(251, 175, 67, .5);
   border-color: var(--gold);
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
 }
 
 .carousel-indicator {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  background: rgba(0, 0, 0, .6);
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, .5);
   color: var(--gold);
   padding: 8px 14px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 175, 67, .2);
 }
 
 .carousel-thumbnails {
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  padding-bottom: 8px;
+  padding: 12px 0;
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: rgba(251, 175, 67, .2) transparent;
 }
 
 .carousel-thumbnails::-webkit-scrollbar {
-  height: 6px;
+  height: 4px;
 }
 
 .carousel-thumbnails::-webkit-scrollbar-track {
@@ -851,7 +896,7 @@ button, input, textarea, select { font: inherit; }
 
 .carousel-thumbnails::-webkit-scrollbar-thumb {
   background: rgba(251, 175, 67, .3);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .carousel-thumbnails::-webkit-scrollbar-thumb:hover {
@@ -862,12 +907,13 @@ button, input, textarea, select { font: inherit; }
   min-width: 90px;
   width: 90px;
   height: 90px;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: all .25s ease;
+  transition: all .4s cubic-bezier(0.4, 0.0, 0.2, 1);
   position: relative;
+  flex-shrink: 0;
 }
 
 .carousel-thumb img,
@@ -875,16 +921,22 @@ button, input, textarea, select { font: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform .4s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .carousel-thumb.active {
   border-color: var(--gold);
-  box-shadow: 0 0 12px rgba(251, 175, 67, .3);
+  box-shadow: 0 0 0 3px rgba(251, 175, 67, .2), 0 8px 24px rgba(251, 175, 67, .3);
+  transform: scale(1);
 }
 
-.carousel-thumb:hover {
+.carousel-thumb:hover:not(.active) {
   transform: scale(1.05);
-  border-color: var(--gold);
+  border-color: rgba(251, 175, 67, .4);
+}
+
+.carousel-thumb:hover img {
+  transform: scale(1.1);
 }
 
 .carousel-thumb.video-thumb::before {
@@ -897,14 +949,15 @@ button, input, textarea, select { font: inherit; }
   z-index: 1;
   width: 0;
   height: 0;
-  border-left: 20px solid var(--gold);
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  opacity: .8;
+  border-left: 18px solid var(--gold);
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
   margin: auto;
+  opacity: .9;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .5));
 }
 
-/* VIDEO SECTION - SEPARATED */
+/* SEPARATE VIDEO SECTION */
 .video-section {
   margin-top: 40px;
   padding: 40px;
@@ -920,12 +973,24 @@ button, input, textarea, select { font: inherit; }
   color: #fff;
   font-weight: 700;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.video-section h4 i {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .modal-video {
   border-radius: 20px;
   overflow: hidden;
   background: #111;
+  box-shadow: 0 10px 30px rgba(251, 175, 67, .1);
 }
 
 .modal-video iframe {
@@ -935,6 +1000,7 @@ button, input, textarea, select { font: inherit; }
 }
 
 .modal-description {
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 
@@ -1642,19 +1708,20 @@ footer {
   }
 
   .carousel-controls {
-    bottom: 12px;
-    gap: 8px;
+    bottom: 16px;
+    gap: 12px;
+    padding: 10px 16px;
   }
 
   .carousel-btn {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     font-size: 14px;
   }
 
   .carousel-indicator {
-    top: 12px;
-    right: 12px;
+    top: 16px;
+    right: 16px;
     font-size: 11px;
     padding: 6px 11px;
   }
@@ -2154,17 +2221,17 @@ footer {
       </button>
     </div>
 
-    <!-- PHOTO CAROUSEL -->
+    <!-- APPLE STYLE CAROUSEL -->
     <div class="carousel-gallery">
       <div class="carousel-container">
         <div class="carousel-wrapper">
           <div class="carousel-main" id="carouselMain">
-            <img id="carouselImage" src="" alt="Project">
+            <img src="" alt="Project">
           </div>
         </div>
 
         <div class="carousel-indicator">
-          <span id="carouselIndex">1</span> / <span id="carouselTotal">8</span>
+          <span id="carouselIndex">1</span> / <span id="carouselTotal">9</span>
         </div>
 
         <div class="carousel-controls">
@@ -2412,7 +2479,6 @@ const projectsData = {
 let currentSlide = 0;
 let currentPhotos = [];
 let autoPlayInterval = null;
-let isSliding = false;
 
 const scrollTopBtn = document.querySelector('.scroll-top');
 const scrollProgress = document.querySelector('.scroll-progress');
@@ -2536,32 +2602,34 @@ filterBtns.forEach(btn => {
   });
 });
 
-// SMOOTH SLIDE CAROUSEL FROM RIGHT TO LEFT
-function updateCarousel() {
-  if (isSliding) return;
-  isSliding = true;
-
+// APPLE STYLE CIRCULAR CAROUSEL
+function updateCarousel(direction = 'next') {
   const carouselMain = document.getElementById('carouselMain');
-  const photo = currentPhotos[currentSlide];
+  const img = document.createElement('img');
+  img.src = currentPhotos[currentSlide];
+  img.alt = `Project photo ${currentSlide + 1}`;
+
+  const newCarouselMain = document.createElement('div');
+  newCarouselMain.className = 'carousel-main';
   
-  carouselMain.classList.add('slide-right');
-  
+  if (direction === 'next') {
+    newCarouselMain.classList.add('next-enter');
+    carouselMain.classList.add('next-exit');
+  } else {
+    newCarouselMain.classList.add('prev-enter');
+    carouselMain.classList.add('prev-exit');
+  }
+
+  newCarouselMain.appendChild(img);
+  carouselMain.parentElement.insertBefore(newCarouselMain, carouselMain);
+
   setTimeout(() => {
-    const img = document.createElement('img');
-    img.src = photo;
-    img.alt = `Project photo ${currentSlide + 1}`;
-    
-    carouselMain.innerHTML = '';
-    carouselMain.appendChild(img);
-    carouselMain.classList.remove('slide-right');
-    carouselMain.classList.remove('slide-left');
-    
-    isSliding = false;
-  }, 400);
-  
+    carouselMain.remove();
+  }, 700);
+
   document.getElementById('carouselIndex').textContent = currentSlide + 1;
   document.getElementById('carouselTotal').textContent = currentPhotos.length;
-  
+
   const thumbs = document.querySelectorAll('.carousel-thumb');
   thumbs.forEach((thumb, idx) => {
     if (idx < currentPhotos.length) {
@@ -2572,12 +2640,12 @@ function updateCarousel() {
 
 function nextSlide() {
   currentSlide = (currentSlide + 1) % currentPhotos.length;
-  updateCarousel();
+  updateCarousel('next');
 }
 
 function prevSlide() {
   currentSlide = (currentSlide - 1 + currentPhotos.length) % currentPhotos.length;
-  updateCarousel();
+  updateCarousel('prev');
 }
 
 function startAutoPlay() {
@@ -2639,6 +2707,13 @@ workCards.forEach(card => {
       document.getElementById('projectClient').textContent = project.clientType;
       document.getElementById('projectVideo').src = project.video;
 
+      const carouselMain = document.getElementById('carouselMain');
+      const img = document.createElement('img');
+      img.src = project.photos[0];
+      img.alt = 'Project photo';
+      carouselMain.innerHTML = '';
+      carouselMain.appendChild(img);
+
       const thumbsContainer = document.getElementById('carouselThumbs');
       thumbsContainer.innerHTML = '';
       
@@ -2646,29 +2721,21 @@ workCards.forEach(card => {
         const thumb = document.createElement('div');
         thumb.className = 'carousel-thumb' + (index === 0 ? ' active' : '');
         
-        const img = document.createElement('img');
-        img.src = photo;
-        img.alt = `Thumbnail ${index + 1}`;
-        thumb.appendChild(img);
+        const thumbImg = document.createElement('img');
+        thumbImg.src = photo;
+        thumbImg.alt = `Thumbnail ${index + 1}`;
+        thumb.appendChild(thumbImg);
         
         thumb.addEventListener('click', () => {
           stopAutoPlay();
           currentSlide = index;
-          updateCarousel();
+          updateCarousel(index > currentSlide ? 'next' : 'prev');
           startAutoPlay();
         });
         
         thumbsContainer.appendChild(thumb);
       });
 
-      const firstImg = document.createElement('img');
-      firstImg.src = project.photos[0];
-      firstImg.alt = 'Project photo';
-      
-      const carouselMain = document.getElementById('carouselMain');
-      carouselMain.innerHTML = '';
-      carouselMain.appendChild(firstImg);
-      
       document.getElementById('carouselIndex').textContent = '1';
       document.getElementById('carouselTotal').textContent = project.photos.length;
       
