@@ -732,20 +732,45 @@ button, input, textarea, select { font: inherit; }
   color: #111;
 }
 
-/* CAROUSEL GALLERY */
+/* CAROUSEL GALLERY - SMOOTH SLIDE FROM RIGHT TO LEFT */
 .carousel-gallery {
   margin-bottom: 40px;
 }
 
-.carousel-main {
+.carousel-container {
   position: relative;
-  border-radius: 20px;
   overflow: hidden;
-  margin-bottom: 20px;
+  border-radius: 20px;
   background: #111;
   height: 450px;
-  opacity: 1;
-  transition: opacity .15s ease;
+  margin-bottom: 20px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-main.slide-right {
+  transform: translateX(100%);
+}
+
+.carousel-main.slide-left {
+  transform: translateX(-100%);
 }
 
 .carousel-main img,
@@ -862,16 +887,6 @@ button, input, textarea, select { font: inherit; }
   border-color: var(--gold);
 }
 
-.carousel-thumb.video-thumb::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, .3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .carousel-thumb.video-thumb::before {
   content: '';
   position: absolute;
@@ -880,22 +895,43 @@ button, input, textarea, select { font: inherit; }
   align-items: center;
   justify-content: center;
   z-index: 1;
-}
-
-.carousel-thumb.video-thumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel-thumb.video-thumb::before {
-  content: '';
   width: 0;
   height: 0;
   border-left: 20px solid var(--gold);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
   opacity: .8;
+  margin: auto;
+}
+
+/* VIDEO SECTION - SEPARATED */
+.video-section {
+  margin-top: 40px;
+  padding: 40px;
+  background: linear-gradient(180deg, rgba(251, 175, 67, .05), rgba(251, 175, 67, .01));
+  border: 1px solid rgba(251, 175, 67, .15);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(251, 175, 67, .08);
+}
+
+.video-section h4 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.modal-video {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #111;
+}
+
+.modal-video iframe {
+  width: 100%;
+  height: 480px;
+  border: none;
 }
 
 .modal-description {
@@ -1591,7 +1627,7 @@ footer {
     font-size: 24px;
   }
 
-  .carousel-main {
+  .carousel-container {
     height: 300px;
   }
 
@@ -1621,6 +1657,14 @@ footer {
     right: 12px;
     font-size: 11px;
     padding: 6px 11px;
+  }
+
+  .video-section {
+    padding: 24px;
+  }
+
+  .modal-video iframe {
+    height: 300px;
   }
 
   .process-grid {
@@ -1739,14 +1783,22 @@ footer {
     font-size: 20px;
   }
 
-  .carousel-main {
-    height: 240px;
+  .carousel-container {
+    height: 220px;
   }
 
   .carousel-thumb {
     min-width: 65px;
     width: 65px;
     height: 65px;
+  }
+
+  .video-section {
+    padding: 20px;
+  }
+
+  .modal-video iframe {
+    height: 220px;
   }
 
   .fab-btn {
@@ -2102,26 +2154,38 @@ footer {
       </button>
     </div>
 
-    <!-- CAROUSEL GALLERY -->
+    <!-- PHOTO CAROUSEL -->
     <div class="carousel-gallery">
-      <div class="carousel-main" id="carouselMain">
-        <img id="carouselImage" src="" alt="Project">
-      </div>
-      
-      <div class="carousel-indicator">
-        <span id="carouselIndex">1</span> / <span id="carouselTotal">8</span>
-      </div>
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-main" id="carouselMain">
+            <img id="carouselImage" src="" alt="Project">
+          </div>
+        </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="prevBtn" aria-label="Previous slide">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="carousel-btn" id="nextBtn" aria-label="Next slide">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
+        <div class="carousel-indicator">
+          <span id="carouselIndex">1</span> / <span id="carouselTotal">8</span>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevBtn" aria-label="Previous slide">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn" id="nextBtn" aria-label="Next slide">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
 
       <div class="carousel-thumbnails" id="carouselThumbs"></div>
+    </div>
+
+    <!-- SEPARATE VIDEO SECTION -->
+    <div class="video-section">
+      <h4><i class="fa-solid fa-play"></i> Project Video</h4>
+      <div class="modal-video">
+        <iframe id="projectVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
 
     <div class="modal-description">
@@ -2235,18 +2299,18 @@ const projectsData = {
     duration: '18 months',
     clientType: 'Corporate',
     description: 'A large-scale modern office complex featuring state-of-the-art infrastructure, sustainable building practices, and contemporary design.',
-    media: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80', alt: 'Building exterior' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80', alt: 'Building interior' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80', alt: 'Building details' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1467495682498-f1104393e25b?auto=format&fit=crop&w=1600&q=80', alt: 'Building structure' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80', alt: 'Building facade' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80', alt: 'Construction process' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80', alt: 'Project completion' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80', alt: 'Final walkthrough' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80', alt: 'Project overview' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Project video' }
-    ]
+    photos: [
+      'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1467495682498-f1104393e25b?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
   },
   project2: {
     title: 'Residential Complex Development',
@@ -2254,18 +2318,18 @@ const projectsData = {
     duration: '24 months',
     clientType: 'Developer',
     description: 'Premium residential complex with 200+ units featuring modern amenities, landscaping, and community spaces.',
-    media: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80', alt: 'Complex exterior' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1493788048098-0880cd7da3fa?auto=format&fit=crop&w=1600&q=80', alt: 'Complex interior' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=80', alt: 'Unit design' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80', alt: 'Amenities' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80', alt: 'Landscaping' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80', alt: 'Common areas' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1552672260-96c77eeadce1?auto=format&fit=crop&w=1600&q=80', alt: 'Parking area' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80', alt: 'Night view' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1520932091298-1b5eab9c3789?auto=format&fit=crop&w=1600&q=80', alt: 'Entrance' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Project video' }
-    ]
+    photos: [
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1493788048098-0880cd7da3fa?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1552672260-96c77eeadce1?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1520932091298-1b5eab9c3789?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
   },
   project3: {
     title: 'Transportation Hub Infrastructure',
@@ -2273,18 +2337,18 @@ const projectsData = {
     duration: '30 months',
     clientType: 'Government',
     description: 'Major infrastructure project including terminal construction, access roads, and utilities.',
-    media: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80', alt: 'Hub structure' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1467495682498-f1104393e25b?auto=format&fit=crop&w=1600&q=80', alt: 'Terminal interior' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80', alt: 'Construction phase' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80', alt: 'Access roads' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80', alt: 'Project site' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80', alt: 'Infrastructure' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=1600&q=80', alt: 'Utilities' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80', alt: 'Final phase' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80', alt: 'Completion' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Project video' }
-    ]
+    photos: [
+      'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1467495682498-f1104393e25b?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
   },
   project4: {
     title: 'International Corporate Summit',
@@ -2292,18 +2356,18 @@ const projectsData = {
     duration: '6 weeks',
     clientType: 'Corporate',
     description: 'Three-day international conference hosting 2000+ attendees featuring keynote speakers, workshops, and networking events.',
-    media: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80', alt: 'Event venue' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80', alt: 'Main stage' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80', alt: 'Conference room' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80', alt: 'Attendees' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80', alt: 'Networking area' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80', alt: 'Event decor' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80', alt: 'Workshop session' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80', alt: 'Evening event' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80', alt: 'Audience' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Event highlights' }
-    ]
+    photos: [
+      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
   },
   project5: {
     title: 'Premium Wedding Celebration',
@@ -2311,18 +2375,18 @@ const projectsData = {
     duration: '4 months planning',
     clientType: 'Private',
     description: 'Luxury wedding event for 500 guests featuring elegant decoration, live entertainment, gourmet dining, and professional photography.',
-    media: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80', alt: 'Venue setup' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80', alt: 'Ceremony' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80', alt: 'Reception' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80', alt: 'Dining area' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80', alt: 'Entertainment' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80', alt: 'Decoration' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80', alt: 'Dance floor' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80', alt: 'Lighting' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80', alt: 'Night view' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Wedding highlights' }
-    ]
+    photos: [
+      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
   },
   project6: {
     title: 'Product Launch Experience',
@@ -2330,24 +2394,25 @@ const projectsData = {
     duration: '8 weeks',
     clientType: 'Corporate',
     description: 'Innovative product launch event featuring interactive displays, live demonstrations, and brand experiences.',
-    media: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80', alt: 'Launch event' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80', alt: 'Product display' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80', alt: 'Interactive booth' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80', alt: 'Demo station' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80', alt: 'Presentation' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80', alt: 'Attendee experience' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80', alt: 'Crowd reaction' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80', alt: 'Photo ops' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80', alt: 'After party' },
-      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1', alt: 'Launch video' }
-    ]
+    photos: [
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
   }
 };
 
 let currentSlide = 0;
-let currentProjectMedia = [];
+let currentPhotos = [];
 let autoPlayInterval = null;
+let isSliding = false;
 
 const scrollTopBtn = document.querySelector('.scroll-top');
 const scrollProgress = document.querySelector('.scroll-progress');
@@ -2471,49 +2536,47 @@ filterBtns.forEach(btn => {
   });
 });
 
-// CAROUSEL FUNCTIONS WITH AUTO-PLAY
+// SMOOTH SLIDE CAROUSEL FROM RIGHT TO LEFT
 function updateCarousel() {
-  const media = currentProjectMedia[currentSlide];
+  if (isSliding) return;
+  isSliding = true;
+
   const carouselMain = document.getElementById('carouselMain');
+  const photo = currentPhotos[currentSlide];
   
-  carouselMain.style.opacity = '0';
+  carouselMain.classList.add('slide-right');
   
   setTimeout(() => {
+    const img = document.createElement('img');
+    img.src = photo;
+    img.alt = `Project photo ${currentSlide + 1}`;
+    
     carouselMain.innerHTML = '';
+    carouselMain.appendChild(img);
+    carouselMain.classList.remove('slide-right');
+    carouselMain.classList.remove('slide-left');
     
-    if (media.type === 'image') {
-      const img = document.createElement('img');
-      img.src = media.src;
-      img.alt = media.alt;
-      carouselMain.appendChild(img);
-    } else if (media.type === 'video') {
-      const iframe = document.createElement('iframe');
-      iframe.src = media.src;
-      iframe.frameborder = '0';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      iframe.allowFullscreen = true;
-      carouselMain.appendChild(iframe);
-    }
-    
-    carouselMain.style.opacity = '1';
-  }, 150);
+    isSliding = false;
+  }, 400);
   
   document.getElementById('carouselIndex').textContent = currentSlide + 1;
-  document.getElementById('carouselTotal').textContent = currentProjectMedia.length;
+  document.getElementById('carouselTotal').textContent = currentPhotos.length;
   
   const thumbs = document.querySelectorAll('.carousel-thumb');
   thumbs.forEach((thumb, idx) => {
-    thumb.classList.toggle('active', idx === currentSlide);
+    if (idx < currentPhotos.length) {
+      thumb.classList.toggle('active', idx === currentSlide);
+    }
   });
 }
 
 function nextSlide() {
-  currentSlide = (currentSlide + 1) % currentProjectMedia.length;
+  currentSlide = (currentSlide + 1) % currentPhotos.length;
   updateCarousel();
 }
 
 function prevSlide() {
-  currentSlide = (currentSlide - 1 + currentProjectMedia.length) % currentProjectMedia.length;
+  currentSlide = (currentSlide - 1 + currentPhotos.length) % currentPhotos.length;
   updateCarousel();
 }
 
@@ -2566,7 +2629,7 @@ workCards.forEach(card => {
     const project = projectsData[projectId];
     
     if (project) {
-      currentProjectMedia = project.media;
+      currentPhotos = project.photos;
       currentSlide = 0;
       
       document.getElementById('modalTitle').textContent = project.title;
@@ -2574,22 +2637,19 @@ workCards.forEach(card => {
       document.getElementById('projectCategory').textContent = project.category;
       document.getElementById('projectDuration').textContent = project.duration;
       document.getElementById('projectClient').textContent = project.clientType;
+      document.getElementById('projectVideo').src = project.video;
 
       const thumbsContainer = document.getElementById('carouselThumbs');
       thumbsContainer.innerHTML = '';
       
-      project.media.forEach((media, index) => {
+      project.photos.forEach((photo, index) => {
         const thumb = document.createElement('div');
         thumb.className = 'carousel-thumb' + (index === 0 ? ' active' : '');
-        if (media.type === 'video') {
-          thumb.classList.add('video-thumb');
-        }
         
-        if (media.type === 'image') {
-          thumb.innerHTML = `<img src="${media.src}" alt="${media.alt}">`;
-        } else {
-          thumb.innerHTML = '';
-        }
+        const img = document.createElement('img');
+        img.src = photo;
+        img.alt = `Thumbnail ${index + 1}`;
+        thumb.appendChild(img);
         
         thumb.addEventListener('click', () => {
           stopAutoPlay();
@@ -2601,7 +2661,17 @@ workCards.forEach(card => {
         thumbsContainer.appendChild(thumb);
       });
 
-      updateCarousel();
+      const firstImg = document.createElement('img');
+      firstImg.src = project.photos[0];
+      firstImg.alt = 'Project photo';
+      
+      const carouselMain = document.getElementById('carouselMain');
+      carouselMain.innerHTML = '';
+      carouselMain.appendChild(firstImg);
+      
+      document.getElementById('carouselIndex').textContent = '1';
+      document.getElementById('carouselTotal').textContent = project.photos.length;
+      
       portfolioModal.classList.add('show');
       document.body.style.overflow = 'hidden';
       
