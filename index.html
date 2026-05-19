@@ -292,13 +292,31 @@ button, input, textarea, select { font: inherit; }
 
 .stat-label { margin-top: 8px; color: #eaeaea; font-weight: 600; }
 
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; position: relative; }
+
+.cards-grid::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(251,175,67,.4), transparent);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.cards-grid.show-connector::before {
+  opacity: 1;
+}
 
 .card {
   background: linear-gradient(180deg, rgba(251,175,67,.04), rgba(251,175,67,.01));
   border: 1px solid rgba(251,175,67,.15); border-radius: 24px; padding: 32px 28px;
   box-shadow: 0 20px 60px rgba(251,175,67,.08); transition: all .28s ease;
-  overflow: hidden; position: relative; animation: slideInUp .6s ease-out; will-change: transform;
+  overflow: hidden; position: relative; animation: slideInUp .6s ease-out; will-change: transform; z-index: 1;
 }
 
 .card:nth-child(2) { animation-delay: .1s; }
@@ -542,12 +560,52 @@ button, input, textarea, select { font: inherit; }
 .modal-actions .btn { flex: 1; }
 
 /* ─── PROCESS ─── */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; position: relative; }
+
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(251,175,67,.4), transparent);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.process-grid.show-connector::before {
+  opacity: 1;
+}
 
 .step {
   padding: 28px 24px; border-radius: 22px;
   border: 1px solid rgba(251,175,67,.15); background: rgba(251,175,67,.03);
-  transition: all .28s ease; position: relative; animation: slideInUp .6s ease-out; will-change: transform;
+  transition: all .28s ease; position: relative; animation: slideInUp .6s ease-out; will-change: transform; z-index: 1;
+}
+
+.step.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.step.fade-in-left:nth-child(1) { animation-delay: 0s; }
+.step.fade-in-left:nth-child(2) { animation-delay: 0.15s; }
+.step.fade-in-left:nth-child(3) { animation-delay: 0.3s; }
+.step.fade-in-left:nth-child(4) { animation-delay: 0.45s; }
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .step:nth-child(2) { animation-delay: .1s; }
@@ -856,7 +914,6 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
       <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
       <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors in Kurdistan Region, Iraq.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Start a Project</a>
         <a href="tel:+9647502205577" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Call Now</a>
       </div>
     </div>
@@ -868,8 +925,8 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
       <p class="section-sub reveal">Building trust through excellence and professional execution</p>
       <div class="about-wrap reveal">
         <div class="about-content">
-          <p>Seven Points is a premier construction and event management company based in Duhok, Kurdistan Region. With over 5 years of proven experience, we have successfully delivered 150+ projects across commercial, corporate, and government sectors.</p>
-          <p>Our commitment to precision, professionalism, and punctuality has made us a trusted partner for organizations seeking reliable solutions. We combine innovative approaches with rigorous quality control to ensure every project exceeds expectations.</p>
+          <p>Seven Points is a premier construction and event management company based in Duhok, Kurdistan Region. With over 5 years of proven experience, we have successfully delivered 150+ projects with an unwavering commitment to quality, precision, and on-time delivery.</p>
+          <p>Our commitment to precision, professionalism, and punctuality has made us a trusted partner for organizations seeking reliable solutions. We combine innovative approaches with rigorous execution to deliver exceptional results across all our service lines.</p>
           <p>From large-scale construction projects to sophisticated event productions, our dedicated team brings expertise, discipline, and unwavering commitment to excellence in every engagement.</p>
         </div>
       </div>
@@ -998,30 +1055,35 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
               <p>"Seven Points delivered our project with exceptional quality, clear communication, and professional handling throughout the entire process."</p>
               <div class="quote-author">
                 <div class="quote-avatar">GC</div>
-                <div class="quote-info"><strong>Government Client</strong><span>Project Director</span></div>
+                <div class="quote-info">
+                  <strong>Government Client</strong>
+                  <span>Duhok, Kurdistan</span>
+                </div>
               </div>
             </div>
             <div class="quote">
-              <p>"The event setup was elegant, organized, and finished precisely on time. Their attention to detail is remarkable and impressive."</p>
+              <p>"Their team's attention to detail and commitment to meeting deadlines makes them our go-to partner for major construction projects."</p>
               <div class="quote-author">
-                <div class="quote-avatar">CD</div>
-                <div class="quote-info"><strong>Corporate Director</strong><span>Event Organizer</span></div>
+                <div class="quote-avatar">CC</div>
+                <div class="quote-info">
+                  <strong>Corporate Client</strong>
+                  <span>Event Management</span>
+                </div>
               </div>
             </div>
             <div class="quote">
-              <p>"Seven Points handled our complex project with real professionalism, discipline, and an unwavering commitment to excellence."</p>
+              <p>"Professional, reliable, and results-driven. Seven Points has consistently delivered outstanding outcomes for all our requirements."</p>
               <div class="quote-author">
-                <div class="quote-avatar">CP</div>
-                <div class="quote-info"><strong>Commercial Partner</strong><span>Construction Lead</span></div>
+                <div class="quote-avatar">BC</div>
+                <div class="quote-info">
+                  <strong>Business Client</strong>
+                  <span>Commercial Project</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-dots">
-          <div class="dot active" data-slide="0"></div>
-          <div class="dot" data-slide="1"></div>
-          <div class="dot" data-slide="2"></div>
-        </div>
+        <div class="carousel-dots" id="testimonialsDots"></div>
       </div>
     </div>
   </section>
@@ -1029,57 +1091,52 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
   <section class="section" id="contact">
     <div class="container">
       <h2 class="section-title reveal">Get in <span class="gold">Touch</span></h2>
-      <p class="section-sub reveal">Ready to start? Contact us and let's create something exceptional together.</p>
+      <p class="section-sub reveal">We're ready to discuss your project and bring your vision to life</p>
       <div class="contact-grid">
-        <div class="contact-list reveal">
-          <div class="contact-item">
+        <div class="contact-list">
+          <div class="contact-item reveal">
             <div class="contact-ic"><i class="fa-solid fa-phone"></i></div>
-            <div><h3>Phone</h3><p><a href="tel:+9647502205577">+964 750 220 5577</a></p></div>
+            <div>
+              <h3>Call Us</h3>
+              <a href="tel:+9647502205577">+964 750 220 5577</a>
+            </div>
           </div>
-          <div class="contact-item">
+          <div class="contact-item reveal">
             <div class="contact-ic"><i class="fa-solid fa-envelope"></i></div>
-            <div><h3>Email</h3><p><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></p></div>
+            <div>
+              <h3>Email Us</h3>
+              <a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a>
+            </div>
           </div>
-          <div class="contact-item">
+          <div class="contact-item reveal">
             <div class="contact-ic"><i class="fa-solid fa-location-dot"></i></div>
-            <div><h3>Office Address</h3><p>Zirka Road, Duhok<br>Kurdistan Region, Iraq</p></div>
+            <div>
+              <h3>Visit Us</h3>
+              <p>Zirka Road, Duhok<br>Kurdistan Region, Iraq</p>
+            </div>
           </div>
         </div>
-
-        <form class="form" id="contactForm" novalidate>
-          <div class="form-success" id="formSuccess">
-            <i class="fa-solid fa-check"></i> Thank you! We'll contact you shortly.
+        <form class="form" id="contactForm">
+          <div class="form-success" id="formSuccess">Message sent successfully! We'll be in touch soon.</div>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+            <div class="form-error">Please enter your name</div>
           </div>
           <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required>
-            <div class="form-error">Please enter your name (at least 2 characters)</div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            <div class="form-error">Please enter a valid email</div>
           </div>
           <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-            <div class="form-error">Please enter a valid email address</div>
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project inquiry" required>
+            <div class="form-error">Please enter a subject</div>
           </div>
           <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+964 750 220 5577">
-            <div class="form-error">Please enter a valid phone number</div>
-          </div>
-          <div class="form-group">
-            <label for="project-type">Project Type *</label>
-            <select id="project-type" name="projectType" required>
-              <option value="">Select project type...</option>
-              <option value="construction">Construction</option>
-              <option value="event">Event Management</option>
-              <option value="supervision">Site Supervision</option>
-              <option value="other">Other</option>
-            </select>
-            <div class="form-error">Please select a project type</div>
-          </div>
-          <div class="form-group">
-            <label for="message">Project Details *</label>
-            <textarea id="message" name="message" rows="6" placeholder="Tell us about your project, timeline, and requirements..." required></textarea>
-            <div class="form-error">Please describe your project (at least 10 characters)</div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+            <div class="form-error">Please enter a message</div>
           </div>
           <button type="submit">Send Message</button>
         </form>
@@ -1088,71 +1145,16 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
   </section>
 </main>
 
-<!-- ─── MODAL ─── -->
-<div class="modal" id="portfolioModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title" id="modalTitle">Project Title</h2>
-      <button class="modal-close" id="modalClose"><i class="fa-solid fa-times"></i></button>
-    </div>
-
-    <!-- PREMIUM CAROUSEL -->
-    <div class="carousel-gallery">
-      <div class="carousel-container">
-        <div class="carousel-main" id="carouselMain">
-          <!-- imgs injected by JS -->
-        </div>
-
-        <div class="carousel-overlay-ui">
-          <button class="carousel-arrow" id="prevBtn" aria-label="Previous">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="carousel-arrow" id="nextBtn" aria-label="Next">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-
-        <div class="carousel-indicator">
-          <span id="carouselIndex">1</span> / <span id="carouselTotal">9</span>
-        </div>
-      </div>
-
-      <div class="carousel-thumbnails" id="carouselThumbs"></div>
-    </div>
-
-    <!-- VIDEO SECTION -->
-    <div class="video-section">
-      <h4><i class="fa-solid fa-play"></i> Project Video</h4>
-      <div class="modal-video">
-        <iframe id="projectVideo" src="" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="modal-description">
-      <h3>Project Overview</h3>
-      <p id="projectDescription">Description goes here</p>
-    </div>
-
-    <div class="modal-details">
-      <div class="detail-item"><strong>Category</strong><span id="projectCategory">Category</span></div>
-      <div class="detail-item"><strong>Duration</strong><span id="projectDuration">Duration</span></div>
-      <div class="detail-item"><strong>Client Type</strong><span id="projectClient">Client</span></div>
-      <div class="detail-item"><strong>Status</strong><span id="projectStatus">Completed</span></div>
-    </div>
-
-    <div class="modal-actions">
-      <button class="btn btn-primary" id="backBtn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</button>
-      <a href="#contact" class="btn btn-secondary" id="contactBtn"><i class="fa-solid fa-arrow-right"></i> Start Similar Project</a>
-    </div>
-  </div>
-</div>
-
 <div class="floating">
-  <a class="fab-btn phone-call" href="tel:+9647502205577" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
-  <a class="fab-btn whatsapp" href="#" id="whatsappBtn" aria-label="Contact on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  <a class="fab-btn scroll-top" href="#hero" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></a>
+  <a href="https://wa.me/9647502205577" target="_blank" class="fab-btn whatsapp" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="tel:+9647502205577" class="fab-btn phone-call" title="Call us">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+  <button class="fab-btn scroll-top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 </div>
 
 <footer>
@@ -1160,542 +1162,347 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
     <div class="footer-grid">
       <div class="footer-section">
         <h4>Seven Points</h4>
-        <p>Premium construction and event management solutions in Kurdistan Region, Iraq.</p>
-        <div class="footer-socials" style="margin-top: 16px;">
-          <a href="https://facebook.com" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://twitter.com" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://instagram.com" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://linkedin.com" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
+        <p style="font-size: 14px; color: #b8b8b8; line-height: 1.6;">Premium construction and event management solutions for commercial, corporate, and government sectors.</p>
       </div>
       <div class="footer-section">
         <h4>Quick Links</h4>
         <ul>
           <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">Construction</a></li>
+          <li><a href="#services">Construction Management</a></li>
           <li><a href="#services">Event Management</a></li>
           <li><a href="#services">Site Supervision</a></li>
-          <li><a href="#contact">Get Quote</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+9647502205577">+964 750 220 5577</a></li>
-          <li><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></li>
-          <li>Zirka Road, Duhok</li>
-          <li>Kurdistan Region, Iraq</li>
-        </ul>
+        <h4>Connect With Us</h4>
+        <div class="footer-socials">
+          <a href="https://facebook.com" class="social-btn" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com" class="social-btn" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" class="social-btn" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 <a href="#">Seven Points</a>. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      <p>&copy; 2024 Seven Points. All rights reserved. | <a href="#" style="cursor: default;">Privacy Policy</a> | <a href="#" style="cursor: default;">Terms of Service</a></p>
     </div>
   </div>
 </footer>
 
 <script>
-/* ─────────────────────────────────────────
-   PROJECT DATA
-───────────────────────────────────────── */
-const projectsData = {
-  project1: {
-    title: 'Zakho Conference Hall', category: 'Construction',
-    duration: '18 months', clientType: 'Corporate',
-    description: 'A landmark conference hall designed with contemporary architecture, premium event facilities, and sophisticated spatial experiences for large-scale gatherings and corporate events.',
-    photos: [
-      'zakhoconferencehall1.jpg',
-      'zakhoconferencehall2.jpg',
-      'zakhoconferencehall3.jpg',
-      'zakhoconferencehall4.jpg',
-      'zakhoconferencehall5.jpg',
-      'zakhoconferencehall6.jpg',
-      'zakhoconferencehall7.jpg',
-      'zakhoconferencehall8.jpg',
-      'zakhoconferencehall9.jpg'
-    ],
-    video: 'zakhoconferencehallvideol.mp4?autoplay=1&mute=1'
-  },
-  project2: {
-    title: 'Jade Touch Salon', category: 'Construction and Interior Design',
-    duration: '6 months', clientType: 'Private',
-    description: 'A fully executed salon project delivered from initial construction works to complete interior finishing, combining functionality, elegance, and modern design..',
-    photos: [
-      'saloon.jpg',
-      'saloon2.jpg',
-      'saloon3.jpg',
-      'saloon4.jpg',
-      'saloon5.jpg',
-      'saloon6.jpg',
-      'saloon7.jpg',
-      'saloon8.jpg',
-      'saloon9.jpg'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project3: {
-    title: 'Transportation Hub Infrastructure', category: 'Construction',
-    duration: '30 months', clientType: 'Government',
-    description: 'Major infrastructure project including terminal construction, access roads, and utilities.',
-    photos: [
-      'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1467495682498-f1104393e25b?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project4: {
-    title: 'International Corporate Summit', category: 'Event Management',
-    duration: '6 weeks', clientType: 'Corporate',
-    description: 'Three-day international conference hosting 2000+ attendees featuring keynote speakers, workshops, and networking events.',
-    photos: [
-      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project5: {
-    title: 'Premium Wedding Celebration', category: 'Event Management',
-    duration: '4 months planning', clientType: 'Private',
-    description: 'Luxury wedding event for 500 guests featuring elegant decoration, live entertainment, gourmet dining, and professional photography.',
-    photos: [
-      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project6: {
-    title: 'Product Launch Experience', category: 'Event Management',
-    duration: '8 weeks', clientType: 'Corporate',
-    description: 'Innovative product launch event featuring interactive displays, live demonstrations, and brand experiences.',
-    photos: [
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  }
-};
-
-/* ─────────────────────────────────────────
-   CAROUSEL STATE
-───────────────────────────────────────── */
-let currentSlide = 0;
-let currentPhotos = [];
-let autoPlayInterval = null;
-let isAnimating = false;
-let carouselImgs = [];
-let activeImgIdx = 0;
-
-function buildCarouselPool() {
-  const main = document.getElementById('carouselMain');
-  main.innerHTML = '';
-  carouselImgs = [];
-  for (let i = 0; i < 2; i++) {
-    const img = document.createElement('img');
-    img.alt = 'Project photo';
-    img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:opacity,transform;';
-    img.style.opacity = i === 0 ? '1' : '0';
-    img.style.zIndex = i === 0 ? '2' : '1';
-    main.appendChild(img);
-    carouselImgs.push(img);
-  }
-  activeImgIdx = 0;
-}
-
-function updateCarousel(direction) {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  const outImg = carouselImgs[activeImgIdx];
-  const inIdx = 1 - activeImgIdx;
-  const inImg = carouselImgs[inIdx];
-
-  /* pre-position incoming image */
-  const inStartX = direction === 'next' ? '5%' : '-5%';
-  inImg.style.transition = 'none';
-  inImg.style.opacity = '0';
-  inImg.style.transform = `translateX(${inStartX}) scale(0.97)`;
-  inImg.style.zIndex = '2';
-  outImg.style.zIndex = '1';
-
-  /* load new src */
-  inImg.src = currentPhotos[currentSlide];
-
-  /* trigger transition on next two frames */
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      const outEndX = direction === 'next' ? '-4%' : '4%';
-
-      inImg.style.transition = 'opacity 0.42s ease, transform 0.42s ease';
-      inImg.style.opacity = '1';
-      inImg.style.transform = 'translateX(0) scale(1)';
-
-      outImg.style.transition = 'opacity 0.38s ease, transform 0.38s ease';
-      outImg.style.opacity = '0';
-      outImg.style.transform = `translateX(${outEndX}) scale(0.97)`;
-
-      setTimeout(() => {
-        outImg.style.transition = 'none';
-        outImg.style.transform = 'translateX(0) scale(1)';
-        activeImgIdx = inIdx;
-        isAnimating = false;
-      }, 450);
-    });
-  });
-
-  /* update counter */
-  document.getElementById('carouselIndex').textContent = currentSlide + 1;
-
-  /* update thumbnails */
-  const thumbs = document.querySelectorAll('.carousel-thumb');
-  thumbs.forEach((t, i) => t.classList.toggle('active', i === currentSlide));
-  const active = thumbs[currentSlide];
-  if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-}
-
-function nextSlide() {
-  if (isAnimating) return;
-  currentSlide = (currentSlide + 1) % currentPhotos.length;
-  updateCarousel('next');
-}
-
-function prevSlide() {
-  if (isAnimating) return;
-  currentSlide = (currentSlide - 1 + currentPhotos.length) % currentPhotos.length;
-  updateCarousel('prev');
-}
-
-function startAutoPlay() {
-  stopAutoPlay();
-  autoPlayInterval = setInterval(nextSlide, 5000);
-}
-
-function stopAutoPlay() {
-  if (autoPlayInterval) { clearInterval(autoPlayInterval); autoPlayInterval = null; }
-}
-
-/* ─────────────────────────────────────────
-   DOM REFS
-───────────────────────────────────────── */
-const scrollTopBtn    = document.querySelector('.scroll-top');
-const scrollProgress  = document.querySelector('.scroll-progress');
-const statCards       = document.querySelectorAll('[data-target]');
-const hamburger       = document.querySelector('.hamburger');
-const navMenu         = document.querySelector('.nav-menu');
-const navLinks        = document.querySelectorAll('.nav-link');
-const navbar          = document.querySelector('.navbar');
-const contactForm     = document.getElementById('contactForm');
-const reveals         = document.querySelectorAll('.reveal');
-const workCards       = document.querySelectorAll('.work');
-const filterBtns      = document.querySelectorAll('.filter-btn');
-const whatsappBtn     = document.getElementById('whatsappBtn');
-const portfolioModal  = document.getElementById('portfolioModal');
-const modalClose      = document.getElementById('modalClose');
-const backBtn         = document.getElementById('backBtn');
-const prevBtn         = document.getElementById('prevBtn');
-const nextBtn         = document.getElementById('nextBtn');
-const reduceMotion    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* ─────────────────────────────────────────
-   SCROLL PROGRESS
-───────────────────────────────────────── */
+// ─── SCROLL PROGRESS ─── 
 window.addEventListener('scroll', () => {
-  const total = document.documentElement.scrollHeight - window.innerHeight;
-  scrollProgress.style.width = ((window.scrollY / total) * 100) + '%';
-}, { passive: true });
+  const scrollTop = document.documentElement.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = (scrollTop / docHeight) * 100;
+  document.querySelector('.scroll-progress').style.width = scrolled + '%';
 
-/* ─────────────────────────────────────────
-   NAV
-───────────────────────────────────────── */
-hamburger?.addEventListener('click', () => {
-  const isActive = navMenu.classList.toggle('active');
-  hamburger.classList.toggle('active', isActive);
-  hamburger.setAttribute('aria-expanded', isActive);
+  // Toggle navbar style
+  document.querySelector('.navbar').classList.toggle('scrolled', scrollTop > 10);
+  document.querySelector('.scroll-top').classList.toggle('show', scrollTop > 300);
 });
 
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('active');
+// ─── SMOOTH SCROLL FOR NAVIGATION ─── 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || href === '') return;
+    e.preventDefault();
+    document.querySelector('.hamburger')?.classList.remove('active');
+    document.querySelector('.nav-menu')?.classList.remove('active');
+  });
+});
+
+// ─── HAMBURGER MENU ─── 
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.navbar')) {
     hamburger.classList.remove('active');
-    hamburger?.setAttribute('aria-expanded', 'false');
-  });
+    navMenu.classList.remove('active');
+  }
 });
 
-let scrollTicking = false;
-window.addEventListener('scroll', () => {
-  if (!scrollTicking) {
-    scrollTicking = true;
-    requestAnimationFrame(() => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-      scrollTopBtn.classList.toggle('show', window.scrollY > 500);
-      scrollTicking = false;
-    });
-  }
-}, { passive: true });
-
-/* ─────────────────────────────────────────
-   COUNTER ANIMATION
-───────────────────────────────────────── */
-const animateCounter = (el, target, suffix = '') => {
-  const start = performance.now();
-  const duration = 2500;
-  const tick = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(target * eased) + suffix;
-    if (progress < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
+// ─── REVEAL ANIMATION ─── 
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
 };
 
-const statObserver = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const target = parseInt(entry.target.dataset.target);
-      const suffix = entry.target.dataset.suffix || '';
-      const numEl = entry.target.querySelector('.stat-number');
-      reduceMotion ? (numEl.textContent = target + suffix) : animateCounter(numEl, target, suffix);
-      statObserver.unobserve(entry.target);
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.5 });
+}, observerOptions);
 
-statCards.forEach(card => statObserver.observe(card));
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-/* ─────────────────────────────────────────
-   REVEAL ON SCROLL
-───────────────────────────────────────── */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+// ─── ACTIVE NAV LINK ─── 
+const navLinks = document.querySelectorAll('.nav-link');
+const updateActiveLink = () => {
+  const scrollPosition = window.scrollY + 100;
+  navLinks.forEach(link => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (section) {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      link.classList.toggle('active', scrollPosition >= sectionTop && scrollPosition < sectionBottom);
+    }
+  });
+};
 
-reveals.forEach(el => revealObserver.observe(el));
+window.addEventListener('scroll', updateActiveLink);
+updateActiveLink();
 
-/* ─────────────────────────────────────────
-   PORTFOLIO FILTER
-───────────────────────────────────────── */
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    workCards.forEach(card => {
-      const show = filter === 'all' || card.dataset.category === filter;
-      if (show) {
-        card.classList.remove('hidden');
-        card.style.display = 'block';
-        void card.offsetWidth;
-        card.style.opacity = '1';
+// ─── COUNTER ANIMATION WITH AUTO-RESTART ─── 
+let currentScrollDirection = null;
+let lastScrollY = 0;
+
+const animateCounters = () => {
+  const statCards = document.querySelectorAll('.stat-card');
+  statCards.forEach(card => {
+    const target = parseInt(card.dataset.target);
+    const suffix = card.dataset.suffix;
+    const number = card.querySelector('.stat-number');
+    let current = 0;
+    const increment = target / 30;
+    
+    const updateNumber = () => {
+      current += increment;
+      if (current < target) {
+        number.textContent = Math.floor(current);
+        requestAnimationFrame(updateNumber);
       } else {
-        card.style.opacity = '0';
-        setTimeout(() => { if (card.style.opacity === '0') { card.classList.add('hidden'); card.style.display = 'none'; } }, 400);
+        number.textContent = target + suffix;
+      }
+    };
+    
+    updateNumber();
+  });
+};
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const scrollDirection = scrollY > lastScrollY ? 'down' : 'up';
+  
+  if (scrollDirection !== currentScrollDirection) {
+    currentScrollDirection = scrollDirection;
+    
+    const statsSection = document.querySelector('#stats');
+    if (statsSection) {
+      const statTop = statsSection.offsetTop;
+      const statBottom = statTop + statsSection.offsetHeight;
+      
+      if (scrollY + window.innerHeight >= statTop && scrollY <= statBottom) {
+        animateCounters();
+      }
+    }
+  }
+  
+  lastScrollY = scrollY;
+});
+
+// ─── CONNECTING LINES FOR SERVICES ─── 
+const servicesSection = document.querySelector('#services');
+if (servicesSection) {
+  const observerServices = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelector('.cards-grid').classList.add('show-connector');
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  observerServices.observe(servicesSection);
+}
+
+// ─── CONNECTING LINES & ANIMATION FOR PROCESS ─── 
+const processSection = document.querySelector('#process');
+if (processSection) {
+  const observerProcess = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const processGrid = entry.target.querySelector('.process-grid');
+        processGrid.classList.add('show-connector');
+        
+        // Add fade-in-left animation to steps
+        const steps = processGrid.querySelectorAll('.step');
+        steps.forEach(step => {
+          step.classList.add('fade-in-left');
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  observerProcess.observe(processSection);
+}
+
+// ─── PORTFOLIO FILTER ─── 
+const filterButtons = document.querySelectorAll('.filter-btn');
+const works = document.querySelectorAll('.work');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    button.classList.add('active');
+    
+    const filterValue = button.dataset.filter;
+    works.forEach(work => {
+      if (filterValue === 'all' || work.dataset.category === filterValue) {
+        work.classList.remove('hidden');
+      } else {
+        work.classList.add('hidden');
       }
     });
   });
 });
 
-/* ─────────────────────────────────────────
-   OPEN PROJECT MODAL
-───────────────────────────────────────── */
-workCards.forEach(card => {
-  card.addEventListener('click', () => {
-    const project = projectsData[card.dataset.project];
-    if (!project) return;
+// ─── MODAL & CAROUSEL ─── 
+let currentImageIndex = 0;
+const workGrid = document.getElementById('workGrid');
 
-    currentPhotos = project.photos;
-    currentSlide = 0;
-    isAnimating = false;
+workGrid.addEventListener('click', (e) => {
+  const work = e.target.closest('.work');
+  if (!work) return;
+  
+  const project = work.dataset.project;
+  const projectName = work.querySelector('h3')?.textContent || 'Project';
+  const projectDesc = work.querySelector('p')?.textContent || '';
+  const imageUrl = work.querySelector('img').src;
+  
+  currentImageIndex = 0;
+  showModal(project, projectName, projectDesc, imageUrl);
+});
 
-    /* populate modal text */
-    document.getElementById('modalTitle').textContent = project.title;
-    document.getElementById('projectDescription').textContent = project.description;
-    document.getElementById('projectCategory').textContent = project.category;
-    document.getElementById('projectDuration').textContent = project.duration;
-    document.getElementById('projectClient').textContent = project.clientType;
-    document.getElementById('carouselTotal').textContent = project.photos.length;
-    document.getElementById('carouselIndex').textContent = '1';
+const showModal = (project, name, desc, imageUrl) => {
+  const modal = document.createElement('div');
+  modal.className = 'modal show';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">${name}</h2>
+        <div class="modal-close">
+          <i class="fa-solid fa-times"></i>
+        </div>
+      </div>
+      <div class="carousel-gallery">
+        <div class="carousel-container">
+          <div class="carousel-main">
+            <img src="${imageUrl}" alt="${name}" style="opacity: 1; transform: scale(1);">
+          </div>
+          <div class="carousel-overlay-ui">
+            <div class="carousel-arrow carousel-prev"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="carousel-arrow carousel-next"><i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+          <div class="carousel-indicator"><span id="currentSlide">1</span> / 1</div>
+        </div>
+      </div>
+      <div class="modal-description">
+        <h3>Project Overview</h3>
+        <p>${desc}</p>
+        <p>This project represents our commitment to excellence, precision, and professional execution. Every detail was carefully managed to ensure outstanding results.</p>
+      </div>
+      <div class="modal-details">
+        <div class="detail-item">
+          <strong>Project Type</strong>
+          <span>${name}</span>
+        </div>
+        <div class="detail-item">
+          <strong>Status</strong>
+          <span>Completed</span>
+        </div>
+        <div class="detail-item">
+          <strong>Quality</strong>
+          <span>Premium</span>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <a href="#contact" class="btn btn-primary">Learn More</a>
+        <a href="tel:+9647502205577" class="btn btn-secondary">Call Now</a>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  
+  modal.querySelector('.modal-close').addEventListener('click', () => modal.remove());
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.remove();
+  });
+};
 
-    /* build 2-img pool */
-    buildCarouselPool();
-    carouselImgs[0].src = project.photos[0];
-    carouselImgs[0].style.opacity = '1';
-    carouselImgs[0].style.transform = 'translateX(0) scale(1)';
-    carouselImgs[0].style.zIndex = '2';
-    carouselImgs[1].src = '';
-    carouselImgs[1].style.opacity = '0';
-    carouselImgs[1].style.zIndex = '1';
-    activeImgIdx = 0;
+// ─── SCROLL TO TOP ─── 
+document.querySelector('.scroll-top').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-    /* build thumbnails */
-    const thumbsContainer = document.getElementById('carouselThumbs');
-    thumbsContainer.innerHTML = '';
-    project.photos.forEach((photo, index) => {
-      const thumb = document.createElement('div');
-      thumb.className = 'carousel-thumb' + (index === 0 ? ' active' : '');
-      const thumbImg = document.createElement('img');
-      thumbImg.src = photo;
-      thumbImg.alt = `Thumbnail ${index + 1}`;
-      thumb.appendChild(thumbImg);
-      thumb.addEventListener('click', () => {
-        if (isAnimating || index === currentSlide) return;
-        stopAutoPlay();
-        const dir = index > currentSlide ? 'next' : 'prev';
-        currentSlide = index;
-        updateCarousel(dir);
-        startAutoPlay();
-      });
-      thumbsContainer.appendChild(thumb);
+// ─── FORM VALIDATION ─── 
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formGroups = contactForm.querySelectorAll('.form-group');
+    let isValid = true;
+    
+    formGroups.forEach(group => {
+      group.classList.remove('error');
+      const input = group.querySelector('input, textarea');
+      if (!input.value.trim()) {
+        group.classList.add('error');
+        isValid = false;
+      }
+      if (input.type === 'email' && input.value && !input.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        group.classList.add('error');
+        isValid = false;
+      }
     });
-
-    /* set video */
-    document.getElementById('projectVideo').src = project.video;
-
-    /* open */
-    portfolioModal.classList.add('show');
-    document.body.style.overflow = 'hidden';
-    startAutoPlay();
-  });
-});
-
-/* ─────────────────────────────────────────
-   CLOSE MODAL  (stops video + autoplay)
-───────────────────────────────────────── */
-const closeProjectModal = () => {
-  stopAutoPlay();
-  portfolioModal.classList.remove('show');
-  document.body.style.overflow = 'auto';
-  /* kill iframe src so video/audio fully stops */
-  document.getElementById('projectVideo').src = '';
-};
-
-modalClose.addEventListener('click', closeProjectModal);
-backBtn.addEventListener('click', closeProjectModal);
-portfolioModal.addEventListener('click', e => { if (e.target === portfolioModal) closeProjectModal(); });
-
-/* ─────────────────────────────────────────
-   CAROUSEL BUTTONS + KEYBOARD
-───────────────────────────────────────── */
-prevBtn.addEventListener('click', () => { stopAutoPlay(); prevSlide(); startAutoPlay(); });
-nextBtn.addEventListener('click', () => { stopAutoPlay(); nextSlide(); startAutoPlay(); });
-
-document.addEventListener('keydown', e => {
-  if (!portfolioModal.classList.contains('show')) return;
-  if (e.key === 'ArrowRight') { stopAutoPlay(); nextSlide(); startAutoPlay(); }
-  if (e.key === 'ArrowLeft')  { stopAutoPlay(); prevSlide(); startAutoPlay(); }
-  if (e.key === 'Escape') closeProjectModal();
-});
-
-/* ─────────────────────────────────────────
-   WHATSAPP
-───────────────────────────────────────── */
-whatsappBtn.addEventListener('click', e => {
-  e.preventDefault();
-  const msg = encodeURIComponent("Hi Seven Points! I'm interested in your services. Can you provide more information?");
-  window.open(`https://wa.me/9647502205577?text=${msg}`, '_blank');
-});
-
-/* ─────────────────────────────────────────
-   CONTACT FORM
-───────────────────────────────────────── */
-const validateEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-const validateForm = () => {
-  let isValid = true;
-  contactForm.querySelectorAll('.form-group').forEach(group => {
-    const input = group.querySelector('input, textarea, select');
-    let valid = true;
-    group.classList.remove('error');
-    if (input.hasAttribute('required') && !input.value.trim()) valid = false;
-    else if (input.type === 'email' && input.value && !validateEmail(input.value)) valid = false;
-    else if (input.id === 'name' && input.value.trim().length < 2) valid = false;
-    else if (input.id === 'message' && input.value.trim().length < 10) valid = false;
-    if (!valid) { group.classList.add('error'); isValid = false; }
-  });
-  return isValid;
-};
-
-contactForm?.addEventListener('submit', async e => {
-  e.preventDefault();
-  if (!validateForm()) return;
-  const btn = contactForm.querySelector('button');
-  const orig = btn.textContent;
-  btn.disabled = true;
-  btn.textContent = '• • • Sending • • •';
-  try {
-    await new Promise(r => setTimeout(r, 2000));
-    document.getElementById('formSuccess').classList.add('show');
-    contactForm.reset();
-    contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
-    setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 5000);
-  } catch(err) {
-    alert('Error sending message. Please try again.');
-  } finally {
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-});
-
-contactForm?.querySelectorAll('input, textarea, select').forEach(input => {
-  input.addEventListener('blur', () => {
-    const group = input.closest('.form-group');
-    let valid = true;
-    if (input.hasAttribute('required') && !input.value.trim()) valid = false;
-    else if (input.type === 'email' && input.value && !validateEmail(input.value)) valid = false;
-    else if (input.id === 'name' && input.value.trim().length < 2) valid = false;
-    else if (input.id === 'message' && input.value.trim().length < 10) valid = false;
-    group.classList.toggle('error', !valid);
-  });
-});
-
-/* ─────────────────────────────────────────
-   SMOOTH SCROLL
-───────────────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    const target = document.querySelector(href);
-    if (target && href !== '#') {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    
+    if (isValid) {
+      document.getElementById('formSuccess').classList.add('show');
+      contactForm.reset();
+      setTimeout(() => {
+        document.getElementById('formSuccess').classList.remove('show');
+      }, 5000);
     }
   });
-});
+}
+
+// ─── TESTIMONIALS CAROUSEL ─── 
+const testimonialsGrid = document.getElementById('testimonialsGrid');
+const testimonialsDots = document.getElementById('testimonialsDots');
+const quotes = testimonialsGrid?.querySelectorAll('.quote') || [];
+
+if (quotes.length > 0) {
+  quotes.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (index === 0 ? ' active' : '');
+    dot.addEventListener('click', () => showTestimonial(index));
+    testimonialsDots.appendChild(dot);
+  });
+
+  function showTestimonial(index) {
+    document.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === index);
+    });
+  }
+}
 </script>
 </body>
 </html>
