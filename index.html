@@ -856,7 +856,6 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
       <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
       <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors in Kurdistan Region, Iraq.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Start a Project</a>
         <a href="tel:+9647502205577" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Call Now</a>
       </div>
     </div>
@@ -881,7 +880,7 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
       <h2 class="section-title reveal">Proven <span class="gold">Results</span></h2>
       <p class="section-sub reveal">Consistent excellence backed by measurable outcomes</p>
       <div class="stats-wrap reveal">
-        <div class="stats-grid">
+        <div class="stats-grid" id="statsGrid">
           <div class="stat-card" data-target="150" data-suffix="+">
             <span class="stat-number">0</span>
             <div class="stat-label">Projects Completed</div>
@@ -1431,6 +1430,8 @@ const backBtn         = document.getElementById('backBtn');
 const prevBtn         = document.getElementById('prevBtn');
 const nextBtn         = document.getElementById('nextBtn');
 const reduceMotion    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const statsGrid       = document.getElementById('statsGrid');
+const statsSection    = document.getElementById('stats');
 
 /* ─────────────────────────────────────────
    SCROLL PROGRESS
@@ -1470,7 +1471,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* ─────────────────────────────────────────
-   COUNTER ANIMATION
+   COUNTER ANIMATION - RESETS ON EACH SCROLL INTO VIEW
 ───────────────────────────────────────── */
 const animateCounter = (el, target, suffix = '') => {
   const start = performance.now();
@@ -1487,16 +1488,18 @@ const animateCounter = (el, target, suffix = '') => {
 const statObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const target = parseInt(entry.target.dataset.target);
-      const suffix = entry.target.dataset.suffix || '';
-      const numEl = entry.target.querySelector('.stat-number');
-      reduceMotion ? (numEl.textContent = target + suffix) : animateCounter(numEl, target, suffix);
-      statObserver.unobserve(entry.target);
+      const cards = entry.target.querySelectorAll('[data-target]');
+      cards.forEach(card => {
+        const target = parseInt(card.dataset.target);
+        const suffix = card.dataset.suffix || '';
+        const numEl = card.querySelector('.stat-number');
+        reduceMotion ? (numEl.textContent = target + suffix) : animateCounter(numEl, target, suffix);
+      });
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
-statCards.forEach(card => statObserver.observe(card));
+if (statsGrid) statObserver.observe(statsGrid);
 
 /* ─────────────────────────────────────────
    REVEAL ON SCROLL
