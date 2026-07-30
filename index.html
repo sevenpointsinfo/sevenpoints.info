@@ -1,1675 +1,1160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Seven Points delivers premium construction and event management solutions in Kurdistan Region, Iraq. 150+ projects, 100% on-time delivery.">
-<meta name="keywords" content="construction, event management, Kurdistan Region, Iraq">
-<meta name="theme-color" content="#030303">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta property="og:type" content="business.business">
-<meta property="og:title" content="Seven Points | Premium Construction & Event Management">
-<meta property="og:description" content="Professional construction and event management solutions in Kurdistan Region, Iraq.">
-<meta property="og:image" content="https://sevenpoints.info/sevenpointsbg.png">
+  <title>Seven Points | Construction & Event Management in Duhok</title>
+  <meta name="description" content="Seven Points delivers construction, interior fit-out, site supervision, and event management services across the Kurdistan Region of Iraq.">
+  <meta name="theme-color" content="#080806">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://sevenpoints.info/">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Seven Points",
-  "url": "https://sevenpoints.info",
-  "telephone": "+9647502205577",
-  "email": "email@sevenpoints.info",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Zirka Road",
-    "addressLocality": "Duhok",
-    "addressRegion": "Kurdistan Region",
-    "addressCountry": "IQ"
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sevenpoints.info/">
+  <meta property="og:title" content="Seven Points | Built with precision. Delivered with discipline.">
+  <meta property="og:description" content="Construction, interior fit-out, supervision, and event management in the Kurdistan Region of Iraq.">
+  <meta property="og:image" content="https://sevenpoints.info/sevenpointsbg.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Seven Points",
+    "url": "https://sevenpoints.info/",
+    "logo": "https://sevenpoints.info/logo.png",
+    "image": "https://sevenpoints.info/sevenpointsbg.png",
+    "telephone": "+9647502205577",
+    "email": "email@sevenpoints.info",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Zirka Road",
+      "addressLocality": "Duhok",
+      "addressRegion": "Kurdistan Region",
+      "addressCountry": "IQ"
+    },
+    "areaServed": "Kurdistan Region, Iraq"
   }
-}
-</script>
-
-<title>Seven Points | Premium Construction & Event Management</title>
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #050505;
-  --panel: rgba(255, 255, 255, .03);
-  --panel2: rgba(255, 255, 255, .07);
-  --text: #f8f8f8;
-  --muted: #a8a8a8;
-  --gold: #fbaf43;
-  --gold2: #ffc966;
-  --line: rgba(255, 255, 255, .08);
-  --shadow: 0 30px 100px rgba(0, 0, 0, .62);
-  --ease: cubic-bezier(.22,1,.36,1);
-  --font-display: 'Manrope', sans-serif;
-  --font-body: 'Inter', sans-serif;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-body);
-  font-weight: 300;
-  background: radial-gradient(circle at 18% 12%, rgba(251, 175, 67, .06), transparent 20%),
-    radial-gradient(circle at 82% 2%, rgba(255, 255, 255, .04), transparent 18%),
-    linear-gradient(180deg, #050505 0%, #080808 100%);
-  color: var(--text);
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
-button, input, textarea, select { font: inherit; }
-
-h1, h2, h3, h4, h5, .brand, .stat-number, .step-no, .modal-title, .quote-avatar {
-  font-family: var(--font-display);
-  letter-spacing: -.02em;
-}
-
-::selection { background: var(--gold); color: #0a0a0a; }
-
-.scroll-progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--gold2));
-  z-index: 999;
-  transition: width .1s ease;
-  box-shadow: 0 0 10px rgba(251, 175, 67, .4);
-  will-change: width;
-}
-
-.navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px 32px;
-  backdrop-filter: blur(0px);
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: padding .5s var(--ease), background .5s var(--ease), backdrop-filter .5s var(--ease), border-color .5s var(--ease);
-  will-change: transform;
-}
-
-.navbar.scrolled {
-  padding: 14px 32px;
-  background: rgba(5, 5, 5, .78);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border-bottom: 1px solid var(--line);
-  box-shadow: var(--shadow);
-}
-
-.brand { display: flex; align-items: center; gap: 0; font-weight: 800; font-size: 18px; }
-.brand img { width: 62px; height: auto; filter: brightness(1.1); transition: transform .4s var(--ease); }
-.brand img:hover { transform: scale(1.05); }
-
-.nav-menu { display: flex; gap: 40px; align-items: center; list-style: none; }
-
-.nav-menu a {
-  font-family: var(--font-display);
-  font-size: 13px; font-weight: 600; color: var(--muted);
-  transition: color .3s ease; text-transform: uppercase; letter-spacing: 1.4px;
-  position: relative; padding: 4px 0;
-}
-
-.nav-menu a::after {
-  content: ''; position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 1px; background: var(--gold); transition: width .4s var(--ease);
-}
-
-.nav-menu a:hover, .nav-menu a.active { color: #fff; }
-.nav-menu a.active::after, .nav-menu a:hover::after { width: 100%; }
-
-.hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 4px; z-index: 1001;
-}
-
-.hamburger span { width: 22px; height: 1px; background: var(--text); border-radius: 2px; transition: all .35s var(--ease); }
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
-
-.skip-link { position: absolute; top: -40px; left: 0; background: var(--gold); color: #111; padding: 8px 16px; z-index: 9999; border-radius: 0 0 8px 0; }
-.skip-link:focus { top: 0; }
-
-:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-
-/* ─── HERO ─── */
-.hero {
-  min-height: 100svh;
-  padding: 120px 20px 90px;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; isolation: isolate; overflow: hidden;
-  background: #060606;
-}
-
-.hero-bg {
-  position: absolute; inset: 0; z-index: -3;
-  background: url('sevenpointsbg.png') center/cover no-repeat;
-  transform: scale(1.1);
-  animation: kenburns 28s ease-in-out infinite alternate;
-}
-
-@keyframes kenburns {
-  0% { transform: scale(1.1) translate(0, 0); }
-  100% { transform: scale(1.0) translate(-1%, -1%); }
-}
-
-.hero::before {
-  content: ''; position: absolute; inset: -20%;
-  background: radial-gradient(circle at 50% 22%, rgba(251, 175, 67, .1), transparent 30%);
-  filter: blur(30px); opacity: .8; z-index: -2;
-  animation: subtlePulse 7s ease-in-out infinite; will-change: opacity, transform;
-}
-
-.hero::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(3,3,3,.5) 0%, rgba(3,3,3,.32) 34%, rgba(3,3,3,.58) 66%, rgba(3,3,3,.94) 100%);
-  z-index: -1;
-}
-
-@keyframes subtlePulse {
-  0%, 100% { opacity: .8; transform: scale(1); }
-  50% { opacity: .9; transform: scale(1.01); }
-}
-
-.hero-inner { width: min(1120px, 100%); text-align: center; position: relative; z-index: 1; }
-
-.hero-kicker {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 10px 20px; border: 1px solid rgba(251,175,67,.28);
-  border-radius: 999px; background: rgba(251,175,67,.06); backdrop-filter: blur(14px);
-  font-family: var(--font-display); font-size: 11.5px; font-weight: 700; letter-spacing: 2.4px;
-  text-transform: uppercase; color: #eee;
-  margin-bottom: 28px; opacity: 0; animation: slideInDown .8s var(--ease) .1s forwards;
-}
-
-.hero-kicker::before { content: ''; width: 20px; height: 1px; background: var(--gold); display: inline-block; }
-
-@keyframes slideInDown {
-  from { opacity: 0; transform: translateY(-16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero h1 {
-  font-size: clamp(40px, 7.4vw, 96px); line-height: 1.04; font-weight: 800;
-  letter-spacing: -.04em; color: #fff; text-wrap: balance;
-  opacity: 0; animation: slideInDown .8s var(--ease) .22s forwards;
-}
-
-.hero h1 .gold { color: var(--gold); font-weight: 800; }
-
-.hero p {
-  max-width: 680px; margin: 26px auto 0;
-  font-family: var(--font-body); font-weight: 300;
-  font-size: clamp(15px, 1.6vw, 19px); color: var(--muted); line-height: 1.75;
-  opacity: 0; animation: slideInDown .8s var(--ease) .34s forwards;
-}
-
-.hero-actions {
-  display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
-  margin-top: 40px; opacity: 0; animation: slideInUp .8s var(--ease) .46s forwards;
-}
-
-@keyframes slideInUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-scroll-hint {
-  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  font-family: var(--font-display); font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--muted); z-index: 1;
-}
-.hero-scroll-hint .line { width: 1px; height: 44px; background: linear-gradient(180deg, var(--gold), transparent); position: relative; overflow: hidden; }
-.hero-scroll-hint .line::after { content: ''; position: absolute; top: -44px; left: 0; width: 100%; height: 44px; background: var(--gold); animation: scrollline 2.6s ease-in-out infinite; }
-@keyframes scrollline { 0% { top: -44px; } 60% { top: 44px; } 100% { top: 44px; } }
-
-/* ─── BUTTONS ─── */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 10px; padding: 16px 28px; border-radius: 12px;
-  font-family: var(--font-display);
-  font-weight: 700; font-size: 14px; letter-spacing: .01em;
-  transition: transform .45s var(--ease), box-shadow .45s var(--ease), background .35s ease, color .35s ease, border-color .35s ease;
-  cursor: pointer; border: 1px solid transparent; will-change: transform;
-}
-
-.btn i { transition: transform .4s var(--ease); font-size: 13px; }
-.btn:hover i.fa-arrow-right, .btn:hover i.fa-phone { transform: translateX(4px); }
-
-.btn-primary {
-  border: 1px solid rgba(255,255,255,.14);
-  background: transparent; color: #fff;
-}
-.btn-primary:hover, .btn-primary:focus { transform: translateY(-2px); border-color: var(--gold); color: var(--gold); }
-
-.btn-secondary {
-  background: var(--gold); color: #0a0a0a;
-  box-shadow: 0 0 0 rgba(251,175,67,0);
-}
-.btn-secondary:hover, .btn-secondary:focus {
-  background: var(--gold2); transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 16px 44px -10px rgba(251,175,67,.5);
-}
-
-/* ─── SECTION ─── */
-.section { padding: 130px 20px; }
-.container { max-width: 1400px; margin: 0 auto; }
-
-.eyebrow {
-  font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--gold);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-  margin-bottom: 18px;
-}
-.eyebrow::before, .eyebrow::after { content: ''; width: 24px; height: 1px; background: rgba(251,175,67,.5); }
-
-.section-title {
-  font-size: clamp(30px, 4.6vw, 54px); text-align: center; font-weight: 800;
-  letter-spacing: -.03em; margin-bottom: 16px;
-}
-
-.section-sub {
-  max-width: 680px; margin: 0 auto 60px; text-align: center;
-  font-family: var(--font-body); font-weight: 300;
-  color: var(--muted); font-size: 17px;
-}
-
-.gold { color: var(--gold); }
-
-/* ─── ABOUT ─── */
-.about-wrap {
-  border: 1px solid var(--line); border-radius: 24px;
-  background: var(--panel);
-  padding: 68px 56px;
-}
-
-.about-content { max-width: 860px; margin: 0 auto; }
-.about-content p {
-  font-family: var(--font-body); font-weight: 300; font-size: 18px; line-height: 1.9;
-  color: var(--muted); margin-bottom: 26px;
-}
-.about-content p:last-child { margin-bottom: 0; }
-.about-content p:first-child { color: #ececec; font-size: 20px; }
-
-/* ─── STATS ─── */
-.stats-wrap { border: 1px solid var(--line); border-radius: 24px; padding: 4px; background: var(--panel); }
-.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-
-.stat-card {
-  padding: 48px 24px; text-align: center;
-  border-right: 1px solid var(--line);
-  transition: background .4s ease;
-}
-.stat-card:last-child { border-right: none; }
-.stat-card:hover { background: rgba(251,175,67,.03); }
-
-.stat-number {
-  display: block; font-size: clamp(38px, 6vw, 60px); font-weight: 800; line-height: 1;
-  color: var(--gold);
-  font-variant-numeric: tabular-nums;
-}
-
-.stat-label {
-  margin-top: 12px; color: var(--muted); font-weight: 500;
-  font-family: var(--font-display); font-size: 13px; letter-spacing: .04em; text-transform: uppercase;
-}
-
-/* ─── SERVICES CARDS ─── */
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; }
-
-.card {
-  background: var(--bg); padding: 48px 40px;
-  transition: background .5s ease; position: relative;
-}
-.card:hover { background: var(--panel); }
-
-.card i {
-  font-size: 30px; color: var(--gold);
-  margin-bottom: 26px; display: inline-block;
-  transition: transform .45s var(--ease);
-}
-.card:hover i { transform: scale(1.1) rotate(-4deg); }
-
-.card h3 { font-size: 21px; margin-bottom: 12px; color: #fff; font-weight: 700; }
-.card p { font-family: var(--font-body); font-weight: 300; color: var(--muted); line-height: 1.8; margin-bottom: 22px; font-size: 15px; }
-.card .btn-primary { padding: 10px 16px; font-size: 12.5px; border-color: var(--line); }
-
-/* ─── PORTFOLIO — LUXURY MASONRY ─── */
-.portfolio-filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 56px; flex-wrap: wrap; }
-
-.filter-btn {
-  padding: 11px 22px; border: 1px solid var(--line);
-  background: transparent; color: var(--muted); border-radius: 999px;
-  font-family: var(--font-display); font-weight: 600; font-size: 12.5px; cursor: pointer;
-  transition: all .35s ease; text-transform: uppercase; letter-spacing: 1.2px;
-}
-
-.filter-btn:hover { border-color: rgba(255,255,255,.28); color: #fff; }
-.filter-btn.active { background: var(--gold); color: #0a0a0a; border-color: var(--gold); }
-
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
-}
-
-.work {
-  position: relative; border-radius: 18px; overflow: hidden;
-  background: #101010; border: 1px solid var(--line);
-  cursor: pointer; opacity: 1;
-  transition: opacity .4s ease, transform .55s var(--ease), box-shadow .55s var(--ease), border-color .55s var(--ease);
-  will-change: transform;
-  grid-column: span 3; aspect-ratio: 4 / 3.1;
-}
-.work.size-lg { grid-column: span 4; aspect-ratio: 16 / 9.5; }
-.work.size-md { grid-column: span 2; aspect-ratio: 3 / 3.6; }
-
-.work.hidden { display: none; opacity: 0; }
-
-.work:hover { transform: translateY(-8px); box-shadow: 0 32px 70px -20px rgba(0,0,0,.6); border-color: rgba(255,255,255,.16); }
-
-.work-glow {
-  position: absolute; inset: 0; z-index: 2; opacity: 0; pointer-events: none;
-  background: radial-gradient(340px circle at var(--mx,50%) var(--my,50%), rgba(251,175,67,.16), transparent 62%);
-  transition: opacity .4s ease;
-}
-.work:hover .work-glow { opacity: 1; }
-
-.work img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform .8s var(--ease); will-change: transform;
-}
-.work:hover img { transform: scale(1.06); }
-
-.work-overlay {
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(180deg, rgba(5,5,5,0) 32%, rgba(5,5,5,.2) 58%, rgba(5,5,5,.94) 100%);
-  opacity: .78; transition: opacity .5s ease;
-}
-.work:hover .work-overlay { opacity: .94; }
-
-.work-info {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
-  padding: 26px; transform: translateY(12px); transition: transform .55s var(--ease);
-}
-.work:hover .work-info { transform: translateY(0); }
-
-.work-tags {
-  display: flex; align-items: center; gap: 9px;
-  font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 1px;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
-}
-.work-tags .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
-.work-tags .loc { color: var(--muted); font-weight: 500; }
-
-.work-overlay-content h3 { font-size: clamp(18px, 1.8vw, 24px); margin-bottom: 12px; color: #fff; font-weight: 700; }
-
-.work-view {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-display); font-size: 12.5px; font-weight: 700; color: #fff;
-  opacity: 0; transform: translateY(6px);
-  transition: opacity .5s ease .05s, transform .5s var(--ease) .05s;
-}
-.work:hover .work-view { opacity: 1; transform: translateY(0); }
-.work-view i { transition: transform .4s var(--ease); font-size: 11px; }
-.work:hover .work-view i { transform: translateX(4px); }
-
-.see-all-btn { display: flex; justify-content: center; margin-top: 52px; }
-
-/* ─── MODAL ─── */
-.modal {
-  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(2,2,2,.96); z-index: 2000; overflow-y: auto;
-  animation: fadeIn .35s ease; will-change: opacity;
-}
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-.modal.show { display: flex; align-items: flex-start; justify-content: center; padding: 20px; }
-
-.modal-content {
-  background: #0a0a0a; border: 1px solid var(--line); border-radius: 24px;
-  width: 100%; max-width: 920px; padding: 44px; margin-top: 40px;
-  animation: slideUp .5s var(--ease); will-change: transform;
-}
-@keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-.modal-header {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 32px; padding-bottom: 22px; border-bottom: 1px solid var(--line);
-}
-.modal-title { font-size: 32px; font-weight: 800; color: #fff; letter-spacing: -.02em; }
-
-.modal-close {
-  background: transparent; border: 1px solid var(--line); color: var(--gold);
-  width: 42px; height: 42px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; font-size: 18px; transition: all .35s ease; flex-shrink: 0;
-}
-.modal-close:hover { background: var(--gold); color: #0a0a0a; border-color: var(--gold); }
-
-/* ─── CAROUSEL ─── */
-.carousel-gallery { margin-bottom: 36px; }
-
-.carousel-container { position: relative; overflow: hidden; border-radius: 16px; background: #0a0a0a; height: 440px; margin-bottom: 14px; }
-.carousel-main { width: 100%; height: 100%; position: relative; }
-.carousel-main img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; will-change: opacity, transform; }
-
-.carousel-overlay-ui { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; pointer-events: none; z-index: 10; }
-
-.carousel-arrow {
-  pointer-events: all; width: 38px; height: 38px; border-radius: 50%;
-  background: rgba(5,5,5,.6); border: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.85);
-  display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 13px;
-  transition: background .3s, color .3s, transform .25s, border-color .3s;
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-}
-.carousel-arrow:hover { background: rgba(251,175,67,.2); color: var(--gold); border-color: rgba(251,175,67,.4); transform: scale(1.08); }
-.carousel-arrow:active { transform: scale(.94); }
-
-.carousel-indicator {
-  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
-  background: rgba(5,5,5,.55); color: rgba(255,255,255,.8);
-  padding: 5px 14px; border-radius: 999px;
-  font-family: var(--font-display); font-size: 11px; font-weight: 600; letter-spacing: .5px;
-  backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.1); z-index: 10; pointer-events: none;
-}
-
-.carousel-thumbnails { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px; scroll-behavior: smooth; scrollbar-width: none; }
-.carousel-thumbnails::-webkit-scrollbar { display: none; }
-
-.carousel-thumb {
-  min-width: 78px; width: 78px; height: 78px; border-radius: 10px; overflow: hidden;
-  cursor: pointer; border: 2px solid transparent;
-  transition: border-color .3s, transform .25s, box-shadow .3s; flex-shrink: 0; background: #111;
-}
-.carousel-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
-.carousel-thumb.active { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(251,175,67,.2); }
-.carousel-thumb:hover:not(.active) { border-color: rgba(251,175,67,.35); transform: translateY(-2px); }
-.carousel-thumb:hover img { transform: scale(1.06); }
-
-/* ─── VIDEO ─── */
-.video-section { margin-top: 36px; padding: 34px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; }
-.video-section h4 { font-family: var(--font-display); font-size: 15px; margin-bottom: 18px; color: #fff; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
-.video-section h4 i { color: var(--gold); }
-.modal-video { border-radius: 14px; overflow: hidden; background: #111; }
-.modal-video iframe { width: 100%; height: 440px; border: none; display: block; }
-
-.modal-description { margin-top: 36px; margin-bottom: 28px; }
-.modal-description h3 { font-family: var(--font-display); font-size: 13px; margin-bottom: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
-.modal-description p { font-family: var(--font-body); font-weight: 300; color: var(--muted); line-height: 1.85; font-size: 16px; }
-
-.modal-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; margin-bottom: 36px; padding: 24px; background: var(--panel); border-radius: 16px; border: 1px solid var(--line); }
-.detail-item strong { display: block; font-family: var(--font-display); color: var(--gold); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .8px; }
-.detail-item span { color: var(--muted); font-size: 14px; font-family: var(--font-body); }
-
-.modal-actions { display: flex; gap: 14px; padding-top: 24px; border-top: 1px solid var(--line); flex-wrap: wrap; }
-.modal-actions .btn { flex: 1; min-width: 180px; }
-
-/* ─── PROCESS ─── */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-
-.step {
-  padding: 36px 30px; border-radius: 20px; border: 1px solid var(--line); background: var(--panel);
-  transition: transform .45s var(--ease), background .4s ease, border-color .4s ease; position: relative;
-}
-.step:hover { transform: translateY(-8px); background: rgba(251,175,67,.03); border-color: rgba(251,175,67,.3); }
-
-.step-no {
-  width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(251,175,67,.35); color: var(--gold);
-  font-weight: 800; margin-bottom: 22px; font-size: 17px;
-}
-
-.step h3 { font-size: 19px; margin-bottom: 10px; color: #fff; font-weight: 700; }
-.step p { font-family: var(--font-body); font-weight: 300; color: var(--muted); font-size: 14.5px; line-height: 1.7; }
-
-/* ─── TESTIMONIALS ─── */
-.testimonials { border: 1px solid var(--line); border-radius: 24px; background: var(--panel); padding: 56px 40px; position: relative; }
-.testimonials-container { position: relative; overflow: hidden; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-
-.quote { padding: 30px; border-radius: 18px; background: var(--bg); border: 1px solid var(--line); transition: transform .45s var(--ease), border-color .4s ease; min-height: 100%; }
-.quote:hover { transform: translateY(-6px); border-color: rgba(251,175,67,.3); }
-.quote p { font-family: var(--font-body); color: #e6e6e6; font-style: italic; font-weight: 300; font-size: 15.5px; line-height: 1.85; margin-bottom: 22px; }
-
-.quote-author { display: flex; align-items: center; gap: 14px; }
-.quote-avatar {
-  width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(251,175,67,.4);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--gold); font-weight: 700; font-size: 13px; flex-shrink: 0;
-}
-.quote-info strong { display: block; color: #fff; font-size: 14px; font-family: var(--font-display); font-weight: 700; }
-.quote-info span { font-size: 12px; color: var(--muted); font-family: var(--font-body); }
-
-.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 32px; }
-.dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(251,175,67,.3); cursor: pointer; transition: all .35s ease; }
-.dot.active { background: var(--gold); width: 22px; border-radius: 4px; }
-
-/* ─── CONTACT ─── */
-.contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 24px; align-items: start; }
-.contact-list { display: grid; gap: 14px; }
-
-.contact-item {
-  display: flex; gap: 16px; align-items: flex-start; padding: 24px;
-  border-radius: 18px; background: var(--panel); border: 1px solid var(--line);
-  transition: transform .4s var(--ease), border-color .4s ease;
-}
-.contact-item:hover { transform: translateY(-5px); border-color: rgba(251,175,67,.3); }
-
-.contact-ic {
-  width: 46px; height: 46px; border-radius: 12px; border: 1px solid rgba(251,175,67,.3);
-  color: var(--gold); display: flex; align-items: center; justify-content: center; flex: 0 0 auto; font-size: 17px;
-}
-
-.contact-item h3 { font-family: var(--font-display); font-size: 12px; margin-bottom: 6px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-.contact-item p, .contact-item a { font-family: var(--font-body); color: #eee; font-size: 15px; font-weight: 400; }
-.contact-item a { color: var(--gold); text-decoration: none; }
-.contact-item a:hover { color: var(--gold2); }
-
-.form { padding: 40px; border-radius: 22px; background: var(--panel); border: 1px solid var(--line); }
-
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; margin-bottom: 9px; font-family: var(--font-display); font-weight: 600; font-size: 12.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; }
-
-.form input, .form textarea, .form select {
-  width: 100%; padding: 15px 16px; border-radius: 10px;
-  border: 1px solid var(--line); background: rgba(255,255,255,.02);
-  color: #fff; outline: none; transition: all .3s ease; font-size: 15px; min-height: 50px;
-  font-family: var(--font-body);
-}
-.form input::placeholder, .form textarea::placeholder { color: #8a8a8a; }
-.form input:focus, .form textarea:focus, .form select:focus { border-color: var(--gold); background: rgba(251,175,67,.04); box-shadow: 0 0 0 3px rgba(251,175,67,.08); }
-
-.form-group.error input, .form-group.error textarea { border-color: #e46767; background: rgba(228,103,103,.05); }
-.form-error { color: #e46767; font-size: 12.5px; margin-top: 7px; display: none; font-weight: 500; }
-.form-group.error .form-error { display: block; }
-
-.form button {
-  width: 100%; padding: 18px; border: none; border-radius: 12px;
-  background: var(--gold); color: #0a0a0a; font-family: var(--font-display);
-  font-weight: 700; cursor: pointer; transition: all .35s ease;
-  font-size: 14px; text-transform: uppercase; letter-spacing: 1.4px;
-}
-.form button:hover, .form button:focus { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 14px 34px -8px rgba(251,175,67,.45); }
-.form button:disabled { opacity: .6; cursor: not-allowed; }
-
-.form-success { padding: 16px; background: rgba(76,175,80,.08); border: 1px solid rgba(76,175,80,.3); border-radius: 12px; color: #4cb050; margin-bottom: 16px; display: none; font-weight: 600; font-family: var(--font-body); }
-.form-success.show { display: block; animation: slideInDown .35s ease; }
-
-/* ─── FLOATING ─── */
-.floating { position: fixed; right: 24px; bottom: 24px; z-index: 999; display: flex; flex-direction: column; gap: 12px; }
-
-.fab-btn {
-  width: 54px; height: 54px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 14px 30px rgba(0,0,0,.4); transition: all .35s var(--ease);
-  border: none; cursor: pointer; font-size: 21px; text-decoration: none;
-}
-.fab-btn:hover { transform: translateY(-4px) scale(1.06); }
-.whatsapp { background: #25D366; color: #fff; }
-.phone-call { background: var(--gold); color: #0a0a0a; display: none; }
-
-.scroll-top { background: rgba(251,175,67,.12); color: var(--gold); opacity: 0; visibility: hidden; transition: all .35s ease; border: 1px solid rgba(251,175,67,.28); }
-.scroll-top.show { opacity: 1; visibility: visible; }
-
-/* ─── FOOTER ─── */
-footer { background: #030303; border-top: 1px solid var(--line); padding: 70px 20px 26px; color: var(--muted); }
-.footer-content { max-width: 1400px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 48px; }
-.footer-section h4 { font-family: var(--font-display); color: #fff; font-size: 13px; margin-bottom: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-.footer-section p { font-family: var(--font-body); font-size: 14px; line-height: 1.8; color: var(--muted); }
-.footer-section ul { list-style: none; }
-.footer-section ul li { margin-bottom: 12px; }
-.footer-section a { font-family: var(--font-body); color: var(--muted); transition: color .3s ease; font-size: 14px; }
-.footer-section a:hover { color: var(--gold); }
-.footer-socials { display: flex; gap: 14px; }
-
-.social-btn {
-  width: 38px; height: 38px; border-radius: 50%; background: transparent; border: 1px solid var(--line); color: var(--muted);
-  display: flex; align-items: center; justify-content: center; transition: all .3s ease; cursor: pointer; text-decoration: none;
-}
-.social-btn:hover { border-color: var(--gold); color: var(--gold); }
-
-.footer-divider { height: 1px; background: linear-gradient(90deg, var(--gold), transparent 60%); opacity: .4; margin-bottom: 26px; }
-.footer-bottom { border-top: 1px solid var(--line); padding-top: 22px; text-align: center; font-family: var(--font-body); font-size: 13px; }
-.footer-bottom a { color: var(--gold); text-decoration: none; }
-.footer-bottom a:hover { text-decoration: underline; }
-
-/* ─── REVEAL ─── */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
-.reveal.show { opacity: 1; transform: translateY(0); }
-
-/* stagger children helper */
-.cards-grid.reveal-group .card,
-.process-grid .step,
-.testimonials-grid .quote {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity .8s var(--ease), transform .8s var(--ease);
-}
-.cards-grid.reveal-group.show .card,
-.process-grid.show .step,
-.testimonials-grid.show .quote { opacity: 1; transform: translateY(0); }
-.cards-grid.reveal-group.show .card:nth-child(2) { transition-delay: .08s; }
-.cards-grid.reveal-group.show .card:nth-child(3) { transition-delay: .16s; }
-.process-grid.show .step:nth-child(2) { transition-delay: .08s; }
-.process-grid.show .step:nth-child(3) { transition-delay: .16s; }
-.process-grid.show .step:nth-child(4) { transition-delay: .24s; }
-.testimonials-grid.show .quote:nth-child(2) { transition-delay: .08s; }
-.testimonials-grid.show .quote:nth-child(3) { transition-delay: .16s; }
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 1080px) {
-  .contact-grid { grid-template-columns: 1fr; }
-  .work.size-lg { grid-column: span 6; aspect-ratio: 16/9; }
-  .work.size-md { grid-column: span 3; }
-  .work:not(.size-lg):not(.size-md) { grid-column: span 3; }
-}
-
-@media (max-width: 768px) {
-  .navbar { padding: 16px 20px; }
-  .navbar.scrolled { padding: 12px 20px; }
-  .brand img { width: 52px; }
-
-  .nav-menu {
-    position: absolute; top: 100%; left: 0; right: 0;
-    flex-direction: column; gap: 0; align-items: flex-start;
-    background: rgba(3,3,3,.98); backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--line); padding: 8px 24px;
-    max-height: 0; overflow: hidden; transition: max-height .4s var(--ease);
-  }
-  .nav-menu.active { max-height: 500px; padding: 20px 24px; }
-  .nav-menu li { width: 100%; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
-  .nav-menu li:last-child { border-bottom: none; }
-  .nav-menu a::after { display: none; }
-  .hamburger { display: flex; }
-
-  .hero { padding: 110px 18px 70px; }
-  .hero-actions { flex-direction: column; gap: 12px; width: 100%; }
-  .hero-actions .btn { width: 100%; }
-  .hero-scroll-hint { display: none; }
-  .section { padding: 80px 18px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .stat-card:nth-child(odd) { border-right: 1px solid var(--line); }
-  .stat-card:nth-child(1), .stat-card:nth-child(2) { border-bottom: 1px solid var(--line); }
-  .stats-wrap { padding: 4px; }
-  .about-wrap { padding: 44px 26px; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .card { padding: 34px 26px; }
-  .portfolio-filters { gap: 8px; }
-  .filter-btn { padding: 9px 16px; font-size: 11.5px; }
-  .work-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .work, .work.size-lg, .work.size-md { grid-column: span 2 !important; aspect-ratio: 4/3.4 !important; }
-  .modal-content { padding: 26px; }
-  .modal-title { font-size: 24px; }
-  .carousel-container { height: 260px; }
-  .carousel-thumb { min-width: 62px; width: 62px; height: 62px; }
-  .video-section { padding: 22px; }
-  .modal-video iframe { height: 240px; }
-  .process-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .testimonials { padding: 36px 22px; }
-  .form { padding: 26px; }
-  .floating { right: 16px; bottom: 16px; gap: 10px; }
-  .fab-btn { width: 50px; height: 50px; font-size: 19px; }
-  .phone-call { display: flex; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
-}
-
-@media (max-width: 480px) {
-  .stats-grid { grid-template-columns: 1fr; }
-  .stat-card { border-right: none !important; border-bottom: 1px solid var(--line); }
-  .stat-card:last-child { border-bottom: none; }
-  .work-grid { grid-template-columns: 1fr; }
-  .work, .work.size-lg, .work.size-md { grid-column: span 1 !important; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .modal-title { font-size: 20px; }
-  .carousel-container { height: 200px; }
-  .modal-video iframe { height: 200px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-  .hero-kicker, .hero h1, .hero p, .hero-actions { opacity: 1 !important; }
-}
-</style>
+  </script>
+
+  <style>
+    :root {
+      --ink: #080806;
+      --ink-2: #0e0e0b;
+      --paper: #f3efe7;
+      --paper-2: #ddd7cc;
+      --white: #fffdf8;
+      --muted: #aaa69d;
+      --muted-dark: #6f6a61;
+      --gold: #f5ad3d;
+      --gold-soft: #ffc96f;
+      --line: rgba(255,255,255,.12);
+      --line-dark: rgba(8,8,6,.14);
+      --radius: 22px;
+      --display: "Manrope", sans-serif;
+      --body: "DM Sans", sans-serif;
+      --ease: cubic-bezier(.22,1,.36,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.modal-open { overflow: hidden; }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { color: inherit; }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--display); }
+
+    ::selection { background: var(--gold); color: var(--ink); }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      transform: translateY(-150%);
+      background: var(--gold);
+      color: var(--ink);
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .container { width: min(1240px, calc(100% - 48px)); margin-inline: auto; }
+    .section { padding: 120px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      color: var(--gold);
+      font: 700 11px/1 var(--display);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .55fr);
+      align-items: end;
+      gap: 50px;
+      margin-bottom: 58px;
+    }
+    .section-heading h2 {
+      max-width: 850px;
+      margin-bottom: 0;
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -.055em;
+      font-weight: 700;
+    }
+    .section-heading p { margin-bottom: 4px; color: var(--muted); font-size: 17px; }
+
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0 24px;
+      font: 700 13px/1 var(--display);
+      cursor: pointer;
+      transition: transform .35s var(--ease), background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-gold { background: var(--gold); color: var(--ink); }
+    .btn-gold:hover { background: var(--gold-soft); }
+    .btn-outline { border-color: rgba(255,255,255,.24); background: rgba(0,0,0,.18); color: var(--white); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-dark { background: var(--ink); color: var(--white); }
+    .btn-dark:hover { background: #1a1915; }
+    .arrow { font-size: 18px; line-height: 0; }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      border-bottom: 1px solid transparent;
+      transition: background .35s ease, border-color .35s ease, backdrop-filter .35s ease;
+    }
+    .site-header.scrolled {
+      background: rgba(8,8,6,.88);
+      border-color: rgba(255,255,255,.09);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .nav {
+      width: min(1360px, calc(100% - 48px));
+      min-height: 86px;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .brand { margin-right: auto; display: inline-flex; align-items: center; }
+    .brand img { width: 64px; height: auto; }
+    .nav-links { list-style: none; display: flex; align-items: center; gap: 28px; margin: 0; padding: 0; }
+    .nav-links a {
+      position: relative;
+      color: #d8d4cc;
+      font: 600 12px/1 var(--display);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -9px;
+      width: 100%;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .3s var(--ease);
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
+    .nav-cta { min-height: 44px; padding-inline: 20px; }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+      display: block;
+      position: relative;
+      transition: .25s ease;
+    }
+    .menu-toggle span::before, .menu-toggle span::after { content: ""; position: absolute; left: 0; }
+    .menu-toggle span::before { top: -6px; }
+    .menu-toggle span::after { top: 6px; }
+    .menu-toggle.active span { background: transparent; }
+    .menu-toggle.active span::before { transform: translateY(6px) rotate(45deg); }
+    .menu-toggle.active span::after { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Hero */
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      isolation: isolate;
+      padding: 150px 0 72px;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: #17160f url("sevenpointsbg.png") center 42% / cover no-repeat;
+      transform: scale(1.015);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(8,8,6,.97) 0%, rgba(8,8,6,.78) 46%, rgba(8,8,6,.34) 72%, rgba(8,8,6,.46) 100%),
+        linear-gradient(180deg, rgba(8,8,6,.28), rgba(8,8,6,.92));
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 32%;
+      z-index: -1;
+      background: linear-gradient(180deg, transparent, var(--ink));
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(270px, .45fr);
+      align-items: end;
+      gap: 70px;
+    }
+    .hero-copy { max-width: 900px; }
+    .hero-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
+      color: #ebe5d9;
+      font: 700 11px/1 var(--display);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .hero-label span { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 7px rgba(245,173,61,.12); }
+    .hero h1 {
+      max-width: 1000px;
+      margin-bottom: 28px;
+      font-size: clamp(52px, 8.5vw, 118px);
+      line-height: .88;
+      letter-spacing: -.07em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-copy > p {
+      max-width: 690px;
+      margin-bottom: 36px;
+      color: #cbc6bc;
+      font-size: clamp(16px, 1.6vw, 20px);
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .hero-proof {
+      border-left: 1px solid rgba(255,255,255,.25);
+      padding-left: 30px;
+      padding-bottom: 7px;
+    }
+    .hero-proof p { margin-bottom: 28px; color: #cbc6bc; font-size: 14px; }
+    .proof-list { display: grid; gap: 22px; }
+    .proof-item strong { display: block; color: var(--gold); font: 700 25px/1 var(--display); }
+    .proof-item span { display: block; margin-top: 7px; color: #bbb6ac; font-size: 12px; text-transform: uppercase; letter-spacing: .09em; }
+
+    /* Intro */
+    .intro { background: var(--paper); color: var(--ink); }
+    .intro-grid { display: grid; grid-template-columns: .62fr 1.38fr; gap: 90px; align-items: start; }
+    .intro-mark {
+      position: sticky;
+      top: 130px;
+      font: 700 clamp(72px, 12vw, 170px)/.8 var(--display);
+      letter-spacing: -.09em;
+      color: rgba(8,8,6,.09);
+    }
+    .intro-copy h2 {
+      max-width: 850px;
+      margin-bottom: 34px;
+      font-size: clamp(38px, 5.5vw, 74px);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+    }
+    .intro-copy > p { max-width: 780px; color: var(--muted-dark); font-size: 19px; line-height: 1.8; }
+    .intro-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 55px;
+      border-top: 1px solid var(--line-dark);
+    }
+    .intro-point { padding: 25px 24px 0 0; border-right: 1px solid var(--line-dark); }
+    .intro-point + .intro-point { padding-left: 24px; }
+    .intro-point:last-child { border-right: 0; }
+    .intro-point strong { display: block; margin-bottom: 7px; font: 700 15px/1.2 var(--display); }
+    .intro-point span { color: var(--muted-dark); font-size: 14px; }
+
+    /* Services */
+    .services { background: var(--ink); }
+    .services-list { border-top: 1px solid var(--line); }
+    .service-row {
+      display: grid;
+      grid-template-columns: 80px minmax(240px, .8fr) minmax(300px, 1.3fr) 42px;
+      gap: 28px;
+      align-items: center;
+      min-height: 148px;
+      border-bottom: 1px solid var(--line);
+      transition: background .3s ease, padding .4s var(--ease);
+    }
+    .service-row:hover { background: rgba(245,173,61,.045); padding-inline: 18px; }
+    .service-no { color: var(--gold); font: 700 12px/1 var(--display); letter-spacing: .12em; }
+    .service-row h3 { margin: 0; font-size: clamp(24px, 3vw, 38px); letter-spacing: -.035em; }
+    .service-row p { margin: 0; color: var(--muted); max-width: 650px; }
+    .service-arrow { font-size: 25px; color: var(--gold); transition: transform .35s var(--ease); }
+    .service-row:hover .service-arrow { transform: translate(4px,-4px); }
+
+    /* Work */
+    .work-section { background: #11110e; }
+    .project-grid { display: grid; gap: 28px; }
+    .project-card {
+      position: relative;
+      min-height: min(70vw, 690px);
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #191914;
+      border: 1px solid rgba(255,255,255,.1);
+      cursor: pointer;
+      padding: 0;
+      text-align: left;
+    }
+    .project-card.secondary { min-height: min(58vw, 580px); width: calc(75% - 14px); margin-left: auto; }
+    .project-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .8s var(--ease), filter .45s ease;
+    }
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(8,8,6,.22) 55%, rgba(8,8,6,.94) 100%);
+    }
+    .project-card:hover img { transform: scale(1.035); filter: saturate(1.05); }
+    .project-info {
+      position: absolute;
+      z-index: 2;
+      inset: auto 0 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 30px;
+      padding: clamp(28px, 5vw, 58px);
+    }
+    .project-meta { display: flex; gap: 12px; margin-bottom: 15px; color: var(--gold); font: 700 11px/1 var(--display); letter-spacing: .12em; text-transform: uppercase; }
+    .project-info h3 { margin: 0; font-size: clamp(32px, 5vw, 70px); line-height: .98; letter-spacing: -.055em; }
+    .project-open {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 28px;
+      transition: transform .35s var(--ease);
+    }
+    .project-card:hover .project-open { transform: rotate(45deg); }
+    .portfolio-note { margin-top: 34px; color: var(--muted); text-align: right; font-size: 14px; }
+
+    /* Process */
+    .process { background: var(--paper); color: var(--ink); }
+    .process .eyebrow { color: #9c681e; }
+    .process .section-heading p { color: var(--muted-dark); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-dark); }
+    .process-step { position: relative; min-height: 290px; padding: 32px 28px 20px 0; border-right: 1px solid var(--line-dark); }
+    .process-step + .process-step { padding-left: 28px; }
+    .process-step:last-child { border-right: 0; }
+    .process-step b { display: block; margin-bottom: 74px; color: #9c681e; font: 700 12px/1 var(--display); letter-spacing: .12em; }
+    .process-step h3 { margin-bottom: 12px; font-size: 24px; }
+    .process-step p { margin: 0; color: var(--muted-dark); }
+
+    /* Sectors */
+    .sectors { background: var(--ink); }
+    .sector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .sector {
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 30px;
+      background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.01));
+    }
+    .sector span { color: var(--gold); font: 700 12px/1 var(--display); letter-spacing: .13em; }
+    .sector h3 { margin: 0; font-size: clamp(25px, 3vw, 37px); letter-spacing: -.035em; }
+
+    /* Contact */
+    .contact { background: var(--gold); color: var(--ink); }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(380px, 1.2fr); gap: 90px; align-items: start; }
+    .contact-copy h2 {
+      margin-bottom: 30px;
+      font-size: clamp(50px, 7.5vw, 100px);
+      line-height: .9;
+      letter-spacing: -.065em;
+    }
+    .contact-copy > p { max-width: 550px; font-size: 18px; }
+    .contact-details { display: grid; gap: 15px; margin-top: 42px; }
+    .contact-details a, .contact-details address { font-style: normal; font-weight: 600; }
+
+    .quote-form {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: clamp(28px, 5vw, 48px);
+      box-shadow: 0 30px 90px rgba(48,28,0,.18);
+    }
+    .quote-form h3 { margin-bottom: 7px; font-size: 28px; }
+    .quote-form > p { color: var(--muted-dark); margin-bottom: 28px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: grid; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font: 700 11px/1 var(--display); letter-spacing: .1em; text-transform: uppercase; color: #625d55; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      border: 1px solid rgba(8,8,6,.18);
+      border-radius: 12px;
+      background: #fbfaf6;
+      color: var(--ink);
+      min-height: 52px;
+      padding: 13px 15px;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .field textarea { min-height: 130px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: #ae741e; box-shadow: 0 0 0 3px rgba(245,173,61,.22); }
+    .form-help { margin: 16px 0 0; color: var(--muted-dark); font-size: 12px; }
+    .quote-form .btn { width: 100%; margin-top: 20px; }
+
+    /* Footer */
+    footer { background: #050504; border-top: 1px solid var(--line); padding: 62px 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 40px; padding-bottom: 55px; }
+    .footer-brand img { width: 76px; margin-bottom: 22px; }
+    .footer-brand p { max-width: 460px; margin-bottom: 0; color: var(--muted); }
+    .footer-links { display: grid; grid-template-columns: repeat(2, minmax(140px, 1fr)); gap: 40px; }
+    .footer-links h3 { margin-bottom: 18px; color: var(--white); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+    .footer-links ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
+    .footer-links a { color: var(--muted); font-size: 14px; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 25px; border-top: 1px solid var(--line); color: #77736c; font-size: 12px; }
+
+    /* Floating WhatsApp */
+    .whatsapp-fab {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 800;
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 0 18px;
+      background: #25d366;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      transition: transform .3s var(--ease);
+    }
+    .whatsapp-fab:hover { transform: translateY(-4px); }
+
+    /* Dialog */
+    .project-dialog {
+      width: min(1080px, calc(100% - 30px));
+      max-height: calc(100svh - 30px);
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: #0e0e0b;
+      color: var(--white);
+      box-shadow: 0 40px 120px rgba(0,0,0,.7);
+      overflow: hidden;
+    }
+    .project-dialog::backdrop { background: rgba(0,0,0,.82); backdrop-filter: blur(9px); }
+    .dialog-shell { max-height: calc(100svh - 30px); overflow-y: auto; }
+    .dialog-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      background: rgba(14,14,11,.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+    .dialog-header h2 { margin: 0; font-size: clamp(22px, 4vw, 36px); }
+    .dialog-close {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: transparent;
+      cursor: pointer;
+      font-size: 22px;
+    }
+    .dialog-gallery { position: relative; aspect-ratio: 16 / 9; background: #171713; }
+    .dialog-gallery img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      background: rgba(0,0,0,.5);
+      cursor: pointer;
+      font-size: 22px;
+      backdrop-filter: blur(8px);
+    }
+    .gallery-control.prev { left: 16px; }
+    .gallery-control.next { right: 16px; }
+    .gallery-count {
+      position: absolute;
+      right: 18px;
+      bottom: 16px;
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: rgba(0,0,0,.58);
+      font-size: 12px;
+      backdrop-filter: blur(8px);
+    }
+    .thumb-strip { display: flex; gap: 10px; overflow-x: auto; padding: 14px 18px 6px; scrollbar-width: none; }
+    .thumb-strip::-webkit-scrollbar { display: none; }
+    .thumb {
+      flex: 0 0 74px;
+      width: 74px;
+      height: 58px;
+      border: 2px solid transparent;
+      border-radius: 9px;
+      padding: 0;
+      overflow: hidden;
+      background: #151512;
+      cursor: pointer;
+    }
+    .thumb.active { border-color: var(--gold); }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .dialog-body { padding: 32px 28px 38px; }
+    .dialog-meta { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 20px; }
+    .dialog-meta span { border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; color: #c8c3b9; font-size: 12px; }
+    .dialog-body p { color: var(--muted); font-size: 16px; }
+    .project-video { display: none; margin-top: 28px; }
+    .project-video.show { display: block; }
+    .project-video video { width: 100%; border-radius: 14px; background: #000; }
+
+    /* Content stays visible by default; no animation can hide important information. */
+    [data-reveal] { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .nav-links, .nav > .nav-cta { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.open {
+        position: fixed;
+        inset: 86px 18px auto;
+        display: grid;
+        gap: 0;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(8,8,6,.98);
+        box-shadow: 0 24px 70px rgba(0,0,0,.45);
+      }
+      .nav-links.open li { border-bottom: 1px solid var(--line); }
+      .nav-links.open li:last-child { border-bottom: 0; }
+      .nav-links.open a { display: block; padding: 19px 21px; }
+      .hero-grid, .section-heading, .contact-grid { grid-template-columns: 1fr; }
+      .hero-proof { display: none; }
+      .intro-grid { grid-template-columns: 1fr; gap: 35px; }
+      .intro-mark { position: static; font-size: 86px; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-step:nth-child(2) { border-right: 0; }
+      .process-step:nth-child(-n+2) { border-bottom: 1px solid var(--line-dark); }
+      .sector-grid { grid-template-columns: 1fr 1fr; }
+      .project-card.secondary { width: 100%; }
+    }
+
+    @media (max-width: 720px) {
+      .container, .nav { width: min(100% - 32px, 1240px); }
+      .section { padding: 82px 0; }
+      .nav { min-height: 74px; }
+      .nav-links.open { top: 74px; }
+      .brand img { width: 54px; }
+      .hero { min-height: 860px; padding-top: 125px; }
+      .hero h1 { font-size: clamp(50px, 16vw, 78px); }
+      .hero::before { background: linear-gradient(180deg, rgba(8,8,6,.46), rgba(8,8,6,.82) 45%, rgba(8,8,6,.98)); }
+      .hero-actions { display: grid; }
+      .hero-actions .btn { width: 100%; }
+      .section-heading { gap: 22px; margin-bottom: 38px; }
+      .intro-points, .sector-grid, .process-grid, .form-grid { grid-template-columns: 1fr; }
+      .intro-point, .intro-point + .intro-point { padding: 20px 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
+      .intro-point:last-child { border-bottom: 0; }
+      .service-row { grid-template-columns: 42px 1fr 28px; min-height: 130px; gap: 15px; }
+      .service-row p { grid-column: 2 / 4; }
+      .project-card, .project-card.secondary { min-height: 520px; }
+      .project-info { grid-template-columns: 1fr; }
+      .project-open { width: 54px; height: 54px; }
+      .process-step, .process-step + .process-step { min-height: auto; padding: 28px 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
+      .process-step:last-child { border-bottom: 0; }
+      .process-step b { margin-bottom: 38px; }
+      .contact-grid { gap: 42px; }
+      .quote-form { padding: 25px 20px; }
+      .footer-top, .footer-bottom { grid-template-columns: 1fr; display: grid; }
+      .footer-links { grid-template-columns: 1fr 1fr; }
+      .whatsapp-fab span { display: none; }
+      .whatsapp-fab { width: 52px; height: 52px; padding: 0; justify-content: center; font-size: 20px; }
+      .dialog-body { padding-inline: 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="scroll-progress"></div>
+  <header class="site-header" id="siteHeader">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Seven Points home">
+        <img src="logo.png" alt="Seven Points logo" width="64">
+      </a>
 
-<nav class="navbar">
-  <div class="brand">
-    <img src="logo.png" alt="Seven Points">
-  </div>
-  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-menu">
-    <li><a href="#hero" class="nav-link">Home</a></li>
-    <li><a href="#about" class="nav-link">About</a></li>
-    <li><a href="#services" class="nav-link">Services</a></li>
-    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-    <li><a href="#process" class="nav-link">Process</a></li>
-    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-    <li><a href="#contact" class="nav-link">Contact</a></li>
-  </ul>
-</nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Selected Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-<main id="main-content">
-  <section class="hero" id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-inner">
-      <div class="hero-kicker">Construction • Event Management</div>
-      <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
-      <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors in Kurdistan Region, Iraq.</p>
-      <div class="hero-actions">
-        <a href="tel:+9647502205577" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Call Now</a>
-      </div>
-    </div>
-    <div class="hero-scroll-hint"><span>Scroll</span><div class="line"></div></div>
-  </section>
+      <a class="btn btn-gold nav-cta" href="#contact">Request consultation <span class="arrow">↗</span></a>
 
-  <section class="section" id="about">
-    <div class="container">
-      <div class="eyebrow reveal">Who We Are</div>
-      <h2 class="section-title reveal">About <span class="gold">Seven Points</span></h2>
-      <p class="section-sub reveal">Building trust through excellence and professional execution</p>
-      <div class="about-wrap reveal">
-        <div class="about-content">
-          <p>Seven Points is a premier construction and event management company based in Duhok, Kurdistan Region. With over 5 years of proven experience, we have successfully delivered 150+ projects across commercial, corporate, and government sectors.</p>
-          <p>Our commitment to precision, professionalism, and punctuality has made us a trusted partner for organizations seeking reliable solutions. We combine innovative approaches with rigorous quality control to ensure every project exceeds expectations.</p>
-          <p>From large-scale construction projects to sophisticated event productions, our dedicated team brings expertise, discipline, and unwavering commitment to excellence in every engagement.</p>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <div class="hero-label"><span></span> Construction · Interiors · Events</div>
+          <h1>Built with <em>precision.</em><br>Delivered with discipline.</h1>
+          <p>Seven Points manages construction, interior fit-out, supervision, and event production for organizations that expect reliable execution—not excuses.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#work">Explore selected work <span class="arrow">↓</span></a>
+            <a class="btn btn-outline" href="https://wa.me/9647502205577?text=Hello%20Seven%20Points%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Start on WhatsApp <span class="arrow">↗</span></a>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="stats">
-    <div class="container">
-      <div class="eyebrow reveal">By The Numbers</div>
-      <h2 class="section-title reveal">Proven <span class="gold">Results</span></h2>
-      <p class="section-sub reveal">Consistent excellence backed by measurable outcomes</p>
-      <div class="stats-wrap reveal">
-        <div class="stats-grid" id="statsGrid">
-          <div class="stat-card" data-target="150" data-suffix="+">
-            <span class="stat-number">0</span>
-            <div class="stat-label">Projects Completed</div>
+        <aside class="hero-proof" aria-label="Company highlights" data-reveal>
+          <p>Based in Duhok. Delivering across the Kurdistan Region of Iraq.</p>
+          <div class="proof-list">
+            <div class="proof-item"><strong>150+</strong><span>Completed projects</span></div>
+            <div class="proof-item"><strong>5+</strong><span>Years of execution</span></div>
+            <div class="proof-item"><strong>3</strong><span>Integrated disciplines</span></div>
           </div>
-          <div class="stat-card" data-target="5" data-suffix="+">
-            <span class="stat-number">0</span>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-card" data-target="100" data-suffix="%">
-            <span class="stat-number">0</span>
-            <div class="stat-label">On-Time Delivery</div>
-          </div>
-          <div class="stat-card" data-target="50" data-suffix="+">
-            <span class="stat-number">0</span>
-            <div class="stat-label">Satisfied Clients</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section intro" id="about">
+      <div class="container intro-grid">
+        <div class="intro-mark" aria-hidden="true" data-reveal>7P</div>
+        <div class="intro-copy" data-reveal>
+          <div class="eyebrow">Who we are</div>
+          <h2>One accountable team from the first conversation to final handover.</h2>
+          <p>Seven Points is a Duhok-based construction and event management company serving commercial, corporate, and government sectors. We coordinate the people, materials, schedules, and quality controls required to turn demanding briefs into finished work.</p>
+
+          <div class="intro-points">
+            <div class="intro-point"><strong>Clear responsibility</strong><span>One team coordinates scope, execution, and communication.</span></div>
+            <div class="intro-point"><strong>Controlled quality</strong><span>Daily supervision and practical checks throughout delivery.</span></div>
+            <div class="intro-point"><strong>Reliable handover</strong><span>Defined milestones, progress updates, and final inspection.</span></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="services">
-    <div class="container">
-      <div class="eyebrow reveal">Capabilities</div>
-      <h2 class="section-title reveal">Our <span class="gold">Services</span></h2>
-      <p class="section-sub reveal">Professional solutions tailored to your needs</p>
-      <div class="cards-grid reveal-group reveal">
-        <div class="card">
-          <i class="fa-solid fa-hard-hat"></i>
-          <h3>Construction Management</h3>
-          <p>Full-scale construction from planning to delivery, including structure, finishing, and comprehensive site coordination.</p>
-          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div>
+            <div class="eyebrow">Capabilities</div>
+            <h2>Focused services. One standard of execution.</h2>
+          </div>
+          <p>From site planning to final production, each service is managed with the same attention to detail, timing, and accountability.</p>
         </div>
-        <div class="card">
-          <i class="fa-solid fa-calendar-check"></i>
-          <h3>Event Management</h3>
-          <p>Corporate and government events with complete production, professional setup, logistics, and dedicated support.</p>
-          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-clipboard-check"></i>
-          <h3>Site Supervision</h3>
-          <p>Daily quality control, rigorous progress monitoring, and comprehensive supervision to keep projects on track.</p>
-          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+
+        <div class="services-list" data-reveal>
+          <article class="service-row">
+            <span class="service-no">01</span>
+            <h3>Construction Management</h3>
+            <p>Planning, procurement, site coordination, structure, finishing, and controlled project delivery.</p>
+            <span class="service-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="service-row">
+            <span class="service-no">02</span>
+            <h3>Interior Fit-Out</h3>
+            <p>Commercial and hospitality interiors delivered from technical preparation through final installation.</p>
+            <span class="service-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="service-row">
+            <span class="service-no">03</span>
+            <h3>Site Supervision</h3>
+            <p>Daily quality control, progress monitoring, contractor coordination, and reporting against the approved scope.</p>
+            <span class="service-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="service-row">
+            <span class="service-no">04</span>
+            <h3>Event Management</h3>
+            <p>Corporate and government event production, logistics, installation, technical coordination, and on-site support.</p>
+            <span class="service-arrow" aria-hidden="true">↗</span>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="portfolio">
-    <div class="container">
-      <div class="eyebrow reveal">Selected Work</div>
-      <h2 class="section-title reveal">Our <span class="gold">Portfolio</span></h2>
-      <p class="section-sub reveal">Showcase of completed projects</p>
-
-      <div class="portfolio-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="construction">Construction</button>
-        <button class="filter-btn" data-filter="event">Event Management</button>
-      </div>
-
-      <div class="work-grid" id="workGrid">
-        <div class="work reveal size-lg" data-category="construction" data-project="project1">
-          <div class="work-glow"></div>
-          <img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall">
-          <div class="work-overlay"></div>
-          <div class="work-info">
-            <div class="work-tags"><span>Construction</span><span class="sep"></span><span class="loc">Zakho, Iraq</span></div>
-            <div class="work-overlay-content"><h3>Zakho Conference Hall</h3></div>
-            <a class="work-view" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
+    <section class="section work-section" id="work">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div>
+            <div class="eyebrow">Selected work</div>
+            <h2>Proof is more valuable than promises.</h2>
           </div>
+          <p>Only real Seven Points projects are shown here. Open a project to view its full gallery and available video.</p>
         </div>
 
-        <div class="work reveal size-md" data-category="construction" data-project="project2">
-          <div class="work-glow"></div>
-          <img src="saloon.jpg" alt="Jade Touch Salon">
-          <div class="work-overlay"></div>
-          <div class="work-info">
-            <div class="work-tags"><span>Interior Fit-Out</span></div>
-            <div class="work-overlay-content"><h3>Jade Touch Salon</h3></div>
-            <a class="work-view" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="work reveal" data-category="construction" data-project="project3">
-          <div class="work-glow"></div>
-          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80" alt="Infrastructure">
-          <div class="work-overlay"></div>
-          <div class="work-info">
-            <div class="work-tags"><span>Construction</span><span class="sep"></span><span class="loc">Government</span></div>
-            <div class="work-overlay-content"><h3>Infrastructure Project</h3></div>
-            <a class="work-view" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="work reveal" data-category="event" data-project="project4">
-          <div class="work-glow"></div>
-          <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80" alt="Corporate Event">
-          <div class="work-overlay"></div>
-          <div class="work-info">
-            <div class="work-tags"><span>Events</span><span class="sep"></span><span class="loc">Corporate</span></div>
-            <div class="work-overlay-content"><h3>Corporate Summit</h3></div>
-            <a class="work-view" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="work reveal size-md" data-category="event" data-project="project5">
-          <div class="work-glow"></div>
-          <img src="https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80" alt="Wedding Event">
-          <div class="work-overlay"></div>
-          <div class="work-info">
-            <div class="work-tags"><span>Events</span></div>
-            <div class="work-overlay-content"><h3>Wedding Celebration</h3></div>
-            <a class="work-view" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="work reveal size-lg" data-category="event" data-project="project6">
-          <div class="work-glow"></div>
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80" alt="Product Launch">
-          <div class="work-overlay"></div>
-          <div class="work-info">
-            <div class="work-tags"><span>Events</span><span class="sep"></span><span class="loc">Brand Experience</span></div>
-            <div class="work-overlay-content"><h3>Product Launch</h3></div>
-            <a class="work-view" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="see-all-btn reveal">
-        <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-arrow-right"></i> Start Your Project</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="process">
-    <div class="container">
-      <div class="eyebrow reveal">Our Process</div>
-      <h2 class="section-title reveal">How We <span class="gold">Work</span></h2>
-      <p class="section-sub reveal">A proven 4-step process built for clarity and delivery</p>
-      <div class="process-grid reveal">
-        <div class="step"><div class="step-no">01</div><h3>Consultation</h3><p>We review your project goals, scope, and timeline in detail.</p></div>
-        <div class="step"><div class="step-no">02</div><h3>Planning</h3><p>We prepare comprehensive execution plan and source materials.</p></div>
-        <div class="step"><div class="step-no">03</div><h3>Execution</h3><p>We manage with full supervision and daily progress updates.</p></div>
-        <div class="step"><div class="step-no">04</div><h3>Delivery</h3><p>We complete handover with quality checks and support.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="testimonials">
-    <div class="container">
-      <div class="eyebrow reveal">Testimonials</div>
-      <h2 class="section-title reveal">Client <span class="gold">Feedback</span></h2>
-      <p class="section-sub reveal">Trusted by government, corporate, and commercial clients</p>
-      <div class="testimonials reveal">
-        <div class="testimonials-container">
-          <div class="testimonials-grid" id="testimonialsGrid">
-            <div class="quote">
-              <p>"Seven Points delivered our project with exceptional quality, clear communication, and professional handling throughout the entire process."</p>
-              <div class="quote-author">
-                <div class="quote-avatar">GC</div>
-                <div class="quote-info"><strong>Government Client</strong><span>Project Director</span></div>
+        <div class="project-grid">
+          <button class="project-card" type="button" data-project="zakho" aria-label="View Zakho Conference Hall project" data-reveal>
+            <img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall completed by Seven Points" loading="lazy" decoding="async">
+            <div class="project-info">
+              <div>
+                <div class="project-meta"><span>Construction</span><span>·</span><span>Zakho</span></div>
+                <div class="project-title"><h3>Zakho Conference Hall</h3></div>
               </div>
+              <span class="project-open" aria-hidden="true">↗</span>
             </div>
-            <div class="quote">
-              <p>"The event setup was elegant, organized, and finished precisely on time. Their attention to detail is remarkable and impressive."</p>
-              <div class="quote-author">
-                <div class="quote-avatar">CD</div>
-                <div class="quote-info"><strong>Corporate Director</strong><span>Event Organizer</span></div>
+          </button>
+
+          <button class="project-card secondary" type="button" data-project="jade" aria-label="View Jade Touch Salon project" data-reveal>
+            <img src="saloon.jpg" alt="Jade Touch Salon interior completed by Seven Points" loading="lazy" decoding="async">
+            <div class="project-info">
+              <div>
+                <div class="project-meta"><span>Construction + Interior</span><span>·</span><span>Duhok</span></div>
+                <div class="project-title"><h3>Jade Touch Salon</h3></div>
               </div>
+              <span class="project-open" aria-hidden="true">↗</span>
             </div>
-            <div class="quote">
-              <p>"Seven Points handled our complex project with real professionalism, discipline, and an unwavering commitment to excellence."</p>
-              <div class="quote-author">
-                <div class="quote-avatar">CP</div>
-                <div class="quote-info"><strong>Commercial Partner</strong><span>Construction Lead</span></div>
-              </div>
+          </button>
+        </div>
+
+        <p class="portfolio-note" data-reveal>Additional work can be presented privately based on project type and client requirements.</p>
+      </div>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div>
+            <div class="eyebrow">How we work</div>
+            <h2>A practical process built to reduce uncertainty.</h2>
+          </div>
+          <p>Every project is different, but the discipline behind successful delivery should remain consistent.</p>
+        </div>
+
+        <div class="process-grid" data-reveal>
+          <article class="process-step"><b>01 / DISCOVER</b><h3>Consultation</h3><p>We clarify objectives, site conditions, priorities, budget direction, and expected timeline.</p></article>
+          <article class="process-step"><b>02 / DEFINE</b><h3>Planning</h3><p>We establish scope, responsibilities, resources, procurement requirements, and milestones.</p></article>
+          <article class="process-step"><b>03 / DELIVER</b><h3>Execution</h3><p>Our team coordinates the work, supervises progress, and communicates material decisions.</p></article>
+          <article class="process-step"><b>04 / VERIFY</b><h3>Handover</h3><p>We inspect the completed work, address final observations, and close the project properly.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sectors" aria-labelledby="sectors-title">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div>
+            <div class="eyebrow">Who we serve</div>
+            <h2 id="sectors-title">Built for organizations where delivery matters.</h2>
+          </div>
+          <p>Seven Points supports complex work across three core client environments.</p>
+        </div>
+
+        <div class="sector-grid" data-reveal>
+          <article class="sector"><span>01</span><h3>Government & public-sector projects</h3></article>
+          <article class="sector"><span>02</span><h3>Commercial & hospitality spaces</h3></article>
+          <article class="sector"><span>03</span><h3>Corporate events & brand experiences</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy" data-reveal>
+          <div class="eyebrow" style="color:#4b2d00">Start a project</div>
+          <h2>Let’s make the next step clear.</h2>
+          <p>Share the project type, location, and the result you need. The form opens a prepared WhatsApp message, so your enquiry reaches the team directly.</p>
+
+          <div class="contact-details">
+            <a href="tel:+9647502205577">+964 750 220 5577</a>
+            <a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a>
+            <address>Zirka Road, Duhok<br>Kurdistan Region, Iraq</address>
+          </div>
+        </div>
+
+        <form class="quote-form" id="quoteForm" data-reveal>
+          <h3>Request a consultation</h3>
+          <p>No fake “message sent” screen—this sends your information directly through WhatsApp.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" autocomplete="name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+964 ...">
+            </div>
+            <div class="field full">
+              <label for="projectType">Project type</label>
+              <select id="projectType" name="projectType" required>
+                <option value="">Select a service</option>
+                <option>Construction Management</option>
+                <option>Interior Fit-Out</option>
+                <option>Site Supervision</option>
+                <option>Event Management</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="location">Project location</label>
+              <input id="location" name="location" placeholder="Duhok, Erbil, Zakho...">
+            </div>
+            <div class="field full">
+              <label for="details">Project details</label>
+              <textarea id="details" name="details" required minlength="10" placeholder="Tell us what you need, approximate timing, and any important requirements."></textarea>
             </div>
           </div>
-        </div>
-        <div class="carousel-dots">
-          <div class="dot active" data-slide="0"></div>
-          <div class="dot" data-slide="1"></div>
-          <div class="dot" data-slide="2"></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="eyebrow reveal">Get Started</div>
-      <h2 class="section-title reveal">Get in <span class="gold">Touch</span></h2>
-      <p class="section-sub reveal">Ready to start? Contact us and let's create something exceptional together.</p>
-      <div class="contact-grid">
-        <div class="contact-list reveal">
-          <div class="contact-item">
-            <div class="contact-ic"><i class="fa-solid fa-phone"></i></div>
-            <div><h3>Phone</h3><p><a href="tel:+9647502205577">+964 750 220 5577</a></p></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-ic"><i class="fa-solid fa-envelope"></i></div>
-            <div><h3>Email</h3><p><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></p></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-ic"><i class="fa-solid fa-location-dot"></i></div>
-            <div><h3>Office Address</h3><p>Zirka Road, Duhok<br>Kurdistan Region, Iraq</p></div>
-          </div>
-        </div>
-
-        <form class="form reveal" id="contactForm" novalidate>
-          <div class="form-success" id="formSuccess">
-            <i class="fa-solid fa-check"></i> Thank you! We'll contact you shortly.
-          </div>
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required>
-            <div class="form-error">Please enter your name (at least 2 characters)</div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-            <div class="form-error">Please enter a valid email address</div>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+964 750 220 5577">
-            <div class="form-error">Please enter a valid phone number</div>
-          </div>
-          <div class="form-group">
-            <label for="project-type">Project Type *</label>
-            <select id="project-type" name="projectType" required>
-              <option value="">Select project type...</option>
-              <option value="construction">Construction</option>
-              <option value="event">Event Management</option>
-              <option value="supervision">Site Supervision</option>
-              <option value="other">Other</option>
-            </select>
-            <div class="form-error">Please select a project type</div>
-          </div>
-          <div class="form-group">
-            <label for="message">Project Details *</label>
-            <textarea id="message" name="message" rows="6" placeholder="Tell us about your project, timeline, and requirements..." required></textarea>
-            <div class="form-error">Please describe your project (at least 10 characters)</div>
-          </div>
-          <button type="submit">Send Message</button>
+          <button class="btn btn-dark" type="submit">Continue on WhatsApp <span class="arrow">↗</span></button>
+          <p class="form-help">WhatsApp will open with your information prepared. You can review it before sending.</p>
         </form>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 
-<!-- ─── MODAL ─── -->
-<div class="modal" id="portfolioModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title" id="modalTitle">Project Title</h2>
-      <button class="modal-close" id="modalClose"><i class="fa-solid fa-times"></i></button>
-    </div>
-
-    <div class="carousel-gallery">
-      <div class="carousel-container">
-        <div class="carousel-main" id="carouselMain"></div>
-
-        <div class="carousel-overlay-ui">
-          <button class="carousel-arrow" id="prevBtn" aria-label="Previous">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="carousel-arrow" id="nextBtn" aria-label="Next">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Seven Points" width="76" loading="lazy">
+          <p>Construction, interior fit-out, supervision, and event management in the Kurdistan Region of Iraq.</p>
         </div>
 
-        <div class="carousel-indicator">
-          <span id="carouselIndex">1</span> / <span id="carouselTotal">9</span>
+        <div class="footer-links">
+          <div>
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#work">Selected Work</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="tel:+9647502205577">Call</a></li>
+              <li><a href="https://wa.me/9647502205577" target="_blank" rel="noopener">WhatsApp</a></li>
+              <li><a href="mailto:email@sevenpoints.info">Email</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="carousel-thumbnails" id="carouselThumbs"></div>
-    </div>
-
-    <div class="video-section">
-      <h4><i class="fa-solid fa-play"></i> Project Video</h4>
-      <div class="modal-video">
-        <iframe id="projectVideo" src="" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+      <div class="footer-bottom">
+        <span>© 2026 Seven Points. All rights reserved.</span>
+        <span>Duhok · Kurdistan Region · Iraq</span>
       </div>
     </div>
+  </footer>
 
-    <div class="modal-description">
-      <h3>Project Overview</h3>
-      <p id="projectDescription">Description goes here</p>
-    </div>
+  <a class="whatsapp-fab" href="https://wa.me/9647502205577?text=Hello%20Seven%20Points%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Contact Seven Points on WhatsApp">
+    <b>✆</b><span>WhatsApp</span>
+  </a>
 
-    <div class="modal-details">
-      <div class="detail-item"><strong>Category</strong><span id="projectCategory">Category</span></div>
-      <div class="detail-item"><strong>Duration</strong><span id="projectDuration">Duration</span></div>
-      <div class="detail-item"><strong>Client Type</strong><span id="projectClient">Client</span></div>
-      <div class="detail-item"><strong>Status</strong><span id="projectStatus">Completed</span></div>
-    </div>
+  <dialog class="project-dialog" id="projectDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-shell">
+      <header class="dialog-header">
+        <h2 id="dialogTitle">Project</h2>
+        <button class="dialog-close" id="dialogClose" type="button" aria-label="Close project">×</button>
+      </header>
 
-    <div class="modal-actions">
-      <button class="btn btn-primary" id="backBtn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</button>
-      <a href="#contact" class="btn btn-secondary" id="contactBtn"><i class="fa-solid fa-arrow-right"></i> Start Similar Project</a>
-    </div>
-  </div>
-</div>
+      <div class="dialog-gallery">
+        <img id="dialogImage" src="" alt="">
+        <button class="gallery-control prev" id="galleryPrev" type="button" aria-label="Previous project image">‹</button>
+        <button class="gallery-control next" id="galleryNext" type="button" aria-label="Next project image">›</button>
+        <span class="gallery-count" id="galleryCount">1 / 1</span>
+      </div>
 
-<div class="floating">
-  <a class="fab-btn phone-call" href="tel:+9647502205577" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
-  <a class="fab-btn whatsapp" href="#" id="whatsappBtn" aria-label="Contact on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  <a class="fab-btn scroll-top" href="#hero" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></a>
-</div>
+      <div class="thumb-strip" id="thumbStrip" aria-label="Project images"></div>
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-grid">
-      <div class="footer-section">
-        <h4>Seven Points</h4>
-        <p>Premium construction and event management solutions in Kurdistan Region, Iraq.</p>
-        <div class="footer-socials" style="margin-top: 18px;">
-          <a href="https://facebook.com" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://twitter.com" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://instagram.com" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://linkedin.com" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <div class="dialog-body">
+        <div class="dialog-meta" id="dialogMeta"></div>
+        <p id="dialogDescription"></p>
+        <div class="project-video" id="projectVideoWrap">
+          <video id="projectVideo" controls preload="metadata" playsinline></video>
         </div>
       </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">Construction</a></li>
-          <li><a href="#services">Event Management</a></li>
-          <li><a href="#services">Site Supervision</a></li>
-          <li><a href="#contact">Get Quote</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+9647502205577">+964 750 220 5577</a></li>
-          <li><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></li>
-          <li>Zirka Road, Duhok</li>
-          <li>Kurdistan Region, Iraq</li>
-        </ul>
-      </div>
     </div>
-    <div class="footer-divider"></div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 <a href="#">Seven Points</a>. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
-  </div>
-</footer>
+  </dialog>
 
-<script>
-/* ─────────────────────────────────────────
-   PROJECT DATA
-───────────────────────────────────────── */
-const projectsData = {
-  project1: {
-    title: 'Zakho Conference Hall', category: 'Construction',
-    duration: '18 months', clientType: 'Corporate',
-    description: 'A landmark conference hall designed with contemporary architecture, premium event facilities, and sophisticated spatial experiences for large-scale gatherings and corporate events.',
-    photos: [
-      'zakhoconferencehall1.jpg','zakhoconferencehall2.jpg','zakhoconferencehall3.jpg',
-      'zakhoconferencehall4.jpg','zakhoconferencehall5.jpg','zakhoconferencehall6.jpg',
-      'zakhoconferencehall7.jpg','zakhoconferencehall8.jpg','zakhoconferencehall9.jpg'
-    ],
-    video: 'zakhoconferencehallvideol.mp4?autoplay=1&mute=1'
-  },
-  project2: {
-    title: 'Jade Touch Salon', category: 'Construction and Interior Design',
-    duration: '6 months', clientType: 'Private',
-    description: 'A fully executed salon project delivered from initial construction works to complete interior finishing, combining functionality, elegance, and modern design.',
-    photos: [
-      'saloon.jpg','saloon2.jpg','saloon3.jpg','saloon4.jpg','saloon5.jpg',
-      'saloon6.jpg','saloon7.jpg','saloon8.jpg','saloon9.jpg'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project3: {
-    title: 'Transportation Hub Infrastructure', category: 'Construction',
-    duration: '30 months', clientType: 'Government',
-    description: 'Major infrastructure project including terminal construction, access roads, and utilities.',
-    photos: [
-      'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1467495682498-f1104393e25b?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project4: {
-    title: 'International Corporate Summit', category: 'Event Management',
-    duration: '6 weeks', clientType: 'Corporate',
-    description: 'Three-day international conference hosting 2000+ attendees featuring keynote speakers, workshops, and networking events.',
-    photos: [
-      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project5: {
-    title: 'Premium Wedding Celebration', category: 'Event Management',
-    duration: '4 months planning', clientType: 'Private',
-    description: 'Luxury wedding event for 500 guests featuring elegant decoration, live entertainment, gourmet dining, and professional photography.',
-    photos: [
-      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project6: {
-    title: 'Product Launch Experience', category: 'Event Management',
-    duration: '8 weeks', clientType: 'Corporate',
-    description: 'Innovative product launch event featuring interactive displays, live demonstrations, and brand experiences.',
-    photos: [
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  }
-};
-
-/* ─────────────────────────────────────────
-   CAROUSEL STATE
-───────────────────────────────────────── */
-let currentSlide = 0;
-let currentPhotos = [];
-let autoPlayInterval = null;
-let isAnimating = false;
-let carouselImgs = [];
-let activeImgIdx = 0;
-
-function buildCarouselPool() {
-  const main = document.getElementById('carouselMain');
-  main.innerHTML = '';
-  carouselImgs = [];
-  for (let i = 0; i < 2; i++) {
-    const img = document.createElement('img');
-    img.alt = 'Project photo';
-    img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:opacity,transform;';
-    img.style.opacity = i === 0 ? '1' : '0';
-    img.style.zIndex = i === 0 ? '2' : '1';
-    main.appendChild(img);
-    carouselImgs.push(img);
-  }
-  activeImgIdx = 0;
-}
-
-function updateCarousel(direction) {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  const outImg = carouselImgs[activeImgIdx];
-  const inIdx = 1 - activeImgIdx;
-  const inImg = carouselImgs[inIdx];
-
-  const inStartX = direction === 'next' ? '5%' : '-5%';
-  inImg.style.transition = 'none';
-  inImg.style.opacity = '0';
-  inImg.style.transform = `translateX(${inStartX}) scale(0.97)`;
-  inImg.style.zIndex = '2';
-  outImg.style.zIndex = '1';
-
-  inImg.src = currentPhotos[currentSlide];
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      const outEndX = direction === 'next' ? '-4%' : '4%';
-
-      inImg.style.transition = 'opacity 0.42s ease, transform 0.42s ease';
-      inImg.style.opacity = '1';
-      inImg.style.transform = 'translateX(0) scale(1)';
-
-      outImg.style.transition = 'opacity 0.38s ease, transform 0.38s ease';
-      outImg.style.opacity = '0';
-      outImg.style.transform = `translateX(${outEndX}) scale(0.97)`;
-
-      setTimeout(() => {
-        outImg.style.transition = 'none';
-        outImg.style.transform = 'translateX(0) scale(1)';
-        activeImgIdx = inIdx;
-        isAnimating = false;
-      }, 450);
-    });
-  });
-
-  document.getElementById('carouselIndex').textContent = currentSlide + 1;
-
-  const thumbs = document.querySelectorAll('.carousel-thumb');
-  thumbs.forEach((t, i) => t.classList.toggle('active', i === currentSlide));
-  const active = thumbs[currentSlide];
-  if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-}
-
-function nextSlide() {
-  if (isAnimating) return;
-  currentSlide = (currentSlide + 1) % currentPhotos.length;
-  updateCarousel('next');
-}
-
-function prevSlide() {
-  if (isAnimating) return;
-  currentSlide = (currentSlide - 1 + currentPhotos.length) % currentPhotos.length;
-  updateCarousel('prev');
-}
-
-function startAutoPlay() {
-  stopAutoPlay();
-  autoPlayInterval = setInterval(nextSlide, 5000);
-}
-
-function stopAutoPlay() {
-  if (autoPlayInterval) { clearInterval(autoPlayInterval); autoPlayInterval = null; }
-}
-
-/* ─────────────────────────────────────────
-   DOM REFS
-───────────────────────────────────────── */
-const scrollTopBtn    = document.querySelector('.scroll-top');
-const scrollProgress  = document.querySelector('.scroll-progress');
-const hamburger       = document.querySelector('.hamburger');
-const navMenu         = document.querySelector('.nav-menu');
-const navLinks        = document.querySelectorAll('.nav-link');
-const navbar          = document.querySelector('.navbar');
-const contactForm     = document.getElementById('contactForm');
-const reveals         = document.querySelectorAll('.reveal');
-const workCards       = document.querySelectorAll('.work');
-const filterBtns      = document.querySelectorAll('.filter-btn');
-const whatsappBtn     = document.getElementById('whatsappBtn');
-const portfolioModal  = document.getElementById('portfolioModal');
-const modalClose      = document.getElementById('modalClose');
-const backBtn         = document.getElementById('backBtn');
-const prevBtn         = document.getElementById('prevBtn');
-const nextBtn         = document.getElementById('nextBtn');
-const reduceMotion    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const statsGrid       = document.getElementById('statsGrid');
-
-/* ─────────────────────────────────────────
-   SCROLL PROGRESS
-───────────────────────────────────────── */
-window.addEventListener('scroll', () => {
-  const total = document.documentElement.scrollHeight - window.innerHeight;
-  scrollProgress.style.width = ((window.scrollY / total) * 100) + '%';
-}, { passive: true });
-
-/* ─────────────────────────────────────────
-   NAV
-───────────────────────────────────────── */
-hamburger?.addEventListener('click', () => {
-  const isActive = navMenu.classList.toggle('active');
-  hamburger.classList.toggle('active', isActive);
-  hamburger.setAttribute('aria-expanded', isActive);
-});
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-    hamburger.classList.remove('active');
-    hamburger?.setAttribute('aria-expanded', 'false');
-  });
-});
-
-let scrollTicking = false;
-window.addEventListener('scroll', () => {
-  if (!scrollTicking) {
-    scrollTicking = true;
-    requestAnimationFrame(() => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-      scrollTopBtn.classList.toggle('show', window.scrollY > 500);
-      scrollTicking = false;
-    });
-  }
-}, { passive: true });
-
-/* ─────────────────────────────────────────
-   COUNTER ANIMATION
-───────────────────────────────────────── */
-const animateCounter = (el, target, suffix = '') => {
-  const start = performance.now();
-  const duration = 2200;
-  const tick = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(target * eased) + suffix;
-    if (progress < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-};
-
-const statObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const cards = entry.target.querySelectorAll('[data-target]');
-      cards.forEach(card => {
-        const target = parseInt(card.dataset.target);
-        const suffix = card.dataset.suffix || '';
-        const numEl = card.querySelector('.stat-number');
-        reduceMotion ? (numEl.textContent = target + suffix) : animateCounter(numEl, target, suffix);
-      });
-    }
-  });
-}, { threshold: 0.3 });
-
-if (statsGrid) statObserver.observe(statsGrid);
-
-/* ─────────────────────────────────────────
-   REVEAL ON SCROLL (with stagger groups)
-───────────────────────────────────────── */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-reveals.forEach(el => revealObserver.observe(el));
-document.querySelectorAll('.process-grid, .testimonials-grid').forEach(el => revealObserver.observe(el));
-
-/* ─────────────────────────────────────────
-   PORTFOLIO — MOUSE GLOW + FILTER
-───────────────────────────────────────── */
-workCards.forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  });
-});
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    workCards.forEach(card => {
-      const show = filter === 'all' || card.dataset.category === filter;
-      if (show) {
-        card.classList.remove('hidden');
-        card.style.display = 'block';
-        void card.offsetWidth;
-        card.style.opacity = '1';
-      } else {
-        card.style.opacity = '0';
-        setTimeout(() => { if (card.style.opacity === '0') { card.classList.add('hidden'); card.style.display = 'none'; } }, 400);
+  <script>
+    const projects = {
+      zakho: {
+        title: "Zakho Conference Hall",
+        category: "Construction",
+        location: "Zakho, Iraq",
+        duration: "18 months",
+        client: "Corporate",
+        description: "A conference hall project combining contemporary architectural language, premium event facilities, and carefully coordinated interior and construction execution for large gatherings and corporate functions.",
+        images: [
+          "zakhoconferencehall1.jpg", "zakhoconferencehall2.jpg", "zakhoconferencehall3.jpg",
+          "zakhoconferencehall4.jpg", "zakhoconferencehall5.jpg", "zakhoconferencehall6.jpg",
+          "zakhoconferencehall7.jpg", "zakhoconferencehall8.jpg", "zakhoconferencehall9.jpg"
+        ],
+        video: "zakhoconferencehallvideol.mp4"
+      },
+      jade: {
+        title: "Jade Touch Salon",
+        category: "Construction + Interior Fit-Out",
+        location: "Duhok, Iraq",
+        duration: "6 months",
+        client: "Private",
+        description: "A complete salon project delivered from construction works through interior finishing, with the layout, materials, lighting, and detailing coordinated around a refined customer experience.",
+        images: [
+          "saloon.jpg", "saloon2.jpg", "saloon3.jpg", "saloon4.jpg", "saloon5.jpg",
+          "saloon6.jpg", "saloon7.jpg", "saloon8.jpg", "saloon9.jpg"
+        ],
+        video: ""
       }
+    };
+
+    const siteHeader = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const updateHeader = () => siteHeader.classList.toggle("scrolled", window.scrollY > 24);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    menuToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuToggle.classList.toggle("active", open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
     });
-  });
-});
 
-/* ─────────────────────────────────────────
-   OPEN PROJECT MODAL
-───────────────────────────────────────── */
-workCards.forEach(card => {
-  card.addEventListener('click', () => {
-    const project = projectsData[card.dataset.project];
-    if (!project) return;
-
-    currentPhotos = project.photos;
-    currentSlide = 0;
-    isAnimating = false;
-
-    document.getElementById('modalTitle').textContent = project.title;
-    document.getElementById('projectDescription').textContent = project.description;
-    document.getElementById('projectCategory').textContent = project.category;
-    document.getElementById('projectDuration').textContent = project.duration;
-    document.getElementById('projectClient').textContent = project.clientType;
-    document.getElementById('carouselTotal').textContent = project.photos.length;
-    document.getElementById('carouselIndex').textContent = '1';
-
-    buildCarouselPool();
-    carouselImgs[0].src = project.photos[0];
-    carouselImgs[0].style.opacity = '1';
-    carouselImgs[0].style.transform = 'translateX(0) scale(1)';
-    carouselImgs[0].style.zIndex = '2';
-    carouselImgs[1].src = '';
-    carouselImgs[1].style.opacity = '0';
-    carouselImgs[1].style.zIndex = '1';
-    activeImgIdx = 0;
-
-    const thumbsContainer = document.getElementById('carouselThumbs');
-    thumbsContainer.innerHTML = '';
-    project.photos.forEach((photo, index) => {
-      const thumb = document.createElement('div');
-      thumb.className = 'carousel-thumb' + (index === 0 ? ' active' : '');
-      const thumbImg = document.createElement('img');
-      thumbImg.src = photo;
-      thumbImg.alt = `Thumbnail ${index + 1}`;
-      thumb.appendChild(thumbImg);
-      thumb.addEventListener('click', () => {
-        if (isAnimating || index === currentSlide) return;
-        stopAutoPlay();
-        const dir = index > currentSlide ? 'next' : 'prev';
-        currentSlide = index;
-        updateCarousel(dir);
-        startAutoPlay();
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
       });
-      thumbsContainer.appendChild(thumb);
     });
 
-    document.getElementById('projectVideo').src = project.video;
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const navAnchors = [...navLinks.querySelectorAll("a")];
+    const activeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navAnchors.forEach(link => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
+      });
+    }, { rootMargin: "-40% 0px -50%", threshold: 0 });
+    sections.forEach(section => activeObserver.observe(section));
 
-    portfolioModal.classList.add('show');
-    document.body.style.overflow = 'hidden';
-    startAutoPlay();
-  });
-});
+    const quoteForm = document.getElementById("quoteForm");
+    quoteForm.addEventListener("submit", event => {
+      event.preventDefault();
+      if (!quoteForm.reportValidity()) return;
 
-/* ─────────────────────────────────────────
-   CLOSE MODAL
-───────────────────────────────────────── */
-const closeProjectModal = () => {
-  stopAutoPlay();
-  portfolioModal.classList.remove('show');
-  document.body.style.overflow = 'auto';
-  document.getElementById('projectVideo').src = '';
-};
+      const data = new FormData(quoteForm);
+      const lines = [
+        "Hello Seven Points, I would like to request a consultation.",
+        "",
+        `Name: ${data.get("name")}`,
+        `Phone: ${data.get("phone") || "Not provided"}`,
+        `Project type: ${data.get("projectType")}`,
+        `Location: ${data.get("location") || "Not specified"}`,
+        `Project details: ${data.get("details")}`
+      ];
 
-modalClose.addEventListener('click', closeProjectModal);
-backBtn.addEventListener('click', closeProjectModal);
-portfolioModal.addEventListener('click', e => { if (e.target === portfolioModal) closeProjectModal(); });
+      window.open(`https://wa.me/9647502205577?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
+    });
 
-/* ─────────────────────────────────────────
-   CAROUSEL BUTTONS + KEYBOARD
-───────────────────────────────────────── */
-prevBtn.addEventListener('click', () => { stopAutoPlay(); prevSlide(); startAutoPlay(); });
-nextBtn.addEventListener('click', () => { stopAutoPlay(); nextSlide(); startAutoPlay(); });
+    const projectDialog = document.getElementById("projectDialog");
+    const dialogClose = document.getElementById("dialogClose");
+    const dialogTitle = document.getElementById("dialogTitle");
+    const dialogImage = document.getElementById("dialogImage");
+    const dialogMeta = document.getElementById("dialogMeta");
+    const dialogDescription = document.getElementById("dialogDescription");
+    const galleryCount = document.getElementById("galleryCount");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const thumbStrip = document.getElementById("thumbStrip");
+    const projectVideoWrap = document.getElementById("projectVideoWrap");
+    const projectVideo = document.getElementById("projectVideo");
 
-document.addEventListener('keydown', e => {
-  if (!portfolioModal.classList.contains('show')) return;
-  if (e.key === 'ArrowRight') { stopAutoPlay(); nextSlide(); startAutoPlay(); }
-  if (e.key === 'ArrowLeft')  { stopAutoPlay(); prevSlide(); startAutoPlay(); }
-  if (e.key === 'Escape') closeProjectModal();
-});
+    let activeProject = null;
+    let activeIndex = 0;
+    let lastTrigger = null;
 
-/* ─────────────────────────────────────────
-   TESTIMONIAL DOTS
-───────────────────────────────────────── */
-document.querySelectorAll('.carousel-dots .dot').forEach(dot => {
-  dot.addEventListener('click', () => {
-    document.querySelectorAll('.carousel-dots .dot').forEach(d => d.classList.remove('active'));
-    dot.classList.add('active');
-    const idx = parseInt(dot.dataset.slide, 10);
-    const quotes = document.querySelectorAll('#testimonialsGrid .quote');
-    const target = quotes[idx];
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  });
-});
+    const setProjectImage = index => {
+      if (!activeProject) return;
+      const total = activeProject.images.length;
+      activeIndex = (index + total) % total;
+      dialogImage.src = activeProject.images[activeIndex];
+      dialogImage.alt = `${activeProject.title} — image ${activeIndex + 1} of ${total}`;
+      galleryCount.textContent = `${activeIndex + 1} / ${total}`;
+      [...thumbStrip.children].forEach((thumb, thumbIndex) => {
+        thumb.classList.toggle("active", thumbIndex === activeIndex);
+        thumb.setAttribute("aria-current", thumbIndex === activeIndex ? "true" : "false");
+      });
+      thumbStrip.children[activeIndex]?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", inline: "center", block: "nearest" });
+    };
 
-/* ─────────────────────────────────────────
-   WHATSAPP
-───────────────────────────────────────── */
-whatsappBtn.addEventListener('click', e => {
-  e.preventDefault();
-  const msg = encodeURIComponent("Hi Seven Points! I'm interested in your services. Can you provide more information?");
-  window.open(`https://wa.me/9647502205577?text=${msg}`, '_blank');
-});
+    const openProject = (key, trigger) => {
+      activeProject = projects[key];
+      if (!activeProject) return;
+      lastTrigger = trigger;
+      activeIndex = 0;
 
-/* ─────────────────────────────────────────
-   CONTACT FORM
-───────────────────────────────────────── */
-const validateEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      dialogTitle.textContent = activeProject.title;
+      dialogDescription.textContent = activeProject.description;
+      dialogMeta.innerHTML = [activeProject.category, activeProject.location, activeProject.duration, activeProject.client]
+        .map(value => `<span>${value}</span>`)
+        .join("");
 
-const validateForm = () => {
-  let isValid = true;
-  contactForm.querySelectorAll('.form-group').forEach(group => {
-    const input = group.querySelector('input, textarea, select');
-    let valid = true;
-    group.classList.remove('error');
-    if (input.hasAttribute('required') && !input.value.trim()) valid = false;
-    else if (input.type === 'email' && input.value && !validateEmail(input.value)) valid = false;
-    else if (input.id === 'name' && input.value.trim().length < 2) valid = false;
-    else if (input.id === 'message' && input.value.trim().length < 10) valid = false;
-    if (!valid) { group.classList.add('error'); isValid = false; }
-  });
-  return isValid;
-};
+      thumbStrip.innerHTML = "";
+      activeProject.images.forEach((source, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "thumb";
+        button.setAttribute("aria-label", `Show image ${index + 1}`);
+        const image = document.createElement("img");
+        image.src = source;
+        image.alt = "";
+        image.loading = "lazy";
+        button.appendChild(image);
+        button.addEventListener("click", () => setProjectImage(index));
+        thumbStrip.appendChild(button);
+      });
 
-contactForm?.addEventListener('submit', async e => {
-  e.preventDefault();
-  if (!validateForm()) return;
-  const btn = contactForm.querySelector('button');
-  const orig = btn.textContent;
-  btn.disabled = true;
-  btn.textContent = '• • • Sending • • •';
-  try {
-    await new Promise(r => setTimeout(r, 2000));
-    document.getElementById('formSuccess').classList.add('show');
-    contactForm.reset();
-    contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
-    setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 5000);
-  } catch(err) {
-    alert('Error sending message. Please try again.');
-  } finally {
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-});
+      if (activeProject.video) {
+        projectVideo.src = activeProject.video;
+        projectVideoWrap.classList.add("show");
+      } else {
+        projectVideo.removeAttribute("src");
+        projectVideo.load();
+        projectVideoWrap.classList.remove("show");
+      }
 
-contactForm?.querySelectorAll('input, textarea, select').forEach(input => {
-  input.addEventListener('blur', () => {
-    const group = input.closest('.form-group');
-    let valid = true;
-    if (input.hasAttribute('required') && !input.value.trim()) valid = false;
-    else if (input.type === 'email' && input.value && !validateEmail(input.value)) valid = false;
-    else if (input.id === 'name' && input.value.trim().length < 2) valid = false;
-    else if (input.id === 'message' && input.value.trim().length < 10) valid = false;
-    group.classList.toggle('error', !valid);
-  });
-});
+      setProjectImage(0);
+      projectDialog.showModal();
+      document.body.classList.add("modal-open");
+    };
 
-/* ─────────────────────────────────────────
-   SMOOTH SCROLL
-───────────────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    const target = document.querySelector(href);
-    if (target && href !== '#') {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-    }
-  });
-});
-</script>
+    const closeProject = () => {
+      projectVideo.pause();
+      projectDialog.close();
+      document.body.classList.remove("modal-open");
+      lastTrigger?.focus();
+    };
+
+    document.querySelectorAll("[data-project]").forEach(card => {
+      card.addEventListener("click", () => openProject(card.dataset.project, card));
+    });
+
+    galleryPrev.addEventListener("click", () => setProjectImage(activeIndex - 1));
+    galleryNext.addEventListener("click", () => setProjectImage(activeIndex + 1));
+    dialogClose.addEventListener("click", closeProject);
+    projectDialog.addEventListener("click", event => {
+      if (event.target === projectDialog) closeProject();
+    });
+    projectDialog.addEventListener("close", () => {
+      document.body.classList.remove("modal-open");
+      projectVideo.pause();
+    });
+    projectDialog.addEventListener("keydown", event => {
+      if (event.key === "ArrowLeft") setProjectImage(activeIndex - 1);
+      if (event.key === "ArrowRight") setProjectImage(activeIndex + 1);
+    });
+  </script>
 </body>
 </html>
