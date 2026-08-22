@@ -1,717 +1,106 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Seven Points | Construction, Interiors & Events</title>
-  <meta name="description" content="Construction management, interior fit-out, site supervision and event delivery across the Kurdistan Region of Iraq.">
-  <meta name="theme-color" content="#080807">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://sevenpoints.info/">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sevenpoints.info/">
-  <meta property="og:title" content="Seven Points | Built with control.">
-  <meta property="og:description" content="Construction, interior fit-out, supervision and event delivery in the Kurdistan Region of Iraq.">
-  <meta property="og:image" content="https://sevenpoints.info/sevenpointsbg.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="logo.png" type="image/png">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Seven Points",
-    "url":"https://sevenpoints.info/",
-    "logo":"https://sevenpoints.info/logo.png",
-    "telephone":"+9647502205577",
-    "email":"email@sevenpoints.info",
-    "address":{"@type":"PostalAddress","streetAddress":"Zirka Road","addressLocality":"Duhok","addressRegion":"Kurdistan Region","addressCountry":"IQ"},
-    "areaServed":"Kurdistan Region, Iraq"
-  }
-  </script>
-  <style>
-    :root {
-      --ink:#050505;
-      --ink-2:#0d0d0d;
-      --paper:#ffffff;
-      --paper-2:#f4f4f4;
-      --white:#ffffff;
-      --text:#f5f5f5;
-      --muted:#b8b8b8;
-      --dark-muted:#626262;
-      --gold:#FCAF41;
-      --gold-2:#FCAF41;
-      --line:rgba(255,255,255,.13);
-      --dark-line:rgba(0,0,0,.14);
-      --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
-      --font-display:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
-      --ease:cubic-bezier(.22,1,.36,1);
-      --max:1860px;
-      --side:clamp(20px,3.4vw,66px);
-      --radius:clamp(20px,2vw,32px);
-    }
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;background:var(--ink)}
-    body{margin:0;min-width:320px;background:var(--ink);color:var(--text);font-family:var(--font-body);line-height:1.55;overflow-x:clip;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-    body.modal-open{overflow:hidden}
-    img{display:block;max-width:100%}
-    a{color:inherit;text-decoration:none}
-    button,input,textarea,select{font:inherit}
-    button{color:inherit}
-    h1,h2,h3,p{margin-top:0}
-    h1,h2,h3{font-family:var(--font-display);font-weight:700}
-    ::selection{background:var(--gold);color:var(--ink)}
-    :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-    .skip-link{position:fixed;left:16px;top:16px;z-index:9999;padding:10px 14px;border-radius:10px;background:var(--gold);color:var(--ink);font-weight:600;transform:translateY(-160%);transition:transform .2s ease}
-    .skip-link:focus{transform:none}
-    .page-progress{position:fixed;z-index:3000;left:0;top:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;background:var(--gold);pointer-events:none}
-    .shell{width:min(var(--max),calc(100% - (var(--side) * 2)));margin-inline:auto}
-    .section{position:relative;padding:clamp(96px,10vw,170px) 0;scroll-margin-top:92px;content-visibility:auto;contain-intrinsic-size:900px}
-    .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px;color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-    .eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
-    .display{max-width:13ch;font-family:var(--font-display);font-size:clamp(48px,6.2vw,108px);font-weight:700;line-height:1.02;letter-spacing:-.012em;word-spacing:.035em;text-wrap:balance}
-    .section-copy{max-width:610px;color:var(--muted);font-size:clamp(16px,1.15vw,19px);line-height:1.7}
-    .reveal{opacity:0;transform:translateY(26px);transition:opacity .82s var(--ease),transform .82s var(--ease)}
-    .reveal.is-visible{opacity:1;transform:none}
-    .reveal[data-delay="1"]{transition-delay:.08s}
-    .reveal[data-delay="2"]{transition-delay:.16s}
-    .reveal[data-delay="3"]{transition-delay:.24s}
-    .clip{overflow:hidden}
-    .clip>*{transform:translateY(110%);transition:transform .95s var(--ease)}
-    .clip.is-visible>*{transform:none}
-    .button{min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:0 24px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--white);font-size:13px;font-weight:600;cursor:pointer;transition:background .3s ease,color .3s ease,border-color .3s ease,transform .3s var(--ease)}
-    .button:hover{transform:translateY(-2px);border-color:var(--gold);background:var(--gold);color:var(--ink)}
-    .button.primary{background:var(--gold);border-color:var(--gold);color:var(--ink)}
-    .button.primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
-    .arrow{font-size:17px;line-height:1;transition:transform .3s var(--ease)}
-    .button:hover .arrow{transform:translate(3px,-2px)}
-
-    /* Header — compact floating frame */
-    .header{position:fixed;z-index:2000;inset:0 0 auto;padding:10px 12px;pointer-events:none}
-    .nav{width:calc(100% - 4px);max-width:none;min-height:64px;margin:auto;padding:7px 8px 7px 10px;display:flex;align-items:center;gap:30px;border:1px solid rgba(255,255,255,.11);border-radius:18px;background:rgba(7,7,6,.46);box-shadow:0 12px 44px rgba(0,0,0,.14);backdrop-filter:blur(14px) saturate(125%);-webkit-backdrop-filter:blur(14px) saturate(125%);transition:background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s var(--ease);pointer-events:auto}
-    .header.scrolled .nav{background:rgba(7,7,6,.9);border-color:rgba(255,255,255,.14);box-shadow:0 18px 54px rgba(0,0,0,.28);transform:translateY(-1px)}
-    .brand{position:relative;display:inline-flex;align-items:center;justify-content:center;width:128px;height:50px;margin-right:auto;border:1px solid rgba(245,173,53,.48);border-radius:12px;background:linear-gradient(145deg,rgba(245,173,53,.08),rgba(255,255,255,.015));box-shadow:inset 0 0 0 1px rgba(255,255,255,.035),0 8px 24px rgba(0,0,0,.18);overflow:hidden}
-    .brand::before,.brand::after{content:"";position:absolute;width:10px;height:10px;border-color:var(--gold);opacity:.75}
-    .brand::before{left:6px;top:6px;border-left:1px solid;border-top:1px solid}
-    .brand::after{right:6px;bottom:6px;border-right:1px solid;border-bottom:1px solid}
-    .brand img{width:96px;height:auto;transition:transform .35s var(--ease),filter .35s ease;filter:drop-shadow(0 3px 10px rgba(245,173,53,.12))}
-    .brand:hover img{transform:scale(1.035)}
-    .nav-links{display:flex;align-items:center;gap:clamp(22px,2vw,38px);list-style:none;margin:0;padding:0}
-    .nav-links a{position:relative;color:#d2d2d2;font-size:12px;font-weight:500}
-    .nav-links a::after{content:"";position:absolute;left:0;bottom:-8px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease)}
-    .nav-links a:hover,.nav-links a.active{color:var(--white)}
-    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);transform-origin:left}
-    .nav-cta{min-height:44px;padding-inline:20px}
-    .menu{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:transparent;align-items:center;justify-content:center;cursor:pointer}
-    .menu span,.menu span::before,.menu span::after{display:block;width:18px;height:1px;background:currentColor;position:relative;transition:.25s ease}
-    .menu span::before,.menu span::after{content:"";position:absolute;left:0}
-    .menu span::before{top:-6px}.menu span::after{top:6px}
-    .menu.open span{background:transparent}.menu.open span::before{transform:translateY(6px) rotate(45deg)}.menu.open span::after{transform:translateY(-6px) rotate(-45deg)}
-
-    /* Hero */
-    .hero{position:relative;min-height:max(760px,100svh);display:flex;align-items:center;overflow:hidden;background:var(--ink);content-visibility:visible}
-    .hero-art{position:absolute;z-index:0;right:0;top:0;width:58%;height:100%;overflow:hidden}
-    .hero-art img{width:100%;height:112%;object-fit:cover;object-position:68% center;transform:translate3d(0,var(--hero-shift,0px),0) scale(var(--hero-zoom,1.035));will-change:transform}
-    .hero-art::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,var(--ink) 0%,rgba(8,8,7,.82) 14%,rgba(8,8,7,.08) 62%),linear-gradient(180deg,rgba(8,8,7,.12),rgba(8,8,7,.12) 56%,var(--ink) 100%)}
-    .hero-art::after{content:"";position:absolute;z-index:2;left:0;top:12%;bottom:12%;width:1px;background:linear-gradient(transparent,rgba(245,173,53,.65),transparent)}
-    .hero-inner{position:relative;z-index:3;width:min(var(--max),calc(100% - (var(--side) * 2)));margin:auto;padding:clamp(150px,15vh,210px) 0 clamp(80px,9vh,120px)}
-    .hero-copy{max-width:min(820px,55vw)}
-    .hero-label{margin-bottom:30px;color:#d7d7d7;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-    .hero h1{max-width:8.8ch;margin-bottom:34px;color:var(--white);font-family:var(--font-display);font-size:clamp(68px,8vw,142px);font-weight:700;line-height:.98;letter-spacing:-.015em;word-spacing:.045em;text-wrap:balance}
-    .hero h1 span{color:var(--gold)}
-    .hero-intro{max-width:610px;margin-bottom:40px;color:#bdbdbd;font-size:clamp(16px,1.05vw,19px);line-height:1.72}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-    .hero-meta{position:absolute;left:var(--side);right:var(--side);bottom:28px;display:flex;justify-content:space-between;gap:24px;color:#7f7f7f;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-    .hero-meta span:last-child{text-align:right}
-
-    /* Intro */
-    .intro{background:var(--paper);color:var(--ink)}
-    .intro-grid{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.25fr);gap:clamp(50px,8vw,140px);align-items:start}
-    .intro .eyebrow{color:var(--gold)}
-    .intro h2{max-width:10.5ch;margin:0;font-family:var(--font-display);font-size:clamp(52px,6.6vw,108px);font-weight:700;line-height:1.02;letter-spacing:-.012em;word-spacing:.035em;text-wrap:balance}
-    .location-line{display:flex;align-items:center;gap:12px;margin-top:clamp(46px,5vw,72px);color:#6e6e6e;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-    .location-line::before{content:"";width:34px;height:1px;background:var(--gold)}
-    .intro-note{margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--dark-line);border-bottom:1px solid var(--dark-line)}
-    .fact{position:relative;min-height:166px;padding:30px 24px 26px;border-right:1px solid var(--dark-line);overflow:hidden}
-    .fact:first-child{padding-left:0}.fact:last-child{border-right:0;padding-right:0}
-    .fact::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .85s var(--ease)}
-    .intro-note.is-counting .fact::after{transform:scaleX(1)}
-    .fact strong{display:flex;align-items:flex-start;gap:2px;margin-bottom:12px;font-family:var(--font-display);font-size:clamp(38px,3.8vw,62px);font-weight:700;line-height:1.05;letter-spacing:0;font-variant-numeric:tabular-nums}
-    .fact sup{margin-top:.1em;color:var(--gold);font-size:.48em;line-height:1}
-    .fact span.label{display:block;color:var(--dark-muted);font-size:12px;font-weight:500;letter-spacing:.02em}
-
-    /* Services */
-    .services{background:var(--ink)}
-    .services-head{display:grid;grid-template-columns:1fr minmax(280px,.38fr);gap:60px;align-items:end;margin-bottom:clamp(54px,6vw,86px)}
-    .services-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;padding:1px;border-radius:var(--radius);overflow:hidden;background:var(--line)}
-    .service{position:relative;min-height:clamp(220px,20vw,300px);padding:clamp(30px,3.7vw,56px);display:flex;flex-direction:column;justify-content:space-between;background:var(--ink-2);overflow:hidden;transition:background .4s ease,transform .45s var(--ease)}
-    .service::before{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease)}
-    .service.is-visible::before{transform:scaleX(1)}
-    .service:hover{background:#151515}
-    .service-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
-    .service-no{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.16em}
-    .service h3{max-width:11ch;margin:0 0 14px;font-family:var(--font-display);font-size:clamp(31px,3.1vw,50px);font-weight:700;line-height:1.08;letter-spacing:-.008em;word-spacing:.03em}
-    .service p{max-width:390px;margin:0;color:var(--muted);font-size:14px;line-height:1.55}
-    .service-mark{font-size:25px;color:#676767;transition:transform .35s var(--ease),color .35s ease}
-    .service:hover .service-mark{transform:translate(4px,-3px);color:var(--gold)}
-
-    /* Work */
-    .work{background:var(--paper);color:var(--ink);border-top:4px solid var(--gold)}
-    .work-head{display:flex;justify-content:space-between;align-items:end;gap:60px;margin-bottom:clamp(64px,8vw,110px)}
-    .work .eyebrow{color:var(--gold)}
-    .project{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(340px,.72fr);gap:clamp(34px,5vw,84px);align-items:center;margin-bottom:clamp(100px,13vw,210px)}
-    .project.reverse{grid-template-columns:minmax(340px,.72fr) minmax(0,1.28fr)}
-    .project.reverse .project-media{grid-column:2}.project.reverse .project-copy{grid-column:1;grid-row:1}
-    .project-media{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:var(--radius);background:#e8e8e8}
-    .project-media img{width:100%;height:128%;object-fit:cover;object-position:center 20%;transform:translate3d(0,var(--media-shift,0px),0) scale(1.01);will-change:transform}
-    .project-media::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.3);border-radius:inherit;pointer-events:none}
-    .project-tag{display:inline-flex;margin-bottom:22px;color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-    .project h3{margin-bottom:22px;font-size:clamp(48px,5.5vw,92px);line-height:1;letter-spacing:-.015em;word-spacing:.035em}
-    .project p{max-width:520px;margin-bottom:32px;color:var(--dark-muted);font-size:17px;line-height:1.7}
-    .project-link{display:inline-flex;align-items:center;gap:13px;padding-bottom:7px;border-bottom:1px solid rgba(8,8,7,.32);font-size:13px;font-weight:600;cursor:pointer;background:none;border-top:0;border-left:0;border-right:0;color:var(--ink)}
-    .project-link .arrow{color:var(--gold)}
-    .project-link:hover .arrow{transform:translate(4px,-2px)}
-
-    /* Process */
-    .process{background:var(--ink)}
-    .process-grid{display:grid;grid-template-columns:minmax(300px,.6fr) minmax(0,1.4fr);gap:clamp(60px,8vw,150px);align-items:start}
-    .process-copy{position:sticky;top:130px}
-    .process-copy h2{max-width:9ch;margin-bottom:26px}
-    .steps{position:relative;padding-left:42px;--process-progress:0}
-    .steps::before,.steps::after{content:"";position:absolute;left:11px;top:18px;bottom:18px;width:1px;transform-origin:top}
-    .steps::before{background:rgba(255,255,255,.16)}
-    .steps::after{background:var(--gold);transform:scaleY(var(--process-progress));transition:transform .08s linear}
-    .step{position:relative;display:grid;grid-template-columns:70px 1fr;gap:22px;padding:30px 0;border-bottom:1px solid var(--line);opacity:.38;transform:translateX(14px);transition:opacity .5s ease,transform .55s var(--ease)}
-    .step::before{content:"";position:absolute;left:-36px;top:36px;width:11px;height:11px;border:2px solid #5d5d5d;border-radius:50%;background:var(--ink);transition:border-color .35s ease,background .35s ease,transform .35s var(--ease)}
-    .step.is-active{opacity:1;transform:none}
-    .step.is-active::before{border-color:var(--gold);background:var(--gold);transform:scale(1.12)}
-    .step span{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.16em}
-    .step h3{margin-bottom:8px;font-family:var(--font-display);font-size:clamp(30px,2.7vw,44px);font-weight:700;line-height:1.08;letter-spacing:-.006em;word-spacing:.03em}
-    .step p{max-width:580px;margin:0;color:var(--muted);font-size:14px;line-height:1.55}
-
-    /* Contact */
-    .contact{background:var(--gold);color:var(--ink)}
-    .contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(420px,.72fr);gap:clamp(60px,8vw,140px);align-items:start}
-    .contact .eyebrow{color:rgba(8,8,7,.58)}
-    .contact h2{margin-bottom:30px;font-size:clamp(56px,7.5vw,124px);line-height:.98;letter-spacing:-.015em;word-spacing:.035em}
-    .contact-copy>p{max-width:570px;margin-bottom:38px;font-size:18px;line-height:1.65}
-    .contact-details{display:grid;gap:10px;font-size:14px;font-weight:500}
-    .contact-details a{width:max-content;border-bottom:1px solid rgba(8,8,7,.3)}
-    .form{padding:clamp(28px,3.5vw,46px);border-radius:var(--radius);background:var(--white);box-shadow:0 30px 80px rgba(58,35,0,.16)}
-    .form h3{margin-bottom:8px;font-size:29px;letter-spacing:-.006em;word-spacing:.02em}
-    .form>p{margin-bottom:26px;color:var(--dark-muted);font-size:14px}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-    .field{display:grid;gap:8px}.field.full{grid-column:1/-1}
-    .field label{color:#626262;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-    .field input,.field select,.field textarea{width:100%;min-height:52px;padding:13px 14px;border:1px solid rgba(8,8,7,.16);border-radius:11px;background:#ffffff;color:var(--ink);outline:none;transition:border-color .22s ease,box-shadow .22s ease}
-    .field textarea{min-height:118px;resize:vertical}
-    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,173,53,.24)}
-    .form .button{width:100%;margin-top:17px;background:var(--ink);border-color:var(--ink);color:var(--white)}
-    .form .button:hover{background:#111;border-color:#111}
-    .form-note{margin:11px 0 0!important;color:#737373!important;font-size:11px!important}
-
-    /* Footer */
-    footer{padding:58px var(--side) 28px;background:#030303;border-top:1px solid var(--line)}
-    .footer{max-width:var(--max);margin:auto}
-    .footer-main{display:flex;align-items:flex-start;justify-content:space-between;gap:60px;padding-bottom:50px}
-    .footer-brand img{width:112px;margin-bottom:18px}
-    .footer-brand p{max-width:430px;margin:0;color:var(--muted);font-size:14px}
-    .footer-links{display:flex;gap:44px;flex-wrap:wrap}
-    .footer-links a{color:var(--muted);font-size:13px}.footer-links a:hover{color:var(--gold)}
-    .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:22px;border-top:1px solid var(--line);color:#6a6a6a;font-size:11px}
-    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:1700;display:flex;align-items:center;gap:9px;min-height:52px;padding:0 17px;border-radius:999px;background:var(--gold);color:var(--ink);font-size:12px;font-weight:700;box-shadow:0 16px 44px rgba(0,0,0,.28);transition:transform .3s var(--ease)}
-    .whatsapp:hover{transform:translateY(-3px)}
-
-    /* Dialog */
-    .dialog{width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:0;border:0;background:rgba(3,3,3,.95);color:var(--white)}
-    .dialog::backdrop{background:rgba(3,3,3,.95)}
-    .dialog-shell{width:min(1220px,calc(100% - 32px));margin:16px auto 50px;overflow:hidden;border:1px solid var(--line);border-radius:26px;background:#0c0c0c}
-    .dialog-head{min-height:82px;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--line)}
-    .dialog-head h2{margin:0;font-size:clamp(26px,4vw,44px);letter-spacing:-.008em;word-spacing:.025em}
-    .dialog-close{width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:transparent;font-size:27px;cursor:pointer}
-    .dialog-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-    .gallery{position:relative;aspect-ratio:16/9;background:#181818}
-    .gallery>img{width:100%;height:100%;object-fit:cover}
-    .gallery-button{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(8,8,7,.55);font-size:27px;cursor:pointer}
-    .gallery-button:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-    .gallery-button.prev{left:16px}.gallery-button.next{right:16px}
-    .gallery-count{position:absolute;right:18px;bottom:16px;padding:7px 11px;border-radius:999px;background:rgba(8,8,7,.65);font-size:11px}
-    .thumbs{display:flex;gap:9px;overflow-x:auto;padding:13px 16px;border-bottom:1px solid var(--line);scrollbar-width:none}.thumbs::-webkit-scrollbar{display:none}
-    .thumb{width:84px;height:58px;flex:0 0 auto;padding:0;border:2px solid transparent;border-radius:9px;overflow:hidden;background:#161616;opacity:.55;cursor:pointer}.thumb img{width:100%;height:100%;object-fit:cover}.thumb.active{opacity:1;border-color:var(--gold)}
-    .dialog-body{padding:28px}.dialog-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:19px}.dialog-meta span{padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}.dialog-body p{max-width:800px;margin:0;color:var(--muted);font-size:16px;line-height:1.7}
-
-    @media (min-width:1800px){.hero-copy{max-width:920px}.section{padding-top:180px;padding-bottom:180px}.brand{width:138px}.brand img{width:104px}}
-    @media (max-width:1000px){
-      .nav-links,.nav-cta{display:none}.menu{display:flex}.nav-links.open{position:absolute;display:grid;left:14px;right:14px;top:82px;gap:0;padding:10px 18px;border:1px solid var(--line);border-radius:18px;background:rgba(8,8,7,.98);box-shadow:0 20px 60px rgba(0,0,0,.35)}.nav-links.open li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}.nav-links.open li:last-child{border:0}.nav-links.open a{display:block;font-size:14px}.nav-links.open a::after{display:none}
-      .hero-art{width:64%}.hero-copy{max-width:65vw}
-      .intro-grid,.process-grid,.contact-grid{grid-template-columns:1fr}.intro-grid{gap:35px}.process-copy{position:relative;top:0}.contact-grid{gap:55px}.contact-copy{max-width:760px}
-      .intro-note{grid-template-columns:repeat(2,1fr)}.fact:nth-child(2){border-right:0}.fact:nth-child(-n+2){border-bottom:1px solid var(--dark-line)}.fact:nth-child(3){padding-left:0}
-      .services-head{grid-template-columns:1fr;gap:24px}.services-list{grid-template-columns:1fr}.project,.project.reverse{grid-template-columns:1fr}.project.reverse .project-media,.project.reverse .project-copy{grid-column:auto;grid-row:auto}.project-copy{max-width:760px}
-    }
-    @media (max-width:700px){
-      :root{--side:17px;--radius:20px}
-      .section{padding:88px 0}.header{padding:7px}.nav{min-height:58px;padding:6px 7px 6px 8px;border-radius:15px}.brand{width:104px;height:46px;border-radius:10px}.brand img{width:80px}.menu{width:43px;height:43px}
-      .hero{min-height:790px}.hero-art{width:100%;opacity:.6}.hero-art img{object-position:65% center}.hero-art::before{background:linear-gradient(90deg,rgba(8,8,7,.98),rgba(8,8,7,.72) 64%,rgba(8,8,7,.4)),linear-gradient(180deg,rgba(8,8,7,.38),rgba(8,8,7,.55) 55%,var(--ink) 100%)}.hero-art::after{display:none}.hero-inner{padding-top:135px;padding-bottom:110px}.hero-copy{max-width:100%}.hero h1{max-width:9.2ch;font-size:clamp(54px,15vw,78px);line-height:1.01;letter-spacing:-.01em;word-spacing:.04em}.hero-intro{max-width:94%;font-size:16px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions .button{width:100%}.hero-meta{bottom:20px;flex-direction:column;gap:7px}.hero-meta span:last-child{text-align:left}
-      .intro h2{font-size:clamp(46px,12.5vw,68px);line-height:1.04;letter-spacing:-.008em}.location-line{margin-top:42px}.intro-note{grid-template-columns:repeat(2,1fr)}.fact,.fact:first-child,.fact:last-child{min-height:126px;padding:22px 14px}.fact:nth-child(odd){padding-left:0}.fact:nth-child(even){border-right:0}.fact:nth-child(-n+2){border-bottom:1px solid var(--dark-line)}.fact strong{font-size:clamp(36px,11vw,48px)}
-      .services-head{margin-bottom:46px}.service{min-height:210px;padding:28px 24px}.service h3{font-size:30px;line-height:1.1;letter-spacing:0}.service p{font-size:14px}.service:hover{transform:none}
-      .work-head{display:block}.work-head .section-copy{margin-top:24px}.project{gap:30px;margin-bottom:100px}.project h3{font-size:clamp(43px,12vw,66px);line-height:1.02;letter-spacing:-.008em}.project p{font-size:16px}
-      .steps{padding-left:32px}.steps::before,.steps::after{left:7px}.step{grid-template-columns:46px 1fr;gap:14px;padding:27px 0}.step::before{left:-30px;top:32px;width:9px;height:9px}.step h3{font-size:30px;letter-spacing:0}.contact h2{font-size:clamp(50px,14.5vw,74px);line-height:1.01;letter-spacing:-.008em}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
-      .footer-main,.footer-bottom{flex-direction:column}.footer-brand img{width:100px}.footer-links{gap:22px}.whatsapp{width:52px;padding:0;justify-content:center}.whatsapp span{display:none}
-      .dialog-shell{width:calc(100% - 14px);margin:7px auto 30px;border-radius:18px}.gallery{aspect-ratio:4/3}.dialog-head{min-height:70px;padding:13px 16px}.dialog-body{padding:22px 18px}.gallery-button{width:42px;height:42px}.gallery-button.prev{left:8px}.gallery-button.next{right:8px}
-    }
-
-    @media (max-width:900px){
-      .archive-head{grid-template-columns:1fr;gap:20px}.archive-grid{grid-template-columns:1fr}.archive-card,.archive-card:nth-child(2){grid-column:auto;min-height:clamp(360px,110vw,560px)}.archive-foot{display:block}.archive-foot span{display:block}.archive-foot span+span{margin-top:8px}
-    }
-    @media (min-width:1800px){
-      .archive-grid{gap:24px}.archive-card{min-height:700px}.archive-card:nth-child(2){min-height:610px}
-    }
-
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}.reveal,.clip>*{opacity:1!important;transform:none!important}.hero-art img,.project-media img{transform:none!important}.step{opacity:1!important;transform:none!important}.steps::after{transform:scaleY(1)!important}}
-
-    /* V6 — premium refinement: cleaner type, logo showcase, lighter motion */
-    :root{--ease:cubic-bezier(.2,.75,.25,1);--radius:clamp(18px,1.7vw,28px)}
-    body{font-feature-settings:"kern" 1,"liga" 1;text-rendering:optimizeLegibility}
-    h1,h2,h3{font-weight:760;letter-spacing:.006em;word-spacing:.055em}
-    .display{font-weight:760;line-height:1.055;letter-spacing:.008em;word-spacing:.065em;max-width:14ch}
-    .section{padding:clamp(92px,8.5vw,148px) 0}
-    .section-copy{line-height:1.72;letter-spacing:.008em}
-    .eyebrow{letter-spacing:.21em;font-weight:650}
-    .reveal{transform:translate3d(0,18px,0);transition:opacity .62s var(--ease),transform .72s var(--ease)}
-    .clip>*{transform:translate3d(0,104%,0);transition:transform .78s var(--ease)}
-
-    /* Navigation stays quiet; the logo gets its own floating stage. */
-    .header{padding:10px 14px}
-    .nav{min-height:58px;padding:6px 10px 6px 8px;border-radius:16px;background:rgba(5,5,5,.58);border-color:rgba(255,255,255,.09);box-shadow:0 12px 36px rgba(0,0,0,.12);backdrop-filter:blur(12px) saturate(112%);-webkit-backdrop-filter:blur(12px) saturate(112%)}
-    .header.scrolled .nav{background:rgba(5,5,5,.9);box-shadow:0 14px 42px rgba(0,0,0,.22)}
-    .brand{width:126px;height:68px;margin-top:4px;margin-bottom:-14px;border:1px solid rgba(255,255,255,.12);border-radius:15px;background:#080808;box-shadow:0 14px 34px rgba(0,0,0,.32);overflow:visible}
-    .brand::before{left:14px;right:14px;top:auto;bottom:-1px;width:auto;height:2px;border:0;background:var(--gold);opacity:1}
-    .brand::after{display:none}
-    .brand img{width:100px;height:auto;object-fit:contain;filter:none}
-    .brand:hover img{transform:translateY(-1px)}
-    .nav-links a{letter-spacing:.025em}
-
-    .hero h1{font-weight:780;line-height:1.015;letter-spacing:.002em;word-spacing:.07em;max-width:9.4ch}
-    .hero-label{letter-spacing:.2em}
-    .hero-intro{letter-spacing:.006em;line-height:1.72}
-    .hero-art img{height:108%;transform:translate3d(0,var(--hero-shift,0px),0) scale(var(--hero-zoom,1.018));will-change:transform}
-    .hero-art::before{background:linear-gradient(90deg,var(--ink) 0%,rgba(5,5,5,.86) 15%,rgba(5,5,5,.14) 64%),linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.12) 58%,var(--ink) 100%)}
-
-    .button{min-height:50px;padding-inline:22px;gap:10px;border-radius:12px;font-weight:650;letter-spacing:.015em;transition:background .25s ease,color .25s ease,border-color .25s ease,transform .3s var(--ease)}
-    .ui-icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
-    .button .ui-icon{opacity:.82}
-    .button:hover .arrow{transform:translate3d(2px,-1px,0)}
-
-    .work-head{margin-bottom:clamp(54px,6vw,84px)}
-    .project{margin-bottom:clamp(82px,9vw,142px)}
-    .project-media{box-shadow:0 24px 70px rgba(0,0,0,.09)}
-    .project-media img{height:114%;transform:translate3d(0,var(--media-shift,0px),0) scale(1.012);will-change:auto}
-    .project-media.in-view img{will-change:transform}
-    .project h3{font-weight:760;line-height:1.035;letter-spacing:.004em;word-spacing:.06em}
-    .project-tag{letter-spacing:.16em}
-    .project-link{gap:10px;letter-spacing:.015em}
-
-    .intro h2{font-weight:760;line-height:1.055;letter-spacing:.006em;word-spacing:.065em}
-    .fact strong{font-weight:760}
-
-    .services-head{margin-bottom:clamp(48px,5vw,72px)}
-    .services-list{gap:0;border:1px solid var(--line);background:transparent}
-    .service{min-height:clamp(210px,17vw,260px);background:#0b0b0b;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .3s ease,transform .35s var(--ease)}
-    .service:nth-child(2n){border-right:0}.service:nth-last-child(-n+2){border-bottom:0}
-    .service::before{height:1px;transition:transform .72s var(--ease)}
-    .service:hover{background:#101010;transform:translateY(-2px)}
-    .service-no{letter-spacing:.2em}
-    .service-icon{width:30px;height:30px;fill:none;stroke:rgba(255,255,255,.58);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s ease,transform .35s var(--ease)}
-    .service:hover .service-icon{stroke:var(--gold);transform:translateY(-2px)}
-    .service h3{font-weight:740;line-height:1.12;letter-spacing:.008em;word-spacing:.055em}
-    .service p{line-height:1.6;letter-spacing:.008em}
-
-    .process-copy h2,.step h3,.contact h2,.form h3,.dialog-head h2{letter-spacing:.006em;word-spacing:.06em}
-    .process-copy{top:112px}
-    .step{transform:translate3d(10px,0,0);transition:opacity .42s ease,transform .52s var(--ease)}
-    .step h3{font-weight:730}
-
-    .contact h2{font-weight:780;line-height:1.02}
-    .form{box-shadow:0 24px 64px rgba(0,0,0,.14)}
-    .form h3{font-weight:740}
-
-    .whatsapp{min-height:50px;border:1px solid rgba(5,5,5,.15);box-shadow:0 14px 36px rgba(0,0,0,.22)}
-    .whatsapp-icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-    .dialog-icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
-    .dialog-close,.gallery-button{display:grid;place-items:center;font-size:0}
-
-    @media (min-width:1800px){
-      .brand{width:136px;height:72px}.brand img{width:108px}
-      .hero h1{max-width:9.6ch}
-    }
-    @media (max-width:1000px){
-      .brand{width:118px;height:64px;margin-bottom:-12px}.brand img{width:94px}
-    }
-    @media (max-width:700px){
-      .header{padding:7px}
-      .nav{min-height:54px;padding:5px 7px;border-radius:14px}
-      .brand{width:102px;height:58px;margin-top:3px;margin-bottom:-10px;border-radius:12px}
-      .brand img{width:84px}
-      .hero h1{font-size:clamp(52px,14.2vw,76px);line-height:1.035;letter-spacing:.004em;word-spacing:.055em}
-      .display,.intro h2,.project h3,.contact h2{letter-spacing:.006em;word-spacing:.055em}
-      .service{min-height:190px;border-right:0;border-bottom:1px solid var(--line)!important}
-      .service:last-child{border-bottom:0!important}
-      .service:hover{transform:none}
-      .service-icon{width:27px;height:27px}
-    }
-    @media (prefers-reduced-motion:reduce){
-      .reveal,.clip>*,.step,.hero-art img,.project-media img{transition:none!important;transform:none!important}
-    }
-
-    /* Header performance polish */
-    .nav{backdrop-filter:blur(9px) saturate(108%);-webkit-backdrop-filter:blur(9px) saturate(108%)}
-    .project-media{contain:paint}
-    @media (max-width:700px){.nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(5,5,5,.78)}}
-
-
-
-    /* ── PROJECT ARCHIVE ── */
-    .archive{background:var(--ink);color:var(--white);border-top:1px solid rgba(255,255,255,.08)}
-    .archive-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.55fr);gap:48px;align-items:end;margin-bottom:clamp(46px,6vw,82px)}
-    .archive .eyebrow{color:var(--gold)}
-    .archive .section-copy{color:var(--muted)}
-    .archive-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
-    .archive-card{grid-column:span 6;position:relative;min-height:clamp(380px,42vw,660px);overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);background:#101010;color:#fff;text-align:left;cursor:pointer;padding:0;isolation:isolate}
-    .archive-card:nth-child(2){min-height:clamp(330px,36vw,560px);align-self:end}
-    .archive-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .6s ease;transform:scale(1.015);filter:saturate(.88) contrast(1.02)}
-    .archive-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 30%,rgba(0,0,0,.82) 100%);z-index:1}
-    .archive-card:hover img{transform:scale(1.045);filter:saturate(1) contrast(1.04)}
-    .archive-card-content{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:clamp(24px,3vw,42px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
-    .archive-kicker{display:block;margin-bottom:12px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
-    .archive-card h3{font-size:clamp(30px,3.4vw,58px);font-weight:760;line-height:1.03;letter-spacing:.006em;word-spacing:.05em}
-    .archive-card p{margin-top:12px;max-width:520px;color:rgba(255,255,255,.76);font-size:14px;line-height:1.65}
-    .archive-open{width:48px;height:48px;border:1px solid rgba(255,255,255,.38);border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.18);backdrop-filter:blur(8px)}
-    .archive-open svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:1.5}
-    .archive-foot{display:flex;justify-content:space-between;gap:30px;margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);color:#8f8f8f;font-size:11px;letter-spacing:.06em}
-
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seven Points | Construction & Interior Fit-Out</title>
+<meta name="description" content="Seven Points coordinates construction, interior fit-out, site supervision and project delivery across Duhok and the Kurdistan Region of Iraq.">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="logo.png" type="image/png">
+<style>
+:root{
+  --black:#050505;--black2:#0b0b0b;--white:#fff;--off:#f5f5f3;--orange:#FCAF41;
+  --muted:#a7a7a7;--dark:#565656;--line:rgba(255,255,255,.14);--darkline:rgba(0,0,0,.15);
+  --side:clamp(20px,4vw,78px);--max:1920px;--ease:cubic-bezier(.22,1,.36,1);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI Variable","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--black)}body{margin:0;min-width:320px;background:var(--black);color:var(--white);font-family:var(--font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body.lock{overflow:hidden}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{color:inherit}h1,h2,h3,p{margin:0}.shell{width:min(var(--max),calc(100% - 2*var(--side)));margin:auto}.skip{position:fixed;left:14px;top:14px;z-index:9999;transform:translateY(-160%);padding:10px 14px;background:var(--orange);color:#000}.skip:focus{transform:none}
+.progress{position:fixed;z-index:5000;top:0;left:0;width:100%;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;pointer-events:none}
+/* typography */
+.kicker{display:flex;align-items:center;gap:12px;color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}.kicker:before{content:"";width:32px;height:1px;background:currentColor}
+.title{font-size:clamp(54px,6.5vw,124px);font-weight:800;line-height:.98;letter-spacing:.005em;word-spacing:.08em;text-wrap:balance}.copy{max-width:660px;color:var(--muted);font-size:clamp(16px,1.08vw,19px);line-height:1.72;letter-spacing:.004em}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s var(--ease),transform .65s var(--ease)}.reveal.in{opacity:1;transform:none}
+/* header */
+.header{position:fixed;z-index:3000;top:0;left:0;right:0;display:flex;align-items:flex-start;justify-content:space-between;padding:14px var(--side);pointer-events:none}.brand-stage,.nav-wrap{pointer-events:auto}
+.brand-stage{width:154px;height:88px;display:grid;place-items:center;background:rgba(5,5,5,.94);border:1px solid rgba(255,255,255,.12);box-shadow:0 16px 42px rgba(0,0,0,.28);position:relative}.brand-stage:after{content:"";position:absolute;left:0;bottom:0;width:42px;height:3px;background:var(--orange)}.brand-stage img{width:118px;height:auto;object-fit:contain}
+.nav-wrap{display:flex;align-items:center;gap:30px;min-height:54px;padding:0 10px 0 22px;background:rgba(5,5,5,.88);border:1px solid rgba(255,255,255,.1)}.nav{display:flex;gap:30px;align-items:center}.nav a{font-size:12px;color:#d5d5d5;letter-spacing:.025em}.nav a:hover,.nav a.active{color:var(--orange)}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:40px;padding:0 17px;background:var(--orange);color:#080808;font-size:12px;font-weight:750;border:0;cursor:pointer}.cta svg,.text-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}.menu{display:none;width:46px;height:46px;background:transparent;border:1px solid var(--line);cursor:pointer}.menu span,.menu span:before,.menu span:after{display:block;width:18px;height:1px;background:#fff;position:relative;margin:auto}.menu span:before,.menu span:after{content:"";position:absolute;left:0}.menu span:before{top:-6px}.menu span:after{top:6px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#050505}.hero-bg{position:absolute;inset:-5%;will-change:transform;transform:scale(var(--zoom,1.02)) translate3d(0,var(--shift,0px),0);transform-origin:center 45%;background:url('sevenpointsbg.png') center/cover no-repeat}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.72) 42%,rgba(5,5,5,.1) 72%),linear-gradient(0deg,rgba(5,5,5,.92) 0%,rgba(5,5,5,.08) 45%)}
+.hero-inner{position:relative;z-index:2;width:min(1220px,calc(100% - 2*var(--side)));margin:0 auto 0 var(--side);padding:clamp(170px,20vh,250px) 0 clamp(72px,9vh,110px)}.hero .kicker{margin-bottom:28px}.hero h1{max-width:9ch;font-size:clamp(70px,9.2vw,174px);font-weight:850;line-height:.91;letter-spacing:.006em;word-spacing:.08em}.hero h1 em{font-style:normal;color:var(--orange)}.hero p{max-width:650px;margin-top:34px;color:#c4c4c4;font-size:clamp(16px,1.1vw,20px);line-height:1.7}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}.ghost{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px;border:1px solid rgba(255,255,255,.28);font-size:12px;font-weight:650}.ghost:hover{border-color:var(--orange);color:var(--orange)}
+.hero-meta{position:absolute;z-index:2;right:var(--side);bottom:36px;text-align:right;color:#9d9d9d;font-size:11px;line-height:1.7;letter-spacing:.08em;text-transform:uppercase}
+/* projects */
+.work{background:var(--off);color:#080808;padding:clamp(90px,9vw,160px) 0}.work-head{display:grid;grid-template-columns:1.15fr .6fr;gap:70px;align-items:end;margin-bottom:clamp(56px,6vw,96px)}.work .copy{color:var(--dark)}
+.case{margin-bottom:clamp(90px,10vw,170px)}.case:last-child{margin-bottom:0}.case-image{position:relative;width:100%;height:min(72vw,940px);min-height:520px;overflow:hidden;background:#ddd}.case-image img{width:100%;height:110%;object-fit:cover;transform:translate3d(0,var(--p,0px),0) scale(1.01);will-change:transform}.case-image:after{content:"";position:absolute;inset:0;border:1px solid rgba(0,0,0,.08);pointer-events:none}.case-info{display:grid;grid-template-columns:1.35fr .65fr;gap:50px;padding-top:26px;border-top:1px solid var(--darkline);margin-top:20px}.case-index{color:var(--orange);font-size:11px;font-weight:800;letter-spacing:.18em}.case h3{margin-top:8px;font-size:clamp(46px,5.8vw,104px);font-weight:820;line-height:.98;letter-spacing:.008em;word-spacing:.07em}.case-side{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:24px;padding-top:4px}.case-side p{color:#5c5c5c;font-size:15px;line-height:1.65}.text-link{display:inline-flex;align-items:center;gap:9px;padding-bottom:6px;border:0;border-bottom:1px solid #777;background:none;color:#0a0a0a;font-size:12px;font-weight:750;cursor:pointer}.text-link:hover{color:var(--orange);border-color:var(--orange)}
+/* archive */
+.archive{padding:clamp(86px,8vw,140px) 0;background:#0a0a0a}.archive-head{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:46px}.archive-head .copy{max-width:520px}.archive-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.archive-tile{position:relative;min-height:560px;overflow:hidden;background:#111;border:0;padding:0;text-align:left;cursor:pointer}.archive-tile.small{min-height:560px}.archive-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}.archive-tile:hover img{transform:scale(1.025)}.archive-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.82))}.archive-info{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:28px 30px}.archive-info span{color:var(--orange);font-size:10px;font-weight:750;letter-spacing:.17em;text-transform:uppercase}.archive-info h3{margin-top:9px;font-size:clamp(30px,3.3vw,56px);font-weight:800;line-height:1.02;letter-spacing:.01em;word-spacing:.065em}.archive-info p{margin-top:10px;max-width:520px;color:#c5c5c5;font-size:13px;line-height:1.6}
+/* metrics */
+.metrics{background:#fff;color:#080808;padding:clamp(70px,7vw,120px) 0;border-bottom:1px solid var(--darkline)}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--darkline);border-bottom:1px solid var(--darkline)}.metric{min-height:210px;padding:30px 24px;border-right:1px solid var(--darkline);display:flex;flex-direction:column;justify-content:space-between}.metric:first-child{padding-left:0}.metric:last-child{border-right:0}.metric strong{font-size:clamp(52px,6vw,100px);font-weight:850;line-height:.9;color:var(--orange);letter-spacing:.01em}.metric span{max-width:150px;color:#4f4f4f;font-size:12px;line-height:1.45;text-transform:uppercase;letter-spacing:.09em}
+/* about */
+.about{background:#fff;color:#080808;padding:clamp(90px,9vw,165px) 0}.about-grid{display:grid;grid-template-columns:.45fr 1.2fr;gap:clamp(40px,8vw,150px)}.about .title{max-width:11ch}.about .copy{margin-top:28px;color:#555}.about-line{margin-top:50px;padding-top:18px;border-top:1px solid var(--darkline);display:flex;justify-content:space-between;gap:30px;color:#686868;font-size:12px;letter-spacing:.04em}
+/* services */
+.services{background:var(--black);padding:clamp(90px,9vw,160px) 0}.services-top{display:grid;grid-template-columns:1fr .55fr;gap:50px;align-items:end;margin-bottom:60px}.service-row{display:grid;grid-template-columns:74px 1fr .9fr 42px;gap:30px;align-items:center;min-height:132px;border-top:1px solid var(--line);transition:background .25s ease}.service-row:last-child{border-bottom:1px solid var(--line)}.service-row:hover{background:rgba(252,175,65,.035)}.service-no{color:var(--orange);font-size:11px;font-weight:750;letter-spacing:.14em}.service-row h3{font-size:clamp(29px,3vw,54px);font-weight:800;letter-spacing:.008em;word-spacing:.06em}.service-row p{color:#aaa;font-size:14px;line-height:1.6}.service-icon{width:38px;height:38px}.service-icon svg{width:100%;height:100%;fill:none;stroke:var(--orange);stroke-width:1.25}
+/* process */
+.process{background:#0a0a0a;padding:clamp(90px,9vw,160px) 0}.process-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(50px,8vw,140px);align-items:start}.process-intro{position:sticky;top:150px}.process-intro .title{font-size:clamp(54px,5.2vw,96px);max-width:9ch}.process-intro .copy{margin-top:26px}.steps{position:relative}.steps:before{content:"";position:absolute;left:17px;top:0;bottom:0;width:1px;background:#323232}.steps:after{content:"";position:absolute;left:17px;top:0;width:1px;height:100%;background:var(--orange);transform:scaleY(var(--stepProgress,0));transform-origin:top;transition:transform .12s linear}.step{position:relative;min-height:190px;padding:0 0 58px 64px;opacity:.38;transform:translateY(10px);transition:opacity .4s ease,transform .4s var(--ease)}.step:last-child{padding-bottom:0}.step:before{content:"";position:absolute;left:11px;top:6px;width:13px;height:13px;border-radius:50%;background:#0a0a0a;border:2px solid #555;z-index:1}.step.active{opacity:1;transform:none}.step.active:before{background:var(--orange);border-color:var(--orange)}.step b{display:block;color:var(--orange);font-size:10px;letter-spacing:.17em;margin-bottom:12px}.step h3{font-size:clamp(34px,4vw,66px);font-weight:820;line-height:1;letter-spacing:.01em;word-spacing:.065em}.step p{margin-top:10px;color:#aaa;font-size:14px;line-height:1.6}
+/* contact */
+.contact{background:var(--orange);color:#070707;padding:clamp(90px,9vw,150px) 0}.contact-grid{display:grid;grid-template-columns:1fr .75fr;gap:clamp(50px,8vw,130px);align-items:start}.contact .kicker{color:rgba(0,0,0,.55)}.contact .title{max-width:9ch}.contact .copy{margin-top:26px;color:#282828}.contact-details{display:grid;gap:8px;margin-top:38px;font-size:14px}.contact-details a{width:max-content;border-bottom:1px solid rgba(0,0,0,.4)}.form{background:#fff;padding:clamp(28px,3vw,46px)}.form h3{font-size:28px;font-weight:800;letter-spacing:.01em}.form>p{margin-top:8px;color:#666;font-size:13px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:10px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:#646464}.field input,.field select,.field textarea{width:100%;min-height:50px;border:1px solid #d7d7d7;background:#fff;padding:12px 13px;outline:none;border-radius:0}.field textarea{min-height:110px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#111;box-shadow:0 0 0 1px #111}.submit{margin-top:15px;width:100%;min-height:52px;background:#070707;color:#fff;border:0;font-weight:750;cursor:pointer}.submit:hover{background:#171717}
+/* footer */
+footer{background:#030303;border-top:1px solid var(--line);padding:48px var(--side) 24px}.footer{max-width:var(--max);margin:auto}.footer-top{display:flex;justify-content:space-between;gap:50px;align-items:flex-start;padding-bottom:42px}.footer-brand img{width:116px}.footer-brand p{margin-top:14px;max-width:440px;color:#8d8d8d;font-size:13px}.footer-links{display:flex;gap:34px;flex-wrap:wrap}.footer-links a{font-size:12px;color:#aaa}.footer-links a:hover{color:var(--orange)}.footer-bottom{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:20px;color:#646464;font-size:11px}
+/* modal */
+dialog{width:100%;max-width:none;height:100%;max-height:none;margin:0;border:0;padding:0;background:rgba(4,4,4,.96);color:#fff}dialog::backdrop{background:rgba(4,4,4,.96)}.dialog-shell{width:min(1320px,calc(100% - 28px));margin:14px auto 42px;background:#0b0b0b;border:1px solid var(--line)}.dialog-head{display:flex;align-items:center;justify-content:space-between;min-height:76px;padding:16px 20px;border-bottom:1px solid var(--line)}.dialog-head h2{font-size:clamp(28px,4vw,52px);font-weight:820;letter-spacing:.01em;word-spacing:.06em}.close{width:44px;height:44px;border:1px solid var(--line);background:none;cursor:pointer}.close svg,.gal-btn svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.4}.gallery{position:relative;aspect-ratio:16/9;background:#111}.gallery>img{width:100%;height:100%;object-fit:cover}.gal-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.28);display:grid;place-items:center;cursor:pointer}.gal-btn.prev{left:12px}.gal-btn.next{right:12px}.count{position:absolute;bottom:12px;right:14px;background:rgba(0,0,0,.65);padding:7px 10px;font-size:11px}.thumbs{display:flex;gap:8px;padding:11px;overflow:auto;border-bottom:1px solid var(--line)}.thumb{flex:0 0 88px;height:58px;padding:0;border:1px solid transparent;background:#111;opacity:.5}.thumb.active{opacity:1;border-color:var(--orange)}.thumb img{width:100%;height:100%;object-fit:cover}.dialog-body{padding:24px}.dialog-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.dialog-meta span{border:1px solid var(--line);padding:6px 9px;color:var(--orange);font-size:10px;text-transform:uppercase;letter-spacing:.09em}.dialog-body p{max-width:820px;color:#aaa;line-height:1.7;font-size:15px}
+@media(max-width:1050px){.nav{display:none}.menu{display:block}.nav-wrap{padding:4px}.nav.open{position:absolute;display:grid;right:var(--side);top:78px;width:min(320px,calc(100vw - 40px));padding:16px;background:#090909;border:1px solid var(--line);gap:0}.nav.open a{padding:14px 6px;border-bottom:1px solid var(--line)}.nav.open a:last-child{border:0}.nav-wrap .cta{display:none}.work-head,.services-top,.process-layout,.contact-grid{grid-template-columns:1fr}.process-intro{position:relative;top:auto}.case-info{grid-template-columns:1fr .65fr}.archive-grid{grid-template-columns:1fr}.archive-tile,.archive-tile.small{min-height:620px}.metric-grid{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--darkline)}.metric:nth-child(3){padding-left:0}.about-grid{grid-template-columns:1fr;gap:30px}.service-row{grid-template-columns:58px 1fr 1fr 38px}}
+@media(max-width:700px){:root{--side:17px}.header{padding:8px}.brand-stage{width:118px;height:66px}.brand-stage img{width:90px}.nav-wrap{min-height:50px}.hero{min-height:820px}.hero:after{background:linear-gradient(90deg,rgba(5,5,5,.95),rgba(5,5,5,.55)),linear-gradient(0deg,rgba(5,5,5,.94),rgba(5,5,5,.15) 52%)}.hero-inner{margin-left:var(--side);padding-top:150px;padding-bottom:128px}.hero h1{font-size:clamp(58px,17vw,86px);line-height:.94}.hero p{font-size:16px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions a{width:100%}.hero-meta{left:var(--side);right:var(--side);bottom:28px;text-align:left}.work{padding-top:82px}.work-head{display:block;margin-bottom:45px}.work-head .copy{margin-top:22px}.case{margin-bottom:90px}.case-image{height:68vh;min-height:430px}.case-info{grid-template-columns:1fr;gap:18px}.case h3{font-size:clamp(44px,13vw,68px);line-height:1}.archive{padding:82px 0}.archive-head{display:block}.archive-head .copy{margin-top:22px}.archive-tile,.archive-tile.small{min-height:500px}.archive-info{padding:22px}.metric-grid{grid-template-columns:1fr 1fr}.metric{min-height:160px;padding:20px 14px}.metric strong{font-size:clamp(42px,14vw,64px)}.metric span{font-size:10px}.about{padding:82px 0}.about-line{display:grid}.services{padding:82px 0}.services-top{margin-bottom:40px}.service-row{grid-template-columns:42px 1fr 34px;gap:14px;padding:22px 0}.service-row p{grid-column:2/4}.service-row h3{font-size:31px}.process{padding:82px 0}.steps{margin-top:42px}.step{min-height:160px;padding-left:50px}.steps:before,.steps:after{left:13px}.step:before{left:7px}.contact{padding:82px 0}.form{padding:24px 18px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-top,.footer-bottom{flex-direction:column}.footer-links{gap:20px}.gallery{aspect-ratio:4/3}.dialog-shell{width:calc(100% - 12px);margin:6px auto 24px}}
+@media(min-width:1900px){.hero-inner{margin-left:max(var(--side),calc((100vw - var(--max))/2 + var(--side)))}.hero-meta{right:max(var(--side),calc((100vw - var(--max))/2 + var(--side)))}.header{padding-inline:max(var(--side),calc((100vw - var(--max))/2 + var(--side)))}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-bg,.case-image img{transform:none!important}.steps:after{transition:none}}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <div class="page-progress" id="pageProgress"></div>
-
-  <header class="header" id="header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#home" aria-label="Seven Points home"><img src="logo.png" alt="Seven Points" width="300" height="180"></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#work">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a class="button nav-cta" href="#contact">Start a project <svg class="ui-icon arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M8 6h6v6"/></svg></a>
-      <button class="menu" id="menu" type="button" aria-expanded="false" aria-label="Open navigation"><span></span></button>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="home">
-      <div class="hero-art" aria-hidden="true"><img id="heroArt" src="sevenpointsbg.png" alt=""></div>
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <div class="hero-label reveal">Seven Points · Duhok, Kurdistan Region</div>
-          <div class="clip"><h1>Built with<br><span>discipline.</span></h1></div>
-          <p class="hero-intro reveal" data-delay="1">Construction, interior fit-out and site delivery managed by one team — from planning through handover.</p>
-          <div class="hero-actions reveal" data-delay="2">
-            <a class="button primary" href="#work">View our work <svg class="ui-icon arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v11M6 11l4 4 4-4"/></svg></a>
-            <a class="button" href="#contact">Start a conversation <svg class="ui-icon arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M8 6h6v6"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="hero-meta"><span>Construction · Interior fit-out · Site delivery</span><span>Duhok · Kurdistan Region · Iraq</span></div>
-    </section>
-
-    <section class="section work" id="work">
-      <div class="shell">
-        <div class="work-head">
-          <div><div class="eyebrow reveal">Selected projects</div><div class="clip"><h2 class="display">Selected work.</h2></div></div>
-          <p class="section-copy reveal">Recent construction and fit-out projects delivered by Seven Points.</p>
-        </div>
-
-        <article class="project">
-          <div class="project-media reveal" data-parallax><img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall" width="1600" height="1000" loading="lazy"></div>
-          <div class="project-copy reveal" data-delay="1">
-            <span class="project-tag">Construction · Zakho · 18 months</span>
-            <h3>Zakho Conference Hall</h3>
-            <p>Conference hall construction coordinated across structure, interior works and event requirements.</p>
-            <button class="project-link" type="button" data-project="zakho">View project <svg class="ui-icon arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M8 6h6v6"/></svg></button>
-          </div>
-        </article>
-
-        <article class="project reverse">
-          <div class="project-media reveal" data-parallax><img src="saloon.jpg" alt="Jade Touch Salon" width="1600" height="1000" loading="lazy"></div>
-          <div class="project-copy reveal" data-delay="1">
-            <span class="project-tag">Construction + Fit-out · Duhok · 6 months</span>
-            <h3>Jade Touch Salon</h3>
-            <p>Commercial construction and interior fit-out delivered as one coordinated scope.</p>
-            <button class="project-link" type="button" data-project="jade">View project <svg class="ui-icon arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M8 6h6v6"/></svg></button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section archive" id="archive">
-      <div class="shell">
-        <div class="archive-head">
-          <div><div class="eyebrow reveal">Project archive</div><div class="clip"><h2 class="display">More work.</h2></div></div>
-          <p class="section-copy reveal">Design development and project material from the Seven Points archive.</p>
-        </div>
-
-        <div class="archive-grid">
-          <button class="archive-card reveal" type="button" data-project="rtbank" aria-label="Open RT Bank Duhok project archive">
-            <img src="rtbank-branch-01.webp" alt="RT Bank Duhok branch exterior design" loading="lazy" decoding="async">
-            <span class="archive-card-content">
-              <span>
-                <span class="archive-kicker">Commercial · Duhok</span>
-                <h3>RT Bank Duhok</h3>
-                <p>Branch development covering architectural, interior and building-services coordination.</p>
-              </span>
-              <span class="archive-open" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M8 6h6v6"/></svg></span>
-            </span>
-          </button>
-
-          <button class="archive-card reveal" data-delay="1" type="button" data-project="rtbatm" aria-label="Open RTB ATM kiosk design archive">
-            <img src="rtb-atm-01.webp" alt="RTB 24/7 ATM kiosk design" loading="lazy" decoding="async">
-            <span class="archive-card-content">
-              <span>
-                <span class="archive-kicker">Design development · ATM</span>
-                <h3>RTB 24/7 ATM Kiosk</h3>
-                <p>Compact ATM enclosure developed around visibility, access and a clean customer-facing finish.</p>
-              </span>
-              <span class="archive-open" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M8 6h6v6"/></svg></span>
-            </span>
-          </button>
-        </div>
-
-        <div class="archive-foot reveal"><span>Archive grows as projects are cleared for publication.</span><span>Seven Points · Duhok</span></div>
-      </div>
-    </section>
-
-    <section class="section intro" id="about">
-      <div class="shell">
-        <div class="intro-grid">
-          <div class="eyebrow reveal">About Seven Points</div>
-          <div>
-            <div class="clip"><h2>One team. One point of responsibility.</h2></div>
-            <p class="section-copy reveal" data-delay="1" style="margin-top:34px">We coordinate planning, procurement, site execution, quality checks and handover through a single project team.</p>
-          </div>
-        </div>
-        <div class="location-line reveal">Based in Duhok · Kurdistan Region, Iraq</div>
-        <div class="intro-note" id="statsGrid">
-          <div class="fact"><strong><span class="count" data-target="150">0</span><sup>+</sup></strong><span class="label">Completed projects</span></div>
-          <div class="fact"><strong><span class="count" data-target="5">0</span><sup>+</sup></strong><span class="label">Years operating</span></div>
-          <div class="fact"><strong><span class="count" data-target="100">0</span><sup>%</sup></strong><span class="label">On-time delivery</span></div>
-          <div class="fact"><strong><span class="count" data-target="50">0</span><sup>+</sup></strong><span class="label">Satisfied clients</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section services" id="services">
-      <div class="shell">
-        <div class="services-head">
-          <div><div class="eyebrow reveal">Services</div><div class="clip"><h2 class="display">What we deliver.</h2></div></div>
-          <p class="section-copy reveal">Construction and project delivery services for commercial, institutional and private clients.</p>
-        </div>
-        <div class="services-list">
-          <article class="service reveal"><div class="service-top"><span class="service-no">01</span><svg class="service-icon" viewBox="0 0 28 28" aria-hidden="true"><path d="M5 23V8l9-4 9 4v15M14 4v19M5 13h18M9 17h2M17 17h2"/></svg></div><div><h3>Construction management</h3><p>Programme, procurement and site coordination.</p></div></article>
-          <article class="service reveal" data-delay="1"><div class="service-top"><span class="service-no">02</span><svg class="service-icon" viewBox="0 0 28 28" aria-hidden="true"><path d="M5 5h8v8H5zM15 5h8v18H5v-8h8M13 13h10"/></svg></div><div><h3>Interior fit-out</h3><p>Finishes, joinery, lighting and installation.</p></div></article>
-          <article class="service reveal"><div class="service-top"><span class="service-no">03</span><svg class="service-icon" viewBox="0 0 28 28" aria-hidden="true"><path d="M7 5h14v18H7zM10 10h8M10 14h5M10 18l2 2 5-5"/></svg></div><div><h3>Site supervision</h3><p>Quality checks, progress control and reporting.</p></div></article>
-          <article class="service reveal" data-delay="1"><div class="service-top"><span class="service-no">04</span><svg class="service-icon" viewBox="0 0 28 28" aria-hidden="true"><path d="M5 23h18M7 23V11h14v12M10 11V7h8v4M10 16h8"/></svg></div><div><h3>Event production</h3><p>Technical setup, logistics and on-site delivery.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="section process" id="process">
-      <div class="shell process-grid">
-        <div class="process-copy">
-          <div class="eyebrow reveal">Process</div>
-          <div class="clip"><h2 class="display">From brief to handover.</h2></div>
-          <p class="section-copy reveal" data-delay="1" style="margin-top:28px">A short, controlled workflow.</p>
-        </div>
-        <div class="steps" id="processSteps">
-          <article class="step"><span>01</span><div><h3>Brief</h3><p>Scope, budget and programme.</p></div></article>
-          <article class="step"><span>02</span><div><h3>Plan</h3><p>Drawings, procurement and sequencing.</p></div></article>
-          <article class="step"><span>03</span><div><h3>Build</h3><p>Execution, checks and reporting.</p></div></article>
-          <article class="step"><span>04</span><div><h3>Handover</h3><p>Final review and closeout.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="shell contact-grid">
-        <div class="contact-copy">
-          <div class="eyebrow reveal">Contact</div>
-          <div class="clip"><h2>Discuss your project.</h2></div>
-          <p class="reveal" data-delay="1">Send the project location, scope and expected timing. We will review it and contact you directly.</p>
-          <div class="contact-details reveal" data-delay="2">
-            <a href="tel:+9647502205577">+964 750 220 5577</a>
-            <a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a>
-            <span>Zirka Road, Duhok</span>
-          </div>
-        </div>
-        <form class="form reveal" id="quoteForm">
-          <h3>Project enquiry</h3>
-          <p>Enter the project details below.</p>
-          <div class="form-grid">
-            <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" required placeholder="Your name"></div>
-            <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+964 ..."></div>
-            <div class="field full"><label for="projectType">Service</label><select id="projectType" name="projectType" required><option value="">Choose a service</option><option>Construction Management</option><option>Interior Fit-Out</option><option>Site Supervision</option><option>Event Production</option><option>Other</option></select></div>
-            <div class="field full"><label for="location">Project location</label><input id="location" name="location" placeholder="Duhok, Erbil, Zakho..."></div>
-            <div class="field full"><label for="details">Scope and timeline</label><textarea id="details" name="details" required minlength="10" placeholder="Describe the project, expected timing and important requirements."></textarea></div>
-          </div>
-          <button class="button" type="submit">Send via WhatsApp <svg class="ui-icon arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M8 6h6v6"/></svg></button>
-          <p class="form-note">Opens a pre-filled WhatsApp message for your review.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer">
-      <div class="footer-main">
-        <div class="footer-brand"><img src="logo.png" alt="Seven Points" width="300" height="180" loading="lazy"><p>Construction, interior fit-out and site delivery across the Kurdistan Region of Iraq.</p></div>
-        <div class="footer-links"><a href="#work">Projects</a><a href="#about">About</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
-      </div>
-      <div class="footer-bottom"><span>© 2026 Seven Points. All rights reserved.</span><span>Duhok · Kurdistan Region · Iraq</span></div>
-    </div>
-  </footer>
-
-  <a class="whatsapp" href="https://wa.me/9647502205577?text=Hello%20Seven%20Points%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Contact Seven Points on WhatsApp"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9.1 8.3c.2 2.5 2.1 4.5 4.6 4.8"/></svg><span>WhatsApp</span></a>
-
-  <dialog class="dialog" id="projectDialog" aria-labelledby="dialogTitle">
-    <div class="dialog-shell">
-      <header class="dialog-head"><h2 id="dialogTitle">Project</h2><button class="dialog-close" id="dialogClose" type="button" aria-label="Close project"><svg class="dialog-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></header>
-      <div class="gallery"><img id="dialogImage" src="" alt=""><button class="gallery-button prev" id="galleryPrev" type="button" aria-label="Previous image"><svg class="dialog-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m12.5 4-6 6 6 6"/></svg></button><button class="gallery-button next" id="galleryNext" type="button" aria-label="Next image"><svg class="dialog-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 4 6 6-6 6"/></svg></button><span class="gallery-count" id="galleryCount">1 / 1</span></div>
-      <div class="thumbs" id="thumbs"></div>
-      <div class="dialog-body"><div class="dialog-meta" id="dialogMeta"></div><p id="dialogDescription"></p></div>
-    </div>
-  </dialog>
-
-  <script>
-  (()=>{
-    const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const header=document.getElementById('header');
-    const progress=document.getElementById('pageProgress');
-    const menu=document.getElementById('menu');
-    const navLinks=document.getElementById('navLinks');
-    const hero=document.querySelector('.hero');
-    const heroArt=document.getElementById('heroArt');
-    const statsGrid=document.getElementById('statsGrid');
-    const processSection=document.getElementById('process');
-    const processSteps=document.getElementById('processSteps');
-    const processItems=processSteps?[...processSteps.querySelectorAll('.step')]:[];
-    const parallaxItems=[...document.querySelectorAll('[data-parallax]')];
-    let visibleParallax=new Set();
-    let ticking=false;
-
-    const updateScroll=()=>{
-      ticking=false;
-      const max=Math.max(1,document.documentElement.scrollHeight-innerHeight);
-      progress.style.transform=`scaleX(${scrollY/max})`;
-      header.classList.toggle('scrolled',scrollY>28);
-      if(!reduceMotion){
-        const hr=hero.getBoundingClientRect();
-        if(hr.bottom>0&&hr.top<innerHeight){
-          const p=Math.max(0,Math.min(1,-hr.top/Math.max(1,hr.height)));
-          heroArt.style.setProperty('--hero-shift',`${p*24}px`);
-          heroArt.style.setProperty('--hero-zoom',String(1.018+(p*.055)));
-        }
-        visibleParallax.forEach(el=>{
-          const r=el.getBoundingClientRect();
-          const center=(r.top+r.height/2-innerHeight/2)/innerHeight;
-          const shift=Math.max(-20,Math.min(20,center*-18));
-          el.style.setProperty('--media-shift',`${shift}px`);
-        });
-        if(processSection&&processSteps){
-          const pr=processSection.getBoundingClientRect();
-          const start=Math.min(130,innerHeight*.14);
-          const travel=Math.max(1,pr.height-150);
-          const pp=Math.max(0,Math.min(1,(start-pr.top)/travel));
-          processSteps.style.setProperty('--process-progress',pp.toFixed(3));
-          processItems.forEach((item,i)=>item.classList.toggle('is-active',pp>=(i*.24-.02)));
-        }
-      }
-    };
-    const requestUpdate=()=>{if(!ticking){ticking=true;requestAnimationFrame(updateScroll)}};
-    addEventListener('scroll',requestUpdate,{passive:true});
-    addEventListener('resize',requestUpdate,{passive:true});
-    updateScroll();
-
-    const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
-      if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target)}
-    }),{threshold:.12,rootMargin:'0px 0px -7%'});
-    document.querySelectorAll('.reveal,.clip').forEach(el=>revealObserver.observe(el));
-
-    const parallaxObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
-      if(entry.isIntersecting){visibleParallax.add(entry.target);entry.target.classList.add('in-view')}else{visibleParallax.delete(entry.target);entry.target.classList.remove('in-view')};
-      requestUpdate();
-    }),{rootMargin:'20% 0px'});
-    parallaxItems.forEach(el=>parallaxObserver.observe(el));
-
-    const counterEase=t=>1-Math.pow(1-t,3);
-    const animateCounters=()=>{
-      if(!statsGrid)return;
-      statsGrid.classList.add('is-counting');
-      statsGrid.querySelectorAll('.count').forEach(el=>{
-        const target=Number(el.dataset.target||0);
-        if(reduceMotion){el.textContent=String(target);return;}
-        const started=performance.now(),duration=1050+Math.min(target,150)*2;
-        const frame=now=>{
-          const p=Math.min(1,(now-started)/duration);
-          el.textContent=String(Math.round(target*counterEase(p)));
-          if(p<1)requestAnimationFrame(frame);
-        };
-        requestAnimationFrame(frame);
-      });
-    };
-    if(statsGrid){
-      const statsObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
-        if(entry.isIntersecting&&entry.intersectionRatio>=.32){animateCounters();}
-        else if(!entry.isIntersecting){
-          statsGrid.classList.remove('is-counting');
-          statsGrid.querySelectorAll('.count').forEach(el=>el.textContent='0');
-        }
-      }),{threshold:[0,.32,.65]});
-      statsObserver.observe(statsGrid);
-    }
-
-    const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
-      if(!entry.isIntersecting)return;
-      document.querySelectorAll('.nav-links a').forEach(link=>link.classList.toggle('active',link.getAttribute('href')===`#${entry.target.id}`));
-    }),{rootMargin:'-42% 0px -50%',threshold:0});
-    document.querySelectorAll('main section[id]').forEach(section=>sectionObserver.observe(section));
-
-    menu.addEventListener('click',()=>{
-      const open=navLinks.classList.toggle('open');menu.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
-    });
-    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menu.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
-
-    document.getElementById('quoteForm').addEventListener('submit',event=>{
-      event.preventDefault();const form=event.currentTarget;if(!form.reportValidity())return;const data=new FormData(form);
-      const message=['Hello Seven Points, I would like to discuss a project.','',`Name: ${data.get('name')}`,`Phone: ${data.get('phone')||'Not provided'}`,`Service: ${data.get('projectType')}`,`Location: ${data.get('location')||'Not specified'}`,`Scope and timeline: ${data.get('details')}`].join('\n');
-      window.open(`https://wa.me/9647502205577?text=${encodeURIComponent(message)}`,'_blank','noopener');
-    });
-
-    const projects={
-      zakho:{title:'Zakho Conference Hall',meta:['Construction','Zakho, Iraq','18 months'],description:'Conference hall construction coordinated across structure, interior works and event requirements.',images:['zakhoconferencehall1.jpg','zakhoconferencehall2.jpg','zakhoconferencehall3.jpg','zakhoconferencehall4.jpg','zakhoconferencehall5.jpg','zakhoconferencehall6.jpg','zakhoconferencehall7.jpg','zakhoconferencehall8.jpg','zakhoconferencehall9.jpg']},
-      jade:{title:'Jade Touch Salon',meta:['Construction + Interior Fit-Out','Duhok, Iraq','6 months'],description:'Commercial construction and interior fit-out delivered as one coordinated scope.',images:['saloon.jpg','saloon2.jpg','saloon3.jpg','saloon4.jpg','saloon5.jpg','saloon6.jpg','saloon7.jpg','saloon8.jpg','saloon9.jpg']},
-      rtbank:{title:'RT Bank Duhok',meta:['Design Development','Duhok, Iraq','Commercial'],description:'Branch development covering architectural design, interior coordination and building-services planning.',images:['rtbank-branch-01.webp','rtbank-branch-02.webp','rtbank-interior-01.webp']},
-      rtbatm:{title:'RTB 24/7 ATM Kiosk',meta:['Design Development','ATM Kiosk','RTB'],description:'Compact ATM kiosk design developed around access, visibility, security and a clean customer-facing finish.',images:['rtb-atm-01.webp']}
-    };
-    const dialog=document.getElementById('projectDialog'),title=document.getElementById('dialogTitle'),image=document.getElementById('dialogImage'),meta=document.getElementById('dialogMeta'),description=document.getElementById('dialogDescription'),count=document.getElementById('galleryCount'),thumbs=document.getElementById('thumbs');
-    let active=null,index=0,lastTrigger=null;
-    const show=i=>{if(!active)return;index=(i+active.images.length)%active.images.length;image.src=active.images[index];image.alt=`${active.title}, image ${index+1} of ${active.images.length}`;count.textContent=`${index+1} / ${active.images.length}`;[...thumbs.children].forEach((t,n)=>t.classList.toggle('active',n===index));thumbs.children[index]?.scrollIntoView({behavior:reduceMotion?'auto':'smooth',inline:'center',block:'nearest'})};
-    const openProject=(key,trigger)=>{active=projects[key];if(!active)return;lastTrigger=trigger;title.textContent=active.title;meta.innerHTML=active.meta.map(v=>`<span>${v}</span>`).join('');description.textContent=active.description;thumbs.innerHTML='';active.images.forEach((src,i)=>{const b=document.createElement('button');b.type='button';b.className='thumb';b.setAttribute('aria-label',`Show image ${i+1}`);const im=document.createElement('img');im.src=src;im.alt='';im.loading='lazy';b.appendChild(im);b.addEventListener('click',()=>show(i));thumbs.appendChild(b)});show(0);dialog.showModal();document.body.classList.add('modal-open')};
-    const closeProject=()=>{dialog.close();document.body.classList.remove('modal-open');lastTrigger?.focus()};
-    document.querySelectorAll('[data-project]').forEach(b=>b.addEventListener('click',()=>openProject(b.dataset.project,b)));
-    document.getElementById('galleryPrev').addEventListener('click',()=>show(index-1));document.getElementById('galleryNext').addEventListener('click',()=>show(index+1));document.getElementById('dialogClose').addEventListener('click',closeProject);dialog.addEventListener('click',e=>{if(e.target===dialog)closeProject()});dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(index-1);if(e.key==='ArrowRight')show(index+1)});dialog.addEventListener('close',()=>document.body.classList.remove('modal-open'));
-  })();
-  </script>
-</body>
-</html>
+<a class="skip" href="#main">Skip to content</a><div class="progress" aria-hidden="true"></div>
+<header class="header" id="header">
+  <a class="brand-stage" href="#home" aria-label="Seven Points home"><img src="logo.png" alt="Seven Points Construction"></a>
+  <div class="nav-wrap"><nav class="nav" id="nav"><a href="#work">Projects</a><a href="#about">Company</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></nav><a class="cta" href="#contact">Project enquiry <svg viewBox="0 0 20 20"><path d="M6 14 14 6M8 6h6v6"/></svg></a><button class="menu" id="menu" aria-label="Open menu" aria-expanded="false"><span></span></button></div>
+</header>
+<main id="main">
+<section class="hero" id="home"><div class="hero-bg" id="heroBg"></div><div class="hero-inner"><div class="kicker reveal">Seven Points · Duhok</div><h1 class="reveal">Built to <em>specification.</em></h1><p class="reveal">Construction, interior fit-out and site delivery managed by one team across Duhok and the Kurdistan Region.</p><div class="hero-actions reveal"><a class="cta" href="#work">View projects <svg viewBox="0 0 20 20"><path d="M10 4v11M6 11l4 4 4-4"/></svg></a><a class="ghost" href="#contact">Discuss a project</a></div></div><div class="hero-meta">Construction · Interior fit-out<br>Site supervision · Project delivery</div></section>
+<section class="work" id="work"><div class="shell"><div class="work-head"><div><div class="kicker reveal">Selected work</div><h2 class="title reveal">Projects first.</h2></div><p class="copy reveal">Completed construction and fit-out work presented with the project information that matters.</p></div>
+<article class="case"><div class="case-image reveal" data-parallax><img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall"></div><div class="case-info reveal"><div><span class="case-index">01 · Construction · Zakho</span><h3>Zakho Conference Hall</h3></div><div class="case-side"><p>Conference hall construction coordinated across structure, interior works and event requirements.</p><button class="text-link" data-project="zakho">View project <svg viewBox="0 0 20 20"><path d="M6 14 14 6M8 6h6v6"/></svg></button></div></div></article>
+<article class="case"><div class="case-image reveal" data-parallax><img src="saloon.jpg" alt="Jade Touch Salon"></div><div class="case-info reveal"><div><span class="case-index">02 · Construction + Fit-out · Duhok</span><h3>Jade Touch Salon</h3></div><div class="case-side"><p>Commercial construction and interior fit-out delivered as one coordinated scope.</p><button class="text-link" data-project="jade">View project <svg viewBox="0 0 20 20"><path d="M6 14 14 6M8 6h6v6"/></svg></button></div></div></article>
+</div></section>
+<section class="archive" id="archive"><div class="shell"><div class="archive-head"><div><div class="kicker reveal">Project archive</div><h2 class="title reveal">Design development.</h2></div><p class="copy reveal">Additional work shown separately from completed-project photography.</p></div><div class="archive-grid"><button class="archive-tile reveal" data-project="rtbank"><img src="rtbank-branch.webp" alt="RT Bank Duhok architectural design"><span class="archive-info"><span>Commercial · Duhok</span><h3>RT Bank Duhok</h3><p>Architectural and interior design development for a bank branch.</p></span></button><button class="archive-tile small reveal" data-project="rtbatm"><img src="rtb-atm.webp" alt="RTB ATM kiosk design"><span class="archive-info"><span>ATM · Design development</span><h3>RTB 24/7 Kiosk</h3><p>Compact customer-facing ATM enclosure.</p></span></button></div></div></section>
+<section class="metrics" aria-label="Company figures"><div class="shell"><div class="metric-grid" id="metrics"><div class="metric"><strong><span data-count="150">0</span>+</strong><span>Completed projects</span></div><div class="metric"><strong><span data-count="5">0</span>+</strong><span>Years operating</span></div><div class="metric"><strong><span data-count="100">0</span>%</strong><span>On-time delivery</span></div><div class="metric"><strong><span data-count="50">0</span>+</strong><span>Satisfied clients</span></div></div></div></section>
+<section class="about" id="about"><div class="shell"><div class="about-grid"><div class="kicker reveal">Seven Points</div><div><h2 class="title reveal">One team from planning to handover.</h2><p class="copy reveal">Seven Points is a Duhok-based construction company. We coordinate planning, procurement, site works, finishes, quality checks and handover through one project team.</p><div class="about-line reveal"><span>Duhok · Kurdistan Region · Iraq</span><span>Construction · Fit-out · Supervision · Events</span></div></div></div></div></section>
+<section class="services" id="services"><div class="shell"><div class="services-top"><div><div class="kicker reveal">Services</div><h2 class="title reveal">What we deliver.</h2></div><p class="copy reveal">Four clear scopes, managed around drawings, programme and site control.</p></div>
+<div class="service-list"><article class="service-row reveal"><span class="service-no">01</span><h3>Construction management</h3><p>Planning, procurement, coordination, finishing and handover.</p><span class="service-icon"><svg viewBox="0 0 40 40"><path d="M6 33V17l14-9 14 9v16M13 33V21h14v12M20 8v25"/></svg></span></article><article class="service-row reveal"><span class="service-no">02</span><h3>Interior fit-out</h3><p>Materials, lighting, joinery, finishes and installation.</p><span class="service-icon"><svg viewBox="0 0 40 40"><path d="M7 32V8h26v24M7 20h26M18 8v24M27 25h2"/></svg></span></article><article class="service-row reveal"><span class="service-no">03</span><h3>Site supervision</h3><p>Daily checks, reporting, coordination and quality control.</p><span class="service-icon"><svg viewBox="0 0 40 40"><path d="M9 31h22M12 31V13h16v18M16 13V8h8v5M16 20h8M16 25h5"/></svg></span></article><article class="service-row reveal"><span class="service-no">04</span><h3>Event production</h3><p>Setup, logistics and on-site delivery.</p><span class="service-icon"><svg viewBox="0 0 40 40"><path d="M8 31h24M11 31V17h18v14M15 17v-6h10v6M15 24h10"/></svg></span></article></div>
+</div></section>
+<section class="process" id="process"><div class="shell process-layout"><div class="process-intro"><div class="kicker reveal">Process</div><h2 class="title reveal">Four steps.</h2><p class="copy reveal">Short, visible stages from first brief to final handover.</p></div><div class="steps" id="steps"><article class="step active"><b>01</b><h3>Scope</h3><p>Confirm brief, budget and programme.</p></article><article class="step"><b>02</b><h3>Coordinate</h3><p>Drawings, procurement and sequence.</p></article><article class="step"><b>03</b><h3>Build</h3><p>Site control, quality and progress.</p></article><article class="step"><b>04</b><h3>Handover</h3><p>Final checks and closeout.</p></article></div></div></section>
+<section class="contact" id="contact"><div class="shell contact-grid"><div><div class="kicker reveal">Contact</div><h2 class="title reveal">Discuss your project.</h2><p class="copy reveal">Send the location, scope and expected timing. We will review it and contact you directly.</p><div class="contact-details reveal"><a href="tel:+9647502205577">+964 750 220 5577</a><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a><span>Zirka Road, Duhok</span></div></div><form class="form reveal" id="quoteForm"><h3>Project enquiry</h3><p>Your details open as a prepared WhatsApp message.</p><div class="form-grid"><div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div><div class="field full"><label for="service">Service</label><select id="service" name="service" required><option value="">Choose</option><option>Construction Management</option><option>Interior Fit-Out</option><option>Site Supervision</option><option>Event Production</option><option>Other</option></select></div><div class="field full"><label for="location">Location</label><input id="location" name="location" placeholder="Duhok, Erbil, Zakho..."></div><div class="field full"><label for="details">Scope and timeline</label><textarea id="details" name="details" required minlength="10"></textarea></div></div><button class="submit" type="submit">Continue on WhatsApp</button></form></div></section>
+</main>
+<footer><div class="footer"><div class="footer-top"><div class="footer-brand"><img src="logo.png" alt="Seven Points"><p>Construction, interior fit-out and project delivery across the Kurdistan Region of Iraq.</p></div><div class="footer-links"><a href="#work">Projects</a><a href="#about">Company</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Seven Points. All rights reserved.</span><span>Duhok · Kurdistan Region · Iraq</span></div></div></footer>
+<dialog id="projectDialog"><div class="dialog-shell"><header class="dialog-head"><h2 id="dialogTitle">Project</h2><button class="close" id="dialogClose" aria-label="Close"><svg viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"/></svg></button></header><div class="gallery"><img id="dialogImage" alt=""><button class="gal-btn prev" id="prev" aria-label="Previous"><svg viewBox="0 0 20 20"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="gal-btn next" id="next" aria-label="Next"><svg viewBox="0 0 20 20"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button><span class="count" id="count">1 / 1</span></div><div class="thumbs" id="thumbs"></div><div class="dialog-body"><div class="dialog-meta" id="dialogMeta"></div><p id="dialogDescription"></p></div></div></dialog>
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const progress=document.querySelector('.progress'),heroBg=document.getElementById('heroBg'),parallax=[...document.querySelectorAll('[data-parallax]')];let ticking=false;
+function paint(){const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${max>0?y/max:0})`;if(!reduce){const vh=innerHeight;const hp=Math.min(1,y/vh);heroBg.style.setProperty('--zoom',(1.02+hp*.065).toFixed(4));heroBg.style.setProperty('--shift',`${hp*22}px`);for(const el of parallax){const r=el.getBoundingClientRect();if(r.bottom>0&&r.top<vh){const p=(vh/2-(r.top+r.height/2))/vh;el.querySelector('img').style.setProperty('--p',`${p*34}px`)}}}ticking=false}
+addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(paint);ticking=true}},{passive:true});addEventListener('resize',paint,{passive:true});paint();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+const metrics=document.getElementById('metrics');function countUp(){metrics.querySelectorAll('[data-count]').forEach(el=>{const target=+el.dataset.count;el.textContent='0';const start=performance.now(),dur=900;function frame(t){const p=Math.min(1,(t-start)/dur),v=Math.round(target*(1-Math.pow(1-p,3)));el.textContent=v;if(p<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)})}const mio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)countUp()}),{threshold:.55});mio.observe(metrics);
+const steps=document.getElementById('steps'),stepEls=[...steps.querySelectorAll('.step')];function processPaint(){const r=steps.getBoundingClientRect(),vh=innerHeight;const raw=Math.max(0,Math.min(1,(vh*.62-r.top)/(r.height-vh*.18)));steps.style.setProperty('--stepProgress',raw);const idx=Math.min(3,Math.floor(raw*4));stepEls.forEach((s,i)=>s.classList.toggle('active',i===idx))}addEventListener('scroll',processPaint,{passive:true});addEventListener('resize',processPaint,{passive:true});processPaint();
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const sections=[...document.querySelectorAll('main section[id]')],links=[...nav.querySelectorAll('a[href^="#"]')];const nio=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}},{rootMargin:'-45% 0px -45% 0px'});sections.forEach(s=>nio.observe(s));
+document.getElementById('quoteForm').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;if(!f.reportValidity())return;const d=new FormData(f);const msg=['Hello Seven Points, I would like to discuss a project.','',`Name: ${d.get('name')}`,`Phone: ${d.get('phone')||'Not provided'}`,`Service: ${d.get('service')}`,`Location: ${d.get('location')||'Not specified'}`,`Scope and timeline: ${d.get('details')}`].join('\n');window.open(`https://wa.me/9647502205577?text=${encodeURIComponent(msg)}`,'_blank','noopener')});
+const projects={
+zakho:{title:'Zakho Conference Hall',meta:['Construction','Zakho, Iraq','18 months'],description:'Conference hall construction coordinated across structure, interior works and event requirements.',images:['zakhoconferencehall1.jpg','zakhoconferencehall2.jpg','zakhoconferencehall3.jpg','zakhoconferencehall4.jpg','zakhoconferencehall5.jpg','zakhoconferencehall6.jpg','zakhoconferencehall7.jpg','zakhoconferencehall8.jpg','zakhoconferencehall9.jpg']},
+jade:{title:'Jade Touch Salon',meta:['Construction + Interior Fit-Out','Duhok, Iraq','6 months'],description:'Commercial construction and interior fit-out delivered as one coordinated scope.',images:['saloon.jpg','saloon2.jpg','saloon3.jpg','saloon4.jpg','saloon5.jpg','saloon6.jpg','saloon7.jpg','saloon8.jpg','saloon9.jpg']},
+rtbank:{title:'RT Bank Duhok',meta:['Design Development','Duhok, Iraq','Commercial'],description:'Architectural and interior design development for a bank branch.',images:['rtbank-branch.webp','rtbank-interior.webp']},
+rtbatm:{title:'RTB 24/7 Kiosk',meta:['Design Development','ATM Kiosk','RTB'],description:'Compact customer-facing ATM enclosure.',images:['rtb-atm.webp']}
+};
+const dialog=document.getElementById('projectDialog'),title=document.getElementById('dialogTitle'),image=document.getElementById('dialogImage'),meta=document.getElementById('dialogMeta'),desc=document.getElementById('dialogDescription'),counter=document.getElementById('count'),thumbs=document.getElementById('thumbs');let active=null,index=0,last=null;
+function show(i){if(!active)return;index=(i+active.images.length)%active.images.length;image.src=active.images[index];image.alt=`${active.title}, image ${index+1}`;counter.textContent=`${index+1} / ${active.images.length}`;[...thumbs.children].forEach((b,n)=>b.classList.toggle('active',n===index))}
+function openProject(key,trigger){active=projects[key];if(!active)return;last=trigger;title.textContent=active.title;meta.innerHTML=active.meta.map(x=>`<span>${x}</span>`).join('');desc.textContent=active.description;thumbs.innerHTML='';active.images.forEach((src,i)=>{const b=document.createElement('button');b.className='thumb';b.type='button';b.setAttribute('aria-label',`Show image ${i+1}`);b.innerHTML=`<img src="${src}" alt="">`;b.addEventListener('click',()=>show(i));thumbs.appendChild(b)});show(0);dialog.showModal();document.body.classList.add('lock')}
+function close(){dialog.close();document.body.classList.remove('lock');last?.focus()}
+document.querySelectorAll('[data-project]').forEach(b=>b.addEventListener('click',()=>openProject(b.dataset.project,b)));document.getElementById('prev').addEventListener('click',()=>show(index-1));document.getElementById('next').addEventListener('click',()=>show(index+1));document.getElementById('dialogClose').addEventListener('click',close);dialog.addEventListener('click',e=>{if(e.target===dialog)close()});dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(index-1);if(e.key==='ArrowRight')show(index+1)});dialog.addEventListener('close',()=>document.body.classList.remove('lock'));
+})();
+</script>
+</body></html>
