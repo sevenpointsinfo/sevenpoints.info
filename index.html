@@ -1,106 +1,1704 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Seven Points | Construction & Interior Fit-Out</title>
-<meta name="description" content="Seven Points coordinates construction, interior fit-out, site supervision and project delivery across Duhok and the Kurdistan Region of Iraq.">
-<meta name="theme-color" content="#050505">
-<link rel="icon" href="logo.png" type="image/png">
-<style>
-:root{
-  --black:#050505;--black2:#0b0b0b;--white:#fff;--off:#f5f5f3;--orange:#FCAF41;
-  --muted:#a7a7a7;--dark:#565656;--line:rgba(255,255,255,.14);--darkline:rgba(0,0,0,.15);
-  --side:clamp(20px,4vw,78px);--max:1920px;--ease:cubic-bezier(.22,1,.36,1);
-  --font:-apple-system,BlinkMacSystemFont,"Segoe UI Variable","Segoe UI","Helvetica Neue",Arial,sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Seven Points delivers premium construction and event management solutions in Kurdistan Region, Iraq. 150+ projects, 100% on-time delivery.">
+<meta name="keywords" content="construction, event management, Kurdistan Region, Iraq">
+<meta name="theme-color" content="#030303">
+
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Seven Points | Premium Construction & Event Management">
+<meta property="og:description" content="Professional construction and event management solutions in Kurdistan Region, Iraq.">
+<meta property="og:image" content="https://sevenpoints.info/sevenpointsbg.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Seven Points",
+  "url": "https://sevenpoints.info",
+  "telephone": "+9647502205577",
+  "email": "email@sevenpoints.info",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Zirka Road",
+    "addressLocality": "Duhok",
+    "addressRegion": "Kurdistan Region",
+    "addressCountry": "IQ"
+  }
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--black)}body{margin:0;min-width:320px;background:var(--black);color:var(--white);font-family:var(--font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-body.lock{overflow:hidden}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{color:inherit}h1,h2,h3,p{margin:0}.shell{width:min(var(--max),calc(100% - 2*var(--side)));margin:auto}.skip{position:fixed;left:14px;top:14px;z-index:9999;transform:translateY(-160%);padding:10px 14px;background:var(--orange);color:#000}.skip:focus{transform:none}
-.progress{position:fixed;z-index:5000;top:0;left:0;width:100%;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;pointer-events:none}
-/* typography */
-.kicker{display:flex;align-items:center;gap:12px;color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}.kicker:before{content:"";width:32px;height:1px;background:currentColor}
-.title{font-size:clamp(54px,6.5vw,124px);font-weight:800;line-height:.98;letter-spacing:.005em;word-spacing:.08em;text-wrap:balance}.copy{max-width:660px;color:var(--muted);font-size:clamp(16px,1.08vw,19px);line-height:1.72;letter-spacing:.004em}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s var(--ease),transform .65s var(--ease)}.reveal.in{opacity:1;transform:none}
-/* header */
-.header{position:fixed;z-index:3000;top:0;left:0;right:0;display:flex;align-items:flex-start;justify-content:space-between;padding:14px var(--side);pointer-events:none}.brand-stage,.nav-wrap{pointer-events:auto}
-.brand-stage{width:154px;height:88px;display:grid;place-items:center;background:rgba(5,5,5,.94);border:1px solid rgba(255,255,255,.12);box-shadow:0 16px 42px rgba(0,0,0,.28);position:relative}.brand-stage:after{content:"";position:absolute;left:0;bottom:0;width:42px;height:3px;background:var(--orange)}.brand-stage img{width:118px;height:auto;object-fit:contain}
-.nav-wrap{display:flex;align-items:center;gap:30px;min-height:54px;padding:0 10px 0 22px;background:rgba(5,5,5,.88);border:1px solid rgba(255,255,255,.1)}.nav{display:flex;gap:30px;align-items:center}.nav a{font-size:12px;color:#d5d5d5;letter-spacing:.025em}.nav a:hover,.nav a.active{color:var(--orange)}
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:40px;padding:0 17px;background:var(--orange);color:#080808;font-size:12px;font-weight:750;border:0;cursor:pointer}.cta svg,.text-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}.menu{display:none;width:46px;height:46px;background:transparent;border:1px solid var(--line);cursor:pointer}.menu span,.menu span:before,.menu span:after{display:block;width:18px;height:1px;background:#fff;position:relative;margin:auto}.menu span:before,.menu span:after{content:"";position:absolute;left:0}.menu span:before{top:-6px}.menu span:after{top:6px}
-/* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#050505}.hero-bg{position:absolute;inset:-5%;will-change:transform;transform:scale(var(--zoom,1.02)) translate3d(0,var(--shift,0px),0);transform-origin:center 45%;background:url('sevenpointsbg.png') center/cover no-repeat}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.72) 42%,rgba(5,5,5,.1) 72%),linear-gradient(0deg,rgba(5,5,5,.92) 0%,rgba(5,5,5,.08) 45%)}
-.hero-inner{position:relative;z-index:2;width:min(1220px,calc(100% - 2*var(--side)));margin:0 auto 0 var(--side);padding:clamp(170px,20vh,250px) 0 clamp(72px,9vh,110px)}.hero .kicker{margin-bottom:28px}.hero h1{max-width:9ch;font-size:clamp(70px,9.2vw,174px);font-weight:850;line-height:.91;letter-spacing:.006em;word-spacing:.08em}.hero h1 em{font-style:normal;color:var(--orange)}.hero p{max-width:650px;margin-top:34px;color:#c4c4c4;font-size:clamp(16px,1.1vw,20px);line-height:1.7}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}.ghost{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px;border:1px solid rgba(255,255,255,.28);font-size:12px;font-weight:650}.ghost:hover{border-color:var(--orange);color:var(--orange)}
-.hero-meta{position:absolute;z-index:2;right:var(--side);bottom:36px;text-align:right;color:#9d9d9d;font-size:11px;line-height:1.7;letter-spacing:.08em;text-transform:uppercase}
-/* projects */
-.work{background:var(--off);color:#080808;padding:clamp(90px,9vw,160px) 0}.work-head{display:grid;grid-template-columns:1.15fr .6fr;gap:70px;align-items:end;margin-bottom:clamp(56px,6vw,96px)}.work .copy{color:var(--dark)}
-.case{margin-bottom:clamp(90px,10vw,170px)}.case:last-child{margin-bottom:0}.case-image{position:relative;width:100%;height:min(72vw,940px);min-height:520px;overflow:hidden;background:#ddd}.case-image img{width:100%;height:110%;object-fit:cover;transform:translate3d(0,var(--p,0px),0) scale(1.01);will-change:transform}.case-image:after{content:"";position:absolute;inset:0;border:1px solid rgba(0,0,0,.08);pointer-events:none}.case-info{display:grid;grid-template-columns:1.35fr .65fr;gap:50px;padding-top:26px;border-top:1px solid var(--darkline);margin-top:20px}.case-index{color:var(--orange);font-size:11px;font-weight:800;letter-spacing:.18em}.case h3{margin-top:8px;font-size:clamp(46px,5.8vw,104px);font-weight:820;line-height:.98;letter-spacing:.008em;word-spacing:.07em}.case-side{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:24px;padding-top:4px}.case-side p{color:#5c5c5c;font-size:15px;line-height:1.65}.text-link{display:inline-flex;align-items:center;gap:9px;padding-bottom:6px;border:0;border-bottom:1px solid #777;background:none;color:#0a0a0a;font-size:12px;font-weight:750;cursor:pointer}.text-link:hover{color:var(--orange);border-color:var(--orange)}
-/* archive */
-.archive{padding:clamp(86px,8vw,140px) 0;background:#0a0a0a}.archive-head{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:46px}.archive-head .copy{max-width:520px}.archive-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.archive-tile{position:relative;min-height:560px;overflow:hidden;background:#111;border:0;padding:0;text-align:left;cursor:pointer}.archive-tile.small{min-height:560px}.archive-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}.archive-tile:hover img{transform:scale(1.025)}.archive-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.82))}.archive-info{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:28px 30px}.archive-info span{color:var(--orange);font-size:10px;font-weight:750;letter-spacing:.17em;text-transform:uppercase}.archive-info h3{margin-top:9px;font-size:clamp(30px,3.3vw,56px);font-weight:800;line-height:1.02;letter-spacing:.01em;word-spacing:.065em}.archive-info p{margin-top:10px;max-width:520px;color:#c5c5c5;font-size:13px;line-height:1.6}
-/* metrics */
-.metrics{background:#fff;color:#080808;padding:clamp(70px,7vw,120px) 0;border-bottom:1px solid var(--darkline)}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--darkline);border-bottom:1px solid var(--darkline)}.metric{min-height:210px;padding:30px 24px;border-right:1px solid var(--darkline);display:flex;flex-direction:column;justify-content:space-between}.metric:first-child{padding-left:0}.metric:last-child{border-right:0}.metric strong{font-size:clamp(52px,6vw,100px);font-weight:850;line-height:.9;color:var(--orange);letter-spacing:.01em}.metric span{max-width:150px;color:#4f4f4f;font-size:12px;line-height:1.45;text-transform:uppercase;letter-spacing:.09em}
-/* about */
-.about{background:#fff;color:#080808;padding:clamp(90px,9vw,165px) 0}.about-grid{display:grid;grid-template-columns:.45fr 1.2fr;gap:clamp(40px,8vw,150px)}.about .title{max-width:11ch}.about .copy{margin-top:28px;color:#555}.about-line{margin-top:50px;padding-top:18px;border-top:1px solid var(--darkline);display:flex;justify-content:space-between;gap:30px;color:#686868;font-size:12px;letter-spacing:.04em}
-/* services */
-.services{background:var(--black);padding:clamp(90px,9vw,160px) 0}.services-top{display:grid;grid-template-columns:1fr .55fr;gap:50px;align-items:end;margin-bottom:60px}.service-row{display:grid;grid-template-columns:74px 1fr .9fr 42px;gap:30px;align-items:center;min-height:132px;border-top:1px solid var(--line);transition:background .25s ease}.service-row:last-child{border-bottom:1px solid var(--line)}.service-row:hover{background:rgba(252,175,65,.035)}.service-no{color:var(--orange);font-size:11px;font-weight:750;letter-spacing:.14em}.service-row h3{font-size:clamp(29px,3vw,54px);font-weight:800;letter-spacing:.008em;word-spacing:.06em}.service-row p{color:#aaa;font-size:14px;line-height:1.6}.service-icon{width:38px;height:38px}.service-icon svg{width:100%;height:100%;fill:none;stroke:var(--orange);stroke-width:1.25}
-/* process */
-.process{background:#0a0a0a;padding:clamp(90px,9vw,160px) 0}.process-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(50px,8vw,140px);align-items:start}.process-intro{position:sticky;top:150px}.process-intro .title{font-size:clamp(54px,5.2vw,96px);max-width:9ch}.process-intro .copy{margin-top:26px}.steps{position:relative}.steps:before{content:"";position:absolute;left:17px;top:0;bottom:0;width:1px;background:#323232}.steps:after{content:"";position:absolute;left:17px;top:0;width:1px;height:100%;background:var(--orange);transform:scaleY(var(--stepProgress,0));transform-origin:top;transition:transform .12s linear}.step{position:relative;min-height:190px;padding:0 0 58px 64px;opacity:.38;transform:translateY(10px);transition:opacity .4s ease,transform .4s var(--ease)}.step:last-child{padding-bottom:0}.step:before{content:"";position:absolute;left:11px;top:6px;width:13px;height:13px;border-radius:50%;background:#0a0a0a;border:2px solid #555;z-index:1}.step.active{opacity:1;transform:none}.step.active:before{background:var(--orange);border-color:var(--orange)}.step b{display:block;color:var(--orange);font-size:10px;letter-spacing:.17em;margin-bottom:12px}.step h3{font-size:clamp(34px,4vw,66px);font-weight:820;line-height:1;letter-spacing:.01em;word-spacing:.065em}.step p{margin-top:10px;color:#aaa;font-size:14px;line-height:1.6}
-/* contact */
-.contact{background:var(--orange);color:#070707;padding:clamp(90px,9vw,150px) 0}.contact-grid{display:grid;grid-template-columns:1fr .75fr;gap:clamp(50px,8vw,130px);align-items:start}.contact .kicker{color:rgba(0,0,0,.55)}.contact .title{max-width:9ch}.contact .copy{margin-top:26px;color:#282828}.contact-details{display:grid;gap:8px;margin-top:38px;font-size:14px}.contact-details a{width:max-content;border-bottom:1px solid rgba(0,0,0,.4)}.form{background:#fff;padding:clamp(28px,3vw,46px)}.form h3{font-size:28px;font-weight:800;letter-spacing:.01em}.form>p{margin-top:8px;color:#666;font-size:13px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:10px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:#646464}.field input,.field select,.field textarea{width:100%;min-height:50px;border:1px solid #d7d7d7;background:#fff;padding:12px 13px;outline:none;border-radius:0}.field textarea{min-height:110px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#111;box-shadow:0 0 0 1px #111}.submit{margin-top:15px;width:100%;min-height:52px;background:#070707;color:#fff;border:0;font-weight:750;cursor:pointer}.submit:hover{background:#171717}
-/* footer */
-footer{background:#030303;border-top:1px solid var(--line);padding:48px var(--side) 24px}.footer{max-width:var(--max);margin:auto}.footer-top{display:flex;justify-content:space-between;gap:50px;align-items:flex-start;padding-bottom:42px}.footer-brand img{width:116px}.footer-brand p{margin-top:14px;max-width:440px;color:#8d8d8d;font-size:13px}.footer-links{display:flex;gap:34px;flex-wrap:wrap}.footer-links a{font-size:12px;color:#aaa}.footer-links a:hover{color:var(--orange)}.footer-bottom{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:20px;color:#646464;font-size:11px}
-/* modal */
-dialog{width:100%;max-width:none;height:100%;max-height:none;margin:0;border:0;padding:0;background:rgba(4,4,4,.96);color:#fff}dialog::backdrop{background:rgba(4,4,4,.96)}.dialog-shell{width:min(1320px,calc(100% - 28px));margin:14px auto 42px;background:#0b0b0b;border:1px solid var(--line)}.dialog-head{display:flex;align-items:center;justify-content:space-between;min-height:76px;padding:16px 20px;border-bottom:1px solid var(--line)}.dialog-head h2{font-size:clamp(28px,4vw,52px);font-weight:820;letter-spacing:.01em;word-spacing:.06em}.close{width:44px;height:44px;border:1px solid var(--line);background:none;cursor:pointer}.close svg,.gal-btn svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.4}.gallery{position:relative;aspect-ratio:16/9;background:#111}.gallery>img{width:100%;height:100%;object-fit:cover}.gal-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.28);display:grid;place-items:center;cursor:pointer}.gal-btn.prev{left:12px}.gal-btn.next{right:12px}.count{position:absolute;bottom:12px;right:14px;background:rgba(0,0,0,.65);padding:7px 10px;font-size:11px}.thumbs{display:flex;gap:8px;padding:11px;overflow:auto;border-bottom:1px solid var(--line)}.thumb{flex:0 0 88px;height:58px;padding:0;border:1px solid transparent;background:#111;opacity:.5}.thumb.active{opacity:1;border-color:var(--orange)}.thumb img{width:100%;height:100%;object-fit:cover}.dialog-body{padding:24px}.dialog-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.dialog-meta span{border:1px solid var(--line);padding:6px 9px;color:var(--orange);font-size:10px;text-transform:uppercase;letter-spacing:.09em}.dialog-body p{max-width:820px;color:#aaa;line-height:1.7;font-size:15px}
-@media(max-width:1050px){.nav{display:none}.menu{display:block}.nav-wrap{padding:4px}.nav.open{position:absolute;display:grid;right:var(--side);top:78px;width:min(320px,calc(100vw - 40px));padding:16px;background:#090909;border:1px solid var(--line);gap:0}.nav.open a{padding:14px 6px;border-bottom:1px solid var(--line)}.nav.open a:last-child{border:0}.nav-wrap .cta{display:none}.work-head,.services-top,.process-layout,.contact-grid{grid-template-columns:1fr}.process-intro{position:relative;top:auto}.case-info{grid-template-columns:1fr .65fr}.archive-grid{grid-template-columns:1fr}.archive-tile,.archive-tile.small{min-height:620px}.metric-grid{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--darkline)}.metric:nth-child(3){padding-left:0}.about-grid{grid-template-columns:1fr;gap:30px}.service-row{grid-template-columns:58px 1fr 1fr 38px}}
-@media(max-width:700px){:root{--side:17px}.header{padding:8px}.brand-stage{width:118px;height:66px}.brand-stage img{width:90px}.nav-wrap{min-height:50px}.hero{min-height:820px}.hero:after{background:linear-gradient(90deg,rgba(5,5,5,.95),rgba(5,5,5,.55)),linear-gradient(0deg,rgba(5,5,5,.94),rgba(5,5,5,.15) 52%)}.hero-inner{margin-left:var(--side);padding-top:150px;padding-bottom:128px}.hero h1{font-size:clamp(58px,17vw,86px);line-height:.94}.hero p{font-size:16px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions a{width:100%}.hero-meta{left:var(--side);right:var(--side);bottom:28px;text-align:left}.work{padding-top:82px}.work-head{display:block;margin-bottom:45px}.work-head .copy{margin-top:22px}.case{margin-bottom:90px}.case-image{height:68vh;min-height:430px}.case-info{grid-template-columns:1fr;gap:18px}.case h3{font-size:clamp(44px,13vw,68px);line-height:1}.archive{padding:82px 0}.archive-head{display:block}.archive-head .copy{margin-top:22px}.archive-tile,.archive-tile.small{min-height:500px}.archive-info{padding:22px}.metric-grid{grid-template-columns:1fr 1fr}.metric{min-height:160px;padding:20px 14px}.metric strong{font-size:clamp(42px,14vw,64px)}.metric span{font-size:10px}.about{padding:82px 0}.about-line{display:grid}.services{padding:82px 0}.services-top{margin-bottom:40px}.service-row{grid-template-columns:42px 1fr 34px;gap:14px;padding:22px 0}.service-row p{grid-column:2/4}.service-row h3{font-size:31px}.process{padding:82px 0}.steps{margin-top:42px}.step{min-height:160px;padding-left:50px}.steps:before,.steps:after{left:13px}.step:before{left:7px}.contact{padding:82px 0}.form{padding:24px 18px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-top,.footer-bottom{flex-direction:column}.footer-links{gap:20px}.gallery{aspect-ratio:4/3}.dialog-shell{width:calc(100% - 12px);margin:6px auto 24px}}
-@media(min-width:1900px){.hero-inner{margin-left:max(var(--side),calc((100vw - var(--max))/2 + var(--side)))}.hero-meta{right:max(var(--side),calc((100vw - var(--max))/2 + var(--side)))}.header{padding-inline:max(var(--side),calc((100vw - var(--max))/2 + var(--side)))}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-bg,.case-image img{transform:none!important}.steps:after{transition:none}}
+</script>
+
+<title>Seven Points | Premium Construction & Event Management</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #030303;
+  --panel: rgba(255, 255, 255, .03);
+  --panel2: rgba(255, 255, 255, .07);
+  --text: #f8f8f8;
+  --muted: #b8b8b8;
+  --gold: #fbaf43;
+  --gold2: #ffc966;
+  --line: rgba(255, 255, 255, .09);
+  --shadow: 0 30px 100px rgba(0, 0, 0, .62);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at 18% 12%, rgba(251, 175, 67, .08), transparent 18%),
+    radial-gradient(circle at 82% 2%, rgba(255, 255, 255, .06), transparent 16%),
+    linear-gradient(180deg, #030303 0%, #070707 100%);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button, input, textarea, select { font: inherit; }
+
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  z-index: 999;
+  transition: width .1s ease;
+  box-shadow: 0 0 10px rgba(251, 175, 67, .4);
+  will-change: width;
+}
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  backdrop-filter: blur(12px);
+  background: rgba(3, 3, 3, .85);
+  border-bottom: 1px solid var(--line);
+  transition: all .3s ease;
+  will-change: transform;
+}
+
+.navbar.scrolled {
+  padding: 10px 20px;
+  background: rgba(3, 3, 3, .95);
+  box-shadow: var(--shadow);
+}
+
+.brand { display: flex; align-items: center; gap: 0; font-weight: 900; font-size: 18px; }
+.brand img { width: 70px; height: auto; filter: brightness(1.15); transition: transform .3s ease; }
+.brand img:hover { transform: scale(1.05); }
+
+.nav-menu { display: flex; gap: 32px; align-items: center; list-style: none; }
+
+.nav-menu a {
+  font-size: 13px; font-weight: 700; color: var(--muted);
+  transition: color .25s ease; text-transform: uppercase; letter-spacing: 1.2px;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: ''; position: absolute; bottom: -5px; left: 0;
+  width: 0; height: 2px; background: var(--gold); transition: width .3s ease;
+}
+
+.nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
+.nav-menu a.active::after, .nav-menu a:hover::after { width: 100%; }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px; z-index: 1001;
+}
+
+.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .3s ease; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
+
+.skip-link { position: absolute; top: -40px; left: 0; background: var(--gold); color: #111; padding: 8px 16px; z-index: 9999; border-radius: 0 0 8px 0; }
+.skip-link:focus { top: 0; }
+
+.hero {
+  min-height: 100svh;
+  padding: 120px 20px 80px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; isolation: isolate; overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .18), rgba(0, 0, 0, .66)),
+    url('sevenpointsbg.png') center/cover no-repeat;
+}
+
+.hero::before {
+  content: ''; position: absolute; inset: -20%;
+  background: radial-gradient(circle at 50% 28%, rgba(251, 175, 67, .12), transparent 24%);
+  filter: blur(20px); opacity: .85; z-index: -2;
+  animation: subtlePulse 6s ease-in-out infinite; will-change: transform;
+}
+
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.44) 46%, rgba(0,0,0,.86) 100%);
+  z-index: -1;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { opacity: .85; transform: scale(1); }
+  50% { opacity: .92; transform: scale(1.01); }
+}
+
+.hero-inner { width: min(1120px, 100%); text-align: center; position: relative; z-index: 1; animation: fadeIn .8s ease-out; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border: 1px solid rgba(251,175,67,.3);
+  border-radius: 999px; background: rgba(251,175,67,.08); backdrop-filter: blur(14px);
+  font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase; color: #eee;
+  margin-bottom: 18px; animation: slideInDown .6s ease-out;
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-size: clamp(42px, 8vw, 98px); line-height: 1.01; font-weight: 900;
+  letter-spacing: -.06em; color: #fff; text-wrap: balance;
+  text-shadow: 0 18px 50px rgba(0,0,0,.68); animation: slideInDown .6s ease-out .1s backwards;
+}
+
+.hero h1 .gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.hero p {
+  max-width: 760px; margin: 22px auto 0;
+  font-size: clamp(16px, 2vw, 22px); color: #f3f3f3; opacity: .98;
+  animation: slideInDown .6s ease-out .2s backwards;
+}
+
+.hero-actions {
+  display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
+  margin-top: 32px; animation: slideInUp .6s ease-out .3s backwards;
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px; padding: 15px 24px; border-radius: 999px;
+  font-weight: 800; font-size: 15px; transition: all .25s ease;
+  cursor: pointer; border: none; will-change: transform;
+}
+
+.btn-primary {
+  border: 1.5px solid rgba(251,175,67,.6);
+  background: rgba(251,175,67,.08); color: #fff; backdrop-filter: blur(12px);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  transform: translateY(-3px); background: rgba(251,175,67,.15);
+  border-color: var(--gold); color: var(--gold);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #111; box-shadow: 0 18px 36px rgba(251,175,67,.25);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  transform: translateY(-3px); box-shadow: 0 24px 48px rgba(251,175,67,.35);
+}
+
+.section { padding: 96px 20px; animation: fadeInUp .8s ease-out; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container { max-width: 1400px; margin: 0 auto; }
+
+.section-title {
+  font-size: clamp(30px, 5vw, 60px); text-align: center; font-weight: 900;
+  letter-spacing: -.04em; margin-bottom: 14px; animation: slideInUp .6s ease-out;
+}
+
+.section-sub {
+  max-width: 760px; margin: 0 auto 50px; text-align: center;
+  color: var(--muted); font-size: 18px; animation: slideInUp .6s ease-out .1s backwards;
+}
+
+.gold { color: var(--gold); }
+
+.about-wrap {
+  background: linear-gradient(180deg, rgba(251,175,67,.04), rgba(251,175,67,.01));
+  border: 1px solid rgba(251,175,67,.15); border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(251,175,67,.1); backdrop-filter: blur(16px); padding: 60px 40px;
+}
+
+.about-content { max-width: 900px; margin: 0 auto; }
+.about-content p { font-size: 18px; line-height: 1.8; color: var(--muted); margin-bottom: 24px; }
+.about-content p:last-child { margin-bottom: 0; }
+
+.stats-wrap {
+  background: linear-gradient(180deg, rgba(251,175,67,.04), rgba(251,175,67,.01));
+  border: 1px solid rgba(251,175,67,.15); border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(251,175,67,.1); backdrop-filter: blur(16px); padding: 40px 30px;
+}
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+
+.stat-card {
+  padding: 24px 16px; border-radius: 20px;
+  background: rgba(251,175,67,.05); border: 1px solid rgba(251,175,67,.1);
+  text-align: center; transition: all .24s ease; animation: slideInUp .6s ease-out; will-change: transform;
+}
+
+.stat-card:nth-child(2) { animation-delay: .1s; }
+.stat-card:nth-child(3) { animation-delay: .2s; }
+.stat-card:nth-child(4) { animation-delay: .3s; }
+
+.stat-card:hover {
+  transform: translateY(-6px); background: rgba(251,175,67,.1);
+  border-color: var(--gold); box-shadow: 0 12px 30px rgba(251,175,67,.15);
+}
+
+.stat-number {
+  display: block; font-size: clamp(38px, 7vw, 68px); font-weight: 900; line-height: 1;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label { margin-top: 8px; color: #eaeaea; font-weight: 600; }
+
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+
+.card {
+  background: linear-gradient(180deg, rgba(251,175,67,.04), rgba(251,175,67,.01));
+  border: 1px solid rgba(251,175,67,.15); border-radius: 24px; padding: 32px 28px;
+  box-shadow: 0 20px 60px rgba(251,175,67,.08); transition: all .28s ease;
+  overflow: hidden; position: relative; animation: slideInUp .6s ease-out; will-change: transform;
+}
+
+.card:nth-child(2) { animation-delay: .1s; }
+.card:nth-child(3) { animation-delay: .2s; }
+
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(180deg, rgba(251,175,67,.08), rgba(251,175,67,.03));
+  border-color: var(--gold); box-shadow: 0 30px 80px rgba(251,175,67,.15);
+}
+
+.card i {
+  font-size: 48px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 20px; transition: transform .3s ease; display: inline-block; will-change: transform;
+}
+
+.card:hover i { transform: scale(1.15) rotate(8deg); }
+.card h3 { font-size: 24px; margin-bottom: 12px; color: #fff; }
+.card p { color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+.card .btn-primary { padding: 8px 14px; font-size: 13px; }
+.card .btn-primary i { font-size: 14px; margin: 0; }
+
+.portfolio-filters { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+
+.filter-btn {
+  padding: 10px 20px; border: 1.5px solid rgba(251,175,67,.3);
+  background: rgba(251,175,67,.06); color: var(--muted); border-radius: 999px;
+  font-weight: 700; font-size: 14px; cursor: pointer; transition: all .25s ease;
+  text-transform: uppercase; letter-spacing: 1px; will-change: background, color;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #111; border-color: var(--gold); box-shadow: 0 8px 20px rgba(251,175,67,.2);
+}
+
+.work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+
+.work {
+  position: relative; min-height: 320px; border-radius: 24px; overflow: hidden;
+  background: #111; box-shadow: 0 20px 60px rgba(251,175,67,.08);
+  cursor: pointer; opacity: 1; transition: opacity .4s ease, transform .3s ease; will-change: transform;
+}
+
+.work.hidden { display: none; opacity: 0; }
+
+.work img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .4s ease; will-change: transform;
+}
+
+.work:hover img { transform: scale(1.08); }
+
+.work-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(251,175,67,.2), rgba(0,0,0,.95));
+  display: flex; align-items: flex-end; padding: 24px;
+  opacity: 0; transition: opacity .3s ease; pointer-events: none; will-change: opacity;
+}
+
+.work:hover .work-overlay { opacity: 1; }
+.work-overlay h3 { font-size: 24px; margin-bottom: 6px; color: #fff; }
+.work-overlay p { color: #ddd; font-size: 14px; }
+
+.see-all-btn { display: flex; justify-content: center; margin-top: 40px; }
+
+/* ─── MODAL ─── */
+.modal {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,.95); z-index: 2000; overflow-y: auto;
+  animation: fadeIn .3s ease; will-change: opacity;
+}
+
+.modal.show { display: flex; align-items: flex-start; justify-content: center; padding: 20px; }
+
+.modal-content {
+  background: linear-gradient(180deg, rgba(251,175,67,.05), rgba(251,175,67,.01));
+  border: 1px solid rgba(251,175,67,.15); border-radius: 24px;
+  width: 100%; max-width: 900px; padding: 40px; margin-top: 40px;
+  animation: slideUp .4s ease; will-change: transform;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(251,175,67,.15);
+}
+
+.modal-title { font-size: 36px; font-weight: 900; color: #fff; }
+
+.modal-close {
+  background: rgba(251,175,67,.1); border: 1px solid rgba(251,175,67,.2);
+  color: var(--gold); width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 24px; transition: all .25s ease; will-change: background, color;
+}
+
+.modal-close:hover { background: var(--gold); color: #111; }
+
+/* ─── PREMIUM CAROUSEL ─── */
+.carousel-gallery { margin-bottom: 32px; }
+
+.carousel-container {
+  position: relative; overflow: hidden;
+  border-radius: 16px; background: #0a0a0a;
+  height: 440px; margin-bottom: 12px;
+}
+
+.carousel-main {
+  width: 100%; height: 100%;
+  position: relative;
+}
+
+.carousel-main img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  position: absolute; inset: 0;
+  will-change: opacity, transform;
+}
+
+.carousel-overlay-ui {
+  position: absolute; inset: 0;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.carousel-arrow {
+  pointer-events: all;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(10,10,10,.55);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.85);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 13px;
+  transition: background .2s, color .2s, transform .15s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.carousel-arrow:hover {
+  background: rgba(251,175,67,.25);
+  color: var(--gold);
+  border-color: rgba(251,175,67,.4);
+  transform: scale(1.08);
+}
+
+.carousel-arrow:active { transform: scale(0.95); }
+
+.carousel-indicator {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  background: rgba(10,10,10,.5); color: rgba(255,255,255,.75);
+  padding: 4px 12px; border-radius: 999px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.1);
+  z-index: 10; pointer-events: none;
+}
+
+.carousel-thumbnails {
+  display: flex; gap: 8px; overflow-x: auto;
+  padding: 4px 2px; scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel-thumbnails::-webkit-scrollbar { display: none; }
+
+.carousel-thumb {
+  min-width: 76px; width: 76px; height: 76px;
+  border-radius: 10px; overflow: hidden; cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color .25s, transform .2s, box-shadow .25s;
+  flex-shrink: 0; background: #111;
+}
+
+.carousel-thumb img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .3s ease;
+}
+
+.carousel-thumb.active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(251,175,67,.2);
+}
+
+.carousel-thumb:hover:not(.active) {
+  border-color: rgba(251,175,67,.35);
+  transform: translateY(-2px);
+}
+
+.carousel-thumb:hover img { transform: scale(1.06); }
+
+/* ─── VIDEO SECTION ─── */
+.video-section {
+  margin-top: 32px; padding: 32px;
+  background: linear-gradient(180deg, rgba(251,175,67,.05), rgba(251,175,67,.01));
+  border: 1px solid rgba(251,175,67,.15); border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(251,175,67,.08);
+}
+
+.video-section h4 {
+  font-size: 18px; margin-bottom: 16px; color: #fff; font-weight: 700;
+  text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+
+.video-section h4 i {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.modal-video { border-radius: 14px; overflow: hidden; background: #111; box-shadow: 0 10px 30px rgba(251,175,67,.1); }
+.modal-video iframe { width: 100%; height: 440px; border: none; display: block; }
+
+.modal-description { margin-top: 32px; margin-bottom: 24px; }
+.modal-description h3 { font-size: 20px; margin-bottom: 10px; color: #fff; }
+.modal-description p { color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+
+.modal-details {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px; margin-bottom: 32px; padding: 20px;
+  background: rgba(251,175,67,.03); border-radius: 16px; border: 1px solid rgba(251,175,67,.1);
+}
+
+.detail-item strong { display: block; color: var(--gold); margin-bottom: 6px; font-size: 14px; }
+.detail-item span { color: var(--muted); font-size: 13px; }
+
+.modal-actions { display: flex; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(251,175,67,.15); }
+.modal-actions .btn { flex: 1; }
+
+/* ─── PROCESS ─── */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+
+.step {
+  padding: 28px 24px; border-radius: 22px;
+  border: 1px solid rgba(251,175,67,.15); background: rgba(251,175,67,.03);
+  transition: all .28s ease; position: relative; animation: slideInUp .6s ease-out; will-change: transform;
+}
+
+.step:nth-child(2) { animation-delay: .1s; }
+.step:nth-child(3) { animation-delay: .2s; }
+.step:nth-child(4) { animation-delay: .3s; }
+
+.step::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent); opacity: 0; transition: opacity .28s ease;
+}
+
+.step:hover { transform: translateY(-8px); background: rgba(251,175,67,.06); border-color: var(--gold); box-shadow: 0 12px 30px rgba(251,175,67,.1); }
+.step:hover::before { opacity: 1; }
+
+.step-no {
+  width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #111;
+  font-weight: 900; margin-bottom: 16px; font-size: 20px; box-shadow: 0 8px 20px rgba(251,175,67,.2);
+}
+
+.step h3 { font-size: 20px; margin-bottom: 8px; color: #fff; }
+.step p { color: var(--muted); font-size: 14px; }
+
+/* ─── TESTIMONIALS ─── */
+.testimonials {
+  background: linear-gradient(180deg, rgba(251,175,67,.04), rgba(251,175,67,.01));
+  border: 1px solid rgba(251,175,67,.15); border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(251,175,67,.08); backdrop-filter: blur(16px);
+  padding: 40px 30px; position: relative;
+}
+
+.testimonials-container { position: relative; overflow: hidden; }
+
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px; transition: transform .5s ease; will-change: transform;
+}
+
+.quote {
+  padding: 24px; border-radius: 20px; background: rgba(251,175,67,.05);
+  border: 1px solid rgba(251,175,67,.1); transition: all .28s ease;
+  animation: slideInUp .6s ease-out; min-height: 100%; will-change: transform;
+}
+
+.quote:nth-child(2) { animation-delay: .1s; }
+.quote:nth-child(3) { animation-delay: .2s; }
+
+.quote:hover { transform: translateY(-6px); background: rgba(251,175,67,.08); border-color: var(--gold); box-shadow: 0 12px 30px rgba(251,175,67,.12); }
+.quote p { color: #f0f0f0; font-style: italic; font-size: 15px; line-height: 1.8; margin-bottom: 16px; }
+
+.quote-author { display: flex; align-items: center; gap: 12px; }
+
+.quote-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  display: flex; align-items: center; justify-content: center;
+  color: #111; font-weight: 900; font-size: 14px; flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(251,175,67,.2);
+}
+
+.quote-info strong { display: block; color: var(--gold); font-size: 14px; }
+.quote-info span { font-size: 12px; color: var(--muted); }
+
+.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+
+.dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(251,175,67,.3); cursor: pointer; transition: all .3s ease; will-change: width, background;
+}
+
+.dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+
+/* ─── CONTACT ─── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+.contact-list { display: grid; gap: 14px; animation: slideInUp .6s ease-out; }
+
+.contact-item {
+  display: flex; gap: 14px; align-items: flex-start; padding: 20px;
+  border-radius: 18px; background: rgba(251,175,67,.03);
+  border: 1px solid rgba(251,175,67,.1); transition: all .25s ease; will-change: transform;
+}
+
+.contact-item:hover { transform: translateY(-5px); background: rgba(251,175,67,.06); border-color: var(--gold); box-shadow: 0 8px 20px rgba(251,175,67,.1); }
+
+.contact-ic {
+  width: 50px; height: 50px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #111; display: flex; align-items: center; justify-content: center;
+  flex: 0 0 auto; font-size: 20px; box-shadow: 0 8px 20px rgba(251,175,67,.2);
+}
+
+.contact-item h3 { font-size: 16px; margin-bottom: 4px; color: #fff; font-weight: 700; }
+.contact-item p, .contact-item a { color: var(--muted); font-size: 14px; }
+.contact-item a { color: var(--gold); text-decoration: none; font-weight: 600; }
+.contact-item a:hover { text-decoration: underline; }
+
+.form {
+  padding: 32px; border-radius: 24px; background: rgba(251,175,67,.03);
+  border: 1px solid rgba(251,175,67,.1); animation: slideInUp .6s ease-out .1s backwards;
+  box-shadow: 0 20px 60px rgba(251,175,67,.08);
+}
+
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #f0f0f0; }
+
+.form input, .form textarea, .form select {
+  width: 100%; padding: 16px; border-radius: 12px;
+  border: 1.5px solid rgba(251,175,67,.2); background: rgba(251,175,67,.03);
+  color: #fff; outline: none; transition: all .25s ease; font-size: 15px; min-height: 50px;
+}
+
+.form input::placeholder, .form textarea::placeholder { color: #a9a9a9; }
+
+.form input:focus, .form textarea:focus, .form select:focus {
+  border-color: var(--gold); background: rgba(251,175,67,.06); box-shadow: 0 0 0 3px rgba(251,175,67,.1);
+}
+
+.form-group.error input, .form-group.error textarea { border-color: #ff6b6b; background: rgba(255,107,107,.05); }
+
+.form-error { color: #ff6b6b; font-size: 13px; margin-top: 6px; display: none; font-weight: 600; }
+.form-group.error .form-error { display: block; }
+
+.form button {
+  width: 100%; padding: 18px; border: none; border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #111; font-weight: 900; cursor: pointer; transition: all .25s ease;
+  font-size: 15px; text-transform: uppercase; letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(251,175,67,.2); will-change: transform;
+}
+
+.form button:hover, .form button:focus { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(251,175,67,.3); }
+.form button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.form-success {
+  padding: 16px; background: rgba(76,175,80,.1); border: 1px solid rgba(76,175,80,.3);
+  border-radius: 12px; color: #4cb050; margin-bottom: 16px; display: none; font-weight: 600;
+}
+
+.form-success.show { display: block; animation: slideInDown .3s ease; }
+
+/* ─── FLOATING ─── */
+.floating { position: fixed; right: 20px; bottom: 20px; z-index: 999; display: flex; flex-direction: column; gap: 12px; }
+
+.fab-btn {
+  width: 58px; height: 58px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 14px 30px rgba(251,175,67,.2); transition: all .25s ease;
+  border: none; cursor: pointer; font-size: 24px; text-decoration: none; will-change: transform;
+}
+
+.fab-btn:hover { transform: translateY(-4px) scale(1.08); }
+.whatsapp { background: #25D366; color: #fff; }
+.phone-call { background: var(--gold); color: #111; display: none; }
+
+.scroll-top {
+  background: rgba(251,175,67,.2); color: var(--gold);
+  opacity: 0; visibility: hidden; transition: all .25s ease;
+  border: 1px solid rgba(251,175,67,.3); will-change: opacity, visibility;
+}
+
+.scroll-top.show { opacity: 1; visibility: visible; }
+
+/* ─── FOOTER ─── */
+footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding: 50px 20px 20px; color: var(--muted); }
+.footer-content { max-width: 1400px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 40px; }
+.footer-section h4 { color: #fff; font-size: 16px; margin-bottom: 16px; font-weight: 700; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 10px; }
+.footer-section a { color: var(--muted); transition: color .25s ease; font-size: 14px; }
+.footer-section a:hover { color: var(--gold); }
+.footer-socials { display: flex; gap: 16px; }
+
+.social-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(251,175,67,.1); border: 1px solid rgba(251,175,67,.2); color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  transition: all .25s ease; cursor: pointer; text-decoration: none; will-change: background, color;
+}
+
+.social-btn:hover { background: var(--gold); color: #111; }
+.footer-bottom { border-top: 1px solid var(--line); padding-top: 20px; text-align: center; font-size: 14px; }
+.footer-bottom a { color: var(--gold); text-decoration: none; }
+.footer-bottom a:hover { text-decoration: underline; }
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .navbar { padding: 12px 16px; }
+  .brand img { width: 56px; }
+
+  .nav-menu {
+    position: absolute; top: 56px; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: rgba(0,0,0,.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line); padding: 20px;
+    max-height: 0; overflow: hidden; transition: max-height .3s ease;
+  }
+
+  .nav-menu.active { max-height: 500px; }
+  .nav-menu li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+  .nav-menu li:last-child { border-bottom: none; }
+  .nav-menu a { font-size: 12px; }
+  .nav-menu a::after { display: none; }
+  .nav-menu a.active { color: var(--gold); }
+  .hamburger { display: flex; }
+
+  .hero { padding: 110px 16px 60px; }
+  .hero h1 { font-size: clamp(28px, 10vw, 48px); }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  .btn { width: 100%; }
+  .section { padding: 60px 16px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .stat-card { padding: 18px 12px; }
+  .stat-card:hover { transform: translateY(-4px); }
+  .stat-number { font-size: clamp(28px, 6vw, 48px); }
+  .stats-wrap { padding: 24px 16px; }
+  .about-wrap { padding: 40px 24px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .card { padding: 24px 20px; }
+  .card:hover { transform: translateY(-8px); }
+  .card i { font-size: 40px; }
+  .portfolio-filters { gap: 8px; }
+  .filter-btn { padding: 8px 16px; font-size: 12px; }
+  .work-grid { grid-template-columns: 1fr; }
+  .work { min-height: 280px; }
+  .modal-content { padding: 24px; }
+  .modal-title { font-size: 24px; }
+  .carousel-container { height: 260px; }
+  .carousel-thumbnails { gap: 8px; }
+  .carousel-thumb { min-width: 64px; width: 64px; height: 64px; }
+  .video-section { padding: 20px; }
+  .modal-video iframe { height: 260px; }
+  .process-grid { grid-template-columns: 1fr; }
+  .step { padding: 24px 18px; }
+  .step:hover { transform: translateY(-6px); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .form { padding: 24px; }
+  .form input, .form textarea, .form select { min-height: 56px; padding: 16px; }
+  .form button { padding: 16px; min-height: 54px; }
+  .floating { right: 16px; bottom: 16px; gap: 10px; }
+  .fab-btn { width: 52px; height: 52px; font-size: 20px; box-shadow: 0 10px 24px rgba(251,175,67,.15); }
+  .phone-call { display: flex; }
+  .section-title { font-size: clamp(24px, 6vw, 42px); }
+  .section-sub { font-size: 16px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  .brand img { width: 48px; }
+  .hero { padding: 90px 14px 50px; }
+  .hero h1 { font-size: clamp(24px, 8vw, 40px); }
+  .hero p { font-size: 14px; }
+  .stats-grid { grid-template-columns: 1fr; gap: 10px; }
+  .stat-number { font-size: clamp(24px, 5vw, 36px); }
+  .section-title { font-size: clamp(22px, 5vw, 36px); }
+  .card { padding: 20px 16px; }
+  .card h3 { font-size: 20px; }
+  .work { min-height: 240px; }
+  .modal-content { border-radius: 16px; max-width: calc(100% - 20px); }
+  .modal-title { font-size: 20px; }
+  .carousel-container { height: 200px; }
+  .carousel-thumb { min-width: 56px; width: 56px; height: 56px; }
+  .modal-video iframe { height: 200px; }
+  .fab-btn { width: 48px; height: 48px; font-size: 18px; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
 </style>
 </head>
+
 <body>
-<a class="skip" href="#main">Skip to content</a><div class="progress" aria-hidden="true"></div>
-<header class="header" id="header">
-  <a class="brand-stage" href="#home" aria-label="Seven Points home"><img src="logo.png" alt="Seven Points Construction"></a>
-  <div class="nav-wrap"><nav class="nav" id="nav"><a href="#work">Projects</a><a href="#about">Company</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></nav><a class="cta" href="#contact">Project enquiry <svg viewBox="0 0 20 20"><path d="M6 14 14 6M8 6h6v6"/></svg></a><button class="menu" id="menu" aria-label="Open menu" aria-expanded="false"><span></span></button></div>
-</header>
-<main id="main">
-<section class="hero" id="home"><div class="hero-bg" id="heroBg"></div><div class="hero-inner"><div class="kicker reveal">Seven Points · Duhok</div><h1 class="reveal">Built to <em>specification.</em></h1><p class="reveal">Construction, interior fit-out and site delivery managed by one team across Duhok and the Kurdistan Region.</p><div class="hero-actions reveal"><a class="cta" href="#work">View projects <svg viewBox="0 0 20 20"><path d="M10 4v11M6 11l4 4 4-4"/></svg></a><a class="ghost" href="#contact">Discuss a project</a></div></div><div class="hero-meta">Construction · Interior fit-out<br>Site supervision · Project delivery</div></section>
-<section class="work" id="work"><div class="shell"><div class="work-head"><div><div class="kicker reveal">Selected work</div><h2 class="title reveal">Projects first.</h2></div><p class="copy reveal">Completed construction and fit-out work presented with the project information that matters.</p></div>
-<article class="case"><div class="case-image reveal" data-parallax><img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall"></div><div class="case-info reveal"><div><span class="case-index">01 · Construction · Zakho</span><h3>Zakho Conference Hall</h3></div><div class="case-side"><p>Conference hall construction coordinated across structure, interior works and event requirements.</p><button class="text-link" data-project="zakho">View project <svg viewBox="0 0 20 20"><path d="M6 14 14 6M8 6h6v6"/></svg></button></div></div></article>
-<article class="case"><div class="case-image reveal" data-parallax><img src="saloon.jpg" alt="Jade Touch Salon"></div><div class="case-info reveal"><div><span class="case-index">02 · Construction + Fit-out · Duhok</span><h3>Jade Touch Salon</h3></div><div class="case-side"><p>Commercial construction and interior fit-out delivered as one coordinated scope.</p><button class="text-link" data-project="jade">View project <svg viewBox="0 0 20 20"><path d="M6 14 14 6M8 6h6v6"/></svg></button></div></div></article>
-</div></section>
-<section class="archive" id="archive"><div class="shell"><div class="archive-head"><div><div class="kicker reveal">Project archive</div><h2 class="title reveal">Design development.</h2></div><p class="copy reveal">Additional work shown separately from completed-project photography.</p></div><div class="archive-grid"><button class="archive-tile reveal" data-project="rtbank"><img src="rtbank-branch.webp" alt="RT Bank Duhok architectural design"><span class="archive-info"><span>Commercial · Duhok</span><h3>RT Bank Duhok</h3><p>Architectural and interior design development for a bank branch.</p></span></button><button class="archive-tile small reveal" data-project="rtbatm"><img src="rtb-atm.webp" alt="RTB ATM kiosk design"><span class="archive-info"><span>ATM · Design development</span><h3>RTB 24/7 Kiosk</h3><p>Compact customer-facing ATM enclosure.</p></span></button></div></div></section>
-<section class="metrics" aria-label="Company figures"><div class="shell"><div class="metric-grid" id="metrics"><div class="metric"><strong><span data-count="150">0</span>+</strong><span>Completed projects</span></div><div class="metric"><strong><span data-count="5">0</span>+</strong><span>Years operating</span></div><div class="metric"><strong><span data-count="100">0</span>%</strong><span>On-time delivery</span></div><div class="metric"><strong><span data-count="50">0</span>+</strong><span>Satisfied clients</span></div></div></div></section>
-<section class="about" id="about"><div class="shell"><div class="about-grid"><div class="kicker reveal">Seven Points</div><div><h2 class="title reveal">One team from planning to handover.</h2><p class="copy reveal">Seven Points is a Duhok-based construction company. We coordinate planning, procurement, site works, finishes, quality checks and handover through one project team.</p><div class="about-line reveal"><span>Duhok · Kurdistan Region · Iraq</span><span>Construction · Fit-out · Supervision · Events</span></div></div></div></div></section>
-<section class="services" id="services"><div class="shell"><div class="services-top"><div><div class="kicker reveal">Services</div><h2 class="title reveal">What we deliver.</h2></div><p class="copy reveal">Four clear scopes, managed around drawings, programme and site control.</p></div>
-<div class="service-list"><article class="service-row reveal"><span class="service-no">01</span><h3>Construction management</h3><p>Planning, procurement, coordination, finishing and handover.</p><span class="service-icon"><svg viewBox="0 0 40 40"><path d="M6 33V17l14-9 14 9v16M13 33V21h14v12M20 8v25"/></svg></span></article><article class="service-row reveal"><span class="service-no">02</span><h3>Interior fit-out</h3><p>Materials, lighting, joinery, finishes and installation.</p><span class="service-icon"><svg viewBox="0 0 40 40"><path d="M7 32V8h26v24M7 20h26M18 8v24M27 25h2"/></svg></span></article><article class="service-row reveal"><span class="service-no">03</span><h3>Site supervision</h3><p>Daily checks, reporting, coordination and quality control.</p><span class="service-icon"><svg viewBox="0 0 40 40"><path d="M9 31h22M12 31V13h16v18M16 13V8h8v5M16 20h8M16 25h5"/></svg></span></article><article class="service-row reveal"><span class="service-no">04</span><h3>Event production</h3><p>Setup, logistics and on-site delivery.</p><span class="service-icon"><svg viewBox="0 0 40 40"><path d="M8 31h24M11 31V17h18v14M15 17v-6h10v6M15 24h10"/></svg></span></article></div>
-</div></section>
-<section class="process" id="process"><div class="shell process-layout"><div class="process-intro"><div class="kicker reveal">Process</div><h2 class="title reveal">Four steps.</h2><p class="copy reveal">Short, visible stages from first brief to final handover.</p></div><div class="steps" id="steps"><article class="step active"><b>01</b><h3>Scope</h3><p>Confirm brief, budget and programme.</p></article><article class="step"><b>02</b><h3>Coordinate</h3><p>Drawings, procurement and sequence.</p></article><article class="step"><b>03</b><h3>Build</h3><p>Site control, quality and progress.</p></article><article class="step"><b>04</b><h3>Handover</h3><p>Final checks and closeout.</p></article></div></div></section>
-<section class="contact" id="contact"><div class="shell contact-grid"><div><div class="kicker reveal">Contact</div><h2 class="title reveal">Discuss your project.</h2><p class="copy reveal">Send the location, scope and expected timing. We will review it and contact you directly.</p><div class="contact-details reveal"><a href="tel:+9647502205577">+964 750 220 5577</a><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a><span>Zirka Road, Duhok</span></div></div><form class="form reveal" id="quoteForm"><h3>Project enquiry</h3><p>Your details open as a prepared WhatsApp message.</p><div class="form-grid"><div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div><div class="field full"><label for="service">Service</label><select id="service" name="service" required><option value="">Choose</option><option>Construction Management</option><option>Interior Fit-Out</option><option>Site Supervision</option><option>Event Production</option><option>Other</option></select></div><div class="field full"><label for="location">Location</label><input id="location" name="location" placeholder="Duhok, Erbil, Zakho..."></div><div class="field full"><label for="details">Scope and timeline</label><textarea id="details" name="details" required minlength="10"></textarea></div></div><button class="submit" type="submit">Continue on WhatsApp</button></form></div></section>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="scroll-progress"></div>
+
+<nav class="navbar">
+  <div class="brand">
+    <img src="logo.png" alt="Seven Points">
+  </div>
+  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-menu">
+    <li><a href="#hero" class="nav-link">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#services" class="nav-link">Services</a></li>
+    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+    <li><a href="#process" class="nav-link">Process</a></li>
+    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-kicker">Construction • Event Management</div>
+      <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
+      <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors in Kurdistan Region, Iraq.</p>
+      <div class="hero-actions">
+        <a href="tel:+9647502205577" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title reveal">About <span class="gold">Seven Points</span></h2>
+      <p class="section-sub reveal">Building trust through excellence and professional execution</p>
+      <div class="about-wrap reveal">
+        <div class="about-content">
+          <p>Seven Points is a premier construction and event management company based in Duhok, Kurdistan Region. With over 5 years of proven experience, we have successfully delivered 150+ projects across commercial, corporate, and government sectors.</p>
+          <p>Our commitment to precision, professionalism, and punctuality has made us a trusted partner for organizations seeking reliable solutions. We combine innovative approaches with rigorous quality control to ensure every project exceeds expectations.</p>
+          <p>From large-scale construction projects to sophisticated event productions, our dedicated team brings expertise, discipline, and unwavering commitment to excellence in every engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="stats">
+    <div class="container">
+      <h2 class="section-title reveal">Proven <span class="gold">Results</span></h2>
+      <p class="section-sub reveal">Consistent excellence backed by measurable outcomes</p>
+      <div class="stats-wrap reveal">
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card" data-target="150" data-suffix="+">
+            <span class="stat-number">0</span>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-card" data-target="5" data-suffix="+">
+            <span class="stat-number">0</span>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card" data-target="100" data-suffix="%">
+            <span class="stat-number">0</span>
+            <div class="stat-label">On-Time Delivery</div>
+          </div>
+          <div class="stat-card" data-target="50" data-suffix="+">
+            <span class="stat-number">0</span>
+            <div class="stat-label">Satisfied Clients</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title reveal">Our <span class="gold">Services</span></h2>
+      <p class="section-sub reveal">Professional solutions tailored to your needs</p>
+      <div class="cards-grid">
+        <div class="card reveal">
+          <i class="fa-solid fa-hard-hat"></i>
+          <h3>Construction Management</h3>
+          <p>Full-scale construction from planning to delivery, including structure, finishing, and comprehensive site coordination.</p>
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+        </div>
+        <div class="card reveal">
+          <i class="fa-solid fa-calendar-check"></i>
+          <h3>Event Management</h3>
+          <p>Corporate and government events with complete production, professional setup, logistics, and dedicated support.</p>
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+        </div>
+        <div class="card reveal">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <h3>Site Supervision</h3>
+          <p>Daily quality control, rigorous progress monitoring, and comprehensive supervision to keep projects on track.</p>
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="portfolio">
+    <div class="container">
+      <h2 class="section-title reveal">Selected <span class="gold">Work</span></h2>
+      <p class="section-sub reveal">Showcase of completed projects</p>
+
+      <div class="portfolio-filters reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="construction">Construction</button>
+        <button class="filter-btn" data-filter="event">Event Management</button>
+      </div>
+
+      <div class="work-grid" id="workGrid">
+        <div class="work reveal" data-category="construction" data-project="project1">
+          <img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall">
+          <div class="work-overlay"><div><h3>Zakho Conference Hall</h3><p>Exterior and Interior Design</p></div></div>
+        </div>
+        <div class="work reveal" data-category="construction" data-project="project2">
+          <img src="saloon.jpg" alt="Jade Touch Salon">
+          <div class="work-overlay"><div><h3>Jade Touch Salon</h3><p>Private Property</p></div></div>
+        </div>
+        <div class="work reveal" data-category="construction" data-project="project3">
+          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80" alt="Infrastructure">
+          <div class="work-overlay"><div><h3>Infrastructure Project</h3><p>Transportation hub</p></div></div>
+        </div>
+        <div class="work reveal" data-category="event" data-project="project4">
+          <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80" alt="Corporate Event">
+          <div class="work-overlay"><div><h3>Corporate Summit</h3><p>International conference</p></div></div>
+        </div>
+        <div class="work reveal" data-category="event" data-project="project5">
+          <img src="https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80" alt="Wedding Event">
+          <div class="work-overlay"><div><h3>Wedding Celebration</h3><p>Premium event production</p></div></div>
+        </div>
+        <div class="work reveal" data-category="event" data-project="project6">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80" alt="Product Launch">
+          <div class="work-overlay"><div><h3>Product Launch</h3><p>Brand experience event</p></div></div>
+        </div>
+      </div>
+
+      <div class="see-all-btn reveal">
+        <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-arrow-right"></i> Start Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="container">
+      <h2 class="section-title reveal">How We <span class="gold">Work</span></h2>
+      <p class="section-sub reveal">A proven 4-step process built for clarity and delivery</p>
+      <div class="process-grid">
+        <div class="step reveal"><div class="step-no">01</div><h3>Consultation</h3><p>We review your project goals, scope, and timeline in detail.</p></div>
+        <div class="step reveal"><div class="step-no">02</div><h3>Planning</h3><p>We prepare comprehensive execution plan and source materials.</p></div>
+        <div class="step reveal"><div class="step-no">03</div><h3>Execution</h3><p>We manage with full supervision and daily progress updates.</p></div>
+        <div class="step reveal"><div class="step-no">04</div><h3>Delivery</h3><p>We complete handover with quality checks and support.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <div class="container">
+      <h2 class="section-title reveal">Client <span class="gold">Feedback</span></h2>
+      <p class="section-sub reveal">Trusted by government, corporate, and commercial clients</p>
+      <div class="testimonials reveal">
+        <div class="testimonials-container">
+          <div class="testimonials-grid" id="testimonialsGrid">
+            <div class="quote">
+              <p>"Seven Points delivered our project with exceptional quality, clear communication, and professional handling throughout the entire process."</p>
+              <div class="quote-author">
+                <div class="quote-avatar">GC</div>
+                <div class="quote-info"><strong>Government Client</strong><span>Project Director</span></div>
+              </div>
+            </div>
+            <div class="quote">
+              <p>"The event setup was elegant, organized, and finished precisely on time. Their attention to detail is remarkable and impressive."</p>
+              <div class="quote-author">
+                <div class="quote-avatar">CD</div>
+                <div class="quote-info"><strong>Corporate Director</strong><span>Event Organizer</span></div>
+              </div>
+            </div>
+            <div class="quote">
+              <p>"Seven Points handled our complex project with real professionalism, discipline, and an unwavering commitment to excellence."</p>
+              <div class="quote-author">
+                <div class="quote-avatar">CP</div>
+                <div class="quote-info"><strong>Commercial Partner</strong><span>Construction Lead</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-dots">
+          <div class="dot active" data-slide="0"></div>
+          <div class="dot" data-slide="1"></div>
+          <div class="dot" data-slide="2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Get in <span class="gold">Touch</span></h2>
+      <p class="section-sub reveal">Ready to start? Contact us and let's create something exceptional together.</p>
+      <div class="contact-grid">
+        <div class="contact-list reveal">
+          <div class="contact-item">
+            <div class="contact-ic"><i class="fa-solid fa-phone"></i></div>
+            <div><h3>Phone</h3><p><a href="tel:+9647502205577">+964 750 220 5577</a></p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-ic"><i class="fa-solid fa-envelope"></i></div>
+            <div><h3>Email</h3><p><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-ic"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Office Address</h3><p>Zirka Road, Duhok<br>Kurdistan Region, Iraq</p></div>
+          </div>
+        </div>
+
+        <form class="form" id="contactForm" novalidate>
+          <div class="form-success" id="formSuccess">
+            <i class="fa-solid fa-check"></i> Thank you! We'll contact you shortly.
+          </div>
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+            <div class="form-error">Please enter your name (at least 2 characters)</div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            <div class="form-error">Please enter a valid email address</div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+964 750 220 5577">
+            <div class="form-error">Please enter a valid phone number</div>
+          </div>
+          <div class="form-group">
+            <label for="project-type">Project Type *</label>
+            <select id="project-type" name="projectType" required>
+              <option value="">Select project type...</option>
+              <option value="construction">Construction</option>
+              <option value="event">Event Management</option>
+              <option value="supervision">Site Supervision</option>
+              <option value="other">Other</option>
+            </select>
+            <div class="form-error">Please select a project type</div>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details *</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us about your project, timeline, and requirements..." required></textarea>
+            <div class="form-error">Please describe your project (at least 10 characters)</div>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="footer"><div class="footer-top"><div class="footer-brand"><img src="logo.png" alt="Seven Points"><p>Construction, interior fit-out and project delivery across the Kurdistan Region of Iraq.</p></div><div class="footer-links"><a href="#work">Projects</a><a href="#about">Company</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Seven Points. All rights reserved.</span><span>Duhok · Kurdistan Region · Iraq</span></div></div></footer>
-<dialog id="projectDialog"><div class="dialog-shell"><header class="dialog-head"><h2 id="dialogTitle">Project</h2><button class="close" id="dialogClose" aria-label="Close"><svg viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"/></svg></button></header><div class="gallery"><img id="dialogImage" alt=""><button class="gal-btn prev" id="prev" aria-label="Previous"><svg viewBox="0 0 20 20"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="gal-btn next" id="next" aria-label="Next"><svg viewBox="0 0 20 20"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button><span class="count" id="count">1 / 1</span></div><div class="thumbs" id="thumbs"></div><div class="dialog-body"><div class="dialog-meta" id="dialogMeta"></div><p id="dialogDescription"></p></div></div></dialog>
+
+<!-- ─── MODAL ─── -->
+<div class="modal" id="portfolioModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title" id="modalTitle">Project Title</h2>
+      <button class="modal-close" id="modalClose"><i class="fa-solid fa-times"></i></button>
+    </div>
+
+    <!-- PREMIUM CAROUSEL -->
+    <div class="carousel-gallery">
+      <div class="carousel-container">
+        <div class="carousel-main" id="carouselMain">
+          <!-- imgs injected by JS -->
+        </div>
+
+        <div class="carousel-overlay-ui">
+          <button class="carousel-arrow" id="prevBtn" aria-label="Previous">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-arrow" id="nextBtn" aria-label="Next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="carousel-indicator">
+          <span id="carouselIndex">1</span> / <span id="carouselTotal">9</span>
+        </div>
+      </div>
+
+      <div class="carousel-thumbnails" id="carouselThumbs"></div>
+    </div>
+
+    <!-- VIDEO SECTION -->
+    <div class="video-section">
+      <h4><i class="fa-solid fa-play"></i> Project Video</h4>
+      <div class="modal-video">
+        <iframe id="projectVideo" src="" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="modal-description">
+      <h3>Project Overview</h3>
+      <p id="projectDescription">Description goes here</p>
+    </div>
+
+    <div class="modal-details">
+      <div class="detail-item"><strong>Category</strong><span id="projectCategory">Category</span></div>
+      <div class="detail-item"><strong>Duration</strong><span id="projectDuration">Duration</span></div>
+      <div class="detail-item"><strong>Client Type</strong><span id="projectClient">Client</span></div>
+      <div class="detail-item"><strong>Status</strong><span id="projectStatus">Completed</span></div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-primary" id="backBtn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</button>
+      <a href="#contact" class="btn btn-secondary" id="contactBtn"><i class="fa-solid fa-arrow-right"></i> Start Similar Project</a>
+    </div>
+  </div>
+</div>
+
+<div class="floating">
+  <a class="fab-btn phone-call" href="tel:+9647502205577" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
+  <a class="fab-btn whatsapp" href="#" id="whatsappBtn" aria-label="Contact on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a class="fab-btn scroll-top" href="#hero" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></a>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h4>Seven Points</h4>
+        <p>Premium construction and event management solutions in Kurdistan Region, Iraq.</p>
+        <div class="footer-socials" style="margin-top: 16px;">
+          <a href="https://facebook.com" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://twitter.com" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Construction</a></li>
+          <li><a href="#services">Event Management</a></li>
+          <li><a href="#services">Site Supervision</a></li>
+          <li><a href="#contact">Get Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+9647502205577">+964 750 220 5577</a></li>
+          <li><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></li>
+          <li>Zirka Road, Duhok</li>
+          <li>Kurdistan Region, Iraq</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <a href="#">Seven Points</a>. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
 <script>
-(()=>{
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const progress=document.querySelector('.progress'),heroBg=document.getElementById('heroBg'),parallax=[...document.querySelectorAll('[data-parallax]')];let ticking=false;
-function paint(){const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${max>0?y/max:0})`;if(!reduce){const vh=innerHeight;const hp=Math.min(1,y/vh);heroBg.style.setProperty('--zoom',(1.02+hp*.065).toFixed(4));heroBg.style.setProperty('--shift',`${hp*22}px`);for(const el of parallax){const r=el.getBoundingClientRect();if(r.bottom>0&&r.top<vh){const p=(vh/2-(r.top+r.height/2))/vh;el.querySelector('img').style.setProperty('--p',`${p*34}px`)}}}ticking=false}
-addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(paint);ticking=true}},{passive:true});addEventListener('resize',paint,{passive:true});paint();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
-const metrics=document.getElementById('metrics');function countUp(){metrics.querySelectorAll('[data-count]').forEach(el=>{const target=+el.dataset.count;el.textContent='0';const start=performance.now(),dur=900;function frame(t){const p=Math.min(1,(t-start)/dur),v=Math.round(target*(1-Math.pow(1-p,3)));el.textContent=v;if(p<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)})}const mio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)countUp()}),{threshold:.55});mio.observe(metrics);
-const steps=document.getElementById('steps'),stepEls=[...steps.querySelectorAll('.step')];function processPaint(){const r=steps.getBoundingClientRect(),vh=innerHeight;const raw=Math.max(0,Math.min(1,(vh*.62-r.top)/(r.height-vh*.18)));steps.style.setProperty('--stepProgress',raw);const idx=Math.min(3,Math.floor(raw*4));stepEls.forEach((s,i)=>s.classList.toggle('active',i===idx))}addEventListener('scroll',processPaint,{passive:true});addEventListener('resize',processPaint,{passive:true});processPaint();
-const menu=document.getElementById('menu'),nav=document.getElementById('nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const sections=[...document.querySelectorAll('main section[id]')],links=[...nav.querySelectorAll('a[href^="#"]')];const nio=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}},{rootMargin:'-45% 0px -45% 0px'});sections.forEach(s=>nio.observe(s));
-document.getElementById('quoteForm').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;if(!f.reportValidity())return;const d=new FormData(f);const msg=['Hello Seven Points, I would like to discuss a project.','',`Name: ${d.get('name')}`,`Phone: ${d.get('phone')||'Not provided'}`,`Service: ${d.get('service')}`,`Location: ${d.get('location')||'Not specified'}`,`Scope and timeline: ${d.get('details')}`].join('\n');window.open(`https://wa.me/9647502205577?text=${encodeURIComponent(msg)}`,'_blank','noopener')});
-const projects={
-zakho:{title:'Zakho Conference Hall',meta:['Construction','Zakho, Iraq','18 months'],description:'Conference hall construction coordinated across structure, interior works and event requirements.',images:['zakhoconferencehall1.jpg','zakhoconferencehall2.jpg','zakhoconferencehall3.jpg','zakhoconferencehall4.jpg','zakhoconferencehall5.jpg','zakhoconferencehall6.jpg','zakhoconferencehall7.jpg','zakhoconferencehall8.jpg','zakhoconferencehall9.jpg']},
-jade:{title:'Jade Touch Salon',meta:['Construction + Interior Fit-Out','Duhok, Iraq','6 months'],description:'Commercial construction and interior fit-out delivered as one coordinated scope.',images:['saloon.jpg','saloon2.jpg','saloon3.jpg','saloon4.jpg','saloon5.jpg','saloon6.jpg','saloon7.jpg','saloon8.jpg','saloon9.jpg']},
-rtbank:{title:'RT Bank Duhok',meta:['Design Development','Duhok, Iraq','Commercial'],description:'Architectural and interior design development for a bank branch.',images:['rtbank-branch.webp','rtbank-interior.webp']},
-rtbatm:{title:'RTB 24/7 Kiosk',meta:['Design Development','ATM Kiosk','RTB'],description:'Compact customer-facing ATM enclosure.',images:['rtb-atm.webp']}
+/* ─────────────────────────────────────────
+   PROJECT DATA
+───────────────────────────────────────── */
+const projectsData = {
+  project1: {
+    title: 'Zakho Conference Hall', category: 'Construction',
+    duration: '18 months', clientType: 'Corporate',
+    description: 'A landmark conference hall designed with contemporary architecture, premium event facilities, and sophisticated spatial experiences for large-scale gatherings and corporate events.',
+    photos: [
+      'zakhoconferencehall1.jpg',
+      'zakhoconferencehall2.jpg',
+      'zakhoconferencehall3.jpg',
+      'zakhoconferencehall4.jpg',
+      'zakhoconferencehall5.jpg',
+      'zakhoconferencehall6.jpg',
+      'zakhoconferencehall7.jpg',
+      'zakhoconferencehall8.jpg',
+      'zakhoconferencehall9.jpg'
+    ],
+    video: 'zakhoconferencehallvideol.mp4?autoplay=1&mute=1'
+  },
+  project2: {
+    title: 'Jade Touch Salon', category: 'Construction and Interior Design',
+    duration: '6 months', clientType: 'Private',
+    description: 'A fully executed salon project delivered from initial construction works to complete interior finishing, combining functionality, elegance, and modern design..',
+    photos: [
+      'saloon.jpg',
+      'saloon2.jpg',
+      'saloon3.jpg',
+      'saloon4.jpg',
+      'saloon5.jpg',
+      'saloon6.jpg',
+      'saloon7.jpg',
+      'saloon8.jpg',
+      'saloon9.jpg'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
+  },
+  project3: {
+    title: 'Transportation Hub Infrastructure', category: 'Construction',
+    duration: '30 months', clientType: 'Government',
+    description: 'Major infrastructure project including terminal construction, access roads, and utilities.',
+    photos: [
+      'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1467495682498-f1104393e25b?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
+  },
+  project4: {
+    title: 'International Corporate Summit', category: 'Event Management',
+    duration: '6 weeks', clientType: 'Corporate',
+    description: 'Three-day international conference hosting 2000+ attendees featuring keynote speakers, workshops, and networking events.',
+    photos: [
+      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
+  },
+  project5: {
+    title: 'Premium Wedding Celebration', category: 'Event Management',
+    duration: '4 months planning', clientType: 'Private',
+    description: 'Luxury wedding event for 500 guests featuring elegant decoration, live entertainment, gourmet dining, and professional photography.',
+    photos: [
+      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
+  },
+  project6: {
+    title: 'Product Launch Experience', category: 'Event Management',
+    duration: '8 weeks', clientType: 'Corporate',
+    description: 'Innovative product launch event featuring interactive displays, live demonstrations, and brand experiences.',
+    photos: [
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
+  }
 };
-const dialog=document.getElementById('projectDialog'),title=document.getElementById('dialogTitle'),image=document.getElementById('dialogImage'),meta=document.getElementById('dialogMeta'),desc=document.getElementById('dialogDescription'),counter=document.getElementById('count'),thumbs=document.getElementById('thumbs');let active=null,index=0,last=null;
-function show(i){if(!active)return;index=(i+active.images.length)%active.images.length;image.src=active.images[index];image.alt=`${active.title}, image ${index+1}`;counter.textContent=`${index+1} / ${active.images.length}`;[...thumbs.children].forEach((b,n)=>b.classList.toggle('active',n===index))}
-function openProject(key,trigger){active=projects[key];if(!active)return;last=trigger;title.textContent=active.title;meta.innerHTML=active.meta.map(x=>`<span>${x}</span>`).join('');desc.textContent=active.description;thumbs.innerHTML='';active.images.forEach((src,i)=>{const b=document.createElement('button');b.className='thumb';b.type='button';b.setAttribute('aria-label',`Show image ${i+1}`);b.innerHTML=`<img src="${src}" alt="">`;b.addEventListener('click',()=>show(i));thumbs.appendChild(b)});show(0);dialog.showModal();document.body.classList.add('lock')}
-function close(){dialog.close();document.body.classList.remove('lock');last?.focus()}
-document.querySelectorAll('[data-project]').forEach(b=>b.addEventListener('click',()=>openProject(b.dataset.project,b)));document.getElementById('prev').addEventListener('click',()=>show(index-1));document.getElementById('next').addEventListener('click',()=>show(index+1));document.getElementById('dialogClose').addEventListener('click',close);dialog.addEventListener('click',e=>{if(e.target===dialog)close()});dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(index-1);if(e.key==='ArrowRight')show(index+1)});dialog.addEventListener('close',()=>document.body.classList.remove('lock'));
-})();
+
+/* ─────────────────────────────────────────
+   CAROUSEL STATE
+───────────────────────────────────────── */
+let currentSlide = 0;
+let currentPhotos = [];
+let autoPlayInterval = null;
+let isAnimating = false;
+let carouselImgs = [];
+let activeImgIdx = 0;
+
+function buildCarouselPool() {
+  const main = document.getElementById('carouselMain');
+  main.innerHTML = '';
+  carouselImgs = [];
+  for (let i = 0; i < 2; i++) {
+    const img = document.createElement('img');
+    img.alt = 'Project photo';
+    img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:opacity,transform;';
+    img.style.opacity = i === 0 ? '1' : '0';
+    img.style.zIndex = i === 0 ? '2' : '1';
+    main.appendChild(img);
+    carouselImgs.push(img);
+  }
+  activeImgIdx = 0;
+}
+
+function updateCarousel(direction) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const outImg = carouselImgs[activeImgIdx];
+  const inIdx = 1 - activeImgIdx;
+  const inImg = carouselImgs[inIdx];
+
+  /* pre-position incoming image */
+  const inStartX = direction === 'next' ? '5%' : '-5%';
+  inImg.style.transition = 'none';
+  inImg.style.opacity = '0';
+  inImg.style.transform = `translateX(${inStartX}) scale(0.97)`;
+  inImg.style.zIndex = '2';
+  outImg.style.zIndex = '1';
+
+  /* load new src */
+  inImg.src = currentPhotos[currentSlide];
+
+  /* trigger transition on next two frames */
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const outEndX = direction === 'next' ? '-4%' : '4%';
+
+      inImg.style.transition = 'opacity 0.42s ease, transform 0.42s ease';
+      inImg.style.opacity = '1';
+      inImg.style.transform = 'translateX(0) scale(1)';
+
+      outImg.style.transition = 'opacity 0.38s ease, transform 0.38s ease';
+      outImg.style.opacity = '0';
+      outImg.style.transform = `translateX(${outEndX}) scale(0.97)`;
+
+      setTimeout(() => {
+        outImg.style.transition = 'none';
+        outImg.style.transform = 'translateX(0) scale(1)';
+        activeImgIdx = inIdx;
+        isAnimating = false;
+      }, 450);
+    });
+  });
+
+  /* update counter */
+  document.getElementById('carouselIndex').textContent = currentSlide + 1;
+
+  /* update thumbnails */
+  const thumbs = document.querySelectorAll('.carousel-thumb');
+  thumbs.forEach((t, i) => t.classList.toggle('active', i === currentSlide));
+  const active = thumbs[currentSlide];
+  if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
+
+function nextSlide() {
+  if (isAnimating) return;
+  currentSlide = (currentSlide + 1) % currentPhotos.length;
+  updateCarousel('next');
+}
+
+function prevSlide() {
+  if (isAnimating) return;
+  currentSlide = (currentSlide - 1 + currentPhotos.length) % currentPhotos.length;
+  updateCarousel('prev');
+}
+
+function startAutoPlay() {
+  stopAutoPlay();
+  autoPlayInterval = setInterval(nextSlide, 5000);
+}
+
+function stopAutoPlay() {
+  if (autoPlayInterval) { clearInterval(autoPlayInterval); autoPlayInterval = null; }
+}
+
+/* ─────────────────────────────────────────
+   DOM REFS
+───────────────────────────────────────── */
+const scrollTopBtn    = document.querySelector('.scroll-top');
+const scrollProgress  = document.querySelector('.scroll-progress');
+const statCards       = document.querySelectorAll('[data-target]');
+const hamburger       = document.querySelector('.hamburger');
+const navMenu         = document.querySelector('.nav-menu');
+const navLinks        = document.querySelectorAll('.nav-link');
+const navbar          = document.querySelector('.navbar');
+const contactForm     = document.getElementById('contactForm');
+const reveals         = document.querySelectorAll('.reveal');
+const workCards       = document.querySelectorAll('.work');
+const filterBtns      = document.querySelectorAll('.filter-btn');
+const whatsappBtn     = document.getElementById('whatsappBtn');
+const portfolioModal  = document.getElementById('portfolioModal');
+const modalClose      = document.getElementById('modalClose');
+const backBtn         = document.getElementById('backBtn');
+const prevBtn         = document.getElementById('prevBtn');
+const nextBtn         = document.getElementById('nextBtn');
+const reduceMotion    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const statsGrid       = document.getElementById('statsGrid');
+const statsSection    = document.getElementById('stats');
+
+/* ─────────────────────────────────────────
+   SCROLL PROGRESS
+───────────────────────────────────────── */
+window.addEventListener('scroll', () => {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.width = ((window.scrollY / total) * 100) + '%';
+}, { passive: true });
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+hamburger?.addEventListener('click', () => {
+  const isActive = navMenu.classList.toggle('active');
+  hamburger.classList.toggle('active', isActive);
+  hamburger.setAttribute('aria-expanded', isActive);
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    hamburger.classList.remove('active');
+    hamburger?.setAttribute('aria-expanded', 'false');
+  });
+});
+
+let scrollTicking = false;
+window.addEventListener('scroll', () => {
+  if (!scrollTicking) {
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      scrollTopBtn.classList.toggle('show', window.scrollY > 500);
+      scrollTicking = false;
+    });
+  }
+}, { passive: true });
+
+/* ─────────────────────────────────────────
+   COUNTER ANIMATION - RESETS ON EACH SCROLL INTO VIEW
+───────────────────────────────────────── */
+const animateCounter = (el, target, suffix = '') => {
+  const start = performance.now();
+  const duration = 2500;
+  const tick = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(target * eased) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+};
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const cards = entry.target.querySelectorAll('[data-target]');
+      cards.forEach(card => {
+        const target = parseInt(card.dataset.target);
+        const suffix = card.dataset.suffix || '';
+        const numEl = card.querySelector('.stat-number');
+        reduceMotion ? (numEl.textContent = target + suffix) : animateCounter(numEl, target, suffix);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+if (statsGrid) statObserver.observe(statsGrid);
+
+/* ─────────────────────────────────────────
+   REVEAL ON SCROLL
+───────────────────────────────────────── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => revealObserver.observe(el));
+
+/* ─────────────────────────────────────────
+   PORTFOLIO FILTER
+───────────────────────────────────────── */
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    workCards.forEach(card => {
+      const show = filter === 'all' || card.dataset.category === filter;
+      if (show) {
+        card.classList.remove('hidden');
+        card.style.display = 'block';
+        void card.offsetWidth;
+        card.style.opacity = '1';
+      } else {
+        card.style.opacity = '0';
+        setTimeout(() => { if (card.style.opacity === '0') { card.classList.add('hidden'); card.style.display = 'none'; } }, 400);
+      }
+    });
+  });
+});
+
+/* ─────────────────────────────────────────
+   OPEN PROJECT MODAL
+───────────────────────────────────────── */
+workCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const project = projectsData[card.dataset.project];
+    if (!project) return;
+
+    currentPhotos = project.photos;
+    currentSlide = 0;
+    isAnimating = false;
+
+    /* populate modal text */
+    document.getElementById('modalTitle').textContent = project.title;
+    document.getElementById('projectDescription').textContent = project.description;
+    document.getElementById('projectCategory').textContent = project.category;
+    document.getElementById('projectDuration').textContent = project.duration;
+    document.getElementById('projectClient').textContent = project.clientType;
+    document.getElementById('carouselTotal').textContent = project.photos.length;
+    document.getElementById('carouselIndex').textContent = '1';
+
+    /* build 2-img pool */
+    buildCarouselPool();
+    carouselImgs[0].src = project.photos[0];
+    carouselImgs[0].style.opacity = '1';
+    carouselImgs[0].style.transform = 'translateX(0) scale(1)';
+    carouselImgs[0].style.zIndex = '2';
+    carouselImgs[1].src = '';
+    carouselImgs[1].style.opacity = '0';
+    carouselImgs[1].style.zIndex = '1';
+    activeImgIdx = 0;
+
+    /* build thumbnails */
+    const thumbsContainer = document.getElementById('carouselThumbs');
+    thumbsContainer.innerHTML = '';
+    project.photos.forEach((photo, index) => {
+      const thumb = document.createElement('div');
+      thumb.className = 'carousel-thumb' + (index === 0 ? ' active' : '');
+      const thumbImg = document.createElement('img');
+      thumbImg.src = photo;
+      thumbImg.alt = `Thumbnail ${index + 1}`;
+      thumb.appendChild(thumbImg);
+      thumb.addEventListener('click', () => {
+        if (isAnimating || index === currentSlide) return;
+        stopAutoPlay();
+        const dir = index > currentSlide ? 'next' : 'prev';
+        currentSlide = index;
+        updateCarousel(dir);
+        startAutoPlay();
+      });
+      thumbsContainer.appendChild(thumb);
+    });
+
+    /* set video */
+    document.getElementById('projectVideo').src = project.video;
+
+    /* open */
+    portfolioModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    startAutoPlay();
+  });
+});
+
+/* ─────────────────────────────────────────
+   CLOSE MODAL  (stops video + autoplay)
+───────────────────────────────────────── */
+const closeProjectModal = () => {
+  stopAutoPlay();
+  portfolioModal.classList.remove('show');
+  document.body.style.overflow = 'auto';
+  /* kill iframe src so video/audio fully stops */
+  document.getElementById('projectVideo').src = '';
+};
+
+modalClose.addEventListener('click', closeProjectModal);
+backBtn.addEventListener('click', closeProjectModal);
+portfolioModal.addEventListener('click', e => { if (e.target === portfolioModal) closeProjectModal(); });
+
+/* ─────────────────────────────────────────
+   CAROUSEL BUTTONS + KEYBOARD
+───────────────────────────────────────── */
+prevBtn.addEventListener('click', () => { stopAutoPlay(); prevSlide(); startAutoPlay(); });
+nextBtn.addEventListener('click', () => { stopAutoPlay(); nextSlide(); startAutoPlay(); });
+
+document.addEventListener('keydown', e => {
+  if (!portfolioModal.classList.contains('show')) return;
+  if (e.key === 'ArrowRight') { stopAutoPlay(); nextSlide(); startAutoPlay(); }
+  if (e.key === 'ArrowLeft')  { stopAutoPlay(); prevSlide(); startAutoPlay(); }
+  if (e.key === 'Escape') closeProjectModal();
+});
+
+/* ─────────────────────────────────────────
+   WHATSAPP
+───────────────────────────────────────── */
+whatsappBtn.addEventListener('click', e => {
+  e.preventDefault();
+  const msg = encodeURIComponent("Hi Seven Points! I'm interested in your services. Can you provide more information?");
+  window.open(`https://wa.me/9647502205577?text=${msg}`, '_blank');
+});
+
+/* ─────────────────────────────────────────
+   CONTACT FORM
+───────────────────────────────────────── */
+const validateEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+const validateForm = () => {
+  let isValid = true;
+  contactForm.querySelectorAll('.form-group').forEach(group => {
+    const input = group.querySelector('input, textarea, select');
+    let valid = true;
+    group.classList.remove('error');
+    if (input.hasAttribute('required') && !input.value.trim()) valid = false;
+    else if (input.type === 'email' && input.value && !validateEmail(input.value)) valid = false;
+    else if (input.id === 'name' && input.value.trim().length < 2) valid = false;
+    else if (input.id === 'message' && input.value.trim().length < 10) valid = false;
+    if (!valid) { group.classList.add('error'); isValid = false; }
+  });
+  return isValid;
+};
+
+contactForm?.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!validateForm()) return;
+  const btn = contactForm.querySelector('button');
+  const orig = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = '• • • Sending • • •';
+  try {
+    await new Promise(r => setTimeout(r, 2000));
+    document.getElementById('formSuccess').classList.add('show');
+    contactForm.reset();
+    contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
+    setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 5000);
+  } catch(err) {
+    alert('Error sending message. Please try again.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+});
+
+contactForm?.querySelectorAll('input, textarea, select').forEach(input => {
+  input.addEventListener('blur', () => {
+    const group = input.closest('.form-group');
+    let valid = true;
+    if (input.hasAttribute('required') && !input.value.trim()) valid = false;
+    else if (input.type === 'email' && input.value && !validateEmail(input.value)) valid = false;
+    else if (input.id === 'name' && input.value.trim().length < 2) valid = false;
+    else if (input.id === 'message' && input.value.trim().length < 10) valid = false;
+    group.classList.toggle('error', !valid);
+  });
+});
+
+/* ─────────────────────────────────────────
+   SMOOTH SCROLL
+───────────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    const target = document.querySelector(href);
+    if (target && href !== '#') {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    }
+  });
+});
 </script>
-</body></html>
+</body>
+</html>
