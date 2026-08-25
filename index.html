@@ -937,7 +937,6 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
       <div class="portfolio-filters reveal">
         <button class="filter-btn active" data-filter="all">All Projects</button>
         <button class="filter-btn" data-filter="construction">Construction</button>
-        <button class="filter-btn" data-filter="event">Event Management</button>
       </div>
 
       <div class="work-grid" id="workGrid">
@@ -948,22 +947,6 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
         <div class="work reveal" data-category="construction" data-project="project2">
           <img src="saloon.jpg" alt="Jade Touch Salon">
           <div class="work-overlay"><div><h3>Jade Touch Salon</h3><p>Private Property</p></div></div>
-        </div>
-        <div class="work reveal" data-category="construction" data-project="project3">
-          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80" alt="Infrastructure">
-          <div class="work-overlay"><div><h3>Infrastructure Project</h3><p>Transportation hub</p></div></div>
-        </div>
-        <div class="work reveal" data-category="event" data-project="project4">
-          <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80" alt="Corporate Event">
-          <div class="work-overlay"><div><h3>Corporate Summit</h3><p>International conference</p></div></div>
-        </div>
-        <div class="work reveal" data-category="event" data-project="project5">
-          <img src="https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80" alt="Wedding Event">
-          <div class="work-overlay"><div><h3>Wedding Celebration</h3><p>Premium event production</p></div></div>
-        </div>
-        <div class="work reveal" data-category="event" data-project="project6">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80" alt="Product Launch">
-          <div class="work-overlay"><div><h3>Product Launch</h3><p>Brand experience event</p></div></div>
         </div>
       </div>
 
@@ -1091,7 +1074,7 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
 <div class="modal" id="portfolioModal">
   <div class="modal-content">
     <div class="modal-header">
-      <h2 class="modal-title" id="modalTitle">Project Title</h2>
+      <h2 class="modal-title" id="modalTitle"></h2>
       <button class="modal-close" id="modalClose"><i class="fa-solid fa-times"></i></button>
     </div>
 
@@ -1120,7 +1103,7 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
     </div>
 
     <!-- VIDEO SECTION -->
-    <div class="video-section">
+    <div class="video-section" id="videoSection">
       <h4><i class="fa-solid fa-play"></i> Project Video</h4>
       <div class="modal-video">
         <iframe id="projectVideo" src="" frameborder="0"
@@ -1131,13 +1114,13 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
 
     <div class="modal-description">
       <h3>Project Overview</h3>
-      <p id="projectDescription">Description goes here</p>
+      <p id="projectDescription"></p>
     </div>
 
     <div class="modal-details">
-      <div class="detail-item"><strong>Category</strong><span id="projectCategory">Category</span></div>
-      <div class="detail-item"><strong>Duration</strong><span id="projectDuration">Duration</span></div>
-      <div class="detail-item"><strong>Client Type</strong><span id="projectClient">Client</span></div>
+      <div class="detail-item"><strong>Category</strong><span id="projectCategory"></span></div>
+      <div class="detail-item"><strong>Duration</strong><span id="projectDuration"></span></div>
+      <div class="detail-item"><strong>Client Type</strong><span id="projectClient"></span></div>
       <div class="detail-item"><strong>Status</strong><span id="projectStatus">Completed</span></div>
     </div>
 
@@ -1227,7 +1210,7 @@ const projectsData = {
   project2: {
     title: 'Jade Touch Salon', category: 'Construction and Interior Design',
     duration: '6 months', clientType: 'Private',
-    description: 'A fully executed salon project delivered from initial construction works to complete interior finishing, combining functionality, elegance, and modern design..',
+    description: 'A fully executed salon project delivered from initial construction works to complete interior finishing, combining functionality, elegance, and modern design.',
     photos: [
       'saloon.jpg',
       'saloon2.jpg',
@@ -1239,76 +1222,9 @@ const projectsData = {
       'saloon8.jpg',
       'saloon9.jpg'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project3: {
-    title: 'Transportation Hub Infrastructure', category: 'Construction',
-    duration: '30 months', clientType: 'Government',
-    description: 'Major infrastructure project including terminal construction, access roads, and utilities.',
-    photos: [
-      'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1467495682498-f1104393e25b?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project4: {
-    title: 'International Corporate Summit', category: 'Event Management',
-    duration: '6 weeks', clientType: 'Corporate',
-    description: 'Three-day international conference hosting 2000+ attendees featuring keynote speakers, workshops, and networking events.',
-    photos: [
-      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project5: {
-    title: 'Premium Wedding Celebration', category: 'Event Management',
-    duration: '4 months planning', clientType: 'Private',
-    description: 'Luxury wedding event for 500 guests featuring elegant decoration, live entertainment, gourmet dining, and professional photography.',
-    photos: [
-      'https://images.unsplash.com/photo-1519167758993-1a7de7b6f6e1?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1460749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
-  },
-  project6: {
-    title: 'Product Launch Experience', category: 'Event Management',
-    duration: '8 weeks', clientType: 'Corporate',
-    description: 'Innovative product launch event featuring interactive displays, live demonstrations, and brand experiences.',
-    photos: [
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1541123603104-852fc5d25b99?auto=format&fit=crop&w=1600&q=80'
-    ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
+    video: ''
   }
+
 };
 
 /* ─────────────────────────────────────────
@@ -1586,8 +1502,16 @@ workCards.forEach(card => {
       thumbsContainer.appendChild(thumb);
     });
 
-    /* set video */
-    document.getElementById('projectVideo').src = project.video;
+    /* set video only when the project has a real video */
+    const videoSection = document.getElementById('videoSection');
+    const projectVideo = document.getElementById('projectVideo');
+    if (project.video) {
+      videoSection.style.display = '';
+      projectVideo.src = project.video;
+    } else {
+      videoSection.style.display = 'none';
+      projectVideo.src = '';
+    }
 
     /* open */
     portfolioModal.classList.add('show');
