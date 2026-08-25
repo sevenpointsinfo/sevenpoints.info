@@ -34,7 +34,7 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 <style>
@@ -2055,6 +2055,369 @@ h1, h2, h3, .section-title, .modal-title, .project-copy h3,
   .modal-actions {
     flex-direction: column;
   }
+}
+
+
+/* ─────────────────────────────────────────
+   BOLD / CLEAN / HIGH-READABILITY TYPOGRAPHY
+───────────────────────────────────────── */
+:root {
+  --muted: #d0d0d0;
+  --text: #ffffff;
+}
+
+html { font-size: 17px; }
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Inter', Arial, sans-serif !important;
+  font-weight: 500;
+}
+
+body {
+  color: #fff;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4,
+.section-title,
+.modal-title,
+.project-copy h3,
+.capability h3,
+.step h3,
+.stat-number,
+.hero-kicker,
+.eyebrow,
+.project-index,
+.project-link,
+.modal-project-index {
+  font-family: 'Inter', Arial, sans-serif !important;
+}
+
+/* Navigation */
+.nav-menu a {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .65px;
+}
+.nav-menu .nav-cta { font-weight: 800; }
+
+/* Hero */
+.hero-kicker {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.hero h1 {
+  font-size: clamp(52px, 7vw, 98px);
+  font-weight: 900;
+  letter-spacing: -.047em;
+  line-height: 1;
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: clamp(18px, 1.65vw, 22px);
+  font-weight: 500;
+  line-height: 1.65;
+  color: rgba(255,255,255,.94);
+}
+
+.btn {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .55px;
+}
+
+/* Section hierarchy */
+.eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.25px;
+}
+
+.section-title {
+  font-size: clamp(46px, 5.6vw, 76px);
+  font-weight: 900;
+  letter-spacing: -.045em;
+  line-height: 1.02;
+}
+
+/* Projects */
+.project-index {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.project-copy h3 {
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 900;
+  letter-spacing: -.035em;
+}
+
+.project-copy p {
+  color: #d8d8d8;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.project-meta-row {
+  color: #bfbfbf;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .45px;
+}
+
+.project-link,
+.projects-note a {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .65px;
+}
+
+.projects-note {
+  color: #d2d2d2;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Expertise */
+.capability > span,
+.step-no {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.capability h3 {
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-weight: 900;
+  letter-spacing: -.025em;
+}
+
+.capability p {
+  color: #d4d4d4;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.72;
+}
+
+/* Company */
+.company-copy p {
+  color: #d4d4d4;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.78;
+}
+
+.company-copy .company-lead {
+  font-size: clamp(23px, 2.3vw, 32px);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.clean-stats .stat-number { font-weight: 900; }
+
+.clean-stats .stat-label {
+  color: #c8c8c8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .75px;
+}
+
+/* Process */
+.step h3 {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.step p {
+  color: #d2d2d2;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+/* Contact */
+.contact-intro p {
+  color: #d4d4d4;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.contact-item h3 {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.contact-item p,
+.contact-item a {
+  color: #d4d4d4;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.form input,
+.form textarea,
+.form select {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #a8a8a8;
+  opacity: 1;
+}
+
+.form button {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: .6px;
+}
+
+.field-optional {
+  color: #ababab;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Project case study */
+.modal-project-index {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.modal-title {
+  font-size: clamp(38px, 5vw, 70px);
+  font-weight: 900;
+  letter-spacing: -.045em;
+}
+
+.modal-description h3 {
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.modal-description p {
+  color: #d4d4d4;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+.detail-item strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.detail-item span {
+  color: #d1d1d1;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.carousel-indicator {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Footer */
+footer,
+.footer-section p {
+  color: #c7c7c7;
+  font-size: 15px;
+}
+
+.footer-section h4 {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.footer-section a {
+  color: #c7c7c7;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.footer-bottom { font-size: 14px; }
+
+/* Mobile readability */
+@media (max-width: 768px) {
+  html { font-size: 16px; }
+
+  .nav-menu a { font-size: 14px; }
+
+  .hero-kicker,
+  .eyebrow { font-size: 12px; }
+
+  .hero h1 {
+    font-size: clamp(40px, 11vw, 58px);
+    line-height: 1.02;
+  }
+
+  .hero p {
+    font-size: 17px;
+    line-height: 1.62;
+  }
+
+  .section-title {
+    font-size: clamp(38px, 10vw, 54px);
+  }
+
+  .project-copy h3 { font-size: 29px; }
+
+  .project-copy p,
+  .capability p,
+  .company-copy p,
+  .contact-intro p,
+  .modal-description p {
+    font-size: 16px;
+  }
+
+  .project-meta-row { font-size: 12px; }
+
+  .capability h3,
+  .step h3 { font-size: 25px; }
+
+  .step p { font-size: 16px; }
+
+  .contact-item p,
+  .contact-item a,
+  .form-group label,
+  .form input,
+  .form textarea,
+  .form select {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(36px, 10.5vw, 48px);
+  }
+
+  .hero p { font-size: 16px; }
+
+  .section-title {
+    font-size: clamp(34px, 9vw, 46px);
+  }
+
+  .project-copy h3 { font-size: 27px; }
+
+  .projects-note { font-size: 15px; }
 }
 
 </style>
