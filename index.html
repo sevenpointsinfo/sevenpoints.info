@@ -34,7 +34,7 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 <style>
@@ -1597,6 +1597,466 @@ footer {
   .modal-content { padding: 20px; }
 }
 
+
+/* ─────────────────────────────────────────
+   FINAL ARCHITECTURAL REFINEMENTS
+───────────────────────────────────────── */
+body {
+  font-family: 'Manrope', sans-serif;
+  background: #050505;
+}
+
+h1, h2, h3, .section-title, .modal-title, .project-copy h3,
+.capability h3, .step h3, .stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.scroll-progress {
+  height: 1px;
+  box-shadow: none;
+  background: var(--gold);
+}
+
+.hero {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.68) 44%, rgba(0,0,0,.30) 78%, rgba(0,0,0,.42) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.72)),
+    url('zakhoconferencehall1.jpg') center 44%/cover no-repeat;
+}
+
+.hero::before { display: none; }
+
+.hero h1 .gold,
+.section-title .gold {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: var(--gold);
+  color: var(--gold);
+}
+
+.hero h1 {
+  max-width: 980px;
+  font-weight: 600;
+  letter-spacing: -.058em;
+}
+
+.hero p {
+  max-width: 590px;
+  color: rgba(255,255,255,.76);
+}
+
+.hero-kicker,
+.eyebrow,
+.project-index,
+.project-link,
+.modal-project-index {
+  font-family: 'Manrope', sans-serif;
+}
+
+.section-title {
+  font-weight: 600;
+  letter-spacing: -.055em;
+}
+
+.project-image {
+  aspect-ratio: 16 / 8.5;
+}
+
+.project-feature.work .project-image img {
+  filter: saturate(.92) contrast(1.02);
+}
+
+.project-copy {
+  align-items: start;
+  padding-top: 28px;
+}
+
+.project-copy h3 {
+  font-weight: 600;
+}
+
+.project-copy p {
+  margin-bottom: 13px;
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  color: rgba(255,255,255,.48);
+  font-size: 11px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.project-meta-row span {
+  position: relative;
+}
+
+.project-meta-row span + span::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(251,175,67,.72);
+  transform: translateY(-50%);
+}
+
+.capability,
+.step,
+.stat-card,
+.contact-item,
+.form {
+  box-shadow: none !important;
+}
+
+.capability {
+  min-height: 195px;
+}
+
+.capability > span,
+.step-no {
+  color: var(--gold);
+  background: transparent;
+  box-shadow: none;
+}
+
+.step-no {
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+  border-radius: 0;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.clean-stats .stat-card {
+  background: transparent;
+}
+
+.contact-item,
+.form {
+  border-radius: 0;
+  background: transparent;
+}
+
+.contact-item {
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 0;
+}
+
+.contact-item:last-child {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.contact-ic {
+  border-radius: 0;
+  background: transparent;
+  color: var(--gold);
+  box-shadow: none;
+  border: 1px solid rgba(251,175,67,.28);
+}
+
+.form {
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.form input, .form textarea, .form select {
+  border-radius: 0;
+  background: #090909;
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.form input:focus, .form textarea:focus, .form select:focus {
+  background: #0c0c0c;
+  border-color: rgba(251,175,67,.7);
+  box-shadow: none;
+}
+
+.field-optional {
+  color: rgba(255,255,255,.38);
+  font-size: 11px;
+  font-weight: 500;
+  margin-left: 7px;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+
+/* Full-screen project case study */
+.modal {
+  background: #050505;
+}
+
+.modal.show {
+  display: block;
+  padding: 0;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 clamp(20px, 5vw, 84px) 80px;
+  border: 0;
+  border-radius: 0;
+  background: #050505;
+  box-shadow: none;
+  animation: none;
+}
+
+.modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  min-height: 112px;
+  margin: 0 0 36px;
+  padding: 22px 0 20px;
+  background: rgba(5,5,5,.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.modal-heading-block {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(18px, 3vw, 42px);
+}
+
+.modal-project-index {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  white-space: nowrap;
+}
+
+.modal-title {
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 600;
+  letter-spacing: -.055em;
+  line-height: .98;
+}
+
+.modal-close {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 0;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.modal-close:hover {
+  color: #111;
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.carousel-gallery {
+  max-width: 1480px;
+  margin: 0 auto 64px;
+}
+
+.carousel-container {
+  height: min(72vh, 820px);
+  min-height: 500px;
+  border-radius: 0;
+  margin-bottom: 16px;
+}
+
+.carousel-thumb {
+  width: 92px;
+  min-width: 92px;
+  height: 66px;
+  border-radius: 0;
+  border: 1px solid transparent;
+  opacity: .6;
+}
+
+.carousel-thumb.active {
+  opacity: 1;
+  border-color: var(--gold);
+  box-shadow: none;
+}
+
+.carousel-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  background: rgba(5,5,5,.64);
+}
+
+.carousel-indicator {
+  border-radius: 0;
+  background: rgba(5,5,5,.72);
+}
+
+.modal-description,
+.modal-details,
+.video-section,
+.modal-actions {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-description {
+  margin-top: 64px;
+  margin-bottom: 34px;
+}
+
+.modal-description h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+
+.modal-description p {
+  max-width: 880px;
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.72;
+  color: rgba(255,255,255,.72);
+}
+
+.modal-details {
+  padding: 26px 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  background: transparent;
+  gap: 28px;
+}
+
+.detail-item strong {
+  color: rgba(255,255,255,.38);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1.1px;
+}
+
+.detail-item span {
+  color: #fff;
+  font-size: 14px;
+}
+
+.video-section {
+  padding: 34px 0 0;
+  margin-top: 68px;
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.video-section h4 {
+  justify-content: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 11px;
+}
+
+.modal-video {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.modal-video video {
+  width: 100%;
+  max-height: 72vh;
+  display: block;
+  background: #000;
+}
+
+.modal-actions {
+  margin-top: 46px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.footer-logo {
+  filter: brightness(1.04);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.58), rgba(0,0,0,.86)),
+      url('zakhoconferencehall1.jpg') center/cover no-repeat;
+  }
+
+  .project-image { aspect-ratio: 4 / 3; }
+
+  .project-copy {
+    grid-template-columns: 42px minmax(0,1fr);
+  }
+
+  .project-link {
+    grid-column: 2;
+    margin-top: 8px;
+  }
+
+  .project-meta-row {
+    gap: 8px 18px;
+    line-height: 1.6;
+  }
+
+  .modal-content {
+    padding: 0 16px 48px;
+  }
+
+  .modal-header {
+    min-height: 92px;
+    gap: 12px;
+  }
+
+  .modal-heading-block {
+    display: block;
+  }
+
+  .modal-project-index {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .modal-title {
+    font-size: clamp(26px, 8vw, 42px);
+  }
+
+  .carousel-container {
+    min-height: 0;
+    height: 58vw;
+  }
+
+  .carousel-thumb {
+    width: 72px;
+    min-width: 72px;
+    height: 52px;
+  }
+
+  .modal-description {
+    margin-top: 42px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+}
+
 </style>
 </head>
 
@@ -1650,6 +2110,7 @@ footer {
             <div>
               <h3>Zakho Conference Hall</h3>
               <p>Exterior &amp; Interior Design</p>
+              <div class="project-meta-row"><span>Construction</span><span>18 months</span><span>Corporate</span></div>
             </div>
             <span class="project-link">View project <i class="fa-solid fa-arrow-right"></i></span>
           </div>
@@ -1664,6 +2125,7 @@ footer {
             <div>
               <h3>Jade Touch Salon</h3>
               <p>Construction &amp; Interior Design</p>
+              <div class="project-meta-row"><span>Construction &amp; Interior Design</span><span>6 months</span><span>Private</span></div>
             </div>
             <span class="project-link">View project <i class="fa-solid fa-arrow-right"></i></span>
           </div>
@@ -1806,8 +2268,8 @@ footer {
             <div class="form-error">Please enter your name (at least 2 characters)</div>
           </div>
           <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            <label for="email">Email Address <span class="field-optional">Optional</span></label>
+            <input type="email" id="email" name="email" placeholder="your@email.com">
             <div class="form-error">Please enter a valid email address</div>
           </div>
           <div class="form-group">
@@ -1845,7 +2307,10 @@ footer {
 <div class="modal" id="portfolioModal" aria-hidden="true">
   <div class="modal-content">
     <div class="modal-header">
-      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-heading-block">
+        <span class="modal-project-index" id="modalProjectIndex">01 / PROJECT</span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+      </div>
       <button class="modal-close" id="modalClose" aria-label="Close project"><i class="fa-solid fa-times"></i></button>
     </div>
 
@@ -1944,6 +2409,7 @@ footer {
 ───────────────────────────────────────── */
 const projectsData = {
   project1: {
+    index: '01',
     title: 'Zakho Conference Hall', category: 'Construction',
     duration: '18 months', clientType: 'Corporate',
     description: 'Conference hall project combining exterior and interior design with spaces planned for large-scale gatherings and corporate events.',
@@ -1961,6 +2427,7 @@ const projectsData = {
     video: 'zakhoconferencehallvideol.mp4'
   },
   project2: {
+    index: '02',
     title: 'Jade Touch Salon', category: 'Construction and Interior Design',
     duration: '6 months', clientType: 'Private',
     description: 'Salon project delivered from construction works through interior finishing, with the layout and finishes coordinated as one complete scope.',
@@ -2228,6 +2695,7 @@ workCards.forEach(card => {
 
     /* populate modal text */
     document.getElementById('modalTitle').textContent = project.title;
+    document.getElementById('modalProjectIndex').textContent = `${project.index} / PROJECT`;
     document.getElementById('projectDescription').textContent = project.description;
     document.getElementById('projectCategory').textContent = project.category;
     document.getElementById('projectDuration').textContent = project.duration;
@@ -2363,7 +2831,7 @@ contactForm?.addEventListener('submit', e => {
     'Seven Points — Project Enquiry',
     '',
     `Name: ${name}`,
-    `Email: ${email}`,
+    email ? `Email: ${email}` : '',
     phone ? `Phone: ${phone}` : '',
     `Project Type: ${projectType}`,
     '',
