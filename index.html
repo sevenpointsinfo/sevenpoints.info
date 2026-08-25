@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Seven Points delivers premium construction and event management solutions in Kurdistan Region, Iraq. 150+ projects, 100% on-time delivery.">
-<meta name="keywords" content="construction, event management, Kurdistan Region, Iraq">
+<meta name="description" content="Seven Points delivers construction, architecture, interior, project management, site supervision, and event production solutions across the Kurdistan Region, Iraq.">
+<meta name="keywords" content="construction, architecture, interior design, fit-out, project management, site supervision, event production, Duhok, Kurdistan Region, Iraq">
 <meta name="theme-color" content="#030303">
 
 <meta property="og:type" content="business.business">
-<meta property="og:title" content="Seven Points | Premium Construction & Event Management">
-<meta property="og:description" content="Professional construction and event management solutions in Kurdistan Region, Iraq.">
+<meta property="og:title" content="Seven Points | Construction, Design & Project Delivery">
+<meta property="og:description" content="Construction, design, fit-out, project management and event production across the Kurdistan Region, Iraq.">
 <meta property="og:image" content="https://sevenpoints.info/sevenpointsbg.png">
 
 <script type="application/ld+json">
@@ -30,7 +30,7 @@
 }
 </script>
 
-<title>Seven Points | Premium Construction & Event Management</title>
+<title>Seven Points | Construction, Design & Project Delivery</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -823,6 +823,780 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ─────────────────────────────────────────
+   SEVEN POINTS — ARCHITECTURAL REFINEMENT
+   Cleaner geometry, stronger typography, less template-style glow
+───────────────────────────────────────── */
+body {
+  background: #050505;
+}
+
+.container {
+  max-width: 1280px;
+}
+
+.navbar {
+  padding: 16px clamp(20px, 4vw, 64px);
+  background: rgba(5,5,5,.82);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: none;
+}
+
+.navbar.scrolled {
+  padding: 12px clamp(20px, 4vw, 64px);
+  background: rgba(5,5,5,.96);
+  box-shadow: 0 10px 40px rgba(0,0,0,.24);
+}
+
+.brand img { width: 62px; }
+
+.nav-menu { gap: 30px; }
+
+.nav-menu a {
+  font-size: 12px;
+  letter-spacing: 1.4px;
+}
+
+.nav-menu a::after { height: 1px; }
+
+.nav-menu .nav-cta {
+  color: #111;
+  background: var(--gold);
+  padding: 11px 16px;
+  border: 1px solid var(--gold);
+}
+
+.nav-menu .nav-cta::after { display: none; }
+
+.nav-menu .nav-cta:hover {
+  color: #111;
+  background: var(--gold2);
+}
+
+.hero {
+  justify-content: flex-start;
+  padding: 140px clamp(20px, 6vw, 92px) 90px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.58) 48%, rgba(0,0,0,.24) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.58)),
+    url('sevenpointsbg.png') center/cover no-repeat;
+}
+
+.hero::before {
+  opacity: .3;
+  animation: none;
+}
+
+.hero::after {
+  background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.7));
+}
+
+.hero-inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.hero-kicker {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  backdrop-filter: none;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  max-width: 1040px;
+  font-size: clamp(48px, 7.5vw, 104px);
+  letter-spacing: -.055em;
+  line-height: .98;
+  text-shadow: 0 12px 44px rgba(0,0,0,.5);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 28px 0 0;
+  font-size: clamp(16px, 1.7vw, 20px);
+  line-height: 1.7;
+  color: rgba(255,255,255,.82);
+}
+
+.hero-actions {
+  justify-content: flex-start;
+  margin-top: 34px;
+}
+
+.btn {
+  border-radius: 2px;
+  padding: 14px 20px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  border: 1px solid rgba(255,255,255,.32);
+  background: rgba(0,0,0,.24);
+  box-shadow: none;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.58);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  box-shadow: none;
+  background: var(--gold);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  transform: translateY(-2px);
+  box-shadow: none;
+  background: var(--gold2);
+}
+
+.section {
+  padding: 118px clamp(20px, 4vw, 64px);
+  animation: none;
+  border-top: 1px solid rgba(255,255,255,.055);
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 52px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  text-align: left;
+  margin: 0;
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: .98;
+  letter-spacing: -.05em;
+}
+
+.projects-section {
+  background: #080808;
+}
+
+.project-list {
+  display: grid;
+  gap: 88px;
+}
+
+.project-feature.work {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  min-height: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.project-feature.work:hover {
+  transform: none;
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  background: #101010;
+  aspect-ratio: 16 / 9;
+}
+
+.project-feature.work .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .75s cubic-bezier(.2,.7,.2,1), filter .4s ease;
+}
+
+.project-feature.work:hover .project-image img {
+  transform: scale(1.025);
+  filter: brightness(1.04);
+}
+
+.project-copy {
+  display: grid;
+  grid-template-columns: 70px minmax(0,1fr) auto;
+  align-items: end;
+  gap: 24px;
+  padding: 24px 0 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.project-index {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.project-copy h3 {
+  font-size: clamp(26px, 3vw, 42px);
+  line-height: 1.05;
+  letter-spacing: -.035em;
+  margin-bottom: 7px;
+}
+
+.project-copy p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.project-link {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 11px;
+  white-space: nowrap;
+  padding-bottom: 5px;
+}
+
+.project-link i {
+  margin-left: 8px;
+  transition: transform .25s ease;
+}
+
+.project-feature:hover .project-link i {
+  transform: translateX(4px);
+}
+
+.projects-note {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.projects-note a {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.expertise-section {
+  background: #050505;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.capability {
+  position: relative;
+  min-height: 210px;
+  padding: 30px 36px 34px 0;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.capability:nth-child(odd) {
+  border-right: 1px solid rgba(255,255,255,.12);
+  padding-right: 52px;
+}
+
+.capability:nth-child(even) {
+  padding-left: 52px;
+}
+
+.capability > span {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  margin-bottom: 40px;
+}
+
+.capability h3 {
+  font-size: clamp(24px, 2.4vw, 34px);
+  letter-spacing: -.025em;
+  margin-bottom: 12px;
+}
+
+.capability p {
+  color: var(--muted);
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.company-section {
+  background: #0a0a0a;
+}
+
+.company-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(50px, 8vw, 120px);
+  align-items: start;
+}
+
+.company-grid .section-heading {
+  display: block;
+  margin: 0;
+}
+
+.company-copy {
+  padding-top: 28px;
+}
+
+.company-copy p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 680px;
+}
+
+.company-copy .company-lead {
+  color: #fff;
+  font-size: clamp(21px, 2.3vw, 31px);
+  line-height: 1.45;
+  letter-spacing: -.02em;
+  margin-bottom: 28px;
+}
+
+.clean-stats {
+  margin-top: 88px;
+  border-top: 1px solid rgba(255,255,255,.14);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+  gap: 0;
+}
+
+.clean-stats .stat-card {
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(255,255,255,.12);
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+  padding: 32px 24px;
+  animation: none;
+}
+
+.clean-stats .stat-card:first-child { padding-left: 0; }
+.clean-stats .stat-card:last-child { border-right: 0; }
+
+.clean-stats .stat-card:hover {
+  transform: none;
+  background: transparent;
+  border-color: rgba(255,255,255,.12);
+  box-shadow: none;
+}
+
+.clean-stats .stat-number {
+  font-size: clamp(34px, 4.8vw, 62px);
+  letter-spacing: -.045em;
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: #fff;
+}
+
+.clean-stats .stat-location .stat-number {
+  color: var(--gold);
+  font-size: clamp(30px, 3.8vw, 52px);
+}
+
+.clean-stats .stat-label {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.process-section {
+  background: #050505;
+}
+
+.process-grid {
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.step {
+  padding: 28px 28px 10px 0;
+  border: 0;
+  border-right: 1px solid rgba(255,255,255,.12);
+  border-radius: 0;
+  background: transparent;
+  transition: none;
+  animation: none;
+  min-height: 220px;
+}
+
+.step + .step { padding-left: 28px; }
+.step:last-child { border-right: 0; }
+
+.step::before { display: none; }
+
+.step:hover {
+  transform: none;
+  background: transparent;
+  border-color: rgba(255,255,255,.12);
+  box-shadow: none;
+}
+
+.step-no {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  justify-content: flex-start;
+  background: none;
+  color: var(--gold);
+  box-shadow: none;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  margin-bottom: 48px;
+}
+
+.step h3 {
+  font-size: 26px;
+  letter-spacing: -.025em;
+  margin-bottom: 12px;
+}
+
+.step p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.contact-section {
+  background: #0a0a0a;
+}
+
+.contact-intro {
+  max-width: 900px;
+  margin-bottom: 58px;
+}
+
+.contact-intro p {
+  max-width: 650px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.contact-grid {
+  grid-template-columns: .85fr 1.15fr;
+  gap: clamp(28px, 5vw, 72px);
+}
+
+.contact-list {
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.contact-item {
+  padding: 22px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  border-radius: 0;
+  background: transparent;
+}
+
+.contact-item:hover {
+  transform: none;
+  background: transparent;
+  border-color: rgba(255,255,255,.12);
+  box-shadow: none;
+}
+
+.contact-ic {
+  width: 38px;
+  height: 38px;
+  border-radius: 0;
+  background: transparent;
+  color: var(--gold);
+  box-shadow: none;
+  font-size: 16px;
+  border: 1px solid rgba(251,175,67,.35);
+}
+
+.form {
+  padding: 34px;
+  border-radius: 0;
+  background: #0d0d0d;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: none;
+  animation: none;
+}
+
+.form input, .form textarea, .form select {
+  border-radius: 0;
+  border: 1px solid rgba(255,255,255,.16);
+  background: #080808;
+}
+
+.form input:focus, .form textarea:focus, .form select:focus {
+  border-color: var(--gold);
+  background: #080808;
+  box-shadow: none;
+}
+
+.form button {
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--gold);
+}
+
+.form button:hover, .form button:focus {
+  transform: none;
+  box-shadow: none;
+  background: var(--gold2);
+}
+
+.modal {
+  background: rgba(0,0,0,.94);
+}
+
+.modal-content {
+  max-width: 1040px;
+  border-radius: 0;
+  border-color: rgba(255,255,255,.14);
+  background: #090909;
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
+}
+
+.carousel-container,
+.carousel-thumb,
+.video-section,
+.modal-video,
+.modal-details {
+  border-radius: 0;
+}
+
+.video-section {
+  box-shadow: none;
+  border-color: rgba(255,255,255,.12);
+  background: #0c0c0c;
+}
+
+.modal-video video {
+  width: 100%;
+  max-height: 560px;
+  display: block;
+  background: #000;
+}
+
+.modal-details {
+  border-color: rgba(255,255,255,.12);
+  background: #0c0c0c;
+}
+
+.floating {
+  right: 20px;
+  bottom: 20px;
+}
+
+.fab-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 2px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
+}
+
+.scroll-top {
+  background: #101010;
+  border-color: rgba(255,255,255,.16);
+}
+
+footer {
+  background: #030303;
+  padding: 64px clamp(20px, 4vw, 64px) 24px;
+}
+
+.footer-content { max-width: 1280px; }
+
+.footer-grid-clean {
+  grid-template-columns: 1.5fr .7fr 1fr;
+  gap: 60px;
+}
+
+.footer-logo {
+  width: 74px;
+  margin-bottom: 22px;
+}
+
+.footer-brand p {
+  max-width: 390px;
+  line-height: 1.7;
+}
+
+.footer-bottom {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .capabilities-grid { grid-template-columns: 1fr; }
+  .capability,
+  .capability:nth-child(odd),
+  .capability:nth-child(even) {
+    padding: 28px 0 30px;
+    border-right: 0;
+  }
+
+  .company-grid { grid-template-columns: 1fr; }
+  .company-copy { padding-top: 0; }
+
+  .process-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .step:nth-child(2) { border-right: 0; }
+  .step:nth-child(3), .step:nth-child(4) { border-top: 1px solid rgba(255,255,255,.12); }
+  .step:nth-child(3) { padding-left: 0; }
+
+  .footer-grid-clean { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 12px 16px; }
+  .navbar.scrolled { padding: 10px 16px; }
+
+  .nav-menu {
+    top: 64px;
+    padding: 12px 20px 22px;
+    background: rgba(5,5,5,.98);
+  }
+
+  .nav-menu .nav-cta {
+    display: inline-block;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .hero {
+    min-height: 92svh;
+    padding: 120px 18px 64px;
+    background-position: 58% center;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 66px);
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+  }
+
+  .section {
+    padding: 82px 18px;
+  }
+
+  .section-heading {
+    margin-bottom: 38px;
+  }
+
+  .project-list { gap: 62px; }
+
+  .project-copy {
+    grid-template-columns: 42px minmax(0,1fr);
+    gap: 14px;
+  }
+
+  .project-link {
+    grid-column: 2;
+    margin-top: 8px;
+  }
+
+  .projects-note {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .clean-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clean-stats .stat-card,
+  .clean-stats .stat-card:first-child {
+    padding: 24px 18px 24px 0;
+  }
+
+  .clean-stats .stat-card:nth-child(2) { border-right: 0; padding-left: 18px; }
+  .clean-stats .stat-card:nth-child(3),
+  .clean-stats .stat-card:nth-child(4) { border-top: 1px solid rgba(255,255,255,.12); }
+  .clean-stats .stat-card:nth-child(4) { border-right: 0; padding-left: 18px; }
+
+  .process-grid { grid-template-columns: 1fr; }
+  .step,
+  .step + .step,
+  .step:nth-child(3) {
+    padding: 26px 0 28px;
+    border-right: 0;
+    border-top: 1px solid rgba(255,255,255,.12);
+    min-height: 0;
+  }
+  .step:first-child { border-top: 0; }
+  .step-no { margin-bottom: 26px; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .footer-grid-clean { grid-template-columns: 1fr; gap: 36px; }
+  .footer-brand { grid-column: auto; }
+
+  .modal-video video { max-height: 320px; }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .project-image { aspect-ratio: 4 / 3; }
+
+  .clean-stats .stat-number {
+    font-size: 34px;
+  }
+
+  .form { padding: 24px 18px; }
+
+  .modal-content { padding: 20px; }
+}
+
 </style>
 </head>
 
@@ -832,186 +1606,176 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
 <div class="scroll-progress"></div>
 
 <nav class="navbar">
-  <div class="brand">
+  <a class="brand" href="#hero" aria-label="Seven Points home">
     <img src="logo.png" alt="Seven Points">
-  </div>
+  </a>
   <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-menu">
-    <li><a href="#hero" class="nav-link">Home</a></li>
-    <li><a href="#about" class="nav-link">About</a></li>
-    <li><a href="#services" class="nav-link">Services</a></li>
-    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-    <li><a href="#process" class="nav-link">Process</a></li>
-    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-    <li><a href="#contact" class="nav-link">Contact</a></li>
+    <li><a href="#portfolio" class="nav-link">Projects</a></li>
+    <li><a href="#services" class="nav-link">Expertise</a></li>
+    <li><a href="#about" class="nav-link">Company</a></li>
+    <li><a href="#contact" class="nav-link nav-cta">Start a Project</a></li>
   </ul>
 </nav>
 
 <main id="main-content">
   <section class="hero" id="hero">
     <div class="hero-inner">
-      <div class="hero-kicker">Construction • Event Management</div>
+      <div class="hero-kicker">Seven Points · Duhok, Kurdistan Region</div>
       <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
-      <p>Seven Points delivers integrated construction, event management, and production solutions for commercial, corporate, and government sectors in Kurdistan Region, Iraq.</p>
+      <p>Construction, design and project delivery for commercial, institutional and private developments across the Kurdistan Region.</p>
       <div class="hero-actions">
-        <a href="tel:+9647502205577" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <a href="#portfolio" class="btn btn-secondary">View Projects <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#contact" class="btn btn-primary">Discuss a Project <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section projects-section" id="portfolio">
     <div class="container">
-      <h2 class="section-title reveal">About <span class="gold">Seven Points</span></h2>
-      <p class="section-sub reveal">Building trust through excellence and professional execution</p>
-      <div class="about-wrap reveal">
-        <div class="about-content">
-          <p>Seven Points is a premier construction and event management company based in Duhok, Kurdistan Region. With over 5 years of proven experience, we have successfully delivered 150+ projects across commercial, corporate, and government sectors.</p>
-          <p>Our commitment to precision, professionalism, and punctuality has made us a trusted partner for organizations seeking reliable solutions. We combine innovative approaches with rigorous quality control to ensure every project exceeds expectations.</p>
-          <p>From large-scale construction projects to sophisticated event productions, our dedicated team brings expertise, discipline, and unwavering commitment to excellence in every engagement.</p>
-        </div>
+      <div class="section-heading reveal">
+        <span class="eyebrow">Selected work</span>
+        <h2 class="section-title">Selected <span class="gold">Projects</span></h2>
+      </div>
+
+      <div class="project-list" id="workGrid">
+        <article class="project-feature work reveal" data-category="construction" data-project="project1" tabindex="0" role="button" aria-label="Open Zakho Conference Hall project">
+          <div class="project-image">
+            <img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall" loading="eager">
+          </div>
+          <div class="project-copy">
+            <span class="project-index">01</span>
+            <div>
+              <h3>Zakho Conference Hall</h3>
+              <p>Exterior &amp; Interior Design</p>
+            </div>
+            <span class="project-link">View project <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <article class="project-feature work reveal" data-category="construction" data-project="project2" tabindex="0" role="button" aria-label="Open Jade Touch Salon project">
+          <div class="project-image">
+            <img src="saloon.jpg" alt="Jade Touch Salon" loading="lazy">
+          </div>
+          <div class="project-copy">
+            <span class="project-index">02</span>
+            <div>
+              <h3>Jade Touch Salon</h3>
+              <p>Construction &amp; Interior Design</p>
+            </div>
+            <span class="project-link">View project <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-note reveal">
+        <p>Planning a construction, interior or project-management scope?</p>
+        <a href="#contact">Discuss your project <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="stats">
+  <section class="section expertise-section" id="services">
     <div class="container">
-      <h2 class="section-title reveal">Proven <span class="gold">Results</span></h2>
-      <p class="section-sub reveal">Consistent excellence backed by measurable outcomes</p>
-      <div class="stats-wrap reveal">
-        <div class="stats-grid" id="statsGrid">
-          <div class="stat-card" data-target="150" data-suffix="+">
-            <span class="stat-number">0</span>
-            <div class="stat-label">Projects Completed</div>
-          </div>
-          <div class="stat-card" data-target="5" data-suffix="+">
-            <span class="stat-number">0</span>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-card" data-target="100" data-suffix="%">
-            <span class="stat-number">0</span>
-            <div class="stat-label">On-Time Delivery</div>
-          </div>
-          <div class="stat-card" data-target="50" data-suffix="+">
-            <span class="stat-number">0</span>
-            <div class="stat-label">Satisfied Clients</div>
-          </div>
-        </div>
+      <div class="section-heading reveal">
+        <span class="eyebrow">What we do</span>
+        <h2 class="section-title">Our <span class="gold">Expertise</span></h2>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="services">
-    <div class="container">
-      <h2 class="section-title reveal">Our <span class="gold">Services</span></h2>
-      <p class="section-sub reveal">Professional solutions tailored to your needs</p>
-      <div class="cards-grid">
-        <div class="card reveal">
-          <i class="fa-solid fa-hard-hat"></i>
-          <h3>Construction Management</h3>
-          <p>Full-scale construction from planning to delivery, including structure, finishing, and comprehensive site coordination.</p>
-          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+      <div class="capabilities-grid">
+        <div class="capability reveal">
+          <span>01</span>
+          <h3>Construction</h3>
+          <p>Project execution from structural works and coordination through finishing and handover.</p>
         </div>
-        <div class="card reveal">
-          <i class="fa-solid fa-calendar-check"></i>
-          <h3>Event Management</h3>
-          <p>Corporate and government events with complete production, professional setup, logistics, and dedicated support.</p>
-          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+        <div class="capability reveal">
+          <span>02</span>
+          <h3>Architecture &amp; Design</h3>
+          <p>Design development and coordination focused on practical, buildable project outcomes.</p>
         </div>
-        <div class="card reveal">
-          <i class="fa-solid fa-clipboard-check"></i>
+        <div class="capability reveal">
+          <span>03</span>
+          <h3>Interior &amp; Fit-Out</h3>
+          <p>Interior execution, finishing and fit-out for commercial and private spaces.</p>
+        </div>
+        <div class="capability reveal">
+          <span>04</span>
+          <h3>Project Management</h3>
+          <p>Planning, coordination, procurement follow-up and progress control across project stages.</p>
+        </div>
+        <div class="capability reveal">
+          <span>05</span>
           <h3>Site Supervision</h3>
-          <p>Daily quality control, rigorous progress monitoring, and comprehensive supervision to keep projects on track.</p>
-          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+          <p>On-site quality control, coordination and progress monitoring during execution.</p>
+        </div>
+        <div class="capability reveal">
+          <span>06</span>
+          <h3>Event Production</h3>
+          <p>Planning, setup, logistics and production support for corporate and institutional events.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="portfolio">
+  <section class="section company-section" id="about">
     <div class="container">
-      <h2 class="section-title reveal">Selected <span class="gold">Work</span></h2>
-      <p class="section-sub reveal">Showcase of completed projects</p>
-
-      <div class="portfolio-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="construction">Construction</button>
-      </div>
-
-      <div class="work-grid" id="workGrid">
-        <div class="work reveal" data-category="construction" data-project="project1">
-          <img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall">
-          <div class="work-overlay"><div><h3>Zakho Conference Hall</h3><p>Exterior and Interior Design</p></div></div>
+      <div class="company-grid">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Seven Points</span>
+          <h2 class="section-title">Built around <span class="gold">execution.</span></h2>
         </div>
-        <div class="work reveal" data-category="construction" data-project="project2">
-          <img src="saloon.jpg" alt="Jade Touch Salon">
-          <div class="work-overlay"><div><h3>Jade Touch Salon</h3><p>Private Property</p></div></div>
+        <div class="company-copy reveal">
+          <p class="company-lead">Seven Points is based in Duhok and delivers construction, design, fit-out and project solutions across the Kurdistan Region.</p>
+          <p>Our team coordinates planning, site execution, finishing and handover under one direction, working across commercial, corporate, institutional and private projects.</p>
         </div>
       </div>
 
-      <div class="see-all-btn reveal">
-        <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-arrow-right"></i> Start Your Project</a>
+      <div class="stats-grid clean-stats" id="statsGrid">
+        <div class="stat-card reveal" data-target="150" data-suffix="+">
+          <span class="stat-number">150+</span>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card reveal" data-target="5" data-suffix="+">
+          <span class="stat-number">5+</span>
+          <div class="stat-label">Years Operating</div>
+        </div>
+        <div class="stat-card reveal" data-target="50" data-suffix="+">
+          <span class="stat-number">50+</span>
+          <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-card reveal stat-location">
+          <span class="stat-number">Duhok</span>
+          <div class="stat-label">Based in Kurdistan Region</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="process">
+  <section class="section process-section" id="process">
     <div class="container">
-      <h2 class="section-title reveal">How We <span class="gold">Work</span></h2>
-      <p class="section-sub reveal">A proven 4-step process built for clarity and delivery</p>
+      <div class="section-heading reveal">
+        <span class="eyebrow">Delivery</span>
+        <h2 class="section-title">How we <span class="gold">work</span></h2>
+      </div>
       <div class="process-grid">
-        <div class="step reveal"><div class="step-no">01</div><h3>Consultation</h3><p>We review your project goals, scope, and timeline in detail.</p></div>
-        <div class="step reveal"><div class="step-no">02</div><h3>Planning</h3><p>We prepare comprehensive execution plan and source materials.</p></div>
-        <div class="step reveal"><div class="step-no">03</div><h3>Execution</h3><p>We manage with full supervision and daily progress updates.</p></div>
-        <div class="step reveal"><div class="step-no">04</div><h3>Delivery</h3><p>We complete handover with quality checks and support.</p></div>
+        <div class="step reveal"><div class="step-no">01</div><h3>Define</h3><p>Scope, requirements, priorities and project constraints are established before execution.</p></div>
+        <div class="step reveal"><div class="step-no">02</div><h3>Coordinate</h3><p>Design, materials, procurement and site requirements are aligned into a workable plan.</p></div>
+        <div class="step reveal"><div class="step-no">03</div><h3>Execute</h3><p>Site work is managed with supervision, quality control and progress coordination.</p></div>
+        <div class="step reveal"><div class="step-no">04</div><h3>Handover</h3><p>Final checks, completion items and project handover close the delivery process.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="testimonials">
+  <section class="section contact-section" id="contact">
     <div class="container">
-      <h2 class="section-title reveal">Client <span class="gold">Feedback</span></h2>
-      <p class="section-sub reveal">Trusted by government, corporate, and commercial clients</p>
-      <div class="testimonials reveal">
-        <div class="testimonials-container">
-          <div class="testimonials-grid" id="testimonialsGrid">
-            <div class="quote">
-              <p>"Seven Points delivered our project with exceptional quality, clear communication, and professional handling throughout the entire process."</p>
-              <div class="quote-author">
-                <div class="quote-avatar">GC</div>
-                <div class="quote-info"><strong>Government Client</strong><span>Project Director</span></div>
-              </div>
-            </div>
-            <div class="quote">
-              <p>"The event setup was elegant, organized, and finished precisely on time. Their attention to detail is remarkable and impressive."</p>
-              <div class="quote-author">
-                <div class="quote-avatar">CD</div>
-                <div class="quote-info"><strong>Corporate Director</strong><span>Event Organizer</span></div>
-              </div>
-            </div>
-            <div class="quote">
-              <p>"Seven Points handled our complex project with real professionalism, discipline, and an unwavering commitment to excellence."</p>
-              <div class="quote-author">
-                <div class="quote-avatar">CP</div>
-                <div class="quote-info"><strong>Commercial Partner</strong><span>Construction Lead</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-dots">
-          <div class="dot active" data-slide="0"></div>
-          <div class="dot" data-slide="1"></div>
-          <div class="dot" data-slide="2"></div>
-        </div>
+      <div class="contact-intro reveal">
+        <span class="eyebrow">Start a project</span>
+        <h2 class="section-title">Tell us what you’re <span class="gold">building.</span></h2>
+        <p>Share the project type, location, timeline and requirements. We’ll prepare the enquiry in WhatsApp so you can send it directly to Seven Points.</p>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="contact">
-    <div class="container">
-      <h2 class="section-title reveal">Get in <span class="gold">Touch</span></h2>
-      <p class="section-sub reveal">Ready to start? Contact us and let's create something exceptional together.</p>
       <div class="contact-grid">
         <div class="contact-list reveal">
           <div class="contact-item">
@@ -1019,18 +1783,22 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
             <div><h3>Phone</h3><p><a href="tel:+9647502205577">+964 750 220 5577</a></p></div>
           </div>
           <div class="contact-item">
+            <div class="contact-ic"><i class="fa-brands fa-whatsapp"></i></div>
+            <div><h3>WhatsApp</h3><p><a href="https://wa.me/9647502205577" target="_blank" rel="noopener">Message Seven Points</a></p></div>
+          </div>
+          <div class="contact-item">
             <div class="contact-ic"><i class="fa-solid fa-envelope"></i></div>
             <div><h3>Email</h3><p><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></p></div>
           </div>
           <div class="contact-item">
             <div class="contact-ic"><i class="fa-solid fa-location-dot"></i></div>
-            <div><h3>Office Address</h3><p>Zirka Road, Duhok<br>Kurdistan Region, Iraq</p></div>
+            <div><h3>Office</h3><p>Zirka Road, Duhok<br>Kurdistan Region, Iraq</p></div>
           </div>
         </div>
 
         <form class="form" id="contactForm" novalidate>
           <div class="form-success" id="formSuccess">
-            <i class="fa-solid fa-check"></i> Thank you! We'll contact you shortly.
+            <i class="fa-solid fa-check"></i> Your enquiry is ready in WhatsApp.
           </div>
           <div class="form-group">
             <label for="name">Full Name *</label>
@@ -1044,26 +1812,29 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
           </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+964 750 220 5577">
+            <input type="tel" id="phone" name="phone" placeholder="+964">
             <div class="form-error">Please enter a valid phone number</div>
           </div>
           <div class="form-group">
             <label for="project-type">Project Type *</label>
             <select id="project-type" name="projectType" required>
               <option value="">Select project type...</option>
-              <option value="construction">Construction</option>
-              <option value="event">Event Management</option>
-              <option value="supervision">Site Supervision</option>
-              <option value="other">Other</option>
+              <option value="Construction">Construction</option>
+              <option value="Architecture & Design">Architecture &amp; Design</option>
+              <option value="Interior & Fit-Out">Interior &amp; Fit-Out</option>
+              <option value="Project Management">Project Management</option>
+              <option value="Site Supervision">Site Supervision</option>
+              <option value="Event Production">Event Production</option>
+              <option value="Other">Other</option>
             </select>
             <div class="form-error">Please select a project type</div>
           </div>
           <div class="form-group">
             <label for="message">Project Details *</label>
-            <textarea id="message" name="message" rows="6" placeholder="Tell us about your project, timeline, and requirements..." required></textarea>
+            <textarea id="message" name="message" rows="6" placeholder="Project location, scope, timeline and requirements..." required></textarea>
             <div class="form-error">Please describe your project (at least 10 characters)</div>
           </div>
-          <button type="submit">Send Message</button>
+          <button type="submit">Send Project Enquiry <i class="fa-brands fa-whatsapp"></i></button>
         </form>
       </div>
     </div>
@@ -1071,11 +1842,11 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
 </main>
 
 <!-- ─── MODAL ─── -->
-<div class="modal" id="portfolioModal">
+<div class="modal" id="portfolioModal" aria-hidden="true">
   <div class="modal-content">
     <div class="modal-header">
       <h2 class="modal-title" id="modalTitle"></h2>
-      <button class="modal-close" id="modalClose"><i class="fa-solid fa-times"></i></button>
+      <button class="modal-close" id="modalClose" aria-label="Close project"><i class="fa-solid fa-times"></i></button>
     </div>
 
     <!-- PREMIUM CAROUSEL -->
@@ -1095,7 +1866,7 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
         </div>
 
         <div class="carousel-indicator">
-          <span id="carouselIndex">1</span> / <span id="carouselTotal">9</span>
+          <span id="carouselIndex">1</span> / <span id="carouselTotal"></span>
         </div>
       </div>
 
@@ -1106,14 +1877,12 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
     <div class="video-section" id="videoSection">
       <h4><i class="fa-solid fa-play"></i> Project Video</h4>
       <div class="modal-video">
-        <iframe id="projectVideo" src="" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+        <video id="projectVideo" controls muted playsinline preload="metadata"></video>
       </div>
     </div>
 
     <div class="modal-description">
-      <h3>Project Overview</h3>
+      <h3>Scope &amp; Overview</h3>
       <p id="projectDescription"></p>
     </div>
 
@@ -1139,34 +1908,18 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
 
 <footer>
   <div class="footer-content">
-    <div class="footer-grid">
-      <div class="footer-section">
-        <h4>Seven Points</h4>
-        <p>Premium construction and event management solutions in Kurdistan Region, Iraq.</p>
-        <div class="footer-socials" style="margin-top: 16px;">
-          <a href="https://facebook.com" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://twitter.com" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://instagram.com" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://linkedin.com" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
+    <div class="footer-grid footer-grid-clean">
+      <div class="footer-section footer-brand">
+        <img src="logo.png" alt="Seven Points" class="footer-logo">
+        <p>Construction, design and project delivery across the Kurdistan Region.</p>
       </div>
       <div class="footer-section">
-        <h4>Quick Links</h4>
+        <h4>Explore</h4>
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">Construction</a></li>
-          <li><a href="#services">Event Management</a></li>
-          <li><a href="#services">Site Supervision</a></li>
-          <li><a href="#contact">Get Quote</a></li>
+          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#services">Expertise</a></li>
+          <li><a href="#about">Company</a></li>
+          <li><a href="#contact">Start a Project</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -1180,7 +1933,7 @@ footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 <a href="#">Seven Points</a>. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      <p>&copy; 2026 Seven Points. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -1193,7 +1946,7 @@ const projectsData = {
   project1: {
     title: 'Zakho Conference Hall', category: 'Construction',
     duration: '18 months', clientType: 'Corporate',
-    description: 'A landmark conference hall designed with contemporary architecture, premium event facilities, and sophisticated spatial experiences for large-scale gatherings and corporate events.',
+    description: 'Conference hall project combining exterior and interior design with spaces planned for large-scale gatherings and corporate events.',
     photos: [
       'zakhoconferencehall1.jpg',
       'zakhoconferencehall2.jpg',
@@ -1205,12 +1958,12 @@ const projectsData = {
       'zakhoconferencehall8.jpg',
       'zakhoconferencehall9.jpg'
     ],
-    video: 'zakhoconferencehallvideol.mp4?autoplay=1&mute=1'
+    video: 'zakhoconferencehallvideol.mp4'
   },
   project2: {
     title: 'Jade Touch Salon', category: 'Construction and Interior Design',
     duration: '6 months', clientType: 'Private',
-    description: 'A fully executed salon project delivered from initial construction works to complete interior finishing, combining functionality, elegance, and modern design.',
+    description: 'Salon project delivered from construction works through interior finishing, with the layout and finishes coordinated as one complete scope.',
     photos: [
       'saloon.jpg',
       'saloon2.jpg',
@@ -1343,6 +2096,7 @@ const whatsappBtn     = document.getElementById('whatsappBtn');
 const portfolioModal  = document.getElementById('portfolioModal');
 const modalClose      = document.getElementById('modalClose');
 const backBtn         = document.getElementById('backBtn');
+const contactBtn      = document.getElementById('contactBtn');
 const prevBtn         = document.getElementById('prevBtn');
 const nextBtn         = document.getElementById('nextBtn');
 const reduceMotion    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1390,6 +2144,7 @@ window.addEventListener('scroll', () => {
    COUNTER ANIMATION - RESETS ON EACH SCROLL INTO VIEW
 ───────────────────────────────────────── */
 const animateCounter = (el, target, suffix = '') => {
+  el.textContent = '0';
   const start = performance.now();
   const duration = 2500;
   const tick = (now) => {
@@ -1446,6 +2201,16 @@ filterBtns.forEach(btn => {
         setTimeout(() => { if (card.style.opacity === '0') { card.classList.add('hidden'); card.style.display = 'none'; } }, 400);
       }
     });
+  });
+});
+
+
+workCards.forEach(card => {
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.click();
+    }
   });
 });
 
@@ -1508,13 +2273,16 @@ workCards.forEach(card => {
     if (project.video) {
       videoSection.style.display = '';
       projectVideo.src = project.video;
+      projectVideo.load();
     } else {
       videoSection.style.display = 'none';
-      projectVideo.src = '';
+      projectVideo.removeAttribute('src');
+      projectVideo.load();
     }
 
     /* open */
     portfolioModal.classList.add('show');
+    portfolioModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     startAutoPlay();
   });
@@ -1526,13 +2294,17 @@ workCards.forEach(card => {
 const closeProjectModal = () => {
   stopAutoPlay();
   portfolioModal.classList.remove('show');
+  portfolioModal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = 'auto';
-  /* kill iframe src so video/audio fully stops */
-  document.getElementById('projectVideo').src = '';
+  const video = document.getElementById('projectVideo');
+  video.pause();
+  video.removeAttribute('src');
+  video.load();
 };
 
 modalClose.addEventListener('click', closeProjectModal);
 backBtn.addEventListener('click', closeProjectModal);
+contactBtn?.addEventListener('click', closeProjectModal);
 portfolioModal.addEventListener('click', e => { if (e.target === portfolioModal) closeProjectModal(); });
 
 /* ─────────────────────────────────────────
@@ -1577,25 +2349,31 @@ const validateForm = () => {
   return isValid;
 };
 
-contactForm?.addEventListener('submit', async e => {
+contactForm?.addEventListener('submit', e => {
   e.preventDefault();
   if (!validateForm()) return;
-  const btn = contactForm.querySelector('button');
-  const orig = btn.textContent;
-  btn.disabled = true;
-  btn.textContent = '• • • Sending • • •';
-  try {
-    await new Promise(r => setTimeout(r, 2000));
-    document.getElementById('formSuccess').classList.add('show');
-    contactForm.reset();
-    contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
-    setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 5000);
-  } catch(err) {
-    alert('Error sending message. Please try again.');
-  } finally {
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const projectType = document.getElementById('project-type').value;
+  const message = document.getElementById('message').value.trim();
+
+  const enquiry = [
+    'Seven Points — Project Enquiry',
+    '',
+    `Name: ${name}`,
+    `Email: ${email}`,
+    phone ? `Phone: ${phone}` : '',
+    `Project Type: ${projectType}`,
+    '',
+    'Project Details:',
+    message
+  ].filter(Boolean).join('\\n');
+
+  document.getElementById('formSuccess').classList.add('show');
+  window.open(`https://wa.me/9647502205577?text=${encodeURIComponent(enquiry)}`, '_blank', 'noopener');
+  setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 5000);
 });
 
 contactForm?.querySelectorAll('input, textarea, select').forEach(input => {
@@ -1616,8 +2394,9 @@ contactForm?.querySelectorAll('input, textarea, select').forEach(input => {
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const href = link.getAttribute('href');
+    if (!href || href === '#') return;
     const target = document.querySelector(href);
-    if (target && href !== '#') {
+    if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
     }
