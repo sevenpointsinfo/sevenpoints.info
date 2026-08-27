@@ -3002,6 +3002,350 @@ html, body {
   }
 }
 
+
+
+/* ─────────────────────────────────────────
+   SEVEN POINTS — BLACK GLASS + PROJECT HERO
+   Rich architectural dark direction
+───────────────────────────────────────── */
+:root {
+  --sp-yellow: #FCAF41;
+  --sp-black: #070707;
+  --sp-graphite: #111214;
+  --sp-white: #F7F7F5;
+}
+
+html, body { background: var(--sp-black); }
+
+.hero {
+  min-height: 100svh;
+  padding: 132px clamp(20px, 5vw, 78px) 76px;
+  color: var(--sp-white);
+  background:
+    linear-gradient(90deg, rgba(5,5,5,.97) 0%, rgba(5,5,5,.91) 43%, rgba(5,5,5,.72) 72%, rgba(5,5,5,.88) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.34), rgba(0,0,0,.78)),
+    url('zakhoconferencehall1.jpg') center / cover no-repeat;
+}
+
+/* blurred ambient architecture behind the glass */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -8%;
+  z-index: 0;
+  opacity: .72;
+  filter: blur(56px) saturate(88%);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(252,175,65,.16) 0 7%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,.09) 0 8%, transparent 25%),
+    radial-gradient(circle at 82% 76%, rgba(252,175,65,.10) 0 10%, transparent 30%);
+}
+
+/* full-screen dark frosted layer */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(118deg, rgba(255,255,255,.055), rgba(255,255,255,.012) 34%, rgba(255,255,255,.022) 66%, rgba(252,175,65,.03)),
+    rgba(5,5,5,.16);
+  border-bottom: 1px solid rgba(255,255,255,.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter: blur(16px) saturate(92%);
+  -webkit-backdrop-filter: blur(16px) saturate(92%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1380px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(430px, 1.08fr);
+  gap: clamp(46px, 6vw, 92px);
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.hero-inner::before { display: none; }
+.hero-copy { position: relative; z-index: 4; max-width: 690px; }
+
+.hero-brand-mark {
+  width: 116px;
+  height: 78px;
+  margin-bottom: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.13);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.025)),
+    rgba(8,8,8,.46);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.14),
+    0 18px 48px rgba(0,0,0,.30);
+  backdrop-filter: blur(24px) saturate(112%);
+  -webkit-backdrop-filter: blur(24px) saturate(112%);
+}
+
+.hero-brand-mark img { width: 84px; filter: none; }
+.hero-kicker { color: rgba(255,255,255,.60); font-weight: 700; letter-spacing: .16em; }
+
+.hero h1 {
+  max-width: 720px;
+  color: #fff;
+  font-size: clamp(50px, 6.1vw, 88px);
+  line-height: .99;
+  letter-spacing: -.025em;
+  text-shadow: 0 16px 54px rgba(0,0,0,.45);
+}
+
+.hero h1 .gold {
+  background: linear-gradient(135deg, #FCAF41, #FFD07A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--sp-yellow);
+}
+
+.hero p {
+  max-width: 620px;
+  color: rgba(255,255,255,.72);
+  font-size: clamp(16px, 1.28vw, 19px);
+  line-height: 1.72;
+  font-weight: 500;
+}
+
+.hero-actions { justify-content: flex-start; gap: 12px; }
+
+.hero .btn {
+  min-height: 50px;
+  padding: 0 20px;
+  border-radius: 14px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 16px 38px rgba(0,0,0,.24);
+  backdrop-filter: blur(18px) saturate(118%);
+  -webkit-backdrop-filter: blur(18px) saturate(118%);
+}
+
+.hero .btn-secondary {
+  color: #111;
+  border: 1px solid rgba(255,200,111,.64);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.26), rgba(255,255,255,.04)),
+    rgba(252,175,65,.96);
+}
+.hero .btn-secondary:hover,
+.hero .btn-secondary:focus {
+  color: #111;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.34), rgba(255,255,255,.06)),
+    #FCAF41;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.34), 0 20px 46px rgba(0,0,0,.30), 0 0 28px rgba(252,175,65,.12);
+}
+
+.hero .btn-primary {
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.018)),
+    rgba(10,10,10,.46);
+}
+.hero .btn-primary:hover,
+.hero .btn-primary:focus {
+  color: #fff;
+  border-color: rgba(252,175,65,.48);
+  background:
+    linear-gradient(145deg, rgba(252,175,65,.11), rgba(255,255,255,.025)),
+    rgba(10,10,10,.54);
+}
+
+/* project-photo glass composition */
+.hero-projects {
+  position: relative;
+  min-height: clamp(500px, 60vw, 690px);
+  width: 100%;
+  justify-self: end;
+}
+
+.hero-project-card {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.035);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 34px 90px rgba(0,0,0,.48);
+  backdrop-filter: blur(18px) saturate(108%);
+  -webkit-backdrop-filter: blur(18px) saturate(108%);
+}
+
+.hero-project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.13), transparent 30%),
+    linear-gradient(180deg, transparent 58%, rgba(0,0,0,.54));
+}
+
+.hero-project-card::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 74px;
+  height: 54px;
+  transform: translate(-50%,-50%);
+  z-index: 3;
+  background: url('logo.png') center / contain no-repeat;
+  opacity: .12;
+  filter: drop-shadow(0 4px 14px rgba(0,0,0,.40));
+  pointer-events: none;
+}
+
+.hero-project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.88) contrast(1.04) brightness(.87);
+  transition: transform .9s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+}
+
+.hero-project-card:hover img {
+  transform: scale(1.035);
+  filter: saturate(.94) contrast(1.04) brightness(.94);
+}
+
+.hero-project-main {
+  inset: 3% 4% 7% 5%;
+  border-radius: 28px;
+  transform: rotate(.55deg);
+}
+
+.hero-project-small {
+  width: 34%;
+  aspect-ratio: 1 / 1.13;
+  border-radius: 22px;
+}
+
+.hero-project-small-a {
+  top: -2%;
+  right: -1%;
+  transform: rotate(2.2deg);
+}
+
+.hero-project-small-b {
+  left: -1%;
+  bottom: -2%;
+  transform: rotate(-2deg);
+}
+
+.hero-project-caption {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 20px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: .01em;
+}
+.hero-project-caption span { color: var(--sp-yellow); font-size: 11px; letter-spacing: .12em; }
+.hero-project-caption strong { font-size: 14px; font-weight: 700; }
+
+.hero-project-chip {
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  z-index: 6;
+  padding: 11px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.13);
+  color: rgba(255,255,255,.72);
+  background: rgba(8,8,8,.44);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.09);
+  backdrop-filter: blur(18px) saturate(110%);
+  -webkit-backdrop-filter: blur(18px) saturate(110%);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+/* premium dark glass navbar */
+.navbar {
+  background: rgba(7,7,7,.54);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+  backdrop-filter: blur(26px) saturate(112%);
+  -webkit-backdrop-filter: blur(26px) saturate(112%);
+}
+.navbar.scrolled {
+  background: rgba(7,7,7,.80);
+  backdrop-filter: blur(30px) saturate(112%);
+  -webkit-backdrop-filter: blur(30px) saturate(112%);
+}
+
+/* keep the rest of the site in the strong original dark direction */
+.hero + .projects-section::before { background: linear-gradient(90deg, transparent, rgba(252,175,65,.24), transparent); }
+
+@media (max-width: 1100px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, .78fr);
+    gap: 42px;
+  }
+  .hero-projects { min-height: 560px; }
+  .hero h1 { font-size: clamp(48px, 6.7vw, 76px); }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 116px 18px 62px;
+    background:
+      linear-gradient(180deg, rgba(5,5,5,.96) 0%, rgba(5,5,5,.88) 55%, rgba(5,5,5,.78) 100%),
+      url('zakhoconferencehall1.jpg') center / cover no-repeat;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+  .hero-copy { max-width: 720px; }
+  .hero-projects {
+    width: min(700px, 100%);
+    min-height: 480px;
+    justify-self: start;
+  }
+  .hero-project-main { inset: 3% 3% 5% 3%; }
+  .hero-project-small { width: 30%; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding-top: 102px; }
+  .hero-brand-mark { width: 98px; height: 66px; margin-bottom: 20px; border-radius: 15px; }
+  .hero-brand-mark img { width: 70px; }
+  .hero h1 { font-size: clamp(38px, 12vw, 56px); letter-spacing: -.018em; }
+  .hero p { font-size: 15px; }
+  .hero-actions { flex-direction: column; }
+  .hero .btn { width: 100%; }
+  .hero-projects { min-height: 365px; }
+  .hero-project-main { inset: 4% 2% 6% 2%; border-radius: 22px; }
+  .hero-project-small { width: 31%; border-radius: 16px; }
+  .hero-project-card::after { width: 54px; height: 40px; opacity: .11; }
+  .hero-project-chip { right: 3%; bottom: 1%; font-size: 8px; padding: 9px 11px; }
+  .hero-project-caption { left: 16px; right: 16px; bottom: 14px; }
+}
 </style>
 </head>
 
@@ -3028,15 +3372,31 @@ html, body {
 <main id="main-content">
   <section class="hero" id="hero">
     <div class="hero-inner">
-      <div class="hero-brand-mark" aria-hidden="true">
-        <img src="logo.png" alt="">
+      <div class="hero-copy">
+        <div class="hero-brand-mark" aria-hidden="true">
+          <img src="logo.png" alt="">
+        </div>
+        <div class="hero-kicker">Seven Points · Duhok, Kurdistan Region</div>
+        <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
+        <p>Construction, design and project delivery for commercial, institutional and private developments across the Kurdistan Region.</p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-secondary">View Projects <i class="fa-solid fa-arrow-down"></i></a>
+          <a href="#contact" class="btn btn-primary">Discuss a Project <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
-      <div class="hero-kicker">Seven Points · Duhok, Kurdistan Region</div>
-      <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
-      <p>Construction, design and project delivery for commercial, institutional and private developments across the Kurdistan Region.</p>
-      <div class="hero-actions">
-        <a href="#portfolio" class="btn btn-secondary">View Projects <i class="fa-solid fa-arrow-down"></i></a>
-        <a href="#contact" class="btn btn-primary">Discuss a Project <i class="fa-solid fa-arrow-right"></i></a>
+
+      <div class="hero-projects" aria-label="Selected Seven Points projects">
+        <div class="hero-project-card hero-project-main">
+          <img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall project">
+          <div class="hero-project-caption"><span>01</span><strong>Zakho Conference Hall</strong></div>
+        </div>
+        <div class="hero-project-card hero-project-small hero-project-small-a">
+          <img src="zakhoconferencehall3.jpg" alt="Zakho Conference Hall interior">
+        </div>
+        <div class="hero-project-card hero-project-small hero-project-small-b">
+          <img src="saloon2.jpg" alt="Jade Touch Salon project">
+        </div>
+        <div class="hero-project-chip">Selected projects · Seven Points</div>
       </div>
     </div>
   </section>
