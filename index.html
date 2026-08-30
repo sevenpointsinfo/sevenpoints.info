@@ -34,7 +34,7 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 <style>
@@ -3430,6 +3430,527 @@ html, body { background: var(--sp-black); }
   .hero-project-panel,
   .hero-project-panel img { transform: none !important; }
 }
+
+/* ==========================================================
+   SEVEN POINTS — STUDIO SCROLL EXPERIENCE
+   Art direction: cinematic architectural editorial.
+   One focal canvas, controlled glass, scroll as narrative.
+   No card collage. No WebGL. No continuous animation loop.
+   ========================================================== */
+:root {
+  --sp-yellow: #FCAF41;
+  --studio-p: 0;
+  --studio-expand: 0;
+  --studio-copy: 1;
+  --studio-s1: 1;
+  --studio-s2: 0;
+  --studio-s3: 0;
+  --studio-proof: 0;
+}
+
+body {
+  font-family: 'Manrope', Arial, sans-serif;
+  background: #080808;
+  color: #f5f5f3;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+h1, h2, h3, .section-title, .project-copy h3, .modal-title,
+.capability h3, .step h3, .stat-number {
+  font-family: 'Space Grotesk', 'Manrope', Arial, sans-serif;
+}
+
+/* Hero is a scroll chapter. The sticky child is the measured visual state. */
+.hero.studio-hero {
+  position: relative;
+  height: 250svh;
+  min-height: 0;
+  padding: 0;
+  display: block;
+  overflow: visible;
+  background: #080808;
+  isolation: isolate;
+}
+
+.studio-hero::before,
+.studio-hero::after { display: none !important; }
+
+.studio-hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 690px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 74% 23%, rgba(252,175,65,.055), transparent 28%),
+    linear-gradient(180deg, #111213 0%, #080808 100%);
+}
+
+/* One giant project canvas. It begins as an architectural plane and resolves full-bleed. */
+.studio-media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  clip-path: inset(
+    calc(7.2% - var(--studio-expand) * 4.6%)
+    calc(3.2% - var(--studio-expand) * 1.5%)
+    calc(7.2% - var(--studio-expand) * 4.6%)
+    calc(43% - var(--studio-expand) * 40.2%)
+    round calc(26px - var(--studio-expand) * 15px)
+  );
+  transform-origin: 88% 52%;
+  transform:
+    perspective(1900px)
+    rotateY(calc(-5.6deg + var(--studio-expand) * 5.6deg))
+    rotateX(calc(1.1deg - var(--studio-expand) * 1.1deg))
+    translate3d(calc((1 - var(--studio-expand)) * 1.25vw), 0, 0);
+  box-shadow: -34px 36px 100px rgba(0,0,0,.44);
+  will-change: transform, clip-path;
+}
+
+.studio-media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: inherit;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.14),
+    inset 0 -1px 0 rgba(255,255,255,.045),
+    0 0 0 1px rgba(0,0,0,.22);
+}
+
+.studio-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(4,4,4,.28) 0%, transparent 25%, transparent 74%, rgba(5,5,5,.08) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.06), transparent 50%, rgba(0,0,0,.28));
+}
+
+.studio-scene {
+  position: absolute;
+  inset: -3%;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.studio-scene img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.88) contrast(1.035) brightness(.88);
+  transform-origin: 62% 50%;
+  will-change: transform, opacity;
+}
+
+.studio-scene-1 { opacity: var(--studio-s1); z-index: 1; }
+.studio-scene-2 { opacity: var(--studio-s2); z-index: 2; }
+.studio-scene-3 { opacity: var(--studio-s3); z-index: 3; }
+
+.studio-scene-1 img {
+  object-position: 55% 48%;
+  transform: scale(calc(1.035 + var(--studio-p) * .055)) translate3d(calc(var(--studio-p) * -1.2%), calc(var(--studio-p) * -.5%), 0);
+}
+.studio-scene-2 img {
+  object-position: 56% 50%;
+  transform: scale(calc(1.06 + var(--studio-p) * .025)) translate3d(calc((var(--studio-p) - .45) * -1.7%), calc((var(--studio-p) - .45) * -.5%), 0);
+}
+.studio-scene-3 img {
+  object-position: 50% 50%;
+  transform: scale(calc(1.075 + var(--studio-p) * .02)) translate3d(calc((var(--studio-p) - .72) * -1.4%), 0, 0);
+}
+
+.studio-media-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(5,5,5,.68) 0%, rgba(5,5,5,.32) 18%, rgba(5,5,5,.02) 42%, transparent 72%),
+    linear-gradient(0deg, rgba(0,0,0,.34), transparent 32%);
+  opacity: calc(.34 + var(--studio-expand) * .32);
+}
+
+.studio-watermark {
+  position: absolute;
+  z-index: 8;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(64px, 7vw, 112px);
+  opacity: calc(.08 + var(--studio-proof) * .025);
+  pointer-events: none;
+  filter: drop-shadow(0 8px 22px rgba(0,0,0,.28));
+}
+.studio-watermark img { width: 100%; height: auto; display: block; }
+
+/* soft depth behind the canvas, not decorative glass cards */
+.studio-ambient {
+  position: absolute;
+  z-index: 0;
+  width: 42vw;
+  height: 42vw;
+  right: 12vw;
+  top: 22%;
+  border-radius: 50%;
+  background: rgba(252,175,65,.055);
+  filter: blur(110px);
+  transform: translate3d(0, calc(var(--studio-p) * -28px), 0);
+  pointer-events: none;
+}
+
+.studio-interface {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  width: min(1540px, 100%);
+  margin: 0 auto;
+  padding: clamp(118px, 11vh, 154px) clamp(28px, 4.7vw, 78px) clamp(38px, 5vh, 62px);
+  pointer-events: none;
+}
+
+.studio-copy {
+  width: min(560px, 38vw);
+  opacity: var(--studio-copy);
+  transform: translate3d(0, calc((1 - var(--studio-copy)) * -26px), 0);
+  will-change: opacity, transform;
+  pointer-events: auto;
+}
+
+.studio-mark-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 28px;
+  color: rgba(255,255,255,.56);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.studio-hero-logo {
+  width: 70px;
+  height: auto;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,.26));
+}
+.studio-kicker {
+  margin-bottom: 16px;
+  color: var(--sp-yellow);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.studio-copy h1 {
+  margin: 0;
+  max-width: 560px;
+  color: #fff;
+  font-size: clamp(52px, 5.4vw, 88px);
+  font-weight: 600;
+  line-height: .955;
+  letter-spacing: -.028em;
+  text-wrap: balance;
+  text-shadow: 0 18px 54px rgba(0,0,0,.34);
+}
+.studio-copy h1 span { color: var(--sp-yellow); }
+.studio-copy p {
+  max-width: 510px;
+  margin: 27px 0 0;
+  color: rgba(255,255,255,.72);
+  font-size: clamp(15px, 1.15vw, 18px);
+  font-weight: 500;
+  line-height: 1.72;
+  letter-spacing: .002em;
+}
+
+.studio-actions {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+.studio-btn {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 20px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+  transition: transform .24s ease, background .24s ease, border-color .24s ease;
+}
+.studio-btn i { font-size: 11px; }
+.studio-btn-solid {
+  color: #141414;
+  border: 1px solid rgba(255,211,142,.74);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.30), rgba(255,255,255,.025) 48%),
+    var(--sp-yellow);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.34), 0 16px 34px rgba(0,0,0,.24);
+}
+.studio-btn-glass {
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.018)), rgba(8,8,8,.42);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.09);
+  backdrop-filter: blur(16px) saturate(110%);
+  -webkit-backdrop-filter: blur(16px) saturate(110%);
+}
+@media (hover:hover) and (pointer:fine) {
+  .studio-btn:hover { transform: translateY(-2px); }
+  .studio-btn-solid:hover { background: #ffc264; }
+  .studio-btn-glass:hover { border-color: rgba(252,175,65,.45); background: rgba(18,18,18,.66); }
+}
+
+/* Scene metadata is attached to the composition edge, not a floating card. */
+.studio-scene-info {
+  position: absolute;
+  right: clamp(34px, 5vw, 82px);
+  bottom: clamp(74px, 8vh, 105px);
+  width: min(400px, 31vw);
+  height: 64px;
+  pointer-events: none;
+}
+.studio-info {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  align-items: end;
+  gap: 14px;
+  padding: 0 0 13px;
+  border-bottom: 1px solid rgba(255,255,255,.24);
+  color: #fff;
+  transform: translate3d(0, 12px, 0);
+  will-change: opacity, transform;
+}
+.studio-info-1 { opacity: var(--studio-s1); transform: translate3d(0, calc((1 - var(--studio-s1)) * 12px), 0); }
+.studio-info-2 { opacity: var(--studio-s2); transform: translate3d(0, calc((1 - var(--studio-s2)) * 12px), 0); }
+.studio-info-3 { opacity: var(--studio-s3); transform: translate3d(0, calc((1 - var(--studio-s3)) * 12px), 0); }
+.studio-info-no {
+  color: var(--sp-yellow);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+.studio-info strong {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-weight: 600;
+  letter-spacing: -.015em;
+  line-height: 1.1;
+}
+.studio-info small {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255,255,255,.58);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.studio-side-label {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  color: rgba(255,255,255,.34);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  white-space: nowrap;
+  opacity: calc(.45 + var(--studio-expand) * .45);
+}
+
+.studio-scroll-ui {
+  position: absolute;
+  left: clamp(28px, 4.7vw, 78px);
+  bottom: clamp(26px, 3.8vh, 48px);
+  display: grid;
+  grid-template-columns: auto minmax(120px, 220px) auto;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255,255,255,.42);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.studio-scroll-track {
+  position: relative;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(255,255,255,.17);
+}
+.studio-scroll-track i {
+  position: absolute;
+  inset: 0;
+  transform-origin: left;
+  transform: scaleX(var(--studio-p));
+  background: var(--sp-yellow);
+}
+.studio-scroll-ui b { color: rgba(255,255,255,.78); font-weight: 700; }
+
+/* The navbar becomes a precise glass instrument over the hero. */
+.navbar {
+  background: rgba(7,7,7,.42) !important;
+  border-bottom: 1px solid rgba(255,255,255,.075) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035) !important;
+  backdrop-filter: blur(24px) saturate(112%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(112%) !important;
+}
+.navbar.scrolled {
+  background: rgba(7,7,7,.78) !important;
+  backdrop-filter: blur(28px) saturate(112%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(112%) !important;
+}
+
+/* Cleaner handoff into selected work. */
+.studio-hero + .projects-section {
+  position: relative;
+  z-index: 12;
+  background: #090909;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.studio-hero + .projects-section::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: min(520px, 46vw);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(252,175,65,.72), transparent);
+}
+
+@media (max-width: 1100px) {
+  .studio-copy { width: min(510px, 44vw); }
+  .studio-copy h1 { font-size: clamp(50px, 6.2vw, 74px); }
+  .studio-media {
+    clip-path: inset(
+      calc(7.5% - var(--studio-expand) * 4.8%)
+      calc(2.5% - var(--studio-expand) * 1.2%)
+      calc(7.5% - var(--studio-expand) * 4.8%)
+      calc(47% - var(--studio-expand) * 44.5%)
+      round calc(24px - var(--studio-expand) * 13px)
+    );
+  }
+  .studio-mark-row span { display: none; }
+}
+
+/* Mobile is a different composition, not desktop squeezed down. */
+@media (max-width: 760px) {
+  .hero.studio-hero { height: 205svh; }
+  .studio-hero-sticky { min-height: 640px; }
+  .studio-interface {
+    padding: 100px 18px 28px;
+  }
+  .studio-copy {
+    width: 100%;
+    max-width: 540px;
+  }
+  .studio-hero-logo { width: 58px; }
+  .studio-mark-row { margin-bottom: 17px; }
+  .studio-kicker { margin-bottom: 12px; }
+  .studio-copy h1 {
+    max-width: 480px;
+    font-size: clamp(43px, 12.7vw, 62px);
+    line-height: .96;
+    letter-spacing: -.022em;
+  }
+  .studio-copy p {
+    max-width: 430px;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.62;
+  }
+  .studio-actions { margin-top: 25px; }
+  .studio-btn { min-height: 48px; padding: 0 17px; font-size: 11px; }
+  .studio-media {
+    clip-path: inset(
+      calc(45% - var(--studio-expand) * 42.2%)
+      calc(4.5% - var(--studio-expand) * 2%)
+      calc(5.5% - var(--studio-expand) * 2.8%)
+      calc(4.5% - var(--studio-expand) * 2%)
+      round calc(22px - var(--studio-expand) * 11px)
+    );
+    transform:
+      perspective(1300px)
+      rotateX(calc(4deg - var(--studio-expand) * 4deg))
+      translate3d(0, calc((1 - var(--studio-expand)) * 12px), 0);
+    transform-origin: 50% 80%;
+  }
+  .studio-media-vignette {
+    background: linear-gradient(0deg, rgba(0,0,0,.38), transparent 46%);
+  }
+  .studio-scene img { object-position: 52% 50%; }
+  .studio-scene-info {
+    right: 21px;
+    left: 21px;
+    bottom: 76px;
+    width: auto;
+    height: 57px;
+  }
+  .studio-info { grid-template-columns: 35px 1fr; gap: 10px; }
+  .studio-info strong { font-size: 17px; }
+  .studio-side-label { display: none; }
+  .studio-scroll-ui {
+    left: 18px;
+    right: 18px;
+    bottom: 24px;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+  }
+  .studio-scroll-ui span { font-size: 8px; }
+  .studio-watermark { width: 62px; }
+}
+
+@media (max-width: 460px) {
+  .studio-copy h1 { font-size: clamp(39px, 12vw, 52px); }
+  .studio-copy p { max-width: 350px; font-size: 14px; }
+  .studio-actions { flex-direction: column; align-items: stretch; width: min(330px, 100%); }
+  .studio-btn { width: 100%; }
+  .studio-media {
+    clip-path: inset(
+      calc(49% - var(--studio-expand) * 46%)
+      calc(3.8% - var(--studio-expand) * 1.5%)
+      calc(4.8% - var(--studio-expand) * 2.3%)
+      calc(3.8% - var(--studio-expand) * 1.5%)
+      round calc(20px - var(--studio-expand) * 10px)
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero.studio-hero { height: auto; }
+  .studio-hero-sticky { position: relative; height: auto; min-height: 820px; }
+  .studio-media {
+    clip-path: inset(6% 3% 6% 43% round 24px) !important;
+    transform: none !important;
+  }
+  .studio-scene-1 { opacity: 1 !important; }
+  .studio-scene-2, .studio-scene-3 { opacity: 0 !important; }
+  .studio-copy { opacity: 1 !important; transform: none !important; }
+  .studio-scroll-ui { display: none; }
+}
+
 </style>
 </head>
 
@@ -3454,38 +3975,60 @@ html, body { background: var(--sp-black); }
 </nav>
 
 <main id="main-content">
-  <section class="hero" id="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <div class="hero-brand-mark" aria-hidden="true">
-          <img src="logo.png" alt="">
+  <section class="hero studio-hero" id="hero" data-studio-hero>
+    <div class="studio-hero-sticky">
+      <div class="studio-media" aria-hidden="true">
+        <div class="studio-scene studio-scene-1">
+          <img src="zakhoconferencehall1.jpg" alt="" decoding="async" fetchpriority="high">
         </div>
-        <div class="hero-kicker">Seven Points · Duhok, Kurdistan Region</div>
-        <h1><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
-        <p>Construction, design and project delivery for commercial, institutional and private developments across the Kurdistan Region.</p>
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-secondary">View Projects <i class="fa-solid fa-arrow-down"></i></a>
-          <a href="#contact" class="btn btn-primary">Discuss a Project <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="studio-scene studio-scene-2">
+          <img src="zakhoconferencehall3.jpg" alt="" decoding="async">
         </div>
+        <div class="studio-scene studio-scene-3">
+          <img src="saloon2.jpg" alt="" decoding="async">
+        </div>
+        <div class="studio-media-vignette"></div>
+        <div class="studio-watermark"><img src="logo.png" alt=""></div>
       </div>
 
-      <div class="hero-projects" aria-label="Selected Seven Points projects" data-hero-depth>
-        <div class="hero-project-stage">
-          <div class="hero-project-grid">
-            <figure class="hero-project-panel hero-project-main">
-              <img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall project" decoding="async" fetchpriority="high">
-              <figcaption class="hero-project-caption"><span>01</span><strong>Zakho Conference Hall</strong></figcaption>
-            </figure>
-            <figure class="hero-project-panel hero-project-side-a">
-              <img src="zakhoconferencehall3.jpg" alt="Zakho Conference Hall interior" decoding="async">
-              <span class="hero-project-index">02</span>
-            </figure>
-            <figure class="hero-project-panel hero-project-side-b">
-              <img src="saloon2.jpg" alt="Jade Touch Salon project" decoding="async">
-              <span class="hero-project-index">03</span>
-            </figure>
+      <div class="studio-ambient" aria-hidden="true"></div>
+
+      <div class="studio-interface">
+        <div class="studio-copy">
+          <div class="studio-mark-row">
+            <img class="studio-hero-logo" src="logo.png" alt="Seven Points">
+            <span>Construction · Design · Project Delivery</span>
           </div>
-          <div class="hero-project-rail"><span>Selected work</span><strong>Architecture · Construction · Interior</strong></div>
+          <div class="studio-kicker">Duhok · Kurdistan Region</div>
+          <h1>Precision in<br><span>Construction.</span><br>Power in Execution.</h1>
+          <p>We deliver architecture, construction, fit-out and project management with one coordinated standard from concept to handover.</p>
+          <div class="studio-actions">
+            <a href="#portfolio" class="studio-btn studio-btn-solid">Explore Projects <i class="fa-solid fa-arrow-down"></i></a>
+            <a href="#contact" class="studio-btn studio-btn-glass">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="studio-scene-info" aria-live="off">
+          <div class="studio-info studio-info-1">
+            <span class="studio-info-no">01</span>
+            <div><strong>Zakho Conference Hall</strong><small>Architecture · Construction</small></div>
+          </div>
+          <div class="studio-info studio-info-2">
+            <span class="studio-info-no">01</span>
+            <div><strong>Zakho Conference Hall</strong><small>Interior · Execution Detail</small></div>
+          </div>
+          <div class="studio-info studio-info-3">
+            <span class="studio-info-no">02</span>
+            <div><strong>Jade Touch Salon</strong><small>Interior Design · Fit-Out</small></div>
+          </div>
+        </div>
+
+        <div class="studio-side-label" aria-hidden="true">SEVEN POINTS / SELECTED WORK</div>
+
+        <div class="studio-scroll-ui" aria-hidden="true">
+          <span>SCROLL TO EXPLORE</span>
+          <div class="studio-scroll-track"><i></i></div>
+          <b>03</b>
         </div>
       </div>
     </div>
@@ -4297,6 +4840,62 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   window.addEventListener('scroll', requestHeroDepth, { passive: true });
   window.addEventListener('resize', requestHeroDepth, { passive: true });
 })();
+
+/* ─────────────────────────────────────────
+   STUDIO HERO — SCROLL NARRATIVE
+   Arrival -> Reveal -> Proof -> Handoff
+   Transform/opacity/clip only, passive scroll + one RAF.
+───────────────────────────────────────── */
+(() => {
+  const hero = document.querySelector('[data-studio-hero]');
+  if (!hero) return;
+  const root = document.documentElement;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  const clamp01 = n => Math.min(1, Math.max(0, n));
+  const range = (p, a, b) => clamp01((p - a) / Math.max(b - a, 0.0001));
+  const smooth = t => t * t * (3 - 2 * t);
+  let raf = 0;
+
+  const render = () => {
+    const rect = hero.getBoundingClientRect();
+    const scrollable = Math.max(hero.offsetHeight - window.innerHeight, 1);
+    const p = clamp01(-rect.top / scrollable);
+
+    // Stage 1: large media plane resolves from 3D into full-bleed.
+    const expand = smooth(range(p, 0.08, 0.45));
+    // Brand copy leaves only after the visitor has read it.
+    const copy = 1 - smooth(range(p, 0.20, 0.39));
+
+    // Scene crossfades. Keep sums visually stable and never hard-cut.
+    const to2 = smooth(range(p, 0.34, 0.53));
+    const to3 = smooth(range(p, 0.66, 0.83));
+    const s1 = 1 - to2;
+    const s2 = to2 * (1 - to3);
+    const s3 = to3;
+    const proof = smooth(range(p, 0.36, 0.62));
+
+    root.style.setProperty('--studio-p', p.toFixed(4));
+    root.style.setProperty('--studio-expand', expand.toFixed(4));
+    root.style.setProperty('--studio-copy', copy.toFixed(4));
+    root.style.setProperty('--studio-s1', s1.toFixed(4));
+    root.style.setProperty('--studio-s2', s2.toFixed(4));
+    root.style.setProperty('--studio-s3', s3.toFixed(4));
+    root.style.setProperty('--studio-proof', proof.toFixed(4));
+    raf = 0;
+  };
+
+  const request = () => {
+    if (raf) return;
+    raf = requestAnimationFrame(render);
+  };
+
+  render();
+  window.addEventListener('scroll', request, { passive: true });
+  window.addEventListener('resize', request, { passive: true });
+})();
+
 </script>
 </body>
 </html>
