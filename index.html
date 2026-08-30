@@ -3005,13 +3005,14 @@ html, body {
 
 
 /* ─────────────────────────────────────────
-   SEVEN POINTS — BLACK GLASS + PROJECT HERO
-   Rich architectural dark direction
+   SEVEN POINTS — ARCHITECTURAL 3D PROJECT WALL
+   Large, aligned, GPU-light scroll depth
 ───────────────────────────────────────── */
 :root {
   --sp-yellow: #FCAF41;
+  --sp-yellow-soft: #FFD27B;
   --sp-black: #070707;
-  --sp-graphite: #111214;
+  --sp-graphite: #101113;
   --sp-white: #F7F7F5;
 }
 
@@ -3019,53 +3020,48 @@ html, body { background: var(--sp-black); }
 
 .hero {
   min-height: 100svh;
-  padding: 132px clamp(20px, 5vw, 78px) 76px;
+  padding: 132px clamp(22px, 4.8vw, 78px) 78px;
   color: var(--sp-white);
   background:
-    linear-gradient(90deg, rgba(5,5,5,.97) 0%, rgba(5,5,5,.91) 43%, rgba(5,5,5,.72) 72%, rgba(5,5,5,.88) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.34), rgba(0,0,0,.78)),
-    url('zakhoconferencehall1.jpg') center / cover no-repeat;
+    radial-gradient(circle at 78% 34%, rgba(255,255,255,.055), transparent 28%),
+    radial-gradient(circle at 72% 72%, rgba(252,175,65,.055), transparent 25%),
+    linear-gradient(120deg, #070707 0%, #0a0a0b 48%, #0d0e10 100%);
 }
 
-/* blurred ambient architecture behind the glass */
 .hero::before {
   content: '';
   position: absolute;
-  inset: -8%;
+  inset: 0;
   z-index: 0;
+  pointer-events: none;
   opacity: .72;
-  filter: blur(56px) saturate(88%);
   background:
-    radial-gradient(circle at 18% 20%, rgba(252,175,65,.16) 0 7%, transparent 25%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,.09) 0 8%, transparent 25%),
-    radial-gradient(circle at 82% 76%, rgba(252,175,65,.10) 0 10%, transparent 30%);
+    linear-gradient(90deg, transparent 0 49.8%, rgba(255,255,255,.035) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 0 49.8%, rgba(255,255,255,.025) 50%, transparent 50.2%);
+  background-size: 180px 180px;
+  mask-image: linear-gradient(90deg, transparent 18%, #000 55%, #000 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 18%, #000 55%, #000 100%);
 }
 
-/* full-screen dark frosted layer */
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background:
-    linear-gradient(118deg, rgba(255,255,255,.055), rgba(255,255,255,.012) 34%, rgba(255,255,255,.022) 66%, rgba(252,175,65,.03)),
-    rgba(5,5,5,.16);
-  border-bottom: 1px solid rgba(255,255,255,.09);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
-  backdrop-filter: blur(16px) saturate(92%);
-  -webkit-backdrop-filter: blur(16px) saturate(92%);
+  background: linear-gradient(180deg, rgba(255,255,255,.018), transparent 24%, rgba(0,0,0,.20));
+  border-bottom: 1px solid rgba(255,255,255,.075);
 }
 
 .hero-inner {
   position: relative;
   z-index: 2;
-  width: min(1380px, 100%);
+  width: min(1480px, 100%);
   margin: 0 auto;
   padding: 0;
   display: grid;
-  grid-template-columns: minmax(0, .92fr) minmax(430px, 1.08fr);
-  gap: clamp(46px, 6vw, 92px);
+  grid-template-columns: minmax(380px, .80fr) minmax(620px, 1.36fr);
+  gap: clamp(52px, 6vw, 96px);
   align-items: center;
   border: 0;
   border-radius: 0;
@@ -3076,38 +3072,34 @@ html, body { background: var(--sp-black); }
 }
 
 .hero-inner::before { display: none; }
-.hero-copy { position: relative; z-index: 4; max-width: 690px; }
+.hero-copy { position: relative; z-index: 4; max-width: 650px; }
 
 .hero-brand-mark {
-  width: 116px;
-  height: 78px;
-  margin-bottom: 28px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.13);
-  background:
-    linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.025)),
-    rgba(8,8,8,.46);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.14),
-    0 18px 48px rgba(0,0,0,.30);
-  backdrop-filter: blur(24px) saturate(112%);
-  -webkit-backdrop-filter: blur(24px) saturate(112%);
+  width: 108px;
+  height: 74px;
+  margin-bottom: 30px;
+  border-radius: 17px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.018)), rgba(10,10,10,.48);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 18px 46px rgba(0,0,0,.24);
+  backdrop-filter: blur(20px) saturate(112%);
+  -webkit-backdrop-filter: blur(20px) saturate(112%);
 }
 
-.hero-brand-mark img { width: 84px; filter: none; }
-.hero-kicker { color: rgba(255,255,255,.60); font-weight: 700; letter-spacing: .16em; }
+.hero-brand-mark img { width: 78px; filter: none; }
+.hero-kicker { color: rgba(255,255,255,.58); font-weight: 700; letter-spacing: .15em; font-size: 11px; }
 
 .hero h1 {
-  max-width: 720px;
+  max-width: 650px;
   color: #fff;
-  font-size: clamp(50px, 6.1vw, 88px);
-  line-height: .99;
-  letter-spacing: -.025em;
-  text-shadow: 0 16px 54px rgba(0,0,0,.45);
+  font-size: clamp(50px, 5.55vw, 84px);
+  line-height: 1.01;
+  letter-spacing: -.018em;
+  text-shadow: 0 18px 58px rgba(0,0,0,.34);
 }
 
 .hero h1 .gold {
-  background: linear-gradient(135deg, #FCAF41, #FFD07A);
+  background: linear-gradient(135deg, var(--sp-yellow), var(--sp-yellow-soft));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3115,236 +3107,328 @@ html, body { background: var(--sp-black); }
 }
 
 .hero p {
-  max-width: 620px;
-  color: rgba(255,255,255,.72);
-  font-size: clamp(16px, 1.28vw, 19px);
-  line-height: 1.72;
+  max-width: 590px;
+  color: rgba(255,255,255,.69);
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.78;
   font-weight: 500;
 }
 
-.hero-actions { justify-content: flex-start; gap: 12px; }
+.hero-actions { justify-content: flex-start; gap: 12px; margin-top: 30px; }
 
 .hero .btn {
   min-height: 50px;
-  padding: 0 20px;
-  border-radius: 14px;
+  padding: 0 21px;
+  border-radius: 13px;
   font-size: 12px;
-  letter-spacing: .08em;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 16px 38px rgba(0,0,0,.24);
-  backdrop-filter: blur(18px) saturate(118%);
-  -webkit-backdrop-filter: blur(18px) saturate(118%);
+  letter-spacing: .075em;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.11), 0 14px 34px rgba(0,0,0,.22);
+  backdrop-filter: blur(16px) saturate(112%);
+  -webkit-backdrop-filter: blur(16px) saturate(112%);
 }
 
 .hero .btn-secondary {
   color: #111;
-  border: 1px solid rgba(255,200,111,.64);
-  background:
-    linear-gradient(145deg, rgba(255,255,255,.26), rgba(255,255,255,.04)),
-    rgba(252,175,65,.96);
+  border: 1px solid rgba(255,205,127,.66);
+  background: linear-gradient(145deg, rgba(255,255,255,.24), rgba(255,255,255,.035)), rgba(252,175,65,.96);
 }
 .hero .btn-secondary:hover,
 .hero .btn-secondary:focus {
   color: #111;
-  background:
-    linear-gradient(145deg, rgba(255,255,255,.34), rgba(255,255,255,.06)),
-    #FCAF41;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.34), 0 20px 46px rgba(0,0,0,.30), 0 0 28px rgba(252,175,65,.12);
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, rgba(255,255,255,.32), rgba(255,255,255,.04)), #FCAF41;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 18px 40px rgba(0,0,0,.28);
 }
 
 .hero .btn-primary {
   color: #fff;
-  border: 1px solid rgba(255,255,255,.18);
-  background:
-    linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.018)),
-    rgba(10,10,10,.46);
+  border: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.014)), rgba(10,10,10,.46);
 }
 .hero .btn-primary:hover,
 .hero .btn-primary:focus {
   color: #fff;
-  border-color: rgba(252,175,65,.48);
-  background:
-    linear-gradient(145deg, rgba(252,175,65,.11), rgba(255,255,255,.025)),
-    rgba(10,10,10,.54);
+  border-color: rgba(252,175,65,.42);
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, rgba(252,175,65,.085), rgba(255,255,255,.018)), rgba(10,10,10,.54);
 }
 
-/* project-photo glass composition */
+/* one aligned architectural project wall — no floating Canva cards */
 .hero-projects {
+  --hero-scroll: 0;
   position: relative;
-  min-height: clamp(500px, 60vw, 690px);
   width: 100%;
+  min-height: clamp(560px, 50vw, 720px);
   justify-self: end;
+  perspective: 1700px;
+  perspective-origin: 50% 45%;
+  contain: layout paint style;
 }
 
-.hero-project-card {
+.hero-project-stage {
   position: absolute;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.15);
-  background: rgba(255,255,255,.035);
+  inset: 2% 0 3% 0;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 30px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.014) 46%, rgba(252,175,65,.018)),
+    rgba(9,10,11,.52);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.12),
-    0 34px 90px rgba(0,0,0,.48);
+    0 44px 110px rgba(0,0,0,.46),
+    0 12px 32px rgba(0,0,0,.28);
   backdrop-filter: blur(18px) saturate(108%);
   -webkit-backdrop-filter: blur(18px) saturate(108%);
+  transform-style: preserve-3d;
+  transform:
+    translate3d(0, calc(var(--hero-scroll) * -24px), 0)
+    rotateX(calc(1.8deg - var(--hero-scroll) * 1.4deg))
+    rotateY(calc(-4.4deg + var(--hero-scroll) * 3.5deg));
+  transform-origin: 54% 52%;
+  will-change: transform;
 }
 
-.hero-project-card::before {
+.hero-project-stage::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: 8;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgba(255,255,255,.11), transparent 25%, transparent 72%, rgba(252,175,65,.035));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.hero-project-grid {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(210px, .72fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+  transform-style: preserve-3d;
+}
+
+.hero-project-panel {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid rgba(255,255,255,.085);
+  background: #111214;
+  transform-style: preserve-3d;
+  box-shadow: 0 18px 42px rgba(0,0,0,.22);
+}
+
+.hero-project-main {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  border-radius: 21px 9px 9px 21px;
+  transform: translateZ(calc(14px + var(--hero-scroll) * 8px));
+}
+
+.hero-project-side-a {
+  grid-column: 2;
+  grid-row: 1;
+  border-radius: 9px 21px 9px 9px;
+  transform: translateZ(calc(34px - var(--hero-scroll) * 6px));
+}
+
+.hero-project-side-b {
+  grid-column: 2;
+  grid-row: 2;
+  border-radius: 9px 9px 21px 9px;
+  transform: translateZ(calc(48px - var(--hero-scroll) * 11px));
+}
+
+.hero-project-panel::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
   background:
-    linear-gradient(135deg, rgba(255,255,255,.13), transparent 30%),
-    linear-gradient(180deg, transparent 58%, rgba(0,0,0,.54));
+    linear-gradient(140deg, rgba(255,255,255,.075), transparent 28%),
+    linear-gradient(180deg, transparent 54%, rgba(0,0,0,.47));
 }
 
-.hero-project-card::after {
+.hero-project-panel::after {
   content: '';
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 74px;
-  height: 54px;
-  transform: translate(-50%,-50%);
-  z-index: 3;
+  width: 68px;
+  height: 48px;
+  transform: translate(-50%,-50%) translateZ(2px);
+  z-index: 4;
   background: url('logo.png') center / contain no-repeat;
-  opacity: .12;
-  filter: drop-shadow(0 4px 14px rgba(0,0,0,.40));
+  opacity: .105;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.34));
   pointer-events: none;
 }
 
-.hero-project-card img {
+.hero-project-panel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(.88) contrast(1.04) brightness(.87);
-  transition: transform .9s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+  display: block;
+  filter: saturate(.90) contrast(1.025) brightness(.88);
+  transform: scale(1.045) translate3d(0, calc(var(--hero-scroll) * -9px), 0);
+  transform-origin: center;
+  transition: filter .45s ease;
+  will-change: transform;
 }
 
-.hero-project-card:hover img {
-  transform: scale(1.035);
-  filter: saturate(.94) contrast(1.04) brightness(.94);
+.hero-project-side-a img {
+  transform: scale(1.07) translate3d(0, calc(var(--hero-scroll) * -15px), 0);
 }
 
-.hero-project-main {
-  inset: 3% 4% 7% 5%;
-  border-radius: 28px;
-  transform: rotate(.55deg);
+.hero-project-side-b img {
+  transform: scale(1.07) translate3d(0, calc(var(--hero-scroll) * -20px), 0);
 }
 
-.hero-project-small {
-  width: 34%;
-  aspect-ratio: 1 / 1.13;
-  border-radius: 22px;
-}
-
-.hero-project-small-a {
-  top: -2%;
-  right: -1%;
-  transform: rotate(2.2deg);
-}
-
-.hero-project-small-b {
-  left: -1%;
-  bottom: -2%;
-  transform: rotate(-2deg);
-}
+.hero-project-stage:hover .hero-project-panel img { filter: saturate(.96) contrast(1.025) brightness(.94); }
 
 .hero-project-caption {
   position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: 20px;
-  z-index: 4;
+  left: 24px;
+  bottom: 22px;
+  z-index: 5;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
   color: #fff;
   font-size: 13px;
   letter-spacing: .01em;
+  pointer-events: none;
 }
-.hero-project-caption span { color: var(--sp-yellow); font-size: 11px; letter-spacing: .12em; }
+.hero-project-caption span { color: var(--sp-yellow); font-size: 10px; letter-spacing: .16em; }
 .hero-project-caption strong { font-size: 14px; font-weight: 700; }
 
-.hero-project-chip {
+.hero-project-index {
   position: absolute;
-  right: 2%;
-  bottom: 3%;
-  z-index: 6;
-  padding: 11px 14px;
-  border-radius: 999px;
+  left: 15px;
+  top: 15px;
+  z-index: 5;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
   border: 1px solid rgba(255,255,255,.13);
+  border-radius: 10px;
   color: rgba(255,255,255,.72);
   background: rgba(8,8,8,.44);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.09);
-  backdrop-filter: blur(18px) saturate(110%);
-  -webkit-backdrop-filter: blur(18px) saturate(110%);
-  font-size: 10px;
-  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 9px;
   letter-spacing: .12em;
+}
+
+.hero-project-rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -38px;
+  z-index: 9;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  color: rgba(255,255,255,.52);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 9px;
+  pointer-events: none;
+}
+
+.hero-project-rail::before {
+  content: '';
+  height: 1px;
+  background: linear-gradient(90deg, rgba(252,175,65,.75), rgba(255,255,255,.11));
+}
+
+.hero-project-rail strong {
+  color: rgba(255,255,255,.78);
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 /* premium dark glass navbar */
 .navbar {
-  background: rgba(7,7,7,.54);
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(7,7,7,.55);
+  border-bottom: 1px solid rgba(255,255,255,.075);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
-  backdrop-filter: blur(26px) saturate(112%);
-  -webkit-backdrop-filter: blur(26px) saturate(112%);
+  backdrop-filter: blur(24px) saturate(110%);
+  -webkit-backdrop-filter: blur(24px) saturate(110%);
 }
 .navbar.scrolled {
-  background: rgba(7,7,7,.80);
-  backdrop-filter: blur(30px) saturate(112%);
-  -webkit-backdrop-filter: blur(30px) saturate(112%);
+  background: rgba(7,7,7,.82);
+  backdrop-filter: blur(28px) saturate(110%);
+  -webkit-backdrop-filter: blur(28px) saturate(110%);
 }
 
-/* keep the rest of the site in the strong original dark direction */
 .hero + .projects-section::before { background: linear-gradient(90deg, transparent, rgba(252,175,65,.24), transparent); }
 
-@media (max-width: 1100px) {
+@media (max-width: 1240px) {
   .hero-inner {
-    grid-template-columns: minmax(0, 1fr) minmax(340px, .78fr);
-    gap: 42px;
+    grid-template-columns: minmax(340px, .82fr) minmax(520px, 1.18fr);
+    gap: 46px;
   }
-  .hero-projects { min-height: 560px; }
-  .hero h1 { font-size: clamp(48px, 6.7vw, 76px); }
+  .hero-projects { min-height: 590px; }
 }
 
-@media (max-width: 900px) {
-  .hero {
-    padding: 116px 18px 62px;
-    background:
-      linear-gradient(180deg, rgba(5,5,5,.96) 0%, rgba(5,5,5,.88) 55%, rgba(5,5,5,.78) 100%),
-      url('zakhoconferencehall1.jpg') center / cover no-repeat;
+@media (max-width: 980px) {
+  .hero { padding: 116px 20px 82px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 54px; }
+  .hero-copy { max-width: 760px; }
+  .hero h1 { max-width: 760px; font-size: clamp(48px, 9vw, 78px); }
+  .hero-projects { width: min(900px, 100%); min-height: 600px; justify-self: start; }
+  .hero-project-stage {
+    transform:
+      translate3d(0, calc(var(--hero-scroll) * -18px), 0)
+      rotateX(calc(1.1deg - var(--hero-scroll) * .9deg))
+      rotateY(calc(-2.2deg + var(--hero-scroll) * 1.7deg));
   }
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 38px;
-  }
-  .hero-copy { max-width: 720px; }
-  .hero-projects {
-    width: min(700px, 100%);
-    min-height: 480px;
-    justify-self: start;
-  }
-  .hero-project-main { inset: 3% 3% 5% 3%; }
-  .hero-project-small { width: 30%; }
 }
 
-@media (max-width: 600px) {
-  .hero { padding-top: 102px; }
-  .hero-brand-mark { width: 98px; height: 66px; margin-bottom: 20px; border-radius: 15px; }
-  .hero-brand-mark img { width: 70px; }
-  .hero h1 { font-size: clamp(38px, 12vw, 56px); letter-spacing: -.018em; }
+@media (max-width: 680px) {
+  .hero { padding-top: 104px; padding-bottom: 70px; }
+  .hero-brand-mark { width: 96px; height: 66px; margin-bottom: 22px; border-radius: 15px; }
+  .hero-brand-mark img { width: 68px; }
+  .hero h1 { font-size: clamp(39px, 12vw, 58px); letter-spacing: -.012em; }
   .hero p { font-size: 15px; }
   .hero-actions { flex-direction: column; }
   .hero .btn { width: 100%; }
-  .hero-projects { min-height: 365px; }
-  .hero-project-main { inset: 4% 2% 6% 2%; border-radius: 22px; }
-  .hero-project-small { width: 31%; border-radius: 16px; }
-  .hero-project-card::after { width: 54px; height: 40px; opacity: .11; }
-  .hero-project-chip { right: 3%; bottom: 1%; font-size: 8px; padding: 9px 11px; }
-  .hero-project-caption { left: 16px; right: 16px; bottom: 14px; }
+  .hero-projects { min-height: 470px; perspective: 1200px; }
+  .hero-project-stage { inset: 1% 0 4%; padding: 7px; border-radius: 22px; }
+  .hero-project-grid {
+    grid-template-columns: minmax(0, 1.68fr) minmax(104px, .66fr);
+    gap: 7px;
+  }
+  .hero-project-main { border-radius: 16px 7px 7px 16px; }
+  .hero-project-side-a { border-radius: 7px 16px 7px 7px; }
+  .hero-project-side-b { border-radius: 7px 7px 16px 7px; }
+  .hero-project-panel::after { width: 50px; height: 36px; opacity: .09; }
+  .hero-project-caption { left: 16px; bottom: 15px; gap: 9px; }
+  .hero-project-caption strong { font-size: 12px; }
+  .hero-project-index { left: 10px; top: 10px; width: 28px; height: 28px; border-radius: 8px; font-size: 8px; }
+  .hero-project-rail { bottom: -31px; gap: 10px; font-size: 8px; letter-spacing: .1em; }
+  .hero-project-rail strong { font-size: 8px; }
+}
+
+@media (max-width: 430px) {
+  .hero-projects { min-height: 390px; }
+  .hero-project-grid { grid-template-columns: minmax(0, 1.58fr) minmax(88px, .62fr); }
+  .hero-project-caption strong { max-width: 155px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-project-stage,
+  .hero-project-panel,
+  .hero-project-panel img { transform: none !important; }
 }
 </style>
 </head>
@@ -3385,18 +3469,24 @@ html, body { background: var(--sp-black); }
         </div>
       </div>
 
-      <div class="hero-projects" aria-label="Selected Seven Points projects">
-        <div class="hero-project-card hero-project-main">
-          <img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall project">
-          <div class="hero-project-caption"><span>01</span><strong>Zakho Conference Hall</strong></div>
+      <div class="hero-projects" aria-label="Selected Seven Points projects" data-hero-depth>
+        <div class="hero-project-stage">
+          <div class="hero-project-grid">
+            <figure class="hero-project-panel hero-project-main">
+              <img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall project" decoding="async" fetchpriority="high">
+              <figcaption class="hero-project-caption"><span>01</span><strong>Zakho Conference Hall</strong></figcaption>
+            </figure>
+            <figure class="hero-project-panel hero-project-side-a">
+              <img src="zakhoconferencehall3.jpg" alt="Zakho Conference Hall interior" decoding="async">
+              <span class="hero-project-index">02</span>
+            </figure>
+            <figure class="hero-project-panel hero-project-side-b">
+              <img src="saloon2.jpg" alt="Jade Touch Salon project" decoding="async">
+              <span class="hero-project-index">03</span>
+            </figure>
+          </div>
+          <div class="hero-project-rail"><span>Selected work</span><strong>Architecture · Construction · Interior</strong></div>
         </div>
-        <div class="hero-project-card hero-project-small hero-project-small-a">
-          <img src="zakhoconferencehall3.jpg" alt="Zakho Conference Hall interior">
-        </div>
-        <div class="hero-project-card hero-project-small hero-project-small-b">
-          <img src="saloon2.jpg" alt="Jade Touch Salon project">
-        </div>
-        <div class="hero-project-chip">Selected projects · Seven Points</div>
       </div>
     </div>
   </section>
@@ -4178,6 +4268,35 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }
   });
 });
+
+/* ─────────────────────────────────────────
+   LIGHTWEIGHT HERO 3D SCROLL DEPTH
+   Transform-only, passive scroll + one RAF
+───────────────────────────────────────── */
+(() => {
+  const depthRoot = document.querySelector('[data-hero-depth]');
+  const heroSection = document.getElementById('hero');
+  if (!depthRoot || !heroSection || reduceMotion) return;
+
+  let ticking = false;
+  const updateHeroDepth = () => {
+    const rect = heroSection.getBoundingClientRect();
+    const travel = Math.max(rect.height * 0.72, 1);
+    const progress = Math.min(1, Math.max(0, -rect.top / travel));
+    depthRoot.style.setProperty('--hero-scroll', progress.toFixed(4));
+    ticking = false;
+  };
+
+  const requestHeroDepth = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateHeroDepth);
+  };
+
+  updateHeroDepth();
+  window.addEventListener('scroll', requestHeroDepth, { passive: true });
+  window.addEventListener('resize', requestHeroDepth, { passive: true });
+})();
 </script>
 </body>
 </html>
