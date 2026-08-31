@@ -1,27 +1,17 @@
-
-[2 lines collapsed]
-
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f4f2ed">
 <meta name="theme-color" content="#111111">
 <meta name="description" content="Seven Points delivers construction, architecture, interior, fit-out and project management across the Kurdistan Region, Iraq.">
 <title>Seven Points | Construction, Design & Project Delivery</title>
 <link rel="icon" href="logo.png">
-
-[2 lines collapsed]
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f4f2ed;
-  --paper:#fbfaf7;
-  --ink:#171717;
-  --muted:#77736c;
-  --line:rgba(23,23,23,.16);
-  --yellow:#fcaf41;
-  --dark:#111211;
   --bg:#fff;
   --paper:#fff;
   --ink:#111;
@@ -31,34 +21,24 @@
   --dark:#111;
   --pad:clamp(20px,4vw,66px);
   --max:1540px;
-  --ease:cubic-bezier(.2,.75,.2,1)
   --ease:cubic-bezier(.2,.75,.2,1);
   --rail:190px
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;background:var(--bg)}
 body{font-family:Manrope,Arial,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}img{display:block;width:100%}
 body.is-locked{overflow:hidden}
 a{color:inherit;text-decoration:none}
 button,input,textarea,select{font:inherit}
 img{display:block;max-width:100%;height:auto}
 .wrap{width:min(var(--max),calc(100% - var(--pad)*2));margin-inline:auto}
-.label{font-size:11px;line-height:1.2;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a867e}
 .rail{display:grid;grid-template-columns:var(--rail) 1fr;gap:clamp(50px,8vw,130px)}
 .label{font-size:11px;line-height:1.2;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .display{font-weight:500;letter-spacing:-.047em;line-height:.9}
 .headline{font-size:clamp(58px,7.3vw,112px);max-width:1020px}
 ::selection{background:var(--yellow);color:#111}
+
 /* ---------- NAV ---------- */
-.nav{position:fixed;left:0;right:0;top:0;z-index:1000;height:84px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 var(--pad);color:#fff;transition:color .35s,background .35s,height .35s;isolation:isolate}
-.nav::after{content:"";position:absolute;z-index:-1;inset:0;background:rgba(13,13,13,.02);backdrop-filter:blur(0);transition:background .35s,backdrop-filter .35s}
-.nav.is-light{color:#151515}.nav.is-light::after{background:rgba(244,242,237,.89);backdrop-filter:blur(16px)}
-.nav.is-dark::after{background:rgba(15,15,15,.68);backdrop-filter:blur(14px)}
-.nav-brand{justify-self:start;display:flex;align-items:center;gap:12px}.nav-brand img{width:58px;height:58px;object-fit:contain}.nav-brand span{display:none;font-weight:800;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-.nav-links{list-style:none;display:flex;align-items:center;gap:34px}.nav-links a{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;position:relative}.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:currentColor;transition:width .25s}.nav-links a:hover::after{width:100%}
-.nav-right{justify-self:end;display:flex;align-items:center;gap:22px}.lang{font-size:10px;font-weight:800;letter-spacing:.12em}.contact-pill{display:flex;align-items:center;gap:12px;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.contact-pill b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid currentColor;font-size:15px;font-weight:500}
-.menu{display:none;background:none;border:0;color:inherit;width:44px;height:44px;position:relative}.menu::before,.menu::after{content:"";position:absolute;left:10px;right:10px;height:1px;background:currentColor}.menu::before{top:18px}.menu::after{top:26px}
 .nav{position:fixed;left:0;right:0;top:0;z-index:1100;height:84px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 var(--pad);color:#fff;transition:color .35s,height .35s;isolation:isolate}
 .nav::after{content:"";position:absolute;z-index:-1;inset:0;background:transparent;backdrop-filter:blur(0);transition:background .35s,backdrop-filter .35s}
 .nav.is-light{color:var(--ink)}.nav.is-light::after{background:rgba(255,255,255,.9);backdrop-filter:blur(16px)}
@@ -82,15 +62,14 @@ img{display:block;max-width:100%;height:auto}
 .nav-drawer.open{display:flex}
 .nav-drawer a{font-size:clamp(36px,8vw,64px);font-weight:500;letter-spacing:-.04em;line-height:1}
 .nav-drawer a:hover{color:var(--yellow)}
+
 /* ---------- HERO / SKIP CIRCLE ---------- */
 .hero-story{height:178svh;position:relative;background:var(--dark)}
 .hero{position:sticky;top:0;height:100svh;min-height:650px;overflow:hidden;background:var(--dark);color:#fff;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}.hero-bg img{height:100%;object-fit:cover;object-position:center 52%;transform:scale(1.06);will-change:transform;filter:saturate(.92) contrast(1.03) brightness(.78)}
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;will-change:transform}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 52%;filter:saturate(.92) contrast(1.03) brightness(.78)}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.24) 49%,rgba(0,0,0,.08) 78%),linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.12) 58%,rgba(0,0,0,.62))}
 .hero-copy{position:absolute;z-index:3;left:var(--pad);bottom:clamp(80px,11vh,130px);width:min(980px,72vw);will-change:transform,opacity}
-.hero-copy .label{color:rgba(255,255,255,.65);margin-bottom:22px}.hero h1{font-size:clamp(62px,8.1vw,132px);max-width:1050px}.hero h1 span{display:block}.hero h1 span:nth-child(2){padding-left:clamp(30px,7vw,110px)}.hero h1 span:nth-child(3){padding-left:clamp(80px,15vw,240px);color:var(--yellow)}
 .hero-copy .label{color:rgba(255,255,255,.65);margin-bottom:22px}
 .hero h1{font-size:clamp(62px,8.1vw,132px);max-width:1050px}
 .hero h1 span{display:block}
@@ -99,24 +78,17 @@ img{display:block;max-width:100%;height:auto}
 .hero-copy p{margin-top:30px;max-width:560px;color:rgba(255,255,255,.7);font-size:clamp(15px,1.15vw,19px);line-height:1.72}
 .hero-side{position:absolute;right:var(--pad);bottom:34px;z-index:3;text-align:right;color:rgba(255,255,255,.52);font-size:9px;line-height:1.7;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
 .hero-side strong{display:block;color:#fff;font-size:11px;margin-bottom:3px}
-.skip-disc{--s:1;position:absolute;z-index:6;left:50%;bottom:-74px;width:148px;height:148px;border-radius:50%;background:var(--bg);transform:translateX(-50%) scale(var(--s));will-change:transform}
-.skip-button{position:absolute;z-index:7;left:50%;bottom:8px;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;border:1px solid rgba(20,20,20,.26);color:#171717;display:grid;place-items:center;text-align:center;background:transparent;transition:opacity .2s;cursor:pointer}
-.skip-button small{font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;display:block}.skip-button b{display:block;font-size:18px;font-weight:400;transform:rotate(45deg);margin-top:2px}
 .skip-disc{--s:1;position:absolute;z-index:6;left:50%;bottom:-74px;width:148px;height:148px;border-radius:50%;background:var(--bg);transform:translateX(-50%) scale(var(--s));will-change:transform;transform-origin:center center}
 .skip-button{position:absolute;z-index:7;left:50%;bottom:8px;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;border:1px solid rgba(17,17,17,.26);color:var(--ink);display:grid;place-items:center;text-align:center;background:transparent;transition:opacity .2s;cursor:pointer}
 .skip-button small{font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;display:block}
 .skip-button b{display:block;font-size:18px;font-weight:400;transform:rotate(45deg);margin-top:2px}
 .hero-reveal{position:absolute;z-index:8;inset:0;color:var(--ink);display:grid;align-items:center;opacity:0;transform:translateY(28px);pointer-events:none;will-change:opacity,transform}
-.hero-reveal-grid{width:min(1320px,calc(100% - var(--pad)*2));margin:auto;display:grid;grid-template-columns:190px 1fr;gap:clamp(50px,8vw,130px)}
-.hero-reveal h2{font-size:clamp(62px,7.7vw,122px);max-width:1000px}.hero-reveal h2 em{font-style:normal;color:#aca8a0}.hero-reveal p{font-size:clamp(17px,1.35vw,22px);line-height:1.62;max-width:620px;margin-top:34px}
 .hero-reveal.is-on{pointer-events:auto}
 .hero-reveal h2 em{font-style:normal;color:rgba(17,17,17,.38)}
 .hero-reveal p{font-size:clamp(17px,1.35vw,22px);line-height:1.62;max-width:620px;margin-top:34px}
+
 /* ---------- ABOUT TABS ---------- */
 .about{background:var(--bg);padding:90px 0 150px}
-.about-tabs{display:grid;grid-template-columns:190px 1fr;gap:clamp(50px,8vw,130px)}
-.tab-nav{position:sticky;top:120px;align-self:start;display:grid;gap:4px}.tab-btn{border:0;background:transparent;text-align:left;padding:9px 0;color:#9b978f;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:color .2s}.tab-btn.active{color:var(--ink)}
-.tab-stage{min-width:0}.tab-panel{display:none}.tab-panel.active{display:block;animation:panelIn .5s var(--ease)}@keyframes panelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .tab-nav{position:sticky;top:120px;align-self:start;display:grid;gap:4px}
 .tab-btn{border:0;background:transparent;text-align:left;padding:9px 0;color:rgba(17,17,17,.38);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:color .2s}
 .tab-btn.active{color:var(--ink)}
@@ -125,10 +97,6 @@ img{display:block;max-width:100%;height:auto}
 .tab-panel.active{display:block;animation:panelIn .5s var(--ease)}
 @keyframes panelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .about-head{display:grid;grid-template-columns:1fr .75fr;gap:clamp(40px,6vw,100px);align-items:end;padding-bottom:72px;border-bottom:1px solid var(--line)}
-.about-head h3{font-size:clamp(50px,6.5vw,98px);max-width:830px}.about-head p{font-size:16px;line-height:1.8;color:#69655e;max-width:540px;padding-bottom:6px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}.stat{min-height:245px;padding:34px 28px 28px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between}.stat:not(:first-child){padding-left:28px}.stat:last-child{border-right:0}.stat strong{font-size:clamp(68px,8vw,124px);line-height:.8;font-weight:500;letter-spacing:-.065em}.stat strong i{font-style:normal;color:var(--yellow);font-size:.48em;vertical-align:top}.stat span{max-width:150px;color:#77736c;font-size:10px;line-height:1.5;letter-spacing:.11em;text-transform:uppercase;font-weight:800}
-.values-scene{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(55px,8vw,120px);margin-top:72px;align-items:start}.values-list{border-top:1px solid var(--line)}.value{display:grid;grid-template-columns:46px 1fr;gap:18px;padding:28px 0;border-bottom:1px solid var(--line)}.value>span{font-size:10px;color:#99958d}.value h4{font-size:clamp(24px,2.2vw,34px);font-weight:600;letter-spacing:-.03em}.value p{margin-top:8px;font-size:14px;line-height:1.72;color:#76716a;max-width:450px}.values-photo{height:min(74vh,780px);position:sticky;top:110px;overflow:hidden}.values-photo img{height:100%;object-fit:cover;transition:transform .9s var(--ease)}.values-photo:hover img{transform:scale(1.02)}
-.roles{margin-top:80px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.roles-track{width:max-content;display:flex;animation:marquee 34s linear infinite}.roles-group{display:flex;gap:24px;padding:18px 12px;white-space:nowrap}.roles span{font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}.roles b{font-weight:400;opacity:.38}@keyframes marquee{to{transform:translateX(-50%)}}
 .about-head h3{font-size:clamp(50px,6.5vw,98px);max-width:830px}
 .about-head p{font-size:16px;line-height:1.8;color:var(--muted);max-width:540px;padding-bottom:6px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
@@ -153,10 +121,9 @@ img{display:block;max-width:100%;height:auto}
 .roles span{font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
 .roles b{font-weight:400;opacity:.38}
 @keyframes marquee{to{transform:translateX(-50%)}}
+
 /* ---------- WHAT WE DO ---------- */
 .what{background:var(--paper);padding:150px 0}
-.what-head{display:grid;grid-template-columns:190px 1fr;gap:clamp(50px,8vw,130px);margin-bottom:90px}.what-head h2{font-size:clamp(58px,7.3vw,112px);max-width:1020px}.what-head p{font-size:16px;line-height:1.8;color:#6d6962;max-width:560px;margin-top:30px}
-.service-story{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(50px,7vw,110px);align-items:start}.service-canvas{position:sticky;top:100px;height:min(78vh,820px);background:#e6e3dc;overflow:hidden}.service-canvas img{position:absolute;inset:0;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .62s var(--ease),transform 1.15s var(--ease)}.service-canvas img.active{opacity:1;transform:scale(1)}.service-canvas::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.32))}.service-caption{position:absolute;z-index:2;left:22px;bottom:18px;color:#fff;font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.service-list{border-top:1px solid var(--line)}.service{min-height:54vh;padding:32px 0 58px;border-bottom:1px solid var(--line);opacity:.28;transition:opacity .3s}.service.active{opacity:1}.service-top{display:grid;grid-template-columns:54px 1fr;align-items:start}.service-no{font-size:10px;color:#8d8981;padding-top:8px}.service h3{font-size:clamp(46px,4.7vw,74px);font-weight:500;letter-spacing:-.048em;line-height:.92}.service p{margin:25px 0 22px 54px;max-width:520px;font-size:15px;line-height:1.76;color:#6e6a63}.service-sub{margin-left:54px;border-top:1px solid var(--line)}.service-sub div{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px}.service-sub b{width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:var(--yellow);font-weight:600}
 .what-head{margin-bottom:90px}
 .what-head p{font-size:16px;line-height:1.8;color:var(--muted);max-width:560px;margin-top:30px}
 .service-story{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(50px,7vw,110px);align-items:start}
@@ -174,3 +141,413 @@ img{display:block;max-width:100%;height:auto}
 .service p{margin:25px 0 22px 54px;max-width:520px;font-size:15px;line-height:1.76;color:var(--muted)}
 .service-sub{margin-left:54px;border-top:1px solid var(--line)}
 .service-sub div{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px}
+.service-sub b{width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:var(--yellow);font-weight:600}
+
+/* ---------- STATEMENT ---------- */
+.promise{background:var(--dark);color:#fff;padding:145px 0}
+.promise .label{color:rgba(255,255,255,.42)}
+.promise h2 span{color:var(--yellow)}
+.promise p{max-width:650px;color:rgba(255,255,255,.57);font-size:16px;line-height:1.78;margin-top:38px}
+
+/* ---------- 3 FEATURE SCENES ---------- */
+.features{background:var(--dark);padding-bottom:110px}
+.feature{height:100svh;min-height:650px;position:relative;overflow:hidden;color:#fff}
+.feature img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) brightness(.7);transform:scale(1);transition:transform 1.2s var(--ease)}
+.feature::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.58),rgba(0,0,0,.08) 65%),linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.42))}
+.feature-copy{position:absolute;z-index:2;left:var(--pad);bottom:clamp(64px,9vh,110px);max-width:740px}
+.feature small{font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.feature h3{font-size:clamp(60px,7vw,108px);margin-top:14px}
+.feature p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.72);max-width:500px;margin-top:26px}
+.feature:hover img{transform:scale(1.04)}
+
+/* ---------- PROJECTS ---------- */
+.projects{background:var(--bg);padding:155px 0}
+.projects-head{margin-bottom:86px}
+.project-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:clamp(36px,5vw,80px);align-items:start}
+.project-card{cursor:pointer}
+.project-card:nth-child(2){margin-top:clamp(48px,12vh,160px)}
+.project-media{overflow:hidden;aspect-ratio:4/3;background:#111;position:relative}
+.project-media img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.project-card:hover .project-media img{transform:scale(1.04)}
+.project-media::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:70px;height:70px;background:url('logo.png') center/contain no-repeat;opacity:.12;pointer-events:none}
+.project-info{display:grid;grid-template-columns:48px 1fr auto;gap:20px;padding-top:20px;border-top:1px solid var(--line);margin-top:12px;align-items:start}
+.project-index{font-size:10px;color:rgba(17,17,17,.4)}
+.project-info h3{font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-.038em;line-height:1}
+.project-info p{font-size:12px;color:var(--muted);margin-top:8px}
+.project-link{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;padding-top:5px}
+.project-link b{font-size:16px;margin-left:8px}
+
+/* ---------- TRUSTED PARTNERSHIP ---------- */
+.trust{background:var(--paper);padding:145px 0}
+.trust-head{margin-bottom:70px}
+.trust-body{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(55px,8vw,120px)}
+.client-list{border-top:1px solid var(--line)}
+.client-btn{width:100%;border:0;background:none;text-align:left;padding:19px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:600;color:rgba(17,17,17,.38);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.client-btn.active{color:var(--ink)}
+.client-btn span{font-size:10px;color:rgba(17,17,17,.38)}
+.quote{min-height:390px;display:flex;flex-direction:column;justify-content:space-between}
+.quote blockquote{font-size:clamp(27px,3.15vw,48px);letter-spacing:-.034em;line-height:1.25;font-weight:500}
+.quote-bottom{display:flex;align-items:end;justify-content:space-between;gap:30px;padding-top:40px;border-top:1px solid var(--line)}
+.quote-bottom strong{font-size:15px}
+.quote-bottom span{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.quote-count{font-size:11px;color:rgba(17,17,17,.4)}
+
+/* ---------- CTA + FOOTER ---------- */
+.cta{background:var(--yellow);padding:130px 0 90px}
+.cta .label{color:rgba(17,17,17,.6)}
+.cta-actions{display:flex;align-items:center;gap:28px;margin-top:48px;flex-wrap:wrap}
+.cta-link{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.cta-link b{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid #111;font-size:19px;font-weight:400}
+.footer{background:var(--dark);color:#fff;padding:72px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.1fr .7fr .7fr;gap:50px}
+.footer-brand img{width:74px}
+.footer-brand p{max-width:370px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.58);margin-top:22px}
+.footer h4{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:18px}
+.footer a,.footer p{font-size:13px;line-height:1.85}
+.footer-links{display:grid;gap:7px}
+.footer-bottom{margin-top:54px;padding-top:20px;border-top:1px solid rgba(255,255,255,.13);display:flex;justify-content:space-between;gap:20px;color:rgba(255,255,255,.44);font-size:10px;text-transform:uppercase;letter-spacing:.07em}
+
+/* ---------- MODAL ---------- */
+.modal{position:fixed;inset:0;z-index:2000;background:rgba(10,10,10,.95);display:none;color:#fff;overflow:auto}
+.modal.show{display:block}
+.modal-top{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);border-bottom:1px solid rgba(255,255,255,.12);position:sticky;top:0;background:rgba(12,12,12,.86);backdrop-filter:blur(14px);z-index:3}
+.modal-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.modal-close{width:44px;height:44px;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:none;color:#fff;font-size:22px;cursor:pointer}
+.modal-body{width:min(1280px,calc(100% - var(--pad)*2));margin:70px auto 110px}
+.modal-hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+.modal-hero h2{font-size:clamp(48px,7vw,105px);font-weight:500;letter-spacing:-.05em;line-height:.9}
+.modal-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid rgba(255,255,255,.16);padding-top:18px}
+.modal-meta small{display:block;color:rgba(255,255,255,.42);font-size:9px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+.modal-meta span{font-size:13px}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:60px}
+.gallery img{width:100%;height:min(70vh,760px);object-fit:cover}
+.gallery img:nth-child(3n+1){grid-column:1/-1;height:min(78vh,850px)}
+
+/* ---------- REVEALS ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.show{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:960px){
+  .nav{grid-template-columns:1fr auto;height:70px}
+  .nav-links,.nav-right .lang{display:none}
+  .menu{display:block}
+  .contact-pill span{display:none}
+  .nav-brand img{width:48px;height:48px}
+  .rail{grid-template-columns:1fr;gap:24px}
+  .rail>.label,.rail>.tab-nav{margin-bottom:4px}
+  .hero-copy{width:calc(100% - var(--pad)*2)}
+  .hero h1{font-size:clamp(46px,11vw,82px)}
+  .hero h1 span:nth-child(2){padding-left:0}
+  .hero h1 span:nth-child(3){padding-left:12vw}
+  .hero-side{display:none}
+  .tab-nav{position:static;display:flex;overflow-x:auto;gap:18px;margin-bottom:24px;scrollbar-width:none}
+  .tab-nav::-webkit-scrollbar{display:none}
+  .tab-btn{white-space:nowrap}
+  .about-head{grid-template-columns:1fr;gap:24px}
+  .stat{min-height:190px}
+  .stat strong{font-size:clamp(46px,9vw,80px)}
+  .values-scene{grid-template-columns:1fr;gap:40px}
+  .values-photo{position:relative;top:auto;height:60vw;min-height:420px;order:-1}
+  .service-story{grid-template-columns:1fr}
+  .service-canvas{position:relative;top:auto;height:62vw;min-height:420px}
+  .service{min-height:0;padding:28px 0 42px}
+  .service-list{margin-top:24px}
+  .project-grid{grid-template-columns:1fr}
+  .project-card:nth-child(2){margin-top:60px}
+  .trust-body{grid-template-columns:1fr}
+  .quote{min-height:320px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .modal-hero{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .gallery img,.gallery img:nth-child(3n+1){grid-column:auto;height:auto;aspect-ratio:4/3}
+}
+@media(min-width:961px){
+  .nav-drawer,.nav-drawer.open{display:none}
+}
+@media(max-width:620px){
+  :root{--pad:18px}
+  .nav{height:64px}
+  .nav-brand img{width:44px;height:44px}
+  .contact-pill b{width:34px;height:34px}
+  .hero-story{height:150svh}
+  .hero{min-height:560px}
+  .hero-bg img{object-position:center 50%}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.12) 34%,rgba(0,0,0,.72) 78%,rgba(0,0,0,.86))}
+  .hero-copy{bottom:94px}
+  .hero-copy .label{margin-bottom:14px;font-size:9px}
+  .hero h1{font-size:clamp(42px,13vw,64px);line-height:.92}
+  .hero h1 span:nth-child(3){padding-left:0}
+  .hero-copy p{font-size:14px;margin-top:18px;max-width:92%}
+  .skip-disc{width:112px;height:112px;bottom:-56px}
+  .skip-button{width:70px;height:70px;bottom:7px}
+  .skip-button small{font-size:7px}
+  .hero-reveal h2{font-size:clamp(43px,12vw,62px)}
+  .hero-reveal p{font-size:15px;margin-top:20px}
+  .about{padding:65px 0 90px}
+  .about-head{padding-bottom:45px}
+  .about-head h3{font-size:clamp(40px,11vw,58px)}
+  .about-head p{font-size:14px}
+  .stats{grid-template-columns:1fr}
+  .stat{min-height:140px;border-right:0;border-bottom:1px solid var(--line);padding:24px 0}
+  .stat:not(:first-child){padding-left:0}
+  .stat:last-child{border-bottom:0}
+  .stat strong{font-size:64px}
+  .stat span{max-width:none}
+  .values-scene{margin-top:46px}
+  .values-photo{min-height:300px;height:92vw}
+  .roles{margin-top:50px}
+  .what{padding:92px 0}
+  .what-head{margin-bottom:54px}
+  .headline{font-size:clamp(42px,12vw,62px)}
+  .what-head p{font-size:14px;margin-top:20px}
+  .service-canvas{min-height:310px;height:86vw}
+  .service h3{font-size:42px}
+  .service p,.service-sub{margin-left:0}
+  .service p{font-size:14px}
+  .service-top{grid-template-columns:40px 1fr}
+  .promise{padding:90px 0}
+  .promise p{font-size:14px;margin-top:26px}
+  .feature{height:82svh;min-height:550px}
+  .feature h3{font-size:clamp(44px,13vw,66px)}
+  .feature-copy{bottom:54px}
+  .feature p{font-size:14px}
+  .projects{padding:90px 0}
+  .projects-head{margin-bottom:50px}
+  .project-media{aspect-ratio:1/1}
+  .project-info{grid-template-columns:34px 1fr}
+  .project-link{grid-column:2;margin-top:12px}
+  .project-card:nth-child(2){margin-top:48px}
+  .trust{padding:90px 0}
+  .trust-head{margin-bottom:45px}
+  .quote blockquote{font-size:26px}
+  .quote-bottom{align-items:start;flex-direction:column}
+  .client-btn{font-size:13px}
+  .cta{padding:85px 0 65px}
+  .cta-actions{margin-top:34px}
+  .footer{padding:55px 0 25px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand{grid-column:auto}
+  .footer-bottom{flex-direction:column}
+  .modal-body{margin-top:42px}
+  .modal-meta{grid-template-columns:1fr}
+  .modal-hero h2{font-size:48px}
+  .gallery{margin-top:38px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<header class="nav is-dark" id="nav">
+  <a class="nav-brand" href="#top" aria-label="Seven Points home"><img src="logo.png" alt="Seven Points"><span>Seven Points</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#partners">Clients</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="lang">EN</span>
+    <a class="contact-pill" href="#contact"><span>Contact Us</span><b>↗</b></a>
+    <button class="menu" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer"></button>
+  </div>
+</header>
+<nav class="nav-drawer" id="navDrawer" aria-label="Mobile">
+  <a href="#about">About Us</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#partners">Clients</a>
+  <a href="#contact">Contact</a>
+</nav>
+<main id="top">
+<section class="hero-story" id="heroStory">
+  <div class="hero" id="hero">
+    <div class="hero-bg" id="heroBg"><img src="zakhoconferencehall1.jpg" alt="Seven Points project"></div>
+    <div class="hero-copy" id="heroCopy">
+      <div class="label">Seven Points · Design & Build</div>
+      <h1 class="display"><span>Transform</span><span>ideas into</span><span>built reality.</span></h1>
+      <p>Integrated architecture, construction, interiors and project delivery for commercial, institutional and private developments across the Kurdistan Region.</p>
+    </div>
+    <div class="hero-side"><strong>Zakho Conference Hall</strong>Selected Project · Duhok Region<br>Construction + Interior + Exterior</div>
+    <div class="skip-disc" id="skipDisc"></div>
+    <button class="skip-button" id="skipButton" aria-label="Continue to about section"><span><small>Discover</small><b>↘</b></span></button>
+    <div class="hero-reveal" id="heroReveal">
+      <div class="wrap rail"><div class="label">About Us</div><div><h2 class="display headline">One team for <em>design, construction</em> and delivery.</h2><p>Seven Points brings planning, design coordination, site execution and finishing together under one direction, so the project is controlled from the first decision through handover.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap rail">
+    <nav class="tab-nav" aria-label="About sections">
+      <button class="tab-btn active" type="button" data-tab="who">Who We Are</button>
+      <button class="tab-btn" type="button" data-tab="values">Our Values</button>
+      <button class="tab-btn" type="button" data-tab="team">Our Team</button>
+      <button class="tab-btn" type="button" data-tab="story">Our Direction</button>
+    </nav>
+    <div class="tab-stage">
+      <div class="tab-panel active" id="tab-who">
+        <div class="about-head"><h3 class="display reveal">Built around execution.</h3><p class="reveal">We coordinate design, materials, procurement, trades, site supervision, finishing and handover as one project system rather than disconnected scopes.</p></div>
+        <div class="stats" id="stats"><div class="stat"><strong data-count="150">0<i>+</i></strong><span>Projects Completed</span></div><div class="stat"><strong data-count="5">0<i>+</i></strong><span>Years Operating</span></div><div class="stat"><strong data-count="50">0<i>+</i></strong><span>Clients Served</span></div></div>
+      </div>
+      <div class="tab-panel" id="tab-values">
+        <div class="about-head"><h3 class="display">Control at every stage.</h3><p>Clear responsibilities, practical decisions and consistent supervision keep the design and execution moving toward the same result.</p></div>
+        <div class="values-scene">
+          <div class="values-list">
+            <article class="value"><span>01</span><div><h4>Experience</h4><p>Practical knowledge built through completed construction, fit-out, design and delivery scopes.</p></div></article>
+            <article class="value"><span>02</span><div><h4>Reliable</h4><p>Clear communication, accountable coordination and consistent follow-through across the project.</p></div></article>
+            <article class="value"><span>03</span><div><h4>Performance</h4><p>Quality, progress and site decisions are measured against the approved scope and finish standard.</p></div></article>
+            <article class="value"><span>04</span><div><h4>Precision</h4><p>Details are resolved before they become site problems, from drawings and materials through execution.</p></div></article>
+          </div>
+          <div class="values-photo"><img src="zakhoconferencehall3.jpg" alt="Seven Points interior project"></div>
+        </div>
+      </div>
+      <div class="tab-panel" id="tab-team">
+        <div class="about-head"><h3 class="display">Different disciplines. One direction.</h3><p>Architecture, site management, construction, fit-out and project coordination work together rather than handing problems from one team to another.</p></div>
+        <div class="roles"><div class="roles-track"><div class="roles-group"><span>Architecture</span><b>|</b><span>Project Management</span><b>|</b><span>Construction Team</span><b>|</b><span>Interior & Fit-Out</span><b>|</b><span>Site Supervision</span><b>|</b><span>Electrical & MEP Coordination</span><b>|</b><span>General Trading</span><b>|</b></div><div class="roles-group" aria-hidden="true"><span>Architecture</span><b>|</b><span>Project Management</span><b>|</b><span>Construction Team</span><b>|</b><span>Interior & Fit-Out</span><b>|</b><span>Site Supervision</span><b>|</b><span>Electrical & MEP Coordination</span><b>|</b><span>General Trading</span><b>|</b></div></div></div>
+      </div>
+      <div class="tab-panel" id="tab-story">
+        <div class="about-head"><h3 class="display">Regional work. Long-term ambition.</h3><p>Based in Duhok and working across the Kurdistan Region, Seven Points is building a portfolio across commercial, institutional and private developments.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="what" id="services">
+  <div class="wrap">
+    <div class="rail what-head"><div class="label reveal">What We Do</div><div><h2 class="display headline reveal">Designing and building every stage as one system.</h2><p class="reveal">From early planning to handover, each stage is coordinated with the next so the design remains buildable, the site remains controlled and the final result remains consistent.</p></div></div>
+    <div class="service-story">
+      <div class="service-canvas reveal" id="serviceCanvas">
+        <img class="active" src="zakhoconferencehall1.jpg" alt="Planning">
+        <img src="saloon.jpg" alt="Designing">
+        <img src="zakhoconferencehall3.jpg" alt="Construction">
+        <img src="saloon2.jpg" alt="Management">
+        <span class="service-caption" id="serviceCaption">01 · Planning</span>
+      </div>
+      <div class="service-list">
+        <article class="service active" data-service="0"><div class="service-top"><span class="service-no">01</span><h3>Planning</h3></div><p>Define the project, understand the site and establish priorities before execution begins.</p><div class="service-sub"><div><span>Scope, site survey & constraints</span><b>↗</b></div><div><span>Budget, sequence & procurement planning</span><b>↗</b></div></div></article>
+        <article class="service" data-service="1"><div class="service-top"><span class="service-no">02</span><h3>Designing</h3></div><p>Translate requirements into coordinated architecture and interiors that can actually be built.</p><div class="service-sub"><div><span>Architecture & interior development</span><b>↗</b></div><div><span>Materials & technical coordination</span><b>↗</b></div></div></article>
+        <article class="service" data-service="2"><div class="service-top"><span class="service-no">03</span><h3>Construction</h3></div><p>Execute the approved scope with trade coordination, supervision and finish control.</p><div class="service-sub"><div><span>Construction & fit-out execution</span><b>↗</b></div><div><span>Quality, progress & site supervision</span><b>↗</b></div></div></article>
+        <article class="service" data-service="3"><div class="service-top"><span class="service-no">04</span><h3>Management</h3></div><p>Keep decisions, procurement, progress and completion aligned through final handover.</p><div class="service-sub"><div><span>Project & procurement coordination</span><b>↗</b></div><div><span>Completion, snagging & handover</span><b>↗</b></div></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="promise"><div class="wrap rail"><div class="label reveal">Our Approach</div><div><h2 class="display headline reveal">Clear design.<br>Controlled delivery.<br><span>Dependable results.</span></h2><p class="reveal">The value is not in adding more layers to a project. It is in making every layer work together — design, materials, site coordination, construction and finishing.</p></div></div></section>
+
+<section class="features">
+  <article class="feature"><img src="saloon.jpg" alt="Designed"><div class="feature-copy reveal"><small>Perfectly designed</small><h3 class="display">Designed<br>with purpose.</h3><p>Architecture and interiors shaped around function, identity, material logic and buildability.</p></div></article>
+  <article class="feature"><img src="zakhoconferencehall1.jpg" alt="Planned"><div class="feature-copy reveal"><small>Carefully planned</small><h3 class="display">Planned<br>around reality.</h3><p>Scope, sequencing, procurement and site requirements resolved before they become delays.</p></div></article>
+  <article class="feature"><img src="zakhoconferencehall3.jpg" alt="Executed"><div class="feature-copy reveal"><small>Smartly executed</small><h3 class="display">Executed<br>with control.</h3><p>Disciplined supervision, coordination and finishing through completion and handover.</p></div></article>
+</section>
+
+<section class="projects" id="projects"><div class="wrap"><div class="rail projects-head"><div class="label reveal">Selected Work</div><h2 class="display headline reveal">Projects that define our craft.</h2></div><div class="project-grid">
+  <article class="project-card reveal" data-project="project1" tabindex="0"><div class="project-media"><img src="zakhoconferencehall1.jpg" alt="Zakho Conference Hall"></div><div class="project-info"><span class="project-index">01</span><div><h3>Zakho Conference Hall</h3><p>Exterior & Interior Design · Construction · 18 months</p></div><span class="project-link">View Project <b>↗</b></span></div></article>
+  <article class="project-card reveal" data-project="project2" tabindex="0"><div class="project-media"><img src="saloon.jpg" alt="Jade Touch Salon"></div><div class="project-info"><span class="project-index">02</span><div><h3>Jade Touch Salon</h3><p>Construction & Interior Design · 6 months</p></div><span class="project-link">View Project <b>↗</b></span></div></article>
+</div></div></section>
+
+<section class="trust" id="partners"><div class="wrap"><div class="rail trust-head"><div class="label reveal">Trusted Partnership</div><h2 class="display headline reveal">Built through trust, coordination and delivery.</h2></div><div class="trust-body"><div class="client-list reveal"><button class="client-btn active" type="button" data-quote="0">RT Bank <span>01</span></button><button class="client-btn" type="button" data-quote="1">KIB <span>02</span></button><button class="client-btn" type="button" data-quote="2">Institutional Projects <span>03</span></button><button class="client-btn" type="button" data-quote="3">Private Developments <span>04</span></button></div><div class="quote reveal"><blockquote id="quoteText">Commercial and institutional work requires more than a strong visual result. It requires coordination, predictable execution and attention to every handover detail.</blockquote><div class="quote-bottom"><div><strong id="quoteName">Seven Points</strong><span id="quoteRole">Construction · Design · Project Delivery</span></div><div class="quote-count" id="quoteCount">01 / 04</div></div></div></div></div></section>
+
+<section class="cta" id="contact"><div class="wrap rail"><div class="label reveal">Start a Project</div><div><h2 class="display headline reveal">Bring your project to life with Seven Points.</h2><div class="cta-actions reveal"><a class="cta-link" href="https://wa.me/9647502205577"><span>Send Your Inquiry</span><b>↗</b></a><a class="cta-link" href="tel:+9647502205577"><span>Call +964 750 220 5577</span></a></div></div></div></section>
+</main>
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><img src="logo.png" alt="Seven Points"><p>Construction, architecture, interior, fit-out and project delivery across the Kurdistan Region.</p></div><div><h4>Explore</h4><div class="footer-links"><a href="#about">About Us</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#partners">Clients</a><a href="#contact">Contact</a></div></div><div><h4>Contact</h4><p>+964 750 220 5577<br>email@sevenpoints.info<br>Zirka Road, Duhok<br>Kurdistan Region, Iraq</p></div></div><div class="footer-bottom"><span>© 2026 Seven Points. All rights reserved.</span><span>Construction · Design · Project Delivery</span></div></div></footer>
+
+<div class="modal" id="projectModal" aria-hidden="true"><div class="modal-top"><div class="modal-title" id="modalTitleSmall">Project</div><button class="modal-close" id="modalClose" type="button" aria-label="Close">×</button></div><div class="modal-body"><div class="modal-hero"><h2 id="modalTitle">Project</h2><div class="modal-meta"><div><small>Category</small><span id="modalCategory"></span></div><div><small>Duration</small><span id="modalDuration"></span></div><div><small>Client Type</small><span id="modalClient"></span></div></div></div><div class="gallery" id="modalGallery"></div></div></div>
+
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n));
+const mqDesktop=matchMedia('(min-width:961px)');
+
+const heroStory=document.getElementById('heroStory'),heroBg=document.getElementById('heroBg'),heroCopy=document.getElementById('heroCopy'),skipDisc=document.getElementById('skipDisc'),skipButton=document.getElementById('skipButton'),heroReveal=document.getElementById('heroReveal'),nav=document.getElementById('nav');
+const menuBtn=document.getElementById('menuBtn'),drawer=document.getElementById('navDrawer');
+const modal=document.getElementById('projectModal'),modalClose=document.getElementById('modalClose');
+
+function lockScroll(){
+  document.body.classList.toggle('is-locked', drawer.classList.contains('open') || modal.classList.contains('show'));
+}
+
+function setMenu(open){
+  if(mqDesktop.matches) open=false;
+  menuBtn.classList.toggle('is-open',open);
+  drawer.classList.toggle('open',open);
+  menuBtn.setAttribute('aria-expanded',String(open));
+  menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  if(open){
+    nav.classList.add('is-dark');
+    nav.classList.remove('is-light');
+  }
+  lockScroll();
+  if(!open) heroUpdate();
+}
+
+let ticking=false;
+function heroUpdate(){
+  const r=heroStory.getBoundingClientRect();
+  const travel=Math.max(1,heroStory.offsetHeight-innerHeight);
+  const p=clamp(-r.top/travel);
+  if(!reduce){
+    heroBg.style.transform=`scale(${1+p*.06}) translate3d(0,${-p*18}px,0)`;
+    const cFade=clamp(p/.36);heroCopy.style.opacity=String(1-cFade);heroCopy.style.transform=`translate3d(0,${-cFade*34}px,0)`;
+    const cp=clamp((p-.14)/.48),ease=1-Math.pow(1-cp,3);skipDisc.style.setProperty('--s',String(1+ease*19));skipButton.style.opacity=String(1-clamp(cp*2.1));
+    const ap=clamp((p-.50)/.24);heroReveal.style.opacity=String(ap);heroReveal.style.transform=`translateY(${(1-ap)*28}px)`;
+    heroReveal.classList.toggle('is-on',ap>.4);
+  }
+  if(!drawer.classList.contains('open')){
+    nav.classList.toggle('is-light',p>.56);
+    nav.classList.toggle('is-dark',p<=.56);
+  }
+  ticking=false;
+}
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(heroUpdate)}},{passive:true});
+heroUpdate();
+skipButton.addEventListener('click',()=>document.getElementById('about').scrollIntoView({behavior:reduce?'auto':'smooth'}));
+
+menuBtn.addEventListener('click',()=>setMenu(!drawer.classList.contains('open')));
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+mqDesktop.addEventListener('change',()=>{if(mqDesktop.matches) setMenu(false)});
+
+const tabBtns=[...document.querySelectorAll('.tab-btn')],tabPanels=[...document.querySelectorAll('.tab-panel')];
+tabBtns.forEach(btn=>btn.addEventListener('click',()=>{tabBtns.forEach(b=>b.classList.remove('active'));tabPanels.forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('tab-'+btn.dataset.tab).classList.add('active')}));
+
+const reveals=[...document.querySelectorAll('.reveal')];
+if(reduce) reveals.forEach(x=>x.classList.add('show'));
+else {const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12,rootMargin:'0px 0px -7%'});reveals.forEach(x=>io.observe(x));}
+
+const stats=document.getElementById('stats');
+if(stats){const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;stats.querySelectorAll('[data-count]').forEach(el=>{if(el.dataset.done)return;el.dataset.done=1;const target=+el.dataset.count,start=performance.now();function go(t){const p=reduce?1:clamp((t-start)/1100),q=1-Math.pow(1-p,3);el.childNodes[0].nodeValue=Math.round(target*q);if(p<1)requestAnimationFrame(go)}requestAnimationFrame(go)});io.disconnect()},{threshold:.35});io.observe(stats)}
+
+const services=[...document.querySelectorAll('.service')],serviceImgs=[...document.querySelectorAll('#serviceCanvas img')],serviceCaption=document.getElementById('serviceCaption'),serviceNames=['01 · Planning','02 · Designing','03 · Construction','04 · Management'];
+function activateService(i){services.forEach((s,n)=>s.classList.toggle('active',n===i));serviceImgs.forEach((im,n)=>im.classList.toggle('active',n===i));serviceCaption.textContent=serviceNames[i]}
+const sio=new IntersectionObserver(es=>{const best=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(best)activateService(+best.target.dataset.service)},{threshold:[.25,.45,.6],rootMargin:'-18% 0px -28%'});services.forEach(s=>sio.observe(s));
+
+const quotes=[
+ ['Commercial and institutional work requires more than a strong visual result. It requires coordination, predictable execution and attention to every handover detail.','Seven Points','Construction · Design · Project Delivery'],
+ ['Our delivery model keeps design decisions, materials, site realities and execution under one direction instead of allowing each stage to drift independently.','Seven Points','Integrated Project Delivery'],
+ ['The strongest result is a project that looks resolved because it was planned, coordinated and executed as one complete scope.','Seven Points','Construction + Fit-Out'],
+ ['Private projects receive the same discipline: clear scope, controlled details, practical materials and consistent supervision through completion.','Seven Points','Private Developments']
+];
+const clientBtns=[...document.querySelectorAll('.client-btn')],qt=document.getElementById('quoteText'),qn=document.getElementById('quoteName'),qr=document.getElementById('quoteRole'),qc=document.getElementById('quoteCount');
+clientBtns.forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.quote;clientBtns.forEach(x=>x.classList.toggle('active',x===b));if(!reduce) qt.animate([{opacity:.2,transform:'translateY(8px)'},{opacity:1,transform:'none'}],{duration:360,easing:'ease-out'});qt.textContent=quotes[i][0];qn.textContent=quotes[i][1];qr.textContent=quotes[i][2];qc.textContent=String(i+1).padStart(2,'0')+' / 04'}));
+
+const projects={project1:{title:'Zakho Conference Hall',category:'Construction',duration:'18 months',client:'Corporate',photos:['zakhoconferencehall1.jpg','zakhoconferencehall2.jpg','zakhoconferencehall3.jpg','zakhoconferencehall4.jpg','zakhoconferencehall5.jpg','zakhoconferencehall6.jpg','zakhoconferencehall7.jpg','zakhoconferencehall8.jpg','zakhoconferencehall9.jpg']},project2:{title:'Jade Touch Salon',category:'Construction & Interior Design',duration:'6 months',client:'Private',photos:['saloon.jpg','saloon2.jpg','saloon3.jpg','saloon4.jpg','saloon5.jpg','saloon6.jpg','saloon7.jpg','saloon8.jpg','saloon9.jpg']}};
+function openProject(key){const p=projects[key];if(!p)return;setMenu(false);document.getElementById('modalTitle').textContent=p.title;document.getElementById('modalTitleSmall').textContent=p.title;document.getElementById('modalCategory').textContent=p.category;document.getElementById('modalDuration').textContent=p.duration;document.getElementById('modalClient').textContent=p.client;document.getElementById('modalGallery').innerHTML=p.photos.map((src,i)=>`<img src="${src}" alt="${p.title} project photo ${i+1}" loading="${i<2?'eager':'lazy'}">`).join('');modal.classList.add('show');modal.setAttribute('aria-hidden','false');lockScroll()}
+function closeProject(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');lockScroll()}
+document.querySelectorAll('[data-project]').forEach(card=>{card.addEventListener('click',()=>openProject(card.dataset.project));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(card.dataset.project)}})});
+modalClose.addEventListener('click',closeProject);
+modal.addEventListener('click',e=>{if(e.target===modal)closeProject()});
+addEventListener('keydown',e=>{
+  if(e.key!=='Escape') return;
+  if(modal.classList.contains('show')) closeProject();
+  else if(drawer.classList.contains('open')) setMenu(false);
+});
+})();
+</script>
+</body>
+</html>
