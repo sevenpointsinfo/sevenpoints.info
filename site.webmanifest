@@ -1,0 +1,17 @@
+{
+  "name": "Seven Points",
+  "short_name": "Seven Points",
+  "description": "Construction, design and project delivery across the Kurdistan Region.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "3000x3000",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
