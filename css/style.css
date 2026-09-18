@@ -1,0 +1,580 @@
+/* ==========================================================
+   SEVEN POINTS CONSTRUCTION & GENERAL TRADING
+   Stylesheet — structured to mirror index.html section by section.
+   Palette is intentionally restrained: black + off-white dominate,
+   yellow is used only where the brief calls for it (accents, two
+   full-bleed sections, active states).
+========================================================== */
+
+/* ---------- 0. RESET & TOKENS ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+:root {
+  /* brand colors — exact values from brief */
+  --black: #080808;
+  --offwhite: #F5F4F0;
+  --yellow: #FCAF41;
+  --dark2: #111111;
+  --grey: #8E8E8E;
+  --white: #FFFFFF;
+
+  /* --grey (#8E8E8E) is the brief's brand grey — it reads fine on
+     dark backgrounds but fails WCAG contrast on --offwhite. This
+     darker variant is used anywhere grey text sits on --offwhite,
+     so body copy stays legible without changing the brand grey
+     everywhere else. See the contrast note near the bottom of this
+     file for the numbers. */
+  --grey-onlight: #5C5C5C;
+
+  /* derived */
+  --line-on-dark: rgba(255,255,255,.14);
+  --line-on-light: rgba(8,8,8,.12);
+  --line-on-yellow: rgba(8,8,8,.18);
+
+  /* type */
+  --font-sans: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* layout */
+  --maxw: 1480px;
+  --pad: 5vw;
+  --nav-h: 92px;
+  --nav-h-scrolled: 72px;
+}
+
+body {
+  background: var(--offwhite);
+  color: var(--black);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; background: none; border: none; cursor: pointer; color: inherit; }
+ul { list-style: none; }
+
+/* radius stays at zero across the site per brief; do not add rounding */
+:root { --radius: 0px; }
+
+/* visible focus states everywhere */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute; top: -48px; left: 0; z-index: 10000;
+  background: var(--yellow); color: var(--black);
+  padding: 12px 20px; font-weight: 700; font-size: 14px;
+}
+.skip-link:focus { top: 0; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+
+/* ---------- shared editorial type primitives ---------- */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .5px;
+  color: var(--black); margin-bottom: 18px;
+}
+.eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--yellow); }
+
+.headline {
+  font-weight: 800;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  line-height: .96;
+}
+/* Default accent treatment for headlines on --offwhite: literal
+   yellow (#FCAF41) text fails contrast on --offwhite at any size
+   (~1.7:1, needs 3:1+), so the accented word stays black and picks
+   up a solid yellow highlight band instead — same "important word
+   in yellow" effect, fully legible. On the hero (dark photo), plain
+   yellow fill is used instead — see .hero h1 .accent below. */
+.headline .accent {
+  color: var(--black);
+  background-image: linear-gradient(180deg, transparent 62%, var(--yellow) 62%);
+  background-repeat: no-repeat;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.section-lede {
+  color: var(--grey-onlight);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 640px;
+}
+
+.section { padding: clamp(70px, 10vw, 150px) 0; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 26px; font-weight: 700; font-size: 13px;
+  letter-spacing: 1px; text-transform: uppercase;
+  border: 1px solid currentColor; transition: background .25s ease, color .25s ease, border-color .25s ease;
+  white-space: nowrap;
+}
+.btn-fill-yellow { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+.btn-fill-yellow:hover { background: transparent; color: var(--yellow); }
+.btn-fill-black { background: var(--black); color: var(--white); border-color: var(--black); }
+.btn-fill-black:hover { background: transparent; color: var(--black); }
+.btn-outline-white { border-color: rgba(255,255,255,.55); color: var(--white); }
+.btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+.btn-outline-black { border-color: var(--black); color: var(--black); }
+.btn-outline-black:hover { background: var(--black); color: var(--white); }
+
+/* generic on-scroll reveal — used sparingly (headings only), one
+   orchestrated pattern rather than fade-up on every element */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================
+   1. NAVIGATION
+========================================================== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--pad);
+  background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,0));
+  transition: height .3s ease, background .3s ease, backdrop-filter .3s ease;
+}
+.nav.is-scrolled {
+  height: var(--nav-h-scrolled);
+  background: rgba(8,8,8,.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(255,255,255,.08);
+}
+
+.nav-logo img { height: 30px; width: auto; }
+.nav-logo { display: flex; align-items: center; }
+
+.nav-center { display: flex; gap: 40px; }
+.nav-center a {
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,.86);
+  position: relative; padding: 6px 0; transition: color .2s ease;
+}
+.nav-center a::after {
+  content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px;
+  background: var(--yellow); transition: width .25s ease;
+}
+.nav-center a:hover, .nav-center a:focus-visible { color: var(--white); }
+.nav-center a:hover::after, .nav-center a:focus-visible::after { width: 100%; }
+
+.nav-right a {
+  font-size: 13px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
+  color: var(--black); background: var(--yellow); padding: 11px 20px;
+  transition: background .2s ease, color .2s ease;
+}
+.nav-right a:hover { background: var(--white); }
+
+.nav-burger {
+  display: none; width: 40px; height: 40px; position: relative; z-index: 1001;
+}
+.nav-burger span {
+  position: absolute; left: 8px; right: 8px; height: 1.5px; background: var(--white);
+  transition: transform .3s ease, opacity .3s ease;
+}
+.nav-burger span:nth-child(1) { top: 15px; }
+.nav-burger span:nth-child(2) { top: 22px; }
+.nav-burger span:nth-child(3) { top: 29px; }
+.nav-burger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.is-active span:nth-child(2) { opacity: 0; }
+.nav-burger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-mobile {
+  position: fixed; inset: 0; z-index: 950;
+  background: var(--black);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 0 24px;
+  opacity: 0; visibility: hidden; transform: translateY(-12px);
+  transition: opacity .35s ease, transform .35s ease, visibility .35s;
+}
+.nav-mobile.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-mobile ul { display: flex; flex-direction: column; gap: 6px; }
+.nav-mobile a {
+  font-size: clamp(32px, 11vw, 52px); font-weight: 800; text-transform: uppercase;
+  color: var(--white); letter-spacing: -.02em; padding: 12px 0;
+  display: inline-block; border-bottom: 1px solid var(--line-on-dark);
+}
+.nav-mobile a:hover, .nav-mobile a:focus-visible { color: var(--yellow); }
+.nav-mobile-contact { margin-top: 32px; }
+.nav-mobile-contact a { color: var(--yellow); border-bottom: none; font-size: 16px; }
+
+/* ==========================================================
+   2. HERO
+========================================================== */
+.hero {
+  position: relative; height: 100svh; min-height: 560px;
+  display: flex; align-items: flex-end; overflow: hidden;
+  isolation: isolate;
+}
+.hero-media { position: absolute; inset: -4% -4% -4% -4%; z-index: -2; }
+.hero-media img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  will-change: transform;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(0deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.34) 46%, rgba(0,0,0,.5) 100%);
+}
+.hero-content { padding: 0 var(--pad) clamp(64px, 9vw, 110px); width: 100%; }
+.hero-eyebrow {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px;
+  color: rgba(255,255,255,.78); text-transform: uppercase; margin-bottom: 22px;
+}
+.hero h1 {
+  font-weight: 800; text-transform: uppercase; letter-spacing: -.03em;
+  font-size: clamp(44px, 8.4vw, 128px); line-height: .96; color: var(--white);
+  max-width: 1100px;
+  clip-path: inset(0 0 0 0);
+}
+.hero h1 .accent { color: var(--yellow); background: none; }
+.hero-row {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 40px; flex-wrap: wrap; margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,.22); padding-top: 26px;
+}
+.hero-copy { max-width: 480px; color: rgba(255,255,255,.82); font-size: 16px; line-height: 1.8; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ==========================================================
+   3. HERO → ABOUT TRANSITION
+   A single angled off-white plane overlaps the base of the hero.
+   Pure CSS, no canvas / circular reveal — robust at every breakpoint.
+========================================================== */
+.transition-seam {
+  position: relative; z-index: 5;
+  background: var(--offwhite);
+  clip-path: polygon(0 7vh, 100% 0, 100% 100%, 0 100%);
+  margin-top: -7vh;
+}
+@media (max-width: 768px) {
+  .transition-seam { clip-path: polygon(0 4vh, 100% 0, 100% 100%, 0 100%); margin-top: -4vh; }
+}
+
+/* ==========================================================
+   4. INDUSTRIES / DISCIPLINE MARQUEE (shared component)
+========================================================== */
+.marquee {
+  overflow: hidden; border-top: 1px solid var(--line-on-dark); border-bottom: 1px solid var(--line-on-dark);
+  background: var(--black); padding: 18px 0;
+}
+.marquee-track { display: flex; width: max-content; animation: marquee-scroll 42s linear infinite; }
+.marquee:hover .marquee-track, .marquee:focus-within .marquee-track { animation-play-state: paused; }
+.marquee-track span {
+  display: flex; align-items: center; gap: 32px; padding-right: 32px;
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: .5px;
+  color: rgba(255,255,255,.7); white-space: nowrap;
+}
+.marquee-track span i { color: var(--yellow); font-size: 5px; }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; overflow-x: auto; } }
+
+/* ==========================================================
+   5. ABOUT US
+========================================================== */
+.about { background: var(--offwhite); }
+.about-intro { max-width: 920px; margin-bottom: 64px; }
+.about-intro h2 { font-size: clamp(34px, 5.2vw, 68px); margin-bottom: 26px; }
+.about-intro p { color: var(--grey-onlight); font-size: 17px; line-height: 1.85; max-width: 660px; }
+
+/* tabs */
+.about-tabs {
+  display: flex; gap: clamp(24px, 4vw, 52px);
+  border-bottom: 1px solid var(--line-on-light);
+  margin-bottom: 56px; overflow-x: auto; scrollbar-width: none;
+}
+.about-tabs::-webkit-scrollbar { display: none; }
+.about-tab {
+  padding: 14px 2px 18px; font-size: 15px; font-weight: 600; white-space: nowrap;
+  color: var(--grey-onlight); position: relative; flex-shrink: 0;
+}
+.about-tab::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
+  background: var(--yellow); transform: scaleX(0); transform-origin: left; transition: transform .3s ease;
+}
+.about-tab[aria-selected="true"] { color: var(--black); }
+.about-tab[aria-selected="true"]::after { transform: scaleX(1); }
+.about-tab:hover { color: var(--black); }
+
+.about-panel { display: none; }
+.about-panel.is-active { display: block; animation: panel-in .4s ease; }
+@keyframes panel-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* panel: who we are */
+.who-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
+.who-media { aspect-ratio: 4/5; background: var(--dark2); overflow: hidden; }
+.who-media img { width: 100%; height: 100%; object-fit: cover; }
+.who-media-placeholder {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line-on-light); color: var(--grey-onlight);
+  font-family: var(--font-mono); font-size: 12px; text-align: center; padding: 24px;
+}
+.who-stats { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line-on-light); }
+.who-stat { padding: 30px 20px 30px 0; border-bottom: 1px solid var(--line-on-light); }
+.who-stat:nth-child(odd) { border-right: 1px solid var(--line-on-light); padding-right: 26px; }
+.who-stat:nth-child(even) { padding-left: 26px; }
+.who-stat-num { display: block; font-size: clamp(38px, 4.6vw, 64px); font-weight: 800; letter-spacing: -.03em; }
+/* yellow fill fails contrast at this size too — mark the emphasised
+   stat with a yellow underline instead, text stays black */
+.who-stat-num.accent { border-bottom: 4px solid var(--yellow); padding-bottom: 6px; width: fit-content; }
+.who-stat-label { margin-top: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--grey-onlight); letter-spacing: .3px; }
+
+/* panel: our values — numbered linear list, not cards */
+.values-list { border-top: 1px solid var(--line-on-light); }
+.value-row {
+  display: grid; grid-template-columns: 90px 260px 1fr; gap: 24px; align-items: baseline;
+  padding: 30px 0; border-bottom: 1px solid var(--line-on-light);
+}
+/* same reasoning as who-stat-num above: black text, yellow underline */
+.value-num { font-family: var(--font-mono); font-size: 14px; color: var(--black); border-bottom: 2px solid var(--yellow); padding-bottom: 4px; width: fit-content; }
+.value-title { font-size: clamp(20px, 2.2vw, 28px); font-weight: 700; letter-spacing: -.01em; }
+.value-desc { color: var(--grey-onlight); font-size: 15px; line-height: 1.75; max-width: 460px; }
+
+/* panel: our team — typography only */
+.team-statement { max-width: 780px; margin-bottom: 52px; }
+.team-statement h3 { font-size: clamp(30px, 4.4vw, 56px); }
+.team-marquee { border: 1px solid var(--line-on-light); padding: 22px 0; overflow: hidden; }
+.team-marquee .marquee-track { animation-duration: 55s; }
+.team-marquee .marquee-track span { color: var(--black); }
+.team-marquee .marquee-track span i { color: var(--yellow); }
+
+
+/* panel: founders */
+.founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+.founders-copy h3 { font-size: clamp(28px, 4vw, 48px); margin-bottom: 22px; }
+.founders-copy p { color: var(--grey-onlight); font-size: 16px; line-height: 1.85; max-width: 480px; }
+.founder-card { border: 1px solid var(--line-on-light); }
+.founder-photo {
+  aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center;
+  color: var(--grey-onlight); font-family: var(--font-mono); font-size: 12px; text-align: center;
+  border-bottom: 1px solid var(--line-on-light); padding: 24px;
+}
+.founder-meta { padding: 18px 20px; }
+.founder-meta .name { font-weight: 700; font-size: 16px; }
+.founder-meta .title { color: var(--grey-onlight); font-size: 13px; margin-top: 2px; font-family: var(--font-mono); }
+
+/* ==========================================================
+   6. STATISTICS / PROOF — full-bleed yellow
+========================================================== */
+.proof { background: var(--yellow); color: var(--black); }
+.proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-on-yellow); }
+.proof-cell { padding: 34px 24px 34px 0; border-right: 1px solid var(--line-on-yellow); }
+.proof-cell:first-child { padding-left: 0; }
+.proof-cell:last-child { border-right: 0; }
+.proof-num { display: block; font-size: clamp(48px, 7vw, 116px); font-weight: 800; letter-spacing: -.035em; line-height: 1; }
+.proof-label { margin-top: 14px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .4px; }
+
+/* ==========================================================
+   7. SERVICES — sticky scroll-driven stages
+========================================================== */
+.services { background: var(--offwhite); }
+.services-head { margin-bottom: 60px; max-width: 820px; }
+.services-head h2 { font-size: clamp(34px, 5.2vw, 68px); }
+
+.services-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); }
+.services-stages { min-width: 0; }
+
+.services-media { position: sticky; top: calc(var(--nav-h-scrolled) + 24px); align-self: start; height: 72vh; background: var(--dark2); overflow: hidden; }
+.services-media-frame { position: relative; width: 100%; height: 100%; }
+.services-media img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity .45s ease;
+}
+.services-media img.is-active { opacity: 1; }
+
+.stage { padding: 12vh 0; border-top: 1px solid var(--line-on-light); opacity: .4; transition: opacity .5s ease; }
+.stage:last-child { padding-bottom: 4vh; }
+.stage.is-active { opacity: 1; }
+.stage-num {
+  font-family: var(--font-mono); font-size: 13px; color: var(--grey-onlight); margin-bottom: 18px;
+  display: inline-block; border-bottom: 2px solid transparent; padding-bottom: 3px;
+  transition: color .3s ease, border-color .3s ease;
+}
+/* the one "active state" use of yellow the brief asks for — text
+   stays black/legible, yellow marks the state via the underline */
+.stage.is-active .stage-num { color: var(--black); border-color: var(--yellow); }
+.stage h3 { font-size: clamp(28px, 3.6vw, 46px); letter-spacing: -.02em; margin-bottom: 18px; }
+.stage-items { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-bottom: 18px; }
+.stage-items span { font-family: var(--font-mono); font-size: 12.5px; color: var(--grey-onlight); }
+.stage-items span:not(:last-child)::after { content: '/'; margin-left: 14px; color: var(--line-on-light); }
+.stage p { color: var(--grey-onlight); font-size: 15px; line-height: 1.8; max-width: 460px; }
+.stage-mobile-img { display: none; }
+
+@media (max-width: 900px) {
+  .services-inner { grid-template-columns: 1fr; }
+  .services-media { display: none; }
+  .stage { opacity: 1; padding: 8vh 0; } /* no scroll-driven dimming without the sticky panel to justify it */
+  .stage-mobile-img { display: block; aspect-ratio: 4/3; overflow: hidden; margin-bottom: 26px; background: var(--dark2); }
+  .stage-mobile-img img { width: 100%; height: 100%; object-fit: cover; }
+}
+
+/* ==========================================================
+   8. BRAND STATEMENT
+========================================================== */
+.statement { background: var(--offwhite); border-top: 1px solid var(--line-on-light); }
+.statement h2 { font-size: clamp(34px, 6vw, 92px); max-width: 1100px; }
+
+/* ==========================================================
+   9. STORY SECTIONS — Perfectly Designed / Carefully Planned / Smartly Executed
+========================================================== */
+.story { position: relative; height: 92vh; min-height: 520px; display: flex; align-items: flex-end; isolation: isolate; overflow: hidden; }
+.story-media { position: absolute; inset: 0; z-index: -2; }
+.story-media img { width: 100%; height: 100%; object-fit: cover; }
+.story::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.1) 55%); }
+.story-content { padding: 0 var(--pad) clamp(50px, 8vw, 90px); max-width: 720px; }
+.story-content h2 { font-size: clamp(38px, 6.4vw, 88px); color: var(--white); }
+.story-content p { margin-top: 22px; color: rgba(255,255,255,.82); font-size: 16px; line-height: 1.8; max-width: 480px; }
+
+/* ==========================================================
+   10. SELECTED PROJECTS — asymmetric editorial grid
+========================================================== */
+.projects { background: var(--offwhite); }
+.projects-head { margin-bottom: 64px; max-width: 820px; }
+.projects-head h2 { font-size: clamp(34px, 5.2vw, 68px); }
+
+.project-row { display: flex; margin-bottom: clamp(60px, 8vw, 120px); }
+.project-row:last-child { margin-bottom: 0; }
+.project-row.wide { justify-content: flex-start; }
+.project-row.narrow { justify-content: flex-end; }
+.project-card { width: 100%; cursor: default; }
+.project-row.wide .project-card { max-width: 78%; }
+.project-row.narrow .project-card { max-width: 56%; }
+
+.project-media { aspect-ratio: 16/10; overflow: hidden; background: var(--dark2); }
+.project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+@media (hover: hover) { .project-card:hover .project-media img { transform: scale(1.025); } }
+
+/* per-image crop control — adjust per real photo */
+.img-zakho-hero { object-position: 50% 45%; }
+.img-jade-hero { object-position: 50% 40%; }
+
+.project-meta { display: grid; grid-template-columns: 50px 1fr auto; gap: 20px; align-items: end; padding-top: 22px; border-top: 1px solid var(--line-on-light); margin-top: 22px; }
+.project-index { font-family: var(--font-mono); font-size: 13px; color: var(--black); border-bottom: 2px solid var(--yellow); padding-bottom: 3px; display: inline-block; }
+.project-meta h3 { font-size: clamp(22px, 2.6vw, 34px); letter-spacing: -.02em; margin-bottom: 6px; }
+.project-tags { font-family: var(--font-mono); font-size: 12.5px; color: var(--grey-onlight); }
+.project-location { font-family: var(--font-mono); font-size: 12px; color: var(--grey-onlight); text-align: right; white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .project-row, .project-row.wide, .project-row.narrow { justify-content: flex-start; }
+  .project-row.wide .project-card, .project-row.narrow .project-card { max-width: 100%; }
+  .project-meta { grid-template-columns: 36px 1fr; }
+  .project-location { grid-column: 2; text-align: left; margin-top: 4px; }
+}
+
+/* ==========================================================
+   11. TRUSTED PARTNERSHIP
+========================================================== */
+.partners { background: var(--dark2); color: var(--white); }
+.partners-head h2 { font-size: clamp(34px, 5.2vw, 68px); color: var(--white); margin-bottom: 60px; }
+.partners-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 1px solid var(--line-on-dark); }
+.partner-block { padding: 40px 40px 40px 0; border-right: 1px solid var(--line-on-dark); }
+.partner-block:last-child { border-right: 0; padding-left: 40px; padding-right: 0; }
+.client-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 40px; padding: 0 16px; margin-bottom: 26px;
+  border: 1px solid var(--line-on-dark); color: rgba(255,255,255,.5);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .5px;
+}
+.partner-block blockquote { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,.88); margin-bottom: 24px; }
+.partner-name { font-weight: 700; font-size: 14px; }
+.partner-role { color: rgba(255,255,255,.5); font-size: 12.5px; font-family: var(--font-mono); margin-top: 2px; }
+
+@media (max-width: 900px) {
+  .partners-grid { grid-template-columns: 1fr; }
+  .partner-block { border-right: 0; padding: 0 0 40px; border-bottom: 1px solid var(--line-on-dark); }
+  .partner-block:last-child { padding: 40px 0 0; border-bottom: 0; }
+}
+
+/* ==========================================================
+   12. CONTACT CTA — full-bleed yellow
+========================================================== */
+.contact-cta { background: var(--yellow); color: var(--black); }
+.contact-cta h2 { font-size: clamp(38px, 6.4vw, 96px); }
+.contact-cta .sub { font-size: clamp(38px, 6.4vw, 96px); color: rgba(8,8,8,.55); margin-top: 2px; }
+.contact-cta-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-top: 44px; padding-top: 30px; border-top: 1px solid var(--line-on-yellow); }
+.contact-cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ==========================================================
+   13. FOOTER
+========================================================== */
+.footer { background: var(--black); color: rgba(255,255,255,.7); padding: 80px 0 26px; }
+.footer-top { display: grid; grid-template-columns: 1.4fr .8fr .8fr; gap: 50px; padding-bottom: 60px; border-bottom: 1px solid var(--line-on-dark); }
+.footer-logo img { height: 28px; margin-bottom: 22px; }
+.footer-brand-name { color: var(--white); font-weight: 700; font-size: 15px; letter-spacing: .2px; }
+.footer-brand-sub { font-size: 13px; margin-top: 4px; }
+.footer-address { margin-top: 22px; font-size: 14px; line-height: 1.8; }
+.footer-col h4 { color: var(--white); font-size: 13px; font-weight: 700; margin-bottom: 18px; letter-spacing: .3px; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col a { font-size: 14px; transition: color .2s ease; }
+.footer-col a:hover { color: var(--yellow); }
+.footer-social { display: flex; gap: 10px; margin-top: 20px; }
+.footer-social a {
+  width: 36px; height: 36px; border: 1px solid var(--line-on-dark);
+  display: flex; align-items: center; justify-content: center; font-size: 13px;
+  transition: border-color .2s ease, color .2s ease;
+}
+.footer-social a:hover { border-color: var(--yellow); color: var(--yellow); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-top: 24px; font-size: 12.5px; }
+
+@media (max-width: 768px) {
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ==========================================================
+   14. RESPONSIVE — tablet
+========================================================== */
+@media (max-width: 1024px) {
+  :root { --pad: 32px; --nav-h: 80px; --nav-h-scrolled: 66px; }
+  .who-grid, .founders-grid { grid-template-columns: 1fr; }
+  .value-row { grid-template-columns: 50px 1fr; }
+  .value-desc { grid-column: 2; max-width: 100%; }
+  .proof-grid { grid-template-columns: repeat(2, 1fr); }
+  .proof-cell:nth-child(2n) { border-right: 0; }
+  .proof-cell:nth-child(n+3) { border-top: 1px solid var(--line-on-yellow); }
+}
+
+/* ==========================================================
+   15. RESPONSIVE — mobile
+========================================================== */
+@media (max-width: 768px) {
+  :root { --pad: 20px; --nav-h: 72px; --nav-h-scrolled: 60px; }
+  .nav-center { display: none; }
+  .nav-burger { display: block; }
+  .nav-right { display: none; }
+
+  .section { padding: 56px 0; }
+  .hero-row { flex-direction: column; align-items: flex-start; gap: 22px; }
+  .hero-actions { width: 100%; }
+  .hero-actions .btn { flex: 1; }
+
+  .who-stats { grid-template-columns: 1fr; }
+  .who-stat:nth-child(odd) { border-right: 0; padding-right: 0; }
+  .who-stat:nth-child(even) { padding-left: 0; }
+
+  .value-row { grid-template-columns: 1fr; gap: 10px; padding: 24px 0; }
+  .value-desc { grid-column: 1; }
+
+  .contact-cta-row { flex-direction: column; align-items: flex-start; }
+  .contact-cta-actions { width: 100%; }
+  .contact-cta-actions .btn { flex: 1; }
+
+  .story-content p { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .who-media { aspect-ratio: 4/4; }
+  .founder-photo { aspect-ratio: 4/4; }
+}
