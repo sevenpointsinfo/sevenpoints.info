@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seven Points Construction &amp; General Trading | Duhok, Kurdistan Region</title>
-<meta name="description" content="Seven Points delivers architecture, construction, interior design, fit-out, project management and site supervision across the Kurdistan Region, Iraq.">
-<meta name="keywords" content="construction, architecture, interior design, fit-out, project management, site supervision, general contracting, Duhok, Kurdistan Region, Iraq">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seven Points Construction &amp; General Trading — Duhok, Kurdistan Region</title>
+<meta name="description" content="Seven Points delivers architecture, construction, interior design, fit-out, project management and site supervision through one coordinated team in Duhok, Kurdistan Region, Iraq.">
 <meta name="theme-color" content="#080808">
 
-<meta property="og:type" content="business.business">
-<meta property="og:title" content="Seven Points Construction & General Trading">
-<meta property="og:description" content="Architecture, construction, interior design and project delivery through one coordinated team — Duhok, Kurdistan Region.">
-<meta property="og:image" content="https://sevenpoints.info/zakho-exterior-01.webp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Seven Points Construction &amp; General Trading">
+<meta property="og:description" content="Architecture, construction, interior design and project delivery through one coordinated team.">
+<meta property="og:image" content="https://sevenpoints.info/assets/images/hero.webp">
+<meta property="og:url" content="https://sevenpoints.info/">
 
 <script type="application/ld+json">
 {
@@ -19,6 +19,8 @@
   "@type": "GeneralContractor",
   "name": "Seven Points Construction & General Trading",
   "url": "https://sevenpoints.info",
+  "logo": "https://sevenpoints.info/assets/logos/logo.png",
+  "image": "https://sevenpoints.info/assets/images/hero.webp",
   "telephone": "+9647502205577",
   "email": "email@sevenpoints.info",
   "address": {
@@ -31,436 +33,511 @@
 }
 </script>
 
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/png" href="assets/logos/favicon.png">
+<link rel="apple-touch-icon" href="assets/logos/favicon.png">
+
+<!-- Hero image is requested early so the first screen appears fast -->
+<link rel="preload" as="image" href="assets/images/hero.webp" fetchpriority="high">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<!-- Marks the page as "JavaScript on" so scroll animations are only used when they can run -->
+<script>document.documentElement.classList.add('js');</script>
 </head>
+
 <body>
-<a href="#main" class="skip-link">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- ==========================================================
+<!-- =====================================================================
      NAVIGATION
-========================================================== -->
-<header class="nav" id="siteNav">
-  <a href="#hero" class="nav-logo" aria-label="Seven Points home">
-    <img src="logo.png" alt="Seven Points logo">
-    <span style="color:#fff;font-weight:800;font-size:15px;letter-spacing:.2px;">SEVEN&nbsp;POINTS</span>
-  </a>
+====================================================================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Seven Points — back to top">
+      <img src="assets/logos/mark.png" width="240" height="197" alt="">
+      <span class="nav__word">Seven Points</span>
+    </a>
 
-  <nav class="nav-center" aria-label="Primary">
-    <a href="#hero">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#partners">Clients</a>
-  </nav>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#top" data-spy="top">Home</a>
+      <a href="#about" data-spy="about">About Us</a>
+      <a href="#services" data-spy="services">Services</a>
+      <a href="#projects" data-spy="projects">Projects</a>
+      <a href="#partners" data-spy="partners">Clients</a>
+    </nav>
 
-  <div class="nav-right">
-    <a href="#contact">Contact</a>
+    <a class="nav__contact" href="#contact" data-spy="contact">Contact</a>
+
+    <button class="nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
   </div>
-
-  <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
-    <span></span><span></span><span></span>
-  </button>
 </header>
 
-<div class="nav-mobile" id="navMobile">
-  <ul>
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#about">About Us</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#partners">Clients</a></li>
-  </ul>
-  <div class="nav-mobile-contact">
-    <a href="#contact">Contact →</a>
+<!-- Full-screen mobile menu -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__links" aria-label="Mobile">
+    <a href="#top"><span>01</span>Home</a>
+    <a href="#about"><span>02</span>About Us</a>
+    <a href="#services"><span>03</span>Services</a>
+    <a href="#projects"><span>04</span>Projects</a>
+    <a href="#partners"><span>05</span>Clients</a>
+    <a href="#contact"><span>06</span>Contact</a>
+  </nav>
+  <div class="menu__foot">
+    <a href="tel:+9647502205577">+964 750 220 5577</a>
+    <a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a>
+    <span>Zirka Road, Duhok — Kurdistan Region</span>
   </div>
 </div>
 
 <main id="main">
 
-  <!-- ==========================================================
+  <!-- =====================================================================
        HERO
-  ========================================================== -->
-  <section class="hero" id="hero">
-    <div class="hero-media">
-      <img src="zakho-exterior-01.webp" alt="Zakho Conference Hall by Seven Points, Duhok" decoding="async">
+       Replace the photo: assets/images/hero.webp (about 2200–2400px wide)
+  ====================================================================== -->
+  <section class="hero" id="top" aria-label="Introduction">
+    <div class="hero__media">
+      <img src="assets/images/hero.webp" width="2000" height="1201"
+           alt="Zakho Conference Hall, designed and built by Seven Points"
+           fetchpriority="high" decoding="async">
+      <!-- Optional video later (MP4 H.264, max 1080p, muted). Replace the <img> above with:
+      <video autoplay muted loop playsinline poster="assets/images/hero.webp">
+        <source src="assets/videos/hero.mp4" type="video/mp4">
+      </video> -->
     </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Seven Points · Kurdistan Region</p>
-      <h1>We shape <span class="accent">spaces.</span><br>We deliver projects.</h1>
-      <div class="hero-row">
-        <p class="hero-copy">Architecture, construction, interior design and project delivery through one coordinated team.</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-fill-yellow">View Projects</a>
-          <a href="#contact" class="btn btn-outline-white">Start a Project</a>
+
+    <div class="hero__content wrap">
+      <p class="label label--light">Seven Points · Kurdistan Region</p>
+      <h1 class="hero__title" data-reveal="lines">
+        <span class="ln"><span>We shape <em>spaces.</em></span></span>
+        <span class="ln"><span>We deliver projects.</span></span>
+      </h1>
+      <div class="hero__row">
+        <p class="hero__copy" data-reveal="fade">Architecture, construction, interior design and project delivery through one coordinated team.</p>
+        <div class="hero__actions" data-reveal="fade">
+          <a class="btn btn--light" href="#projects">View projects</a>
+          <a class="btn btn--ghost-light" href="#contact">Start a project</a>
         </div>
+      </div>
+    </div>
+
+    <a class="hero__cue" href="#about" aria-label="Scroll to About Us">
+      <span>Scroll</span><i aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- =====================================================================
+       ABOUT US  (light panel rises out of the hero)
+  ====================================================================== -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="about__intro wrap">
+      <p class="label">About us</p>
+      <h2 class="about__title" id="about-title" data-reveal="lines">
+        <span class="ln"><span>Transforming ideas</span></span>
+        <span class="ln"><span>into spaces built</span></span>
+        <span class="ln"><span>for real <em>life.</em></span></span>
+      </h2>
+      <p class="about__lead" data-reveal="fade">Seven Points is a multidisciplinary construction and design company delivering architecture, interiors, fit-out, construction and project management through one coordinated team.</p>
+    </div>
+
+    <div class="about__body wrap">
+      <!-- Chapter navigation: follows the scroll, and each item jumps to its chapter -->
+      <aside class="about__aside">
+        <nav class="chapters" aria-label="About Seven Points">
+          <a href="#who" class="is-active" aria-current="true"><span>01</span>Who We Are</a>
+          <a href="#values"><span>02</span>Our Values</a>
+          <a href="#team"><span>03</span>Our Team</a>
+          <a href="#founders"><span>04</span>Founders</a>
+        </nav>
+        <div class="chapters__progress" aria-hidden="true"><i></i></div>
+      </aside>
+
+      <div class="about__chapters">
+
+        <!-- 01 WHO WE ARE -->
+        <article class="chapter" id="who" aria-labelledby="who-title">
+          <h3 class="chapter__label" id="who-title"><span>01</span>Who We Are</h3>
+          <figure class="who__media" data-reveal="img">
+            <!-- Replace with your best company / site photo: assets/images/company/who-we-are.webp -->
+            <img src="assets/images/company/who-we-are.webp" width="1600" height="961"
+                 alt="Zakho Conference Hall facade" loading="lazy" decoding="async">
+          </figure>
+          <dl class="stats">
+            <div class="stats__item"><dt>Completed Projects</dt><dd>150<em>+</em></dd></div>
+            <div class="stats__item"><dt>Years of Experience</dt><dd>5<em>+</em></dd></div>
+            <div class="stats__item"><dt>Clients &amp; Partners</dt><dd>50<em>+</em></dd></div>
+            <div class="stats__item"><dt>Kurdistan Region</dt><dd class="stats__word">Duhok</dd></div>
+          </dl>
+        </article>
+
+        <!-- 02 OUR VALUES -->
+        <article class="chapter" id="values" aria-labelledby="values-title">
+          <h3 class="chapter__label" id="values-title"><span>02</span>Our Values</h3>
+          <ol class="values">
+            <li class="value">
+              <span class="value__num">01</span>
+              <h4 class="value__title">Experience</h4>
+              <p class="value__text">Practical knowledge across architecture, fit-out and construction.</p>
+            </li>
+            <li class="value">
+              <span class="value__num">02</span>
+              <h4 class="value__title">Precision</h4>
+              <p class="value__text">Every stage is coordinated before execution begins.</p>
+            </li>
+            <li class="value">
+              <span class="value__num">03</span>
+              <h4 class="value__title">Reliability</h4>
+              <p class="value__text">Clear responsibility and dependable project delivery.</p>
+            </li>
+            <li class="value">
+              <span class="value__num">04</span>
+              <h4 class="value__title">Performance</h4>
+              <p class="value__text">Design and construction focused on lasting results.</p>
+            </li>
+          </ol>
+        </article>
+
+        <!-- 03 OUR TEAM  (typography only — add a real team photo here when you have one) -->
+        <article class="chapter" id="team" aria-labelledby="team-title">
+          <h3 class="chapter__label" id="team-title"><span>03</span>Our Team</h3>
+          <p class="chapter__statement">One team.<br>Multiple disciplines.</p>
+          <!-- Real team photo (optional):
+          <figure class="team__media"><img src="assets/images/company/team.webp" width="1600" height="1000" alt="The Seven Points team" loading="lazy" decoding="async"></figure> -->
+          <div class="ticker ticker--light" aria-label="Disciplines: Architects, Project Management, Construction Team, Interior Design, Site Supervision, MEP Coordination, Quantity Surveying">
+            <div class="ticker__track" aria-hidden="true">
+              <span>Architects</span><span>Project Management</span><span>Construction Team</span><span>Interior Design</span><span>Site Supervision</span><span>MEP Coordination</span><span>Quantity Surveying</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 FOUNDERS -->
+        <article class="chapter" id="founders" aria-labelledby="founders-title">
+          <h3 class="chapter__label" id="founders-title"><span>04</span>Founders</h3>
+          <p class="chapter__statement">Design and construction<br>should work as one.</p>
+          <p class="chapter__text">Seven Points was established around the belief that stronger projects come from coordinating design, management and execution under one responsible team.</p>
+
+          <div class="founders">
+            <!-- FOUNDER — replace the empty frame with a real portrait:
+                 <img src="assets/images/company/founder-01.webp" width="1200" height="1500" alt="Founder name" loading="lazy" decoding="async">
+                 and write the real name and title below. Copy this <figure> for a second founder. -->
+            <figure class="founder">
+              <div class="founder__photo" aria-hidden="true"></div>
+              <figcaption>
+                <span class="founder__name">Founder name</span>
+                <span class="founder__role">Title</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <div class="transition-seam"></div>
-
-  <!-- ==========================================================
-       ABOUT US
-  ========================================================== -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="about-intro">
-        <span class="eyebrow">about us</span>
-        <h2 class="headline reveal">Transforming ideas<br>into spaces built<br>for real life.</h2>
-        <p style="margin-top:26px;">Seven Points is a multidisciplinary construction and design company delivering architecture, interiors, fit-out, construction and project management through one coordinated team.</p>
-      </div>
-
-      <div class="about-tabs" role="tablist" aria-label="About Seven Points">
-        <button class="about-tab" role="tab" id="tab-who" aria-controls="panel-who" aria-selected="true">Who We Are</button>
-        <button class="about-tab" role="tab" id="tab-values" aria-controls="panel-values" aria-selected="false">Our Values</button>
-        <button class="about-tab" role="tab" id="tab-team" aria-controls="panel-team" aria-selected="false">Our Team</button>
-        <button class="about-tab" role="tab" id="tab-founders" aria-controls="panel-founders" aria-selected="false">Founders</button>
-      </div>
-
-      <!-- PANEL: WHO WE ARE -->
-      <div class="about-panel is-active" id="panel-who" role="tabpanel" aria-labelledby="tab-who">
-        <div class="who-grid">
-          <div class="who-media">
-            <img src="zakho-exterior-03.webp" alt="Zakho Conference Hall exterior" style="width:100%;height:100%;object-fit:cover;">
-          </div>
-          <div>
-            <div class="who-stats">
-              <div class="who-stat">
-                <span class="who-stat-num">150+</span>
-                <span class="who-stat-label">Completed Projects</span>
-              </div>
-              <div class="who-stat">
-                <span class="who-stat-num">5+</span>
-                <span class="who-stat-label">Years of Experience</span>
-              </div>
-              <div class="who-stat">
-                <span class="who-stat-num">50+</span>
-                <span class="who-stat-label">Clients &amp; Partners</span>
-              </div>
-              <div class="who-stat">
-                <span class="who-stat-num accent">Duhok</span>
-                <span class="who-stat-label">Kurdistan Region</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL: OUR VALUES -->
-      <div class="about-panel" id="panel-values" role="tabpanel" aria-labelledby="tab-values">
-        <div class="values-list">
-          <div class="value-row">
-            <span class="value-num">01</span>
-            <span class="value-title">Experience</span>
-            <span class="value-desc">Practical knowledge across architecture, fit-out and construction.</span>
-          </div>
-          <div class="value-row">
-            <span class="value-num">02</span>
-            <span class="value-title">Precision</span>
-            <span class="value-desc">Every stage is coordinated before execution begins.</span>
-          </div>
-          <div class="value-row">
-            <span class="value-num">03</span>
-            <span class="value-title">Reliability</span>
-            <span class="value-desc">Clear responsibility and dependable project delivery.</span>
-          </div>
-          <div class="value-row">
-            <span class="value-num">04</span>
-            <span class="value-title">Performance</span>
-            <span class="value-desc">Design and construction focused on lasting results.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL: OUR TEAM — typography only, no stock photo -->
-      <div class="about-panel" id="panel-team" role="tabpanel" aria-labelledby="tab-team">
-        <div class="team-statement">
-          <h3 class="headline">One team.<br>Multiple disciplines.</h3>
-        </div>
-        <div class="team-marquee" role="note" aria-label="Disciplines represented on the team">
-          <div class="marquee-track">
-            <span>Architects <i class="fa-solid fa-circle"></i></span>
-            <span>Project Management <i class="fa-solid fa-circle"></i></span>
-            <span>Construction Team <i class="fa-solid fa-circle"></i></span>
-            <span>Interior Design <i class="fa-solid fa-circle"></i></span>
-            <span>Site Supervision <i class="fa-solid fa-circle"></i></span>
-            <span>MEP Coordination <i class="fa-solid fa-circle"></i></span>
-            <span>Quantity Surveying <i class="fa-solid fa-circle"></i></span>
-            <span aria-hidden="true">Architects <i class="fa-solid fa-circle"></i></span>
-            <span aria-hidden="true">Project Management <i class="fa-solid fa-circle"></i></span>
-            <span aria-hidden="true">Construction Team <i class="fa-solid fa-circle"></i></span>
-            <span aria-hidden="true">Interior Design <i class="fa-solid fa-circle"></i></span>
-            <span aria-hidden="true">Site Supervision <i class="fa-solid fa-circle"></i></span>
-            <span aria-hidden="true">MEP Coordination <i class="fa-solid fa-circle"></i></span>
-            <span aria-hidden="true">Quantity Surveying <i class="fa-solid fa-circle"></i></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL: FOUNDERS -->
-      <div class="about-panel" id="panel-founders" role="tabpanel" aria-labelledby="tab-founders">
-        <div class="founders-grid">
-          <div class="founders-copy">
-            <h3 class="headline">Design and construction<br>should work as one.</h3>
-            <p style="margin-top:22px;">Seven Points was established around the belief that stronger projects come from coordinating design, management and execution under one responsible team.</p>
-          </div>
-          <!-- Replace this placeholder card with a real founder photo, name and title. -->
-          <div class="founder-card">
-            <div class="founder-photo">
-              Founder photo<br>assets/images/company/founder-01.webp
-            </div>
-            <div class="founder-meta">
-              <div class="name">Founder Name</div>
-              <div class="title">Title</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- =====================================================================
+       PROOF — yellow band
+  ====================================================================== -->
+  <section class="proof" aria-label="Seven Points in numbers">
+    <div class="proof__grid wrap">
+      <div class="proof__item"><span class="proof__num">150+</span><span class="proof__label">Completed projects</span></div>
+      <div class="proof__item"><span class="proof__num">5+</span><span class="proof__label">Years operating</span></div>
+      <div class="proof__item"><span class="proof__num">50+</span><span class="proof__label">Clients &amp; partners</span></div>
+      <div class="proof__item"><span class="proof__num">Duhok</span><span class="proof__label">Kurdistan Region</span></div>
     </div>
   </section>
 
-  <!-- ==========================================================
-       STATISTICS / PROOF — full-bleed yellow
-  ========================================================== -->
-  <section class="proof">
-    <div class="container" style="padding-top:70px;padding-bottom:70px;">
-      <div class="proof-grid">
-        <div class="proof-cell">
-          <span class="proof-num">150+</span>
-          <span class="proof-label">Completed Projects</span>
-        </div>
-        <div class="proof-cell">
-          <span class="proof-num">5+</span>
-          <span class="proof-label">Years Operating</span>
-        </div>
-        <div class="proof-cell">
-          <span class="proof-num">50+</span>
-          <span class="proof-label">Clients &amp; Partners</span>
-        </div>
-        <div class="proof-cell">
-          <span class="proof-num">Duhok</span>
-          <span class="proof-label">Kurdistan Region</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       MOVING DISCIPLINE STRIP
-  ========================================================== -->
-  <div class="marquee" role="note" aria-label="Our disciplines">
-    <div class="marquee-track">
-      <span>Architecture <i class="fa-solid fa-circle"></i></span>
-      <span>Construction <i class="fa-solid fa-circle"></i></span>
-      <span>Interior Design <i class="fa-solid fa-circle"></i></span>
-      <span>Fit-Out <i class="fa-solid fa-circle"></i></span>
-      <span>Project Management <i class="fa-solid fa-circle"></i></span>
-      <span>Site Supervision <i class="fa-solid fa-circle"></i></span>
-      <span aria-hidden="true">Architecture <i class="fa-solid fa-circle"></i></span>
-      <span aria-hidden="true">Construction <i class="fa-solid fa-circle"></i></span>
-      <span aria-hidden="true">Interior Design <i class="fa-solid fa-circle"></i></span>
-      <span aria-hidden="true">Fit-Out <i class="fa-solid fa-circle"></i></span>
-      <span aria-hidden="true">Project Management <i class="fa-solid fa-circle"></i></span>
-      <span aria-hidden="true">Site Supervision <i class="fa-solid fa-circle"></i></span>
+  <!-- =====================================================================
+       DISCIPLINE STRIP
+  ====================================================================== -->
+  <div class="ticker ticker--dark" aria-label="Architecture, Construction, Interior Design, Fit-Out, Project Management, Site Supervision">
+    <div class="ticker__track" aria-hidden="true">
+      <span>Architecture</span><span>Construction</span><span>Interior Design</span><span>Fit-Out</span><span>Project Management</span><span>Site Supervision</span>
     </div>
   </div>
 
-  <!-- ==========================================================
-       SERVICES — sticky scroll-driven stages
-  ========================================================== -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="services-head">
-        <span class="eyebrow">what we do</span>
-        <h2 class="headline reveal">From idea<br>to execution.</h2>
+  <!-- =====================================================================
+       SERVICES — sticky image left, stages right (desktop)
+       Replace photos in assets/images/services/
+  ====================================================================== -->
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="services__head wrap">
+      <p class="label label--light">What we do</p>
+      <h2 class="services__title" id="services-title" data-reveal="lines">
+        <span class="ln"><span>From idea</span></span>
+        <span class="ln"><span>to <em>execution.</em></span></span>
+      </h2>
+      <p class="services__intro" data-reveal="fade">Four stages, one responsible team. Each stage is handed to the next without losing the intent of the one before it.</p>
+    </div>
+
+    <div class="services__body wrap">
+      <div class="services__media" aria-hidden="true">
+        <div class="services__frame">
+          <img class="is-active" data-stage="0" src="assets/images/services/planning.webp" width="1600" height="961" alt="" decoding="async" loading="lazy">
+          <img data-stage="1" src="assets/images/services/designing.webp" width="1600" height="961" alt="" decoding="async" loading="lazy">
+          <img data-stage="2" src="assets/images/services/construction.webp" width="825" height="550" alt="" decoding="async" loading="lazy">
+          <img data-stage="3" src="assets/images/services/management.webp" width="825" height="550" alt="" decoding="async" loading="lazy">
+          <div class="services__count"><span class="services__current">01</span> / 04</div>
+        </div>
       </div>
 
-      <div class="services-inner">
-        <div class="services-media">
-          <div class="services-media-frame">
-            <img src="zakho-exterior-02.webp" data-stage="planning" alt="Planning stage — Seven Points" class="is-active" loading="lazy" decoding="async">
-            <img src="saloon2.jpg" data-stage="designing" alt="Designing stage — Seven Points" loading="lazy" decoding="async">
-            <img src="zakho-exterior-05.webp" data-stage="construction" alt="Construction stage — Seven Points" loading="lazy" decoding="async">
-            <img src="zakho-interior-02.webp" data-stage="management" alt="Management stage — Seven Points" loading="lazy" decoding="async">
-          </div>
-        </div>
+      <div class="services__stages">
+        <article class="stage is-active" data-stage="0">
+          <img class="stage__img" src="assets/images/services/planning.webp" width="1600" height="961" alt="Aerial view of the Zakho Conference Hall site plan" loading="lazy" decoding="async">
+          <span class="stage__num">01</span>
+          <h3 class="stage__title">Planning</h3>
+          <ul class="stage__list">
+            <li>Project Definition</li><li>Site Survey</li><li>Scope Coordination</li><li>Budget Planning</li>
+          </ul>
+          <p class="stage__text">We establish requirements, priorities, site constraints, budget and delivery strategy before construction begins.</p>
+        </article>
 
-        <div class="services-stages">
-          <div class="stage is-active" data-stage="planning">
-            <img class="stage-mobile-img" src="zakho-exterior-02.webp" alt="Planning stage — Seven Points" loading="lazy" decoding="async">
-            <span class="stage-num">01</span>
-            <h3>Planning</h3>
-            <div class="stage-items">
-              <span>Project Definition</span><span>Site Survey</span><span>Scope Coordination</span><span>Budget Planning</span>
-            </div>
-            <p>We establish requirements, priorities, site constraints, budget and delivery strategy before construction begins.</p>
-          </div>
+        <article class="stage" data-stage="1">
+          <img class="stage__img" src="assets/images/services/designing.webp" width="1600" height="961" alt="Auditorium interior design for the Zakho Conference Hall" loading="lazy" decoding="async">
+          <span class="stage__num">02</span>
+          <h3 class="stage__title">Designing</h3>
+          <ul class="stage__list">
+            <li>Architecture</li><li>Interior Design</li><li>Technical Coordination</li><li>Material Selection</li>
+          </ul>
+          <p class="stage__text">Architecture and interior design are developed around practical, coordinated and buildable solutions.</p>
+        </article>
 
-          <div class="stage" data-stage="designing">
-            <img class="stage-mobile-img" src="saloon2.jpg" alt="Designing stage — Seven Points" loading="lazy" decoding="async">
-            <span class="stage-num">02</span>
-            <h3>Designing</h3>
-            <div class="stage-items">
-              <span>Architecture</span><span>Interior Design</span><span>Technical Coordination</span><span>Material Selection</span>
-            </div>
-            <p>Architecture and interior design are developed around practical, coordinated and buildable solutions.</p>
-          </div>
+        <article class="stage" data-stage="2">
+          <img class="stage__img" src="assets/images/services/construction.webp" width="825" height="550" alt="Lit staircase with glass balustrade, Jade Touch Salon" loading="lazy" decoding="async">
+          <span class="stage__num">03</span>
+          <h3 class="stage__title">Construction</h3>
+          <ul class="stage__list">
+            <li>Construction</li><li>Fit-Out</li><li>Site Supervision</li><li>Quality Control</li>
+          </ul>
+          <p class="stage__text">Site execution, materials, trades and finishing are controlled by one responsible delivery team.</p>
+        </article>
 
-          <div class="stage" data-stage="construction">
-            <img class="stage-mobile-img" src="zakho-exterior-05.webp" alt="Construction stage — Seven Points" loading="lazy" decoding="async">
-            <span class="stage-num">03</span>
-            <h3>Construction</h3>
-            <div class="stage-items">
-              <span>Construction</span><span>Fit-Out</span><span>Site Supervision</span><span>Quality Control</span>
-            </div>
-            <p>Site execution, materials, trades and finishing are controlled by one responsible delivery team.</p>
-          </div>
-
-          <div class="stage" data-stage="management">
-            <img class="stage-mobile-img" src="zakho-interior-02.webp" alt="Management stage — Seven Points" loading="lazy" decoding="async">
-            <span class="stage-num">04</span>
-            <h3>Management</h3>
-            <div class="stage-items">
-              <span>Project Management</span><span>Scheduling</span><span>Reporting</span><span>Handover</span>
-            </div>
-            <p>Scheduling, coordination, reporting, quality control and handover are managed throughout project delivery.</p>
-          </div>
-        </div>
+        <article class="stage" data-stage="3">
+          <img class="stage__img" src="assets/images/services/management.webp" width="825" height="550" alt="Completed treatment area, Jade Touch Salon" loading="lazy" decoding="async">
+          <span class="stage__num">04</span>
+          <h3 class="stage__title">Management</h3>
+          <ul class="stage__list">
+            <li>Project Management</li><li>Scheduling</li><li>Reporting</li><li>Handover</li>
+          </ul>
+          <p class="stage__text">Scheduling, coordination, reporting, quality control and handover are managed throughout project delivery.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================
+  <!-- =====================================================================
        BRAND STATEMENT
-  ========================================================== -->
-  <section class="section statement">
-    <div class="container">
-      <h2 class="headline reveal">Bold design.<br>Clear strategy.<br><span class="accent">Controlled delivery.</span></h2>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       THREE STORY SECTIONS
-  ========================================================== -->
-  <section class="story">
-    <div class="story-media">
-      <img src="zakho-exterior-06.webp" alt="Zakho Conference Hall exterior" loading="lazy" decoding="async">
-    </div>
-    <div class="story-content">
-      <h2 class="headline">Perfectly<br>designed.</h2>
-      <p>Architecture and interior design shaped around function, proportion, materials and construction reality.</p>
-    </div>
-  </section>
-
-  <section class="story">
-    <div class="story-media">
-      <img src="saloon3.jpg" alt="Jade Touch Salon interior" loading="lazy" decoding="async">
-    </div>
-    <div class="story-content">
-      <h2 class="headline">Carefully<br>planned.</h2>
-      <p>Clear scope, coordinated requirements and disciplined preparation before execution.</p>
-    </div>
-  </section>
-
-  <section class="story">
-    <div class="story-media">
-      <img src="zakho-interior-01.webp" alt="Zakho Conference Hall interior" loading="lazy" decoding="async">
-    </div>
-    <div class="story-content">
-      <h2 class="headline">Smartly<br>executed.</h2>
-      <p>Construction and fit-out delivered through close supervision and attention to detail.</p>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       SELECTED PROJECTS — asymmetric editorial grid
-       To add project 03: duplicate a .project-row block, alternate
-       the "wide"/"narrow" class, and give it the next index number.
-  ========================================================== -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <div class="projects-head">
-        <span class="eyebrow">projects</span>
-        <h2 class="headline reveal">Selected projects.</h2>
-      </div>
-
-      <div class="project-row wide">
-        <article class="project-card">
-          <div class="project-media">
-            <img class="img-zakho-hero" src="zakho-exterior-04.webp" alt="Zakho Conference Hall" loading="lazy" decoding="async">
-          </div>
-          <div class="project-meta">
-            <span class="project-index">01</span>
-            <div>
-              <h3>Zakho Conference Hall</h3>
-              <span class="project-tags">Architecture · Construction · Interior</span>
-            </div>
-            <span class="project-location">Duhok / Zakho</span>
-          </div>
-        </article>
-      </div>
-
-      <div class="project-row narrow">
-        <article class="project-card">
-          <div class="project-media">
-            <img class="img-jade-hero" src="saloon.jpg" alt="Jade Touch Salon" loading="lazy" decoding="async">
-          </div>
-          <div class="project-meta">
-            <span class="project-index">02</span>
-            <div>
-              <h3>Jade Touch Salon</h3>
-              <span class="project-tags">Interior Design · Fit-Out</span>
-            </div>
-            <span class="project-location">Duhok</span>
-          </div>
-        </article>
+  ====================================================================== -->
+  <section class="statement" aria-label="Our approach">
+    <div class="wrap">
+      <h2 class="statement__title" data-reveal="lines">
+        <span class="ln"><span>Bold design.</span></span>
+        <span class="ln"><span>Clear strategy.</span></span>
+        <span class="ln"><span><em>Controlled delivery.</em></span></span>
+      </h2>
+      <div class="statement__foot" data-reveal="fade">
+        <p>Design intent, budget and site work are managed by the same people from the first survey to the final handover — so decisions made on paper survive on site.</p>
+        <a class="link-arrow" href="#projects">See the work</a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================
+  <!-- =====================================================================
+       STORIES — pinned sequence on desktop, stacked on mobile
+       Replace each photo with your best real project image
+  ====================================================================== -->
+  <section class="stories" aria-label="How we work">
+    <div class="stories__pin">
+      <article class="story is-active">
+        <img class="story__img" src="assets/images/projects/zakho-conference-hall/exterior-06.webp" width="1800" height="1081"
+             alt="Zakho Conference Hall, side elevation" loading="lazy" decoding="async">
+        <div class="story__text wrap">
+          <span class="story__count">01 — 03</span>
+          <h2 class="story__title"><span class="ln"><span>Perfectly</span></span><span class="ln"><span>designed.</span></span></h2>
+          <p class="story__copy">Architecture and interior design shaped around function, proportion, materials and construction reality.</p>
+        </div>
+      </article>
+      <article class="story">
+        <img class="story__img" src="assets/images/projects/zakho-conference-hall/interior-01.webp" width="1800" height="1081"
+             alt="Zakho Conference Hall reception" loading="lazy" decoding="async">
+        <div class="story__text wrap">
+          <span class="story__count">02 — 03</span>
+          <h2 class="story__title"><span class="ln"><span>Carefully</span></span><span class="ln"><span>planned.</span></span></h2>
+          <p class="story__copy">Clear scope, coordinated requirements and disciplined preparation before execution.</p>
+        </div>
+      </article>
+      <article class="story">
+        <!-- Best replaced with a real on-site construction photo -->
+        <img class="story__img" src="assets/images/projects/zakho-conference-hall/exterior-05.webp" width="1800" height="1081"
+             alt="Zakho Conference Hall, corner view" loading="lazy" decoding="async">
+        <div class="story__text wrap">
+          <span class="story__count">03 — 03</span>
+          <h2 class="story__title"><span class="ln"><span>Smartly</span></span><span class="ln"><span>executed.</span></span></h2>
+          <p class="story__copy">Construction and fit-out delivered through close supervision and attention to detail.</p>
+        </div>
+      </article>
+      <div class="stories__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SELECTED PROJECTS
+       To add a project: copy one <article class="project"> block, change the
+       number, text and image paths, and alternate project--wide / project--narrow.
+       Gallery images for each project are listed inside <ul class="project__gallery">.
+  ====================================================================== -->
+  <section class="projects" id="projects" aria-labelledby="projects-title">
+    <div class="projects__head wrap">
+      <p class="label">Projects</p>
+      <h2 class="projects__title" id="projects-title" data-reveal="lines">
+        <span class="ln"><span>Selected</span></span>
+        <span class="ln"><span>projects.</span></span>
+      </h2>
+    </div>
+
+    <div class="projects__list wrap">
+
+      <!-- PROJECT 01 -->
+      <article class="project project--wide project-zakho">
+        <button class="project__media" type="button" data-gallery="zakho" aria-label="Open Zakho Conference Hall gallery">
+          <img src="assets/images/projects/zakho-conference-hall/hero.webp" width="2000" height="1201"
+               alt="Zakho Conference Hall, front elevation" loading="lazy" decoding="async">
+        </button>
+        <div class="project__meta">
+          <span class="project__index">01</span>
+          <div class="project__name">
+            <h3>Zakho Conference Hall</h3>
+            <p>Architecture · Construction · Interior</p>
+          </div>
+          <span class="project__place">Duhok / Zakho</span>
+          <button class="project__open" type="button" data-gallery="zakho">View project</button>
+        </div>
+        <ul class="project__gallery" id="gallery-zakho" hidden data-title="Zakho Conference Hall">
+          <li data-src="assets/images/projects/zakho-conference-hall/exterior-01.webp" data-alt="Zakho Conference Hall at dusk"></li>
+          <li data-src="assets/images/projects/zakho-conference-hall/exterior-02.webp" data-alt="Aerial view of the site"></li>
+          <li data-src="assets/images/projects/zakho-conference-hall/interior-01.webp" data-alt="Reception"></li>
+          <li data-src="assets/images/projects/zakho-conference-hall/interior-02.webp" data-alt="Auditorium"></li>
+          <li data-src="assets/images/projects/zakho-conference-hall/exterior-03.webp" data-alt="Main facade"></li>
+          <li data-src="assets/images/projects/zakho-conference-hall/exterior-05.webp" data-alt="Corner view"></li>
+          <li data-src="assets/images/projects/zakho-conference-hall/exterior-06.webp" data-alt="Side elevation"></li>
+        </ul>
+      </article>
+
+      <!-- PROJECT 02 -->
+      <article class="project project--narrow project-jade">
+        <button class="project__media" type="button" data-gallery="jade" aria-label="Open Jade Touch Salon gallery">
+          <img src="assets/images/projects/jade-touch-salon/hero.webp" width="825" height="550"
+               alt="Jade Touch Salon, lounge with stone-lit arches" loading="lazy" decoding="async">
+        </button>
+        <div class="project__meta">
+          <span class="project__index">02</span>
+          <div class="project__name">
+            <h3>Jade Touch Salon</h3>
+            <p>Interior Design · Fit-Out</p>
+          </div>
+          <span class="project__place">Duhok</span>
+          <button class="project__open" type="button" data-gallery="jade">View project</button>
+        </div>
+        <ul class="project__gallery" id="gallery-jade" hidden data-title="Jade Touch Salon">
+          <li data-src="assets/images/projects/jade-touch-salon/interior-01.webp" data-alt="Styling stations"></li>
+          <li data-src="assets/images/projects/jade-touch-salon/interior-02.webp" data-alt="Nail bar"></li>
+          <li data-src="assets/images/projects/jade-touch-salon/interior-03.webp" data-alt="Stone feature wall and chandelier"></li>
+          <li data-src="assets/images/projects/jade-touch-salon/interior-04.webp" data-alt="Consultation area"></li>
+          <li data-src="assets/images/projects/jade-touch-salon/interior-05.webp" data-alt="Lit staircase"></li>
+          <li data-src="assets/images/projects/jade-touch-salon/interior-06.webp" data-alt="Reception desk"></li>
+          <li data-src="assets/images/projects/jade-touch-salon/interior-07.webp" data-alt="Wash stations"></li>
+          <li data-src="assets/images/projects/jade-touch-salon/interior-08.webp" data-alt="Glass balustrade"></li>
+        </ul>
+      </article>
+
+      <!-- PROJECT 03 — copy this template, remove the comment marks, and fill it in:
+      <article class="project project--wide project-new">
+        <button class="project__media" type="button" data-gallery="new" aria-label="Open Project name gallery">
+          <img src="assets/images/projects/project-folder/hero.webp" width="2000" height="1400" alt="Describe the photo" loading="lazy" decoding="async">
+        </button>
+        <div class="project__meta">
+          <span class="project__index">03</span>
+          <div class="project__name"><h3>Project name</h3><p>Service · Service</p></div>
+          <span class="project__place">City</span>
+          <button class="project__open" type="button" data-gallery="new">View project</button>
+        </div>
+        <ul class="project__gallery" id="gallery-new" hidden data-title="Project name">
+          <li data-src="assets/images/projects/project-folder/interior-01.webp" data-alt="Describe the photo"></li>
+        </ul>
+      </article>
+      -->
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
        TRUSTED PARTNERSHIP
-  ========================================================== -->
-  <section class="section partners" id="partners">
-    <div class="container">
-      <div class="partners-head">
-        <h2 class="headline">Trusted<br>partnership.</h2>
+  ====================================================================== -->
+  <section class="partners" id="partners" aria-labelledby="partners-title">
+    <div class="partners__grid wrap">
+      <div class="partners__head">
+        <p class="label label--light">Clients</p>
+        <h2 class="partners__title" id="partners-title" data-reveal="lines">
+          <span class="ln"><span>Trusted</span></span>
+          <span class="ln"><span>partnership.</span></span>
+        </h2>
       </div>
-      <div class="partners-grid">
-        <div class="partner-block">
-          <!-- Replace with: <img src="assets/images/clients/client-01.png" alt="Client name"> -->
-          <div class="client-mark">Client logo</div>
-          <blockquote>The team stayed on our site the whole way through — same faces from the first survey to the final walkthrough.</blockquote>
-          <div class="partner-name">Corporate client</div>
-          <div class="partner-role">Conference hall project, Zakho</div>
+
+      <div class="partners__body">
+        <p class="partners__lead" data-reveal="fade">Clients work with one Seven Points team from the first site visit to the day the keys are handed over. One contact, one programme, one standard.</p>
+
+        <ol class="commitments">
+          <li><span>01</span><strong>One point of responsibility</strong><p>Design, trades and site are coordinated under a single team.</p></li>
+          <li><span>02</span><strong>Direct communication</strong><p>Decisions, changes and progress are reported as they happen.</p></li>
+          <li><span>03</span><strong>Complete handover</strong><p>Every project closes with inspection, snagging and documentation.</p></li>
+        </ol>
+
+        <!-- CLIENT TESTIMONIALS — use only real quotes, with the client's permission.
+             Remove the comment marks and duplicate the <figure> for each client.
+        <div class="testimonials">
+          <figure class="testimonial">
+            <img class="testimonial__logo" src="assets/images/clients/client-01.png" width="240" height="80" alt="Client company name" loading="lazy">
+            <blockquote>Real client quote goes here.</blockquote>
+            <figcaption><strong>Client name</strong><span>Company · Project</span></figcaption>
+          </figure>
         </div>
-        <div class="partner-block">
-          <div class="client-mark">Client logo</div>
-          <blockquote>We changed a few finishes mid-project and it never threw the timeline. Communication was direct and fast.</blockquote>
-          <div class="partner-name">Private client</div>
-          <div class="partner-role">Interior fit-out, Duhok</div>
-        </div>
+        -->
+
+        <!-- CLIENT LOGOS — real logos only, saved as PNG/SVG in assets/images/clients/
+        <ul class="logos">
+          <li><img src="assets/images/clients/client-01.png" width="240" height="80" alt="Client name" loading="lazy"></li>
+          <li><img src="assets/images/clients/client-02.png" width="240" height="80" alt="Client name" loading="lazy"></li>
+        </ul>
+        -->
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================
-       CONTACT CTA — full-bleed yellow
-  ========================================================== -->
-  <section class="section contact-cta" id="contact">
-    <div class="container">
-      <h2 class="headline">Have a project<br>in mind?</h2>
-      <p class="headline sub">Let's build it<br>together.</p>
-      <div class="contact-cta-row">
-        <p style="max-width:420px;color:rgba(8,8,8,.72);font-size:15px;line-height:1.75;">Share your project type, location and timeline — we'll get back to you directly.</p>
-        <div class="contact-cta-actions">
-          <a href="https://wa.me/9647502205577" target="_blank" rel="noopener" class="btn btn-fill-black"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-          <a href="mailto:email@sevenpoints.info" class="btn btn-outline-black">Email Us</a>
+  <!-- =====================================================================
+       CONTACT
+  ====================================================================== -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="contact__title" id="contact-title" data-reveal="lines">
+        <span class="ln"><span>Have a project</span></span>
+        <span class="ln"><span>in mind?</span></span>
+      </h2>
+      <p class="contact__sub" data-reveal="lines">
+        <span class="ln"><span>Let’s build it</span></span>
+        <span class="ln"><span>together.</span></span>
+      </p>
+      <div class="contact__row">
+        <p class="contact__copy">Share your project type, location and timeline. We reply directly — no forms, no call centre.</p>
+        <div class="contact__actions">
+          <a class="btn btn--dark" href="https://wa.me/9647502205577" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>
+            WhatsApp
+          </a>
+          <a class="btn btn--line-dark" href="mailto:email@sevenpoints.info">Email us</a>
         </div>
       </div>
     </div>
@@ -468,54 +545,66 @@
 
 </main>
 
-<!-- ==========================================================
+<!-- =====================================================================
      FOOTER
-========================================================== -->
+====================================================================== -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-logo">
-        <!-- Replace with: <img src="assets/logos/logo-white.png" alt="Seven Points"> -->
-        <div class="footer-brand-name">Seven Points</div>
-        <div class="footer-brand-sub">Construction &amp; General Trading</div>
-        <div class="footer-address">
-          Zirka Road, Duhok<br>
-          Kurdistan Region, Iraq
-        </div>
-        <div class="footer-social">
-          <!-- Point these at real profile URLs -->
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+9647502205577">+964 750 220 5577</a></li>
-          <li><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></li>
-        </ul>
-      </div>
+  <div class="footer__grid wrap">
+    <div class="footer__brand">
+      <img src="assets/logos/logo-white.png" width="600" height="556" alt="Seven Points" loading="lazy">
+      <p class="footer__name">Seven Points<br><span>Construction &amp; General Trading</span></p>
     </div>
 
-    <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Seven Points Construction &amp; General Trading</span>
-      <span>Duhok, Kurdistan Region, Iraq</span>
+    <div class="footer__col">
+      <h4>Office</h4>
+      <p>Zirka Road<br>Duhok, Kurdistan Region<br>Iraq</p>
     </div>
+
+    <div class="footer__col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+9647502205577">+964 750 220 5577</a></li>
+        <li><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Follow</h4>
+      <!-- Replace "#" with your real profile links -->
+      <ul>
+        <li><a href="#" rel="noopener">Instagram</a></li>
+        <li><a href="#" rel="noopener">Facebook</a></li>
+        <li><a href="#" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom wrap">
+    <span>© <span data-year>2026</span> Seven Points Construction &amp; General Trading</span>
+    <a href="#top">Back to top ↑</a>
   </div>
 </footer>
 
-<script src="js/script.js"></script>
+<!-- Project gallery (filled by js/script.js) -->
+<dialog class="gallery" id="gallery" aria-labelledby="gallery-title">
+  <div class="gallery__bar">
+    <h2 class="gallery__title" id="gallery-title"></h2>
+    <span class="gallery__count"></span>
+    <button class="gallery__close" type="button" aria-label="Close gallery">Close</button>
+  </div>
+  <div class="gallery__list"></div>
+</dialog>
+
+<script src="js/script.js" defer></script>
 </body>
 </html>
