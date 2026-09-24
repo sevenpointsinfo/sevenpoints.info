@@ -44,12 +44,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="sp-style.css">
 
-<!-- Marks the page as "JavaScript on" so scroll animations are only used when they can run -->
-<script>document.documentElement.classList.add('js');</script>
+<!-- Marks the page as "JavaScript on" and starts the intro screen.
+     Safety net: the intro always disappears after 7 seconds, even if something fails. -->
+<script>
+(function (h) {
+  h.classList.add('js');
+  try { if (!matchMedia('(prefers-reduced-motion: reduce)').matches) h.classList.add('is-loading'); } catch (e) {}
+  setTimeout(function () { h.classList.remove('is-loading'); }, 7000);
+})(document.documentElement);
+</script>
 </head>
 
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+
+<!-- =====================================================================
+     INTRO / LOADING SCREEN
+====================================================================== -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__mark">
+    <img class="loader__ghost" src="sp-mark.png" width="240" height="197" alt="">
+    <img class="loader__fill" src="sp-mark.png" width="240" height="197" alt="">
+  </div>
+  <span class="loader__count">00</span>
+  <span class="loader__meta">Seven Points<br>Construction &amp; General Trading</span>
+  <span class="loader__place">Duhok — Kurdistan Region</span>
+  <i class="loader__bar"></i>
+</div>
 
 <!-- =====================================================================
      NAVIGATION
@@ -149,12 +170,12 @@
       <!-- Chapter navigation: follows the scroll, and each item jumps to its chapter -->
       <aside class="about__aside">
         <nav class="chapters" aria-label="About Seven Points">
+          <div class="chapters__progress" aria-hidden="true"><i></i></div>
           <a href="#who" class="is-active" aria-current="true"><span>01</span>Who We Are</a>
           <a href="#values"><span>02</span>Our Values</a>
           <a href="#team"><span>03</span>Our Team</a>
           <a href="#founders"><span>04</span>Founders</a>
         </nav>
-        <div class="chapters__progress" aria-hidden="true"><i></i></div>
       </aside>
 
       <div class="about__chapters">
@@ -168,9 +189,9 @@
                  alt="Zakho Conference Hall facade" loading="lazy" decoding="async">
           </figure>
           <dl class="stats">
-            <div class="stats__item"><dt>Completed Projects</dt><dd>150<em>+</em></dd></div>
-            <div class="stats__item"><dt>Years of Experience</dt><dd>5<em>+</em></dd></div>
-            <div class="stats__item"><dt>Clients &amp; Partners</dt><dd>50<em>+</em></dd></div>
+            <div class="stats__item"><dt>Completed Projects</dt><dd data-count>150<em>+</em></dd></div>
+            <div class="stats__item"><dt>Years of Experience</dt><dd data-count>5<em>+</em></dd></div>
+            <div class="stats__item"><dt>Clients &amp; Partners</dt><dd data-count>50<em>+</em></dd></div>
             <div class="stats__item"><dt>Kurdistan Region</dt><dd class="stats__word">Duhok</dd></div>
           </dl>
         </article>
@@ -222,31 +243,32 @@
           <p class="chapter__text">Seven Points was established around the belief that stronger projects come from coordinating design, management and execution under one responsible team.</p>
 
           <div class="founders">
-            <!-- FOUNDER — replace the empty frame with a real portrait:
-                 <img src="sp-founder-01.webp" width="1200" height="1500" alt="Founder name" loading="lazy" decoding="async">
-                 and write the real name and title below. Copy this <figure> for a second founder. -->
-            <figure class="founder">
-  <img
-    class="founder__photo"
-    src="mr.shiraz.png"
-    alt="Mr. Shiraz"
-    loading="lazy"
-    decoding="async"
-  >
-  <figcaption>
-    <span class="founder__name">Mr. Shiraz</span>
-    <span class="founder__role">Founder</span>
-  </figcaption>
-</figure>
+            <!-- To add another founder, copy this whole <figure> block -->
+            <figure class="founder" data-reveal="img">
+              <div class="founder__frame">
+                <img class="founder__photo" src="sp-founder-shiraz-aziz.webp" width="1000" height="1250"
+                     alt="Shiraz Aziz, owner and founder of Seven Points" loading="lazy" decoding="async">
+              </div>
+              <figcaption>
+                <span class="founder__name">Shiraz Aziz</span>
+                <span class="founder__role">Owner &amp; Founder</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
 
   <!-- =====================================================================
        PROOF — yellow band
   ====================================================================== -->
   <section class="proof" aria-label="Seven Points in numbers">
     <div class="proof__grid wrap">
-      <div class="proof__item"><span class="proof__num">150+</span><span class="proof__label">Completed projects</span></div>
-      <div class="proof__item"><span class="proof__num">5+</span><span class="proof__label">Years operating</span></div>
-      <div class="proof__item"><span class="proof__num">50+</span><span class="proof__label">Clients &amp; partners</span></div>
+      <div class="proof__item"><span class="proof__num" data-count>150+</span><span class="proof__label">Completed projects</span></div>
+      <div class="proof__item"><span class="proof__num" data-count>5+</span><span class="proof__label">Years operating</span></div>
+      <div class="proof__item"><span class="proof__num" data-count>50+</span><span class="proof__label">Clients &amp; partners</span></div>
       <div class="proof__item"><span class="proof__num">Duhok</span><span class="proof__label">Kurdistan Region</span></div>
     </div>
   </section>
@@ -332,7 +354,7 @@
   <!-- =====================================================================
        BRAND STATEMENT
   ====================================================================== -->
-  <section class="statement" aria-label="Our approach">
+  <section class="statement" aria-label="Our approach" data-drift>
     <div class="wrap">
       <h2 class="statement__title" data-reveal="lines">
         <span class="ln"><span>Bold design.</span></span>
@@ -403,7 +425,8 @@
 
       <!-- PROJECT 01 -->
       <article class="project project--wide project-zakho">
-        <button class="project__media" type="button" data-gallery="zakho" aria-label="Open Zakho Conference Hall gallery">
+        <button class="project__media" type="button" data-reveal="img" data-gallery="zakho" aria-label="Open Zakho Conference Hall gallery">
+          <span class="project__cursor" aria-hidden="true">View</span>
           <img src="sp-zakho-hero.webp" width="2000" height="1201"
                alt="Zakho Conference Hall, front elevation" loading="lazy" decoding="async">
         </button>
@@ -429,7 +452,8 @@
 
       <!-- PROJECT 02 -->
       <article class="project project--narrow project-jade">
-        <button class="project__media" type="button" data-gallery="jade" aria-label="Open Jade Touch Salon gallery">
+        <button class="project__media" type="button" data-reveal="img" data-gallery="jade" aria-label="Open Jade Touch Salon gallery">
+          <span class="project__cursor" aria-hidden="true">View</span>
           <img src="sp-jade-hero.webp" width="825" height="550"
                alt="Jade Touch Salon, lounge with stone-lit arches" loading="lazy" decoding="async">
         </button>
@@ -605,6 +629,8 @@
   <div class="gallery__list"></div>
 </dialog>
 
+<!-- Smooth scrolling library (optional — the site works normally if it doesn't load) -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
 <script src="sp-script.js" defer></script>
 </body>
 </html>
