@@ -116,52 +116,51 @@
   }
 
   /* ---------------------------------------------------------------------
-     Intro screen — counts to 100 while the hero photo loads, then lifts away
+     Intro — Seven Points logo animation
+     The drawing itself is pure CSS (sp-style.css, section 22). This part
+     decides WHEN the loader lifts: after the logo has filled (1.5s) and the
+     hero photo is ready — never later than 3.2s, even on slow connections.
   --------------------------------------------------------------------- */
-  const loader = $('.loader');
   const runIntro = (done) => {
-    if (!loader || !html.classList.contains('is-loading')) { if (loader) loader.remove(); done(); return; }
+    const loader = $('.loader');
+    const mode = html.classList.contains('is-intro-full') ? 'full'
+      : html.classList.contains('is-intro-short') ? 'short' : null;
+
+    if (!loader || !mode || !html.classList.contains('is-intro')) {
+      if (loader) loader.remove();
+      done();
+      return;
+    }
     if (lenis) lenis.stop();
 
-    let seen = null;
-    try { seen = sessionStorage.getItem('sp-intro'); } catch (e) { /* storage blocked */ }
-    const minTime = seen ? 700 : 1900;         // shorter on a second visit in the same session
-    const start = performance.now();
-    const countEl = $('.loader__count', loader);
+    const t0 = window.__spIntroStart || performance.now();
+    const elapsed = () => performance.now() - t0;
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, Math.max(0, ms)));
     const heroImg = $('.hero__media img');
-    let loaded = !heroImg || heroImg.complete;
-    let p = 0;
-    let finished = false;
+    const heroReady = new Promise((resolve) => {
+      if (!heroImg || heroImg.complete) { resolve(); return; }
+      heroImg.addEventListener('load', resolve, { once: true });
+      heroImg.addEventListener('error', resolve, { once: true });
+    });
 
-    const markLoaded = () => { loaded = true; };
-    if (!loaded) {
-      heroImg.addEventListener('load', markLoaded, { once: true });
-      heroImg.addEventListener('error', markLoaded, { once: true });
-    }
-    setTimeout(markLoaded, 4500);
+    const hold = mode === 'full' ? 1500 : 0;       // logo drawn, filled and scaling
+    const maxWait = mode === 'full' ? 3200 : 700;  // slow-connection safety
+    const revealAt = mode === 'full' ? 700 : 60;   // nav + headline, after exit starts
+    const removeAt = mode === 'full' ? 1450 : 300; // loader gone from the page
 
-    const finish = () => {
-      if (finished) return;
-      finished = true;
-      try { sessionStorage.setItem('sp-intro', '1'); } catch (e) { /* ignore */ }
-      loader.classList.add('is-leaving');
-      html.classList.remove('is-loading');
+    Promise.race([
+      Promise.all([heroReady, wait(hold - elapsed())]),
+      wait(maxWait - elapsed()),
+    ]).then(() => {
+      try { sessionStorage.setItem('sevenPointsIntroPlayed', 'true'); } catch (e) { /* storage blocked */ }
+      html.classList.add('is-intro-exit');
       if (lenis) lenis.start();
-      done();
-      setTimeout(() => loader.remove(), 1500);
-    };
-
-    const tick = (now) => {
-      if (!html.classList.contains('is-loading')) { finish(); return; }  // safety net fired
-      const t = clamp((now - start) / minTime);
-      const goal = loaded ? t : Math.min(t, 0.86);
-      p += (goal - p) * 0.14;
-      if (loaded && t >= 1 && p > 0.992) p = 1;
-      loader.style.setProperty('--p', p.toFixed(4));
-      countEl.textContent = String(Math.round(p * 100)).padStart(2, '0');
-      if (p < 1) requestAnimationFrame(tick); else setTimeout(finish, 250);
-    };
-    requestAnimationFrame(tick);
+      setTimeout(() => { html.classList.add('is-intro-reveal'); done(); }, revealAt);
+      setTimeout(() => {
+        html.classList.remove('is-intro', 'is-intro-full', 'is-intro-short', 'is-intro-exit', 'is-intro-reveal');
+        loader.remove();
+      }, removeAt);
+    });
   };
 
   /* ---------------------------------------------------------------------
