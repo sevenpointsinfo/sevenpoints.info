@@ -25,6 +25,14 @@
     $$('.ticker__track').forEach((track) => { track.innerHTML += track.innerHTML; });
   }
 
+  // Looping animations (tickers, hero scroll cue) pause while off screen
+  if ('IntersectionObserver' in window) {
+    const idle = new IntersectionObserver((entries) => {
+      entries.forEach((e) => e.target.classList.toggle('is-offscreen', !e.isIntersecting));
+    });
+    $$('.ticker, .hero').forEach((el) => idle.observe(el));
+  }
+
   /* ---------------------------------------------------------------------
      Smooth scrolling (desktop only, if the library loaded)
   --------------------------------------------------------------------- */
@@ -118,8 +126,9 @@
   /* ---------------------------------------------------------------------
      Intro — Seven Points logo animation
      The drawing itself is pure CSS (sp-style.css, section 22). This part
-     decides WHEN the loader lifts: after the logo has filled (1.5s) and the
-     hero photo is ready — never later than 3.2s, even on slow connections.
+     decides WHEN the loader lifts: after the solid logo has held (5.0s) and
+     the hero photo is ready — never later than 6.0s, so the whole intro
+     always ends before 8s. Afterwards nothing of the loader keeps running.
   --------------------------------------------------------------------- */
   const runIntro = (done) => {
     const loader = $('.loader');
@@ -137,28 +146,35 @@
     const elapsed = () => performance.now() - t0;
     const wait = (ms) => new Promise((resolve) => setTimeout(resolve, Math.max(0, ms)));
     const heroImg = $('.hero__media img');
+    let stopWaiting = () => {};
     const heroReady = new Promise((resolve) => {
       if (!heroImg || heroImg.complete) { resolve(); return; }
       heroImg.addEventListener('load', resolve, { once: true });
       heroImg.addEventListener('error', resolve, { once: true });
+      stopWaiting = () => {                         // tidy listeners if we stopped waiting
+        heroImg.removeEventListener('load', resolve);
+        heroImg.removeEventListener('error', resolve);
+      };
     });
 
-    const hold = mode === 'full' ? 1500 : 0;       // logo drawn, filled and scaling
-    const maxWait = mode === 'full' ? 3200 : 700;  // slow-connection safety
-    const revealAt = mode === 'full' ? 700 : 60;   // nav + headline, after exit starts
-    const removeAt = mode === 'full' ? 1450 : 300; // loader gone from the page
+    const hold = mode === 'full' ? 5000 : 0;       // drawn, outline held, filled, solid hold
+    const maxWait = mode === 'full' ? 6000 : 700;  // slow-connection safety
+    const revealAt = mode === 'full' ? 1100 : 60;  // nav + headline, after the panel starts lifting
+    const removeAt = mode === 'full' ? 2200 : 300; // loader removed from the page
 
     Promise.race([
       Promise.all([heroReady, wait(hold - elapsed())]),
       wait(maxWait - elapsed()),
     ]).then(() => {
+      stopWaiting();
       try { sessionStorage.setItem('sevenPointsIntroPlayed', 'true'); } catch (e) { /* storage blocked */ }
       html.classList.add('is-intro-exit');
       if (lenis) lenis.start();
       setTimeout(() => { html.classList.add('is-intro-reveal'); done(); }, revealAt);
       setTimeout(() => {
         html.classList.remove('is-intro', 'is-intro-full', 'is-intro-short', 'is-intro-exit', 'is-intro-reveal');
-        loader.remove();
+        loader.remove();                            // CSS animations end with the element
+        delete window.__spIntroStart;
       }, removeAt);
     });
   };
@@ -259,13 +275,14 @@
   const setPinned = () => {
     stories.classList.toggle('is-pinned', pinQuery.matches && !reduceMotion);
     if (!stories.classList.contains('is-pinned')) {
-      storyEls.forEach((s) => { s.style.removeProperty('--clip'); s.style.removeProperty('--zoom'); s.classList.add('is-active'); });
+      storyEls.forEach((s) => { s.style.removeProperty('--y'); s.style.removeProperty('--zoom'); s.classList.add('is-active'); });
     }
   };
   setPinned();
 
   let ticking = false;
   let lastY = window.scrollY;
+  let lastAboutScale = '';
   const requestUpdate = () => {
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   };
@@ -296,7 +313,8 @@
 
       // About: light panel widens from 92% to full width as it rises
       const aTop = about.getBoundingClientRect().top;
-      about.style.setProperty('--s', (0.92 + 0.08 * clamp((vh - aTop) / (vh * 0.85))).toFixed(4));
+      const s = (0.92 + 0.08 * clamp((vh - aTop) / (vh * 0.85))).toFixed(4);
+      if (s !== lastAboutScale) { about.style.setProperty('--s', s); lastAboutScale = s; }  // write only on change
 
       // About: reading progress along the chapter list
       if (progress && aboutBody) {
@@ -319,8 +337,9 @@
     }
 
     // Stories: pinned sequence, each photo revealed from below
-    if (stories.classList.contains('is-pinned')) {
-      const r = stories.getBoundingClientRect();
+    const sr = stories.getBoundingClientRect();
+    if (stories.classList.contains('is-pinned') && sr.top < vh && sr.bottom > 0) {
+      const r = sr;
       const run = r.height - vh;
       const t = clamp(-r.top / run) * storyEls.length;
       let active = 0;
@@ -329,7 +348,7 @@
         story.style.setProperty('--zoom', (1.08 - local * 0.05).toFixed(4));
         if (i > 0) {
           const reveal = clamp((t - (i - 0.3)) / 0.6);
-          story.style.setProperty('--clip', ((1 - reveal) * 100).toFixed(2) + '%');
+          story.style.setProperty('--y', ((1 - reveal) * 100).toFixed(2) + 'vh');
           if (reveal > 0.55) active = i;
         }
       });
