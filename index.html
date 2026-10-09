@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Seven Points delivers construction, architecture, interior, project management, site supervision, and event production solutions across the Kurdistan Region, Iraq.">
-<meta name="keywords" content="construction, architecture, interior design, fit-out, project management, site supervision, event production, Duhok, Kurdistan Region, Iraq">
-<meta name="theme-color" content="#030303">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seven Points Construction &amp; General Trading — Duhok, Kurdistan Region</title>
+<meta name="description" content="Seven Points delivers architecture, construction, interior design, fit-out, project management and site supervision through one coordinated team in Duhok, Kurdistan Region, Iraq.">
+<meta name="theme-color" content="#080808">
 
-<meta property="og:type" content="business.business">
-<meta property="og:title" content="Seven Points | Construction, Design & Project Delivery">
-<meta property="og:description" content="Construction, design, fit-out, project management and event production across the Kurdistan Region, Iraq.">
-<meta property="og:image" content="https://sevenpoints.info/sevenpointsbg.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Seven Points Construction &amp; General Trading">
+<meta property="og:description" content="Architecture, construction, interior design and project delivery through one coordinated team.">
+<meta property="og:image" content="https://sevenpoints.info/sp-hero.webp">
+<meta property="og:url" content="https://sevenpoints.info/">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Seven Points",
+  "@type": "GeneralContractor",
+  "name": "Seven Points Construction & General Trading",
   "url": "https://sevenpoints.info",
+  "logo": "https://sevenpoints.info/sevenpointslogoblacktxtsvg.svg",
+  "image": "https://sevenpoints.info/sp-hero.webp",
   "telephone": "+9647502205577",
   "email": "email@sevenpoints.info",
   "address": {
@@ -30,2289 +33,643 @@
 }
 </script>
 
-<title>Seven Points | Construction, Design & Project Delivery</title>
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/png" href="sp-favicon.png">
+<link rel="apple-touch-icon" href="sp-favicon.png">
+
+<!-- Hero image is requested early so the first screen appears fast -->
+<link rel="preload" as="image" href="sp-hero.webp" fetchpriority="high">
+<link rel="preload" as="image" href="sevenpointslogowhitetxtsvg.svg" type="image/svg+xml">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #030303;
-  --panel: rgba(255, 255, 255, .03);
-  --panel2: rgba(255, 255, 255, .07);
-  --text: #f8f8f8;
-  --muted: #b8b8b8;
-  --gold: #fbaf43;
-  --gold2: #ffc966;
-  --line: rgba(255, 255, 255, .09);
-  --shadow: 0 30px 100px rgba(0, 0, 0, .62);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at 18% 12%, rgba(251, 175, 67, .08), transparent 18%),
-    radial-gradient(circle at 82% 2%, rgba(255, 255, 255, .06), transparent 16%),
-    linear-gradient(180deg, #030303 0%, #070707 100%);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
-button, input, textarea, select { font: inherit; }
-
-.scroll-progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--gold2));
-  z-index: 999;
-  transition: width .1s ease;
-  box-shadow: 0 0 10px rgba(251, 175, 67, .4);
-  will-change: width;
-}
-
-.navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-  backdrop-filter: blur(12px);
-  background: rgba(3, 3, 3, .85);
-  border-bottom: 1px solid var(--line);
-  transition: all .3s ease;
-  will-change: transform;
-}
-
-.navbar.scrolled {
-  padding: 10px 20px;
-  background: rgba(3, 3, 3, .95);
-  box-shadow: var(--shadow);
-}
-
-.brand { display: flex; align-items: center; gap: 0; font-weight: 900; font-size: 18px; }
-.brand img { width: 70px; height: auto; filter: brightness(1.15); transition: transform .3s ease; }
-.brand img:hover { transform: scale(1.05); }
-
-.nav-menu { display: flex; gap: 32px; align-items: center; list-style: none; }
-
-.nav-menu a {
-  font-size: 13px; font-weight: 700; color: var(--muted);
-  transition: color .25s ease; text-transform: uppercase; letter-spacing: 1.2px;
-  position: relative;
-}
-
-.nav-menu a::after {
-  content: ''; position: absolute; bottom: -5px; left: 0;
-  width: 0; height: 2px; background: var(--gold); transition: width .3s ease;
-}
-
-.nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
-.nav-menu a.active::after, .nav-menu a:hover::after { width: 100%; }
-
-.hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 4px; z-index: 1001;
-}
-
-.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .3s ease; }
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
-
-.skip-link { position: absolute; top: -40px; left: 0; background: var(--gold); color: #111; padding: 8px 16px; z-index: 9999; border-radius: 0 0 8px 0; }
-.skip-link:focus { top: 0; }
-
-.hero {
-  min-height: 100svh;
-  padding: 120px 20px 80px;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; isolation: isolate; overflow: hidden;
-  background: linear-gradient(180deg, rgba(0, 0, 0, .18), rgba(0, 0, 0, .66)),
-    url('sevenpointsbg.png') center/cover no-repeat;
-}
-
-.hero::before {
-  content: ''; position: absolute; inset: -20%;
-  background: radial-gradient(circle at 50% 28%, rgba(251, 175, 67, .12), transparent 24%);
-  filter: blur(20px); opacity: .85; z-index: -2;
-  animation: subtlePulse 6s ease-in-out infinite; will-change: transform;
-}
-
-.hero::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.44) 46%, rgba(0,0,0,.86) 100%);
-  z-index: -1;
-}
-
-@keyframes subtlePulse {
-  0%, 100% { opacity: .85; transform: scale(1); }
-  50% { opacity: .92; transform: scale(1.01); }
-}
-
-.hero-inner { width: min(1120px, 100%); text-align: center; position: relative; z-index: 1; animation: fadeIn .8s ease-out; }
-
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-.hero-kicker {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 11px 18px; border: 1px solid rgba(251,175,67,.3);
-  border-radius: 999px; background: rgba(251,175,67,.08); backdrop-filter: blur(14px);
-  font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase; color: #eee;
-  margin-bottom: 18px; animation: slideInDown .6s ease-out;
-}
-
-@keyframes slideInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero h1 {
-  font-size: clamp(42px, 8vw, 98px); line-height: 1.01; font-weight: 900;
-  letter-spacing: -.06em; color: #fff; text-wrap: balance;
-  text-shadow: 0 18px 50px rgba(0,0,0,.68); animation: slideInDown .6s ease-out .1s backwards;
-}
-
-.hero h1 .gold {
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-
-.hero p {
-  max-width: 760px; margin: 22px auto 0;
-  font-size: clamp(16px, 2vw, 22px); color: #f3f3f3; opacity: .98;
-  animation: slideInDown .6s ease-out .2s backwards;
-}
-
-.hero-actions {
-  display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
-  margin-top: 32px; animation: slideInUp .6s ease-out .3s backwards;
-}
-
-@keyframes slideInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 10px; padding: 15px 24px; border-radius: 999px;
-  font-weight: 800; font-size: 15px; transition: all .25s ease;
-  cursor: pointer; border: none; will-change: transform;
-}
-
-.btn-primary {
-  border: 1.5px solid rgba(251,175,67,.6);
-  background: rgba(251,175,67,.08); color: #fff; backdrop-filter: blur(12px);
-}
-
-.btn-primary:hover, .btn-primary:focus {
-  transform: translateY(-3px); background: rgba(251,175,67,.15);
-  border-color: var(--gold); color: var(--gold);
-}
-
-.btn-secondary {
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: #111; box-shadow: 0 18px 36px rgba(251,175,67,.25);
-}
-
-.btn-secondary:hover, .btn-secondary:focus {
-  transform: translateY(-3px); box-shadow: 0 24px 48px rgba(251,175,67,.35);
-}
-
-.section { padding: 96px 20px; animation: fadeInUp .8s ease-out; }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.container { max-width: 1400px; margin: 0 auto; }
-
-.section-title {
-  font-size: clamp(30px, 5vw, 60px); text-align: center; font-weight: 900;
-  letter-spacing: -.04em; margin-bottom: 14px; animation: slideInUp .6s ease-out;
-}
-
-.section-sub {
-  max-width: 760px; margin: 0 auto 50px; text-align: center;
-  color: var(--muted); font-size: 18px; animation: slideInUp .6s ease-out .1s backwards;
-}
-
-.gold { color: var(--gold); }
-
-.about-wrap {
-  background: linear-gradient(180deg, rgba(251,175,67,.04), rgba(251,175,67,.01));
-  border: 1px solid rgba(251,175,67,.15); border-radius: 30px;
-  box-shadow: 0 20px 60px rgba(251,175,67,.1); backdrop-filter: blur(16px); padding: 60px 40px;
-}
-
-.about-content { max-width: 900px; margin: 0 auto; }
-.about-content p { font-size: 18px; line-height: 1.8; color: var(--muted); margin-bottom: 24px; }
-.about-content p:last-child { margin-bottom: 0; }
-
-.stats-wrap {
-  background: linear-gradient(180deg, rgba(251,175,67,.04), rgba(251,175,67,.01));
-  border: 1px solid rgba(251,175,67,.15); border-radius: 30px;
-  box-shadow: 0 20px 60px rgba(251,175,67,.1); backdrop-filter: blur(16px); padding: 40px 30px;
-}
-
-.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-
-.stat-card {
-  padding: 24px 16px; border-radius: 20px;
-  background: rgba(251,175,67,.05); border: 1px solid rgba(251,175,67,.1);
-  text-align: center; transition: all .24s ease; animation: slideInUp .6s ease-out; will-change: transform;
-}
-
-.stat-card:nth-child(2) { animation-delay: .1s; }
-.stat-card:nth-child(3) { animation-delay: .2s; }
-.stat-card:nth-child(4) { animation-delay: .3s; }
-
-.stat-card:hover {
-  transform: translateY(-6px); background: rgba(251,175,67,.1);
-  border-color: var(--gold); box-shadow: 0 12px 30px rgba(251,175,67,.15);
-}
-
-.stat-number {
-  display: block; font-size: clamp(38px, 7vw, 68px); font-weight: 900; line-height: 1;
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  font-variant-numeric: tabular-nums;
-}
-
-.stat-label { margin-top: 8px; color: #eaeaea; font-weight: 600; }
-
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-
-.card {
-  background: linear-gradient(180deg, rgba(251,175,67,.04), rgba(251,175,67,.01));
-  border: 1px solid rgba(251,175,67,.15); border-radius: 24px; padding: 32px 28px;
-  box-shadow: 0 20px 60px rgba(251,175,67,.08); transition: all .28s ease;
-  overflow: hidden; position: relative; animation: slideInUp .6s ease-out; will-change: transform;
-}
-
-.card:nth-child(2) { animation-delay: .1s; }
-.card:nth-child(3) { animation-delay: .2s; }
-
-.card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  background: linear-gradient(180deg, rgba(251,175,67,.08), rgba(251,175,67,.03));
-  border-color: var(--gold); box-shadow: 0 30px 80px rgba(251,175,67,.15);
-}
-
-.card i {
-  font-size: 48px;
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  margin-bottom: 20px; transition: transform .3s ease; display: inline-block; will-change: transform;
-}
-
-.card:hover i { transform: scale(1.15) rotate(8deg); }
-.card h3 { font-size: 24px; margin-bottom: 12px; color: #fff; }
-.card p { color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
-.card .btn-primary { padding: 8px 14px; font-size: 13px; }
-.card .btn-primary i { font-size: 14px; margin: 0; }
-
-.portfolio-filters { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
-
-.filter-btn {
-  padding: 10px 20px; border: 1.5px solid rgba(251,175,67,.3);
-  background: rgba(251,175,67,.06); color: var(--muted); border-radius: 999px;
-  font-weight: 700; font-size: 14px; cursor: pointer; transition: all .25s ease;
-  text-transform: uppercase; letter-spacing: 1px; will-change: background, color;
-}
-
-.filter-btn:hover, .filter-btn.active {
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: #111; border-color: var(--gold); box-shadow: 0 8px 20px rgba(251,175,67,.2);
-}
-
-.work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-
-.work {
-  position: relative; min-height: 320px; border-radius: 24px; overflow: hidden;
-  background: #111; box-shadow: 0 20px 60px rgba(251,175,67,.08);
-  cursor: pointer; opacity: 1; transition: opacity .4s ease, transform .3s ease; will-change: transform;
-}
-
-.work.hidden { display: none; opacity: 0; }
-
-.work img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform .4s ease; will-change: transform;
-}
-
-.work:hover img { transform: scale(1.08); }
-
-.work-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(251,175,67,.2), rgba(0,0,0,.95));
-  display: flex; align-items: flex-end; padding: 24px;
-  opacity: 0; transition: opacity .3s ease; pointer-events: none; will-change: opacity;
-}
-
-.work:hover .work-overlay { opacity: 1; }
-.work-overlay h3 { font-size: 24px; margin-bottom: 6px; color: #fff; }
-.work-overlay p { color: #ddd; font-size: 14px; }
-
-.see-all-btn { display: flex; justify-content: center; margin-top: 40px; }
-
-/* ─── MODAL ─── */
-.modal {
-  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,.95); z-index: 2000; overflow-y: auto;
-  animation: fadeIn .3s ease; will-change: opacity;
-}
-
-.modal.show { display: flex; align-items: flex-start; justify-content: center; padding: 20px; }
-
-.modal-content {
-  background: linear-gradient(180deg, rgba(251,175,67,.05), rgba(251,175,67,.01));
-  border: 1px solid rgba(251,175,67,.15); border-radius: 24px;
-  width: 100%; max-width: 900px; padding: 40px; margin-top: 40px;
-  animation: slideUp .4s ease; will-change: transform;
-}
-
-@keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.modal-header {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(251,175,67,.15);
-}
-
-.modal-title { font-size: 36px; font-weight: 900; color: #fff; }
-
-.modal-close {
-  background: rgba(251,175,67,.1); border: 1px solid rgba(251,175,67,.2);
-  color: var(--gold); width: 40px; height: 40px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; font-size: 24px; transition: all .25s ease; will-change: background, color;
-}
-
-.modal-close:hover { background: var(--gold); color: #111; }
-
-/* ─── PREMIUM CAROUSEL ─── */
-.carousel-gallery { margin-bottom: 32px; }
-
-.carousel-container {
-  position: relative; overflow: hidden;
-  border-radius: 16px; background: #0a0a0a;
-  height: 440px; margin-bottom: 12px;
-}
-
-.carousel-main {
-  width: 100%; height: 100%;
-  position: relative;
-}
-
-.carousel-main img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
-  position: absolute; inset: 0;
-  will-change: opacity, transform;
-}
-
-.carousel-overlay-ui {
-  position: absolute; inset: 0;
-  display: flex; align-items: center;
-  justify-content: space-between;
-  padding: 0 14px;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.carousel-arrow {
-  pointer-events: all;
-  width: 34px; height: 34px; border-radius: 50%;
-  background: rgba(10,10,10,.55);
-  border: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.85);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; font-size: 13px;
-  transition: background .2s, color .2s, transform .15s;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.carousel-arrow:hover {
-  background: rgba(251,175,67,.25);
-  color: var(--gold);
-  border-color: rgba(251,175,67,.4);
-  transform: scale(1.08);
-}
-
-.carousel-arrow:active { transform: scale(0.95); }
-
-.carousel-indicator {
-  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
-  background: rgba(10,10,10,.5); color: rgba(255,255,255,.75);
-  padding: 4px 12px; border-radius: 999px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,.1);
-  z-index: 10; pointer-events: none;
-}
-
-.carousel-thumbnails {
-  display: flex; gap: 8px; overflow-x: auto;
-  padding: 4px 2px; scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-.carousel-thumbnails::-webkit-scrollbar { display: none; }
-
-.carousel-thumb {
-  min-width: 76px; width: 76px; height: 76px;
-  border-radius: 10px; overflow: hidden; cursor: pointer;
-  border: 2px solid transparent;
-  transition: border-color .25s, transform .2s, box-shadow .25s;
-  flex-shrink: 0; background: #111;
-}
-
-.carousel-thumb img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform .3s ease;
-}
-
-.carousel-thumb.active {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 2px rgba(251,175,67,.2);
-}
-
-.carousel-thumb:hover:not(.active) {
-  border-color: rgba(251,175,67,.35);
-  transform: translateY(-2px);
-}
-
-.carousel-thumb:hover img { transform: scale(1.06); }
-
-/* ─── VIDEO SECTION ─── */
-.video-section {
-  margin-top: 32px; padding: 32px;
-  background: linear-gradient(180deg, rgba(251,175,67,.05), rgba(251,175,67,.01));
-  border: 1px solid rgba(251,175,67,.15); border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(251,175,67,.08);
-}
-
-.video-section h4 {
-  font-size: 18px; margin-bottom: 16px; color: #fff; font-weight: 700;
-  text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px;
-}
-
-.video-section h4 i {
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-
-.modal-video { border-radius: 14px; overflow: hidden; background: #111; box-shadow: 0 10px 30px rgba(251,175,67,.1); }
-.modal-video iframe { width: 100%; height: 440px; border: none; display: block; }
-
-.modal-description { margin-top: 32px; margin-bottom: 24px; }
-.modal-description h3 { font-size: 20px; margin-bottom: 10px; color: #fff; }
-.modal-description p { color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
-
-.modal-details {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px; margin-bottom: 32px; padding: 20px;
-  background: rgba(251,175,67,.03); border-radius: 16px; border: 1px solid rgba(251,175,67,.1);
-}
-
-.detail-item strong { display: block; color: var(--gold); margin-bottom: 6px; font-size: 14px; }
-.detail-item span { color: var(--muted); font-size: 13px; }
-
-.modal-actions { display: flex; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(251,175,67,.15); }
-.modal-actions .btn { flex: 1; }
-
-/* ─── PROCESS ─── */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-
-.step {
-  padding: 28px 24px; border-radius: 22px;
-  border: 1px solid rgba(251,175,67,.15); background: rgba(251,175,67,.03);
-  transition: all .28s ease; position: relative; animation: slideInUp .6s ease-out; will-change: transform;
-}
-
-.step:nth-child(2) { animation-delay: .1s; }
-.step:nth-child(3) { animation-delay: .2s; }
-.step:nth-child(4) { animation-delay: .3s; }
-
-.step::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--gold), transparent); opacity: 0; transition: opacity .28s ease;
-}
-
-.step:hover { transform: translateY(-8px); background: rgba(251,175,67,.06); border-color: var(--gold); box-shadow: 0 12px 30px rgba(251,175,67,.1); }
-.step:hover::before { opacity: 1; }
-
-.step-no {
-  width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #111;
-  font-weight: 900; margin-bottom: 16px; font-size: 20px; box-shadow: 0 8px 20px rgba(251,175,67,.2);
-}
-
-.step h3 { font-size: 20px; margin-bottom: 8px; color: #fff; }
-.step p { color: var(--muted); font-size: 14px; }
-
-/* ─── TESTIMONIALS ─── */
-.testimonials {
-  background: linear-gradient(180deg, rgba(251,175,67,.04), rgba(251,175,67,.01));
-  border: 1px solid rgba(251,175,67,.15); border-radius: 30px;
-  box-shadow: 0 20px 60px rgba(251,175,67,.08); backdrop-filter: blur(16px);
-  padding: 40px 30px; position: relative;
-}
-
-.testimonials-container { position: relative; overflow: hidden; }
-
-.testimonials-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px; transition: transform .5s ease; will-change: transform;
-}
-
-.quote {
-  padding: 24px; border-radius: 20px; background: rgba(251,175,67,.05);
-  border: 1px solid rgba(251,175,67,.1); transition: all .28s ease;
-  animation: slideInUp .6s ease-out; min-height: 100%; will-change: transform;
-}
-
-.quote:nth-child(2) { animation-delay: .1s; }
-.quote:nth-child(3) { animation-delay: .2s; }
-
-.quote:hover { transform: translateY(-6px); background: rgba(251,175,67,.08); border-color: var(--gold); box-shadow: 0 12px 30px rgba(251,175,67,.12); }
-.quote p { color: #f0f0f0; font-style: italic; font-size: 15px; line-height: 1.8; margin-bottom: 16px; }
-
-.quote-author { display: flex; align-items: center; gap: 12px; }
-
-.quote-avatar {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  display: flex; align-items: center; justify-content: center;
-  color: #111; font-weight: 900; font-size: 14px; flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(251,175,67,.2);
-}
-
-.quote-info strong { display: block; color: var(--gold); font-size: 14px; }
-.quote-info span { font-size: 12px; color: var(--muted); }
-
-.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
-
-.dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: rgba(251,175,67,.3); cursor: pointer; transition: all .3s ease; will-change: width, background;
-}
-
-.dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
-
-/* ─── CONTACT ─── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
-.contact-list { display: grid; gap: 14px; animation: slideInUp .6s ease-out; }
-
-.contact-item {
-  display: flex; gap: 14px; align-items: flex-start; padding: 20px;
-  border-radius: 18px; background: rgba(251,175,67,.03);
-  border: 1px solid rgba(251,175,67,.1); transition: all .25s ease; will-change: transform;
-}
-
-.contact-item:hover { transform: translateY(-5px); background: rgba(251,175,67,.06); border-color: var(--gold); box-shadow: 0 8px 20px rgba(251,175,67,.1); }
-
-.contact-ic {
-  width: 50px; height: 50px; border-radius: 14px;
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: #111; display: flex; align-items: center; justify-content: center;
-  flex: 0 0 auto; font-size: 20px; box-shadow: 0 8px 20px rgba(251,175,67,.2);
-}
-
-.contact-item h3 { font-size: 16px; margin-bottom: 4px; color: #fff; font-weight: 700; }
-.contact-item p, .contact-item a { color: var(--muted); font-size: 14px; }
-.contact-item a { color: var(--gold); text-decoration: none; font-weight: 600; }
-.contact-item a:hover { text-decoration: underline; }
-
-.form {
-  padding: 32px; border-radius: 24px; background: rgba(251,175,67,.03);
-  border: 1px solid rgba(251,175,67,.1); animation: slideInUp .6s ease-out .1s backwards;
-  box-shadow: 0 20px 60px rgba(251,175,67,.08);
-}
-
-.form-group { margin-bottom: 18px; }
-.form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #f0f0f0; }
-
-.form input, .form textarea, .form select {
-  width: 100%; padding: 16px; border-radius: 12px;
-  border: 1.5px solid rgba(251,175,67,.2); background: rgba(251,175,67,.03);
-  color: #fff; outline: none; transition: all .25s ease; font-size: 15px; min-height: 50px;
-}
-
-.form input::placeholder, .form textarea::placeholder { color: #a9a9a9; }
-
-.form input:focus, .form textarea:focus, .form select:focus {
-  border-color: var(--gold); background: rgba(251,175,67,.06); box-shadow: 0 0 0 3px rgba(251,175,67,.1);
-}
-
-.form-group.error input, .form-group.error textarea { border-color: #ff6b6b; background: rgba(255,107,107,.05); }
-
-.form-error { color: #ff6b6b; font-size: 13px; margin-top: 6px; display: none; font-weight: 600; }
-.form-group.error .form-error { display: block; }
-
-.form button {
-  width: 100%; padding: 18px; border: none; border-radius: 12px;
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: #111; font-weight: 900; cursor: pointer; transition: all .25s ease;
-  font-size: 15px; text-transform: uppercase; letter-spacing: 1px;
-  box-shadow: 0 8px 20px rgba(251,175,67,.2); will-change: transform;
-}
-
-.form button:hover, .form button:focus { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(251,175,67,.3); }
-.form button:disabled { opacity: 0.6; cursor: not-allowed; }
-
-.form-success {
-  padding: 16px; background: rgba(76,175,80,.1); border: 1px solid rgba(76,175,80,.3);
-  border-radius: 12px; color: #4cb050; margin-bottom: 16px; display: none; font-weight: 600;
-}
-
-.form-success.show { display: block; animation: slideInDown .3s ease; }
-
-/* ─── FLOATING ─── */
-.floating { position: fixed; right: 20px; bottom: 20px; z-index: 999; display: flex; flex-direction: column; gap: 12px; }
-
-.fab-btn {
-  width: 58px; height: 58px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 14px 30px rgba(251,175,67,.2); transition: all .25s ease;
-  border: none; cursor: pointer; font-size: 24px; text-decoration: none; will-change: transform;
-}
-
-.fab-btn:hover { transform: translateY(-4px) scale(1.08); }
-.whatsapp { background: #25D366; color: #fff; }
-.phone-call { background: var(--gold); color: #111; display: none; }
-
-.scroll-top {
-  background: rgba(251,175,67,.2); color: var(--gold);
-  opacity: 0; visibility: hidden; transition: all .25s ease;
-  border: 1px solid rgba(251,175,67,.3); will-change: opacity, visibility;
-}
-
-.scroll-top.show { opacity: 1; visibility: visible; }
-
-/* ─── FOOTER ─── */
-footer { background: rgba(3,3,3,.95); border-top: 1px solid var(--line); padding: 50px 20px 20px; color: var(--muted); }
-.footer-content { max-width: 1400px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 40px; }
-.footer-section h4 { color: #fff; font-size: 16px; margin-bottom: 16px; font-weight: 700; }
-.footer-section ul { list-style: none; }
-.footer-section ul li { margin-bottom: 10px; }
-.footer-section a { color: var(--muted); transition: color .25s ease; font-size: 14px; }
-.footer-section a:hover { color: var(--gold); }
-.footer-socials { display: flex; gap: 16px; }
-
-.social-btn {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: rgba(251,175,67,.1); border: 1px solid rgba(251,175,67,.2); color: var(--gold);
-  display: flex; align-items: center; justify-content: center;
-  transition: all .25s ease; cursor: pointer; text-decoration: none; will-change: background, color;
-}
-
-.social-btn:hover { background: var(--gold); color: #111; }
-.footer-bottom { border-top: 1px solid var(--line); padding-top: 20px; text-align: center; font-size: 14px; }
-.footer-bottom a { color: var(--gold); text-decoration: none; }
-.footer-bottom a:hover { text-decoration: underline; }
-
-/* ─── REVEAL ─── */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.show { opacity: 1; transform: translateY(0); }
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 768px) {
-  .navbar { padding: 12px 16px; }
-  .brand img { width: 56px; }
-
-  .nav-menu {
-    position: absolute; top: 56px; left: 0; right: 0;
-    flex-direction: column; gap: 0;
-    background: rgba(0,0,0,.95); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line); padding: 20px;
-    max-height: 0; overflow: hidden; transition: max-height .3s ease;
-  }
-
-  .nav-menu.active { max-height: 500px; }
-  .nav-menu li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
-  .nav-menu li:last-child { border-bottom: none; }
-  .nav-menu a { font-size: 12px; }
-  .nav-menu a::after { display: none; }
-  .nav-menu a.active { color: var(--gold); }
-  .hamburger { display: flex; }
-
-  .hero { padding: 110px 16px 60px; }
-  .hero h1 { font-size: clamp(28px, 10vw, 48px); }
-  .hero-actions { flex-direction: column; gap: 12px; }
-  .btn { width: 100%; }
-  .section { padding: 60px 16px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .stat-card { padding: 18px 12px; }
-  .stat-card:hover { transform: translateY(-4px); }
-  .stat-number { font-size: clamp(28px, 6vw, 48px); }
-  .stats-wrap { padding: 24px 16px; }
-  .about-wrap { padding: 40px 24px; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .card { padding: 24px 20px; }
-  .card:hover { transform: translateY(-8px); }
-  .card i { font-size: 40px; }
-  .portfolio-filters { gap: 8px; }
-  .filter-btn { padding: 8px 16px; font-size: 12px; }
-  .work-grid { grid-template-columns: 1fr; }
-  .work { min-height: 280px; }
-  .modal-content { padding: 24px; }
-  .modal-title { font-size: 24px; }
-  .carousel-container { height: 260px; }
-  .carousel-thumbnails { gap: 8px; }
-  .carousel-thumb { min-width: 64px; width: 64px; height: 64px; }
-  .video-section { padding: 20px; }
-  .modal-video iframe { height: 260px; }
-  .process-grid { grid-template-columns: 1fr; }
-  .step { padding: 24px 18px; }
-  .step:hover { transform: translateY(-6px); }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .form { padding: 24px; }
-  .form input, .form textarea, .form select { min-height: 56px; padding: 16px; }
-  .form button { padding: 16px; min-height: 54px; }
-  .floating { right: 16px; bottom: 16px; gap: 10px; }
-  .fab-btn { width: 52px; height: 52px; font-size: 20px; box-shadow: 0 10px 24px rgba(251,175,67,.15); }
-  .phone-call { display: flex; }
-  .section-title { font-size: clamp(24px, 6vw, 42px); }
-  .section-sub { font-size: 16px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-}
-
-@media (max-width: 480px) {
-  .brand img { width: 48px; }
-  .hero { padding: 90px 14px 50px; }
-  .hero h1 { font-size: clamp(24px, 8vw, 40px); }
-  .hero p { font-size: 14px; }
-  .stats-grid { grid-template-columns: 1fr; gap: 10px; }
-  .stat-number { font-size: clamp(24px, 5vw, 36px); }
-  .section-title { font-size: clamp(22px, 5vw, 36px); }
-  .card { padding: 20px 16px; }
-  .card h3 { font-size: 20px; }
-  .work { min-height: 240px; }
-  .modal-content { border-radius: 16px; max-width: calc(100% - 20px); }
-  .modal-title { font-size: 20px; }
-  .carousel-container { height: 200px; }
-  .carousel-thumb { min-width: 56px; width: 56px; height: 56px; }
-  .modal-video iframe { height: 200px; }
-  .fab-btn { width: 48px; height: 48px; font-size: 18px; }
-  .footer-grid { grid-template-columns: 1fr; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
-
-/* ─────────────────────────────────────────
-   SEVEN POINTS — ARCHITECTURAL REFINEMENT
-   Cleaner geometry, stronger typography, less template-style glow
-───────────────────────────────────────── */
-body {
-  background: #050505;
-}
-
-.container {
-  max-width: 1280px;
-}
-
-.navbar {
-  padding: 16px clamp(20px, 4vw, 64px);
-  background: rgba(5,5,5,.82);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  box-shadow: none;
-}
-
-.navbar.scrolled {
-  padding: 12px clamp(20px, 4vw, 64px);
-  background: rgba(5,5,5,.96);
-  box-shadow: 0 10px 40px rgba(0,0,0,.24);
-}
-
-.brand img { width: 62px; }
-
-.nav-menu { gap: 30px; }
-
-.nav-menu a {
-  font-size: 12px;
-  letter-spacing: 1.4px;
-}
-
-.nav-menu a::after { height: 1px; }
-
-.nav-menu .nav-cta {
-  color: #111;
-  background: var(--gold);
-  padding: 11px 16px;
-  border: 1px solid var(--gold);
-}
-
-.nav-menu .nav-cta::after { display: none; }
-
-.nav-menu .nav-cta:hover {
-  color: #111;
-  background: var(--gold2);
-}
-
-.hero {
-  justify-content: flex-start;
-  padding: 140px clamp(20px, 6vw, 92px) 90px;
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.58) 48%, rgba(0,0,0,.24) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.58)),
-    url('sevenpointsbg.png') center/cover no-repeat;
-}
-
-.hero::before {
-  opacity: .3;
-  animation: none;
-}
-
-.hero::after {
-  background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.7));
-}
-
-.hero-inner {
-  width: min(1180px, 100%);
-  margin: 0 auto;
-  text-align: left;
-}
-
-.hero-kicker {
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: none;
-  backdrop-filter: none;
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2.2px;
-  margin-bottom: 24px;
-}
-
-.hero h1 {
-  max-width: 1040px;
-  font-size: clamp(48px, 7.5vw, 104px);
-  letter-spacing: -.055em;
-  line-height: .98;
-  text-shadow: 0 12px 44px rgba(0,0,0,.5);
-}
-
-.hero p {
-  max-width: 650px;
-  margin: 28px 0 0;
-  font-size: clamp(16px, 1.7vw, 20px);
-  line-height: 1.7;
-  color: rgba(255,255,255,.82);
-}
-
-.hero-actions {
-  justify-content: flex-start;
-  margin-top: 34px;
-}
-
-.btn {
-  border-radius: 2px;
-  padding: 14px 20px;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.btn-primary {
-  border: 1px solid rgba(255,255,255,.32);
-  background: rgba(0,0,0,.24);
-  box-shadow: none;
-}
-
-.btn-primary:hover, .btn-primary:focus {
-  background: rgba(255,255,255,.08);
-  border-color: rgba(255,255,255,.58);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  box-shadow: none;
-  background: var(--gold);
-}
-
-.btn-secondary:hover, .btn-secondary:focus {
-  transform: translateY(-2px);
-  box-shadow: none;
-  background: var(--gold2);
-}
-
-.section {
-  padding: 118px clamp(20px, 4vw, 64px);
-  animation: none;
-  border-top: 1px solid rgba(255,255,255,.055);
-}
-
-.section-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 52px;
-}
-
-.eyebrow {
-  display: inline-block;
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.section-title {
-  text-align: left;
-  margin: 0;
-  font-size: clamp(42px, 6vw, 78px);
-  line-height: .98;
-  letter-spacing: -.05em;
-}
-
-.projects-section {
-  background: #080808;
-}
-
-.project-list {
-  display: grid;
-  gap: 88px;
-}
-
-.project-feature.work {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 0;
-  min-height: 0;
-  border-radius: 0;
-  overflow: visible;
-  background: transparent;
-  box-shadow: none;
-  cursor: pointer;
-}
-
-.project-feature.work:hover {
-  transform: none;
-}
-
-.project-image {
-  position: relative;
-  overflow: hidden;
-  background: #101010;
-  aspect-ratio: 16 / 9;
-}
-
-.project-feature.work .project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .75s cubic-bezier(.2,.7,.2,1), filter .4s ease;
-}
-
-.project-feature.work:hover .project-image img {
-  transform: scale(1.025);
-  filter: brightness(1.04);
-}
-
-.project-copy {
-  display: grid;
-  grid-template-columns: 70px minmax(0,1fr) auto;
-  align-items: end;
-  gap: 24px;
-  padding: 24px 0 0;
-  border-top: 1px solid rgba(255,255,255,.12);
-}
-
-.project-index {
-  color: var(--gold);
-  font-size: 12px;
-  letter-spacing: 1.5px;
-}
-
-.project-copy h3 {
-  font-size: clamp(26px, 3vw, 42px);
-  line-height: 1.05;
-  letter-spacing: -.035em;
-  margin-bottom: 7px;
-}
-
-.project-copy p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.project-link {
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  font-size: 11px;
-  white-space: nowrap;
-  padding-bottom: 5px;
-}
-
-.project-link i {
-  margin-left: 8px;
-  transition: transform .25s ease;
-}
-
-.project-feature:hover .project-link i {
-  transform: translateX(4px);
-}
-
-.projects-note {
-  margin-top: 56px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,.1);
-  display: flex;
-  justify-content: space-between;
-  gap: 28px;
-  align-items: center;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.projects-note a {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  font-size: 11px;
-  white-space: nowrap;
-}
-
-.expertise-section {
-  background: #050505;
-}
-
-.capabilities-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  border-top: 1px solid rgba(255,255,255,.14);
-}
-
-.capability {
-  position: relative;
-  min-height: 210px;
-  padding: 30px 36px 34px 0;
-  border-bottom: 1px solid rgba(255,255,255,.12);
-}
-
-.capability:nth-child(odd) {
-  border-right: 1px solid rgba(255,255,255,.12);
-  padding-right: 52px;
-}
-
-.capability:nth-child(even) {
-  padding-left: 52px;
-}
-
-.capability > span {
-  display: block;
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  margin-bottom: 40px;
-}
-
-.capability h3 {
-  font-size: clamp(24px, 2.4vw, 34px);
-  letter-spacing: -.025em;
-  margin-bottom: 12px;
-}
-
-.capability p {
-  color: var(--muted);
-  max-width: 520px;
-  font-size: 15px;
-  line-height: 1.75;
-}
-
-.company-section {
-  background: #0a0a0a;
-}
-
-.company-grid {
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: clamp(50px, 8vw, 120px);
-  align-items: start;
-}
-
-.company-grid .section-heading {
-  display: block;
-  margin: 0;
-}
-
-.company-copy {
-  padding-top: 28px;
-}
-
-.company-copy p {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.8;
-  max-width: 680px;
-}
-
-.company-copy .company-lead {
-  color: #fff;
-  font-size: clamp(21px, 2.3vw, 31px);
-  line-height: 1.45;
-  letter-spacing: -.02em;
-  margin-bottom: 28px;
-}
-
-.clean-stats {
-  margin-top: 88px;
-  border-top: 1px solid rgba(255,255,255,.14);
-  border-bottom: 1px solid rgba(255,255,255,.14);
-  gap: 0;
-}
-
-.clean-stats .stat-card {
-  background: transparent;
-  border: 0;
-  border-right: 1px solid rgba(255,255,255,.12);
-  border-radius: 0;
-  box-shadow: none;
-  text-align: left;
-  padding: 32px 24px;
-  animation: none;
-}
-
-.clean-stats .stat-card:first-child { padding-left: 0; }
-.clean-stats .stat-card:last-child { border-right: 0; }
-
-.clean-stats .stat-card:hover {
-  transform: none;
-  background: transparent;
-  border-color: rgba(255,255,255,.12);
-  box-shadow: none;
-}
-
-.clean-stats .stat-number {
-  font-size: clamp(34px, 4.8vw, 62px);
-  letter-spacing: -.045em;
-  background: none;
-  -webkit-text-fill-color: initial;
-  color: #fff;
-}
-
-.clean-stats .stat-location .stat-number {
-  color: var(--gold);
-  font-size: clamp(30px, 3.8vw, 52px);
-}
-
-.clean-stats .stat-label {
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-}
-
-.process-section {
-  background: #050505;
-}
-
-.process-grid {
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 0;
-  border-top: 1px solid rgba(255,255,255,.14);
-}
-
-.step {
-  padding: 28px 28px 10px 0;
-  border: 0;
-  border-right: 1px solid rgba(255,255,255,.12);
-  border-radius: 0;
-  background: transparent;
-  transition: none;
-  animation: none;
-  min-height: 220px;
-}
-
-.step + .step { padding-left: 28px; }
-.step:last-child { border-right: 0; }
-
-.step::before { display: none; }
-
-.step:hover {
-  transform: none;
-  background: transparent;
-  border-color: rgba(255,255,255,.12);
-  box-shadow: none;
-}
-
-.step-no {
-  width: auto;
-  height: auto;
-  border-radius: 0;
-  justify-content: flex-start;
-  background: none;
-  color: var(--gold);
-  box-shadow: none;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  margin-bottom: 48px;
-}
-
-.step h3 {
-  font-size: 26px;
-  letter-spacing: -.025em;
-  margin-bottom: 12px;
-}
-
-.step p {
-  font-size: 14px;
-  line-height: 1.75;
-}
-
-.contact-section {
-  background: #0a0a0a;
-}
-
-.contact-intro {
-  max-width: 900px;
-  margin-bottom: 58px;
-}
-
-.contact-intro p {
-  max-width: 650px;
-  margin-top: 24px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.75;
-}
-
-.contact-grid {
-  grid-template-columns: .85fr 1.15fr;
-  gap: clamp(28px, 5vw, 72px);
-}
-
-.contact-list {
-  gap: 0;
-  border-top: 1px solid rgba(255,255,255,.12);
-}
-
-.contact-item {
-  padding: 22px 0;
-  border: 0;
-  border-bottom: 1px solid rgba(255,255,255,.12);
-  border-radius: 0;
-  background: transparent;
-}
-
-.contact-item:hover {
-  transform: none;
-  background: transparent;
-  border-color: rgba(255,255,255,.12);
-  box-shadow: none;
-}
-
-.contact-ic {
-  width: 38px;
-  height: 38px;
-  border-radius: 0;
-  background: transparent;
-  color: var(--gold);
-  box-shadow: none;
-  font-size: 16px;
-  border: 1px solid rgba(251,175,67,.35);
-}
-
-.form {
-  padding: 34px;
-  border-radius: 0;
-  background: #0d0d0d;
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: none;
-  animation: none;
-}
-
-.form input, .form textarea, .form select {
-  border-radius: 0;
-  border: 1px solid rgba(255,255,255,.16);
-  background: #080808;
-}
-
-.form input:focus, .form textarea:focus, .form select:focus {
-  border-color: var(--gold);
-  background: #080808;
-  box-shadow: none;
-}
-
-.form button {
-  border-radius: 0;
-  box-shadow: none;
-  background: var(--gold);
-}
-
-.form button:hover, .form button:focus {
-  transform: none;
-  box-shadow: none;
-  background: var(--gold2);
-}
-
-.modal {
-  background: rgba(0,0,0,.94);
-}
-
-.modal-content {
-  max-width: 1040px;
-  border-radius: 0;
-  border-color: rgba(255,255,255,.14);
-  background: #090909;
-  box-shadow: 0 30px 80px rgba(0,0,0,.45);
-}
-
-.carousel-container,
-.carousel-thumb,
-.video-section,
-.modal-video,
-.modal-details {
-  border-radius: 0;
-}
-
-.video-section {
-  box-shadow: none;
-  border-color: rgba(255,255,255,.12);
-  background: #0c0c0c;
-}
-
-.modal-video video {
-  width: 100%;
-  max-height: 560px;
-  display: block;
-  background: #000;
-}
-
-.modal-details {
-  border-color: rgba(255,255,255,.12);
-  background: #0c0c0c;
-}
-
-.floating {
-  right: 20px;
-  bottom: 20px;
-}
-
-.fab-btn {
-  width: 52px;
-  height: 52px;
-  border-radius: 2px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.3);
-}
-
-.scroll-top {
-  background: #101010;
-  border-color: rgba(255,255,255,.16);
-}
-
-footer {
-  background: #030303;
-  padding: 64px clamp(20px, 4vw, 64px) 24px;
-}
-
-.footer-content { max-width: 1280px; }
-
-.footer-grid-clean {
-  grid-template-columns: 1.5fr .7fr 1fr;
-  gap: 60px;
-}
-
-.footer-logo {
-  width: 74px;
-  margin-bottom: 22px;
-}
-
-.footer-brand p {
-  max-width: 390px;
-  line-height: 1.7;
-}
-
-.footer-bottom {
-  text-align: left;
-  margin-top: 20px;
-  font-size: 12px;
-}
-
-@media (max-width: 900px) {
-  .capabilities-grid { grid-template-columns: 1fr; }
-  .capability,
-  .capability:nth-child(odd),
-  .capability:nth-child(even) {
-    padding: 28px 0 30px;
-    border-right: 0;
-  }
-
-  .company-grid { grid-template-columns: 1fr; }
-  .company-copy { padding-top: 0; }
-
-  .process-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .step:nth-child(2) { border-right: 0; }
-  .step:nth-child(3), .step:nth-child(4) { border-top: 1px solid rgba(255,255,255,.12); }
-  .step:nth-child(3) { padding-left: 0; }
-
-  .footer-grid-clean { grid-template-columns: 1fr 1fr; }
-  .footer-brand { grid-column: 1 / -1; }
-}
-
-@media (max-width: 768px) {
-  .navbar { padding: 12px 16px; }
-  .navbar.scrolled { padding: 10px 16px; }
-
-  .nav-menu {
-    top: 64px;
-    padding: 12px 20px 22px;
-    background: rgba(5,5,5,.98);
-  }
-
-  .nav-menu .nav-cta {
-    display: inline-block;
-    margin-top: 8px;
-    text-align: center;
-  }
-
-  .hero {
-    min-height: 92svh;
-    padding: 120px 18px 64px;
-    background-position: 58% center;
-  }
-
-  .hero h1 {
-    font-size: clamp(42px, 12vw, 66px);
-  }
-
-  .hero-actions {
-    flex-direction: row;
-  }
-
-  .hero-actions .btn {
-    width: auto;
-  }
-
-  .section {
-    padding: 82px 18px;
-  }
-
-  .section-heading {
-    margin-bottom: 38px;
-  }
-
-  .project-list { gap: 62px; }
-
-  .project-copy {
-    grid-template-columns: 42px minmax(0,1fr);
-    gap: 14px;
-  }
-
-  .project-link {
-    grid-column: 2;
-    margin-top: 8px;
-  }
-
-  .projects-note {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .clean-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .clean-stats .stat-card,
-  .clean-stats .stat-card:first-child {
-    padding: 24px 18px 24px 0;
-  }
-
-  .clean-stats .stat-card:nth-child(2) { border-right: 0; padding-left: 18px; }
-  .clean-stats .stat-card:nth-child(3),
-  .clean-stats .stat-card:nth-child(4) { border-top: 1px solid rgba(255,255,255,.12); }
-  .clean-stats .stat-card:nth-child(4) { border-right: 0; padding-left: 18px; }
-
-  .process-grid { grid-template-columns: 1fr; }
-  .step,
-  .step + .step,
-  .step:nth-child(3) {
-    padding: 26px 0 28px;
-    border-right: 0;
-    border-top: 1px solid rgba(255,255,255,.12);
-    min-height: 0;
-  }
-  .step:first-child { border-top: 0; }
-  .step-no { margin-bottom: 26px; }
-
-  .contact-grid { grid-template-columns: 1fr; }
-
-  .footer-grid-clean { grid-template-columns: 1fr; gap: 36px; }
-  .footer-brand { grid-column: auto; }
-
-  .modal-video video { max-height: 320px; }
-}
-
-@media (max-width: 480px) {
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .project-image { aspect-ratio: 4 / 3; }
-
-  .clean-stats .stat-number {
-    font-size: 34px;
-  }
-
-  .form { padding: 24px 18px; }
-
-  .modal-content { padding: 20px; }
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sp-style.css">
+
+<!-- INTRO MODE (runs before anything is drawn, so there is no flash)
+     full  = first visit in this browser session: complete logo animation
+     short = already seen this session: 250ms fade only
+     none  = visitor prefers reduced motion: no intro
+     Safety net: the intro is always removed after 9 seconds. -->
+<script>
+(function (h) {
+  h.classList.add('js');
+  var mode = 'none';
+  try {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      mode = sessionStorage.getItem('sevenPointsIntroPlayed') ? 'short' : 'full';
+    }
+  } catch (e) { mode = 'full'; }
+  if (mode !== 'none') { h.classList.add('is-intro'); h.classList.add('is-intro-' + mode); }
+  window.__spIntroStart = performance.now();
+  setTimeout(function () { h.classList.remove('is-intro', 'is-intro-full', 'is-intro-short'); }, 9000);
+})(document.documentElement);
+</script>
 </head>
 
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<div class="scroll-progress"></div>
+<!-- =====================================================================
+     INTRO — Seven Points logo animation
+     The logo below is an inline COPY of sevenpointslogowhitetxtsvg.svg
+     (same geometry, colours removed) so each shape can be drawn.
+     Styles: sp-style.css → section "22. INTRO".  Logic: sp-script.js → "Intro".
+====================================================================== -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__panel"></div>
+  <div class="loader__stage">
+    <svg class="loader__logo" viewBox="0 0 177.26 162.37" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <polygon class="loader__part loader__part--mark" style="--d:0.00s;--t:1.10s" points="147.38 59.12 147.38 42.46 129.17 32.83 129.17 99.34 134.59 104.57 152.16 104.57 152.16 59.12"/>
+      <polygon class="loader__part loader__part--mark" style="--d:0.25s;--t:1.45s" points="121.15 0 115.52 2.92 108.53 6.54 108.5 6.55 108.49 6.55 106.41 7.62 106.4 7.63 87.97 52.64 80.16 52.64 98.64 7.72 98.64 0 25.11 0 25.17 19.65 71.29 19.65 57.16 52.64 35.45 52.64 35.45 59.55 54.2 59.55 37.61 98.27 37.52 104.57 58.8 104.57 77.32 59.55 85.14 59.55 66.7 104.57 72.53 104.57 111.71 10.19 111.71 10.18 115.61 8.16 116.12 39.26 116.11 39.27 116.11 104.57 121.93 104.57 121.93 35.82 128.45 31.92 128.45 4.45 123.33 1.33"/>
+      <path class="loader__part loader__part--type" style="--d:0.90s;--t:.45s" d="M11.54,128.77c-.55-.34-1.16-.61-1.83-.81-.67-.2-1.34-.38-2-.53-.67-.15-1.28-.31-1.83-.46-.55-.15-1-.36-1.33-.61-.34-.25-.51-.59-.51-1,0-.35.1-.66.3-.93.2-.27.53-.49.99-.66.46-.17,1.05-.25,1.77-.25s1.46.1,2.21.31c.75.21,1.5.53,2.26.96l1.15-2.83c-.75-.48-1.62-.83-2.6-1.07-.98-.24-1.98-.36-2.99-.36-1.52,0-2.78.23-3.79.68-1.01.45-1.76,1.06-2.26,1.82-.5.76-.75,1.6-.75,2.52,0,.86.17,1.57.52,2.12.34.55.79,1,1.35,1.33.55.34,1.16.61,1.83.83.67.21,1.34.4,2,.54.67.15,1.28.3,1.83.46s1,.37,1.33.62.51.6.51,1.02c0,.34-.11.64-.32.9-.22.26-.55.46-1,.61-.45.15-1.05.22-1.78.22-.97,0-1.92-.16-2.87-.47-.94-.31-1.76-.72-2.45-1.21l-1.27,2.81c.72.55,1.67,1,2.86,1.35,1.18.35,2.42.52,3.71.52,1.54,0,2.81-.23,3.81-.69,1.01-.46,1.76-1.07,2.27-1.82.51-.75.76-1.58.76-2.49,0-.84-.17-1.54-.52-2.1-.34-.55-.79-1-1.35-1.34Z"/>
+      <polygon class="loader__part loader__part--type" style="--d:0.95s;--t:.45s" points="28.43 133.93 19.66 133.93 19.66 130.2 27.15 130.2 27.15 127.29 19.66 127.29 19.66 123.79 28.14 123.79 28.14 120.8 15.96 120.8 15.96 136.92 28.43 136.92"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.00s;--t:.45s" points="39.69 136.92 46.67 120.8 42.96 120.8 37.99 132.31 33.09 120.8 29.06 120.8 36.01 136.92"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.05s;--t:.45s" points="60.48 133.93 51.71 133.93 51.71 130.2 59.19 130.2 59.19 127.29 51.71 127.29 51.71 123.79 60.18 123.79 60.18 120.8 48 120.8 48 136.92 60.48 136.92"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.10s;--t:.45s" points="67.14 127.14 75.17 136.92 78.24 136.92 78.24 120.8 74.55 120.8 74.55 130.58 66.54 120.8 63.45 120.8 63.45 136.92 67.14 136.92"/>
+      <path class="loader__part loader__part--type" style="--d:1.15s;--t:.45s" d="M92.3,132.47h3.25c1.44,0,2.69-.23,3.73-.7,1.04-.47,1.85-1.14,2.42-2.01.57-.87.85-1.91.85-3.11s-.28-2.26-.85-3.13c-.57-.88-1.37-1.55-2.42-2.01-1.04-.47-2.29-.7-3.73-.7h-6.98v16.12h3.73v-4.44ZM97.92,124.58c.57.49.85,1.18.85,2.07s-.28,1.56-.85,2.05c-.57.49-1.43.74-2.58.74h-3.04v-5.59h3.04c1.15,0,2.01.25,2.58.74Z"/>
+      <path class="loader__part loader__part--type" style="--d:1.20s;--t:.45s" d="M106.91,134.82c.79.75,1.73,1.34,2.81,1.75,1.08.41,2.26.62,3.53.62s2.42-.21,3.49-.62c1.07-.41,2-.99,2.79-1.74.79-.74,1.41-1.63,1.85-2.65.45-1.02.67-2.13.67-3.33s-.22-2.32-.67-3.33-1.06-1.88-1.85-2.64c-.79-.75-1.72-1.34-2.79-1.75-1.07-.41-2.24-.62-3.51-.62s-2.42.21-3.5.62c-1.08.41-2.01,1-2.81,1.75s-1.42,1.63-1.85,2.65c-.44,1.01-.66,2.12-.66,3.32s.22,2.3.66,3.32c.44,1.01,1.05,1.9,1.84,2.65ZM108.57,126.77c.25-.63.61-1.17,1.07-1.63.46-.46.99-.81,1.6-1.06s1.27-.37,1.99-.37,1.39.12,2,.37c.61.25,1.15.6,1.6,1.06.45.46.81,1.01,1.06,1.63.25.63.38,1.33.38,2.09s-.13,1.47-.38,2.1c-.25.63-.61,1.17-1.07,1.63-.46.46-.99.81-1.6,1.06-.61.25-1.27.37-1.99.37s-1.39-.12-2-.37c-.61-.25-1.15-.6-1.6-1.06-.45-.46-.81-1.01-1.06-1.65-.25-.64-.38-1.33-.38-2.08s.13-1.47.38-2.09Z"/>
+      <rect class="loader__part loader__part--type" style="--d:1.25s;--t:.45s" x="124.86" y="120.8" width="3.73" height="16.12"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.30s;--t:.45s" points="136.09 127.14 144.13 136.92 147.19 136.92 147.19 120.8 143.51 120.8 143.51 130.58 135.5 120.8 132.41 120.8 132.41 136.92 136.09 136.92"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.35s;--t:.45s" points="149.19 123.84 154.35 123.84 154.35 136.92 158.08 136.92 158.08 123.84 163.24 123.84 163.24 120.8 149.19 120.8"/>
+      <path class="loader__part loader__part--type" style="--d:1.40s;--t:.45s" d="M176.74,130.1c-.34-.55-.79-1-1.35-1.34-.55-.34-1.16-.61-1.83-.81-.67-.2-1.34-.38-2-.53-.67-.15-1.28-.31-1.83-.46-.55-.15-1-.36-1.33-.61-.34-.25-.51-.59-.51-1,0-.35.1-.66.3-.93.2-.27.53-.49.99-.66.46-.17,1.05-.25,1.77-.25s1.46.1,2.21.31c.75.21,1.5.53,2.26.96l1.15-2.83c-.75-.48-1.62-.83-2.6-1.07-.98-.24-1.98-.36-2.99-.36-1.52,0-2.78.23-3.79.68-1.01.45-1.76,1.06-2.26,1.82-.5.76-.75,1.6-.75,2.52,0,.86.17,1.57.52,2.12.34.55.79,1,1.35,1.33.55.34,1.16.61,1.83.83.67.21,1.34.4,2,.54.67.15,1.28.3,1.83.46s1,.37,1.33.62.51.6.51,1.02c0,.34-.11.64-.32.9-.22.26-.55.46-1,.61-.45.15-1.05.22-1.78.22-.97,0-1.92-.16-2.87-.47-.94-.31-1.76-.72-2.45-1.21l-1.27,2.81c.72.55,1.67,1,2.86,1.35,1.18.35,2.42.52,3.71.52,1.54,0,2.81-.23,3.81-.69,1.01-.46,1.76-1.07,2.27-1.82.51-.75.76-1.58.76-2.49,0-.84-.17-1.54-.52-2.1Z"/>
+      <path class="loader__part loader__part--type" style="--d:1.45s;--t:.45s" d="M32.32,150c.51-.51,1.12-.9,1.82-1.18.7-.28,1.47-.41,2.32-.41s1.63.16,2.35.47c.72.32,1.38.79,1.96,1.42l1.94-1.82c-.75-.89-1.67-1.56-2.77-2.02-1.09-.45-2.3-.68-3.62-.68-1.24,0-2.39.2-3.43.61s-1.96.98-2.74,1.73c-.78.75-1.39,1.62-1.82,2.64-.43,1.01-.65,2.12-.65,3.32s.22,2.3.65,3.32c.43,1.01,1.03,1.89,1.81,2.64.78.75,1.69,1.32,2.74,1.73,1.05.41,2.19.61,3.42.61,1.34,0,2.55-.23,3.64-.69,1.09-.46,2.01-1.13,2.77-2.01l-1.94-1.84c-.58.65-1.24,1.13-1.96,1.44-.72.32-1.51.47-2.35.47s-1.62-.14-2.32-.42c-.7-.28-1.31-.67-1.82-1.18-.51-.51-.91-1.11-1.2-1.8s-.43-1.45-.43-2.28.14-1.59.43-2.28.68-1.29,1.2-1.8Z"/>
+      <path class="loader__part loader__part--type" style="--d:1.50s;--t:.45s" d="M58.36,148.14c-.78-.75-1.7-1.33-2.75-1.74s-2.21-.62-3.47-.62-2.4.21-3.46.62-1.98,1-2.77,1.74c-.78.75-1.39,1.62-1.82,2.63-.43,1.01-.65,2.11-.65,3.31s.22,2.3.65,3.31c.43,1.01,1.04,1.88,1.82,2.63.78.75,1.71,1.33,2.77,1.74,1.06.41,2.22.62,3.48.62s2.39-.21,3.45-.62c1.05-.42,1.97-.99,2.75-1.73.78-.74,1.39-1.61,1.82-2.63.43-1.01.65-2.12.65-3.32s-.21-2.3-.65-3.31c-.43-1.01-1.04-1.88-1.82-2.63ZM57.38,156.35c-.29.68-.68,1.28-1.19,1.8-.51.52-1.11.91-1.8,1.19-.69.28-1.44.42-2.26.42s-1.57-.14-2.26-.42c-.69-.28-1.29-.67-1.8-1.19-.51-.51-.9-1.12-1.19-1.81s-.43-1.44-.43-2.26.14-1.59.43-2.27c.28-.68.68-1.28,1.2-1.8.51-.51,1.11-.91,1.8-1.19.68-.28,1.43-.41,2.25-.41s1.57.14,2.26.41c.69.28,1.29.67,1.8,1.19.51.52.9,1.11,1.19,1.8.28.68.43,1.44.43,2.27s-.14,1.59-.43,2.27Z"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.55s;--t:.45s" points="79.17 146.01 72.87 156.7 66.47 146.01 64 146.01 64 162.14 66.86 162.14 66.86 151.59 72.16 160.3 73.5 160.3 78.8 151.45 78.82 162.14 81.66 162.14 81.64 146.01"/>
+      <path class="loader__part loader__part--type" style="--d:1.60s;--t:.45s" d="M98.69,148.68c-.55-.86-1.34-1.52-2.36-1.98-1.02-.46-2.25-.69-3.68-.69h-6.64v16.13h3v-4.66h3.64c1.43,0,2.65-.23,3.68-.69,1.02-.46,1.81-1.12,2.36-1.98.55-.86.83-1.88.83-3.07s-.28-2.2-.83-3.07ZM95.5,154.11c-.67.56-1.66.84-2.99.84h-3.5v-6.41h3.5c1.32,0,2.32.28,2.99.83.67.55,1,1.34,1,2.37s-.33,1.8-1,2.36Z"/>
+      <path class="loader__part loader__part--type" style="--d:1.65s;--t:.45s" d="M106.69,146.01l-7.26,16.13h3.09l1.6-3.73h8.07l1.6,3.73h3.13l-7.28-16.13h-2.95ZM105.12,156.06l3.02-7.06,3.03,7.06h-6.05Z"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.70s;--t:.45s" points="130.34 156.93 121.44 146.01 118.97 146.01 118.97 162.14 121.95 162.14 121.95 151.22 130.84 162.14 133.31 162.14 133.31 146.01 130.34 146.01"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.75s;--t:.45s" points="147.65 146.01 142.88 153.86 138.15 146.01 134.95 146.01 141.29 156.5 141.29 162.14 144.28 162.14 144.28 156.46 150.6 146.01"/>
+    </svg>
+  </div>
+</div>
+<script>
+/* Intro: measure each logo shape's real outline length so the stroke draws exactly once */
+(function () {
+  var parts = document.querySelectorAll('.loader__part');
+  for (var i = 0; i < parts.length; i++) {
+    try { parts[i].style.setProperty('--len', (parts[i].getTotalLength() + 1).toFixed(2)); } catch (e) {}
+  }
+})();
+</script>
 
-<nav class="navbar">
-  <a class="brand" href="#hero" aria-label="Seven Points home">
-    <img src="logo.png" alt="Seven Points">
-  </a>
-  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-menu">
-    <li><a href="#portfolio" class="nav-link">Projects</a></li>
-    <li><a href="#services" class="nav-link">Expertise</a></li>
-    <li><a href="#about" class="nav-link">Company</a></li>
-    <li><a href="#contact" class="nav-link nav-cta">Start a Project</a></li>
-  </ul>
-</nav>
+<!-- =====================================================================
+     NAVIGATION
+====================================================================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Seven Points — back to top">
+      <img class="nav__logo" src="sevenpointslogowhitetxtsvg.svg" width="177" height="162" alt="">
+    </a>
 
-<main id="main-content">
-  <section class="hero" id="hero">
-    <div class="hero-inner">
-      <div class="hero-kicker" id="heroKicker">Seven Points · Duhok, Kurdistan Region</div>
-      <h1 id="heroTitle"><span class="gold">Precision</span> in Construction.<br><span class="gold">Power</span> in Execution.</h1>
-      <p id="heroSubtitle">Construction, design and project delivery for commercial, institutional and private developments across the Kurdistan Region.</p>
-      <div class="hero-actions">
-        <a href="#portfolio" class="btn btn-secondary">View Projects <i class="fa-solid fa-arrow-down"></i></a>
-        <a href="#contact" class="btn btn-primary">Discuss a Project <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#top" data-spy="top">Home</a>
+      <a href="#about" data-spy="about">About Us</a>
+      <a href="#services" data-spy="services">Services</a>
+      <a href="#projects" data-spy="projects">Projects</a>
+      <a href="#partners" data-spy="partners">Clients</a>
+    </nav>
 
-  <section class="section projects-section" id="portfolio">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="eyebrow">Selected work</span>
-        <h2 class="section-title">Selected <span class="gold">Projects</span></h2>
-      </div>
+    <a class="nav__contact" href="#contact" data-spy="contact">Contact</a>
 
-      <div class="project-list" id="workGrid"></div>
+    <button class="nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
 
-      <div class="projects-note reveal">
-        <p>Planning a construction, interior or project-management scope?</p>
-        <a href="#contact">Discuss your project <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section expertise-section" id="services">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="eyebrow">What we do</span>
-        <h2 class="section-title">Our <span class="gold">Expertise</span></h2>
-      </div>
-
-      <div class="capabilities-grid">
-        <div class="capability reveal">
-          <span>01</span>
-          <h3>Construction</h3>
-          <p>Project execution from structural works and coordination through finishing and handover.</p>
-        </div>
-        <div class="capability reveal">
-          <span>02</span>
-          <h3>Architecture &amp; Design</h3>
-          <p>Design development and coordination focused on practical, buildable project outcomes.</p>
-        </div>
-        <div class="capability reveal">
-          <span>03</span>
-          <h3>Interior &amp; Fit-Out</h3>
-          <p>Interior execution, finishing and fit-out for commercial and private spaces.</p>
-        </div>
-        <div class="capability reveal">
-          <span>04</span>
-          <h3>Project Management</h3>
-          <p>Planning, coordination, procurement follow-up and progress control across project stages.</p>
-        </div>
-        <div class="capability reveal">
-          <span>05</span>
-          <h3>Site Supervision</h3>
-          <p>On-site quality control, coordination and progress monitoring during execution.</p>
-        </div>
-        <div class="capability reveal">
-          <span>06</span>
-          <h3>Event Production</h3>
-          <p>Planning, setup, logistics and production support for corporate and institutional events.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section company-section" id="about">
-    <div class="container">
-      <div class="company-grid">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Seven Points</span>
-          <h2 class="section-title">Built around <span class="gold">execution.</span></h2>
-        </div>
-        <div class="company-copy reveal">
-          <p class="company-lead" id="aboutLead">Seven Points is based in Duhok and delivers construction, design, fit-out and project solutions across the Kurdistan Region.</p>
-          <p id="aboutBody">Our team coordinates planning, site execution, finishing and handover under one direction, working across commercial, corporate, institutional and private projects.</p>
-        </div>
-      </div>
-
-      <div class="stats-grid clean-stats" id="statsGrid"></div>
-    </div>
-  </section>
-
-  <section class="section process-section" id="process">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="eyebrow">Delivery</span>
-        <h2 class="section-title">How we <span class="gold">work</span></h2>
-      </div>
-      <div class="process-grid">
-        <div class="step reveal"><div class="step-no">01</div><h3>Define</h3><p>Scope, requirements, priorities and project constraints are established before execution.</p></div>
-        <div class="step reveal"><div class="step-no">02</div><h3>Coordinate</h3><p>Design, materials, procurement and site requirements are aligned into a workable plan.</p></div>
-        <div class="step reveal"><div class="step-no">03</div><h3>Execute</h3><p>Site work is managed with supervision, quality control and progress coordination.</p></div>
-        <div class="step reveal"><div class="step-no">04</div><h3>Handover</h3><p>Final checks, completion items and project handover close the delivery process.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <div id="testimonialsMount"></div>
-
-  <section class="section contact-section" id="contact">
-    <div class="container">
-      <div class="contact-intro reveal">
-        <span class="eyebrow">Start a project</span>
-        <h2 class="section-title">Tell us what you’re <span class="gold">building.</span></h2>
-        <p>Share the project type, location, timeline and requirements. We’ll prepare the enquiry in WhatsApp so you can send it directly to Seven Points.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-list reveal" id="contactList"></div>
-
-        <form class="form" id="contactForm" novalidate>
-          <div class="form-success" id="formSuccess">
-            <i class="fa-solid fa-check"></i> Your enquiry is ready in WhatsApp.
-          </div>
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required>
-            <div class="form-error">Please enter your name (at least 2 characters)</div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-            <div class="form-error">Please enter a valid email address</div>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+964">
-            <div class="form-error">Please enter a valid phone number</div>
-          </div>
-          <div class="form-group">
-            <label for="project-type">Project Type *</label>
-            <select id="project-type" name="projectType" required>
-              <option value="">Select project type...</option>
-              <option value="Construction">Construction</option>
-              <option value="Architecture & Design">Architecture &amp; Design</option>
-              <option value="Interior & Fit-Out">Interior &amp; Fit-Out</option>
-              <option value="Project Management">Project Management</option>
-              <option value="Site Supervision">Site Supervision</option>
-              <option value="Event Production">Event Production</option>
-              <option value="Other">Other</option>
-            </select>
-            <div class="form-error">Please select a project type</div>
-          </div>
-          <div class="form-group">
-            <label for="message">Project Details *</label>
-            <textarea id="message" name="message" rows="6" placeholder="Project location, scope, timeline and requirements..." required></textarea>
-            <div class="form-error">Please describe your project (at least 10 characters)</div>
-          </div>
-          <button type="submit">Send Project Enquiry <i class="fa-brands fa-whatsapp"></i></button>
-        </form>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ─── MODAL ─── -->
-<div class="modal" id="portfolioModal" aria-hidden="true">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title" id="modalTitle"></h2>
-      <button class="modal-close" id="modalClose" aria-label="Close project"><i class="fa-solid fa-times"></i></button>
-    </div>
-
-    <!-- PREMIUM CAROUSEL -->
-    <div class="carousel-gallery">
-      <div class="carousel-container">
-        <div class="carousel-main" id="carouselMain">
-          <!-- imgs injected by JS -->
-        </div>
-
-        <div class="carousel-overlay-ui">
-          <button class="carousel-arrow" id="prevBtn" aria-label="Previous">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="carousel-arrow" id="nextBtn" aria-label="Next">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-
-        <div class="carousel-indicator">
-          <span id="carouselIndex">1</span> / <span id="carouselTotal"></span>
-        </div>
-      </div>
-
-      <div class="carousel-thumbnails" id="carouselThumbs"></div>
-    </div>
-
-    <!-- VIDEO SECTION -->
-    <div class="video-section" id="videoSection">
-      <h4><i class="fa-solid fa-play"></i> Project Video</h4>
-      <div class="modal-video">
-        <video id="projectVideo" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="modal-description">
-      <h3>Scope &amp; Overview</h3>
-      <p id="projectDescription"></p>
-    </div>
-
-    <div class="modal-details">
-      <div class="detail-item"><strong>Category</strong><span id="projectCategory"></span></div>
-      <div class="detail-item"><strong>Duration</strong><span id="projectDuration"></span></div>
-      <div class="detail-item"><strong>Client Type</strong><span id="projectClient"></span></div>
-      <div class="detail-item"><strong>Status</strong><span id="projectStatus">Completed</span></div>
-    </div>
-
-    <div class="modal-actions">
-      <button class="btn btn-primary" id="backBtn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</button>
-      <a href="#contact" class="btn btn-secondary" id="contactBtn"><i class="fa-solid fa-arrow-right"></i> Start Similar Project</a>
-    </div>
+<!-- Full-screen mobile menu -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__links" aria-label="Mobile">
+    <a href="#top"><span>01</span>Home</a>
+    <a href="#about"><span>02</span>About Us</a>
+    <a href="#services"><span>03</span>Services</a>
+    <a href="#projects"><span>04</span>Projects</a>
+    <a href="#partners"><span>05</span>Clients</a>
+    <a href="#contact"><span>06</span>Contact</a>
+  </nav>
+  <div class="menu__foot">
+    <a href="tel:+9647502205577">+964 750 220 5577</a>
+    <a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a>
+    <span>Zirka Road, Duhok — Kurdistan Region</span>
   </div>
 </div>
 
-<div class="floating">
-  <a class="fab-btn phone-call" id="fabPhone" href="tel:+9647502205577" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
-  <a class="fab-btn whatsapp" href="#" id="whatsappBtn" aria-label="Contact on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  <a class="fab-btn scroll-top" href="#hero" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></a>
-</div>
+<main id="main">
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-grid footer-grid-clean">
-      <div class="footer-section footer-brand">
-        <img src="logo.png" alt="Seven Points" class="footer-logo">
-        <p>Construction, design and project delivery across the Kurdistan Region.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#services">Expertise</a></li>
-          <li><a href="#about">Company</a></li>
-          <li><a href="#contact">Start a Project</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+9647502205577" id="footerPhone">+964 750 220 5577</a></li>
-          <li><a href="mailto:email@sevenpoints.info" id="footerEmail">email@sevenpoints.info</a></li>
-          <li id="footerAddress1">Zirka Road, Duhok</li>
-          <li id="footerAddress2">Kurdistan Region, Iraq</li>
-        </ul>
+  <!-- =====================================================================
+       HERO
+       Replace the photo: sp-hero.webp (about 2200–2400px wide)
+  ====================================================================== -->
+  <section class="hero" id="top" aria-label="Introduction">
+    <div class="hero__media">
+      <img src="sp-hero.webp" width="2000" height="1201"
+           alt="Zakho Conference Hall, designed and built by Seven Points"
+           fetchpriority="high" decoding="async">
+      <!-- Optional video later (MP4 H.264, max 1080p, muted). Replace the <img> above with:
+      <video autoplay muted loop playsinline poster="sp-hero.webp">
+        <source src="sp-hero.mp4" type="video/mp4">
+      </video> -->
+    </div>
+
+    <div class="hero__content wrap">
+      <p class="label label--light">Seven Points · Kurdistan Region</p>
+      <h1 class="hero__title" data-reveal="lines">
+        <span class="ln"><span>We shape <em>spaces.</em></span></span>
+        <span class="ln"><span>We deliver projects.</span></span>
+      </h1>
+      <div class="hero__row">
+        <p class="hero__copy" data-reveal="fade">Architecture, construction, interior design and project delivery through one coordinated team.</p>
+        <div class="hero__actions" data-reveal="fade">
+          <a class="btn btn--light" href="#projects">View projects</a>
+          <a class="btn btn--ghost-light" href="#contact">Start a project</a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Seven Points. All rights reserved.</p>
+
+    <a class="hero__cue" href="#about" aria-label="Scroll to About Us">
+      <span>Scroll</span><i aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- =====================================================================
+       ABOUT US  (light panel rises out of the hero)
+  ====================================================================== -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="about__intro wrap">
+      <p class="label">About us</p>
+      <h2 class="about__title" id="about-title" data-reveal="lines">
+        <span class="ln"><span>Transforming ideas</span></span>
+        <span class="ln"><span>into spaces built</span></span>
+        <span class="ln"><span>for real <em>life.</em></span></span>
+      </h2>
+      <p class="about__lead" data-reveal="fade">Seven Points is a multidisciplinary construction and design company delivering architecture, interiors, fit-out, construction and project management through one coordinated team.</p>
     </div>
+
+    <div class="about__body wrap">
+      <!-- Chapter navigation: follows the scroll, and each item jumps to its chapter -->
+      <aside class="about__aside">
+        <nav class="chapters" aria-label="About Seven Points">
+          <div class="chapters__progress" aria-hidden="true"><i></i></div>
+          <a href="#who" class="is-active" aria-current="true"><span>01</span>Who We Are</a>
+          <a href="#values"><span>02</span>Our Values</a>
+          <a href="#team"><span>03</span>Our Team</a>
+          <a href="#founders"><span>04</span>Founders</a>
+        </nav>
+      </aside>
+
+      <div class="about__chapters">
+
+        <!-- 01 WHO WE ARE -->
+        <article class="chapter" id="who" aria-labelledby="who-title">
+          <h3 class="chapter__label" id="who-title"><span>01</span>Who We Are</h3>
+          <figure class="who__media" data-reveal="img">
+            <!-- Replace with your best company / site photo: sp-who-we-are.webp -->
+            <img src="sp-who-we-are.webp" width="1600" height="961"
+                 alt="Zakho Conference Hall facade" loading="lazy" decoding="async">
+          </figure>
+          <dl class="stats">
+            <div class="stats__item"><dt>Completed Projects</dt><dd data-count>150<em>+</em></dd></div>
+            <div class="stats__item"><dt>Years of Experience</dt><dd data-count>5<em>+</em></dd></div>
+            <div class="stats__item"><dt>Clients &amp; Partners</dt><dd data-count>50<em>+</em></dd></div>
+            <div class="stats__item"><dt>Kurdistan Region</dt><dd class="stats__word">Duhok</dd></div>
+          </dl>
+        </article>
+
+        <!-- 02 OUR VALUES -->
+        <article class="chapter" id="values" aria-labelledby="values-title">
+          <h3 class="chapter__label" id="values-title"><span>02</span>Our Values</h3>
+          <ol class="values">
+            <li class="value">
+              <span class="value__num">01</span>
+              <h4 class="value__title">Experience</h4>
+              <p class="value__text">Practical knowledge across architecture, fit-out and construction.</p>
+            </li>
+            <li class="value">
+              <span class="value__num">02</span>
+              <h4 class="value__title">Precision</h4>
+              <p class="value__text">Every stage is coordinated before execution begins.</p>
+            </li>
+            <li class="value">
+              <span class="value__num">03</span>
+              <h4 class="value__title">Reliability</h4>
+              <p class="value__text">Clear responsibility and dependable project delivery.</p>
+            </li>
+            <li class="value">
+              <span class="value__num">04</span>
+              <h4 class="value__title">Performance</h4>
+              <p class="value__text">Design and construction focused on lasting results.</p>
+            </li>
+          </ol>
+        </article>
+
+        <!-- 03 OUR TEAM  (typography only — add a real team photo here when you have one) -->
+        <article class="chapter" id="team" aria-labelledby="team-title">
+          <h3 class="chapter__label" id="team-title"><span>03</span>Our Team</h3>
+          <p class="chapter__statement">One team.<br>Multiple disciplines.</p>
+          <!-- Real team photo (optional):
+          <figure class="team__media"><img src="sp-team.webp" width="1600" height="1000" alt="The Seven Points team" loading="lazy" decoding="async"></figure> -->
+          <div class="ticker ticker--light" aria-label="Disciplines: Architects, Project Management, Construction Team, Interior Design, Site Supervision, MEP Coordination">
+            <div class="ticker__track" aria-hidden="true">
+              <span>Architects</span><span>Project Management</span><span>Construction Team</span><span>Interior Design</span><span>Site Supervision</span><span>MEP Coordination</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 FOUNDERS -->
+        <article class="chapter" id="founders" aria-labelledby="founders-title">
+          <h3 class="chapter__label" id="founders-title"><span>04</span>Founders</h3>
+          <p class="chapter__statement">Design and construction<br>should work as one.</p>
+          <p class="chapter__text">Seven Points was established around the belief that stronger projects come from coordinating design, management and execution under one responsible team.</p>
+
+          <div class="founders">
+            <!-- To add another founder, copy this whole <figure> block -->
+            <figure class="founder" data-reveal="img">
+              <div class="founder__frame">
+                <img class="founder__photo" src="sp-founder-shiraz-aziz.webp" width="1000" height="1250"
+                     alt="Shiraz Aziz, owner and founder of Seven Points" loading="lazy" decoding="async">
+              </div>
+              <figcaption>
+                <span class="founder__name">Shiraz Aziz</span>
+                <span class="founder__role">Owner &amp; Founder</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PROOF — yellow band
+  ====================================================================== -->
+  <section class="proof" aria-label="Seven Points in numbers">
+    <div class="proof__grid wrap">
+      <div class="proof__item"><span class="proof__num" data-count>150+</span><span class="proof__label">Completed projects</span></div>
+      <div class="proof__item"><span class="proof__num" data-count>5+</span><span class="proof__label">Years operating</span></div>
+      <div class="proof__item"><span class="proof__num" data-count>50+</span><span class="proof__label">Clients &amp; partners</span></div>
+      <div class="proof__item"><span class="proof__num">Duhok</span><span class="proof__label">Kurdistan Region</span></div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       DISCIPLINE STRIP
+  ====================================================================== -->
+  <div class="ticker ticker--dark" aria-label="Architecture, Construction, Interior Design, Fit-Out, Project Management, Site Supervision">
+    <div class="ticker__track" aria-hidden="true">
+      <span>Architecture</span><span>Construction</span><span>Interior Design</span><span>Fit-Out</span><span>Project Management</span><span>Site Supervision</span>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SERVICES — sticky image left, stages right (desktop)
+       Replace photos: sp-service-planning.webp, sp-service-designing.webp, sp-service-construction.webp, sp-service-management.webp
+  ====================================================================== -->
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="services__head wrap">
+      <p class="label label--light">What we do</p>
+      <h2 class="services__title" id="services-title" data-reveal="lines">
+        <span class="ln"><span>From idea</span></span>
+        <span class="ln"><span>to <em>execution.</em></span></span>
+      </h2>
+      <p class="services__intro" data-reveal="fade">Four stages, one responsible team. Each stage is handed to the next without losing the intent of the one before it.</p>
+    </div>
+
+    <div class="services__body wrap">
+      <div class="services__media" aria-hidden="true">
+        <div class="services__frame">
+          <img class="is-active" data-stage="0" src="sp-service-planning.webp" width="1600" height="961" alt="" decoding="async" loading="lazy">
+          <img data-stage="1" src="sp-service-designing.webp" width="1600" height="961" alt="" decoding="async" loading="lazy">
+          <img data-stage="2" src="sp-service-construction.webp" width="825" height="550" alt="" decoding="async" loading="lazy">
+          <img data-stage="3" src="sp-service-management.webp" width="825" height="550" alt="" decoding="async" loading="lazy">
+          <div class="services__count"><span class="services__current">01</span> / 04</div>
+        </div>
+      </div>
+
+      <div class="services__stages">
+        <article class="stage is-active" data-stage="0">
+          <img class="stage__img" src="sp-service-planning.webp" width="1600" height="961" alt="Aerial view of the Zakho Conference Hall site plan" loading="lazy" decoding="async">
+          <span class="stage__num">01</span>
+          <h3 class="stage__title">Planning</h3>
+          <ul class="stage__list">
+            <li>Project Definition</li><li>Site Survey</li><li>Scope Coordination</li><li>Budget Planning</li>
+          </ul>
+          <p class="stage__text">We establish requirements, priorities, site constraints, budget and delivery strategy before construction begins.</p>
+        </article>
+
+        <article class="stage" data-stage="1">
+          <img class="stage__img" src="sp-service-designing.webp" width="1600" height="961" alt="Auditorium interior design for the Zakho Conference Hall" loading="lazy" decoding="async">
+          <span class="stage__num">02</span>
+          <h3 class="stage__title">Designing</h3>
+          <ul class="stage__list">
+            <li>Architecture</li><li>Interior Design</li><li>Technical Coordination</li><li>Material Selection</li>
+          </ul>
+          <p class="stage__text">Architecture and interior design are developed around practical, coordinated and buildable solutions.</p>
+        </article>
+
+        <article class="stage" data-stage="2">
+          <img class="stage__img" src="sp-service-construction.webp" width="825" height="550" alt="Lit staircase with glass balustrade, Jade Touch Salon" loading="lazy" decoding="async">
+          <span class="stage__num">03</span>
+          <h3 class="stage__title">Construction</h3>
+          <ul class="stage__list">
+            <li>Construction</li><li>Fit-Out</li><li>Site Supervision</li><li>Quality Control</li>
+          </ul>
+          <p class="stage__text">Site execution, materials, trades and finishing are controlled by one responsible delivery team.</p>
+        </article>
+
+        <article class="stage" data-stage="3">
+          <img class="stage__img" src="sp-service-management.webp" width="825" height="550" alt="Completed treatment area, Jade Touch Salon" loading="lazy" decoding="async">
+          <span class="stage__num">04</span>
+          <h3 class="stage__title">Management</h3>
+          <ul class="stage__list">
+            <li>Project Management</li><li>Scheduling</li><li>Reporting</li><li>Handover</li>
+          </ul>
+          <p class="stage__text">Scheduling, coordination, reporting, quality control and handover are managed throughout project delivery.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       BRAND STATEMENT
+  ====================================================================== -->
+  <section class="statement" aria-label="Our approach" data-drift>
+    <div class="wrap">
+      <h2 class="statement__title" data-reveal="lines">
+        <span class="ln"><span>Bold design.</span></span>
+        <span class="ln"><span>Clear strategy.</span></span>
+        <span class="ln"><span><em>Controlled delivery.</em></span></span>
+      </h2>
+      <div class="statement__foot" data-reveal="fade">
+        <p>Design intent, budget and site work are managed by the same people from the first survey to the final handover — so decisions made on paper survive on site.</p>
+        <a class="link-arrow" href="#projects">See the work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       STORIES — pinned sequence on desktop, stacked on mobile
+       Replace each photo with your best real project image
+  ====================================================================== -->
+  <section class="stories" aria-label="How we work">
+    <div class="stories__pin">
+      <article class="story is-active">
+        <img class="story__img" src="sp-zakho-exterior-06.webp" width="1800" height="1081"
+             alt="Zakho Conference Hall, side elevation" loading="lazy" decoding="async">
+        <div class="story__text wrap">
+          <span class="story__count">01 — 03</span>
+          <h2 class="story__title"><span class="ln"><span>Perfectly</span></span><span class="ln"><span>designed.</span></span></h2>
+          <p class="story__copy">Architecture and interior design shaped around function, proportion, materials and construction reality.</p>
+        </div>
+      </article>
+      <article class="story">
+        <img class="story__img" src="sp-zakho-interior-01.webp" width="1800" height="1081"
+             alt="Zakho Conference Hall reception" loading="lazy" decoding="async">
+        <div class="story__text wrap">
+          <span class="story__count">02 — 03</span>
+          <h2 class="story__title"><span class="ln"><span>Carefully</span></span><span class="ln"><span>planned.</span></span></h2>
+          <p class="story__copy">Clear scope, coordinated requirements and disciplined preparation before execution.</p>
+        </div>
+      </article>
+      <article class="story">
+        <!-- Best replaced with a real on-site construction photo -->
+        <img class="story__img" src="sp-zakho-exterior-05.webp" width="1800" height="1081"
+             alt="Zakho Conference Hall, corner view" loading="lazy" decoding="async">
+        <div class="story__text wrap">
+          <span class="story__count">03 — 03</span>
+          <h2 class="story__title"><span class="ln"><span>Smartly</span></span><span class="ln"><span>executed.</span></span></h2>
+          <p class="story__copy">Construction and fit-out delivered through close supervision and attention to detail.</p>
+        </div>
+      </article>
+      <div class="stories__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SELECTED PROJECTS
+       To add a project: copy one <article class="project"> block, change the
+       number, text and image paths, and alternate project--wide / project--narrow.
+       Gallery images for each project are listed inside <ul class="project__gallery">.
+  ====================================================================== -->
+  <section class="projects" id="projects" aria-labelledby="projects-title">
+    <div class="projects__head wrap">
+      <p class="label">Projects</p>
+      <h2 class="projects__title" id="projects-title" data-reveal="lines">
+        <span class="ln"><span>Selected</span></span>
+        <span class="ln"><span>projects.</span></span>
+      </h2>
+    </div>
+
+    <div class="projects__list wrap">
+
+      <!-- PROJECT 01 -->
+      <article class="project project--wide project-zakho">
+        <button class="project__media" type="button" data-reveal="img" data-gallery="zakho" aria-label="Open Zakho Conference Hall gallery">
+          <span class="project__cursor" aria-hidden="true">View</span>
+          <img src="sp-zakho-hero.webp" width="2000" height="1201"
+               alt="Zakho Conference Hall, front elevation" loading="lazy" decoding="async">
+        </button>
+        <div class="project__meta">
+          <span class="project__index">01</span>
+          <div class="project__name">
+            <h3>Zakho Conference Hall</h3>
+            <p>Architecture · Construction · Interior</p>
+          </div>
+          <span class="project__place">Duhok / Zakho</span>
+          <button class="project__open" type="button" data-gallery="zakho">View project</button>
+        </div>
+        <ul class="project__gallery" id="gallery-zakho" hidden data-title="Zakho Conference Hall">
+          <li data-src="sp-zakho-exterior-01.webp" data-alt="Zakho Conference Hall at dusk"></li>
+          <li data-src="sp-zakho-exterior-02.webp" data-alt="Aerial view of the site"></li>
+          <li data-src="sp-zakho-interior-01.webp" data-alt="Reception"></li>
+          <li data-src="sp-zakho-interior-02.webp" data-alt="Auditorium"></li>
+          <li data-src="sp-zakho-exterior-03.webp" data-alt="Main facade"></li>
+          <li data-src="sp-zakho-exterior-05.webp" data-alt="Corner view"></li>
+          <li data-src="sp-zakho-exterior-06.webp" data-alt="Side elevation"></li>
+        </ul>
+      </article>
+
+      <!-- PROJECT 02 -->
+      <article class="project project--narrow project-jade">
+        <button class="project__media" type="button" data-reveal="img" data-gallery="jade" aria-label="Open Jade Touch Salon gallery">
+          <span class="project__cursor" aria-hidden="true">View</span>
+          <img src="sp-jade-hero.webp" width="825" height="550"
+               alt="Jade Touch Salon, lounge with stone-lit arches" loading="lazy" decoding="async">
+        </button>
+        <div class="project__meta">
+          <span class="project__index">02</span>
+          <div class="project__name">
+            <h3>Jade Touch Salon</h3>
+            <p>Interior Design · Fit-Out</p>
+          </div>
+          <span class="project__place">Duhok</span>
+          <button class="project__open" type="button" data-gallery="jade">View project</button>
+        </div>
+        <ul class="project__gallery" id="gallery-jade" hidden data-title="Jade Touch Salon">
+          <li data-src="sp-jade-interior-01.webp" data-alt="Styling stations"></li>
+          <li data-src="sp-jade-interior-02.webp" data-alt="Nail bar"></li>
+          <li data-src="sp-jade-interior-03.webp" data-alt="Stone feature wall and chandelier"></li>
+          <li data-src="sp-jade-interior-04.webp" data-alt="Consultation area"></li>
+          <li data-src="sp-jade-interior-05.webp" data-alt="Lit staircase"></li>
+          <li data-src="sp-jade-interior-06.webp" data-alt="Reception desk"></li>
+          <li data-src="sp-jade-interior-07.webp" data-alt="Wash stations"></li>
+          <li data-src="sp-jade-interior-08.webp" data-alt="Glass balustrade"></li>
+        </ul>
+      </article>
+
+      <!-- PROJECT 03 — copy this template, remove the comment marks, and fill it in:
+      <article class="project project--wide project-new">
+        <button class="project__media" type="button" data-gallery="new" aria-label="Open Project name gallery">
+          <img src="sp-newproject-hero.webp" width="2000" height="1400" alt="Describe the photo" loading="lazy" decoding="async">
+        </button>
+        <div class="project__meta">
+          <span class="project__index">03</span>
+          <div class="project__name"><h3>Project name</h3><p>Service · Service</p></div>
+          <span class="project__place">City</span>
+          <button class="project__open" type="button" data-gallery="new">View project</button>
+        </div>
+        <ul class="project__gallery" id="gallery-new" hidden data-title="Project name">
+          <li data-src="sp-newproject-01.webp" data-alt="Describe the photo"></li>
+        </ul>
+      </article>
+      -->
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       TRUSTED PARTNERSHIP
+  ====================================================================== -->
+  <section class="partners" id="partners" aria-labelledby="partners-title">
+    <div class="partners__grid wrap">
+      <div class="partners__head">
+        <p class="label label--light">Clients</p>
+        <h2 class="partners__title" id="partners-title" data-reveal="lines">
+          <span class="ln"><span>Trusted</span></span>
+          <span class="ln"><span>partnership.</span></span>
+        </h2>
+      </div>
+
+      <div class="partners__body">
+        <p class="partners__lead" data-reveal="fade">Clients work with one Seven Points team from the first site visit to the day the keys are handed over. One contact, one programme, one standard.</p>
+
+        <ol class="commitments">
+          <li><span>01</span><strong>One point of responsibility</strong><p>Design, trades and site are coordinated under a single team.</p></li>
+          <li><span>02</span><strong>Direct communication</strong><p>Decisions, changes and progress are reported as they happen.</p></li>
+          <li><span>03</span><strong>Complete handover</strong><p>Every project closes with inspection, snagging and documentation.</p></li>
+        </ol>
+
+        <!-- CLIENT TESTIMONIALS — use only real quotes, with the client's permission.
+             Remove the comment marks and duplicate the <figure> for each client.
+        <div class="testimonials">
+          <figure class="testimonial">
+            <img class="testimonial__logo" src="sp-client-01.png" width="240" height="80" alt="Client company name" loading="lazy">
+            <blockquote>Real client quote goes here.</blockquote>
+            <figcaption><strong>Client name</strong><span>Company · Project</span></figcaption>
+          </figure>
+        </div>
+        -->
+
+        <!-- CLIENT LOGOS — real logos only, uploaded to the main folder
+        <ul class="logos">
+          <li><img src="sp-client-01.png" width="240" height="80" alt="Client name" loading="lazy"></li>
+          <li><img src="sp-client-02.png" width="240" height="80" alt="Client name" loading="lazy"></li>
+        </ul>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CONTACT
+  ====================================================================== -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="contact__title" id="contact-title" data-reveal="lines">
+        <span class="ln"><span>Have a project</span></span>
+        <span class="ln"><span>in mind?</span></span>
+      </h2>
+      <p class="contact__sub" data-reveal="lines">
+        <span class="ln"><span>Let’s build it</span></span>
+        <span class="ln"><span>together.</span></span>
+      </p>
+      <div class="contact__row">
+        <p class="contact__copy">Share your project type, location and timeline. We reply directly — no forms, no call centre.</p>
+        <div class="contact__actions">
+          <a class="btn btn--dark" href="https://wa.me/9647502205577" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>
+            WhatsApp
+          </a>
+          <a class="btn btn--line-dark" href="mailto:email@sevenpoints.info">Email us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER
+====================================================================== -->
+<footer class="footer">
+  <div class="footer__grid wrap">
+    <div class="footer__brand">
+      <img class="footer__logo" src="sevenpointslogowhitetxtsvg.svg" width="177" height="162" alt="Seven Points" loading="lazy">
+      <p class="footer__name"><span>Construction &amp; General Trading</span></p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Office</h4>
+      <p>Zirka Road<br>Duhok, Kurdistan Region<br>Iraq</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+9647502205577">+964 750 220 5577</a></li>
+        <li><a href="mailto:email@sevenpoints.info">email@sevenpoints.info</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Follow</h4>
+      <!-- Replace "#" with your real profile links -->
+      <ul>
+        <li><a href="#" rel="noopener">Instagram</a></li>
+        <li><a href="#" rel="noopener">Facebook</a></li>
+        <li><a href="#" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom wrap">
+    <span>© <span data-year>2026</span> Seven Points Construction &amp; General Trading</span>
+    <a href="#top">Back to top ↑</a>
   </div>
 </footer>
 
-<script>
-/* ─────────────────────────────────────────
-   SITE INTERACTIONS
-   Runs once js/content.js has fetched content/*.json
-   and injected the dynamic sections into the page.
-   projectsData is built by content.js from content/projects.json;
-   settings is content/settings.json.
-───────────────────────────────────────── */
-function initSite(projectsData, settings) {
+<!-- Project gallery (filled by sp-script.js) -->
+<dialog class="gallery" id="gallery" aria-labelledby="gallery-title">
+  <div class="gallery__bar">
+    <h2 class="gallery__title" id="gallery-title"></h2>
+    <span class="gallery__count"></span>
+    <button class="gallery__close" type="button" aria-label="Close gallery">Close</button>
+  </div>
+  <div class="gallery__list"></div>
+</dialog>
 
-/* ─────────────────────────────────────────
-   CAROUSEL STATE
-───────────────────────────────────────── */
-let currentSlide = 0;
-let currentPhotos = [];
-let autoPlayInterval = null;
-let isAnimating = false;
-let carouselImgs = [];
-let activeImgIdx = 0;
-
-function buildCarouselPool() {
-  const main = document.getElementById('carouselMain');
-  main.innerHTML = '';
-  carouselImgs = [];
-  for (let i = 0; i < 2; i++) {
-    const img = document.createElement('img');
-    img.alt = 'Project photo';
-    img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:opacity,transform;';
-    img.style.opacity = i === 0 ? '1' : '0';
-    img.style.zIndex = i === 0 ? '2' : '1';
-    main.appendChild(img);
-    carouselImgs.push(img);
-  }
-  activeImgIdx = 0;
-}
-
-function updateCarousel(direction) {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  const outImg = carouselImgs[activeImgIdx];
-  const inIdx = 1 - activeImgIdx;
-  const inImg = carouselImgs[inIdx];
-
-  /* pre-position incoming image */
-  const inStartX = direction === 'next' ? '5%' : '-5%';
-  inImg.style.transition = 'none';
-  inImg.style.opacity = '0';
-  inImg.style.transform = `translateX(${inStartX}) scale(0.97)`;
-  inImg.style.zIndex = '2';
-  outImg.style.zIndex = '1';
-
-  /* load new src */
-  inImg.src = currentPhotos[currentSlide];
-
-  /* trigger transition on next two frames */
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      const outEndX = direction === 'next' ? '-4%' : '4%';
-
-      inImg.style.transition = 'opacity 0.42s ease, transform 0.42s ease';
-      inImg.style.opacity = '1';
-      inImg.style.transform = 'translateX(0) scale(1)';
-
-      outImg.style.transition = 'opacity 0.38s ease, transform 0.38s ease';
-      outImg.style.opacity = '0';
-      outImg.style.transform = `translateX(${outEndX}) scale(0.97)`;
-
-      setTimeout(() => {
-        outImg.style.transition = 'none';
-        outImg.style.transform = 'translateX(0) scale(1)';
-        activeImgIdx = inIdx;
-        isAnimating = false;
-      }, 450);
-    });
-  });
-
-  /* update counter */
-  document.getElementById('carouselIndex').textContent = currentSlide + 1;
-
-  /* update thumbnails */
-  const thumbs = document.querySelectorAll('.carousel-thumb');
-  thumbs.forEach((t, i) => t.classList.toggle('active', i === currentSlide));
-  const active = thumbs[currentSlide];
-  if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-}
-
-function nextSlide() {
-  if (isAnimating) return;
-  currentSlide = (currentSlide + 1) % currentPhotos.length;
-  updateCarousel('next');
-}
-
-function prevSlide() {
-  if (isAnimating) return;
-  currentSlide = (currentSlide - 1 + currentPhotos.length) % currentPhotos.length;
-  updateCarousel('prev');
-}
-
-function startAutoPlay() {
-  stopAutoPlay();
-  autoPlayInterval = setInterval(nextSlide, 5000);
-}
-
-function stopAutoPlay() {
-  if (autoPlayInterval) { clearInterval(autoPlayInterval); autoPlayInterval = null; }
-}
-
-/* ─────────────────────────────────────────
-   DOM REFS
-───────────────────────────────────────── */
-const scrollTopBtn    = document.querySelector('.scroll-top');
-const scrollProgress  = document.querySelector('.scroll-progress');
-const statCards       = document.querySelectorAll('[data-target]');
-const hamburger       = document.querySelector('.hamburger');
-const navMenu         = document.querySelector('.nav-menu');
-const navLinks        = document.querySelectorAll('.nav-link');
-const navbar          = document.querySelector('.navbar');
-const contactForm     = document.getElementById('contactForm');
-const reveals         = document.querySelectorAll('.reveal');
-const workCards       = document.querySelectorAll('.work');
-const filterBtns      = document.querySelectorAll('.filter-btn');
-const whatsappBtn     = document.getElementById('whatsappBtn');
-const portfolioModal  = document.getElementById('portfolioModal');
-const modalClose      = document.getElementById('modalClose');
-const backBtn         = document.getElementById('backBtn');
-const contactBtn      = document.getElementById('contactBtn');
-const prevBtn         = document.getElementById('prevBtn');
-const nextBtn         = document.getElementById('nextBtn');
-const reduceMotion    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const statsGrid       = document.getElementById('statsGrid');
-const statsSection    = document.getElementById('stats');
-
-/* ─────────────────────────────────────────
-   SCROLL PROGRESS
-───────────────────────────────────────── */
-window.addEventListener('scroll', () => {
-  const total = document.documentElement.scrollHeight - window.innerHeight;
-  scrollProgress.style.width = ((window.scrollY / total) * 100) + '%';
-}, { passive: true });
-
-/* ─────────────────────────────────────────
-   NAV
-───────────────────────────────────────── */
-hamburger?.addEventListener('click', () => {
-  const isActive = navMenu.classList.toggle('active');
-  hamburger.classList.toggle('active', isActive);
-  hamburger.setAttribute('aria-expanded', isActive);
-});
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-    hamburger.classList.remove('active');
-    hamburger?.setAttribute('aria-expanded', 'false');
-  });
-});
-
-let scrollTicking = false;
-window.addEventListener('scroll', () => {
-  if (!scrollTicking) {
-    scrollTicking = true;
-    requestAnimationFrame(() => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-      scrollTopBtn.classList.toggle('show', window.scrollY > 500);
-      scrollTicking = false;
-    });
-  }
-}, { passive: true });
-
-/* ─────────────────────────────────────────
-   COUNTER ANIMATION - RESETS ON EACH SCROLL INTO VIEW
-───────────────────────────────────────── */
-const animateCounter = (el, target, suffix = '') => {
-  el.textContent = '0';
-  const start = performance.now();
-  const duration = 2500;
-  const tick = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(target * eased) + suffix;
-    if (progress < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-};
-
-const statObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const cards = entry.target.querySelectorAll('[data-target]');
-      cards.forEach(card => {
-        const target = parseInt(card.dataset.target);
-        const suffix = card.dataset.suffix || '';
-        const numEl = card.querySelector('.stat-number');
-        reduceMotion ? (numEl.textContent = target + suffix) : animateCounter(numEl, target, suffix);
-      });
-    }
-  });
-}, { threshold: 0.3 });
-
-if (statsGrid) statObserver.observe(statsGrid);
-
-/* ─────────────────────────────────────────
-   REVEAL ON SCROLL
-───────────────────────────────────────── */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-reveals.forEach(el => revealObserver.observe(el));
-
-/* ─────────────────────────────────────────
-   PORTFOLIO FILTER
-───────────────────────────────────────── */
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    workCards.forEach(card => {
-      const show = filter === 'all' || card.dataset.category === filter;
-      if (show) {
-        card.classList.remove('hidden');
-        card.style.display = 'block';
-        void card.offsetWidth;
-        card.style.opacity = '1';
-      } else {
-        card.style.opacity = '0';
-        setTimeout(() => { if (card.style.opacity === '0') { card.classList.add('hidden'); card.style.display = 'none'; } }, 400);
-      }
-    });
-  });
-});
-
-
-workCards.forEach(card => {
-  card.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      card.click();
-    }
-  });
-});
-
-/* ─────────────────────────────────────────
-   OPEN PROJECT MODAL
-───────────────────────────────────────── */
-workCards.forEach(card => {
-  card.addEventListener('click', () => {
-    const project = projectsData[card.dataset.project];
-    if (!project) return;
-
-    currentPhotos = project.photos;
-    currentSlide = 0;
-    isAnimating = false;
-
-    /* populate modal text */
-    document.getElementById('modalTitle').textContent = project.title;
-    document.getElementById('projectDescription').textContent = project.description;
-    document.getElementById('projectCategory').textContent = project.category;
-    document.getElementById('projectDuration').textContent = project.duration;
-    document.getElementById('projectClient').textContent = project.clientType;
-    document.getElementById('carouselTotal').textContent = project.photos.length;
-    document.getElementById('carouselIndex').textContent = '1';
-
-    /* build 2-img pool */
-    buildCarouselPool();
-    carouselImgs[0].src = project.photos[0];
-    carouselImgs[0].style.opacity = '1';
-    carouselImgs[0].style.transform = 'translateX(0) scale(1)';
-    carouselImgs[0].style.zIndex = '2';
-    carouselImgs[1].src = '';
-    carouselImgs[1].style.opacity = '0';
-    carouselImgs[1].style.zIndex = '1';
-    activeImgIdx = 0;
-
-    /* build thumbnails */
-    const thumbsContainer = document.getElementById('carouselThumbs');
-    thumbsContainer.innerHTML = '';
-    project.photos.forEach((photo, index) => {
-      const thumb = document.createElement('div');
-      thumb.className = 'carousel-thumb' + (index === 0 ? ' active' : '');
-      const thumbImg = document.createElement('img');
-      thumbImg.src = photo;
-      thumbImg.alt = `Thumbnail ${index + 1}`;
-      thumb.appendChild(thumbImg);
-      thumb.addEventListener('click', () => {
-        if (isAnimating || index === currentSlide) return;
-        stopAutoPlay();
-        const dir = index > currentSlide ? 'next' : 'prev';
-        currentSlide = index;
-        updateCarousel(dir);
-        startAutoPlay();
-      });
-      thumbsContainer.appendChild(thumb);
-    });
-
-    /* set video only when the project has a real video */
-    const videoSection = document.getElementById('videoSection');
-    const projectVideo = document.getElementById('projectVideo');
-    if (project.video) {
-      videoSection.style.display = '';
-      projectVideo.src = project.video;
-      projectVideo.load();
-    } else {
-      videoSection.style.display = 'none';
-      projectVideo.removeAttribute('src');
-      projectVideo.load();
-    }
-
-    /* open */
-    portfolioModal.classList.add('show');
-    portfolioModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    startAutoPlay();
-  });
-});
-
-/* ─────────────────────────────────────────
-   CLOSE MODAL  (stops video + autoplay)
-───────────────────────────────────────── */
-const closeProjectModal = () => {
-  stopAutoPlay();
-  portfolioModal.classList.remove('show');
-  portfolioModal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = 'auto';
-  const video = document.getElementById('projectVideo');
-  video.pause();
-  video.removeAttribute('src');
-  video.load();
-};
-
-modalClose.addEventListener('click', closeProjectModal);
-backBtn.addEventListener('click', closeProjectModal);
-contactBtn?.addEventListener('click', closeProjectModal);
-portfolioModal.addEventListener('click', e => { if (e.target === portfolioModal) closeProjectModal(); });
-
-/* ─────────────────────────────────────────
-   CAROUSEL BUTTONS + KEYBOARD
-───────────────────────────────────────── */
-prevBtn.addEventListener('click', () => { stopAutoPlay(); prevSlide(); startAutoPlay(); });
-nextBtn.addEventListener('click', () => { stopAutoPlay(); nextSlide(); startAutoPlay(); });
-
-document.addEventListener('keydown', e => {
-  if (!portfolioModal.classList.contains('show')) return;
-  if (e.key === 'ArrowRight') { stopAutoPlay(); nextSlide(); startAutoPlay(); }
-  if (e.key === 'ArrowLeft')  { stopAutoPlay(); prevSlide(); startAutoPlay(); }
-  if (e.key === 'Escape') closeProjectModal();
-});
-
-/* ─────────────────────────────────────────
-   WHATSAPP
-───────────────────────────────────────── */
-whatsappBtn.addEventListener('click', e => {
-  e.preventDefault();
-  const msg = encodeURIComponent(settings.contact.whatsappMessage);
-  window.open(`https://wa.me/${settings.contact.whatsappNumber}?text=${msg}`, '_blank');
-});
-
-/* ─────────────────────────────────────────
-   CONTACT FORM
-───────────────────────────────────────── */
-const validateEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-const validateForm = () => {
-  let isValid = true;
-  contactForm.querySelectorAll('.form-group').forEach(group => {
-    const input = group.querySelector('input, textarea, select');
-    let valid = true;
-    group.classList.remove('error');
-    if (input.hasAttribute('required') && !input.value.trim()) valid = false;
-    else if (input.type === 'email' && input.value && !validateEmail(input.value)) valid = false;
-    else if (input.id === 'name' && input.value.trim().length < 2) valid = false;
-    else if (input.id === 'message' && input.value.trim().length < 10) valid = false;
-    if (!valid) { group.classList.add('error'); isValid = false; }
-  });
-  return isValid;
-};
-
-contactForm?.addEventListener('submit', e => {
-  e.preventDefault();
-  if (!validateForm()) return;
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const projectType = document.getElementById('project-type').value;
-  const message = document.getElementById('message').value.trim();
-
-  const enquiry = [
-    'Seven Points — Project Enquiry',
-    '',
-    `Name: ${name}`,
-    `Email: ${email}`,
-    phone ? `Phone: ${phone}` : '',
-    `Project Type: ${projectType}`,
-    '',
-    'Project Details:',
-    message
-  ].filter(Boolean).join('\\n');
-
-  document.getElementById('formSuccess').classList.add('show');
-  window.open(`https://wa.me/${settings.contact.whatsappNumber}?text=${encodeURIComponent(enquiry)}`, '_blank', 'noopener');
-  setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 5000);
-});
-
-contactForm?.querySelectorAll('input, textarea, select').forEach(input => {
-  input.addEventListener('blur', () => {
-    const group = input.closest('.form-group');
-    let valid = true;
-    if (input.hasAttribute('required') && !input.value.trim()) valid = false;
-    else if (input.type === 'email' && input.value && !validateEmail(input.value)) valid = false;
-    else if (input.id === 'name' && input.value.trim().length < 2) valid = false;
-    else if (input.id === 'message' && input.value.trim().length < 10) valid = false;
-    group.classList.toggle('error', !valid);
-  });
-});
-
-/* ─────────────────────────────────────────
-   SMOOTH SCROLL
-───────────────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (!href || href === '#') return;
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-    }
-  });
-});
-
-} /* end initSite */
-</script>
-<script src="js/content.js"></script>
+<!-- Smooth scrolling library (optional — the site works normally if it doesn't load) -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="sp-script.js" defer></script>
 </body>
 </html>
