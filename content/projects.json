@@ -1,0 +1,58 @@
+{
+  "projects": [
+    {
+      "name": "Zakho Conference Hall",
+      "slug": "zakho-conference-hall",
+      "location": "Zakho, Kurdistan Region",
+      "year": "",
+      "category": "Construction",
+      "services": ["Architecture", "Construction", "Interior"],
+      "shortDescription": "Exterior & Interior Design",
+      "longDescription": "Conference hall project combining exterior and interior design with spaces planned for large-scale gatherings and corporate events.",
+      "duration": "18 months",
+      "clientType": "Corporate",
+      "hero": "zakhoconferencehall1.jpg",
+      "gallery": [
+        "zakhoconferencehall1.jpg",
+        "zakhoconferencehall2.jpg",
+        "zakhoconferencehall3.jpg",
+        "zakhoconferencehall4.jpg",
+        "zakhoconferencehall5.jpg",
+        "zakhoconferencehall6.jpg",
+        "zakhoconferencehall7.jpg",
+        "zakhoconferencehall8.jpg",
+        "zakhoconferencehall9.jpg"
+      ],
+      "video": "zakhoconferencehallvideol.mp4",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "name": "Jade Touch Salon",
+      "slug": "jade-touch-salon",
+      "location": "",
+      "year": "",
+      "category": "Construction and Interior Design",
+      "services": ["Construction", "Interior"],
+      "shortDescription": "Construction & Interior Design",
+      "longDescription": "Salon project delivered from construction works through interior finishing, with the layout and finishes coordinated as one complete scope.",
+      "duration": "6 months",
+      "clientType": "Private",
+      "hero": "saloon.jpg",
+      "gallery": [
+        "saloon.jpg",
+        "saloon2.jpg",
+        "saloon3.jpg",
+        "saloon4.jpg",
+        "saloon5.jpg",
+        "saloon6.jpg",
+        "saloon7.jpg",
+        "saloon8.jpg",
+        "saloon9.jpg"
+      ],
+      "video": "",
+      "featured": true,
+      "order": 2
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+backend:
+  name: github
+  repo: sevenpointsinfo/sevenpoints.info   # owner/repo
+  branch: main   # change to "master" if that is this repo's default branch
+
+# Sign-in uses Sveltia CMS's built-in "Sign In with Token" option (a GitHub
+# personal access token pasted at login time, stored only in your browser).
+# No OAuth app, no extra server, nothing to deploy. See the setup guide for
+# the one-time steps to create that token.
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "settings"
+    label: "Homepage & Contact"
+    files:
+      - file: "content/settings.json"
+        label: "Site Settings"
+        name: "settings"
+        fields:
+          - label: "Hero (top of homepage)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Small line above the headline", name: "kicker", widget: "string" }
+              - { label: "Headline — highlighted word (line 1)", name: "titleLine1Gold", widget: "string" }
+              - { label: "Headline — rest of line 1", name: "titleLine1Rest", widget: "string" }
+              - { label: "Headline — highlighted word (line 2)", name: "titleLine2Gold", widget: "string" }
+              - { label: "Headline — rest of line 2", name: "titleLine2Rest", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "text" }
+              - label: "Background Photo"
+                name: "backgroundImage"
+                widget: "image"
+                media_folder: "/"
+                public_folder: "/"
+                hint: "This is the big photo behind the homepage headline."
+
+          - label: "About Us"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Lead sentence (bold intro line)", name: "lead", widget: "text" }
+              - { label: "Body paragraph", name: "body", widget: "text" }
+
+          - label: "Statistics"
+            name: "stats"
+            widget: "list"
+            label_singular: "Statistic"
+            summary: "{{label}}"
+            fields:
+              - { label: "Type", name: "type", widget: "select", options: ["number", "text"], hint: "\"number\" counts up on scroll, e.g. 150+. \"text\" shows as-is, e.g. Duhok." }
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Suffix (e.g. +)", name: "suffix", widget: "string", required: false }
+              - { label: "Label", name: "label", widget: "string" }
+
+          - label: "Contact Details"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Phone number", name: "phone", widget: "string", hint: "Used for the call button, WhatsApp, and the contact section. e.g. +964 750 220 5577" }
+              - { label: "WhatsApp default message", name: "whatsappMessage", widget: "text" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Address — line 1", name: "addressLine1", widget: "string" }
+              - { label: "Address — line 2", name: "addressLine2", widget: "string" }
+
+          - label: "Social Links"
+            name: "social"
+            widget: "list"
+            required: false
+            label_singular: "Social Link"
+            fields:
+              - { label: "Platform", name: "icon", widget: "select", options: ["facebook", "instagram", "linkedin", "x", "youtube", "tiktok"] }
+              - { label: "URL", name: "url", widget: "string" }
+
+  - name: "content"
+    label: "Projects & Clients"
+    files:
+      - file: "content/projects.json"
+        label: "Projects"
+        name: "projects"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            label_singular: "Project"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Project Name", name: "name", widget: "string" }
+              - label: "Slug"
+                name: "slug"
+                widget: "string"
+                pattern: ['^[a-z0-9-]+$', "Lowercase letters, numbers and hyphens only — no spaces"]
+                hint: "Used as the folder name for this project's photos, e.g. zakho-conference-hall. Set this once when you create the project and avoid changing it later."
+              - { label: "Location", name: "location", widget: "string", required: false }
+              - { label: "Year", name: "year", widget: "string", required: false }
+              - { label: "Category", name: "category", widget: "string" }
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                field: { label: "Service", name: "service", widget: "string" }
+              - { label: "Short Description", name: "shortDescription", widget: "string", hint: "Shown on the homepage project card." }
+              - { label: "Full Description", name: "longDescription", widget: "text", hint: "Shown when the project is opened." }
+              - label: "Hero Photo"
+                name: "hero"
+                widget: "image"
+                media_folder: "/assets/images/projects/{{fields.slug}}"
+                public_folder: "/assets/images/projects/{{fields.slug}}"
+                hint: "The main photo shown on the homepage card."
+              - label: "Gallery Photos"
+                name: "gallery"
+                widget: "list"
+                label_singular: "Photo"
+                summary: "{{fields.image}}"
+                field:
+                  label: "Photo"
+                  name: "image"
+                  widget: "image"
+                  media_folder: "/assets/images/projects/{{fields.slug}}"
+                  public_folder: "/assets/images/projects/{{fields.slug}}"
+              - label: "Project Video (optional)"
+                name: "video"
+                widget: "file"
+                required: false
+                media_folder: "/assets/images/projects/{{fields.slug}}"
+                public_folder: "/assets/images/projects/{{fields.slug}}"
+              - { label: "Show on Homepage", name: "featured", widget: "boolean", default: true }
+              - { label: "Display Order (lower shows first)", name: "order", widget: "number", value_type: "int", default: 1 }
+              - { label: "Duration (shown in the project popup)", name: "duration", widget: "string", required: false }
+              - { label: "Client Type (shown in the project popup)", name: "clientType", widget: "string", required: false }
+
+      - file: "content/clients.json"
+        label: "Client Testimonials"
+        name: "clients"
+        fields:
+          - label: "Testimonials"
+            name: "clients"
+            widget: "list"
+            label_singular: "Testimonial"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Client Name", name: "name", widget: "string" }
+              - label: "Logo (optional)"
+                name: "logo"
+                widget: "image"
+                required: false
+                media_folder: "/assets/images/clients"
+                public_folder: "/assets/images/clients"
+              - { label: "Testimonial Quote", name: "testimonial", widget: "text" }
+              - { label: "Role / Company (optional)", name: "role", widget: "string", required: false }

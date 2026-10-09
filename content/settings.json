@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "kicker": "Seven Points · Duhok, Kurdistan Region",
+    "titleLine1Gold": "Precision",
+    "titleLine1Rest": "in Construction.",
+    "titleLine2Gold": "Power",
+    "titleLine2Rest": "in Execution.",
+    "subtitle": "Construction, design and project delivery for commercial, institutional and private developments across the Kurdistan Region.",
+    "backgroundImage": "sevenpointsbg.png"
+  },
+  "about": {
+    "lead": "Seven Points is based in Duhok and delivers construction, design, fit-out and project solutions across the Kurdistan Region.",
+    "body": "Our team coordinates planning, site execution, finishing and handover under one direction, working across commercial, corporate, institutional and private projects."
+  },
+  "stats": [
+    { "type": "number", "value": 150, "suffix": "+", "label": "Projects Completed" },
+    { "type": "number", "value": 5, "suffix": "+", "label": "Years Operating" },
+    { "type": "number", "value": 50, "suffix": "+", "label": "Clients Served" },
+    { "type": "text", "value": "Duhok", "label": "Based in Kurdistan Region" }
+  ],
+  "contact": {
+    "phone": "+964 750 220 5577",
+    "whatsappMessage": "Hi Seven Points! I'm interested in your services. Can you provide more information?",
+    "email": "email@sevenpoints.info",
+    "addressLine1": "Zirka Road, Duhok",
+    "addressLine2": "Kurdistan Region, Iraq"
+  },
+  "social": []
+}
