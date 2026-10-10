@@ -1,16 +1,11 @@
-seo:
-  page_title: Seven Points Construction & General Trading — Duhok, Kurdistan Region
-  description: Seven Points delivers architecture, construction, interior design, fit-out, project management and site supervision through one coordinated team in Duhok, Kurdistan Region, Iraq.
-  share_title: Seven Points Construction & General Trading
-  share_description: Architecture, construction, interior design and project delivery through one coordinated team.
-  share_image: assets/images/home/hero.webp
 hero:
   label: Seven Points · Kurdistan Region
   title:
     - text: We shape
       highlight: spaces.
     - text: We deliver projects.
-  subtitle: Architecture, construction, interior design and project delivery through one coordinated team.
+  subtitle: Architecture, construction, interior design and project delivery
+    through one coordinated team.
   button_projects: View projects
   button_contact: Start a project
   image: assets/images/home/hero.webp
@@ -20,13 +15,13 @@ hero:
   project_info: designed and built by Seven Points
 numbers:
   - value: "150"
-    sign: "+"
+    sign: +
     label: Completed projects
-  - value: "5"
-    sign: "+"
+  - value: "18"
+    sign: +
     label: Years operating
-  - value: "50"
-    sign: "+"
+  - value: "40"
+    sign: +
     label: Clients & partners
   - value: Duhok
     label: Kurdistan Region
@@ -34,7 +29,7 @@ strip:
   - Architecture
   - Construction
   - Interior Design
-  - Fit-Out
+  - Event Management
   - Project Management
   - Site Supervision
 statement:
@@ -42,7 +37,9 @@ statement:
     - text: Bold design.
     - text: Clear strategy.
     - highlight: Controlled delivery.
-  text: Design intent, budget and site work are managed by the same people from the first survey to the final handover — so decisions made on paper survive on site.
+  text: Design intent, budget and site work are managed by the same people from
+    the first survey to the final handover — so decisions made on paper survive
+    on site.
   link: See the work
 stories:
   - image: assets/images/projects/zakho-conference-hall/exterior-06.webp
@@ -51,21 +48,24 @@ stories:
     image_alt: Zakho Conference Hall, side elevation
     title_line_1: Perfectly
     title_line_2: designed.
-    text: Architecture and interior design shaped around function, proportion, materials and construction reality.
+    text: Architecture and interior design shaped around function, proportion,
+      materials and construction reality.
   - image: assets/images/projects/zakho-conference-hall/interior-01.webp
     image_width: 1800
     image_height: 1081
     image_alt: Zakho Conference Hall reception
     title_line_1: Carefully
     title_line_2: planned.
-    text: Clear scope, coordinated requirements and disciplined preparation before execution.
+    text: Clear scope, coordinated requirements and disciplined preparation before
+      execution.
   - image: assets/images/projects/zakho-conference-hall/exterior-05.webp
     image_width: 1800
     image_height: 1081
     image_alt: Zakho Conference Hall, corner view
     title_line_1: Smartly
     title_line_2: executed.
-    text: Construction and fit-out delivered through close supervision and attention to detail.
+    text: Construction and fit-out delivered through close supervision and attention
+      to detail.
 projects_section:
   label: Projects
   title:
@@ -76,7 +76,8 @@ clients_section:
   title:
     - text: Trusted
     - text: partnership.
-  text: Clients work with one Seven Points team from the first site visit to the day the keys are handed over. One contact, one programme, one standard.
+  text: Clients work with one Seven Points team from the first site visit to the
+    day the keys are handed over. One contact, one programme, one standard.
   promises:
     - title: One point of responsibility
       text: Design, trades and site are coordinated under a single team.
@@ -91,6 +92,16 @@ contact_section:
   subtitle:
     - text: Let’s build it
     - text: together.
-  text: Share your project type, location and timeline. We reply directly — no forms, no call centre.
+  text: Share your project type, location and timeline. We reply directly — no
+    forms, no call centre.
   button_whatsapp: WhatsApp
   button_email: Email us
+seo:
+  page_title: Seven Points Construction & General Trading — Duhok, Kurdistan Region
+  description: Seven Points delivers architecture, construction, interior design,
+    fit-out, project management and site supervision through one coordinated
+    team in Duhok, Kurdistan Region, Iraq.
+  share_title: Seven Points Construction & General Trading
+  share_description: Architecture, construction, interior design and project
+    delivery through one coordinated team.
+  share_image: assets/images/home/hero.webp
