@@ -1,0 +1,683 @@
+# ──────────────────────────────────────────────────────────────────────────
+#  Pages CMS — editing setup for the Seven Points website
+#
+#  Open https://app.pagescms.org, sign in with GitHub and choose the
+#  sevenpoints.info repository. Each item under "content" below is one entry
+#  in the Pages CMS menu. Every Save is stored on GitHub, and GitHub Pages
+#  then rebuilds https://sevenpoints.info by itself (about 1–2 minutes).
+#
+#  Where things live in the repository:
+#    _data/homepage.yml   _data/about.yml   _data/services.yml   _data/contact.yml
+#    _projects/<slug>.md  (one file per project)
+#    _clients/<name>.md   (one file per client)
+#    assets/images/...    (photos, in folders)
+#  The design (sp-style.css) and motion (sp-script.js) are not edited here.
+# ──────────────────────────────────────────────────────────────────────────
+
+media:
+  name: photos
+  label: Website photos
+  input: assets/images
+  output: assets/images
+  categories: [ image ]
+  rename: safe          # "My Photo 01.WEBP" is saved as "my-photo-01.webp"
+
+settings:
+  config: false         # keeps this technical file out of the Pages CMS menu
+
+# Reusable field: a heading written line by line, with optional orange words
+components:
+  headline:
+    label: Heading
+    description: One row per line, exactly as it breaks on the website. Words in "Orange words" appear in orange at the end of that line.
+    type: object
+    list:
+      min: 1
+      max: 4
+      collapsible: false
+    fields:
+      - name: text
+        label: Line
+        type: string
+      - name: highlight
+        label: Orange words at the end of the line (optional)
+        type: string
+
+content:
+
+  # ──────────────────────────────────────────────── HOMEPAGE
+  - name: homepage
+    label: Homepage
+    description: Texts and photos of the homepage, from top to bottom. (The About Us section has its own menu item.)
+    type: file
+    path: _data/homepage.yml
+    format: yaml
+    fields:
+      - name: hero
+        label: Hero — top of the page
+        type: object
+        fields:
+          - name: label
+            label: Small line above the headline
+            type: string
+          - name: title
+            label: Hero headline
+            component: headline
+          - name: subtitle
+            label: Hero subtitle (text under the headline)
+            type: text
+          - name: button_projects
+            label: First button text (goes to Projects)
+            type: string
+          - name: button_contact
+            label: Second button text (goes to Contact)
+            type: string
+          - name: image
+            label: Hero photo
+            description: The full-screen photo. Upload a WebP from your 03_WEB_READY folder, about 2400 px wide.
+            type: image
+            required: true
+            options:
+              path: assets/images/home
+          - name: image_width
+            type: number
+            hidden: true
+          - name: image_height
+            type: number
+            hidden: true
+          - name: project_name
+            label: Hero project name
+            description: The project in the hero photo. Not shown as text in this design; it describes the photo for Google and screen readers.
+            type: string
+          - name: project_info
+            label: Hero project information
+            description: Added after the project name in that description, e.g. "designed and built by Seven Points".
+            type: string
+
+      - name: numbers
+        label: Statistics — yellow numbers band
+        description: A number counts up when the page shows it. A word (like Duhok) is shown as it is.
+        type: object
+        list:
+          min: 1
+          max: 6
+          collapsible:
+            collapsed: true
+            summary: "{fields.value}{fields.sign}  {fields.label}"
+        fields:
+          - name: value
+            label: Number or word
+            type: string
+            required: true
+          - name: sign
+            label: Sign after the number, e.g. +
+            type: string
+          - name: label
+            label: Label
+            type: string
+
+      - name: strip
+        label: Moving words (dark band under the numbers)
+        type: string
+        list: true
+
+      - name: statement
+        label: Brand statement
+        type: object
+        fields:
+          - name: title
+            label: Brand statement heading
+            component: headline
+          - name: text
+            label: Brand statement text
+            type: text
+          - name: link
+            label: Link text (goes to Projects)
+            type: string
+
+      - name: stories
+        label: Photo story — three full-screen photos
+        description: Always three slides; the scrolling effect is built for three.
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: "{fields.title_line_1} {fields.title_line_2}"
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            required: true
+            options:
+              path: assets/images/projects
+          - name: image_width
+            type: number
+            hidden: true
+          - name: image_height
+            type: number
+            hidden: true
+          - name: image_alt
+            label: Photo description (alt text)
+            type: string
+          - name: title_line_1
+            label: Big words — line 1
+            type: string
+          - name: title_line_2
+            label: Big words — line 2
+            type: string
+          - name: text
+            label: Small text
+            type: text
+
+      - name: projects_section
+        label: Projects section — heading
+        description: Which projects appear here is set in Projects (switch on "Show on homepage"); their order follows "Display order".
+        type: object
+        fields:
+          - name: label
+            label: Small label
+            type: string
+          - name: title
+            label: Projects heading
+            component: headline
+
+      - name: clients_section
+        label: Clients section
+        description: Client logos and testimonials are added in "Clients & testimonials".
+        type: object
+        fields:
+          - name: label
+            label: Small label
+            type: string
+          - name: title
+            label: Clients heading
+            component: headline
+          - name: text
+            label: Clients text
+            type: text
+          - name: promises
+            label: Numbered points
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.title}"
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: text
+                label: Text
+                type: text
+
+      - name: contact_section
+        label: Call to action — contact section at the bottom
+        description: Phone, WhatsApp and email are in "Contact & social media".
+        type: object
+        fields:
+          - name: title
+            label: CTA heading
+            component: headline
+          - name: subtitle
+            label: CTA second heading (grey)
+            component: headline
+          - name: text
+            label: CTA text
+            type: text
+          - name: button_whatsapp
+            label: WhatsApp button text
+            type: string
+          - name: button_email
+            label: Email button text
+            type: string
+
+      - name: seo
+        label: Google & sharing
+        type: object
+        fields:
+          - name: page_title
+            label: Page title (shown in Google and on the browser tab)
+            type: string
+            required: true
+          - name: description
+            label: Meta description (the text under the title in Google)
+            type: text
+          - name: share_title
+            label: Title when the link is shared (WhatsApp, Facebook…)
+            type: string
+          - name: share_description
+            label: Text when the link is shared
+            type: text
+          - name: share_image
+            label: Image when the link is shared
+            description: Leave empty to use the hero photo.
+            type: image
+            options:
+              path: assets/images/home
+
+  # ──────────────────────────────────────────────── PROJECTS
+  - name: projects
+    label: Projects
+    description: One entry per project. Projects with "Show on homepage" switched on appear in Selected Projects, in "Display order"; the layout alternates wide / narrow by itself.
+    type: collection
+    path: _projects
+    format: yaml-frontmatter
+    filename: "{fields.slug}.md"
+    view:
+      primary: title
+      fields: [ title, location, featured, order ]
+      sort: [ order, title ]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Project name
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        description: Short web name, lowercase words joined by dashes, e.g. zakho-conference-hall. Use the same name for the project's photo folder.
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9]+(-[a-z0-9]+)*$"
+          message: Use lowercase letters, numbers and dashes only, e.g. villa-duhok-2025
+      - name: location
+        label: Location
+        description: Shown on the project card, e.g. Duhok / Zakho
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: status
+        label: Status
+        type: select
+        options:
+          values: [ Completed, In progress, Design stage ]
+      - name: short_description
+        label: Short description
+        description: One or two sentences. Used for Google; the homepage card itself shows the name, services and location.
+        type: text
+      - name: body
+        label: Full description
+        description: The full story of the project. Kept with the project for Google and for future project pages.
+        type: rich-text
+      - name: services
+        label: Services
+        description: Shown under the project name, e.g. Architecture · Construction · Interior
+        type: string
+        list: true
+      - name: featured
+        label: Show on homepage (featured)
+        type: boolean
+        default: true
+      - name: order
+        label: Display order
+        description: 1 = first, 2 = second…
+        type: number
+        default: 10
+        required: true
+      - name: hero_image
+        label: Project hero photo
+        description: The photo on the project card. Upload WebP files from 03_WEB_READY into assets/images/projects/<slug>/.
+        type: image
+        required: true
+        options:
+          path: assets/images/projects
+      - name: hero_image_width
+        type: number
+        hidden: true
+      - name: hero_image_height
+        type: number
+        hidden: true
+      - name: hero_alt
+        label: Hero photo description (image alt text)
+        type: string
+      - name: hero_crop
+        label: Hero photo crop
+        description: Which part of the photo stays visible on the card.
+        type: select
+        default: 50% 50%
+        options:
+          values:
+            - value: 50% 50%
+              label: Centre
+            - value: 50% 30%
+              label: Upper part
+            - value: 50% 45%
+              label: Slightly above centre
+            - value: 50% 60%
+              label: Slightly below centre
+            - value: 50% 75%
+              label: Lower part
+      - name: gallery
+        label: Gallery photos
+        description: Opens when visitors click the project. Add, remove, replace or drag photos to reorder them — the website follows this order. Each photo's description is its caption and alt text.
+        type: object
+        list:
+          collapsible:
+            collapsed: false
+            summary: "{fields.alt}"
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            required: true
+            options:
+              path: assets/images/projects
+          - name: alt
+            label: Photo description (caption and alt text)
+            type: string
+      - name: seo_title
+        label: SEO title
+        description: For Google. Leave empty to use the project name.
+        type: string
+      - name: seo_description
+        label: SEO description
+        description: For Google. Leave empty to use the short description.
+        type: text
+
+  # ──────────────────────────────────────────────── ABOUT
+  - name: about
+    label: About Us
+    description: The About Us section — Who We Are, Our Values, Our Team and Founders.
+    type: file
+    path: _data/about.yml
+    format: yaml
+    fields:
+      - name: label
+        label: Small label
+        type: string
+      - name: title
+        label: About Us main statement (heading)
+        component: headline
+      - name: lead
+        label: About description (text next to the heading)
+        type: text
+      - name: who_we_are
+        label: 01 Who We Are
+        type: object
+        fields:
+          - name: text
+            label: Who We Are text (optional)
+            description: Leave empty to keep the section as it is now (photo and numbers only).
+            type: text
+          - name: image
+            label: Who We Are photo
+            type: image
+            required: true
+            options:
+              path: assets/images/company
+          - name: image_width
+            type: number
+            hidden: true
+          - name: image_height
+            type: number
+            hidden: true
+          - name: image_alt
+            label: Photo description (alt text)
+            type: string
+          - name: stats
+            label: Statistics
+            description: A number counts up when the page shows it. A word (like Duhok) is shown as it is.
+            type: object
+            list:
+              min: 1
+              max: 6
+              collapsible:
+                collapsed: true
+                summary: "{fields.value}{fields.sign}  {fields.label}"
+            fields:
+              - name: value
+                label: Number or word
+                type: string
+                required: true
+              - name: sign
+                label: Sign after the number, e.g. +
+                type: string
+              - name: label
+                label: Label
+                type: string
+      - name: values
+        label: 02 Our Values
+        description: Numbered automatically (01, 02…).
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}"
+        fields:
+          - name: title
+            label: Value
+            type: string
+          - name: text
+            label: Text
+            type: text
+      - name: team
+        label: 03 Our Team
+        type: object
+        fields:
+          - name: statement
+            label: Our Team statement
+            description: Press Enter where the line should break.
+            type: text
+          - name: disciplines
+            label: Team disciplines (moving words)
+            type: string
+            list: true
+      - name: founders
+        label: 04 Founders
+        type: object
+        fields:
+          - name: statement
+            label: Founders heading
+            description: Press Enter where the line should break.
+            type: text
+          - name: text
+            label: Founders description
+            type: text
+          - name: people
+            label: Founders
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.name}"
+            fields:
+              - name: name
+                label: Name
+                type: string
+                required: true
+              - name: role
+                label: Role
+                type: string
+              - name: photo
+                label: Portrait photo
+                type: image
+                required: true
+                options:
+                  path: assets/images/company
+              - name: photo_width
+                type: number
+                hidden: true
+              - name: photo_height
+                type: number
+                hidden: true
+              - name: photo_alt
+                label: Photo description (alt text)
+                type: string
+
+  # ──────────────────────────────────────────────── SERVICES
+  - name: services
+    label: Services
+    description: Planning, Designing, Construction and Management. The scrolling photo panel follows these four stages.
+    type: file
+    path: _data/services.yml
+    format: yaml
+    fields:
+      - name: label
+        label: Small label
+        type: string
+      - name: title
+        label: Services heading
+        component: headline
+      - name: intro
+        label: Services introduction
+        type: text
+      - name: stages
+        label: Services (four stages)
+        type: object
+        list:
+          min: 4
+          max: 4
+          collapsible:
+            collapsed: true
+            summary: "{fields.number} {fields.title}"
+        fields:
+          - name: number
+            label: Number
+            type: string
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: text
+            label: Description
+            type: text
+          - name: points
+            label: Bullet points
+            type: string
+            list: true
+          - name: image
+            label: Image
+            type: image
+            required: true
+            options:
+              path: assets/images/services
+          - name: image_width
+            type: number
+            hidden: true
+          - name: image_height
+            type: number
+            hidden: true
+          - name: image_alt
+            label: Image description (alt text)
+            type: string
+
+  # ──────────────────────────────────────────────── CLIENTS
+  - name: clients
+    label: Clients & testimonials
+    description: Clients with "Show on website" switched on appear in the Clients section — their logo in the logo row, and their testimonial (if any) as a quote. Use real logos and real quotes only, with the client's permission.
+    type: collection
+    path: _clients
+    format: yaml-frontmatter
+    filename: "{fields.title}.md"
+    view:
+      primary: title
+      fields: [ title, person, featured, order ]
+      sort: [ order, title ]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Client name
+        type: string
+        required: true
+      - name: logo
+        label: Client logo
+        description: PNG or SVG with a transparent background works best.
+        type: image
+        options:
+          path: assets/images/clients
+      - name: testimonial
+        label: Testimonial
+        type: text
+      - name: person
+        label: Person name
+        type: string
+      - name: position
+        label: Position
+        type: string
+      - name: order
+        label: Display order
+        type: number
+        default: 10
+      - name: featured
+        label: Show on website (featured)
+        type: boolean
+        default: true
+
+  # ──────────────────────────────────────────────── CONTACT
+  - name: contact
+    label: Contact & social media
+    description: Used in the menu, the contact buttons, the footer and Google's company information.
+    type: file
+    path: _data/contact.yml
+    format: yaml
+    fields:
+      - name: phone
+        label: Phone
+        description: As it should appear, e.g. +964 750 220 5577
+        type: string
+        pattern:
+          regex: "^[+0-9 ()-]*$"
+          message: Use numbers, spaces and + only, e.g. +964 750 220 5577
+      - name: whatsapp
+        label: WhatsApp number
+        description: With country code, e.g. +964 750 220 5577
+        type: string
+        pattern:
+          regex: "^[+0-9 ()-]*$"
+          message: Use numbers, spaces and + only, e.g. +964 750 220 5577
+      - name: email
+        label: Email
+        type: string
+        pattern:
+          regex: "^([^@\\s]+@[^@\\s]+\\.[^@\\s]+)?$"
+          message: Enter a full email address, e.g. info@sevenpoints.info
+      - name: address
+        label: Address
+        type: object
+        fields:
+          - name: street
+            label: Street
+            type: string
+          - name: city
+            label: City
+            type: string
+          - name: region
+            label: Region
+            type: string
+          - name: country
+            label: Country
+            type: string
+          - name: country_code
+            label: Country code for Google (two letters)
+            type: string
+      - name: social
+        label: Social media
+        description: Full links, starting with https://. Empty links stay as placeholders.
+        type: object
+        fields:
+          - name: instagram
+            label: Instagram
+            type: string
+            pattern:
+              regex: "^(https?://\\S+)?$"
+              message: Paste the full link, starting with https://
+          - name: facebook
+            label: Facebook
+            type: string
+            pattern:
+              regex: "^(https?://\\S+)?$"
+              message: Paste the full link, starting with https://
+          - name: linkedin
+            label: LinkedIn
+            type: string
+            pattern:
+              regex: "^(https?://\\S+)?$"
+              message: Paste the full link, starting with https://
