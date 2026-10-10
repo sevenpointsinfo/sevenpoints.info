@@ -1,0 +1,9 @@
+{%- comment -%}
+  One headline, line by line, in the site's reveal markup:
+  <span class="ln"><span>white words <em>orange words</em></span></span>
+  include.lines  = list of { text, highlight }   (from the content files)
+  include.indent = spaces before each line, so the page source stays tidy
+{%- endcomment -%}
+{%- for line in include.lines %}
+{{ include.indent }}<span class="ln"><span>{{ line.text | escape }}{% if line.text.size > 0 and line.highlight.size > 0 %}{{ ' ' }}{% endif %}{% if line.highlight.size > 0 %}<em>{{ line.highlight | escape }}</em>{% endif %}</span></span>
+{%- endfor -%}

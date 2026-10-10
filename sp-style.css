@@ -515,8 +515,7 @@ section { position: relative; }
   transition: transform 1.4s var(--ease);
 }
 .project__media:hover img, .project__media:focus-visible img { transform: scale(1.025); }
-.project-zakho .project__media img { object-position: 50% 60%; }
-.project-jade .project__media img { object-position: 50% 45%; }
+/* Each project's photo crop is set in Pages CMS → Projects → "Hero photo crop". */
 
 .project__meta {
   display: grid; grid-template-columns: 64px minmax(0, 1fr) auto auto; column-gap: 24px; align-items: baseline;

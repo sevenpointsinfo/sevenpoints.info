@@ -1,0 +1,55 @@
+label: What we do
+title:
+  - text: From idea
+  - text: to
+    highlight: execution.
+intro: Four stages, one responsible team. Each stage is handed to the next without losing the intent of the one before it.
+stages:
+  - number: "01"
+    title: Planning
+    points:
+      - Project Definition
+      - Site Survey
+      - Scope Coordination
+      - Budget Planning
+    text: We establish requirements, priorities, site constraints, budget and delivery strategy before construction begins.
+    image: assets/images/services/planning.webp
+    image_width: 1600
+    image_height: 961
+    image_alt: Aerial view of the Zakho Conference Hall site plan
+  - number: "02"
+    title: Designing
+    points:
+      - Architecture
+      - Interior Design
+      - Technical Coordination
+      - Material Selection
+    text: Architecture and interior design are developed around practical, coordinated and buildable solutions.
+    image: assets/images/services/designing.webp
+    image_width: 1600
+    image_height: 961
+    image_alt: Auditorium interior design for the Zakho Conference Hall
+  - number: "03"
+    title: Construction
+    points:
+      - Construction
+      - Fit-Out
+      - Site Supervision
+      - Quality Control
+    text: Site execution, materials, trades and finishing are controlled by one responsible delivery team.
+    image: assets/images/services/construction.webp
+    image_width: 825
+    image_height: 550
+    image_alt: Lit staircase with glass balustrade, Jade Touch Salon
+  - number: "04"
+    title: Management
+    points:
+      - Project Management
+      - Scheduling
+      - Reporting
+      - Handover
+    text: Scheduling, coordination, reporting, quality control and handover are managed throughout project delivery.
+    image: assets/images/services/management.webp
+    image_width: 825
+    image_height: 550
+    image_alt: Completed treatment area, Jade Touch Salon

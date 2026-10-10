@@ -1,0 +1,73 @@
+# Seven Points — website settings for GitHub Pages.
+#
+# GitHub Pages builds this site with Jekyll every time something is saved to
+# the repository (for example from Pages CMS), then publishes it at
+# https://sevenpoints.info. Nothing to install or run.
+#
+#   Content  →  _data/*.yml, _projects/*.md, _clients/*.md   (edited in Pages CMS, see .pages.yml)
+#   Design   →  sp-style.css
+#   Motion   →  sp-script.js
+#   Photos   →  assets/images/...   Logos → assets/logos/
+
+title: Seven Points Construction & General Trading
+url: https://sevenpoints.info
+baseurl: ""
+
+# Projects and clients are lists of entries used on the homepage.
+# They do not get pages of their own.
+collections:
+  projects:
+    output: false
+  clients:
+    output: false
+
+# Files in the repository that are not part of the public website:
+# notes, and older files from previous versions of the site that the
+# current site no longer uses (they stay in the repository, unpublished).
+exclude:
+  # notes and tooling
+  - README.md
+  - SETUP.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - tsconfig.json
+  - use-mobile.ts
+  - vite.config.ts
+  # an earlier content-editor attempt (replaced by Pages CMS)
+  - admin
+  - content
+  # older versions of the site
+  - css
+  - js
+  - docs
+  - script.js
+  - style.css
+  - styles.css
+  - site.webmanifest
+  # older photos and logos in the main folder (the site now uses assets/)
+  - "sp-*.webp"
+  - "sp-*.png"
+  - "saloon*"
+  - "exterior-*"
+  - "interior-*"
+  - "zakho-*"
+  - "zakhoconferencehall*"
+  - construction.webp
+  - designing.webp
+  - management.webp
+  - planning.webp
+  - hero.webp
+  - who-we-are.webp
+  - favicon.png
+  - logo.png
+  - logo-white.png
+  - mark.png
+  - mr.shiraz.png
+  - sevenpointsbg.png
+  - sevenpointslogoblacktxtsvg.svg
+  - sevenpointslogowhitetxtsvg.svg
+  # old notes inside the photo folders
+  - "assets/images/*README.txt"
+  - assets/logos/README.txt
