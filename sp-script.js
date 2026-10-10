@@ -1,7 +1,9 @@
 /* =========================================================================
    SEVEN POINTS — interactions
-   Plain JavaScript. The optional Lenis library adds inertial smooth
-   scrolling on desktop; everything works without it.
+   Plain JavaScript. Scrolling is the browser's own; the effects that follow
+   the scroll (hero drift, About panel, statement lines, pinned photos) are
+   CSS scroll-driven animations in sp-style.css, section 23, so the browser
+   runs them in step with the scroll without redrawing the page.
    Without JavaScript the page is fully readable, just without motion.
    ========================================================================= */
 (() => {
@@ -14,6 +16,10 @@
   const clamp = (v, min = 0, max = 1) => Math.min(max, Math.max(min, v));
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  // Browsers that can run scroll effects in CSS (Chrome, Edge, Safari 26+). In others the
+  // script moves the hero, About panel and statement as before, and the photo section
+  // stacks as on phones.
+  const cssScroll = !!(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()'));
 
   /* ---------------------------------------------------------------------
      Small things
@@ -34,7 +40,9 @@
   }
 
   /* ---------------------------------------------------------------------
-     Smooth scrolling (desktop only, if the library loaded)
+     Smooth scrolling library — no longer loaded by index.html, because the
+     browser's own scrolling is faster and smoother. This stays inactive
+     unless the Lenis <script> is added back.
   --------------------------------------------------------------------- */
   let lenis = null;
   if (window.Lenis && !reduceMotion && finePointer) {
@@ -85,7 +93,7 @@
           revealer.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.01 });
+    }, { rootMargin: '0px 0px 0px 0px', threshold: 0.01 });   // start as soon as it appears
     targets.forEach((el) => revealer.observe(el));
   };
 
@@ -104,7 +112,7 @@
     const c = prepareCount(el);
     if (!c) return;
     const t0 = performance.now();
-    const dur = 1800;
+    const dur = 1200;
     const step = (now) => {
       const t = clamp((now - t0) / dur);
       const eased = 1 - Math.pow(2, -10 * t);
@@ -256,33 +264,39 @@
   }, '-45% 0px -50% 0px');
 
   /* ---------------------------------------------------------------------
-     Scroll-driven motion (one rAF loop)
+     Scroll state (one rAF per scroll frame, only small updates)
+     The moving parts themselves — hero drift, About panel, statement lines
+     and the pinned photos — are CSS scroll-driven animations
+     (sp-style.css, section 23). This loop sets classes and two small
+     progress indicators — and, only in browsers without CSS scroll
+     effects, moves the hero, About panel and statement as before.
   --------------------------------------------------------------------- */
   const nav = $('#nav');
+  const aboutBody = $('.about__chapters');
+  const progress = $('.chapters__progress');
+  // Only used by browsers without CSS scroll effects (older Safari, Firefox):
   const hero = $('.hero');
   const heroMedia = $('.hero__media');
   const heroContent = $('.hero__content');
   const about = $('.about');
-  const aboutBody = $('.about__chapters');
-  const progress = $('.chapters__progress');
   const statement = $('[data-drift]');
   const statementLines = statement ? $$('.statement__title .ln', statement) : [];
+  let lastAboutScale = '';
   const stories = $('.stories');
   const storyEls = $$('.story');
   const storyBars = $$('.stories__bar i');
   const pinQuery = window.matchMedia('(min-width: 900px)');
 
+  // Pinned photo sequence: desktop, motion allowed, and CSS scroll effects available
   const setPinned = () => {
-    stories.classList.toggle('is-pinned', pinQuery.matches && !reduceMotion);
-    if (!stories.classList.contains('is-pinned')) {
-      storyEls.forEach((s) => { s.style.removeProperty('--y'); s.style.removeProperty('--zoom'); s.classList.add('is-active'); });
-    }
+    stories.classList.toggle('is-pinned', pinQuery.matches && !reduceMotion && cssScroll);
+    if (!stories.classList.contains('is-pinned')) storyEls.forEach((s) => s.classList.add('is-active'));
   };
   setPinned();
 
   let ticking = false;
   let lastY = window.scrollY;
-  let lastAboutScale = '';
+  let lastProgress = '';
   const requestUpdate = () => {
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   };
@@ -301,8 +315,9 @@
     }
     lastY = y;
 
-    if (!reduceMotion) {
-      // Hero: image drifts and scales 1.04 → 1.08, copy lifts away
+    // Browsers without CSS scroll effects: the same hero / About panel / statement
+    // motion, moved by this script as before
+    if (!reduceMotion && !cssScroll) {
       const p = clamp(y / vh);
       if (p < 1) {
         heroMedia.style.transform = `translate3d(0, ${(p * 16).toFixed(2)}vh, 0) scale(${(1.04 + p * 0.04).toFixed(4)})`;
@@ -310,50 +325,37 @@
         heroContent.style.opacity = String(clamp(1 - p * 1.25));
         hero.style.setProperty('--shade', (p * 0.65).toFixed(3));
       }
-
-      // About: light panel widens from 92% to full width as it rises
       const aTop = about.getBoundingClientRect().top;
       const s = (0.92 + 0.08 * clamp((vh - aTop) / (vh * 0.85))).toFixed(4);
-      if (s !== lastAboutScale) { about.style.setProperty('--s', s); lastAboutScale = s; }  // write only on change
-
-      // About: reading progress along the chapter list
-      if (progress && aboutBody) {
-        const r = aboutBody.getBoundingClientRect();
-        const ap = clamp((vh * 0.4 - r.top) / (r.height - vh * 0.5));
-        progress.style.setProperty('--p', ap.toFixed(4));
-      }
-
-      // Statement: lines slide sideways in alternating directions
+      if (s !== lastAboutScale) { about.style.setProperty('--s', s); lastAboutScale = s; }
       if (statementLines.length) {
         const r = statement.getBoundingClientRect();
         if (r.top < vh && r.bottom > 0) {
           const sp = clamp((vh - r.top) / (vh + r.height)) - 0.5;
           statementLines.forEach((line, i) => {
-            const dir = i % 2 === 0 ? 1 : -1;
-            line.style.transform = `translate3d(${(sp * dir * 9).toFixed(2)}vw, 0, 0)`;
+            line.style.transform = `translate3d(${(sp * (i % 2 === 0 ? 1 : -1) * 9).toFixed(2)}vw, 0, 0)`;
           });
         }
       }
     }
 
-    // Stories: pinned sequence, each photo revealed from below
-    const sr = stories.getBoundingClientRect();
-    if (stories.classList.contains('is-pinned') && sr.top < vh && sr.bottom > 0) {
-      const r = sr;
-      const run = r.height - vh;
-      const t = clamp(-r.top / run) * storyEls.length;
-      let active = 0;
-      storyEls.forEach((story, i) => {
-        const local = clamp(t - i + 0.35, 0, 1.35);
-        story.style.setProperty('--zoom', (1.08 - local * 0.05).toFixed(4));
-        if (i > 0) {
-          const reveal = clamp((t - (i - 0.3)) / 0.6);
-          story.style.setProperty('--y', ((1 - reveal) * 100).toFixed(2) + 'vh');
-          if (reveal > 0.55) active = i;
-        }
-      });
-      storyEls.forEach((story, i) => story.classList.toggle('is-active', i === active));
-      storyBars.forEach((bar, i) => bar.style.setProperty('--f', clamp(t - i).toFixed(3)));
+    // About: reading progress along the chapter list (desktop)
+    if (!reduceMotion && progress && aboutBody) {
+      const r = aboutBody.getBoundingClientRect();
+      const ap = clamp((vh * 0.4 - r.top) / (r.height - vh * 0.5)).toFixed(4);
+      if (ap !== lastProgress) { progress.style.setProperty('--p', ap); lastProgress = ap; }
+    }
+
+    // Pinned photos: which one is current (its words rise) and the small bars on the right
+    if (stories.classList.contains('is-pinned')) {
+      const r = stories.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) {
+        const t = clamp(-r.top / (r.height - vh)) * storyEls.length;
+        let active = 0;
+        storyEls.forEach((story, i) => { if (i > 0 && clamp((t - (i - 0.3)) / 0.6) > 0.55) active = i; });
+        storyEls.forEach((story, i) => story.classList.toggle('is-active', i === active));
+        storyBars.forEach((bar, i) => bar.style.setProperty('--f', clamp(t - i).toFixed(3)));
+      }
     }
   }
 

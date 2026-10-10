@@ -426,7 +426,7 @@ section { position: relative; }
 .services__frame img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
   opacity: 0; transform: scale(1.06);
-  transition: opacity 1s ease, transform 1.8s var(--ease);
+  transition: opacity .6s ease, transform 1.1s var(--ease);
 }
 .services__frame img.is-active { opacity: 1; transform: none; }
 .services__frame img[data-stage="0"] { object-position: 50% 50%; }
@@ -447,7 +447,7 @@ section { position: relative; }
   min-height: 76vh;
   display: flex; flex-direction: column; justify-content: center;
   padding: 6vh 0;
-  opacity: .22; transition: opacity .7s ease;
+  opacity: .22; transition: opacity .5s ease;
 }
 .stage.is-active { opacity: 1; }
 .stage__img { display: none; }
@@ -624,16 +624,16 @@ section { position: relative; }
    Only active when JavaScript runs (html.js) and motion is allowed.      */
 .js [data-reveal="lines"] .ln > span {
   transform: translateY(110%);
-  transition: transform 1s cubic-bezier(.16, 1, .3, 1);
-  transition-delay: calc(var(--i, 0) * 110ms);
+  transition: transform .75s cubic-bezier(.16, 1, .3, 1);
+  transition-delay: calc(var(--i, 0) * 70ms);
 }
 .js [data-reveal="lines"].is-in .ln > span { transform: none; }
 
-.js [data-reveal="fade"] { opacity: 0; transform: translateY(16px); transition: opacity .7s ease .2s, transform .8s cubic-bezier(.16, 1, .3, 1) .2s; }
+.js [data-reveal="fade"] { opacity: 0; transform: translateY(16px); transition: opacity .5s ease .1s, transform .6s cubic-bezier(.16, 1, .3, 1) .1s; }
 .js [data-reveal="fade"].is-in { opacity: 1; transform: none; }
 
-.js [data-reveal="img"] { clip-path: inset(14% 0 0 0); transition: clip-path 1.4s var(--ease); }
-.js [data-reveal="img"] img { transform: scale(1.12); transition: transform 1.8s var(--ease); }
+.js [data-reveal="img"] { clip-path: inset(14% 0 0 0); transition: clip-path .9s var(--ease); }
+.js [data-reveal="img"] img { transform: scale(1.12); transition: transform 1.1s var(--ease); }
 .js [data-reveal="img"].is-in { clip-path: inset(0); }
 .js [data-reveal="img"].is-in img { transform: none; }
 
@@ -643,17 +643,13 @@ section { position: relative; }
   .js .stories.is-pinned .stories__pin { position: sticky; top: 0; height: 100vh; overflow: hidden; }
   .js .stories.is-pinned .story { position: absolute; inset: 0; height: 100%; min-height: 0; }
   /* Each new photo slides up from below while its contents counter-move,
-     so it reads as a reveal. Transforms only — no repainting while scrolling. */
-  .js .stories.is-pinned .story:not(:first-child) { --y: 100vh; transform: translate3d(0, var(--y), 0); }
-  .js .stories.is-pinned .story__img { transform: translate3d(0, calc(var(--y, 0vh) * -1), 0) scale(var(--zoom, 1.06)); }
-  .js .stories.is-pinned .story__text,
-  .js .stories.is-pinned .story::after { transform: translate3d(0, calc(var(--y, 0vh) * -1), 0); }
-  .js .stories.is-pinned .story .ln > span { transform: translateY(108%); transition: transform 1s var(--ease); }
-  .js .stories.is-pinned .story .ln + .ln > span { transition-delay: .08s; }
+     so it reads as a reveal. The movement itself is in section 23. */
+  .js .stories.is-pinned .story .ln > span { transform: translateY(108%); transition: transform .7s var(--ease); }
+  .js .stories.is-pinned .story .ln + .ln > span { transition-delay: .06s; }
   .js .stories.is-pinned .story.is-active .ln > span { transform: none; }
-  .js .stories.is-pinned .story__copy, .js .stories.is-pinned .story__count { opacity: 0; transition: opacity .6s ease; }
+  .js .stories.is-pinned .story__copy, .js .stories.is-pinned .story__count { opacity: 0; transition: opacity .45s ease; }
   .js .stories.is-pinned .story.is-active .story__copy,
-  .js .stories.is-pinned .story.is-active .story__count { opacity: 1; transition-delay: .2s; }
+  .js .stories.is-pinned .story.is-active .story__count { opacity: 1; transition-delay: .12s; }
   .js .stories.is-pinned .stories__bar {
     position: absolute; z-index: 3; right: var(--pad); top: 50%; transform: translateY(-50%);
     display: flex; flex-direction: column; gap: 8px;
@@ -760,7 +756,7 @@ section { position: relative; }
   /* On phones the About headline flows as one text block instead of fixed lines */
   .about__title .ln, .about__title .ln > span { display: inline; overflow: visible; padding: 0; margin: 0; }
   .js .about__title[data-reveal="lines"] .ln > span { transform: none; }
-  .js .about__title[data-reveal="lines"] { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1.2s var(--ease); }
+  .js .about__title[data-reveal="lines"] { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .8s var(--ease); }
   .js .about__title[data-reveal="lines"].is-in { opacity: 1; transform: none; }
   .about__lead { grid-column: 1 / -1; margin-top: 36px; font-size: 18px; }
   .chapters { gap: 22px; }
@@ -970,4 +966,117 @@ html.lenis, html.lenis body { height: auto; }
   .loader { display: none !important; }
   .is-intro .nav__brand, .is-intro .nav__links, .is-intro .nav__contact, .is-intro .nav__burger { opacity: 1 !important; transform: none !important; }
   .stage { opacity: 1; }
+}
+
+/* 23. SCROLL EFFECTS -------------------------------------------------------
+   The motion that follows the scroll, as CSS scroll-driven animations: the
+   browser runs them in step with the scroll on the graphics card, with no
+   script and no redrawing while the page moves. (A script used to move
+   these parts frame by frame; on wide screens that made the browser redraw
+   large areas constantly, which showed up as flicker and stutter.) Each
+   animation reproduces the motion the script used to make.
+   Browsers without this feature (older Safari, Firefox) skip this section:
+   sp-script.js then moves the hero, About panel and statement as before,
+   and the photo section is stacked as on phones.                        */
+@supports (animation-timeline: view()) {
+  @keyframes sp-hero-media  { from { transform: translate3d(0, 0, 0) scale(1.04); } to { transform: translate3d(0, 16vh, 0) scale(1.08); } }
+  @keyframes sp-hero-copy   { from { transform: translate3d(0, 0, 0); opacity: 1; } 80% { opacity: 0; } to { transform: translate3d(0, -70px, 0); opacity: 0; } }
+  @keyframes sp-hero-shade  { from { opacity: 0; } to { opacity: .65; } }
+  @keyframes sp-panel       { from { transform: scaleX(.92); } to { transform: scaleX(1); } }
+  @keyframes sp-drift-right { from { transform: translate3d(-4.5vw, 0, 0); } to { transform: translate3d(4.5vw, 0, 0); } }
+  @keyframes sp-drift-left  { from { transform: translate3d(4.5vw, 0, 0); } to { transform: translate3d(-4.5vw, 0, 0); } }
+  @keyframes sp-slide-in    { from { translate: 0 100vh; } to { translate: 0 0; } }
+  @keyframes sp-counter     { from { translate: 0 -100vh; } to { translate: 0 0; } }
+  @keyframes sp-zoom-first  { from { scale: 1.0625; } to { scale: 1.0125; } }
+  @keyframes sp-zoom        { from { scale: 1.08; } to { scale: 1.0125; } }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero      { view-timeline-name: --sp-hero; }
+    .about     { view-timeline-name: --sp-about; }
+    .statement { view-timeline-name: --sp-statement; }
+    .stories   { view-timeline-name: --sp-stories; }
+
+    /* Hero, while it scrolls away: the photo drifts down 16vh and grows
+       1.04 → 1.08, the words lift 70px and are gone by 80%, the shade deepens */
+    .hero__media {
+      animation: sp-hero-media auto linear both;
+      animation-timeline: --sp-hero; animation-range: exit 0% exit 100%;
+      will-change: transform;   /* draw the photo once; the zoom then costs nothing */
+    }
+    .hero__content {
+      animation: sp-hero-copy auto linear both;
+      animation-timeline: --sp-hero; animation-range: exit 0% exit 100%;
+    }
+    .hero::after {
+      animation: sp-hero-shade auto linear both;
+      animation-timeline: --sp-hero; animation-range: exit 0% exit 100%;
+    }
+
+    /* About: the light panel widens from 92% to full width as it rises
+       (complete when its top edge is 15% below the top of the screen) */
+    .about::before {
+      animation: sp-panel auto linear both;
+      animation-timeline: --sp-about; animation-range: entry 0% entry 85%;
+    }
+
+    /* Statement: lines slide sideways in alternating directions while it crosses the screen */
+    .statement__title .ln:nth-child(odd) {
+      animation: sp-drift-right auto linear both;
+      animation-timeline: --sp-statement; animation-range: cover 0% cover 100%;
+    }
+    .statement__title .ln:nth-child(even) {
+      animation: sp-drift-left auto linear both;
+      animation-timeline: --sp-statement; animation-range: cover 0% cover 100%;
+    }
+  }
+
+  /* Pinned photos (desktop). 0% → 100% is the scroll through the pinned section.
+     Photos 2 and 3 slide up from below while their picture, shade and words
+     counter-move; every picture eases out of a slight zoom. */
+  @media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+    .js .stories.is-pinned .story,
+    .js .stories.is-pinned .story__img,
+    .js .stories.is-pinned .story__text,
+    .js .stories.is-pinned .story::after {
+      animation-duration: auto; animation-timing-function: linear; animation-fill-mode: both;
+    }
+    /* draw each photo once; sliding and zooming it then costs nothing */
+    .js .stories.is-pinned .story,
+    .js .stories.is-pinned .story__img { will-change: transform; }
+    /* Photo 1: zoom 1.0625 → 1.0125 during the first third */
+    .js .stories.is-pinned .story:nth-child(1) .story__img {
+      animation-name: sp-zoom-first;
+      animation-timeline: --sp-stories; animation-range: contain 0% contain 33.333%;
+    }
+    /* Photo 2: slides in from 23.3% to 43.3%; zoom 1.08 → 1.0125 from 21.7% to 66.7% */
+    .js .stories.is-pinned .story:nth-child(2) {
+      animation-name: sp-slide-in;
+      animation-timeline: --sp-stories; animation-range: contain 23.333% contain 43.333%;
+    }
+    .js .stories.is-pinned .story:nth-child(2) .story__text,
+    .js .stories.is-pinned .story:nth-child(2)::after {
+      animation-name: sp-counter;
+      animation-timeline: --sp-stories; animation-range: contain 23.333% contain 43.333%;
+    }
+    .js .stories.is-pinned .story:nth-child(2) .story__img {
+      animation-name: sp-counter, sp-zoom;
+      animation-timeline: --sp-stories, --sp-stories;
+      animation-range: contain 23.333% contain 43.333%, contain 21.667% contain 66.667%;
+    }
+    /* Photo 3: slides in from 56.7% to 76.7%; zoom from 55% to 100% */
+    .js .stories.is-pinned .story:nth-child(3) {
+      animation-name: sp-slide-in;
+      animation-timeline: --sp-stories; animation-range: contain 56.667% contain 76.667%;
+    }
+    .js .stories.is-pinned .story:nth-child(3) .story__text,
+    .js .stories.is-pinned .story:nth-child(3)::after {
+      animation-name: sp-counter;
+      animation-timeline: --sp-stories; animation-range: contain 56.667% contain 76.667%;
+    }
+    .js .stories.is-pinned .story:nth-child(3) .story__img {
+      animation-name: sp-counter, sp-zoom;
+      animation-timeline: --sp-stories, --sp-stories;
+      animation-range: contain 56.667% contain 76.667%, contain 55% contain 100%;
+    }
+  }
 }
