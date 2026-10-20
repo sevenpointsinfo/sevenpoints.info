@@ -291,7 +291,7 @@ try { (function (l) { if ((l === 'ar' || l === 'ckb') && location.protocol !== '
         <nav class="chapters" aria-label="{{ ui.about_nav | default: "About Seven Points" }}">
           <div class="chapters__progress" aria-hidden="true"><i></i></div>
           <a href="#who" class="is-active" aria-current="true"><span>01</span>{{ ui.who | default: "Who We Are" }}</a>
-          <a href="#values"><span>02</span>{{ ui.values | default: "Our Values" }}</a>
+          <a href="#values"><span>02</span>{{ ui.values | default: "Our Approach" }}</a>
           <a href="#team"><span>03</span>{{ ui.team | default: "Our Team" }}</a>
           <a href="#founders"><span>04</span>{{ ui.founders | default: "Founders" }}</a>
         </nav>
@@ -302,8 +302,9 @@ try { (function (l) { if ((l === 'ar' || l === 'ckb') && location.protocol !== '
         <!-- 01 WHO WE ARE -->
         <article class="chapter" id="who" aria-labelledby="who-title">
           <h3 class="chapter__label" id="who-title"><span>01</span>{{ ui.who | default: "Who We Are" }}</h3>
-{%- if about.who_we_are.text.size > 0 %}
-          <p class="chapter__text">{{ ta.who_we_are.text | default: about.who_we_are.text | escape }}</p>
+{%- assign who_text = ta.who_we_are.text | default: about.who_we_are.text %}
+{%- if who_text.size > 0 %}
+          <p class="chapter__text">{{ who_text | escape }}</p>
 {%- endif %}
           <figure class="who__media" data-reveal="img">
             <img src="{{ root }}{{ about.who_we_are.image }}" width="{{ about.who_we_are.image_width | default: 1600 }}" height="{{ about.who_we_are.image_height | default: 961 }}"
@@ -317,9 +318,21 @@ try { (function (l) { if ((l === 'ar' || l === 'ckb') && location.protocol !== '
           </dl>
         </article>
 
-        <!-- 02 OUR VALUES -->
+        <!-- 02 OUR APPROACH -->
         <article class="chapter" id="values" aria-labelledby="values-title">
-          <h3 class="chapter__label" id="values-title"><span>02</span>{{ ui.values | default: "Our Values" }}</h3>
+          <h3 class="chapter__label" id="values-title"><span>02</span>{{ ui.values | default: "Our Approach" }}</h3>
+          <div class="philosophy">
+{%- assign philosophy_keys = "vision,mission" | split: "," %}
+{%- for key in philosophy_keys %}
+{%- assign p_text = ta.philosophy[key].text | default: about.philosophy[key].text %}
+{%- if p_text.size > 0 %}
+            <div class="philosophy__item">
+              <h4>{{ ta.philosophy[key].title | default: about.philosophy[key].title | escape }}</h4>
+              <p>{{ p_text | escape }}</p>
+            </div>
+{%- endif %}
+{%- endfor %}
+          </div>
           <ol class="values">
 {%- for v in about.values %}{% assign t_v = ta.values[forloop.index0] %}
             <li class="value">

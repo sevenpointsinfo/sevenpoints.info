@@ -256,6 +256,8 @@ components:
               - name: label
                 label: Label
                 type: string
+      - name: philosophy
+        component: philosophy
       - name: values
         label: 02 Our Values
         description: Keep the same number of values and the same order as About Us.
@@ -544,6 +546,31 @@ components:
       - name: jade-touch-salon
         label: Jade Touch Salon
         component: translated_project
+
+  philosophy:
+    label: Vision & mission
+    type: object
+    fields:
+      - name: vision
+        label: Our vision
+        type: object
+        fields:
+          - name: title
+            label: Heading
+            type: string
+          - name: text
+            label: Text
+            type: text
+      - name: mission
+        label: Our mission
+        type: object
+        fields:
+          - name: title
+            label: Heading
+            type: string
+          - name: text
+            label: Text
+            type: text
 
 content:
 
@@ -943,6 +970,8 @@ content:
               - name: label
                 label: Label
                 type: string
+      - name: philosophy
+        component: philosophy
       - name: values
         label: 02 Our Values
         description: Numbered automatically (01, 02…).

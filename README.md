@@ -31,7 +31,7 @@ https://sevenpoints.info by itself (usually 1–2 minutes). Nothing to install o
 1. Open [Pages CMS](https://app.pagescms.org), choose `sevenpointsinfo/sevenpoints.info`
    and the `main` branch. Refresh the CMS if the language entries are not visible yet.
 2. Choose **Arabic — العربية** or **Kurdish (Sorani) — کوردی** in the menu.
-3. Edit the relevant section: Homepage, About Us, Services, Office address,
+3. Edit the relevant section: Homepage, About Us (including Vision & mission), Services, Office address,
    Project names & gallery captions, or Menu, buttons & accessibility.
 4. Click **Save**. After GitHub Pages finishes rebuilding, check
    [Arabic](https://sevenpoints.info/ar/) or [Kurdish](https://sevenpoints.info/ckb/).

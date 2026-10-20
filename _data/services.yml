@@ -1,54 +1,58 @@
-label: What we do
+label: How we work
 title:
-  - text: From idea
-  - text: to
-    highlight: execution.
-intro: Four stages, one responsible team. Each stage is handed to the next without losing the intent of the one before it.
+  - text: Planning, design
+  - text: and
+  - highlight: construction.
+intro: Our work follows four connected stages. Project management runs throughout, coordinating the design,
+  schedule and site activities.
 stages:
-  - number: "01"
+  - number: '01'
     title: Planning
     points:
       - Project Definition
       - Site Survey
       - Scope Coordination
       - Budget Planning
-    text: We establish requirements, priorities, site constraints, budget and delivery strategy before construction begins.
+    text: We review the requirements, survey the site and establish the scope, budget and sequence of
+      work.
     image: assets/images/services/planning.webp
     image_width: 1600
     image_height: 961
     image_alt: Aerial view of the Zakho Conference Hall site plan
-  - number: "02"
-    title: Designing
+  - number: '02'
+    title: Design
     points:
       - Architecture
       - Interior Design
       - Technical Coordination
       - Material Selection
-    text: Architecture and interior design are developed around practical, coordinated and buildable solutions.
+    text: We develop the architectural and interior design, coordinate technical requirements and select
+      materials.
     image: assets/images/services/designing.webp
     image_width: 1600
     image_height: 961
     image_alt: Auditorium interior design for the Zakho Conference Hall
-  - number: "03"
+  - number: '03'
     title: Construction
     points:
       - Construction
       - Fit-Out
       - Site Supervision
       - Quality Control
-    text: Site execution, materials, trades and finishing are controlled by one responsible delivery team.
+    text: We coordinate the construction and fit-out, supervise site work and check materials and finishes
+      against the agreed design.
     image: assets/images/services/construction.webp
     image_width: 825
     image_height: 550
     image_alt: Lit staircase with glass balustrade, Jade Touch Salon
-  - number: "04"
+  - number: '04'
     title: Management
     points:
       - Project Management
       - Scheduling
       - Reporting
       - Handover
-    text: Scheduling, coordination, reporting, quality control and handover are managed throughout project delivery.
+    text: We coordinate schedules, track progress, report changes and organise inspections and handover.
     image: assets/images/services/management.webp
     image_width: 825
     image_height: 550
