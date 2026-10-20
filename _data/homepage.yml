@@ -1,27 +1,27 @@
 hero:
   label: Seven Points · Kurdistan Region
   title:
-    - text: Design and
-    - highlight: construction.
-  subtitle: Architecture, interiors and construction, with project management and site supervision. Based
-    in Duhok, Kurdistan Region.
+    - text: Seven Points
+    - highlight: Company
+  subtitle: Architecture, interiors and construction, with project and Event
+    Management and site supervision, Based in Duhok, Kurdistan Region.
   button_projects: View projects
-  button_contact: Discuss a project
+  button_contact: Contact Us
   image: assets/images/home/zakho-conference-hall-in-late-afternoon-light.webp
   image_width: 2000
   image_height: 1201
   project_name: Zakho Conference Hall
-  project_info: designed and built by Seven Points
+  project_info: Designed and built by Seven Points
 numbers:
-  - value: '150'
+  - value: "160"
     sign: +
     label: Completed projects
-  - value: '18'
+  - value: "18"
     sign: +
     label: Years operating
-  - value: '40'
+  - value: "40"
     sign: +
-    label: Clients & partners
+    label: Clients & Partners
   - value: Duhok
     label: Kurdistan Region
 strip:
@@ -35,8 +35,9 @@ statement:
   title:
     - text: Design decisions.
     - highlight: Built details.
-  text: A drawing is only useful if it can be built well. We consider the use of the space, materials,
-    budget and site conditions together, so the design can be carried through into construction.
+  text: A drawing is only useful if it can be built well. We consider the use of
+    the space, materials, budget and site conditions together, so the design can
+    be carried through into construction.
   link: See the work
 stories:
   - image: assets/images/projects/zakho-conference-hall/exterior-06.webp
@@ -45,22 +46,24 @@ stories:
     image_alt: Zakho Conference Hall, side elevation
     title_line_1: Space
     title_line_2: and use.
-    text: Layout, circulation, light and materials are considered together in the architectural and interior
-      design.
+    text: Layout, circulation, light and materials are considered together in the
+      architectural and interior design.
   - image: assets/images/projects/zakho-conference-hall/interior-01.webp
     image_width: 1800
     image_height: 1081
     image_alt: Zakho Conference Hall reception
     title_line_1: Scope
     title_line_2: and sequence.
-    text: The work, budget and sequence of construction are defined before work starts on site.
+    text: The work, budget and sequence of construction are defined before work
+      starts on site.
   - image: assets/images/projects/zakho-conference-hall/exterior-05.webp
     image_width: 1800
     image_height: 1081
     image_alt: Zakho Conference Hall, corner view
     title_line_1: Work
     title_line_2: on site.
-    text: Site supervision connects drawings with the work being built, from structure to finishes.
+    text: Site supervision connects drawings with the work being built, from
+      structure to finishes.
 projects_section:
   label: Projects
   title:
@@ -71,15 +74,18 @@ clients_section:
   title:
     - text: Working
     - text: with clients.
-  text: A project needs clear decisions and a shared understanding of the work. We coordinate design and
-    construction, keeping the client informed as the project progresses.
+  text: A project needs clear decisions and a shared understanding of the work. We
+    coordinate design and construction, keeping the client informed as the
+    project progresses.
   promises:
     - title: Defined responsibilities
-      text: The scope of work and the people responsible for it are agreed at the start.
+      text: The scope of work and the people responsible for it are agreed at the
+        start.
     - title: Clear communication
       text: We explain progress, decisions and changes to the scope, cost or schedule.
     - title: Handover
-      text: Completed work is inspected and outstanding items are recorded for follow-up.
+      text: Completed work is inspected and outstanding items are recorded for
+        follow-up.
 contact_section:
   title:
     - text: Discuss
@@ -87,15 +93,16 @@ contact_section:
   subtitle:
     - text: Speak with
     - text: our team.
-  text: Tell us what you plan to build, where it is and when you need it. Contact our team by phone, WhatsApp
-    or email.
+  text: Tell us what you plan to build, where it is and when you need it. Contact
+    our team by phone, WhatsApp or email.
   button_whatsapp: WhatsApp
   button_email: Email us
 seo:
-  page_title: Seven Points Construction & General Trading — Duhok, Kurdistan Region
-  description: Seven Points is based in Duhok, Kurdistan Region. Architecture, interior design, fit-out,
-    construction, project management and site supervision.
-  share_title: Seven Points Construction & General Trading
-  share_description: Design and construction in Duhok, with architecture, interiors, project management
-    and site supervision.
+  page_title: Seven Points Company — Duhok, Kurdistan Region - Iraq
+  description: Seven Points is based in Duhok, Kurdistan Region. Architecture,
+    interior design, fit-out, construction, project management and site
+    supervision.
+  share_title: Seven Points Company
+  share_description: Design and construction in Duhok, with architecture,
+    interiors, project management and site supervision.
   share_image: assets/images/home/hero.webp
