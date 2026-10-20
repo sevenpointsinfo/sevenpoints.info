@@ -1,38 +1,43 @@
 label: About us
 title:
-  - text: A company for
-  - text: design and
-  - highlight: construction.
-lead: Seven Points is a design and construction company based in Duhok. Our work covers architecture,
-  interior design, fit-out, construction, project management and site supervision.
+  - text: About Us
+  - {}
+  - highlight: Who we are?
+lead: Seven Points is a design and construction company based in Duhok. Our work
+  covers architecture, interior design, fit-out, construction, project
+  management and site supervision.
 who_we_are:
+  text: We begin with the client's requirements and the conditions of the site.
+    Our team brings design and construction together, coordinating the work from
+    the initial plans through to handover.
   image: assets/images/company/who-we-are.webp
   image_width: 1600
   image_height: 961
   image_alt: Zakho Conference Hall facade
   stats:
-    - value: '150'
-      sign: +
-      label: Completed Projects
-    - value: '5'
-      sign: +
-      label: Years of Experience
-    - value: '50'
-      sign: +
-      label: Clients & Partners
     - value: Duhok
-      label: Kurdistan Region
-  text: We begin with the client's requirements and the conditions of the site. Our team brings design
-    and construction together, coordinating the work from the initial plans through to handover.
+      label: Kurdistan Region - Iraq
+philosophy:
+  vision:
+    title: Our vision
+    text: To contribute to better places to live, work and gather in Kurdistan,
+      through considered design and careful construction.
+  mission:
+    title: Our mission
+    text: To carry projects from planning to completion by coordinating design,
+      construction and management, with clear responsibility at each stage.
 values:
   - title: Requirements
-    text: Understand the client's needs, the budget and the site before developing the design.
+    text: Understand the client's needs, the budget and the site before developing
+      the design.
   - title: Buildability
-    text: Choose details and materials with their construction, use and maintenance in mind.
+    text: Choose details and materials with their construction, use and maintenance
+      in mind.
   - title: Communication
     text: Make decisions, progress and changes clear to the people involved.
   - title: Responsibility
-    text: Define who is responsible for each part of the work and follow it through to completion.
+    text: Define who is responsible for each part of the work and follow it through
+      to completion.
 team:
   statement: |-
     Design and site teams.
@@ -48,8 +53,9 @@ founders:
   statement: |-
     A connection between
     design and construction.
-  text: Seven Points was founded on the belief that design decisions and site work should be managed together.
-    That principle guides how we plan, coordinate and deliver our projects.
+  text: Seven Points was founded on the belief that design decisions and site work
+    should be managed together. That principle guides how we plan, coordinate
+    and deliver our projects.
   people:
     - name: Shiraz Aziz
       role: Owner & Founder
@@ -57,12 +63,3 @@ founders:
       photo_width: 1000
       photo_height: 1250
       photo_alt: Shiraz Aziz, owner and founder of Seven Points
-philosophy:
-  vision:
-    title: Our vision
-    text: To contribute to better places to live, work and gather in Kurdistan, through considered design
-      and careful construction.
-  mission:
-    title: Our mission
-    text: To carry projects from planning to completion by coordinating design, construction and management,
-      with clear responsibility at each stage.
