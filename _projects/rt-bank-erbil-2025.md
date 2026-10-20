@@ -15,5 +15,12 @@ order: 10
 hero_image: assets/images/projects/rtb-erbil4.webp
 hero_alt: Interior Design
 hero_crop: 50% 50%
+gallery:
+  - image: assets/images/projects/rtb-erbil3.webp
+  - image: assets/images/projects/untitled-1.webp
+  - image: assets/images/projects/rtb-erbil5.webp
+  - image: assets/images/projects/rtb-erbil4-1.webp
+  - image: assets/images/projects/rtb-erbil1.webp
+  - image: assets/images/projects/rtb-erbil2.webp
 ---
 Every element reflects our dedication to creating spaces that combine contemporary aesthetics, practical performance, and lasting value.
