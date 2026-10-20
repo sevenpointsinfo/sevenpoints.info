@@ -43,6 +43,508 @@ components:
         label: Orange words at the end of the line (optional)
         type: string
 
+  # Shared text-only schemas for Arabic and Sorani Kurdish.
+  # Keep these keys aligned with _data/i18n/*.yml and _layouts/home.html.
+  # Add new project slugs to translated_projects when new projects are translated.
+  translated_homepage:
+    label: Homepage
+    type: object
+    fields:
+      - name: hero
+        label: Hero — top of the page
+        type: object
+        fields:
+          - name: label
+            label: Small line above the headline
+            type: string
+          - name: title
+            label: Hero headline
+            component: headline
+          - name: subtitle
+            label: Hero subtitle (text under the headline)
+            type: text
+          - name: button_projects
+            label: First button text (goes to Projects)
+            type: string
+          - name: button_contact
+            label: Second button text (goes to Contact)
+            type: string
+          - name: project_name
+            label: Hero project name
+            description: The project in the hero photo. Not shown as text in this design; it describes the photo for
+              Google and screen readers.
+            type: string
+          - name: project_info
+            label: Hero project information
+            description: Added after the project name in that description, e.g. "designed and built by Seven Points".
+            type: string
+      - name: numbers
+        label: Statistics — yellow numbers band
+        description: Keep the same number of rows and the same order as the English statistics. Translate the labels;
+          numeric values and signs come from the English editor.
+        type: object
+        list:
+          min: 1
+          max: 6
+          collapsible:
+            collapsed: true
+            summary: '{fields.label}'
+        fields:
+          - name: value
+            label: Translated word (only for a place name such as Duhok)
+            type: string
+            description: Leave empty for numeric statistics. The website uses the English numbers.
+          - name: label
+            label: Label
+            type: string
+      - name: strip
+        label: Moving words (dark band under the numbers)
+        type: string
+        list: true
+      - name: statement
+        label: Brand statement
+        type: object
+        fields:
+          - name: title
+            label: Brand statement heading
+            component: headline
+          - name: text
+            label: Brand statement text
+            type: text
+          - name: link
+            label: Link text (goes to Projects)
+            type: string
+      - name: stories
+        label: Photo story — three full-screen photos
+        description: Translate the three photo stories in the same order as Homepage.
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: '{fields.title_line_1} {fields.title_line_2}'
+        fields:
+          - name: image_alt
+            label: Photo description (alt text)
+            type: string
+          - name: title_line_1
+            label: Big words — line 1
+            type: string
+          - name: title_line_2
+            label: Big words — line 2
+            type: string
+          - name: text
+            label: Small text
+            type: text
+      - name: projects_section
+        label: Projects section — heading
+        description: Translate the heading above the selected projects.
+        type: object
+        fields:
+          - name: label
+            label: Small label
+            type: string
+          - name: title
+            label: Projects heading
+            component: headline
+      - name: clients_section
+        label: Clients section
+        description: Translate the clients heading, introduction and numbered points.
+        type: object
+        fields:
+          - name: label
+            label: Small label
+            type: string
+          - name: title
+            label: Clients heading
+            component: headline
+          - name: text
+            label: Clients text
+            type: text
+          - name: promises
+            label: Numbered points
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: '{fields.title}'
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: text
+                label: Text
+                type: text
+            description: Keep the same number of points and the same order as Homepage > Clients section.
+      - name: contact_section
+        label: Call to action — contact section at the bottom
+        description: Translate the contact headings and buttons. Contact links are shared.
+        type: object
+        fields:
+          - name: title
+            label: CTA heading
+            component: headline
+          - name: subtitle
+            label: CTA second heading (grey)
+            component: headline
+          - name: text
+            label: CTA text
+            type: text
+          - name: button_whatsapp
+            label: WhatsApp button text
+            type: string
+          - name: button_email
+            label: Email button text
+            type: string
+      - name: seo
+        label: Google & sharing
+        type: object
+        fields:
+          - name: page_title
+            label: Page title (shown in Google and on the browser tab)
+            type: string
+          - name: description
+            label: Meta description (the text under the title in Google)
+            type: text
+          - name: share_title
+            label: Title when the link is shared (WhatsApp, Facebook…)
+            type: string
+          - name: share_description
+            label: Text when the link is shared
+            type: text
+  translated_about:
+    label: About Us
+    type: object
+    fields:
+      - name: label
+        label: Small label
+        type: string
+      - name: title
+        label: About Us main statement (heading)
+        component: headline
+      - name: lead
+        label: About description (text next to the heading)
+        type: text
+      - name: who_we_are
+        label: 01 Who We Are
+        type: object
+        fields:
+          - name: text
+            label: Who We Are text (optional)
+            description: Translate the optional paragraph from About Us > Who We Are, if used.
+            type: text
+          - name: image_alt
+            label: Photo description (alt text)
+            type: string
+          - name: stats
+            label: Statistics
+            description: Keep the same number of rows and the same order as the English statistics. Translate the
+              labels; numeric values and signs come from the English editor.
+            type: object
+            list:
+              min: 1
+              max: 6
+              collapsible:
+                collapsed: true
+                summary: '{fields.label}'
+            fields:
+              - name: value
+                label: Translated word (only for a place name such as Duhok)
+                type: string
+                description: Leave empty for numeric statistics. The website uses the English numbers.
+              - name: label
+                label: Label
+                type: string
+      - name: values
+        label: 02 Our Values
+        description: Keep the same number of values and the same order as About Us.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+          - name: title
+            label: Value
+            type: string
+          - name: text
+            label: Text
+            type: text
+      - name: team
+        label: 03 Our Team
+        type: object
+        fields:
+          - name: statement
+            label: Our Team statement
+            description: Press Enter where the line should break.
+            type: text
+          - name: disciplines
+            label: Team disciplines (moving words)
+            type: string
+            list: true
+      - name: founders
+        label: 04 Founders
+        type: object
+        fields:
+          - name: statement
+            label: Founders heading
+            description: Press Enter where the line should break.
+            type: text
+          - name: text
+            label: Founders description
+            type: text
+          - name: people
+            label: Founders
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: '{fields.name}'
+            fields:
+              - name: name
+                label: Name
+                type: string
+              - name: role
+                label: Role
+                type: string
+              - name: photo_alt
+                label: Photo description (alt text)
+                type: string
+            description: Keep the same number of founders and the same order as About Us > Founders.
+  translated_services:
+    label: Services
+    type: object
+    fields:
+      - name: label
+        label: Small label
+        type: string
+      - name: title
+        label: Services heading
+        component: headline
+      - name: intro
+        label: Services introduction
+        type: text
+      - name: stages
+        label: Services (four stages)
+        type: object
+        list:
+          min: 4
+          max: 4
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: text
+            label: Description
+            type: text
+          - name: points
+            label: Bullet points
+            type: string
+            list: true
+          - name: image_alt
+            label: Image description (alt text)
+            type: string
+        description: 'Translate the four stages in the same order as Services: Planning, Designing, Construction,
+          Management.'
+  translated_contact:
+    label: Office address
+    type: object
+    fields:
+      - name: address
+        label: Address
+        type: object
+        fields:
+          - name: street
+            label: Street
+            type: string
+          - name: city
+            label: City
+            type: string
+          - name: region
+            label: Region
+            type: string
+          - name: country
+            label: Country
+            type: string
+  translated_ui:
+    label: Menu, buttons & accessibility
+    type: object
+    fields:
+      - name: comma
+        label: Comma separator (include the space after it)
+        type: string
+      - name: skip
+        label: Skip to content link
+        type: string
+      - name: brand_aria
+        label: Logo link description for screen readers
+        type: string
+      - name: language
+        label: Language switch label
+        type: string
+      - name: nav_main
+        label: Main navigation label for screen readers
+        type: string
+      - name: nav_mobile
+        label: Mobile navigation label for screen readers
+        type: string
+      - name: home
+        label: Home menu link
+        type: string
+      - name: about
+        label: About Us menu link
+        type: string
+      - name: services
+        label: Services menu link
+        type: string
+      - name: projects
+        label: Projects menu link
+        type: string
+      - name: clients
+        label: Clients menu link
+        type: string
+      - name: contact
+        label: Contact menu link
+        type: string
+      - name: menu_open
+        label: Open menu button
+        type: string
+      - name: menu_close
+        label: Close menu button
+        type: string
+      - name: intro
+        label: Introduction label
+        type: string
+      - name: scroll
+        label: Scroll label
+        type: string
+      - name: scroll_aria
+        label: Scroll link description for screen readers
+        type: string
+      - name: about_nav
+        label: About section navigation label
+        type: string
+      - name: who
+        label: Who We Are chapter title
+        type: string
+      - name: values
+        label: Our Values chapter title
+        type: string
+      - name: team
+        label: Our Team chapter title
+        type: string
+      - name: founders
+        label: Founders chapter title
+        type: string
+      - name: disciplines
+        label: Team disciplines label
+        type: string
+      - name: proof_aria
+        label: Statistics section label for screen readers
+        type: string
+      - name: statement_aria
+        label: Brand statement label for screen readers
+        type: string
+      - name: stories_aria
+        label: Photo stories label for screen readers
+        type: string
+      - name: view
+        label: View label over project photos
+        type: string
+      - name: open_gallery
+        label: Open gallery description for screen readers
+        type: string
+        description: Keep %title% in the text; the website replaces it with the translated project name.
+        pattern:
+          regex: ^([\s\S]*%title%[\s\S]*)?$
+          message: Include %title% for the project name, or leave empty to use English.
+      - name: view_project
+        label: View project button
+        type: string
+      - name: footer_name
+        label: Company description in the footer
+        type: string
+      - name: office
+        label: Office heading
+        type: string
+      - name: explore
+        label: Explore heading
+        type: string
+      - name: contact_heading
+        label: Contact heading
+        type: string
+      - name: follow
+        label: Follow us heading
+        type: string
+      - name: back_to_top
+        label: Back to top link
+        type: string
+      - name: gallery_close_aria
+        label: Close gallery description for screen readers
+        type: string
+      - name: gallery_close
+        label: Close gallery button
+        type: string
+      - name: image_one
+        label: Image count suffix — one image (start with a space)
+        type: string
+      - name: image_many
+        label: Image count suffix — multiple images (start with a space)
+        type: string
+  translated_project:
+    label: Project translation
+    type: object
+    fields:
+      - name: title
+        label: Project name
+        type: string
+      - name: location
+        label: Location
+        description: Shown on the project card, e.g. Duhok / Zakho
+        type: string
+      - name: services
+        label: Services
+        description: Shown under the project name, e.g. Architecture · Construction · Interior
+        type: string
+        list: true
+      - name: hero_alt
+        label: Hero photo description (image alt text)
+        type: string
+      - name: gallery
+        label: Gallery captions
+        description: Translate captions for the existing project photos. Each caption is matched by its photo path,
+          so reordering the English gallery keeps the correct translation.
+        type: object
+        list:
+          collapsible:
+            collapsed: false
+            summary: '{fields.alt}'
+        fields:
+          - name: image
+            label: Existing photo path (match Projects)
+            type: string
+            description: Copy the exact path from the English project's gallery, including assets/images/. This identifies
+              the photo to caption; it does not replace or upload a photo.
+            required: true
+          - name: alt
+            label: Photo description (caption and alt text)
+            type: string
+  translated_projects:
+    label: Project names & gallery captions
+    description: Translations for the current projects. Photos, gallery order and visibility are managed in Projects.
+    type: object
+    fields:
+      - name: zakho-conference-hall
+        label: Zakho Conference Hall
+        component: translated_project
+      - name: jade-touch-salon
+        label: Jade Touch Salon
+        component: translated_project
+
 content:
 
   # ──────────────────────────────────────────────── HOMEPAGE
@@ -681,3 +1183,45 @@ content:
             pattern:
               regex: "^(https?://\\S+)?$"
               message: Paste the full link, starting with https://
+
+  # ──────────────────────────────────────────────── TRANSLATIONS
+  - name: translations_ar
+    label: Arabic — العربية
+    description: Edit the existing translations below, then Save. Blank text falls back to English. Keep repeated
+      items in the same order as the English content. Photos, numbers and links are shared.
+    type: file
+    path: _data/i18n/ar.yml
+    format: yaml
+    fields:
+      - name: homepage
+        component: translated_homepage
+      - name: about
+        component: translated_about
+      - name: services
+        component: translated_services
+      - name: contact
+        component: translated_contact
+      - name: projects
+        component: translated_projects
+      - name: ui
+        component: translated_ui
+  - name: translations_ckb
+    label: Kurdish (Sorani) — کوردی
+    description: Edit the existing translations below, then Save. Blank text falls back to English. Keep repeated
+      items in the same order as the English content. Photos, numbers and links are shared.
+    type: file
+    path: _data/i18n/ckb.yml
+    format: yaml
+    fields:
+      - name: homepage
+        component: translated_homepage
+      - name: about
+        component: translated_about
+      - name: services
+        component: translated_services
+      - name: contact
+        component: translated_contact
+      - name: projects
+        component: translated_projects
+      - name: ui
+        component: translated_ui
