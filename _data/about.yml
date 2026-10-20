@@ -63,3 +63,11 @@ founders:
       photo_width: 1000
       photo_height: 1250
       photo_alt: Shiraz Aziz, owner and founder of Seven Points
+    - name: Shirin Aziz
+      role: CEO
+      photo: assets/images/company/professional-monochrome-portrait.png
+      photo_alt: Shirin Aziz is a dedicated and forward-thinking Chief Executive
+        Officer, committed to driving business growth, operational excellence,
+        and long-term success. With a focus on strategic leadership, innovation,
+        and strong professional relationships, she works to guide the company
+        toward sustainable development and continued excellence.
