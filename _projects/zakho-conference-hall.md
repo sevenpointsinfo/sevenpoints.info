@@ -8,7 +8,7 @@ services:
   - Interior
 featured: true
 order: 1
-hero_image: assets/images/projects/zakho-conference-hall/hero.webp
+hero_image: assets/images/projects/zakho-conference-hall/interior-02.webp
 hero_image_width: 2000
 hero_image_height: 1201
 hero_alt: Zakho Conference Hall, front elevation
