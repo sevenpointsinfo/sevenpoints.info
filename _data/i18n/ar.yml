@@ -1,0 +1,267 @@
+# Arabic text for https://sevenpoints.info/ar/
+# Same structure as the English content files (_data/homepage.yml, about.yml, services.yml,
+# contact.yml and _projects/*.md). Photos, numbers and links always come from the English
+# files; anything missing here falls back to the English text.
+
+ui:
+  comma: "، "
+  skip: "تخطَّ إلى المحتوى"
+  brand_aria: "Seven Points — العودة إلى الأعلى"
+  language: "اللغة"
+  nav_main: "التنقل الرئيسي"
+  nav_mobile: "قائمة الهاتف"
+  home: "الرئيسية"
+  about: "عن الشركة"
+  services: "الخدمات"
+  projects: "المشاريع"
+  clients: "العملاء"
+  contact: "تواصل معنا"
+  menu_open: "فتح القائمة"
+  menu_close: "إغلاق القائمة"
+  intro: "مقدمة"
+  scroll: "مرِّر"
+  scroll_aria: "انتقل إلى قسم عن الشركة"
+  about_nav: "عن Seven Points"
+  who: "من نحن"
+  values: "قيمنا"
+  team: "فريقنا"
+  founders: "المؤسسون"
+  disciplines: "التخصصات"
+  proof_aria: "Seven Points بالأرقام"
+  statement_aria: "نهجنا"
+  stories_aria: "كيف نعمل"
+  view: "عرض"
+  open_gallery: "فتح معرض صور %title%"
+  view_project: "عرض المشروع"
+  footer_name: "للإنشاءات والتجارة العامة"
+  office: "المكتب"
+  explore: "تصفّح"
+  contact_heading: "التواصل"
+  follow: "تابعنا"
+  back_to_top: "العودة إلى الأعلى ↑"
+  gallery_close_aria: "إغلاق المعرض"
+  gallery_close: "إغلاق"
+  image_one: " صورة"
+  image_many: " صور"
+
+homepage:
+  hero:
+    label: "Seven Points · إقليم كوردستان"
+    title:
+      - text: "نصمّم"
+        highlight: "المساحات."
+      - text: "وننفّذ المشاريع."
+    subtitle: "العمارة والبناء والتصميم الداخلي وتنفيذ المشاريع عبر فريق واحد منسّق."
+    button_projects: "عرض المشاريع"
+    button_contact: "ابدأ مشروعك"
+    project_name: "قاعة زاخو للمؤتمرات"
+    project_info: "من تصميم Seven Points وتنفيذها"
+  numbers:
+    - label: "مشاريع منجزة"
+    - label: "سنوات من العمل"
+    - label: "عملاء وشركاء"
+    - value: "دهوك"
+      label: "إقليم كوردستان"
+  strip:
+    - "العمارة"
+    - "البناء"
+    - "التصميم الداخلي"
+    - "إدارة الفعاليات"
+    - "إدارة المشاريع"
+    - "الإشراف على المواقع"
+  statement:
+    title:
+      - text: "تصميم جريء."
+      - text: "استراتيجية واضحة."
+      - highlight: "تنفيذ منضبط."
+    text: "يدير الفريق نفسه غاية التصميم والميزانية وأعمال الموقع من المسح الأول حتى التسليم النهائي، فتصمد القرارات المتّخذة على الورق عند التنفيذ في الموقع."
+    link: "شاهد أعمالنا"
+  stories:
+    - image_alt: "قاعة زاخو للمؤتمرات، الواجهة الجانبية"
+      title_line_1: "مصمَّم"
+      title_line_2: "بإتقان."
+      text: "عمارة وتصميم داخلي يراعيان الوظيفة والتناسب والمواد وواقع التنفيذ."
+    - image_alt: "استقبال قاعة زاخو للمؤتمرات"
+      title_line_1: "مخطَّط"
+      title_line_2: "بعناية."
+      text: "نطاق عمل واضح ومتطلبات منسّقة وتحضير منضبط قبل التنفيذ."
+    - image_alt: "قاعة زاخو للمؤتمرات، منظر من الزاوية"
+      title_line_1: "منفَّذ"
+      title_line_2: "بذكاء."
+      text: "بناء وتجهيز داخلي يُنجَزان بإشراف دقيق واهتمام بالتفاصيل."
+  projects_section:
+    label: "المشاريع"
+    title:
+      - text: "مشاريع"
+      - text: "مختارة."
+  clients_section:
+    label: "العملاء"
+    title:
+      - text: "شراكة"
+      - text: "موثوقة."
+    text: "يعمل عملاؤنا مع فريق واحد من Seven Points من أول زيارة للموقع حتى يوم تسليم المفاتيح. جهة تواصل واحدة، وبرنامج واحد، ومعيار واحد."
+    promises:
+      - title: "جهة مسؤولة واحدة"
+        text: "يُنسَّق التصميم والحِرَف والموقع ضمن فريق واحد."
+      - title: "تواصل مباشر"
+        text: "نُطلعك على القرارات والتغييرات وسير العمل أولًا بأول."
+      - title: "تسليم متكامل"
+        text: "يُختتم كل مشروع بالفحص ومعالجة الملاحظات والتوثيق."
+  contact_section:
+    title:
+      - text: "هل لديك"
+      - text: "مشروع؟"
+    subtitle:
+      - text: "لنبنِه"
+      - text: "معًا."
+    text: "شاركنا نوع مشروعك وموقعه وجدوله الزمني. نردّ عليك مباشرة — بلا نماذج ولا مراكز اتصال."
+    button_whatsapp: "واتساب"
+    button_email: "راسلنا بالبريد"
+  seo:
+    page_title: "Seven Points Construction & General Trading — دهوك، إقليم كوردستان"
+    description: "تقدّم Seven Points التصميم المعماري والبناء والتصميم الداخلي والتجهيز الداخلي وإدارة المشاريع والإشراف على المواقع عبر فريق واحد منسّق في دهوك، إقليم كوردستان، العراق."
+    share_title: "Seven Points Construction & General Trading"
+    share_description: "العمارة والبناء والتصميم الداخلي وتنفيذ المشاريع عبر فريق واحد منسّق."
+
+about:
+  label: "عن الشركة"
+  title:
+    - text: "نحوّل الأفكار"
+    - text: "إلى مساحات مبنيّة"
+    - text: "للحياة"
+      highlight: "الحقيقية."
+  lead: "Seven Points شركة إنشاءات وتصميم متعددة التخصصات، تقدّم العمارة والتصميم الداخلي والتجهيز الداخلي والبناء وإدارة المشاريع عبر فريق واحد منسّق."
+  who_we_are:
+    image_alt: "واجهة قاعة زاخو للمؤتمرات"
+    stats:
+      - label: "مشاريع منجزة"
+      - label: "سنوات من الخبرة"
+      - label: "عملاء وشركاء"
+      - value: "دهوك"
+        label: "إقليم كوردستان"
+  values:
+    - title: "الخبرة"
+      text: "معرفة عملية في العمارة والتجهيز الداخلي والبناء."
+    - title: "الدقة"
+      text: "تُنسَّق كل مرحلة قبل بدء التنفيذ."
+    - title: "الموثوقية"
+      text: "مسؤولية واضحة وتنفيذ للمشاريع يُعتمد عليه."
+    - title: "الأداء"
+      text: "تصميم وبناء يركّزان على نتائج تدوم."
+  team:
+    statement: |-
+      فريق واحد.
+      تخصصات متعددة.
+    disciplines:
+      - "معماريون"
+      - "إدارة المشاريع"
+      - "فريق البناء"
+      - "التصميم الداخلي"
+      - "الإشراف على المواقع"
+      - "تنسيق الأعمال الميكانيكية والكهربائية"
+  founders:
+    statement: |-
+      على التصميم والبناء
+      أن يعملا كجهة واحدة.
+    text: "تأسّست Seven Points على قناعة بأن المشاريع الأقوى تأتي من تنسيق التصميم والإدارة والتنفيذ تحت مسؤولية فريق واحد."
+    people:
+      - name: "شيراز عزيز"
+        role: "المالك والمؤسس"
+        photo_alt: "شيراز عزيز، مالك Seven Points ومؤسسها"
+
+services:
+  label: "ما نقوم به"
+  title:
+    - text: "من الفكرة"
+    - text: "إلى"
+      highlight: "التنفيذ."
+  intro: "أربع مراحل وفريق واحد مسؤول. تنتقل كل مرحلة إلى التي تليها دون أن تفقد غاية ما سبقها."
+  stages:
+    - title: "التخطيط"
+      points:
+        - "تحديد المشروع"
+        - "مسح الموقع"
+        - "تنسيق نطاق العمل"
+        - "تخطيط الميزانية"
+      text: "نحدّد المتطلبات والأولويات وقيود الموقع والميزانية واستراتيجية التنفيذ قبل بدء البناء."
+      image_alt: "منظر جوي لمخطط موقع قاعة زاخو للمؤتمرات"
+    - title: "التصميم"
+      points:
+        - "العمارة"
+        - "التصميم الداخلي"
+        - "التنسيق الفني"
+        - "اختيار المواد"
+      text: "تُطوَّر العمارة والتصميم الداخلي حول حلول عملية ومنسّقة وقابلة للتنفيذ."
+      image_alt: "التصميم الداخلي للمدرّج في قاعة زاخو للمؤتمرات"
+    - title: "البناء"
+      points:
+        - "البناء"
+        - "التجهيز الداخلي"
+        - "الإشراف على الموقع"
+        - "ضبط الجودة"
+      text: "يتولّى فريق تنفيذ واحد مسؤول ضبط أعمال الموقع والمواد والحِرَف والتشطيبات."
+      image_alt: "درج مضاء بدرابزين زجاجي، صالون Jade Touch"
+    - title: "الإدارة"
+      points:
+        - "إدارة المشاريع"
+        - "الجدولة"
+        - "التقارير"
+        - "التسليم"
+      text: "تُدار الجدولة والتنسيق والتقارير وضبط الجودة والتسليم طوال تنفيذ المشروع."
+      image_alt: "منطقة علاج مكتملة، صالون Jade Touch"
+
+contact:
+  address:
+    street: "طريق زركا"
+    city: "دهوك"
+    region: "إقليم كوردستان"
+    country: "العراق"
+
+projects:
+  zakho-conference-hall:
+    title: "قاعة زاخو للمؤتمرات"
+    location: "دهوك / زاخو"
+    services:
+      - "العمارة"
+      - "البناء"
+      - "التصميم الداخلي"
+    hero_alt: "قاعة زاخو للمؤتمرات، الواجهة الأمامية"
+    gallery:
+      - image: assets/images/projects/zakho-conference-hall/exterior-01.webp
+        alt: "قاعة زاخو للمؤتمرات عند الغسق"
+      - image: assets/images/projects/zakho-conference-hall/exterior-02.webp
+        alt: "منظر جوي للموقع"
+      - image: assets/images/projects/zakho-conference-hall/interior-01.webp
+        alt: "الاستقبال"
+      - image: assets/images/projects/zakho-conference-hall/interior-02.webp
+        alt: "المدرّج"
+      - image: assets/images/projects/zakho-conference-hall/exterior-03.webp
+        alt: "الواجهة الرئيسية"
+      - image: assets/images/projects/zakho-conference-hall/exterior-05.webp
+        alt: "منظر من الزاوية"
+      - image: assets/images/projects/zakho-conference-hall/exterior-06.webp
+        alt: "الواجهة الجانبية"
+  jade-touch-salon:
+    title: "صالون Jade Touch"
+    location: "دهوك"
+    services:
+      - "التصميم الداخلي"
+      - "التجهيز الداخلي"
+    hero_alt: "صالون Jade Touch، صالة جلوس تحت أقواس حجرية مضاءة"
+    gallery:
+      - image: assets/images/projects/jade-touch-salon/interior-01.webp
+        alt: "محطات التصفيف"
+      - image: assets/images/projects/jade-touch-salon/interior-02.webp
+        alt: "ركن الأظافر"
+      - image: assets/images/projects/jade-touch-salon/interior-03.webp
+        alt: "جدار حجري مميّز وثريّا"
+      - image: assets/images/projects/jade-touch-salon/interior-04.webp
+        alt: "منطقة الاستشارات"
+      - image: assets/images/projects/jade-touch-salon/interior-05.webp
+        alt: "الدرج المضاء"
+      - image: assets/images/projects/jade-touch-salon/interior-06.webp
+        alt: "مكتب الاستقبال"
+      - image: assets/images/projects/jade-touch-salon/interior-07.webp
+        alt: "محطات الغسيل"
+      - image: assets/images/projects/jade-touch-salon/interior-08.webp
+        alt: "الدرابزين الزجاجي"

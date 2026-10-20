@@ -197,7 +197,8 @@
   const setMenu = (open) => {
     html.classList.toggle('menu-open', open);
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    // labels come from the page in Arabic and Kurdish (data-label-open / data-label-close)
+    burger.setAttribute('aria-label', open ? (burger.dataset.labelClose || 'Close menu') : (burger.dataset.labelOpen || 'Open menu'));
     menu.setAttribute('aria-hidden', String(!open));
     menu.inert = !open;
     if (lenis) { open ? lenis.stop() : lenis.start(); }
@@ -244,7 +245,13 @@
       if (on) {
         a.setAttribute('aria-current', 'true');
         if (chapterNav.scrollWidth > chapterNav.clientWidth) {
-          chapterNav.scrollTo({ left: a.offsetLeft - 20, behavior: reduceMotion ? 'auto' : 'smooth' });
+          if (html.dir === 'rtl') {
+            // right-to-left pages: bring the chapter in from the right-hand edge
+            const shift = a.getBoundingClientRect().right - chapterNav.getBoundingClientRect().right + 20;
+            chapterNav.scrollBy({ left: shift, behavior: reduceMotion ? 'auto' : 'smooth' });
+          } else {
+            chapterNav.scrollTo({ left: a.offsetLeft - 20, behavior: reduceMotion ? 'auto' : 'smooth' });
+          }
         }
       } else {
         a.removeAttribute('aria-current');
@@ -395,7 +402,7 @@
 
       lastTrigger = btn;
       gTitle.textContent = source.dataset.title || '';
-      gCount.textContent = items.length + (items.length === 1 ? ' image' : ' images');
+      gCount.textContent = items.length + (items.length === 1 ? (dialog.dataset.one || ' image') : (dialog.dataset.many || ' images'));
       gList.innerHTML = '';
 
       items.forEach((li, i) => {

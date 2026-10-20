@@ -1,0 +1,662 @@
+---
+# The Seven Points homepage, in English (/), Arabic (/ar/) and Sorani Kurdish (/ckb/).
+# English text and all photos: _data/*.yml and _projects/*.md (Pages CMS).
+# Arabic and Sorani text: _data/i18n/ar.yml and _data/i18n/ckb.yml.
+# Design: sp-style.css (+ sp-i18n.css)   Interaction: sp-script.js (+ sp-i18n.js)
+---
+{%- assign L = page.lang | default: "en" -%}
+{%- comment -%} Arabic and Sorani text: _data/i18n/ar.yml and _data/i18n/ckb.yml. Anything not
+    translated there falls back to the English content files. Photos, numbers and links
+    always come from the English files. {%- endcomment -%}
+{%- assign tr = site.data.i18n[L] -%}
+{%- assign ui = tr.ui -%}{%- assign th = tr.homepage -%}{%- assign ta = tr.about -%}{%- assign ts = tr.services -%}{%- assign tc = tr.contact -%}
+{%- assign root = "" -%}{%- if L != "en" -%}{%- assign root = "../" -%}{%- endif -%}
+{%- assign rtl = false -%}{%- if L == "ar" or L == "ckb" -%}{%- assign rtl = true -%}{%- endif -%}
+{%- assign home = site.data.homepage -%}
+{%- assign seo = home.seo -%}{%- assign tseo = th.seo -%}
+{%- assign about = site.data.about -%}
+{%- assign services = site.data.services -%}
+{%- assign contact = site.data.contact -%}
+{%- assign projects = site.projects | where: "featured", true | sort: "order" -%}
+{%- assign clients = site.clients | where: "featured", true | sort: "order" -%}
+{%- capture newline %}
+{% endcapture -%}
+{%- assign hero_pn = th.hero.project_name | default: home.hero.project_name -%}
+{%- assign hero_pi = th.hero.project_info | default: home.hero.project_info -%}
+{%- capture hero_alt -%}{{ hero_pn }}{% if hero_pn.size > 0 and hero_pi.size > 0 %}{{ ui.comma | default: ", " }}{% endif %}{{ hero_pi }}{%- endcapture -%}
+{%- assign social_links = "" | split: "" -%}
+{%- if contact.social.instagram.size > 0 %}{% assign social_links = social_links | push: contact.social.instagram %}{% endif -%}
+{%- if contact.social.facebook.size > 0 %}{% assign social_links = social_links | push: contact.social.facebook %}{% endif -%}
+{%- if contact.social.linkedin.size > 0 %}{% assign social_links = social_links | push: contact.social.linkedin %}{% endif -%}
+<!DOCTYPE html>
+<html lang="{{ L }}"{% if rtl %} dir="rtl"{% endif %}>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ tseo.page_title | default: seo.page_title | escape }}</title>
+<meta name="description" content="{{ tseo.description | default: seo.description | escape }}">
+<meta name="theme-color" content="#080808">
+<link rel="canonical" href="{{ site.url }}/{% if L != "en" %}{{ L }}/{% endif %}">
+<link rel="alternate" hreflang="en" href="{{ site.url }}/">
+<link rel="alternate" hreflang="ar" href="{{ site.url }}/ar/">
+<link rel="alternate" hreflang="ckb" href="{{ site.url }}/ckb/">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ tseo.share_title | default: tseo.page_title | default: seo.share_title | default: seo.page_title | escape }}">
+<meta property="og:description" content="{{ tseo.share_description | default: tseo.description | default: seo.share_description | default: seo.description | escape }}">
+<meta property="og:image" content="{{ site.url }}/{{ seo.share_image | default: home.hero.image }}">
+<meta property="og:url" content="{{ site.url }}/{% if L != "en" %}{{ L }}/{% endif %}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Seven Points Construction & General Trading",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/assets/logos/seven-points-logo-black.svg",
+  "image": "{{ site.url }}/{{ home.hero.image }}",
+  "telephone": {{ contact.phone | remove: " " | jsonify }},
+  "email": {{ contact.email | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": {{ contact.address.street | jsonify }},
+    "addressLocality": {{ contact.address.city | jsonify }},
+    "addressRegion": {{ contact.address.region | jsonify }},
+    "addressCountry": {{ contact.address.country_code | jsonify }}
+  }{% if social_links.size > 0 %},
+  "sameAs": {{ social_links | jsonify }}{% endif %}
+}
+</script>
+{%- if projects.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Selected projects",
+  "itemListElement": [
+{%- for p in projects %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "CreativeWork",
+        "name": {{ p.seo_title | default: p.title | jsonify }},
+{%- assign p_description = p.seo_description | default: p.short_description %}
+{%- if p_description.size > 0 %}
+        "description": {{ p_description | jsonify }},
+{%- endif %}
+{%- if p.location.size > 0 %}
+        "locationCreated": {{ p.location | jsonify }},
+{%- endif %}
+{%- if p.year.size > 0 %}
+        "dateCreated": {{ p.year | append: "" | jsonify }},
+{%- endif %}
+{%- if p.status.size > 0 %}
+        "creativeWorkStatus": {{ p.status | jsonify }},
+{%- endif %}
+        "image": "{{ site.url }}/{{ p.hero_image }}",
+        "url": "{{ site.url }}/#projects"
+      }
+    }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+  ]
+}
+</script>
+{%- endif %}
+
+<link rel="icon" type="image/png" href="{{ root }}assets/logos/favicon.png">
+<link rel="apple-touch-icon" href="{{ root }}assets/logos/favicon.png">
+
+<!-- Hero image is requested early so the first screen appears fast -->
+<link rel="preload" as="image" href="{{ root }}{{ home.hero.image }}" fetchpriority="high">
+<link rel="preload" as="image" href="{{ root }}assets/logos/seven-points-logo-white.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ root }}sp-style.css">
+<link rel="stylesheet" href="{{ root }}sp-i18n.css">
+
+{%- if L == "en" %}
+<!-- LANGUAGE MEMORY: a visitor who chose Arabic or Kurdish before is taken back to it -->
+<script>
+try { (function (l) { if ((l === 'ar' || l === 'ckb') && location.protocol !== 'file:') location.replace(l + '/' + location.hash); })(localStorage.getItem('sp-lang')); } catch (e) {}
+</script>
+{%- endif %}
+
+<!-- INTRO MODE (runs before anything is drawn, so there is no flash)
+     full  = first visit in this browser session: complete logo animation
+     short = already seen this session: 250ms fade only
+     none  = visitor prefers reduced motion: no intro
+     Safety net: the intro is always removed after 9 seconds. -->
+<script>
+(function (h) {
+  h.classList.add('js');
+  var mode = 'none';
+  try {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      mode = sessionStorage.getItem('sevenPointsIntroPlayed') ? 'short' : 'full';
+    }
+  } catch (e) { mode = 'full'; }
+  if (mode !== 'none') { h.classList.add('is-intro'); h.classList.add('is-intro-' + mode); }
+  window.__spIntroStart = performance.now();
+  setTimeout(function () { h.classList.remove('is-intro', 'is-intro-full', 'is-intro-short'); }, 9000);
+})(document.documentElement);
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">{{ ui.skip | default: "Skip to content" }}</a>
+
+<!-- =====================================================================
+     INTRO — Seven Points logo animation
+     The logo below is an inline COPY of assets/logos/seven-points-logo-white.svg
+     (same geometry, colours removed) so each shape can be drawn.
+     Styles: sp-style.css → section "22. INTRO".  Logic: sp-script.js → "Intro".
+====================================================================== -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__panel"></div>
+  <div class="loader__stage">
+    <svg class="loader__logo" viewBox="0 0 177.26 162.37" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <polygon class="loader__part loader__part--mark" style="--d:0.00s;--t:1.10s" points="147.38 59.12 147.38 42.46 129.17 32.83 129.17 99.34 134.59 104.57 152.16 104.57 152.16 59.12"/>
+      <polygon class="loader__part loader__part--mark" style="--d:0.25s;--t:1.45s" points="121.15 0 115.52 2.92 108.53 6.54 108.5 6.55 108.49 6.55 106.41 7.62 106.4 7.63 87.97 52.64 80.16 52.64 98.64 7.72 98.64 0 25.11 0 25.17 19.65 71.29 19.65 57.16 52.64 35.45 52.64 35.45 59.55 54.2 59.55 37.61 98.27 37.52 104.57 58.8 104.57 77.32 59.55 85.14 59.55 66.7 104.57 72.53 104.57 111.71 10.19 111.71 10.18 115.61 8.16 116.12 39.26 116.11 39.27 116.11 104.57 121.93 104.57 121.93 35.82 128.45 31.92 128.45 4.45 123.33 1.33"/>
+      <path class="loader__part loader__part--type" style="--d:0.90s;--t:.45s" d="M11.54,128.77c-.55-.34-1.16-.61-1.83-.81-.67-.2-1.34-.38-2-.53-.67-.15-1.28-.31-1.83-.46-.55-.15-1-.36-1.33-.61-.34-.25-.51-.59-.51-1,0-.35.1-.66.3-.93.2-.27.53-.49.99-.66.46-.17,1.05-.25,1.77-.25s1.46.1,2.21.31c.75.21,1.5.53,2.26.96l1.15-2.83c-.75-.48-1.62-.83-2.6-1.07-.98-.24-1.98-.36-2.99-.36-1.52,0-2.78.23-3.79.68-1.01.45-1.76,1.06-2.26,1.82-.5.76-.75,1.6-.75,2.52,0,.86.17,1.57.52,2.12.34.55.79,1,1.35,1.33.55.34,1.16.61,1.83.83.67.21,1.34.4,2,.54.67.15,1.28.3,1.83.46s1,.37,1.33.62.51.6.51,1.02c0,.34-.11.64-.32.9-.22.26-.55.46-1,.61-.45.15-1.05.22-1.78.22-.97,0-1.92-.16-2.87-.47-.94-.31-1.76-.72-2.45-1.21l-1.27,2.81c.72.55,1.67,1,2.86,1.35,1.18.35,2.42.52,3.71.52,1.54,0,2.81-.23,3.81-.69,1.01-.46,1.76-1.07,2.27-1.82.51-.75.76-1.58.76-2.49,0-.84-.17-1.54-.52-2.1-.34-.55-.79-1-1.35-1.34Z"/>
+      <polygon class="loader__part loader__part--type" style="--d:0.95s;--t:.45s" points="28.43 133.93 19.66 133.93 19.66 130.2 27.15 130.2 27.15 127.29 19.66 127.29 19.66 123.79 28.14 123.79 28.14 120.8 15.96 120.8 15.96 136.92 28.43 136.92"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.00s;--t:.45s" points="39.69 136.92 46.67 120.8 42.96 120.8 37.99 132.31 33.09 120.8 29.06 120.8 36.01 136.92"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.05s;--t:.45s" points="60.48 133.93 51.71 133.93 51.71 130.2 59.19 130.2 59.19 127.29 51.71 127.29 51.71 123.79 60.18 123.79 60.18 120.8 48 120.8 48 136.92 60.48 136.92"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.10s;--t:.45s" points="67.14 127.14 75.17 136.92 78.24 136.92 78.24 120.8 74.55 120.8 74.55 130.58 66.54 120.8 63.45 120.8 63.45 136.92 67.14 136.92"/>
+      <path class="loader__part loader__part--type" style="--d:1.15s;--t:.45s" d="M92.3,132.47h3.25c1.44,0,2.69-.23,3.73-.7,1.04-.47,1.85-1.14,2.42-2.01.57-.87.85-1.91.85-3.11s-.28-2.26-.85-3.13c-.57-.88-1.37-1.55-2.42-2.01-1.04-.47-2.29-.7-3.73-.7h-6.98v16.12h3.73v-4.44ZM97.92,124.58c.57.49.85,1.18.85,2.07s-.28,1.56-.85,2.05c-.57.49-1.43.74-2.58.74h-3.04v-5.59h3.04c1.15,0,2.01.25,2.58.74Z"/>
+      <path class="loader__part loader__part--type" style="--d:1.20s;--t:.45s" d="M106.91,134.82c.79.75,1.73,1.34,2.81,1.75,1.08.41,2.26.62,3.53.62s2.42-.21,3.49-.62c1.07-.41,2-.99,2.79-1.74.79-.74,1.41-1.63,1.85-2.65.45-1.02.67-2.13.67-3.33s-.22-2.32-.67-3.33-1.06-1.88-1.85-2.64c-.79-.75-1.72-1.34-2.79-1.75-1.07-.41-2.24-.62-3.51-.62s-2.42.21-3.5.62c-1.08.41-2.01,1-2.81,1.75s-1.42,1.63-1.85,2.65c-.44,1.01-.66,2.12-.66,3.32s.22,2.3.66,3.32c.44,1.01,1.05,1.9,1.84,2.65ZM108.57,126.77c.25-.63.61-1.17,1.07-1.63.46-.46.99-.81,1.6-1.06s1.27-.37,1.99-.37,1.39.12,2,.37c.61.25,1.15.6,1.6,1.06.45.46.81,1.01,1.06,1.63.25.63.38,1.33.38,2.09s-.13,1.47-.38,2.1c-.25.63-.61,1.17-1.07,1.63-.46.46-.99.81-1.6,1.06-.61.25-1.27.37-1.99.37s-1.39-.12-2-.37c-.61-.25-1.15-.6-1.6-1.06-.45-.46-.81-1.01-1.06-1.65-.25-.64-.38-1.33-.38-2.08s.13-1.47.38-2.09Z"/>
+      <rect class="loader__part loader__part--type" style="--d:1.25s;--t:.45s" x="124.86" y="120.8" width="3.73" height="16.12"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.30s;--t:.45s" points="136.09 127.14 144.13 136.92 147.19 136.92 147.19 120.8 143.51 120.8 143.51 130.58 135.5 120.8 132.41 120.8 132.41 136.92 136.09 136.92"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.35s;--t:.45s" points="149.19 123.84 154.35 123.84 154.35 136.92 158.08 136.92 158.08 123.84 163.24 123.84 163.24 120.8 149.19 120.8"/>
+      <path class="loader__part loader__part--type" style="--d:1.40s;--t:.45s" d="M176.74,130.1c-.34-.55-.79-1-1.35-1.34-.55-.34-1.16-.61-1.83-.81-.67-.2-1.34-.38-2-.53-.67-.15-1.28-.31-1.83-.46-.55-.15-1-.36-1.33-.61-.34-.25-.51-.59-.51-1,0-.35.1-.66.3-.93.2-.27.53-.49.99-.66.46-.17,1.05-.25,1.77-.25s1.46.1,2.21.31c.75.21,1.5.53,2.26.96l1.15-2.83c-.75-.48-1.62-.83-2.6-1.07-.98-.24-1.98-.36-2.99-.36-1.52,0-2.78.23-3.79.68-1.01.45-1.76,1.06-2.26,1.82-.5.76-.75,1.6-.75,2.52,0,.86.17,1.57.52,2.12.34.55.79,1,1.35,1.33.55.34,1.16.61,1.83.83.67.21,1.34.4,2,.54.67.15,1.28.3,1.83.46s1,.37,1.33.62.51.6.51,1.02c0,.34-.11.64-.32.9-.22.26-.55.46-1,.61-.45.15-1.05.22-1.78.22-.97,0-1.92-.16-2.87-.47-.94-.31-1.76-.72-2.45-1.21l-1.27,2.81c.72.55,1.67,1,2.86,1.35,1.18.35,2.42.52,3.71.52,1.54,0,2.81-.23,3.81-.69,1.01-.46,1.76-1.07,2.27-1.82.51-.75.76-1.58.76-2.49,0-.84-.17-1.54-.52-2.1Z"/>
+      <path class="loader__part loader__part--type" style="--d:1.45s;--t:.45s" d="M32.32,150c.51-.51,1.12-.9,1.82-1.18.7-.28,1.47-.41,2.32-.41s1.63.16,2.35.47c.72.32,1.38.79,1.96,1.42l1.94-1.82c-.75-.89-1.67-1.56-2.77-2.02-1.09-.45-2.3-.68-3.62-.68-1.24,0-2.39.2-3.43.61s-1.96.98-2.74,1.73c-.78.75-1.39,1.62-1.82,2.64-.43,1.01-.65,2.12-.65,3.32s.22,2.3.65,3.32c.43,1.01,1.03,1.89,1.81,2.64.78.75,1.69,1.32,2.74,1.73,1.05.41,2.19.61,3.42.61,1.34,0,2.55-.23,3.64-.69,1.09-.46,2.01-1.13,2.77-2.01l-1.94-1.84c-.58.65-1.24,1.13-1.96,1.44-.72.32-1.51.47-2.35.47s-1.62-.14-2.32-.42c-.7-.28-1.31-.67-1.82-1.18-.51-.51-.91-1.11-1.2-1.8s-.43-1.45-.43-2.28.14-1.59.43-2.28.68-1.29,1.2-1.8Z"/>
+      <path class="loader__part loader__part--type" style="--d:1.50s;--t:.45s" d="M58.36,148.14c-.78-.75-1.7-1.33-2.75-1.74s-2.21-.62-3.47-.62-2.4.21-3.46.62-1.98,1-2.77,1.74c-.78.75-1.39,1.62-1.82,2.63-.43,1.01-.65,2.11-.65,3.31s.22,2.3.65,3.31c.43,1.01,1.04,1.88,1.82,2.63.78.75,1.71,1.33,2.77,1.74,1.06.41,2.22.62,3.48.62s2.39-.21,3.45-.62c1.05-.42,1.97-.99,2.75-1.73.78-.74,1.39-1.61,1.82-2.63.43-1.01.65-2.12.65-3.32s-.21-2.3-.65-3.31c-.43-1.01-1.04-1.88-1.82-2.63ZM57.38,156.35c-.29.68-.68,1.28-1.19,1.8-.51.52-1.11.91-1.8,1.19-.69.28-1.44.42-2.26.42s-1.57-.14-2.26-.42c-.69-.28-1.29-.67-1.8-1.19-.51-.51-.9-1.12-1.19-1.81s-.43-1.44-.43-2.26.14-1.59.43-2.27c.28-.68.68-1.28,1.2-1.8.51-.51,1.11-.91,1.8-1.19.68-.28,1.43-.41,2.25-.41s1.57.14,2.26.41c.69.28,1.29.67,1.8,1.19.51.52.9,1.11,1.19,1.8.28.68.43,1.44.43,2.27s-.14,1.59-.43,2.27Z"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.55s;--t:.45s" points="79.17 146.01 72.87 156.7 66.47 146.01 64 146.01 64 162.14 66.86 162.14 66.86 151.59 72.16 160.3 73.5 160.3 78.8 151.45 78.82 162.14 81.66 162.14 81.64 146.01"/>
+      <path class="loader__part loader__part--type" style="--d:1.60s;--t:.45s" d="M98.69,148.68c-.55-.86-1.34-1.52-2.36-1.98-1.02-.46-2.25-.69-3.68-.69h-6.64v16.13h3v-4.66h3.64c1.43,0,2.65-.23,3.68-.69,1.02-.46,1.81-1.12,2.36-1.98.55-.86.83-1.88.83-3.07s-.28-2.2-.83-3.07ZM95.5,154.11c-.67.56-1.66.84-2.99.84h-3.5v-6.41h3.5c1.32,0,2.32.28,2.99.83.67.55,1,1.34,1,2.37s-.33,1.8-1,2.36Z"/>
+      <path class="loader__part loader__part--type" style="--d:1.65s;--t:.45s" d="M106.69,146.01l-7.26,16.13h3.09l1.6-3.73h8.07l1.6,3.73h3.13l-7.28-16.13h-2.95ZM105.12,156.06l3.02-7.06,3.03,7.06h-6.05Z"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.70s;--t:.45s" points="130.34 156.93 121.44 146.01 118.97 146.01 118.97 162.14 121.95 162.14 121.95 151.22 130.84 162.14 133.31 162.14 133.31 146.01 130.34 146.01"/>
+      <polygon class="loader__part loader__part--type" style="--d:1.75s;--t:.45s" points="147.65 146.01 142.88 153.86 138.15 146.01 134.95 146.01 141.29 156.5 141.29 162.14 144.28 162.14 144.28 156.46 150.6 146.01"/>
+    </svg>
+  </div>
+</div>
+<script>
+/* Intro: measure each logo shape's real outline length so the stroke draws exactly once */
+(function () {
+  var parts = document.querySelectorAll('.loader__part');
+  for (var i = 0; i < parts.length; i++) {
+    try { parts[i].style.setProperty('--len', (parts[i].getTotalLength() + 1).toFixed(2)); } catch (e) {}
+  }
+})();
+</script>
+
+<!-- =====================================================================
+     NAVIGATION
+====================================================================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="{{ ui.brand_aria | default: "Seven Points — back to top" }}">
+      <img class="nav__logo" src="{{ root }}assets/logos/seven-points-logo-white.svg" width="177" height="162" alt="">
+    </a>
+
+    <nav class="nav__links" aria-label="{{ ui.nav_main | default: "Main" }}">
+      <a href="#top" data-spy="top">{{ ui.home | default: "Home" }}</a>
+      <a href="#about" data-spy="about">{{ ui.about | default: "About Us" }}</a>
+      <a href="#services" data-spy="services">{{ ui.services | default: "Services" }}</a>
+      <a href="#projects" data-spy="projects">{{ ui.projects | default: "Projects" }}</a>
+      <a href="#partners" data-spy="partners">{{ ui.clients | default: "Clients" }}</a>
+    </nav>
+
+    <div class="nav__end">
+      {%- include lang-switch.html class="lang" %}
+      <a class="nav__contact" href="#contact" data-spy="contact">{{ ui.contact | default: "Contact" }}</a>
+    </div>
+
+    <button class="nav__burger" id="burger" type="button" aria-label="{{ ui.menu_open | default: "Open menu" }}" aria-expanded="false" aria-controls="menu"{% if ui %} data-label-open="{{ ui.menu_open }}" data-label-close="{{ ui.menu_close }}"{% endif %}>
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Full-screen mobile menu -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__links" aria-label="{{ ui.nav_mobile | default: "Mobile" }}">
+    <a href="#top"><span>01</span>{{ ui.home | default: "Home" }}</a>
+    <a href="#about"><span>02</span>{{ ui.about | default: "About Us" }}</a>
+    <a href="#services"><span>03</span>{{ ui.services | default: "Services" }}</a>
+    <a href="#projects"><span>04</span>{{ ui.projects | default: "Projects" }}</a>
+    <a href="#partners"><span>05</span>{{ ui.clients | default: "Clients" }}</a>
+    <a href="#contact"><span>06</span>{{ ui.contact | default: "Contact" }}</a>
+  </nav>
+  <div class="menu__foot">
+    {%- include lang-switch.html class="lang lang--menu" %}
+    <a href="tel:{{ contact.phone | remove: ' ' }}" dir="ltr">{{ contact.phone | escape }}</a>
+    <a href="mailto:{{ contact.email }}" dir="ltr">{{ contact.email | escape }}</a>
+    <span>{{ tc.address.street | default: contact.address.street | escape }}{{ ui.comma | default: ", " }}{{ tc.address.city | default: contact.address.city | escape }} — {{ tc.address.region | default: contact.address.region | escape }}</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- =====================================================================
+       HERO — text and photo: Pages CMS → Homepage → Hero
+  ====================================================================== -->
+  <section class="hero" id="top" aria-label="{{ ui.intro | default: "Introduction" }}">
+    <div class="hero__media">
+      <img src="{{ root }}{{ home.hero.image }}" width="{{ home.hero.image_width | default: 2000 }}" height="{{ home.hero.image_height | default: 1201 }}"
+           alt="{{ hero_alt | escape }}"
+           fetchpriority="high" decoding="async">
+      <!-- Optional video later (MP4 H.264, max 1080p, muted). Replace the <img> above with:
+      <video autoplay muted loop playsinline poster="{{ home.hero.image }}">
+        <source src="assets/videos/hero.mp4" type="video/mp4">
+      </video> -->
+    </div>
+
+    <div class="hero__content wrap">
+      <p class="label label--light">{{ th.hero.label | default: home.hero.label | escape }}</p>
+      <h1 class="hero__title" data-reveal="lines">
+        {%- assign t_lines = th.hero.title | default: home.hero.title %}{% include lines.html lines=t_lines indent="        " %}
+      </h1>
+      <div class="hero__row">
+        <p class="hero__copy" data-reveal="fade">{{ th.hero.subtitle | default: home.hero.subtitle | escape }}</p>
+        <div class="hero__actions" data-reveal="fade">
+          <a class="btn btn--light" href="#projects">{{ th.hero.button_projects | default: home.hero.button_projects | escape }}</a>
+          <a class="btn btn--ghost-light" href="#contact">{{ th.hero.button_contact | default: home.hero.button_contact | escape }}</a>
+        </div>
+      </div>
+    </div>
+
+    <a class="hero__cue" href="#about" aria-label="{{ ui.scroll_aria | default: "Scroll to About Us" }}">
+      <span>{{ ui.scroll | default: "Scroll" }}</span><i aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- =====================================================================
+       ABOUT US  (light panel rises out of the hero)
+  ====================================================================== -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="about__intro wrap">
+      <p class="label">{{ ta.label | default: about.label | escape }}</p>
+      <h2 class="about__title" id="about-title" data-reveal="lines">
+        {%- assign t_lines = ta.title | default: about.title %}{% include lines.html lines=t_lines indent="        " %}
+      </h2>
+      <p class="about__lead" data-reveal="fade">{{ ta.lead | default: about.lead | escape }}</p>
+    </div>
+
+    <div class="about__body wrap">
+      <!-- Chapter navigation: follows the scroll, and each item jumps to its chapter -->
+      <aside class="about__aside">
+        <nav class="chapters" aria-label="{{ ui.about_nav | default: "About Seven Points" }}">
+          <div class="chapters__progress" aria-hidden="true"><i></i></div>
+          <a href="#who" class="is-active" aria-current="true"><span>01</span>{{ ui.who | default: "Who We Are" }}</a>
+          <a href="#values"><span>02</span>{{ ui.values | default: "Our Values" }}</a>
+          <a href="#team"><span>03</span>{{ ui.team | default: "Our Team" }}</a>
+          <a href="#founders"><span>04</span>{{ ui.founders | default: "Founders" }}</a>
+        </nav>
+      </aside>
+
+      <div class="about__chapters">
+
+        <!-- 01 WHO WE ARE -->
+        <article class="chapter" id="who" aria-labelledby="who-title">
+          <h3 class="chapter__label" id="who-title"><span>01</span>{{ ui.who | default: "Who We Are" }}</h3>
+{%- if about.who_we_are.text.size > 0 %}
+          <p class="chapter__text">{{ ta.who_we_are.text | default: about.who_we_are.text | escape }}</p>
+{%- endif %}
+          <figure class="who__media" data-reveal="img">
+            <img src="{{ root }}{{ about.who_we_are.image }}" width="{{ about.who_we_are.image_width | default: 1600 }}" height="{{ about.who_we_are.image_height | default: 961 }}"
+                 alt="{{ ta.who_we_are.image_alt | default: about.who_we_are.image_alt | escape }}" loading="lazy" decoding="async">
+          </figure>
+          <dl class="stats">
+{%- for s in about.who_we_are.stats %}
+{%- assign s_number = s.value | plus: 0 %}{% assign t_s = ta.who_we_are.stats[forloop.index0] %}
+            <div class="stats__item"><dt>{{ t_s.label | default: s.label | escape }}</dt>{% if s_number > 0 %}<dd data-count>{{ s.value | escape }}{% if s.sign.size > 0 %}<em>{{ s.sign | escape }}</em>{% endif %}</dd>{% else %}<dd class="stats__word">{{ t_s.value | default: s.value | escape }}{{ s.sign | escape }}</dd>{% endif %}</div>
+{%- endfor %}
+          </dl>
+        </article>
+
+        <!-- 02 OUR VALUES -->
+        <article class="chapter" id="values" aria-labelledby="values-title">
+          <h3 class="chapter__label" id="values-title"><span>02</span>{{ ui.values | default: "Our Values" }}</h3>
+          <ol class="values">
+{%- for v in about.values %}{% assign t_v = ta.values[forloop.index0] %}
+            <li class="value">
+              <span class="value__num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+              <h4 class="value__title">{{ t_v.title | default: v.title | escape }}</h4>
+              <p class="value__text">{{ t_v.text | default: v.text | escape }}</p>
+            </li>
+{%- endfor %}
+          </ol>
+        </article>
+
+        <!-- 03 OUR TEAM  (typography only) -->
+        <article class="chapter" id="team" aria-labelledby="team-title">
+          <h3 class="chapter__label" id="team-title"><span>03</span>{{ ui.team | default: "Our Team" }}</h3>
+          {%- assign t_team = ta.team.statement | default: about.team.statement %}{% assign t_disc = ta.team.disciplines | default: about.team.disciplines %}
+          <p class="chapter__statement">{{ t_team | strip | escape | replace: newline, '<br>' }}</p>
+          <div class="ticker ticker--light" aria-label="{{ ui.disciplines | default: 'Disciplines' }}: {{ t_disc | join: ', ' | escape }}">
+            <div class="ticker__track" aria-hidden="true">
+              {% for d in t_disc %}<span>{{ d | escape }}</span>{% endfor %}
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 FOUNDERS -->
+        <article class="chapter" id="founders" aria-labelledby="founders-title">
+          <h3 class="chapter__label" id="founders-title"><span>04</span>{{ ui.founders | default: "Founders" }}</h3>
+          {%- assign t_fs = ta.founders.statement | default: about.founders.statement %}
+          <p class="chapter__statement">{{ t_fs | strip | escape | replace: newline, '<br>' }}</p>
+          <p class="chapter__text">{{ ta.founders.text | default: about.founders.text | escape }}</p>
+
+          <div class="founders">
+{%- for f in about.founders.people %}{% assign t_f = ta.founders.people[forloop.index0] %}
+            <figure class="founder" data-reveal="img">
+              <div class="founder__frame">
+                <img class="founder__photo" src="{{ root }}{{ f.photo }}" width="{{ f.photo_width | default: 1000 }}" height="{{ f.photo_height | default: 1250 }}"
+                     alt="{{ t_f.photo_alt | default: f.photo_alt | default: f.name | escape }}" loading="lazy" decoding="async">
+              </div>
+              <figcaption>
+                <span class="founder__name">{{ t_f.name | default: f.name | escape }}</span>
+                <span class="founder__role">{{ t_f.role | default: f.role | escape }}</span>
+              </figcaption>
+            </figure>
+{%- endfor %}
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PROOF — yellow band
+  ====================================================================== -->
+  <section class="proof" aria-label="{{ ui.proof_aria | default: "Seven Points in numbers" }}">
+    <div class="proof__grid wrap">
+{%- for n in home.numbers %}
+{%- assign n_number = n.value | plus: 0 %}{% assign t_n = th.numbers[forloop.index0] %}
+      <div class="proof__item"><span class="proof__num"{% if n_number > 0 %} data-count{% endif %}>{% if n_number > 0 %}{{ n.value | escape }}{% else %}{{ t_n.value | default: n.value | escape }}{% endif %}{{ n.sign | escape }}</span><span class="proof__label">{{ t_n.label | default: n.label | escape }}</span></div>
+{%- endfor %}
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       DISCIPLINE STRIP
+  ====================================================================== -->
+  {%- assign t_strip = th.strip | default: home.strip %}
+  <div class="ticker ticker--dark" aria-label="{{ t_strip | join: ', ' | escape }}">
+    <div class="ticker__track" aria-hidden="true">
+      {% for w in t_strip %}<span>{{ w | escape }}</span>{% endfor %}
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SERVICES — sticky image left, stages right (desktop)
+       Text and photos: Pages CMS → Services
+  ====================================================================== -->
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="services__head wrap">
+      <p class="label label--light">{{ ts.label | default: services.label | escape }}</p>
+      <h2 class="services__title" id="services-title" data-reveal="lines">
+        {%- assign t_lines = ts.title | default: services.title %}{% include lines.html lines=t_lines indent="        " %}
+      </h2>
+      <p class="services__intro" data-reveal="fade">{{ ts.intro | default: services.intro | escape }}</p>
+    </div>
+
+    <div class="services__body wrap">
+      <div class="services__media" aria-hidden="true">
+        <div class="services__frame">
+{%- for st in services.stages %}
+          <img {% if forloop.first %}class="is-active" {% endif %}data-stage="{{ forloop.index0 }}" src="{{ root }}{{ st.image }}" width="{{ st.image_width | default: 1600 }}" height="{{ st.image_height | default: 961 }}" alt="" decoding="async" loading="lazy">
+{%- endfor %}
+          <div class="services__count"><span class="services__current">01</span> / {% if services.stages.size < 10 %}0{% endif %}{{ services.stages.size }}</div>
+        </div>
+      </div>
+
+      <div class="services__stages">
+{%- for st in services.stages %}{% assign t_st = ts.stages[forloop.index0] %}
+        <article class="stage{% if forloop.first %} is-active{% endif %}" data-stage="{{ forloop.index0 }}">
+          <img class="stage__img" src="{{ root }}{{ st.image }}" width="{{ st.image_width | default: 1600 }}" height="{{ st.image_height | default: 961 }}" alt="{{ t_st.image_alt | default: st.image_alt | escape }}" loading="lazy" decoding="async">
+          <span class="stage__num">{{ st.number | escape }}</span>
+          <h3 class="stage__title">{{ t_st.title | default: st.title | escape }}</h3>
+          <ul class="stage__list">
+            {% assign t_pts = t_st.points | default: st.points %}{% for pt in t_pts %}<li>{{ pt | escape }}</li>{% endfor %}
+          </ul>
+          <p class="stage__text">{{ t_st.text | default: st.text | escape }}</p>
+        </article>
+{%- unless forloop.last %}{{ newline }}{% endunless %}
+{%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       BRAND STATEMENT
+  ====================================================================== -->
+  <section class="statement" aria-label="{{ ui.statement_aria | default: "Our approach" }}" data-drift>
+    <div class="wrap">
+      <h2 class="statement__title" data-reveal="lines">
+        {%- assign t_lines = th.statement.title | default: home.statement.title %}{% include lines.html lines=t_lines indent="        " %}
+      </h2>
+      <div class="statement__foot" data-reveal="fade">
+        <p>{{ th.statement.text | default: home.statement.text | escape }}</p>
+        <a class="link-arrow" href="#projects">{{ th.statement.link | default: home.statement.link | escape }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       STORIES — pinned sequence on desktop, stacked on mobile
+       Photos and words: Pages CMS → Homepage → Photo story (exactly 3)
+  ====================================================================== -->
+  <section class="stories" aria-label="{{ ui.stories_aria | default: "How we work" }}">
+    <div class="stories__pin">
+{%- assign stories_total = home.stories.size %}
+{%- for st in home.stories %}{% assign t_st = th.stories[forloop.index0] %}
+      <article class="story{% if forloop.first %} is-active{% endif %}">
+        <img class="story__img" src="{{ root }}{{ st.image }}" width="{{ st.image_width | default: 1800 }}" height="{{ st.image_height | default: 1081 }}"
+             alt="{{ t_st.image_alt | default: st.image_alt | escape }}" loading="lazy" decoding="async">
+        <div class="story__text wrap">
+          <span class="story__count">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }} — {% if stories_total < 10 %}0{% endif %}{{ stories_total }}</span>
+          <h2 class="story__title"><span class="ln"><span>{{ t_st.title_line_1 | default: st.title_line_1 | escape }}</span></span><span class="ln"><span>{{ t_st.title_line_2 | default: st.title_line_2 | escape }}</span></span></h2>
+          <p class="story__copy">{{ t_st.text | default: st.text | escape }}</p>
+        </div>
+      </article>
+{%- endfor %}
+      <div class="stories__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SELECTED PROJECTS
+       Each project is a file in _projects/, edited in Pages CMS → Projects.
+       Shown here: projects marked "Show on homepage", in "Display order".
+       The layout alternates wide / narrow automatically.
+  ====================================================================== -->
+  <section class="projects" id="projects" aria-labelledby="projects-title">
+    <div class="projects__head wrap">
+      <p class="label">{{ th.projects_section.label | default: home.projects_section.label | escape }}</p>
+      <h2 class="projects__title" id="projects-title" data-reveal="lines">
+        {%- assign t_lines = th.projects_section.title | default: home.projects_section.title %}{% include lines.html lines=t_lines indent="        " %}
+      </h2>
+    </div>
+
+    <div class="projects__list wrap">
+{% for p in projects %}
+{%- capture p_index %}{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}{% endcapture %}
+      <!-- PROJECT {{ p_index }} -->
+{%- assign p_side = forloop.index0 | modulo: 2 %}{% assign tp = tr.projects[p.slug] %}{% assign p_title = tp.title | default: p.title %}
+      <article class="project {% if p_side == 0 %}project--wide{% else %}project--narrow{% endif %} project-{{ p.slug }}">
+        <button class="project__media" type="button" data-reveal="img" data-gallery="{{ p.slug }}" aria-label="{% if ui.open_gallery %}{{ ui.open_gallery | replace: '%title%', p_title | escape }}{% else %}Open {{ p.title | escape }} gallery{% endif %}">
+          <span class="project__cursor" aria-hidden="true">{{ ui.view | default: "View" }}</span>
+          <img src="{{ root }}{{ p.hero_image }}" width="{{ p.hero_image_width | default: 2000 }}" height="{{ p.hero_image_height | default: 1201 }}"
+               alt="{{ tp.hero_alt | default: p.hero_alt | default: p_title | escape }}" loading="lazy" decoding="async"{% if p.hero_crop.size > 0 and p.hero_crop != "50% 50%" %} style="object-position: {{ p.hero_crop }}"{% endif %}>
+        </button>
+        <div class="project__meta">
+          <span class="project__index">{{ p_index }}</span>
+          <div class="project__name">
+            <h3>{{ p_title | escape }}</h3>
+            <p>{% assign t_srv = tp.services | default: p.services %}{{ t_srv | join: ' · ' | escape }}</p>
+          </div>
+          <span class="project__place">{{ tp.location | default: p.location | escape }}</span>
+          <button class="project__open" type="button" data-gallery="{{ p.slug }}">{{ ui.view_project | default: "View project" }}</button>
+        </div>
+        <ul class="project__gallery" id="gallery-{{ p.slug }}" hidden data-title="{{ p_title | escape }}">
+{%- if p.gallery.size > 0 %}
+{%- for g in p.gallery %}
+          {%- assign t_g = tp.gallery | where: "image", g.image | first %}
+          <li data-src="{{ root }}{{ g.image }}" data-alt="{{ t_g.alt | default: g.alt | escape }}"></li>
+{%- endfor %}
+{%- else %}
+          <li data-src="{{ root }}{{ p.hero_image }}" data-alt="{{ tp.hero_alt | default: p.hero_alt | escape }}"></li>
+{%- endif %}
+        </ul>
+      </article>
+{% endfor %}
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       TRUSTED PARTNERSHIP
+  ====================================================================== -->
+  <section class="partners" id="partners" aria-labelledby="partners-title">
+    <div class="partners__grid wrap">
+      <div class="partners__head">
+        <p class="label label--light">{{ th.clients_section.label | default: home.clients_section.label | escape }}</p>
+        <h2 class="partners__title" id="partners-title" data-reveal="lines">
+          {%- assign t_lines = th.clients_section.title | default: home.clients_section.title %}{% include lines.html lines=t_lines indent="          " %}
+        </h2>
+      </div>
+
+      <div class="partners__body">
+        <p class="partners__lead" data-reveal="fade">{{ th.clients_section.text | default: home.clients_section.text | escape }}</p>
+
+        <ol class="commitments">
+{%- for c in home.clients_section.promises %}
+          {% assign t_c = th.clients_section.promises[forloop.index0] %}<li><span>{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><strong>{{ t_c.title | default: c.title | escape }}</strong><p>{{ t_c.text | default: c.text | escape }}</p></li>
+{%- endfor %}
+        </ol>
+{%- comment %} Client quotes and logos: Pages CMS → Clients & testimonials (only those marked "Show on website") {% endcomment %}
+{%- assign quote_count = 0 %}{% assign logo_count = 0 %}
+{%- for c in clients %}{% if c.testimonial.size > 0 %}{% assign quote_count = quote_count | plus: 1 %}{% endif %}{% if c.logo.size > 0 %}{% assign logo_count = logo_count | plus: 1 %}{% endif %}{% endfor %}
+{%- if quote_count > 0 %}
+
+        <div class="testimonials">
+{%- for c in clients %}{% if c.testimonial.size > 0 %}
+          <figure class="testimonial">
+{%- if c.logo.size > 0 %}
+            <img class="testimonial__logo" src="{{ root }}{{ c.logo }}" width="240" height="80" alt="{{ c.title | escape }}" loading="lazy">
+{%- endif %}
+            <blockquote>{{ c.testimonial | strip | escape | replace: newline, '<br>' }}</blockquote>
+            <figcaption><strong>{{ c.person | default: c.title | escape }}</strong><span>{% if c.position.size > 0 %}{{ c.position | escape }} · {% endif %}{{ c.title | escape }}</span></figcaption>
+          </figure>
+{%- endif %}{% endfor %}
+        </div>
+{%- endif %}
+{%- if logo_count > 0 %}
+
+        <ul class="logos">
+{%- for c in clients %}{% if c.logo.size > 0 %}
+          <li><img src="{{ root }}{{ c.logo }}" width="240" height="80" alt="{{ c.title | escape }}" loading="lazy"></li>
+{%- endif %}{% endfor %}
+        </ul>
+{%- endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CONTACT
+  ====================================================================== -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="contact__title" id="contact-title" data-reveal="lines">
+        {%- assign t_lines = th.contact_section.title | default: home.contact_section.title %}{% include lines.html lines=t_lines indent="        " %}
+      </h2>
+      <p class="contact__sub" data-reveal="lines">
+        {%- assign t_lines = th.contact_section.subtitle | default: home.contact_section.subtitle %}{% include lines.html lines=t_lines indent="        " %}
+      </p>
+      <div class="contact__row">
+        <p class="contact__copy">{{ th.contact_section.text | default: home.contact_section.text | escape }}</p>
+        <div class="contact__actions">
+          <a class="btn btn--dark" href="https://wa.me/{{ contact.whatsapp | default: contact.phone | remove: ' ' | remove: '+' | remove: '-' }}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>
+            {{ th.contact_section.button_whatsapp | default: home.contact_section.button_whatsapp | escape }}
+          </a>
+          <a class="btn btn--line-dark" href="mailto:{{ contact.email }}">{{ th.contact_section.button_email | default: home.contact_section.button_email | escape }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER
+====================================================================== -->
+<footer class="footer">
+  <div class="footer__grid wrap">
+    <div class="footer__brand">
+      <img class="footer__logo" src="{{ root }}assets/logos/seven-points-logo-white.svg" width="177" height="162" alt="Seven Points" loading="lazy">
+      <p class="footer__name"><span>{{ ui.footer_name | default: "Construction & General Trading" | escape }}</span></p>
+    </div>
+
+    <div class="footer__col">
+      <h4>{{ ui.office | default: "Office" }}</h4>
+      <p>{{ tc.address.street | default: contact.address.street | escape }}<br>{{ tc.address.city | default: contact.address.city | escape }}{{ ui.comma | default: ", " }}{{ tc.address.region | default: contact.address.region | escape }}<br>{{ tc.address.country | default: contact.address.country | escape }}</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>{{ ui.explore | default: "Explore" }}</h4>
+      <ul>
+        <li><a href="#about">{{ ui.about | default: "About Us" }}</a></li>
+        <li><a href="#services">{{ ui.services | default: "Services" }}</a></li>
+        <li><a href="#projects">{{ ui.projects | default: "Projects" }}</a></li>
+        <li><a href="#contact">{{ ui.contact | default: "Contact" }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>{{ ui.contact_heading | default: "Contact" }}</h4>
+      <ul>
+        <li><a href="tel:{{ contact.phone | remove: ' ' }}" dir="ltr">{{ contact.phone | escape }}</a></li>
+        <li><a href="mailto:{{ contact.email }}" dir="ltr">{{ contact.email | escape }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>{{ ui.follow | default: "Follow" }}</h4>
+      <!-- Profile links: Pages CMS → Contact & social media -->
+      <ul>
+        <li><a href="{{ contact.social.instagram | default: '#' }}" rel="noopener">Instagram</a></li>
+        <li><a href="{{ contact.social.facebook | default: '#' }}" rel="noopener">Facebook</a></li>
+        <li><a href="{{ contact.social.linkedin | default: '#' }}" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom wrap">
+    <span>© <span data-year>2026</span> <span dir="ltr">Seven Points Construction &amp; General Trading</span></span>
+    <a href="#top">{{ ui.back_to_top | default: "Back to top ↑" }}</a>
+  </div>
+</footer>
+
+<!-- Project gallery (filled by sp-script.js) -->
+<dialog class="gallery" id="gallery" aria-labelledby="gallery-title"{% if ui %} data-one="{{ ui.image_one }}" data-many="{{ ui.image_many }}"{% endif %}>
+  <div class="gallery__bar">
+    <h2 class="gallery__title" id="gallery-title"></h2>
+    <span class="gallery__count"></span>
+    <button class="gallery__close" type="button" aria-label="{{ ui.gallery_close_aria | default: "Close gallery" }}">{{ ui.gallery_close | default: "Close" }}</button>
+  </div>
+  <div class="gallery__list"></div>
+</dialog>
+
+<!-- Scrolling is the browser's own (fast and smooth on every device); the
+     scroll effects run in CSS (sp-style.css, section 23). -->
+<script src="{{ root }}sp-script.js" defer></script>
+<!-- Language switch (keeps the visitor's place) -->
+<script src="{{ root }}sp-i18n.js" defer></script>
+</body>
+</html>

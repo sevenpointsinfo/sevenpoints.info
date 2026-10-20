@@ -1,0 +1,267 @@
+# Sorani Kurdish text for https://sevenpoints.info/ckb/
+# Same structure as the English content files (_data/homepage.yml, about.yml, services.yml,
+# contact.yml and _projects/*.md). Photos, numbers and links always come from the English
+# files; anything missing here falls back to the English text.
+
+ui:
+  comma: "، "
+  skip: "بازدان بۆ ناوەڕۆک"
+  brand_aria: "Seven Points — گەڕانەوە بۆ سەرەوە"
+  language: "زمان"
+  nav_main: "ڕێنیشاندەری سەرەکی"
+  nav_mobile: "مێنیوی مۆبایل"
+  home: "سەرەکی"
+  about: "دەربارەی ئێمە"
+  services: "خزمەتگوزارییەکان"
+  projects: "پڕۆژەکان"
+  clients: "کڕیاران"
+  contact: "پەیوەندی"
+  menu_open: "کردنەوەی مێنیو"
+  menu_close: "داخستنی مێنیو"
+  intro: "پێشەکی"
+  scroll: "خوارەوە"
+  scroll_aria: "بڕۆ بۆ بەشی دەربارەی ئێمە"
+  about_nav: "دەربارەی Seven Points"
+  who: "ئێمە کێین"
+  values: "بەهاکانمان"
+  team: "تیمەکەمان"
+  founders: "دامەزرێنەران"
+  disciplines: "پسپۆڕییەکان"
+  proof_aria: "Seven Points بە ژمارە"
+  statement_aria: "ڕێبازی ئێمە"
+  stories_aria: "چۆن کار دەکەین"
+  view: "بینین"
+  open_gallery: "کردنەوەی گەلەریی وێنەکانی %title%"
+  view_project: "بینینی پڕۆژە"
+  footer_name: "بیناسازی و بازرگانیی گشتی"
+  office: "نووسینگە"
+  explore: "بەشەکان"
+  contact_heading: "پەیوەندی"
+  follow: "بەدوامان بکەوە"
+  back_to_top: "گەڕانەوە بۆ سەرەوە ↑"
+  gallery_close_aria: "داخستنی گەلەری"
+  gallery_close: "داخستن"
+  image_one: " وێنە"
+  image_many: " وێنە"
+
+homepage:
+  hero:
+    label: "Seven Points · هەرێمی کوردستان"
+    title:
+      - text: "شوێنەکان"
+        highlight: "دادەڕێژین."
+      - text: "پڕۆژەکان جێبەجێ دەکەین."
+    subtitle: "تەلارسازی، بیناسازی، دیزاینی ناوەوە و جێبەجێکردنی پڕۆژە لە ڕێگەی یەک تیمی هەماهەنگەوە."
+    button_projects: "بینینی پڕۆژەکان"
+    button_contact: "پڕۆژەیەک دەستپێبکە"
+    project_name: "هۆڵی کۆنفرانسی زاخۆ"
+    project_info: "دیزاین و دروستکراوە لەلایەن Seven Points"
+  numbers:
+    - label: "پڕۆژەی تەواوکراو"
+    - label: "ساڵ کارکردن"
+    - label: "کڕیار و هاوبەش"
+    - value: "دهۆک"
+      label: "هەرێمی کوردستان"
+  strip:
+    - "تەلارسازی"
+    - "بیناسازی"
+    - "دیزاینی ناوەوە"
+    - "بەڕێوەبردنی بۆنە"
+    - "بەڕێوەبردنی پڕۆژە"
+    - "سەرپەرشتیی شوێنی کار"
+  statement:
+    title:
+      - text: "دیزاینی بوێرانە."
+      - text: "ستراتیژیی ڕوون."
+      - highlight: "جێبەجێکردنی ڕێکخراو."
+    text: "مەبەستی دیزاین، بودجە و کاری شوێن لەلایەن هەمان کەسانەوە بەڕێوە دەبرێن، لە یەکەم ڕووپێوەوە تا ڕادەستکردنی کۆتایی — بۆیە ئەو بڕیارانەی لەسەر کاغەز دەدرێن لە شوێنی کاردا دەچەسپێن."
+    link: "کارەکان ببینە"
+  stories:
+    - image_alt: "هۆڵی کۆنفرانسی زاخۆ، ڕووکاری لاتەنیشت"
+      title_line_1: "بە وردی"
+      title_line_2: "دیزاینکراو."
+      text: "تەلارسازی و دیزاینی ناوەوە کە لەسەر بنەمای کارکرد، ڕێژە، کەرەستە و واقیعی بیناسازی داڕێژراون."
+    - image_alt: "پێشوازیی هۆڵی کۆنفرانسی زاخۆ"
+      title_line_1: "بە ئاگاداری"
+      title_line_2: "پلانبۆدانراو."
+      text: "بواری کاری ڕوون، داواکاریی هەماهەنگکراو و ئامادەکاریی ڕێکخراو پێش جێبەجێکردن."
+    - image_alt: "هۆڵی کۆنفرانسی زاخۆ، دیمەن لە گۆشەوە"
+      title_line_1: "بە زیرەکی"
+      title_line_2: "جێبەجێکراو."
+      text: "بیناسازی و تەواوکاری ناوەوە بە سەرپەرشتیی نزیک و گرنگیدان بە وردەکارییەکان جێبەجێ دەکرێن."
+  projects_section:
+    label: "پڕۆژەکان"
+    title:
+      - text: "پڕۆژە"
+      - text: "هەڵبژێردراوەکان."
+  clients_section:
+    label: "کڕیاران"
+    title:
+      - text: "هاوبەشیی"
+      - text: "متمانەپێکراو."
+    text: "کڕیاران لە یەکەم سەردانی شوێنەوە تا ئەو ڕۆژەی کلیلەکان ڕادەست دەکرێن لەگەڵ یەک تیمی Seven Points کار دەکەن. یەک پەیوەندی، یەک بەرنامە، یەک ستاندارد."
+    promises:
+      - title: "یەک لایەنی بەرپرسیار"
+        text: "دیزاین، وەستاکان و شوێنی کار لە ژێر یەک تیمدا هەماهەنگ دەکرێن."
+      - title: "پەیوەندیی ڕاستەوخۆ"
+        text: "بڕیار، گۆڕانکاری و پێشکەوتنی کار هەر کاتێک ڕوو بدەن ڕادەگەیەندرێن."
+      - title: "ڕادەستکردنی تەواو"
+        text: "هەموو پڕۆژەیەک بە پشکنین، چارەسەرکردنی کەموکوڕییەکان و بەڵگەنامەکردن کۆتایی دێت."
+  contact_section:
+    title:
+      - text: "پڕۆژەیەکت"
+      - text: "لە بیرە؟"
+    subtitle:
+      - text: "با پێکەوە"
+      - text: "دروستی بکەین."
+    text: "جۆری پڕۆژەکەت، شوێن و خشتەی کاتەکەیمان بۆ بنێرە. ڕاستەوخۆ وەڵامت دەدەینەوە — بێ فۆرم و بێ سەنتەری پەیوەندی."
+    button_whatsapp: "واتسئاپ"
+    button_email: "ئیمەیڵمان بۆ بنێرە"
+  seo:
+    page_title: "Seven Points Construction & General Trading — دهۆک، هەرێمی کوردستان"
+    description: "Seven Points تەلارسازی، بیناسازی، دیزاینی ناوەوە، تەواوکاری ناوەوە، بەڕێوەبردنی پڕۆژە و سەرپەرشتیی شوێنی کار لە ڕێگەی یەک تیمی هەماهەنگەوە پێشکەش دەکات، لە دهۆک، هەرێمی کوردستان، عێراق."
+    share_title: "Seven Points Construction & General Trading"
+    share_description: "تەلارسازی، بیناسازی، دیزاینی ناوەوە و جێبەجێکردنی پڕۆژە لە ڕێگەی یەک تیمی هەماهەنگەوە."
+
+about:
+  label: "دەربارەی ئێمە"
+  title:
+    - text: "گۆڕینی بیرۆکەکان"
+    - text: "بۆ شوێنی دروستکراو"
+    - text: "بۆ ژیانی"
+      highlight: "ڕاستەقینە."
+  lead: "Seven Points کۆمپانیایەکی بیناسازی و دیزاینی فرەپسپۆڕییە کە تەلارسازی، دیزاینی ناوەوە، تەواوکاری ناوەوە، بیناسازی و بەڕێوەبردنی پڕۆژە لە ڕێگەی یەک تیمی هەماهەنگەوە پێشکەش دەکات."
+  who_we_are:
+    image_alt: "ڕووکاری هۆڵی کۆنفرانسی زاخۆ"
+    stats:
+      - label: "پڕۆژەی تەواوکراو"
+      - label: "ساڵ ئەزموون"
+      - label: "کڕیار و هاوبەش"
+      - value: "دهۆک"
+        label: "هەرێمی کوردستان"
+  values:
+    - title: "ئەزموون"
+      text: "زانیاریی کرداری لە تەلارسازی، تەواوکاری ناوەوە و بیناسازیدا."
+    - title: "وردی"
+      text: "هەموو قۆناغێک پێش دەستپێکردنی جێبەجێکردن هەماهەنگ دەکرێت."
+    - title: "متمانەپێکراوی"
+      text: "بەرپرسیارێتیی ڕوون و جێبەجێکردنی پڕۆژەی جێی متمانە."
+    - title: "ئەدا"
+      text: "دیزاین و بیناسازی کە سەرنجیان لەسەر ئەنجامی بەردەوامە."
+  team:
+    statement: |-
+      یەک تیم.
+      چەندین پسپۆڕی.
+    disciplines:
+      - "تەلارسازان"
+      - "بەڕێوەبردنی پڕۆژە"
+      - "تیمی بیناسازی"
+      - "دیزاینی ناوەوە"
+      - "سەرپەرشتیی شوێنی کار"
+      - "هەماهەنگیی کارە میکانیکی و کارەباییەکان"
+  founders:
+    statement: |-
+      دیزاین و بیناسازی
+      دەبێت وەک یەک کار بکەن.
+    text: "Seven Points لەسەر ئەو بڕوایە دامەزرا کە پڕۆژەی بەهێزتر لە هەماهەنگکردنی دیزاین، بەڕێوەبردن و جێبەجێکردن لە ژێر یەک تیمی بەرپرسیاردا دێتە بەرهەم."
+    people:
+      - name: "شیراز عەزیز"
+        role: "خاوەن و دامەزرێنەر"
+        photo_alt: "شیراز عەزیز، خاوەن و دامەزرێنەری Seven Points"
+
+services:
+  label: "ئەوەی دەیکەین"
+  title:
+    - text: "لە بیرۆکەوە"
+    - text: "تا"
+      highlight: "جێبەجێکردن."
+  intro: "چوار قۆناغ، یەک تیمی بەرپرسیار. هەر قۆناغێک ڕادەستی قۆناغی دواتر دەکرێت بەبێ ئەوەی مەبەستی قۆناغی پێشوو لەدەست بچێت."
+  stages:
+    - title: "پلاندانان"
+      points:
+        - "دیاریکردنی پڕۆژە"
+        - "ڕووپێوی شوێن"
+        - "هەماهەنگیی بواری کار"
+        - "پلاندانانی بودجە"
+      text: "پێش دەستپێکردنی بیناسازی، داواکاری، ئەولەوییەکان، سنووردارییەکانی شوێن، بودجە و ستراتیژیی جێبەجێکردن دیاری دەکەین."
+      image_alt: "دیمەنی ئاسمانیی نەخشەی شوێنی هۆڵی کۆنفرانسی زاخۆ"
+    - title: "دیزاینکردن"
+      points:
+        - "تەلارسازی"
+        - "دیزاینی ناوەوە"
+        - "هەماهەنگیی تەکنیکی"
+        - "هەڵبژاردنی کەرەستە"
+      text: "تەلارسازی و دیزاینی ناوەوە لەسەر بنەمای چارەسەری کرداری، هەماهەنگ و جێبەجێکراو پەرە پێدەدرێن."
+      image_alt: "دیزاینی ناوەوەی هۆڵی کۆنفرانس لە هۆڵی کۆنفرانسی زاخۆ"
+    - title: "بیناسازی"
+      points:
+        - "بیناسازی"
+        - "تەواوکاری ناوەوە"
+        - "سەرپەرشتیی شوێنی کار"
+        - "کۆنترۆڵی کوالیتی"
+      text: "جێبەجێکردنی شوێن، کەرەستە، وەستاکان و تەواوکاری لەلایەن یەک تیمی جێبەجێکاری بەرپرسیارەوە کۆنترۆڵ دەکرێن."
+      image_alt: "پەیژەی ڕووناک بە مەحەجەری شووشە، ساڵۆنی Jade Touch"
+    - title: "بەڕێوەبردن"
+      points:
+        - "بەڕێوەبردنی پڕۆژە"
+        - "خشتەی کات"
+        - "ڕاپۆرتکردن"
+        - "ڕادەستکردن"
+      text: "خشتەی کات، هەماهەنگی، ڕاپۆرتکردن، کۆنترۆڵی کوالیتی و ڕادەستکردن بە درێژایی جێبەجێکردنی پڕۆژە بەڕێوە دەبرێن."
+      image_alt: "بەشی چارەسەریی تەواوکراو، ساڵۆنی Jade Touch"
+
+contact:
+  address:
+    street: "شەقامی زرکا"
+    city: "دهۆک"
+    region: "هەرێمی کوردستان"
+    country: "عێراق"
+
+projects:
+  zakho-conference-hall:
+    title: "هۆڵی کۆنفرانسی زاخۆ"
+    location: "دهۆک / زاخۆ"
+    services:
+      - "تەلارسازی"
+      - "بیناسازی"
+      - "دیزاینی ناوەوە"
+    hero_alt: "هۆڵی کۆنفرانسی زاخۆ، ڕووکاری پێشەوە"
+    gallery:
+      - image: assets/images/projects/zakho-conference-hall/exterior-01.webp
+        alt: "هۆڵی کۆنفرانسی زاخۆ لە کاتی ئێوارەدا"
+      - image: assets/images/projects/zakho-conference-hall/exterior-02.webp
+        alt: "دیمەنی ئاسمانیی شوێنەکە"
+      - image: assets/images/projects/zakho-conference-hall/interior-01.webp
+        alt: "پێشوازی"
+      - image: assets/images/projects/zakho-conference-hall/interior-02.webp
+        alt: "هۆڵی کۆنفرانس"
+      - image: assets/images/projects/zakho-conference-hall/exterior-03.webp
+        alt: "ڕووکاری سەرەکی"
+      - image: assets/images/projects/zakho-conference-hall/exterior-05.webp
+        alt: "دیمەن لە گۆشەوە"
+      - image: assets/images/projects/zakho-conference-hall/exterior-06.webp
+        alt: "ڕووکاری لاتەنیشت"
+  jade-touch-salon:
+    title: "ساڵۆنی Jade Touch"
+    location: "دهۆک"
+    services:
+      - "دیزاینی ناوەوە"
+      - "تەواوکاری ناوەوە"
+    hero_alt: "ساڵۆنی Jade Touch، شوێنی دانیشتن لە ژێر کەوانە بەردینە ڕووناکەکاندا"
+    gallery:
+      - image: assets/images/projects/jade-touch-salon/interior-01.webp
+        alt: "شوێنی ڕێکخستنی قژ"
+      - image: assets/images/projects/jade-touch-salon/interior-02.webp
+        alt: "بەشی نینۆک"
+      - image: assets/images/projects/jade-touch-salon/interior-03.webp
+        alt: "دیواری بەردینی جوانکاری و چڵچرا"
+      - image: assets/images/projects/jade-touch-salon/interior-04.webp
+        alt: "شوێنی ڕاوێژ"
+      - image: assets/images/projects/jade-touch-salon/interior-05.webp
+        alt: "پەیژە ڕووناکەکە"
+      - image: assets/images/projects/jade-touch-salon/interior-06.webp
+        alt: "مێزی پێشوازی"
+      - image: assets/images/projects/jade-touch-salon/interior-07.webp
+        alt: "شوێنی شوشتنی قژ"
+      - image: assets/images/projects/jade-touch-salon/interior-08.webp
+        alt: "مەحەجەری شووشە"

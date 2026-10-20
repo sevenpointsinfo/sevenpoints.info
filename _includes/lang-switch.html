@@ -1,0 +1,9 @@
+{%- comment -%}
+  Language switch: English / العربية / کوردی.
+  sp-i18n.js remembers the visitor's choice and keeps their place on the page.
+{%- endcomment %}
+<nav class="{{ include.class }}" aria-label="{{ ui.language | default: 'Language' }}">
+  <a href="{{ root | default: './' }}" hreflang="en" lang="en" data-lang="en"{% if L == 'en' %} aria-current="true"{% endif %}>English</a>
+  <a href="{{ root }}ar/" hreflang="ar" lang="ar" data-lang="ar"{% if L == 'ar' %} aria-current="true"{% endif %}>العربية</a>
+  <a href="{{ root }}ckb/" hreflang="ckb" lang="ckb" data-lang="ckb"{% if L == 'ckb' %} aria-current="true"{% endif %}>کوردی</a>
+</nav>
