@@ -11,7 +11,7 @@ short_description: Seven Points approached the RT Bank project with a commitment
 services:
   - Architecture · Construction · Interior · Exterior
 featured: true
-order: 10
+order: 2
 hero_image: assets/images/projects/rtb-erbil4.webp
 hero_alt: Interior Design
 hero_crop: 50% 50%
