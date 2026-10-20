@@ -6,7 +6,7 @@ services:
   - Interior Design
   - Fit-Out
 featured: true
-order: 2
+order: 3
 hero_image: assets/images/projects/jade-touch-salon/hero.webp
 hero_image_width: 825
 hero_image_height: 550
